@@ -1,6 +1,8 @@
-# shiny.fluent
+# shiny.fluent: Microsoft Fluent UI for Shiny apps
 
 This is a Shiny package based on [shiny.react](https://github.com/Appsilon/shiny.react).
+
+![shinyfluentapp](https://user-images.githubusercontent.com/1421503/97004706-bc396b00-153d-11eb-8fb1-3856e8536f92.gif)
 
 ## Getting started
 
