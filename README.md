@@ -32,6 +32,6 @@ install.packages("git2r", type = "source", configure.vars = "autobrew=yes")
 
 ## Examples
 
-For an example of a dashboard built with Blueprint UI, run `shiny.fluent::run_example("dashboard")` from R (or `echo 'shiny.fluent::run_example("dashboard")' | R --interactive` from command line.)
+For an example of a dashboard built with Fluent UI, run `shiny.fluent::run_example("dashboard")` from R (or `echo 'shiny.fluent::run_example("dashboard")' | R --interactive` from command line.)
 
 To see a list of all available examples, run `shiny.fluent::run_example()`.
