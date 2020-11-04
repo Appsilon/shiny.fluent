@@ -20,7 +20,14 @@ If you run into errors, try installing SSH dependencies and re-installing git2r
 
 ```sh
 sudo apt-get install libssh2-1 libssh2-1-dev
-Rscript -e 'devtools::install_cran("git2r", force=TRUE)'
+Rscript -e 'devtools::install_cran("git2r", force = TRUE)'
+```
+
+For Mac OSX use:
+```sh
+brew install libssh2
+brew install libgit2
+install.packages("git2r", type = "source", configure.vars = "autobrew=yes")
 ```
 
 ## Examples
