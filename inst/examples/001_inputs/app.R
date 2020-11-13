@@ -3,7 +3,7 @@ library(shiny.fluent)
 
 ui <- fluidPage(
   withReact(
-    div(
+    tagList(
       h1("React components as inputs"),
       p("Implemented in reactR way: Shiny input bindings + ReactDOM.render on each change."),
 
