@@ -1,3 +1,7 @@
+#' @example inst/examples/ActivityItem.R
+#' @name ActivityItem
+NULL
+
 #' @example inst/examples/Announced.R
 #' @name Announced
 NULL
