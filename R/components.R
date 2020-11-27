@@ -184,6 +184,10 @@ ActivityItem <- make_output("ActivityItem")
 #' @export
 Announced <- make_output("Announced")
 
+#' @rdname Pickers
+#' @export
+BasePickerListBelow <- make_output("BasePickerListBelow")
+
 #' @rdname Breadcrumb
 #' @export
 Breadcrumb <- make_output("Breadcrumb")
@@ -199,6 +203,10 @@ Coachmark <- make_output("Coachmark")
 #' @rdname CommandBar
 #' @export
 CommandBar <- make_output("CommandBar")
+
+#' @rdname PeoplePicker
+#' @export
+CompactPeoplePicker <- make_output("CompactPeoplePicker")
 
 #' @rdname ContextualMenu
 #' @export
@@ -300,6 +308,10 @@ Image <- make_output("Image")
 #' @export
 ImageIcon <- make_output("ImageIcon")
 
+#' @rdname Keytips
+#' @export
+KeytipLayer <- make_output("KeytipLayer")
+
 #' @rdname Label
 #' @export
 Label <- make_output("Label")
@@ -339,6 +351,10 @@ Modal <- make_output("Modal")
 #' @rdname Nav
 #' @export
 Nav <- make_output("Nav")
+
+#' @rdname PeoplePicker
+#' @export
+NormalPeoplePicker <- make_output("NormalPeoplePicker")
 
 #' @rdname OverflowSet
 #' @export
@@ -399,6 +415,10 @@ Stack <- make_output("Stack")
 #' @rdname ScrollablePane
 #' @export
 Sticky <- make_output("Sticky")
+
+#' @rdname Pickers
+#' @export
+TagPicker <- make_output("TagPicker")
 
 #' @rdname TeachingBubble
 #' @export
