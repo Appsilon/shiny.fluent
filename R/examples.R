@@ -34,8 +34,8 @@ NULL
 #' @name ColorPicker
 NULL
 
-#' @example inst/examples/CoachmarkPicker.R
-#' @name ColorPicker
+#' @example inst/examples/Coachmark.R
+#' @name Coachmark
 NULL
 
 #' @example inst/examples/ContextualMenu.R
