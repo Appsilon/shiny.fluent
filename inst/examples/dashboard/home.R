@@ -42,11 +42,9 @@ card2 <- div(class = "card ms-depth-8",
              ))
 
 homePage <-
-  withReact(
     makePage(
       "This is a Fluent UI app built in Shiny",
       "shiny.react + Fluent UI = shiny.fluent",
       div(card1,
           card2)
     )
-  )
