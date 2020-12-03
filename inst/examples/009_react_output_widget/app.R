@@ -6,10 +6,7 @@ library(leaflet)
 ui <- fluidPage(
   titlePanel("React components in a Shiny layout"),
   checkboxInput("showui", label="Show components?", value=TRUE),
-  uiOutput("ui"),
-  withReact(
-    Label("deps")
-  )
+  uiOutput("ui")
 )
 
 server <- function(input, output, session) {
@@ -27,7 +24,7 @@ server <- function(input, output, session) {
     if(input$showui) {
       div(
         numericInput("count", label="Insert some value", value = 0),
-        reactOutput("reactOutput1")
+        reactOutput("reactOutput1", height=NULL)
       )
     }
   })
@@ -36,6 +33,7 @@ server <- function(input, output, session) {
     reactWidget(
       h3("Label"),
       Label(paste("I'm a Label with count value = ", input$count)),
+      h3("Static buttons"),
       Stack(PrimaryButton("Button1", text="Button 1"), PrimaryButton("Button2", text="Button 2"), PrimaryButton("Button3", text="Button 3"), horizontal=TRUE, tokens=list(childrenGap=20)),
       h3("Teaching Bubble"),
       DefaultButton("toggle", text = "Toggle Teaching Bubble"),
