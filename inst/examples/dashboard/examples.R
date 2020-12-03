@@ -1,10 +1,9 @@
-# Generated automatically based on examples in inst/examples/*.R
+# Initially generated automatically based on examples in inst/examples/*.R
+# Now needs to be updated manually.
 
 examples <- list()
 
-
 # ActivityItem
-
 
 makeActivityItem <- function() {
   ui =
@@ -93,7 +92,7 @@ makeButton <- function() {
   server = function(input, output, session) {
     clicks <- reactiveVal(0)
     addClick <- function() { clicks(isolate(clicks() + 1)) }
-    
+
     observeEvent(input$button1, addClick())
     observeEvent(input$button2, addClick())
     observeEvent(input$button3, addClick())
@@ -146,14 +145,27 @@ examples$Calendar <- makeCalendar()
 
 
 makeCallout <- function() {
-  ui =
-    Callout(
-      tags$div(
-        style = "margin: 10px",
-        "Callout contents"
-      )
-    )
+  ui = div(
+    DefaultButton("toggleCallout", text = "Toggle Callout"),
+    reactOutput("callout", height=NULL)
+  )
   server = function(input, output) {
+    show <- reactiveVal(FALSE)
+    observeEvent(input$toggleCallout, {
+      show(isolate(!show()))
+    })
+    output$callout <- renderReact({
+      reactWidget(
+        if (show()) {
+          Callout(
+            tags$div(
+              style = "margin: 10px",
+              "Callout contents"
+            )
+          )
+        }
+      )
+    })
   }
 
   list(ui = ui, server = server)
@@ -208,6 +220,45 @@ makeChoiceGroup <- function() {
 }
 
 examples$ChoiceGroup <- makeChoiceGroup()
+
+
+# Coachmark
+
+
+makeCoachmark <- function() {
+  ui =
+    div(
+      DefaultButton("toggleCoachmark", text = "Toggle Coachmark"),
+      reactOutput("coachmark", height=NULL)
+    )
+  server = function(input, output) {
+    showCoachmark <- reactiveVal(FALSE)
+    observeEvent(input$toggleCoachmark, {
+      showCoachmark(isolate(!showCoachmark()))
+    })
+    output$coachmark <- renderReact({
+      reactWidget(
+        if (showCoachmark()) {
+          Coachmark(
+            target="#toggleCoachmark",
+            TeachingBubbleContent(
+              headline="Example title",
+              hasCloseButton=TRUE,
+              primaryButtonProps=list(text="Try it"),
+              secondaryButtonProps=list(text="Try it again"),
+              onDismiss=JS("function() { Shiny.setInputValue('toggleCoachmark', Math.random()); }"),
+              "Welcome to the land of coachmarks!"
+            )
+          )
+        }
+      )
+    })
+  }
+
+  list(ui = ui, server = server)
+}
+
+examples$Coachmark <- makeCoachmark()
 
 
 # ColorPicker
@@ -329,6 +380,95 @@ makeCommandBar <- function() {
 examples$CommandBar <- makeCommandBar()
 
 
+# ContextualMenu
+
+
+makeContextualMenu <- function() {
+  ui =
+    div(
+      DefaultButton("toggleContextualMenu", text = "Toggle menu"),
+      reactOutput("contextualMenu", height=NULL)
+    )
+  server = function(input, output) {
+    showContextualMenu <- reactiveVal(FALSE)
+    observeEvent(input$toggleContextualMenu, {
+      showContextualMenu(isolate(!showContextualMenu()))
+    })
+
+    output$contextualMenu <- renderReact({
+      menuItems <- JS("[
+        {
+          key: 'newItem',
+          text: 'New',
+          onClick: () => console.log('New clicked'),
+        },
+        {
+          key: 'divider_1',
+          itemType: 1,
+        },
+        {
+          key: 'rename',
+          text: 'Rename',
+          onClick: () => console.log('Rename clicked'),
+        },
+        {
+          key: 'edit',
+          text: 'Edit',
+          onClick: () => console.log('Edit clicked'),
+        },
+        {
+          key: 'properties',
+          text: 'Properties',
+          onClick: () => console.log('Properties clicked'),
+        },
+        {
+          key: 'linkNoTarget',
+          text: 'Link same window',
+          href: 'http://bing.com',
+        },
+        {
+          key: 'linkWithTarget',
+          text: 'Link new window',
+          href: 'http://bing.com',
+          target: '_blank',
+        },
+        {
+          key: 'linkWithOnClick',
+          name: 'Link click',
+          href: 'http://bing.com',
+          onClick: function(){
+            alert('Link clicked');
+            ev.preventDefault();
+          },
+          target: '_blank',
+        },
+        {
+          key: 'disabled',
+          text: 'Disabled item',
+          disabled: true,
+          onClick: () => console.error('Disabled item should not be clickable.'),
+        },
+      ];
+      ");
+
+      reactWidget(
+        ContextualMenu(
+          items=menuItems,
+          hidden=!showContextualMenu(),
+          target="#toggleContextualMenu",
+          onItemClick=JS("function() { Shiny.setInputValue('toggleContextualMenu', Math.random()); }"),
+          onDismiss=JS("function() { Shiny.setInputValue('toggleContextualMenu', Math.random()); }")
+        )
+      )
+    })
+  }
+
+  list(ui = ui, server = server)
+}
+
+examples$ContextualMenu <- makeContextualMenu()
+
+
 # DatePicker
 
 
@@ -384,6 +524,53 @@ makeDetailsList <- function() {
 }
 
 examples$DetailsList <- makeDetailsList()
+
+
+# Dialog
+
+
+makeDialog <- function() {
+  ui =
+    div(
+      DefaultButton("showDialog", text = "Open dialog"),
+      reactOutput("reactDialog", height=NULL)
+    )
+  server = function(input, output) {
+    isDialogOpen <- reactiveVal(FALSE)
+    output$reactDialog <- renderReact({
+      dialogContentProps <- list(
+        type=0,
+        title='Missing Subject',
+        closeButtonAriaLabel='Close',
+        subText='Do you want to send this message without a subject?'
+      )
+
+      reactWidget(
+        Dialog(
+          hidden=!isDialogOpen(),
+          onDismiss=JS("function() { Shiny.setInputValue('hideDialog', Math.random()); }"),
+          dialogContentProps=dialogContentProps,
+          modalProps=list(),
+          ShinyComponentWrapper(
+            DialogFooter(
+              PrimaryButton("dialogSend", text="Send"),
+              DefaultButton("dialogDontSend", text="Don't send")
+            )
+          )
+        )
+      )
+    })
+
+    observeEvent(input$showDialog, isDialogOpen(TRUE))
+    observeEvent(input$hideDialog, isDialogOpen(FALSE))
+    observeEvent(input$dialogSend, isDialogOpen(FALSE))
+    observeEvent(input$dialogDontSend, isDialogOpen(FALSE))
+  }
+
+  list(ui = ui, server = server)
+}
+
+examples$Dialog <- makeDialog()
 
 
 # DocumentCard
@@ -466,6 +653,50 @@ makeFacepile <- function() {
 }
 
 examples$Facepile <- makeFacepile()
+
+
+# FocusTrapZone
+
+
+makeFocusTrapZone <- function() {
+  ui =
+    reactOutput("focusTrapZone", height=NULL)
+  server = function(input, output) {
+    output$focusTrapZone <- renderReact({
+      useTrapZone <- !is.null(input$useTrapZone) && input$useTrapZone
+      stackStyles <- list(root = list(border = if(useTrapZone) '2px solid #ababab' else 'transparent', padding = 10))
+      textFieldStyles <- list(root = list(width = 300));
+      stackTokens = list(childrenGap = 8);
+
+      reactWidget({
+        div(
+          FocusTrapZone(
+            disabled=!useTrapZone,
+            Stack(
+              horizontalAlign="start",
+              tokens=stackTokens,
+              styles=stackStyles,
+              Toggle(
+                "useTrapZone",
+                value=input$useTrapZone,
+                label="Use trap zone",
+                onText="On (toggle to exit)",
+                offText="Off (toggle to trap focus)"
+              ),
+              TextField("textInput", label="Input inside trap zone", styles=textFieldStyles),
+              Link(href="https://bing.com", target="_blank", "Hyperlink inside trap zone")
+            )),
+          Link(href="https://bing.com", target="_blank", "Hyperlink outside trap zone")
+        )
+        }
+      )
+    })
+  }
+
+  list(ui = ui, server = server)
+}
+
+examples$FocusTrapZone <- makeFocusTrapZone()
 
 
 # FocusZone
@@ -595,6 +826,49 @@ makeImage <- function() {
 examples$Image <- makeImage()
 
 
+# Keytips
+
+
+makeKeytips <- function() {
+    ui = tagList(
+      textOutput("keytipsResult"),
+      div(
+        Label("To open keytips, hit 'Alt-Windows' on Windows/Linux and 'Option-Control' on macOS. Keytips will appear. Type what you see, e.g. 1 and then A to 'click' the first button."),
+        Label("When multiple Keytips start with the same character, typing that character will filter the visible keytips."),
+        Stack(horizontal=TRUE, tokens=list(childrenGap=20),
+          DefaultButton("buttonk1",
+                        keytipProps=JS("keytipMap.Button"),
+                        text="Button"),
+          CompoundButton(
+            "buttonk2",
+            style=list(marginBottom=28),
+            keytipProps=JS("keytipMap.CompoundButton"),
+            text="Compound Button",
+            secondaryText='With a Keytip'),
+          DefaultButton(
+            "buttonk3",
+            keytipProps=JS("keytipMap.ButtonWithMenu"),
+            text="Button with Menu",
+            menuProps=JS("buttonProps"))
+        ),
+        KeytipLayer()
+      )
+    )
+  server = function(input, output) {
+    clicks <- reactiveVal(0)
+    addClick <- function() { clicks(isolate(clicks() + 1)) }
+    output$keytipsResult <- renderText({paste("Buttons clicked: ", clicks())})
+    observeEvent(input$buttonk1, addClick())
+    observeEvent(input$buttonk2, addClick())
+    observeEvent(input$buttonk3, addClick())
+  }
+
+  list(ui = ui, server = server)
+}
+
+examples$Keytips <- makeKeytips()
+
+
 # Label
 
 
@@ -610,10 +884,10 @@ makeLabel <- function() {
 examples$Label <- makeLabel()
 
 
-# Layer
+# LayerHost
 
 
-makeLayer <- function() {
+makeLayerHost <- function() {
   ui =
     div(
       LayerHost(id = "host", style = list(border = "1px dashed", padding = 10)),
@@ -621,6 +895,37 @@ makeLayer <- function() {
       Layer(hostId = "host", "Content")
     )
   server = function(input, output) {
+  }
+
+  list(ui = ui, server = server)
+}
+
+examples$LayerHost <- makeLayerHost()
+
+
+# Layer
+
+
+makeLayer <- function() {
+  ui = div(
+      style="margin-top: 60px; border: 1px solid navy; padding: 10px; background: #eee;",
+      Checkbox("useLayer", FALSE, label = "Display a message in a layer"),
+      reactOutput("layer", height=NULL)
+    )
+  server = function(input, output) {
+    output$layer <- renderReact({
+      box <- div(
+        style = "background-color: #60C7FF; margin: 10px; padding: 10px",
+        "Hello!"
+      )
+      reactWidget(
+        if (input$useLayer) {
+          Layer(box)
+        } else {
+          NULL
+        }
+      )
+    })
   }
 
   list(ui = ui, server = server)
@@ -666,6 +971,45 @@ makeList <- function() {
 examples$List <- makeList()
 
 
+# MarqueeSelection
+makeMarqueeSelection <- function() {
+  ui = div(
+    textOutput("marqueeResult"),
+    Label('Drag a rectangle around the items below to select them'), # Make sure Fluent dependency is loaded.
+    reactOutput("marqueeSelection", height=NULL)
+  )
+  server = function(input, output) {
+    MarqueeSelectionExample <- shiny.react::make_output(NULL, 'exampleApp', 'MarqueeSelectionExample')
+
+    photos <- lapply(1:50, function(index) {
+      randomWidth <- 50 + sample.int(150, 1)
+      list(
+        key=index,
+        url=paste0('http://placehold.it/', randomWidth, 'x100'),
+        width=randomWidth,
+        height=100)
+    })
+
+    output$marqueeResult <- renderText({
+      paste("You have selected: ", paste(input$selectedIndices, collapse=", "))
+    })
+
+    output$marqueeSelection <- renderReact({
+      reactWidget(
+        MarqueeSelectionExample(
+          name="selectedIndices",
+          photos=photos
+        )
+      )
+    })
+  }
+
+  list(ui = ui, server = server)
+}
+
+examples$MarqueeSelection <- makeMarqueeSelection()
+
+
 # MessageBar
 
 
@@ -679,6 +1023,36 @@ makeMessageBar <- function() {
 }
 
 examples$MessageBar <- makeMessageBar()
+
+
+# Modal
+
+
+makeModal <- function() {
+  ui =
+    div(
+      DefaultButton("showModal", text = "Open modal"),
+      reactOutput("reactModal", height=NULL)
+    )
+  server = function(input, output) {
+    isModalOpen <- reactiveVal(FALSE)
+    output$reactModal <- renderReact({
+      reactWidget(
+        Modal(isOpen=isModalOpen(), isBlocking=FALSE, div(
+          style = "margin: 20px",
+          h1("This is an important message"),
+          p("Read this text to learn more."),
+          ShinyComponentWrapper(DefaultButton("hideModal", text="Close"))))
+      )
+    })
+    observeEvent(input$showModal, { isModalOpen(TRUE) })
+    observeEvent(input$hideModal, { isModalOpen(FALSE) })
+  }
+
+  list(ui = ui, server = server)
+}
+
+examples$Modal <- makeModal()
 
 
 # Nav
@@ -844,6 +1218,91 @@ makeOverlay <- function() {
 examples$Overlay <- makeOverlay()
 
 
+# Panel
+
+
+makePanel <- function() {
+  ui =
+    div(
+      DefaultButton("showPanel", text = "Open panel"),
+      reactOutput("reactPanel", height=NULL)
+    )
+  server = function(input, output) {
+    isPanelOpen <- reactiveVal(FALSE)
+    output$reactPanel <- renderReact({
+      reactWidget(
+        Panel(
+          headerText = "Sample panel",
+          isOpen = isPanelOpen(),
+          "Content goes here.",
+          onDismiss = JS("function() { Shiny.setInputValue('hidePanel', Math.random()); }")
+        )
+      )
+    })
+    observeEvent(input$showPanel, isPanelOpen(TRUE))
+    observeEvent(input$hidePanel, isPanelOpen(FALSE))
+  }
+
+  list(ui = ui, server = server)
+}
+
+examples$Panel <- makePanel()
+
+
+# PeoplePicker
+
+
+makePeoplePicker <- function() {
+  people <- tibble::tribble(
+    ~key, ~imageUrl, ~imageInitials, ~text, ~secondaryText, ~tertiaryText, ~optionalText, ~isValid, ~presence, ~canExpand,
+    1, "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-female.png", "PV", "Annie Lindqvist", "Designer", "In a meeting", "Available at 4:00pm", TRUE, 2, NA,
+    2, "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-male.png", "AR", "Aaron Reid", "Designer", "In a meeting", "Available at 4:00pm", TRUE, 6, NA,
+    3, "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-male.png", "AL", "Alex Lundberg", "Software Developer", "In a meeting", "Available at 4:00pm", TRUE, 4, NA,
+    4, "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-male.png", "RK", "Roko Kolar", "Financial Analyst", "In a meeting", "Available at 4:00pm", TRUE, 1, NA,
+    5, "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-male.png", "CB", "Christian Bergqvist", "Sr. Designer", "In a meeting", "Available at 4:00pm", TRUE, 2, NA,
+    6, "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-female.png", "VL", "Valentina Lovric", "Design Developer", "In a meeting", "Available at 4:00pm", TRUE, 2, NA,
+    7, "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-male.png", "MS", "Maor Sharett", "UX Designer", "In a meeting", "Available at 4:00pm", TRUE, 3, NA
+  )
+
+  suggestionProps <- list(
+    suggestionsHeaderText='Suggested People',
+    mostRecentlyUsedHeaderText='Suggested Contacts',
+    noResultsFoundText='No results found',
+    loadingText='Loading',
+    showRemoveButtons=TRUE,
+    suggestionsAvailableAlertText='People Picker Suggestions available',
+    suggestionsContainerAriaLabel='Suggested contacts'
+  );
+
+  people_json <- jsonlite::toJSON(people)
+
+  ui = tagList(
+    textOutput("selectedPeople"),
+    NormalPeoplePicker(
+      onResolveSuggestions=JS(paste("function(filterText) { return ", people_json, ".filter(item => item.text.toLowerCase().indexOf(filterText.toLowerCase()) === 0) }")),
+      onEmptyInputFocus=JS(paste("function() { return ", people_json, "}")),
+      getTextFromItem=JS("function(item) { return item.text }"),
+      pickerSuggestionsProps=suggestionProps,
+      className="ms-PeoplePicker",
+      onChange=JS("function(selection) { Shiny.setInputValue('selectedPeople', JSON.stringify(selection)) }")
+    )
+  )
+  server = function(input, output) {
+    output$selectedPeople <- renderText({
+      if (is.null(input$selectedPeople)) {
+        "Select recipients below:"
+      } else {
+        paste("You have selected:", paste(jsonlite::fromJSON(input$selectedPeople)$text, collapse=", "))
+      }
+    })
+  }
+
+  list(ui = ui, server = server)
+}
+
+examples$PeoplePicker <- makePeoplePicker()
+
+
 # Persona
 
 
@@ -981,7 +1440,7 @@ makeScrollablePane <- function() {
       stri_rand_lipsum(paragraphs)
     )
   )
-  ui =
+  ui = div(style="position: relative; height:500px",
     ScrollablePane(
       styles = list(
         root = list(height = "500px", width = "400px")
@@ -989,7 +1448,7 @@ makeScrollablePane <- function() {
       pane("Some text", 3),
       pane("A lot of text", 5),
       pane("Just a short ending", 1)
-    )
+    ))
   server = function(input, output) {
   }
 
@@ -1178,19 +1637,61 @@ makeSwatchColorPicker <- function() {
 examples$SwatchColorPicker <- makeSwatchColorPicker()
 
 
+# TagPicker
+
+
+makeTagPicker <- function() {
+    ui = div(
+        textOutput("selectedTags"),
+        TagPicker(
+          onResolveSuggestions=JS("filterSuggestedTags"),
+          onEmptyInputFocus=JS("function(tagList) { return testTags.filter(tag => !listContainsTagList(tag, tagList)); }"),
+          getTextFromItem=JS("function(item) { return item.text }"),
+          pickerSuggestionsProps=list(suggestionsHeaderText='Suggested tags', noResultsFoundText='No color tags found'),
+          itemLimit=2,
+          onChange=JS("function(selection) { Shiny.setInputValue('selectedTags', JSON.stringify(selection)) }")
+        )
+      )
+  server = function(input, output) {
+    output$selectedTags <- renderText({
+      if (is.null(input$selectedTags)) {
+        "Select up to 2 colors below:"
+      } else {
+        paste("You have selected:", paste(jsonlite::fromJSON(input$selectedTags)$name, collapse=", "))
+      }
+    })
+  }
+
+  list(ui = ui, server = server)
+}
+
+examples$TagPicker <- makeTagPicker()
+
+
 # TeachingBubble
 
 
 makeTeachingBubble <- function() {
   ui =
     div(
-      DefaultButton("toggle", text = "Button"),
-      TeachingBubble(
-        target = "#toggle",
-        headline = "Very useful!"
-      )
+      DefaultButton("toggleTeachingBubble", text = "Toggle TeachingBubble"),
+      reactOutput("teachingBubble", height=NULL)
     )
   server = function(input, output) {
+    showBubble <- reactiveVal(FALSE)
+    observeEvent(input$toggleTeachingBubble, {
+      showBubble(isolate(!showBubble()))
+    })
+    output$teachingBubble <- renderReact({
+        reactWidget(
+          if (showBubble()) {
+            TeachingBubble(
+              target = "#toggleTeachingBubble",
+              headline = "Very useful!"
+            )
+          }
+        )
+    })
   }
 
   list(ui = ui, server = server)
@@ -1233,6 +1734,20 @@ makeText <- function() {
 }
 
 examples$Text <- makeText()
+
+
+# Themes
+
+
+makeThemes <- function() {
+  ui = Label("Example not available in the dashboard, as it could modify the entire dashboard's look. Please look at the example source code or run individually.")
+  server = function(input, output) {
+  }
+
+  list(ui = ui, server = server)
+}
+
+examples$Themes <- makeThemes()
 
 
 # Toggle
