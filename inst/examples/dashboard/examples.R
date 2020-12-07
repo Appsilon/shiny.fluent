@@ -265,14 +265,13 @@ examples$Coachmark <- makeCoachmark()
 
 
 makeColorPicker <- function() {
-  ui =
-    div(
-      ColorPicker("color", "#00FF01"),
+  ui = div(
+      ColorPicker("colorPickerColor", "#00FF01"),
       textOutput("colorValue")
     )
   server = function(input, output) {
     output$colorValue <- renderText({
-      sprintf("Value: %s", input$color)
+      sprintf("Value: %s", input$colorPickerColor)
     })
   }
 
@@ -1204,12 +1203,33 @@ examples$OverflowSet <- makeOverflowSet()
 
 
 makeOverlay <- function() {
-  ui =
-    Overlay(
-      isDarkThemed = TRUE,
-      "Inside Overlay"
-    )
+  ui = div(
+    DefaultButton("toggleOverlay", text = "Open Overlay"),
+    reactOutput("overlay", height=NULL)
+  )
   server = function(input, output) {
+    show <- reactiveVal(FALSE)
+    observeEvent(input$toggleOverlay, {
+      show(isolate(!show()))
+    })
+    output$overlay <- renderReact({
+      reactWidget(
+        if (show()) {
+          Overlay(
+            onClick=JS("function() { Shiny.setInputValue('toggleOverlay', Math.random()); }"),
+            isDarkThemed = TRUE,
+            div(
+              style="background: white; width: 50vw; height: 20rem; margin: auto;",
+              div(
+                style="padding: 2rem;",
+                h1("Inside Overlay"),
+                p("Click anywhere to hide.")
+              )
+            )
+          )
+        }
+      )
+    })
   }
 
   list(ui = ui, server = server)
