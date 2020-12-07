@@ -1,3 +1,6 @@
+#' shiny.fluent JS dependency.
+#'
+#' @export
 html_dependency <- function() {
   htmltools::htmlDependency(
     name = "shiny.fluent",
