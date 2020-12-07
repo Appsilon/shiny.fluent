@@ -3,9 +3,12 @@
 \docType{import}
 \name{reexports}
 \alias{reexports}
-\alias{withReact}
 \alias{JS}
 \alias{ShinyComponentWrapper}
+\alias{reactOutput}
+\alias{reactWidget}
+\alias{renderReact}
+\alias{withReact}
 \title{Objects exported from other packages}
 \keyword{internal}
 \description{
@@ -13,6 +16,6 @@ These objects are imported from other packages. Follow the links
 below to see their documentation.
 
 \describe{
-  \item{shiny.react}{\code{\link[shiny.react:reexports]{JS}}, \code{\link[shiny.react]{ShinyComponentWrapper}}, \code{\link[shiny.react]{withReact}}}
+  \item{shiny.react}{\code{\link[shiny.react:reexports]{JS}}, \code{\link[shiny.react]{ShinyComponentWrapper}}, \code{\link[shiny.react]{reactOutput}}, \code{\link[shiny.react]{reactWidget}}, \code{\link[shiny.react]{renderReact}}, \code{\link[shiny.react]{withReact}}}
 }}
 

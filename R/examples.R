@@ -1,3 +1,7 @@
+#' @example inst/examples/ActivityItem.R
+#' @name ActivityItem
+NULL
+
 #' @example inst/examples/Announced.R
 #' @name Announced
 NULL
@@ -30,6 +34,14 @@ NULL
 #' @name ColorPicker
 NULL
 
+#' @example inst/examples/Coachmark.R
+#' @name Coachmark
+NULL
+
+#' @example inst/examples/ContextualMenu.R
+#' @name ContextualMenu
+NULL
+
 #' @example inst/examples/ComboBox.R
 #' @name ComboBox
 NULL
@@ -44,6 +56,10 @@ NULL
 
 #' @example inst/examples/DetailsList.R
 #' @name DetailsList
+NULL
+
+#' @example inst/examples/Dialog.R
+#' @name Dialog
 NULL
 
 #' @example inst/examples/DocumentCard.R
@@ -62,6 +78,10 @@ NULL
 #' @name FocusZone
 NULL
 
+#' @example inst/examples/FocusTrapZone.R
+#' @name FocusTrapZone
+NULL
+
 #' @example inst/examples/GroupedList.R
 #' @name GroupedList
 NULL
@@ -74,11 +94,19 @@ NULL
 #' @name Icon
 NULL
 
+#' @example inst/examples/Keytips.R
+#' @name Keytips
+NULL
+
 #' @example inst/examples/Label.R
 #' @name Label
 NULL
 
 #' @example inst/examples/Layer.R
+#' @name Layer
+NULL
+
+#' @example inst/examples/LayerHost.R
 #' @name Layer
 NULL
 
@@ -90,8 +118,16 @@ NULL
 #' @name List
 NULL
 
+#' @example inst/examples/MarqueeSelection.R
+#' @name MarqueeSelection
+NULL
+
 #' @example inst/examples/MessageBar.R
 #' @name MessageBar
+NULL
+
+#' @example inst/examples/Modal.R
+#' @name Modal
 NULL
 
 #' @example inst/examples/Nav.R
@@ -105,6 +141,9 @@ NULL
 #' @example inst/examples/Overlay.R
 #' @name Overlay
 NULL
+#' @example inst/examples/PeoplePicker.R
+#' @name PeoplePicker
+NULL
 
 #' @example inst/examples/Persona.R
 #' @name Persona
@@ -112,6 +151,14 @@ NULL
 
 #' @example inst/examples/Pivot.R
 #' @name Pivot
+NULL
+
+#' @example inst/examples/TagPicker.R
+#' @name Pickers
+NULL
+
+#' @example inst/examples/Panel.R
+#' @name Panel
 NULL
 
 #' @example inst/examples/ProgressIndicator.R
@@ -132,6 +179,17 @@ NULL
 
 #' @example inst/examples/SearchBox.R
 #' @name SearchBox
+NULL
+
+#' Selection
+#'
+#' Selection is a store that maintains the selection state of items in an efficient way.
+#' It exposes methods for accessing the selection state given an item index.
+#' If the items change, it can resolve the selection if items move in the array.
+#' See https://developer.microsoft.com/en-us/fluentui#/controls/web/selection for details.
+#'
+#' @example inst/examples/MarqueeSelection.R
+#' @name Selection
 NULL
 
 #' @example inst/examples/Separator.R
@@ -172,6 +230,15 @@ NULL
 
 #' @example inst/examples/TextField.R
 #' @name TextField
+NULL
+
+#' Fluent UI themes
+#'
+#' Themes is not a component, but a way to override the default theme in the app.
+#' See https://developer.microsoft.com/en-us/fluentui#/controls/web/themes for details.
+#'
+#' @example inst/examples/Themes.R
+#' @name Themes
 NULL
 
 #' @example inst/examples/Toggle.R

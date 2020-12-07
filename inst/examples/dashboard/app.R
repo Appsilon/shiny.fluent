@@ -14,7 +14,7 @@ source("home.R")
 source("footer.R")
 
 examplePages <- imap(examples, function(example, name) {
-  page <- withReact(makeExamplePage(name, example$ui))
+  page <- makeExamplePage(name, example$ui)
   route(name, page)
 })
 names(examplePages) <- NULL
@@ -25,7 +25,7 @@ router <- lift(make_router)(pages)
 layout <- div(class = "grid-container",
   div(class = "header", header),
   div(class = "sidenav", navigation(examples)),
-  div(class = "main", ShinyComponentWrapper(router_ui())),
+  div(class = "main", router$ui),
   div(class = "footer", footer)
 )
 
@@ -37,7 +37,8 @@ ui <- fluidPage(
   suppressDependencies("bootstrap"),
   tags$head(
     tags$link(href = "style.css", rel = "stylesheet", type = "text/css"),
-    shiny::tags$script(type = "text/javascript", src = shiny_router_js)
+    shiny::tags$script(type = "text/javascript", src = shiny_router_js),
+    tags$script(src = "examples_scripts.js")
   ),
   htmltools::htmlDependency(
     "office-ui-fabric-core",
@@ -58,7 +59,7 @@ sass(
 )
 
 server <- function(input, output, session) {
-  router(input, output, session)
+  router$server(input, output, session)
 
   purrr::map(examples, function(example) {
     example$server(input, output)
