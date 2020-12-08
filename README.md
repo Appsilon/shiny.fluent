@@ -46,14 +46,16 @@ To insert Fluent components inside your Shiny app, wrap them inside a `withReact
 
 ```r
   shinyApp(
-    ui = fluidPage(
-      h1("My Page"),
-      withReact(
-        Label("Required label", required = TRUE),
-        Checkbox("myCheckbox")
+    ui = withReact(
+      div(
+        Checkbox("checkbox", FALSE),
+        textOutput("checkboxValue")
       )
-     ),
+    ),
     server = function(input, output) {
+      output$checkboxValue <- renderText({
+        sprintf("Value: %s", input$checkbox)
+      })
     }
   )
 ```
