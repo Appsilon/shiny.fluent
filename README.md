@@ -66,6 +66,8 @@ There is a special category of components which are defined as Shiny inputs, lik
 
 There is also an alternative to `withReact` available. It is less convenient because it requires you to define an output. However, it is more powerful, because it maintains the interal state of React components. It is needed when inserting e.g. a Modal or Dialog. To use it, insert `reactOutput("myReactOutput")` and then define this output like `output$myReactOutput <- reactOutput(reactWidget({ ... React or HTML tags here }))`. Look at the examples for Modal, Dialog, TeachingBubble for details.
 
+You can pass raw JavaScript code as parameters to components. To do that, use `param = JS("my js code")`. See `008_custom_js` for an example.
+
 A couple of things to remember about:
 1. `withReact` currently expects just 1 argument - if you want to pass more tags, use a div or a tagList.
 2. It is enough to use a single `withReact` call for each structure of tags. Do not wrap a `withReact` call inside another `withReact` call - this will not work. However, if you have a `withReact(uiOutput("myOutput"))`, then it is perfectly fine to have `output$myOutput <- renderUI(withReact(...))`
