@@ -1,15 +1,15 @@
 Package: shiny.fluent
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Title: Microsoft Fluent UI for Shiny Apps
+Version: 0.0.1
 Authors@R: 
-    person(given = "First",
-           family = "Last",
-           role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+    c(person(given = "Marek",
+             family = "Rogala",
+             role = c("aut", "cre"),
+             email = "marek@appsilon.com"),
+      person(given = "Appsilon sp. z o.o.",
+             role = "cph"))
+Description: It provides all controls from Microsoft Fluent UI.
+License: LGPL-3 + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
