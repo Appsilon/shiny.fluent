@@ -148,6 +148,14 @@ VirtualizedComboBox <- make_input("VirtualizedComboBox")
 #' @export
 updateVirtualizedComboBox <- shiny.react::update_input
 
+#' @rdname PeoplePicker
+#' @export
+NormalPeoplePicker <- make_input("NormalPeoplePicker")
+
+#' @rdname PeoplePicker
+#' @export
+updateNormalPeoplePicker <- shiny.react::update_input
+
 # We need 0 as the default value to ensure the button does not trigger an event on render.
 
 #' @rdname Button
@@ -354,10 +362,6 @@ Modal <- make_output("Modal")
 #' @rdname Nav
 #' @export
 Nav <- make_output("Nav")
-
-#' @rdname PeoplePicker
-#' @export
-NormalPeoplePicker <- make_output("NormalPeoplePicker")
 
 #' @rdname OverflowSet
 #' @export

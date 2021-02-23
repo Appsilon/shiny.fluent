@@ -79,6 +79,12 @@ makeStandardInput('Toggle', ({ value, setValue, configuration }) => ({
 }));
 makeStandardInput('VirtualizedComboBox', ({ value, setValue, configuration }) => ({
 }));
+makeStandardInput('NormalPeoplePicker', ({ value, setValue, configuration }) => ({
+  onResolveSuggestions: (filterText, currentPersonas) => configuration.options.filter(item => !currentPersonas.includes(item) && item.text.toLowerCase().indexOf(filterText.toLowerCase()) === 0),
+  onEmptyInputFocus: (currentPersonas) => configuration.options.filter(item => !currentPersonas.includes(item)),
+  getTextFromItem: item => item.text,
+  onChange: (selection) => setValue(selection.map(item => item.key)),
+}));
 
 makeButtonInput('ActionButton');
 makeButtonInput('CommandBarButton');
