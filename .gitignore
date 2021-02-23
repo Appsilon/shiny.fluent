@@ -45,3 +45,6 @@ docs/
 po/*~
 node_modules
 .Rproj.user
+
+
+/inst/examples/dashboard/rsconnect/
