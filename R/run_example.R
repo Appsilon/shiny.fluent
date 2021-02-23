@@ -17,7 +17,7 @@ run_example <- function(example = NA,
                         host = getOption("shiny.host", "127.0.0.1"),
                         display.mode = c("auto", "normal", "showcase")) { #nolint
   examples_dir <- system.file("examples", package = "shiny.fluent", mustWork = TRUE)
-  app_path <- shiny:::resolve(examples_dir, example)
+  app_path <- shiny:::resolve(examples_dir, example) # TODO: avoid :::
   if (is.null(app_path)) {
     examples_list_message <- paste0(
       'Available examples: "',

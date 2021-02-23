@@ -1,3 +1,4 @@
+library(shiny)
 library(shiny.fluent)
 
 # This is an advanced demo showing how you can use virtually all features of Fluent UI 

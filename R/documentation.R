@@ -3456,6 +3456,6 @@ NULL
 #'
 #'
 #' @md
-#' @name pickers
+#' @name Pickers
 NULL
 

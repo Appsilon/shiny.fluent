@@ -97,7 +97,7 @@ you need to work using the original docs to achieve the desired result.
 
 Add the data-is-scrollable="true" attribute to your scrollable element containing the List.
 
-By default, the List will use the <body> element as the scrollable element. If you contain List within a scrollable <div> using overflow: auto or scroll, List needs to listen for scroll events on that element instead. On initialization, List will traverse up the DOM looking for the first element with the data-is-scrollable attribute to know which element to listen to for knowing when to re-evaulate the visible window.
+By default, the List will use the \verb{<body>} element as the scrollable element. If you contain List within a scrollable <div> using overflow: auto or scroll, List needs to listen for scroll events on that element instead. On initialization, List will traverse up the DOM looking for the first element with the data-is-scrollable attribute to know which element to listen to for knowing when to re-evaulate the visible window.
 }
 
 \subsection{My list isn't re-rendering when I mutate its items, what should I do?}{

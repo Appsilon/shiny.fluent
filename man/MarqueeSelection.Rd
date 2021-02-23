@@ -41,6 +41,7 @@ The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
 }
 \examples{
+library(shiny)
 library(shiny.fluent)
 
 # This is an advanced demo showing how you can use virtually all features of Fluent UI 

@@ -30,7 +30,7 @@ CommandBarItem <- function(text, icon = NULL, subitems = NULL, ...) {
 #' @export
 fluentPage <- function(bodyContent, ...){
   fluidPage(
-    suppressDependencies("bootstrap"),
+    shiny::suppressDependencies("bootstrap"),
     ...,
     htmltools::htmlDependency(
       "office-ui-fabric-core",

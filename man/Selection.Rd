@@ -10,6 +10,7 @@ If the items change, it can resolve the selection if items move in the array.
 See https://developer.microsoft.com/en-us/fluentui#/controls/web/selection for details.
 }
 \examples{
+library(shiny)
 library(shiny.fluent)
 
 # This is an advanced demo showing how you can use virtually all features of Fluent UI 
