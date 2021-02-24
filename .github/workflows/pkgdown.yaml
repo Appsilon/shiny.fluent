@@ -34,6 +34,7 @@ jobs:
 
       - name: Install dependencies
         run: |
+          remotes::install_git("ssh://git@github.com/Appsilon/shiny.react.git")
           remotes::install_deps(dependencies = TRUE)
           install.packages("pkgdown", type = "binary")
         shell: Rscript {0}
