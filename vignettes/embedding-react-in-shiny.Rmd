@@ -1,0 +1,19 @@
+---
+title: "Topic guide: withReact and reactOutput - what's the difference?"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Topic guide: withReact and reactOutput - what's the difference?}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(shiny.fluent)
+```

@@ -1,0 +1,19 @@
+---
+title: "Topic guide: Using Fluent components documentation"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Topic guide: Using Fluent components documentation}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(shiny.fluent)
+```
