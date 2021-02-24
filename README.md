@@ -14,15 +14,15 @@ As Fluent UI is built in React, shiny.fluent is based on another package called 
 
 > A big game-changer for companies already using Microsoft tools on a daily basis, because everyone is already familiar and pleased by the Microsoft UI.
 
-![shinyfluentapp](https://user-images.githubusercontent.com/1421503/97004706-bc396b00-153d-11eb-8fb1-3856e8536f92.gif)
-
 **Note:** This package strives to be as easy to use as possible, while providing most of Fluent UI possibilities. That said, Fluent UI is more flexible and low level than Bootstrap, and there is additional complexity coming from using React in Shiny. You should expect using shiny.fluent to be somewhat more complex than vanilla Shiny or shiny.semantic, but give more power, flexibility and better UI in return.
+
+![shinyfluentapp](https://user-images.githubusercontent.com/1421503/97004706-bc396b00-153d-11eb-8fb1-3856e8536f92.gif)
 
 
 ## Getting started
 
 The best place to start is the [Quick start](#quick-start) section below. You can then explore [tutorials](https://appsilon.github.io/shiny.fluent/articles/first-app.html), [examples](#examples), and [reference docs](https://appsilon.github.io/shiny.fluent/reference/index.html).
-All of this is easily accessible on the [package's website](https://appsilon.github.io/shiny.fluent/)
+All of this is easily accessible on the [package's website](https://appsilon.github.io/shiny.fluent/).
 
 ### Installation
 
@@ -64,8 +64,6 @@ To insert Fluent components inside your Shiny app, wrap them inside a `withReact
 ### Examples
 
 **The easiest way to get started** is to look at an example dashboard. There's one you can look at immediately after installing the library: simply run `shiny.fluent::run_example("dashboard")`
-
-![shinyfluentapp](vignettes/images/demo_dashboard.png)
 
 There are also usage examples for individual components. For a list of all available examples, use `shiny.fluent::run_example()`.
 
