@@ -7,3 +7,7 @@
 ^.*\.Rproj$
 ^install\.sh$
 ^inst/examples/dashboard/rsconnect/
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^\.github$
