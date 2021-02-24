@@ -6,6 +6,10 @@ Authors@R:
              family = "Rogala",
              role = c("aut", "cre"),
              email = "marek@appsilon.com"),
+      person(given = "Kamil",
+             family = "Zyla",
+             role = "aut",
+             email = "kamil@appsilon.com"),
       person(given = "Appsilon sp. z o.o.",
              role = "cph"))
 Description: It provides all controls from Microsoft Fluent UI.
