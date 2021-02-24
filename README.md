@@ -16,7 +16,7 @@ As Fluent UI is built in React, shiny.fluent is based on another package called 
 
 ## Getting started
 
-The best place to start is the [Quick start]() section below. You can then explore  [more advanced tutorials](), [examples](), and [reference docs]().
+The best place to start is the [Quick start](#quick-start) section below. You can then explore [tutorials](https://appsilon.github.io/shiny.fluent/articles/first-app.html), [examples](#examples), and [reference docs](https://appsilon.github.io/shiny.fluent/reference/index.html).
 All of this is easily accessible on the [package's website](https://appsilon.github.io/shiny.fluent/)
 
 ### Installation
@@ -28,7 +28,7 @@ remotes::install_git("ssh://git@github.com/Appsilon/shiny.react.git")
 remotes::install_git("ssh://git@github.com/Appsilon/shiny.fluent.git")
 ```
 
-This should work out of the box, assuming you have SSH keys that authenticate you to GitHub in the standard path. If you run into issues, check the [Solving installation credentials issues]() section.
+This should work out of the box, assuming you have SSH keys that authenticate you to GitHub in the standard path. If you run into issues, check the [Solving installation credentials issues](#solving-installation-credentials-issues) section.
 
 ### Quick start
 
@@ -60,9 +60,10 @@ To insert Fluent components inside your Shiny app, wrap them inside a `withReact
 
 **The easiest way to get started** is to look at an example dashboard. There's one you can look at immediately after installing the library: simply run `shiny.fluent::run_example("dashboard")`
 
-![shinyfluentapp](images/demo_dashboard.png)
+![shinyfluentapp](vignettes/images/demo_dashboard.png)
 
 There are also usage examples for individual components. For a list of all available examples, use `shiny.fluent::run_example()`.
+
 ## Solving installation credentials issues
 
 _This section will be removed once the package is published_

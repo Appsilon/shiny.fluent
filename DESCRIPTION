@@ -26,4 +26,7 @@ Imports:
 Suggests:
     stringi,
     jsonlite,
-    tibble
+    tibble,
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
