@@ -46,6 +46,18 @@
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li>
+      <a href="articles/first-app.html">Tutorial: Create your first Fluent dashboard</a>
+    </li>
+  </ul>
+</li>
       </ul>
 <ul class="nav navbar-nav navbar-right"></ul>
 </div>
@@ -59,33 +71,77 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="shiny-fluent" class="section level1">
+
+
+<div id="shiny-fluent-build-beautiful-shiny-apps-using-microsofts-fluent-ui" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#shiny-fluent" class="anchor"></a>shiny.fluent</h1></div>
-<p>This is a Shiny package based on <a href="https://github.com/Appsilon/shiny.react">shiny.react</a>.</p>
+<a href="#shiny-fluent-build-beautiful-shiny-apps-using-microsofts-fluent-ui" class="anchor"></a>shiny.fluent: Build beautiful Shiny apps using Microsoft’s Fluent UI</h1></div>
+<p>We believe that a great UI plays a huge role in the success of application projects. shiny.fluent gives your apps:</p>
+<ul>
+<li>beautiful, professional look</li>
+<li>rich set of components easily usable in Shiny</li>
+<li>fast speed of development that Shiny is famous for.</li>
+</ul>
+<p>As Fluent UI is built in React, shiny.fluent is based on another package called <a href="https://github.com/Appsilon/shiny.react">shiny.react</a>, which allows for using React libraries in Shiny.</p>
 <p><img src="https://user-images.githubusercontent.com/1421503/97004706-bc396b00-153d-11eb-8fb1-3856e8536f92.gif" alt="shinyfluentapp"></p>
 <div id="getting-started" class="section level2">
 <h2 class="hasAnchor">
 <a href="#getting-started" class="anchor"></a>Getting started</h2>
-<p>These packages are now private. You need a Github account with access to their repos. Install them from GitHub:</p>
+<p>The best place to start is the <a href="">Quick start</a> section below. You can then explore <a href="">more advanced tutorials</a>, <a href="">examples</a>, and <a href="">reference docs</a>. All of this is easily accessible on the <a href="https://appsilon.github.io/shiny.fluent/">package’s website</a></p>
+<div id="installation" class="section level3">
+<h3 class="hasAnchor">
+<a href="#installation" class="anchor"></a>Installation</h3>
+<p>Currently the packages are only available from Github, and are private - you need to have access to these repositories.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_git</a></span><span class="op">(</span><span class="st">"ssh://git@github.com/Appsilon/shiny.react.git"</span><span class="op">)</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_git</a></span><span class="op">(</span><span class="st">"ssh://git@github.com/Appsilon/shiny.fluent.git"</span><span class="op">)</span></code></pre></div>
-<p>This should work out of the box, assuming you have SSH keys that authenticate you to GitHub in the standard path. If not, configure Git credentials using <code><a href="https://usethis.r-lib.org/reference/git_credentials.html">usethis::use_git_credentials</a></code> and <code><a href="https://docs.ropensci.org/git2r/reference/cred_ssh_key.html">git2r::cred_ssh_key</a></code> or <code><a href="https://docs.ropensci.org/git2r/reference/cred_token.html">git2r::cred_token</a></code>.</p>
-<p>If you run into errors, try installing SSH dependencies and re-installing git2r</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="fu">sudo</span> apt-get install libssh2-1 libssh2-1-dev</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="ex">Rscript</span> -e <span class="st">'devtools::install_cran("git2r", force = TRUE)'</span></a></code></pre></div>
-<p>For Mac OSX use:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="ex">brew</span> install libssh2</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="ex">brew</span> install libgit2</a>
-<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="ex">install.packages</span>(<span class="st">"git2r"</span>, type = <span class="st">"source"</span>, configure.vars = <span class="st">"autobrew=yes"</span>)</a></code></pre></div>
+<code class="sourceCode R"><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_git.html">install_git</a></span><span class="op">(</span><span class="st">"ssh://git@github.com/Appsilon/shiny.react.git"</span><span class="op">)</span>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_git.html">install_git</a></span><span class="op">(</span><span class="st">"ssh://git@github.com/Appsilon/shiny.fluent.git"</span><span class="op">)</span></code></pre></div>
+<p>This should work out of the box, assuming you have SSH keys that authenticate you to GitHub in the standard path. If you run into issues, check the <a href="">Solving installation credentials issues</a> section.</p>
 </div>
-<div id="examples" class="section level2">
+<div id="quick-start" class="section level3">
+<h3 class="hasAnchor">
+<a href="#quick-start" class="anchor"></a>Quick start</h3>
+<p>Here’s how to make an app containing a Fluent UI checkbox:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">shinyApp</span><span class="op">(</span>
+    ui <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny.react/man/withReact.html">withReact</a></span><span class="op">(</span>
+      <span class="fu">div</span><span class="op">(</span>
+        <span class="fu"><a href="reference/Checkbox.html">Checkbox</a></span><span class="op">(</span><span class="st">"checkbox"</span>, <span class="cn">FALSE</span><span class="op">)</span>,
+        <span class="fu">textOutput</span><span class="op">(</span><span class="st">"checkboxValue"</span><span class="op">)</span>
+      <span class="op">)</span>
+    <span class="op">)</span>,
+    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span>
+      <span class="va">output</span><span class="op">$</span><span class="va">checkboxValue</span> <span class="op">&lt;-</span> <span class="fu">renderText</span><span class="op">(</span><span class="op">{</span>
+        <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html">sprintf</a></span><span class="op">(</span><span class="st">"Value: %s"</span>, <span class="va">input</span><span class="op">$</span><span class="va">checkbox</span><span class="op">)</span>
+      <span class="op">}</span><span class="op">)</span>
+    <span class="op">}</span>
+  <span class="op">)</span></code></pre></div>
+<p><code>shiny.fluent</code> provides all controls from <a href="https://developer.microsoft.com/en-us/fluentui#/controls/web">Fluent UI</a>. You can open that page or start typing <code>shiny.fluent::</code> in RStudio to see all available controls.</p>
+<p>All components are documented, so if you run <code>?shiny.fluent::MyComponentName</code>, you’ll see documentation for this component in RStudio, along with examples. When in doubt, open Fluent UI docs for details.</p>
+<p>To insert Fluent components inside your Shiny app, wrap them inside a <code><a href="https://rdrr.io/pkg/shiny.react/man/withReact.html">withReact(...)</a></code> call, like above. Inside a <code>withReact</code> call, you can mix and match React and standard HTML tags. You can also insert other Shiny outputs inside (like a <code>uiOutput</code> or <code>leafletOutput</code>).</p>
+</div>
+<div id="examples" class="section level3">
+<h3 class="hasAnchor">
+<a href="#examples" class="anchor"></a>Examples</h3>
+<p><strong>The easiest way to get started</strong> is to look at an example dashboard. There’s one you can look at immediately after installing the library: simply run <code><a href="reference/run_example.html">shiny.fluent::run_example("dashboard")</a></code></p>
+<p><img src="images/demo_dashboard.png" alt="shinyfluentapp"></p>
+<p>There are also usage examples for individual components. For a list of all available examples, use <code><a href="reference/run_example.html">shiny.fluent::run_example()</a></code>.</p>
+</div>
+</div>
+<div id="solving-installation-credentials-issues" class="section level2">
 <h2 class="hasAnchor">
-<a href="#examples" class="anchor"></a>Examples</h2>
-<p>To run usage examples, use <code><a href="reference/run_example.html">shiny.fluent::run_example("example_name")</a></code> from R or <code>echo 'shiny.fluent::run_example("example_name")' | R --interactive</code> from command line. For a list of available examples, use <code><a href="reference/run_example.html">shiny.fluent::run_example()</a></code>.</p>
+<a href="#solving-installation-credentials-issues" class="anchor"></a>Solving installation credentials issues</h2>
+<p><em>This section will be removed once the package is published</em></p>
+<p>If installation fails, configure Git credentials using <code><a href="https://usethis.r-lib.org/reference/git_credentials.html">usethis::use_git_credentials</a></code> and <code><a href="https://docs.ropensci.org/git2r/reference/cred_ssh_key.html">git2r::cred_ssh_key</a></code> or <code><a href="https://docs.ropensci.org/git2r/reference/cred_token.html">git2r::cred_token</a></code>. This should help</p>
+<p>If you run into errors with installing as above, try installing SSH dependencies and re-installing git2r</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="fu">sudo</span> apt-get install libssh2-1 libssh2-1-dev</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="ex">Rscript</span> -e <span class="st">'remotes::install_cran("git2r", force = TRUE)'</span></a></code></pre></div>
+<p>For Mac OSX use:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="ex">brew</span> install libssh2</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="ex">brew</span> install libgit2</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="ex">install.packages</span>(<span class="st">"git2r"</span>, type = <span class="st">"source"</span>, configure.vars = <span class="st">"autobrew=yes"</span>)</a></code></pre></div>
 </div>
 </div>
+
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -106,7 +162,13 @@
 </ul>
 </div>
 
-  </div>
+  <div class="dev-status">
+<h2>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/Appsilon/shiny.fluent/actions"><img src="https://github.com/Appsilon/shiny.fluent/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
+</ul>
+</div>
+</div>
 </div>
 
 
