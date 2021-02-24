@@ -54,7 +54,19 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
+      <a href="articles/embedding-react-in-shiny.html">Topic guide: withReact and reactOutput - what's the difference?</a>
+    </li>
+    <li>
       <a href="articles/first-app.html">Tutorial: Create your first Fluent dashboard</a>
+    </li>
+    <li>
+      <a href="articles/how-to-use-fluent-docs.html">Topic guide: Using Fluent components documentation</a>
+    </li>
+    <li>
+      <a href="articles/sales-reps-dashboard-advanced.html">Tutorial: Adding advanced components (dashboard part 2)</a>
+    </li>
+    <li>
+      <a href="articles/sales-reps-dashboard.html">Tutorial: Full dashboard in Fluent UI</a>
     </li>
   </ul>
 </li>
@@ -84,10 +96,11 @@
 </ul>
 <p>As Fluent UI is built in React, shiny.fluent is based on another package called <a href="https://github.com/Appsilon/shiny.react">shiny.react</a>, which allows for using React libraries in Shiny.</p>
 <p><img src="https://user-images.githubusercontent.com/1421503/97004706-bc396b00-153d-11eb-8fb1-3856e8536f92.gif" alt="shinyfluentapp"></p>
+<p><strong>Note:</strong> This package strives to be as easy to use as possible, while providing most of Fluent UI possibilities. That said, Fluent UI is more flexible and low level than Bootstrap, and there is additional complexity coming from using React in Shiny. You should expect using shiny.fluent to be somewhat more complex than vanilla Shiny or shiny.semantic, but give more power, flexibility and better UI in return.</p>
 <div id="getting-started" class="section level2">
 <h2 class="hasAnchor">
 <a href="#getting-started" class="anchor"></a>Getting started</h2>
-<p>The best place to start is the <a href="">Quick start</a> section below. You can then explore <a href="">more advanced tutorials</a>, <a href="">examples</a>, and <a href="">reference docs</a>. All of this is easily accessible on the <a href="https://appsilon.github.io/shiny.fluent/">package’s website</a></p>
+<p>The best place to start is the <a href="#quick-start">Quick start</a> section below. You can then explore <a href="https://appsilon.github.io/shiny.fluent/articles/first-app.html">tutorials</a>, <a href="#examples">examples</a>, and <a href="https://appsilon.github.io/shiny.fluent/reference/index.html">reference docs</a>. All of this is easily accessible on the <a href="https://appsilon.github.io/shiny.fluent/">package’s website</a></p>
 <div id="installation" class="section level3">
 <h3 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h3>
@@ -95,7 +108,7 @@
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_git.html">install_git</a></span><span class="op">(</span><span class="st">"ssh://git@github.com/Appsilon/shiny.react.git"</span><span class="op">)</span>
 <span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_git.html">install_git</a></span><span class="op">(</span><span class="st">"ssh://git@github.com/Appsilon/shiny.fluent.git"</span><span class="op">)</span></code></pre></div>
-<p>This should work out of the box, assuming you have SSH keys that authenticate you to GitHub in the standard path. If you run into issues, check the <a href="">Solving installation credentials issues</a> section.</p>
+<p>This should work out of the box, assuming you have SSH keys that authenticate you to GitHub in the standard path. If you run into issues, check the <a href="#solving-installation-credentials-issues">Solving installation credentials issues</a> section.</p>
 </div>
 <div id="quick-start" class="section level3">
 <h3 class="hasAnchor">
@@ -123,7 +136,7 @@
 <h3 class="hasAnchor">
 <a href="#examples" class="anchor"></a>Examples</h3>
 <p><strong>The easiest way to get started</strong> is to look at an example dashboard. There’s one you can look at immediately after installing the library: simply run <code><a href="reference/run_example.html">shiny.fluent::run_example("dashboard")</a></code></p>
-<p><img src="images/demo_dashboard.png" alt="shinyfluentapp"></p>
+<p><img src="articles/images/demo_dashboard.png" alt="shinyfluentapp"></p>
 <p>There are also usage examples for individual components. For a list of all available examples, use <code><a href="reference/run_example.html">shiny.fluent::run_example()</a></code>.</p>
 </div>
 </div>

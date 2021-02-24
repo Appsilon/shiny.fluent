@@ -2,6 +2,10 @@ pandoc: 2.1.3
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
+  embedding-react-in-shiny: embedding-react-in-shiny.html
   first-app: first-app.html
-last_built: 2021-02-24T10:55Z
+  how-to-use-fluent-docs: how-to-use-fluent-docs.html
+  sales-reps-dashboard-advanced: sales-reps-dashboard-advanced.html
+  sales-reps-dashboard: sales-reps-dashboard.html
+last_built: 2021-02-24T11:24Z
 
