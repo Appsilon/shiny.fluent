@@ -222,37 +222,30 @@ you need to work using the original docs to achieve the desired result.</p>
 <span class='op'>)</span>
 
 <span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
-  <span class='va'>suggestionProps</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
-    suggestionsHeaderText<span class='op'>=</span><span class='st'>'Suggested People'</span>,
-    mostRecentlyUsedHeaderText<span class='op'>=</span><span class='st'>'Suggested Contacts'</span>,
-    noResultsFoundText<span class='op'>=</span><span class='st'>'No results found'</span>,
-    loadingText<span class='op'>=</span><span class='st'>'Loading'</span>,
-    showRemoveButtons<span class='op'>=</span><span class='cn'>TRUE</span>,
-    suggestionsAvailableAlertText<span class='op'>=</span><span class='st'>'People Picker Suggestions available'</span>,
-    suggestionsContainerAriaLabel<span class='op'>=</span><span class='st'>'Suggested contacts'</span>
-  <span class='op'>)</span>;
-  
   <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/shinyApp.html'>shinyApp</a></span><span class='op'>(</span>
     ui <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/tag.html'>tagList</a></span><span class='op'>(</span>
-      <span class='va'>tags</span><span class='op'>$</span><span class='fu'>script</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/HTML.html'>HTML</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span><span class='op'>(</span><span class='st'>"people = "</span>, <span class='fu'>jsonlite</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/jsonlite/man/fromJSON.html'>toJSON</a></span><span class='op'>(</span><span class='va'>people</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>,
       <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/textOutput.html'>textOutput</a></span><span class='op'>(</span><span class='st'>"selectedPeople"</span><span class='op'>)</span>,
       <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/withReact.html'>withReact</a></span><span class='op'>(</span>
         <span class='fu'>NormalPeoplePicker</span><span class='op'>(</span>
-          onResolveSuggestions<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/pkg/htmlwidgets/man/JS.html'>JS</a></span><span class='op'>(</span><span class='st'>"function(filterText) { return people.filter(item =&gt; item.text.toLowerCase().indexOf(filterText.toLowerCase()) === 0) }"</span><span class='op'>)</span>,
-          onEmptyInputFocus<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/pkg/htmlwidgets/man/JS.html'>JS</a></span><span class='op'>(</span><span class='st'>"function() { return people }"</span><span class='op'>)</span>,
-          getTextFromItem<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/pkg/htmlwidgets/man/JS.html'>JS</a></span><span class='op'>(</span><span class='st'>"function(item) { return item.text }"</span><span class='op'>)</span>,
-          pickerSuggestionsProps<span class='op'>=</span><span class='va'>suggestionProps</span>,
-          className<span class='op'>=</span><span class='st'>"ms-PeoplePicker"</span>,
-          onChange<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/pkg/htmlwidgets/man/JS.html'>JS</a></span><span class='op'>(</span><span class='st'>"function(selection) { Shiny.setInputValue('selectedPeople', JSON.stringify(selection)) }"</span><span class='op'>)</span>
+          <span class='st'>"selectedPeople"</span>,
+          className <span class='op'>=</span> <span class='st'>"my_class"</span>,
+          options <span class='op'>=</span> <span class='va'>people</span>,
+          pickerSuggestionsProps <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
+            suggestionsHeaderText <span class='op'>=</span> <span class='st'>'Matching people'</span>,
+            mostRecentlyUsedHeaderText <span class='op'>=</span> <span class='st'>'Sales reps'</span>,
+            noResultsFoundText <span class='op'>=</span> <span class='st'>'No results found'</span>,
+            showRemoveButtons <span class='op'>=</span> <span class='cn'>TRUE</span>
+          <span class='op'>)</span>
         <span class='op'>)</span>
       <span class='op'>)</span>
     <span class='op'>)</span>,
     server <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span><span class='op'>)</span> <span class='op'>{</span>
       <span class='va'>output</span><span class='op'>$</span><span class='va'>selectedPeople</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/renderPrint.html'>renderText</a></span><span class='op'>(</span><span class='op'>{</span>
-        <span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/NULL.html'>is.null</a></span><span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>selectedPeople</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
+        <span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/NULL.html'>is.null</a></span><span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>selectedPeople</span><span class='op'>)</span> <span class='op'>||</span> <span class='va'>input</span><span class='op'>$</span><span class='va'>selectedPeople</span> <span class='op'>==</span> <span class='st'>""</span><span class='op'>)</span> <span class='op'>{</span>
           <span class='st'>"Select recipients below:"</span>
         <span class='op'>}</span> <span class='kw'>else</span> <span class='op'>{</span>
-          <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span><span class='op'>(</span><span class='st'>"You have selected:"</span>, <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span><span class='op'>(</span><span class='fu'>jsonlite</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/jsonlite/man/fromJSON.html'>fromJSON</a></span><span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>selectedPeople</span><span class='op'>)</span><span class='op'>$</span><span class='va'>text</span>, collapse<span class='op'>=</span><span class='st'>", "</span><span class='op'>)</span><span class='op'>)</span>
+          <span class='va'>selectedPeople</span> <span class='op'>&lt;-</span> <span class='fu'>dplyr</span><span class='fu'>::</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>people</span>, <span class='va'>key</span> <span class='op'>%in%</span> <span class='va'>input</span><span class='op'>$</span><span class='va'>selectedPeople</span><span class='op'>)</span>
+          <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span><span class='op'>(</span><span class='st'>"You have selected:"</span>, <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span><span class='op'>(</span><span class='va'>selectedPeople</span><span class='op'>$</span><span class='va'>text</span>, collapse<span class='op'>=</span><span class='st'>", "</span><span class='op'>)</span><span class='op'>)</span>
         <span class='op'>}</span>
       <span class='op'>}</span><span class='op'>)</span>
     <span class='op'>}</span>
