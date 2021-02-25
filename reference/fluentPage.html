@@ -8,11 +8,13 @@
 
 <title>Basic Fluent UI page. Replacement for shiny::*Page family of functions. — fluentPage • shiny.fluent</title>
 
+
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
 
 <!-- bootstrap-toc -->
@@ -36,13 +38,12 @@
 
 
 
-<meta property="og:title" content="Basic Fluent UI page. Replacement for shiny::*Page family of functions. — fluentPage" />
 
+<meta property="og:title" content="Basic Fluent UI page. Replacement for shiny::*Page family of functions. — fluentPage" />
 <meta property="og:description" content="Creates a Fluent UI page with sensible defaults (included Fabric CSS classes, proper class given to the body tag,
 suppressed Bootstrap). You can also use shiny.fluent directly, without using this function.
 bodyContent does not get inserted as React to allow for flexibility. Use withReact or reactOutput
 to insert React content." />
-
 
 
 
@@ -82,7 +83,7 @@ to insert React content." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -103,6 +104,12 @@ to insert React content." />
       <a href="../articles/first-app.html">Tutorial: Create your first Fluent dashboard</a>
     </li>
     <li>
+      <a href="../articles/how-to-shiny-modules.html">How to: use shiny.fluent with Shiny modules</a>
+    </li>
+    <li>
+      <a href="../articles/how-to-troubleshoot.html">How to: troubleshoot shiny.react apps</a>
+    </li>
+    <li>
       <a href="../articles/how-to-use-fluent-docs.html">Topic guide: Using Fluent components documentation</a>
     </li>
     <li>
@@ -114,7 +121,6 @@ to insert React content." />
   </ul>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         
       </ul>
@@ -136,16 +142,14 @@ to insert React content." />
     </div>
 
     <div class="ref-description">
-    
     <p>Creates a Fluent UI page with sensible defaults (included Fabric CSS classes, proper class given to the body tag,
 suppressed Bootstrap). You can also use shiny.fluent directly, without using this function.
 <code>bodyContent</code> does not get inserted as React to allow for flexibility. Use <code><a href='https://rdrr.io/pkg/shiny.react/man/withReact.html'>withReact</a></code> or <code><a href='https://rdrr.io/pkg/shiny.react/man/reactOutput.html'>reactOutput</a></code>
 to insert React content.</p>
-    
     </div>
 
     <pre class="usage"><span class='fu'>fluentPage</span><span class='op'>(</span><span class='va'>bodyContent</span>, <span class='va'>...</span><span class='op'>)</span></pre>
-    
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -158,7 +162,7 @@ to insert React content.</p>
       <td><p>Additional tags that will be inserted into the page. Useful particularly for including head tag content like CSS.</p></td>
     </tr>
     </table>
-    
+
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

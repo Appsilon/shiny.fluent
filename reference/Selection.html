@@ -8,11 +8,13 @@
 
 <title>Selection — Selection • shiny.fluent</title>
 
+
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
 
 <!-- bootstrap-toc -->
@@ -36,13 +38,12 @@
 
 
 
-<meta property="og:title" content="Selection — Selection" />
 
+<meta property="og:title" content="Selection — Selection" />
 <meta property="og:description" content="Selection is a store that maintains the selection state of items in an efficient way.
 It exposes methods for accessing the selection state given an item index.
 If the items change, it can resolve the selection if items move in the array.
 See https://developer.microsoft.com/en-us/fluentui#/controls/web/selection for details." />
-
 
 
 
@@ -82,7 +83,7 @@ See https://developer.microsoft.com/en-us/fluentui#/controls/web/selection for d
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -103,6 +104,12 @@ See https://developer.microsoft.com/en-us/fluentui#/controls/web/selection for d
       <a href="../articles/first-app.html">Tutorial: Create your first Fluent dashboard</a>
     </li>
     <li>
+      <a href="../articles/how-to-shiny-modules.html">How to: use shiny.fluent with Shiny modules</a>
+    </li>
+    <li>
+      <a href="../articles/how-to-troubleshoot.html">How to: troubleshoot shiny.react apps</a>
+    </li>
+    <li>
       <a href="../articles/how-to-use-fluent-docs.html">Topic guide: Using Fluent components documentation</a>
     </li>
     <li>
@@ -114,7 +121,6 @@ See https://developer.microsoft.com/en-us/fluentui#/controls/web/selection for d
   </ul>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         
       </ul>
@@ -136,18 +142,17 @@ See https://developer.microsoft.com/en-us/fluentui#/controls/web/selection for d
     </div>
 
     <div class="ref-description">
-    
     <p>Selection is a store that maintains the selection state of items in an efficient way.
 It exposes methods for accessing the selection state given an item index.
 If the items change, it can resolve the selection if items move in the array.
 See https://developer.microsoft.com/en-us/fluentui#/controls/web/selection for details.</p>
-    
     </div>
 
-        
+
+
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://shiny.rstudio.com'>shiny</a></span><span class='op'>)</span>
+    <pre class="examples"><div class='input'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://shiny.rstudio.com/'>shiny</a></span><span class='op'>)</span>
 <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'>shiny.fluent</span><span class='op'>)</span>
 
 <span class='co'># This is an advanced demo showing how you can use virtually all features of Fluent UI </span>
@@ -161,12 +166,12 @@ See https://developer.microsoft.com/en-us/fluentui#/controls/web/selection for d
 <span class='va'>script</span> <span class='op'>&lt;-</span> <span class='va'>tags</span><span class='op'>$</span><span class='fu'>script</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/HTML.html'>HTML</a></span><span class='op'>(</span><span class='st'>[1940 chars quoted with '"']</span><span class='op'>)</span><span class='op'>)</span>
 
 <span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
-  <span class='fu'><a href='https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html'>shinyApp</a></span><span class='op'>(</span>
+  <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/shinyApp.html'>shinyApp</a></span><span class='op'>(</span>
     ui <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/tag.html'>tagList</a></span><span class='op'>(</span>
       <span class='va'>script</span>,
       <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/withReact.html'>withReact</a></span><span class='op'>(</span>
         <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span><span class='op'>(</span>
-          <span class='fu'><a href='https://shiny.rstudio.com/reference/shiny/latest/textOutput.html'>textOutput</a></span><span class='op'>(</span><span class='st'>"marqueeResult"</span><span class='op'>)</span>,
+          <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/textOutput.html'>textOutput</a></span><span class='op'>(</span><span class='st'>"marqueeResult"</span><span class='op'>)</span>,
           <span class='fu'><a href='Label.html'>Label</a></span><span class='op'>(</span><span class='st'>'Drag a rectangle around the items below to select them'</span><span class='op'>)</span>, <span class='co'># Make sure Fluent dependency is loaded.</span>
           <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/reactOutput.html'>reactOutput</a></span><span class='op'>(</span><span class='st'>"marqueeSelection"</span>, width<span class='op'>=</span><span class='st'>"auto"</span>, height<span class='op'>=</span><span class='st'>"auto"</span><span class='op'>)</span>
         <span class='op'>)</span>
@@ -184,7 +189,7 @@ See https://developer.microsoft.com/en-us/fluentui#/controls/web/selection for d
           height<span class='op'>=</span><span class='fl'>100</span><span class='op'>)</span>
       <span class='op'>}</span><span class='op'>)</span>
       
-      <span class='va'>output</span><span class='op'>$</span><span class='va'>marqueeResult</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://shiny.rstudio.com/reference/shiny/latest/renderText.html'>renderText</a></span><span class='op'>(</span><span class='op'>{</span>
+      <span class='va'>output</span><span class='op'>$</span><span class='va'>marqueeResult</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/renderPrint.html'>renderText</a></span><span class='op'>(</span><span class='op'>{</span>
         <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span><span class='op'>(</span><span class='st'>"You have selected: "</span>, <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span><span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>selectedIndices</span>, collapse<span class='op'>=</span><span class='st'>", "</span><span class='op'>)</span><span class='op'>)</span>
       <span class='op'>}</span><span class='op'>)</span>
       

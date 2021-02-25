@@ -8,11 +8,13 @@
 
 <title>ProgressIndicator — ProgressIndicator • shiny.fluent</title>
 
+
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
 
 <!-- bootstrap-toc -->
@@ -36,8 +38,8 @@
 
 
 
-<meta property="og:title" content="ProgressIndicator — ProgressIndicator" />
 
+<meta property="og:title" content="ProgressIndicator — ProgressIndicator" />
 <meta property="og:description" content="ProgressIndicators are used to show the completion status of an operation lasting more than 2 seconds. If the state of progress cannot be determined, use a Spinner instead. ProgressIndicators can appear in a new panel, a flyout, under the UI initiating the operation, or even replacing the initiating UI, as long as the UI can return if the operation is canceled or is stopped.
 ProgressIndicators feature a bar showing total units to completion, and total units finished. The description of the operation appears above the bar, and the status in text appears below. The description should tell someone exactly what the operation is doing. Examples of formatting include:
 Object is being operation name, or
@@ -50,7 +52,6 @@ Real-world examples include copying files to a storage location, saving edits to
 For more details and examples visit the official docs.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result." />
-
 
 
 
@@ -90,7 +91,7 @@ you need to work using the original docs to achieve the desired result." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -111,6 +112,12 @@ you need to work using the original docs to achieve the desired result." />
       <a href="../articles/first-app.html">Tutorial: Create your first Fluent dashboard</a>
     </li>
     <li>
+      <a href="../articles/how-to-shiny-modules.html">How to: use shiny.fluent with Shiny modules</a>
+    </li>
+    <li>
+      <a href="../articles/how-to-troubleshoot.html">How to: troubleshoot shiny.react apps</a>
+    </li>
+    <li>
       <a href="../articles/how-to-use-fluent-docs.html">Topic guide: Using Fluent components documentation</a>
     </li>
     <li>
@@ -122,7 +129,6 @@ you need to work using the original docs to achieve the desired result." />
   </ul>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         
       </ul>
@@ -144,7 +150,6 @@ you need to work using the original docs to achieve the desired result." />
     </div>
 
     <div class="ref-description">
-    
     <p>ProgressIndicators are used to show the completion status of an operation lasting more than 2 seconds. If the state of progress cannot be determined, use a Spinner instead. ProgressIndicators can appear in a new panel, a flyout, under the UI initiating the operation, or even replacing the initiating UI, as long as the UI can return if the operation is canceled or is stopped.</p>
 <p>ProgressIndicators feature a bar showing total units to completion, and total units finished. The description of the operation appears above the bar, and the status in text appears below. The description should tell someone exactly what the operation is doing. Examples of formatting include:</p><ul>
 <li><p><strong>Object</strong> is being <strong>operation name</strong>, or</p></li>
@@ -157,11 +162,10 @@ you need to work using the original docs to achieve the desired result." />
 <p>For more details and examples visit the official <a href='https://developer.microsoft.com/en-us/fluentui#/controls/web/ProgressIndicator'>docs</a>.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.</p>
-    
     </div>
 
     <pre class="usage"><span class='fu'>ProgressIndicator</span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span></pre>
-    
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -210,13 +214,13 @@ you need to work using the original docs to achieve the desired result.</p>
       <td><p><code>string</code> <br /> Deprecated at v0.43.0, to be removed at \&gt;= v0.53.0. Use <code>label</code> instead.</p></td>
     </tr>
     </table>
-    
+
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'>shiny.fluent</span><span class='op'>)</span>
 
 <span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
-  <span class='fu'><a href='https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html'>shinyApp</a></span><span class='op'>(</span>
+  <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/shinyApp.html'>shinyApp</a></span><span class='op'>(</span>
     ui <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/withReact.html'>withReact</a></span><span class='op'>(</span>
       <span class='fu'>ProgressIndicator</span><span class='op'>(</span>
         label <span class='op'>=</span> <span class='st'>"Example title"</span>,

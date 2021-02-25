@@ -8,11 +8,13 @@
 
 <title>HoverCard — HoverCard • shiny.fluent</title>
 
+
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
 
 <!-- bootstrap-toc -->
@@ -36,8 +38,8 @@
 
 
 
-<meta property="og:title" content="HoverCard — HoverCard" />
 
+<meta property="og:title" content="HoverCard — HoverCard" />
 <meta property="og:description" content="Hover cards (HoverCard) show commands and information, such as metadata and activity, when someone hovers over an item.
 Tabbing with a keyboard to the element triggering the HoverCard to open on focus (see first example). In this case no further navigation within the card is available and navigating to the next element will close the card.
 Tabbing with a keyboard to the element triggering the HoverCard and opening when the hotKey is pressed (see second example). When the card is opened it will automatically focus the first focusable element of the card content.
@@ -46,7 +48,6 @@ Tabbing with a keyboard to the element triggering the HoverCard and opening when
 For more details and examples visit the official docs.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result." />
-
 
 
 
@@ -86,7 +87,7 @@ you need to work using the original docs to achieve the desired result." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -107,6 +108,12 @@ you need to work using the original docs to achieve the desired result." />
       <a href="../articles/first-app.html">Tutorial: Create your first Fluent dashboard</a>
     </li>
     <li>
+      <a href="../articles/how-to-shiny-modules.html">How to: use shiny.fluent with Shiny modules</a>
+    </li>
+    <li>
+      <a href="../articles/how-to-troubleshoot.html">How to: troubleshoot shiny.react apps</a>
+    </li>
+    <li>
       <a href="../articles/how-to-use-fluent-docs.html">Topic guide: Using Fluent components documentation</a>
     </li>
     <li>
@@ -118,7 +125,6 @@ you need to work using the original docs to achieve the desired result." />
   </ul>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         
       </ul>
@@ -140,7 +146,6 @@ you need to work using the original docs to achieve the desired result." />
     </div>
 
     <div class="ref-description">
-    
     <p>Hover cards (<code>HoverCard</code>) show commands and information, such as metadata and activity, when someone hovers over an item.</p><ul>
 <li><p>Tabbing with a keyboard to the element triggering the HoverCard to open on focus (see first example). In this case no further navigation within the card is available and navigating to the next element will close the card.</p></li>
 <li><p>Tabbing with a keyboard to the element triggering the HoverCard and opening when the hotKey is pressed (see second example). When the card is opened it will automatically focus the first focusable element of the card content.</p></li>
@@ -149,11 +154,10 @@ you need to work using the original docs to achieve the desired result." />
 <p>For more details and examples visit the official <a href='https://developer.microsoft.com/en-us/fluentui#/controls/web/HoverCard'>docs</a>.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.</p>
-    
     </div>
 
     <pre class="usage"><span class='fu'>HoverCard</span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span></pre>
-    
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -270,7 +274,7 @@ you need to work using the original docs to achieve the desired result.</p>
       <td><p><code>IRenderFunction&lt;any&gt;</code> <br /> Render function to populate compact content area</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="best-practices"><a class="anchor" href="#best-practices"></a>Best practices</h2>
 
     
@@ -282,7 +286,6 @@ you need to work using the original docs to achieve the desired result.</p>
 </ul>
 
 
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'>shiny.fluent</span><span class='op'>)</span>

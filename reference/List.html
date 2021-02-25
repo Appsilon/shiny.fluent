@@ -8,11 +8,13 @@
 
 <title>List — List • shiny.fluent</title>
 
+
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
 
 <!-- bootstrap-toc -->
@@ -36,13 +38,12 @@
 
 
 
-<meta property="og:title" content="List — List" />
 
+<meta property="og:title" content="List — List" />
 <meta property="og:description" content="A list provides a base component for rendering large sets of items. It’s agnostic of layout, the tile component used, and selection management.
 For more details and examples visit the official docs.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result." />
-
 
 
 
@@ -82,7 +83,7 @@ you need to work using the original docs to achieve the desired result." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -103,6 +104,12 @@ you need to work using the original docs to achieve the desired result." />
       <a href="../articles/first-app.html">Tutorial: Create your first Fluent dashboard</a>
     </li>
     <li>
+      <a href="../articles/how-to-shiny-modules.html">How to: use shiny.fluent with Shiny modules</a>
+    </li>
+    <li>
+      <a href="../articles/how-to-troubleshoot.html">How to: troubleshoot shiny.react apps</a>
+    </li>
+    <li>
       <a href="../articles/how-to-use-fluent-docs.html">Topic guide: Using Fluent components documentation</a>
     </li>
     <li>
@@ -114,7 +121,6 @@ you need to work using the original docs to achieve the desired result." />
   </ul>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         
       </ul>
@@ -136,16 +142,14 @@ you need to work using the original docs to achieve the desired result." />
     </div>
 
     <div class="ref-description">
-    
     <p>A list provides a base component for rendering large sets of items. It’s agnostic of layout, the tile component used, and selection management.</p>
 <p>For more details and examples visit the official <a href='https://developer.microsoft.com/en-us/fluentui#/controls/web/List'>docs</a>.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.</p>
-    
     </div>
 
     <pre class="usage"><span class='fu'>List</span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span></pre>
-    
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -274,7 +278,7 @@ you need to work using the original docs to achieve the desired result.</p>
       <td><p><code>string</code> <br /> The role being assigned to the rendered page element by the list.</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="best-practices"><a class="anchor" href="#best-practices"></a>Best practices</h2>
 
     
@@ -301,7 +305,7 @@ you need to work using the original docs to achieve the desired result.</p>
 
 
 <p>Add the data-is-scrollable="true" attribute to your scrollable element containing the List.</p>
-<p>By default, the List will use the <code>&lt;body&gt;</code> element as the scrollable element. If you contain List within a scrollable &lt;div&gt; using overflow: auto or scroll, List needs to listen for scroll events on that element instead. On initialization, List will traverse up the DOM looking for the first element with the data-is-scrollable attribute to know which element to listen to for knowing when to re-evaulate the visible window.</p>
+<p>By default, the List will use the &lt;body&gt; element as the scrollable element. If you contain List within a scrollable &lt;div&gt; using overflow: auto or scroll, List needs to listen for scroll events on that element instead. On initialization, List will traverse up the DOM looking for the first element with the data-is-scrollable attribute to know which element to listen to for knowing when to re-evaulate the visible window.</p>
 
 <h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>My list isn't re-rendering when I mutate its items, what should I do?</h4>
 
@@ -333,7 +337,6 @@ public render(): JSX.Element {
 
 
 
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'>shiny.fluent</span><span class='op'>)</span>

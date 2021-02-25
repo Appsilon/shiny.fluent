@@ -39,7 +39,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -58,6 +58,12 @@
     </li>
     <li>
       <a href="articles/first-app.html">Tutorial: Create your first Fluent dashboard</a>
+    </li>
+    <li>
+      <a href="articles/how-to-shiny-modules.html">How to: use shiny.fluent with Shiny modules</a>
+    </li>
+    <li>
+      <a href="articles/how-to-troubleshoot.html">How to: troubleshoot shiny.react apps</a>
     </li>
     <li>
       <a href="articles/how-to-use-fluent-docs.html">Topic guide: Using Fluent components documentation</a>
@@ -85,9 +91,9 @@
   <div class="contents col-md-9">
 
 
-<div id="shiny-fluent-build-beautiful-shiny-apps-using-microsofts-fluent-ui" class="section level1">
+<div id="shinyfluent-build-beautiful-shiny-apps-using-microsofts-fluent-ui" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#shiny-fluent-build-beautiful-shiny-apps-using-microsofts-fluent-ui" class="anchor"></a>shiny.fluent: Build beautiful Shiny apps using Microsoft’s Fluent UI</h1></div>
+<a href="#shinyfluent-build-beautiful-shiny-apps-using-microsofts-fluent-ui" class="anchor"></a>shiny.fluent: Build beautiful Shiny apps using Microsoft’s Fluent UI</h1></div>
 <p>We believe that a great UI plays a huge role in the success of application projects. shiny.fluent gives your apps:</p>
 <ul>
 <li>beautiful, professional look</li>
@@ -146,14 +152,14 @@
 <h2 class="hasAnchor">
 <a href="#solving-installation-credentials-issues" class="anchor"></a>Solving installation credentials issues</h2>
 <p><em>This section will be removed once the package is published</em></p>
-<p>If installation fails, configure Git credentials using <code><a href="https://usethis.r-lib.org/reference/git_credentials.html">usethis::use_git_credentials</a></code> and <code><a href="https://docs.ropensci.org/git2r/reference/cred_ssh_key.html">git2r::cred_ssh_key</a></code> or <code><a href="https://docs.ropensci.org/git2r/reference/cred_token.html">git2r::cred_token</a></code>. This should help</p>
+<p>If installation fails, configure Git credentials using <code>usethis::use_git_credentials</code> and <code>git2r::cred_ssh_key</code> or <code>git2r::cred_token</code>. This should help</p>
 <p>If you run into errors with installing as above, try installing SSH dependencies and re-installing git2r</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="fu">sudo</span> apt-get install libssh2-1 libssh2-1-dev</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="ex">Rscript</span> -e <span class="st">'remotes::install_cran("git2r", force = TRUE)'</span></a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">sudo</span> apt-get install libssh2-1 libssh2-1-dev</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="ex">Rscript</span> -e <span class="st">'remotes::install_cran("git2r", force = TRUE)'</span></span></code></pre></div>
 <p>For Mac OSX use:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="ex">brew</span> install libssh2</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="ex">brew</span> install libgit2</a>
-<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="ex">install.packages</span>(<span class="st">"git2r"</span>, type = <span class="st">"source"</span>, configure.vars = <span class="st">"autobrew=yes"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="ex">brew</span> install libssh2</span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="ex">brew</span> install libgit2</span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="ex">install.packages</span>(<span class="st">"git2r"</span>, type = <span class="st">"source"</span>, configure.vars = <span class="st">"autobrew=yes"</span>)</span></code></pre></div>
 </div>
 </div>
 

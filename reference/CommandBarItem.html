@@ -8,11 +8,13 @@
 
 <title>Helper function for constructing items for CommandBar — CommandBarItem • shiny.fluent</title>
 
+
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
 
 <!-- bootstrap-toc -->
@@ -36,13 +38,12 @@
 
 
 
-<meta property="og:title" content="Helper function for constructing items for CommandBar — CommandBarItem" />
 
+<meta property="og:title" content="Helper function for constructing items for CommandBar — CommandBarItem" />
 <meta property="og:description" content="CommandBar expects items definition as a nested structure, which gets lengthy and verbose.
 This function helps makes this definition shorter. Returns a list with all arguments passed through,
 except for text, icon (which will inserted as proper iconProps) and subitems (which will be inserted as
 proper subMenuProps)" />
-
 
 
 
@@ -82,7 +83,7 @@ proper subMenuProps)" />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -103,6 +104,12 @@ proper subMenuProps)" />
       <a href="../articles/first-app.html">Tutorial: Create your first Fluent dashboard</a>
     </li>
     <li>
+      <a href="../articles/how-to-shiny-modules.html">How to: use shiny.fluent with Shiny modules</a>
+    </li>
+    <li>
+      <a href="../articles/how-to-troubleshoot.html">How to: troubleshoot shiny.react apps</a>
+    </li>
+    <li>
       <a href="../articles/how-to-use-fluent-docs.html">Topic guide: Using Fluent components documentation</a>
     </li>
     <li>
@@ -114,7 +121,6 @@ proper subMenuProps)" />
   </ul>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         
       </ul>
@@ -136,16 +142,14 @@ proper subMenuProps)" />
     </div>
 
     <div class="ref-description">
-    
     <p>CommandBar expects items definition as a nested structure, which gets lengthy and verbose.
 This function helps makes this definition shorter. Returns a list with all arguments passed through,
 except for <code>text</code>, <code>icon</code> (which will inserted as proper <code>iconProps</code>) and <code>subitems</code> (which will be inserted as
 proper <code>subMenuProps</code>)</p>
-    
     </div>
 
     <pre class="usage"><span class='fu'>CommandBarItem</span><span class='op'>(</span><span class='va'>text</span>, icon <span class='op'>=</span> <span class='cn'>NULL</span>, subitems <span class='op'>=</span> <span class='cn'>NULL</span>, <span class='va'>...</span><span class='op'>)</span></pre>
-    
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -162,11 +166,10 @@ proper <code>subMenuProps</code>)</p>
       <td><p>optional list of CommandBar items</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>CommandBar</p></div>
-    
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

@@ -8,11 +8,13 @@
 
 <title>Layer — Layer • shiny.fluent</title>
 
+
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
 
 <!-- bootstrap-toc -->
@@ -36,15 +38,14 @@
 
 
 
-<meta property="og:title" content="Layer — Layer" />
 
+<meta property="og:title" content="Layer — Layer" />
 <meta property="og:description" content="A Layer is a technical component that does not have specific Design guidance.
 Layers are used to render content outside of a DOM tree, at the end of the document. This allows content to escape traditional boundaries caused by &quot;overflow: hidden&quot; css rules and keeps it on the top without using z-index rules. This is useful for example in ContextualMenu and Tooltip scenarios, where the content should always overlay everything else.
 There are some special considerations. Due to the nature of rendering content elsewhere asynchronously, React refs within content will not be resolvable synchronously at the time the Layer is mounted. Therefore, to use refs correctly, use functional refs ref={ (el) =&amp;gt; { this._root = el; } rather than string refs ref='root'. Additionally measuring the physical Layer element will not include any of the children, since it won't render it. Events that propgate from within the content will not go through the Layer element as well.
 For more details and examples visit the official docs.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result." />
-
 
 
 
@@ -84,7 +85,7 @@ you need to work using the original docs to achieve the desired result." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -105,6 +106,12 @@ you need to work using the original docs to achieve the desired result." />
       <a href="../articles/first-app.html">Tutorial: Create your first Fluent dashboard</a>
     </li>
     <li>
+      <a href="../articles/how-to-shiny-modules.html">How to: use shiny.fluent with Shiny modules</a>
+    </li>
+    <li>
+      <a href="../articles/how-to-troubleshoot.html">How to: troubleshoot shiny.react apps</a>
+    </li>
+    <li>
       <a href="../articles/how-to-use-fluent-docs.html">Topic guide: Using Fluent components documentation</a>
     </li>
     <li>
@@ -116,7 +123,6 @@ you need to work using the original docs to achieve the desired result." />
   </ul>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         
       </ul>
@@ -138,20 +144,18 @@ you need to work using the original docs to achieve the desired result." />
     </div>
 
     <div class="ref-description">
-    
     <p>A Layer is a technical component that does not have specific Design guidance.</p>
 <p>Layers are used to render content outside of a DOM tree, at the end of the document. This allows content to escape traditional boundaries caused by "overflow: hidden" css rules and keeps it on the top without using z-index rules. This is useful for example in ContextualMenu and Tooltip scenarios, where the content should always overlay everything else.</p>
 <p>There are some special considerations. Due to the nature of rendering content elsewhere asynchronously, React refs within content will not be resolvable synchronously at the time the Layer is mounted. Therefore, to use refs correctly, use functional refs <code>ref={ (el) =&gt; { this._root = el; }</code> rather than string refs <code>ref='root'</code>. Additionally measuring the physical Layer element will not include any of the children, since it won't render it. Events that propgate from within the content will not go through the Layer element as well.</p>
 <p>For more details and examples visit the official <a href='https://developer.microsoft.com/en-us/fluentui#/controls/web/Layer'>docs</a>.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.</p>
-    
     </div>
 
     <pre class="usage"><span class='fu'>Layer</span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span>
 
 <span class='fu'>LayerHost</span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span></pre>
-    
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -196,7 +200,7 @@ you need to work using the original docs to achieve the desired result.</p>
       <td><p><code>ITheme</code> <br /> Theme provided by HOC.</p></td>
     </tr>
     </table>
-    
+
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'>shiny.fluent</span><span class='op'>)</span>
