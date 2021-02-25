@@ -9,7 +9,7 @@
 #'
 #' # Best practices
 #' ## Layout
-#' 
+#'
 #' - Use a list of multiple activity items to indicate a history of events relating to a single file, folder, person, or other entity. Alternatively, use a single activity item to indicate the most recent event on an entity.
 #' - Group multiple similar events occurring near the same time into a single activity item.
 #'
@@ -40,12 +40,12 @@ NULL
 #' The Announced component aims to fill several of the accessibility gaps that exist in various web application experiences.
 #' It provides text for the screen reader in certain scenarios that are lacking comprehensive updates, particularly those showing
 #' the completion status or progress of operation(s).
-#' 
+#'
 #' Some real-world applications of the component include copying, uploading, or moving many files; deleting or renaming a single file;
 #' "lazy loading" of page sections that do not appear all at once; and appearance of search results.
-#' 
+#'
 #' The Announced component currently has the following documented use cases:
-#' 
+#'
 #' 1. [Quick Actions](#/controls/web/announced/quickactions): Operations such as editing text or deletion that are short enough that they do not require a status during progress.
 #' 2. [Search Results](#/controls/web/announced/searchresults): Appearance of search results such as in contact fields or search boxes.
 #' 3. [Lazy Loading](#/controls/web/announced/lazyloading): "Lazy loading" of page sections that do not appear all at once.
@@ -69,7 +69,7 @@ NULL
 #'
 #' @description
 #' Breadcrumbs should be used as a navigational aid in your app or site. They indicate the current page’s location within a hierarchy and help the user understand where they are in relation to the rest of that hierarchy. They also afford one-click access to higher levels of that hierarchy.
-#' 
+#'
 #' Breadcrumbs are typically placed, in horizontal form, under the masthead or navigation of an experience, above the primary content area.
 #'
 #' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Breadcrumb).
@@ -90,8 +90,8 @@ NULL
 #' @param onRenderOverflowIcon `IRenderFunction<IButtonProps>` \cr Render a custom overflow icon in place of the default icon `...`
 #' @param overflowAriaLabel `string` \cr Aria label for the overflow button.
 #' @param overflowIndex `number` \cr Optional index where overflow items will be collapsed. Defaults to 0.
-#' @param styles `IStyleFunctionOrObject<IBreadcrumbStyleProps, IBreadcrumbStyles>` \cr 
-#' @param theme `ITheme` \cr 
+#' @param styles `IStyleFunctionOrObject<IBreadcrumbStyleProps, IBreadcrumbStyles>` \cr
+#' @param theme `ITheme` \cr
 #' @param tooltipHostProps `ITooltipHostProps` \cr Extra props for the TooltipHost which wraps each breadcrumb item.
 #' @param item `IBreadcrumbItem` \cr Breadcrumb item to left of the divider to be passed for custom rendering. For overflowed items, it will be last item in the list.
 #'
@@ -110,24 +110,24 @@ NULL
 #'
 #' # Best practices
 #' ### Layout
-#' 
+#'
 #' - For dialog boxes and panels, where people are moving through a sequence of screens, right-align buttons with the container.
 #' - For single-page forms and focused tasks, left-align buttons with the container.
 #' - Always place the primary button on the left, the secondary button just to the right of it.
 #' - Show only one primary button that inherits theme color at rest state. If there are more than two buttons with equal priority, all buttons should have neutral backgrounds.
 #' - Don't use a button to navigate to another place; use a link instead. The exception is in a wizard where "Back" and "Next" buttons may be used.
 #' - Don't place the default focus on a button that destroys data. Instead, place the default focus on the button that performs the "safe act" and retains the content (such as "Save") or cancels the action (such as "Cancel").
-#' 
+#'
 #' ### Content
-#' 
+#'
 #' - Use sentence-style capitalization—only capitalize the first word. For more info, see [Capitalization](https://docs.microsoft.com/style-guide/capitalization) in the Microsoft Writing Style Guide.
 #' - Make sure it's clear what will happen when people interact with the button. Be concise; usually a single verb is best. Include a noun if there is any room for interpretation about what the verb means. For example, "Delete folder" or "Create account".
 #'
-#' @param baseClassName `string` \cr 
-#' @param variantClassName `string` \cr 
+#' @param baseClassName `string` \cr
+#' @param variantClassName `string` \cr
 #' @param allowDisabledFocus `boolean` \cr Whether the button can have focus in disabled mode
 #' @param ariaDescription `string` \cr Detailed description of the button for the benefit of screen readers.
-#' 
+#'
 #' Besides the compound button, other button types will need more information provided to screen reader.
 #' @param ariaHidden `boolean` \cr If provided and is true it adds an 'aria-hidden' attribute instructing screen readers to ignore the element.
 #' @param ariaLabel `string` \cr The aria label of the button for the benefit of screen readers.
@@ -162,7 +162,7 @@ NULL
 #' @param primaryActionButtonProps `IButtonProps` \cr Optional props to be applied only to the primary action button of SplitButton and not to the overall SplitButton container
 #' @param primaryDisabled `boolean` \cr If set to true and if this is a splitButton (split == true) then the primary action of a split button is disabled.
 #' @param renderPersistedMenuHiddenOnMount `boolean` \cr If true, the persisted menu is rendered hidden when the button initially mounts. Non-persisted menus will not be in the component tree unless they are being shown
-#' 
+#'
 #' Note: This increases the time the button will take to mount, but can improve perceived menu open perf. when the user opens the menu.
 #' @param rootProps `React.ButtonHTMLAttributes<HTMLButtonElement> | React.AnchorHTMLAttributes<HTMLAnchorElement>` \cr Deprecated at v0.56.2, to be removed at \>= v1.0.0. Just pass in button props instead. they will be mixed into the button/anchor element rendered by the component.
 #' @param secondaryText `string` \cr Description of the action this button takes. Only used for compound buttons
@@ -191,12 +191,12 @@ NULL
 #'
 #' # Best practices
 #' ### Layout
-#' 
+#'
 #' - Don’t break the control apart.
 #' - Include an up and down arrow for navigating between time ranges and a chevron to make the calendar collapsible.
-#' 
+#'
 #' ### Content
-#' 
+#'
 #' - Use the following format for dates: month, day, year, as in July 31, 2016. When space is limited, use numbers and slashes for dates if the code supports that format and automatically displays the appropriate date format for different locales. For example, 2/16/19.
 #' - Don't use ordinal numbers (such as 1st, 12th, or 23rd) to indicate a date.
 #'
@@ -246,7 +246,7 @@ NULL
 #'
 #' # Best practices
 #' ### Layout
-#' 
+#'
 #' - Don’t use a callout to ask for action confirmation; use a dialog instead.
 #' - Place a callout near the object being described. At the pointer’s tail or head, if possible.
 #' - Don't use large, unformatted blocks of text in your callout. They're difficult to read and overwhelming.
@@ -255,9 +255,9 @@ NULL
 #' - Don’t show callouts on hidden elements.
 #' - Don’t overuse callouts. Too many callouts opening automatically can be perceived as interrupting someone's workflow.
 #' - For a particularly complex concept that needs explanation, place an info icon (`iconClassNames.info`) next to the concept to indicate there's more helpful information available. When someone hovers over or selects the icon, the callout should appear.
-#' 
+#'
 #' ### Content
-#' 
+#'
 #' - Because the content inside of a callout isn't always visible, don't put required information in a callout.
 #' - Short sentences or sentence fragments are best.
 #' - Don't use obvious tip text or text that simply repeats what is already on the screen. Limit the information inside of a callout to supplemental information.
@@ -299,7 +299,7 @@ NULL
 #' @param shouldRestoreFocus `boolean` \cr If true, when this component is unmounted, focus will be restored to the element that had focus when the component first mounted.
 #' @param shouldUpdateWhenHidden `boolean` \cr If true, the component will be updated even when hidden=true. Note that this would consume resources to update even though nothing is being shown to the user. This might be helpful though if your updates are small and you want the callout to be revealed fast to the user when hidden is set to false.
 #' @param style `React.CSSProperties` \cr CSS style to apply to the callout.
-#' 
+#'
 #' If you set `overflowY` in this object, it provides a performance optimization by preventing Popup (underlying component of Callout) from calculating whether it needs a scroll bar.
 #' @param styles `IStyleFunctionOrObject<ICalloutContentStyleProps, ICalloutContentStyles>` \cr Optional styles for the component.
 #' @param target `Target` \cr The target that the Callout should try to position itself based on. It can be either an Element a querySelector string of a valid Element or a MouseEvent. If MouseEvent is given then the origin point of the event will be used.
@@ -320,12 +320,12 @@ NULL
 #'
 #' # Best practices
 #' ### Layout
-#' 
+#'
 #' - Use a single check box when there's only one selection to make or choice to confirm. Selecting a blank check box selects it. Selecting it again clears the check box.
 #' - Use multiple check boxes when one or more options can be selected from a group. Unlike radio buttons, selecting one check box will not clear another check box.
-#' 
+#'
 #' ### Content
-#' 
+#'
 #' - Separate two groups of check boxes with headings rather than positioning them one after the other.
 #' - Use sentence-style capitalization—only capitalize the first word. For more info, see [Capitalization](https://docs.microsoft.com/style-guide/capitalization) in the Microsoft Writing Style Guide.
 #' - Don't use end punctuation (unless the check box label absolutely requires multiple sentences).
@@ -369,15 +369,15 @@ NULL
 #'
 #' # Best practices
 #' ### Layout
-#' 
+#'
 #' - Use radio buttons when there are two to seven options, you have enough screen space, and the options are important enough to be a good use of that screen space.
 #' - If there are more than seven options, use a drop-down menu instead.
 #' - To give people a way to select more than one option, use check boxes instead.
 #' - If a default option is recommended for most people in most situations, use a drop-down menu instead.
 #' - Align radio buttons vertically instead of horizontally, if possible. Horizontal alignment is harder to read and localize. If there are only two mutually exclusive options, combine them into a single check box or toggle. For example, use a check box for "I agree" statements instead of radio buttons for "I agree" and "I disagree".
-#' 
+#'
 #' ### Content
-#' 
+#'
 #' - List the options in a logical order, such as most likely to be selected to least, simplest operation to most complex, or least risk to most. Listing options in alphabetical order isn't recommended because the order will change when the text is localized.
 #' - Select the safest (to prevent loss of data or system access), most secure, and most private option as the default. If safety and security aren't factors, select the most likely or convenient option.
 #' - Use a phrase for the label, rather than a full sentence.
@@ -417,7 +417,7 @@ NULL
 #'
 #' # Best practices
 #' ## Layout
-#' 
+#'
 #' - Only one coach mark and teaching bubble combo should be displayed at a time.
 #' - Coach marks can be standalone or sequential. Sequential coach marks should be used sparingly to walk through complex multistep interactions. It’s recommended that a sequence of coach marks doesn’t exceed three steps.
 #' - Coach marks are designed to only hold teaching bubbles.
@@ -499,7 +499,7 @@ NULL
 #' @param alphaLabel `string` \cr Label for the alpha textfield.
 #' @param alphaSliderHidden `boolean` \cr Whether to hide the alpha (or transparency) slider and text field.
 #' @param alphaType `'alpha' | 'transparency' | 'none'` \cr `alpha` (the default) means display a slider and text field for editing alpha values. `transparency` also displays a slider and text field but for editing transparency values. `none` hides these controls.
-#' 
+#'
 #' Alpha represents the opacity of the color, whereas transparency represents the transparentness of the color: i.e. a 30% transparent color has 70% opaqueness.
 #' @param blueLabel `string` \cr Label for the blue text field.
 #' @param className `string` \cr Additional CSS class(es) to apply to the ColorPicker.
@@ -553,11 +553,11 @@ NULL
 #'
 #' # Best practices
 #' ### Layout
-#' 
+#'
 #' - Use a combo box when there are multiple choices that can be collapsed under one title, when the list of items is long, or when space is constrained.
-#' 
+#'
 #' ### Content
-#' 
+#'
 #' - Use single words or shortened statements as options.
 #' - Don't use punctuation at the end of options.
 #'
@@ -612,7 +612,7 @@ NULL
 #' poorly organized, they can be difficult to use and hide valuable commands from
 #' your user. CommandBars can also display a search box for finding content, hold
 #' simple commands as well as menus, or display the status of ongoing actions.
-#' 
+#'
 #' Commands should be sorted in order of importance, from left-to-right or right-to-left
 #' depending on the culture. Secondarily, organize commands in logical
 #' groupings for easier recall. CommandBars work best when they display no more
@@ -622,7 +622,7 @@ NULL
 #' CommandBar (or left side if in a left-to-right experience). Do not display
 #' more than 2-3 items on the right side as it will make the overall CommandBar
 #' difficult to parse.
-#' 
+#'
 #' All command items should have an icon and a label. Commands can render as
 #' labels only as well. In smaller widths, commands can just use icon only, but
 #' only for the most recognizable and frequently used commands. All other
@@ -665,9 +665,9 @@ NULL
 #'
 #' @description
 #' ContextualMenus are lists of commands that are based on the context of selection, mouse hover or keyboard focus. They are one of the most effective and highly used command surfaces, and can be used in a variety of places.
-#' 
+#'
 #' There are variants that originate from a command bar, or from cursor or focus. Those that come from CommandBars use a beak that is horizontally centered on the button. Ones that come from right click and menu button do not have a beak, but appear to the right and below the cursor. ContextualMenus can have submenus from commands, show selection checks, and icons.
-#' 
+#'
 #' Organize commands in groups divided by rules. This helps users remember command locations, or find less used commands based on proximity to others. One should also group sets of mutually exclusive or multiple selectable options. Use icons sparingly, for high value commands, and don’t mix icons with selection checks, as it makes parsing commands difficult. Avoid submenus of submenus as they can be difficult to invoke or remember.
 #'
 #' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/ContextualMenu).
@@ -688,17 +688,17 @@ NULL
 #' @param openSubMenu `(item: any, target: HTMLElement) => void` \cr This prop will get set by ContextualMenu and can be called to open this item's subMenu, if present.
 #' @param styles `IStyleFunctionOrObject<IContextualMenuItemStyleProps, IContextualMenuItemStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
 #' @param theme `ITheme` \cr Theme provided by High-Order Component.
-#' @param focusableElementIndex `number` \cr 
-#' @param hasCheckmarks `boolean` \cr 
-#' @param hasIcons `boolean` \cr 
-#' @param index `number` \cr 
-#' @param totalItemCount `number` \cr 
-#' @param defaultMenuItemRenderer `(item: IContextualMenuItemRenderProps) => React.ReactNode` \cr 
-#' @param hasCheckmarks `boolean` \cr 
-#' @param hasIcons `boolean` \cr 
-#' @param items `IContextualMenuItem[]` \cr 
-#' @param role `string` \cr 
-#' @param totalItemCount `number` \cr 
+#' @param focusableElementIndex `number` \cr
+#' @param hasCheckmarks `boolean` \cr
+#' @param hasIcons `boolean` \cr
+#' @param index `number` \cr
+#' @param totalItemCount `number` \cr
+#' @param defaultMenuItemRenderer `(item: IContextualMenuItemRenderProps) => React.ReactNode` \cr
+#' @param hasCheckmarks `boolean` \cr
+#' @param hasIcons `boolean` \cr
+#' @param items `IContextualMenuItem[]` \cr
+#' @param role `string` \cr
+#' @param totalItemCount `number` \cr
 #' @param alignTargetEdge `boolean` \cr If true the positioning logic will prefer to flip edges rather than to nudge the rectangle to fit within bounds, thus making sure the element aligns perfectly with target's alignment edge
 #' @param ariaLabel `string` \cr Accessible label for the ContextualMenu's root element (inside the callout).
 #' @param beakWidth `number` \cr The width of the beak.
@@ -755,11 +755,11 @@ NULL
 #'
 #' # Best practices
 #' ### Layout
-#' 
+#'
 #' - Use the control the way it’s designed and built. Don’t break it apart.
-#' 
+#'
 #' ### Content
-#' 
+#'
 #' - The control provides the date in a specific format. If the date can be entered in an input field, provide helper text in the appropriate format.
 #'
 #' @param allFocusable `boolean` \cr Allows all elements to be focused, including disabled ones
@@ -818,49 +818,49 @@ NULL
 #'
 #' # Best practices
 #' ### Layout
-#' 
+#'
 #' - List items are composed of selection, icon, and name columns at minimum. You can include other columns, such as date modified, or any other metadata field associated with the collection.
 #' - Avoid using file type icon overlays to denote status of a file as it can make the entire icon unclear.
 #' - If there are multiple lines of text in a column, consider the variable row height variant.
 #' - Give columns ample default width to display information.
-#' 
+#'
 #' ### Content
-#' 
+#'
 #' - Use sentence-style capitalization for column headers—only capitalize the first word. For more info, see [Capitalization] in the Microsoft Writing Style Guide.
-#' 
+#'
 #' [capitalization]: https://docs.microsoft.com/style-guide/capitalization
-#' 
+#'
 #' ### FAQ
-#' 
+#'
 #' #### My scrollable content isn't updating on scroll. What should I do?
-#' 
+#'
 #' Add the `data-is-scrollable="true"` attribute to your scrollable element containing the DetailsList.
-#' 
+#'
 #' By default, the List used within DetailsList will use the `body` element as the scrollable element. If you contain the List within a scrollable `div` using `overflow: auto` or `scroll`, the List needs to listen for scroll events on that element instead. On initialization, the List will traverse up the DOM looking for the first element with the `data-is-scrollable` attribute to know which element to listen to for knowing when to re-evaulate the visible window.
-#' 
+#'
 #' #### My List is not re-rendering when I mutate its items. What should I do?
-#' 
+#'
 #' To determine if the List within DetailsList should re-render its contents, the component performs a referential equality check within its `shouldComponentUpdate` method. This is done to minimize the performance overhead associated with re-rendering the virtualized List pages, as recommended by the [React documentation](https://reactjs.org/docs/optimizing-performance.html#the-power-of-not-mutating-data).
-#' 
+#'
 #' As a result of this implementation, the inner List will not determine it should re-render if the array values are mutated.
 #' To avoid this problem, we recommend re-creating the items array backing the DetailsList by using a method such as `Array.prototype.concat` or ES6 spread syntax shown below:
-#' 
+#'
 #' ```tsx
 #' public appendItems(): void {
 #'   const { items } = this.state;
-#' 
+#'
 #'   this.setState({
 #'     items: [...items, ...['Foo', 'Bar']]
 #'   })
 #' }
-#' 
+#'
 #' public render(): JSX.Element {
 #'   const { items } = this.state;
-#' 
+#'
 #'   return <DetailsList items={items} />;
 #' }
 #' ```
-#' 
+#'
 #' By re-creating the items array without mutating the values, the inner List will correctly determine its contents have changed and it should then re-render with the new values.
 #'
 #' @param onColumnDragEnd `(props: { dropLocation?: ColumnDragEndLocation; }, event: MouseEvent) => void` \cr Callback to notify the column dragEnd event to List Need this to check whether the dragEnd has happened on corresponding list or outside of the list
@@ -875,7 +875,7 @@ NULL
 #' @param onColumnContextMenu `(column: IColumn, ev: React.MouseEvent<HTMLElement>) => void` \cr Callback fired on contextual menu event to provide contextual menu UI.
 #' @param onRenderColumnHeaderTooltip `IRenderFunction<IDetailsColumnRenderTooltipProps>` \cr Render function for providing a column header tooltip.
 #' @param parentId `string` \cr Parent ID used for accessibility label(s).
-#' @param setDraggedItemIndex `(itemIndex: number) => void` \cr 
+#' @param setDraggedItemIndex `(itemIndex: number) => void` \cr
 #' @param styles `IStyleFunctionOrObject<IDetailsColumnStyleProps, IDetailsColumnStyles>` \cr The component styles to respect during render.
 #' @param theme `ITheme` \cr The theme object to respect during render.
 #' @param updateDragInfo `(props: { itemIndex: number; }, event?: MouseEvent) => void` \cr Callback on drag and drop event.
@@ -883,8 +883,8 @@ NULL
 #' @param columns `IColumn[]` \cr Column metadata
 #' @param selection `ISelection` \cr Selection from utilities
 #' @param selectionMode `SelectionMode` \cr Selection mode
-#' @param onRenderFooter `IRenderFunction<IDetailsGroupDividerProps>` \cr 
-#' @param onRenderHeader `IRenderFunction<IDetailsGroupDividerProps>` \cr 
+#' @param onRenderFooter `IRenderFunction<IDetailsGroupDividerProps>` \cr
+#' @param onRenderHeader `IRenderFunction<IDetailsGroupDividerProps>` \cr
 #' @param ariaLabel `string` \cr ariaLabel for the entire header
 #' @param ariaLabelForSelectAllCheckbox `string` \cr ariaLabel for the header checkbox that selects or deselects everything
 #' @param ariaLabelForSelectionColumn `string` \cr ariaLabel for the selection column
@@ -971,9 +971,9 @@ NULL
 #' @param onRowDidMount `(item?: any, index?: number) => void` \cr Callback for when a given row has been mounted. Useful for identifying when a row has been rendered on the page.
 #' @param onRowWillUnmount `(item?: any, index?: number) => void` \cr Callback for when a given row has been unmounted. Useful for identifying when a row has been removed from the page.
 #' @param onShouldVirtualize `(props: IListProps) => boolean` \cr Callback to determine whether the list should be rendered in full, or virtualized.
-#' 
+#'
 #' Virtualization will add and remove pages of items as the user scrolls them into the visible range. This benefits larger list scenarios by reducing the DOM on the screen, but can negatively affect performance for smaller lists.
-#' 
+#'
 #' The default implementation will virtualize when this callback is not provided.
 #' @param rowElementEventMap `{ eventName: string; callback: (context: IDragDropContext, event?: any) => void; }[]` \cr Event names and corresponding callbacks that will be registered to rendered row elements.
 #' @param selection `ISelection` \cr Selection model to track selection state.
@@ -1028,7 +1028,7 @@ NULL
 #' @param columns `IColumn[]` \cr Columns metadata
 #' @param columnStartIndex `number` \cr Index to start for the column
 #' @param compact `boolean` \cr whether to render as a compact field
-#' @param enableUpdateAnimations `boolean` \cr 
+#' @param enableUpdateAnimations `boolean` \cr
 #' @param item `any` \cr Data source for this component
 #' @param itemIndex `number` \cr The item index of the collection for the DetailsList
 #' @param rowClassNames `{ [k in keyof Pick<IDetailsRowStyles, 'isMultiline' | 'isRowHeader' | 'cell' | 'cellAnimation' | 'cellPadded' | 'cellUnpadded' | 'fields'>]: string; }` \cr Subset of classnames currently generated in DetailsRow that are used within DetailsRowFields.
@@ -1044,7 +1044,7 @@ NULL
 #' @param shimmerOverlayStyles `IStyleFunctionOrObject<IShimmeredDetailsListStyleProps, IShimmeredDetailsListStyles>` \cr Custom styles to override the styles specific to the ShimmeredDetailsList root area.
 #' @param styles `IStyleFunctionOrObject<IShimmeredDetailsListStyleProps, IShimmeredDetailsListStyles>` \cr Custom styles to override the styles specific to the ShimmeredDetailsList root area.
 #' @param skipViewportMeasures `boolean` \cr Whether or not to use ResizeObserver (if available) to detect and measure viewport on 'resize' events.
-#' 
+#'
 #' Falls back to window 'resize' event.
 #'
 #' @md
@@ -1062,52 +1062,52 @@ NULL
 #'
 #' # Best practices
 #' ### Layout
-#' 
+#'
 #' - Don't use more than three buttons.
 #' - Dialog boxes consist of a header, body, and footer.
 #' - Validate that people’s entries are acceptable before closing the dialog box. Show an inline validation error near the field they must correct.
 #' - Blocking dialogs should be used very sparingly, only when it is critical that people make a choice or provide information before they can proceed. Blocking dialogs are generally used for irreversible or potentially destructive tasks. They’re typically paired with an overlay without a light dismiss.
-#' 
+#'
 #' #### Header
-#' 
+#'
 #' - Locks to the top of the dialog.
 #' - May include an icon to the left of the title.
 #' - Includes a Close button in the top-right corner.
-#' 
+#'
 #' #### Footer
-#' 
+#'
 #' - Lock buttons to the bottom of the dialog.
 #' - Includes one primary button. A secondary button is optional.
-#' 
+#'
 #' #### Width
-#' 
+#'
 #' - Maximum is 340 pixels.
 #' - Minimum is 288 pixels.
-#' 
+#'
 #' #### Height
-#' 
+#'
 #' - Maximum is 340 pixels.
 #' - Minimum is 172 pixels.
-#' 
+#'
 #' ### Content
-#' 
+#'
 #' #### Title
-#' 
+#'
 #' - Keep the title as concise as possible.
 #' - Don’t use periods at the end of titles.
 #' - This mandatory content should explain the main information in a clear, concise, and specific statement or question. For example, “Delete this file?” instead of “Are you sure?”
 #' - The title shouldn’t be a description of the body content. For example, don’t use “Error” as a title. Instead, use an informative statement like “Your session ended.”
 #' - Use sentence-style capitalization—only capitalize the first word. For more info, see [Capitalization](https://docs.microsoft.com/style-guide/capitalization) in the Microsoft Writing Style Guide.
-#' 
+#'
 #' #### Body copy (Optional)
-#' 
+#'
 #' - Don't restate the title in the body.
 #' - Use ending punctuation on sentences.
 #' - Use actionable language, with the most important information at the beginning.
 #' - Use the optional body content area for additional info or instructions, if needed. Only include information needed to help people make a decision.
-#' 
+#'
 #' #### Button labels
-#' 
+#'
 #' - Write button labels that are specific responses to the main information in the title. The title “Delete this file?” could have buttons labeled “Delete” and “Cancel”.
 #' - Be concise. Limit labels to one or two words. Usually a single verb is best. Include a noun if there is any room for interpretation about what the verb means. For example, “Delete” or “Delete file”.
 #'
@@ -1172,7 +1172,7 @@ NULL
 #'
 #' # Best practices
 #' ### Layout
-#' 
+#'
 #' - Use this control to represent Office documents or other files in aggregate views, such as when you're showing someone’s most trending document.
 #' - Incorporate metadata that is relevant and useful in this particular view. A card can be specialized to be about the document’s latest changes, or about the document’s popularity, as you see fit.
 #' - Use a document card when you're illustrating an event that encompasses multiple files. For example, a card can be configured to represent a single upload action when adding more than one file.
@@ -1225,7 +1225,7 @@ NULL
 #' @param styles `IStyleFunctionOrObject<IDocumentCardPreviewStyleProps, IDocumentCardPreviewStyles>` \cr Call to provide customized styling that will layer on top of the variant rules
 #' @param theme `ITheme` \cr Theme provided by HOC.
 #' @param accentColor `string` \cr Hex color value of the line below the card, which should correspond to the document type. This should only be supplied when using the 'compact' card layout.
-#' 
+#'
 #' Deprecated at v4.17.1, to be removed at \>= v5.0.0.
 #' @param children `React.ReactNode` \cr Child components to render within the card.
 #' @param className `string` \cr Optional override class name
@@ -1266,12 +1266,12 @@ NULL
 #'
 #' # Best practices
 #' ### Layout
-#' 
+#'
 #' - Use a dropdown list when there are multiple choices that can be collapsed under one title, if the list of items is too long, or when space is constrained.
 #' - Use a dropdown list when the selected option is more important than the alternatives (in contrast to radio buttons where all the choices are visible, putting equal emphasis on all options).
-#' 
+#'
 #' ### Content
-#' 
+#'
 #' - Use sentence-style capitalization—only capitalize the first word. For more info, see [Capitalization](https://docs.microsoft.com/style-guide/capitalization) in the Microsoft Writing Style Guide.
 #' - The dropdown list label should describe what can be found in the menu.
 #' - Use shortened statements or single words as list options.
@@ -1286,7 +1286,7 @@ NULL
 #' @param multiSelectDelimiter `string` \cr When multiple items are selected, this will be used to separate values in the dropdown input.
 #' @param notifyOnReselect `boolean` \cr If true, `onChange` will still be called when an already-selected item is clicked again in single select mode. (Normally it would not be called in this case.)
 #' @param onChange `(event: React.FormEvent<HTMLDivElement>, option?: IDropdownOption, index?: number) => void` \cr Callback for when the selected option changes.
-#' @param onChanged `(option: IDropdownOption, index?: number) => void` \cr 
+#' @param onChanged `(option: IDropdownOption, index?: number) => void` \cr
 #' @param onRenderCaretDown `IRenderFunction<IDropdownProps>` \cr Custom renderer for chevron icon
 #' @param onRenderLabel `IRenderFunction<IDropdownProps>` \cr Custom renderer for the label.
 #' @param onRenderPlaceholder `IRenderFunction<IDropdownProps>` \cr Custom renderer for placeholder text
@@ -1306,7 +1306,7 @@ NULL
 #' ExtendedPeoplePicker
 #'
 #' @description
-#' 
+#'
 #'
 #' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/ExtendedPeoplePicker).
 #' The R package can not handle each and every case, so for advanced use cases
@@ -1329,7 +1329,7 @@ NULL
 #'
 #' # Best practices
 #' ### Layout
-#' 
+#'
 #' - The face pile empty state should only include an "Add" button. Another variant is to use an input field with placeholder text instructing people to add a person. See the people picker component for the menu used to add people to the face pile list.
 #' - When there is only one person in the face pile, consider using their name next to the face or initials.
 #' - When there is a need to show the face pile expanded into a vertical list, include a downward chevron button. Selecting the chevron opens a standard list view of people.
@@ -1363,7 +1363,7 @@ NULL
 #' FloatingPeoplePicker
 #'
 #' @description
-#' 
+#'
 #'
 #' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/FloatingPeoplePicker).
 #' The R package can not handle each and every case, so for advanced use cases
@@ -1379,7 +1379,7 @@ NULL
 #'
 #' @description
 #' FocusTrapZone is used to trap the focus in any html element. Pressing tab will circle focus within the inner focusable elements of the FocusTrapZone.
-#' 
+#'
 #' **Note:** Trapping focus will restrict interaction with other elements in the website such as the side nav. Turn off the "Use trap zone" toggle control to allow this interaction to happen again.
 #'
 #' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/FocusTrapZone).
@@ -1407,7 +1407,7 @@ NULL
 #'
 #' @description
 #' FocusZones abstract arrow key navigation behaviors. Tabbable elements (buttons, anchors, and elements with data-is-focusable='true' attributes) are considered when pressing directional arrow keys and focus is moved appropriately. Tabbing to a zone sets focus only to the current "active" element, making it simple to use the tab key to transition from one zone to the next, rather than through every focusable element.
-#' 
+#'
 #' Using a FocusZone is simple. Just wrap a bunch of content inside of a FocusZone, and arrows and tabbling will be handled for you! See examples below.
 #'
 #' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/FocusZone).
@@ -1464,36 +1464,36 @@ NULL
 #'
 #' # Best practices
 #' ## FAQ
-#' 
+#'
 #' ### My List is not re-rendering when I mutate its items. What should I do?
-#' 
+#'
 #' To determine if the list within the grouped list should re-render its contents, the component performs a referential equality check within its `shouldComponentUpdate` method.
 #' This is done to minimize the performance overhead associating with re-rendering the virtualized List pages, as recommended by the [React documentation](https://reactjs.org/docs/optimizing-performance.html#the-power-of-not-mutating-data).
-#' 
+#'
 #' As a result of this implementation, the inner list will not determine it should re-render if the array values are mutated.
 #' To avoid this problem, we recommend re-creating the items array backing the grouped list by using a method such as `Array.prototype.concat` or ES6 spread syntax shown below:
-#' 
+#'
 #' ```tsx
 #' public appendItems(): void {
 #'   const { items } = this.state;
-#' 
+#'
 #'   this.setState({
 #'     items: [...items, ...['Foo', 'Bar']]
 #'   })
 #' }
-#' 
+#'
 #' public render(): JSX.Element {
 #'   const { items } = this.state;
-#' 
+#'
 #'   return <GroupedList items={items} />;
 #' }
 #' ```
-#' 
+#'
 #' By re-creating the items array without mutating the values, the inner List will correctly determine its contents have changed and then it should re-render with the new values.
 #'
 #' @param className `string` \cr Custom className
 #' @param compact `boolean` \cr Boolean value to indicate if the component should render in compact mode. Set to false by default
-#' @param componentRef `IRefObject<{}>` \cr 
+#' @param componentRef `IRefObject<{}>` \cr
 #' @param expandButtonProps `React.HTMLAttributes<HTMLButtonElement>` \cr Props for expand/collapse button
 #' @param footerText `string` \cr Text to display for the group footer.
 #' @param group `IGroup` \cr The group to be rendered by the header.
@@ -1537,8 +1537,8 @@ NULL
 #' @param usePageCache `boolean` \cr boolean to control if pages containing unchanged items should be cached, this is a perf optimization The same property in List.Props
 #' @param viewport `IViewport` \cr Optional Viewport, provided by the parent component.
 #' @param styles `IStyleFunctionOrObject<IGroupFooterStyleProps, IGroupFooterStyles>` \cr Style function to be passed in to override the themed or default styles
-#' @param checked `boolean` \cr 
-#' @param theme `ITheme` \cr 
+#' @param checked `boolean` \cr
+#' @param theme `ITheme` \cr
 #' @param ariaPosInSet `number` \cr Defines an element's number or position in the current set of listitems or treeitems
 #' @param ariaSetSize `number` \cr Defines the number of items in the current set of listitems or treeitems
 #' @param expandButtonIcon `string` \cr Defines the name of a custom icon to be used for group headers. If not set, the default icon will be used
@@ -1575,7 +1575,7 @@ NULL
 #'
 #' @description
 #' Hover cards (`HoverCard`) show commands and information, such as metadata and activity, when someone hovers over an item.
-#' 
+#'
 #' - Tabbing with a keyboard to the element triggering the HoverCard to open on focus (see first example). In this case no further navigation within the card is available and navigating to the next element will close the card.
 #' - Tabbing with a keyboard to the element triggering the HoverCard and opening when the hotKey is pressed (see second example). When the card is opened it will automatically focus the first focusable element of the card content.
 #'
@@ -1585,7 +1585,7 @@ NULL
 #'
 #' # Best practices
 #' ### Layout
-#' 
+#'
 #' - Hover cards contain both compact and expanded states, with the compact state appearing after 500 milliseconds and the expanded state appearing as the user continues to hover after 1500 milliseconds.
 #' - The hover card positions itself automatically, depending upon where the target is on the viewport. Position the target so the card doesn’t obstruct inline commanding on the item.
 #'
@@ -1626,9 +1626,9 @@ NULL
 #'
 #' @description
 #' In a user interface, an icon is an image that represents an application, a capability, or some other concept or specific entity with meaning for the user. An icon is usually selectable but can also be a nonselectable image, such as a company's logo.
-#' 
+#'
 #' For a list of icons, visit our [icon documentation](#/styles/web/icons).
-#' 
+#'
 #' Note that icons are not bundled by default and typically must be loaded by calling `initializeIcons` from the `@uifabric/icons` package at the root of your application. See the [icon documentation](#/styles/web/icons#fabric-react) for more details.
 #'
 #' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Icon).
@@ -1644,7 +1644,7 @@ NULL
 #' @param imageErrorAs `React.ComponentType<IImageProps>` \cr If rendering an image icon, this component will be rendered in the event that loading the image fails.
 #' @param imageProps `IImageProps` \cr If rendering an image icon, these props will be passed to the Image component.
 #' @param styles `IStyleFunctionOrObject<IIconStyleProps, IIconStyles>` \cr Gets the styles for an Icon.
-#' @param theme `ITheme` \cr 
+#' @param theme `ITheme` \cr
 #' @param className `string` \cr Custom class to style the icon.
 #' @param imageProps `IImageProps` \cr Props passed to the Image component.
 #'
@@ -1680,7 +1680,7 @@ NULL
 #' Keytips
 #'
 #' @description
-#' 
+#'
 #'
 #' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Keytips).
 #' The R package can not handle each and every case, so for advanced use cases
@@ -1724,11 +1724,11 @@ NULL
 #'
 #' # Best practices
 #' ### Layout
-#' 
+#'
 #' - Labels should be close to the control they're paired with.
-#' 
+#'
 #' ### Content
-#' 
+#'
 #' - Labels should describe the purpose of the control.
 #' - Use sentence-style capitalization—only capitalize the first word. For more info, see [Capitalization](https://docs.microsoft.com/style-guide/capitalization) in the Microsoft Writing Style Guide.
 #' - Be short and concise.
@@ -1750,9 +1750,9 @@ NULL
 #'
 #' @description
 #' A Layer is a technical component that does not have specific Design guidance.
-#' 
+#'
 #' Layers are used to render content outside of a DOM tree, at the end of the document. This allows content to escape traditional boundaries caused by "overflow: hidden" css rules and keeps it on the top without using z-index rules. This is useful for example in ContextualMenu and Tooltip scenarios, where the content should always overlay everything else.
-#' 
+#'
 #' There are some special considerations. Due to the nature of rendering content elsewhere asynchronously, React refs within content will not be resolvable synchronously at the time the Layer is mounted. Therefore, to use refs correctly, use functional refs `ref={ (el) => { this._root = el; }` rather than string refs `ref='root'`. Additionally measuring the physical Layer element will not include any of the children, since it won't render it. Events that propgate from within the content will not go through the Layer element as well.
 #'
 #' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Layer).
@@ -1786,11 +1786,11 @@ NULL
 #'
 #' # Best practices
 #' ### Layout
-#' 
+#'
 #' - Links visually indicate that they can be clicked, typically by being displayed using the visited or unvisited link system colors. Traditionally, links are underlined as well, but that approach is often reserved for body copy links within an article.
-#' 
+#'
 #' ### Content
-#' 
+#'
 #' - People should be able to accurately predict the result of selecting a link based on its link text and optional tooltip.
 #' - Use descriptive, actionable link text when possible. Avoid using URLs as link text.
 #' - Don't use if the action is destructive or irreversible. Links aren't appropriate for commands with significant consequences.
@@ -1819,53 +1819,53 @@ NULL
 #'
 #' # Best practices
 #' ### Layout
-#' 
+#'
 #' - List items are composed of selection, icon, and name columns at minimum. You can include other columns, such as date modified, or any other metadata field associated with the collection.
 #' - Avoid using file type icon overlays to denote status of a file as it can make the entire icon unclear.
 #' - If there are multiple lines of text in a column, consider the variable row height variant.
 #' - Give columns ample default width to display information.
-#' 
+#'
 #' ### Content
-#' 
+#'
 #' - Use sentence-style capitalization—only capitalize the first word. For more info, see [Capitalization](https://docs.microsoft.com/style-guide/capitalization) in the Microsoft Writing Style Guide.
-#' 
+#'
 #' ### FAQ
-#' 
+#'
 #' #### My scrollable content isn't updating on scroll, what should I do?
-#' 
+#'
 #' Add the data-is-scrollable="true" attribute to your scrollable element containing the List.
-#' 
+#'
 #' By default, the List will use the <body> element as the scrollable element. If you contain List within a scrollable <div> using overflow: auto or scroll, List needs to listen for scroll events on that element instead. On initialization, List will traverse up the DOM looking for the first element with the data-is-scrollable attribute to know which element to listen to for knowing when to re-evaulate the visible window.
-#' 
+#'
 #' #### My list isn't re-rendering when I mutate its items, what should I do?
-#' 
+#'
 #' To determine if List should re-render its contents, the component performs a referential equality check on the items array in its shouldComponentUpdate method. This is done to minimize the performance overhead associating with re-rendering the virtualized list pages, as recommended by the React documentation.
 #' As a result of this implementation, List will not determine it should re-render if values within the array are mutated. To avoid this problem, we recommend re-creating the items array using a method such as Array.prototype.concat or ES6 spread syntax shown below:
-#' 
+#'
 #' ```
 #' public appendItems(): void {
 #'   const { items } = this.state;
-#' 
+#'
 #'   this.setState({
 #'     items: [...items, ...[{ name: 'Foo' }, { name: 'Bar' }]]
 #'   })
 #' }
-#' 
+#'
 #' public render(): JSX.Element {
 #'   const { items } = this.state;
-#' 
+#'
 #'   return <List items={items} />;
 #' }
 #' ```
-#' 
+#'
 #' Since the items array has been re-created, the list will conclude that its contents have changed and it should re-render the new values.
-#' 
+#'
 #' #### How do I limit rendering to improve performance?
-#' 
+#'
 #' Performance is important, and DOM content is expensive. Therefore, limit what you render. The list component applies this principle by using UI virtualization. Unlike a simple for loop that renders all items in a set, a list only renders a subset of items, and as you scroll around, the subset of rendered content is shifted. This gives a much better experience for large sets, especially when the per-item components are complex/render-intensive/network-intensive.
-#' 
+#'
 #' A list breaks down the set of items passed in into pages. Only pages within a "materialized window" are actually rendered. As that window changes due to scroll events, pages that fall outside that window are removed, and their layout space is remembered and pushed into spacer elements. This gives the user the experience of browsing massive amounts of content but only using a small number of actual elements. This gives the browser much less layout to resolve, and gives React DOM diffing much less content to worry about.
-#' 
+#'
 #' Note: If onRenderCell is not provided in IListProps, the list will attempt to render the name property for each object in the items array.
 #'
 #' @param divProps `React.HTMLAttributes<HTMLDivElement>` \cr Props to apply to the list root element.
@@ -1912,11 +1912,11 @@ NULL
 #' @description
 #' The MarqueeSelection component provides a service which allows the user to drag a rectangle to be drawn around
 #' items to select them. This works in conjunction with a selection object, which can be used to generically store selection state, separate from a component that consumes the state.
-#' 
+#'
 #' MarqueeSelection also works in conjunction with the AutoScroll utility to automatically scroll the container when we drag a rectangle within the vicinity of the edges.
-#' 
+#'
 #' When a selection rectangle is dragged, we look for elements with the **data-selection-index** attribute populated. We get these elements' boundingClientRects and compare them with the root's rect to determine selection state. We update the selection state appropriately.
-#' 
+#'
 #' In virtualization cases where items that were once selected are dematerialized, we will keep the item in its
 #' previous state until we know definitively if it's on/off. (In other words, this works with List.)
 #'
@@ -1950,33 +1950,33 @@ NULL
 #'
 #' # Best practices
 #' ### Layout
-#' 
+#'
 #' - A message bar is most commonly found near the top of an app, underneath the app's main command bar. For example, the Microsoft Office message bar is positioned beneath the Ribbon, but above the document canvas.
 #' - Multiple message bars can appear at a time, but a given scenario or related set of scenarios should aim to only show one message bar at a time. Message bars are rarely shown in direct response to an action; rather, they should be shown when there’s something a person should know about the overall app or document.
 #' - Use the icons options to indicate the message type: the Info icon for information messages; ShieldAlert icon for security-related messages; the Warning icon for non-blocking errors; ErrorBadge icon for critical errors; the Blocked icon for blocking messages; and the Completed icon for success messages.
-#' 
+#'
 #' ### Content
-#' 
+#'
 #' Message bars should include:
-#' 
+#'
 #' #### Title
-#' 
+#'
 #' Limit titles to 50 characters (including spaces) to leave room for text expansion when translated. People should be able to scan the title to determine the purpose of the message. Capitalize only the first word of the title and any proper nouns.
-#' 
+#'
 #' #### Body text
-#' 
+#'
 #' Describe the information or error state concisely, ideally in a single sentence. Limit the message to fewer than 512 characters (including spaces) to leave room for text expansion when translated. Include end punctuation for complete sentences.
-#' 
+#'
 #' #### Action buttons (Optional)
-#' 
+#'
 #' Offer one to two action buttons to help people solve any errors they're receiving. Limit button text to fewer than 50 charactesr (including spaces) to leave room for translation. Action buttons can have any callback attached to them and should provide people with options to address the notification and dismiss the message bar.
-#' 
+#'
 #' #### Link (Optional)
-#' 
+#'
 #' Don’t use buttons when a subtler link will suffice. Reserve the use of a button for when the MessageBar has a single ”hero” action that is useful at that particular moment. Avoid using more than one button.
-#' 
+#'
 #' #### Close button
-#' 
+#'
 #' Always offer a quick way for people to close a message bar, unless there is an issue that must be resolved immediately, such as an expired subscription.
 #'
 #' @param actions `JSX.Element` \cr The actions you want to show on the other side.
@@ -2009,16 +2009,16 @@ NULL
 #'
 #' # Best practices
 #' ### Layout
-#' 
+#'
 #' - Use a variable width with a minimum width of 288 pixels.
 #' - Use a variable height with a minimum height of 172 pixels.
 #' - Center vertically and horizontally in the available space.
 #' - Always have at least one focusable element inside a modal.
 #' - Blocking modals (`Modeless Modal`) should be used very sparingly, only when it's critical for people to make a choice or provide information before they can proceed.
 #' - Provide a clear way for people to dismiss the control, such as a Close button, which should always go in the upper right corner.
-#' 
+#'
 #' ### Content
-#' 
+#'
 #' - Use sentence-style capitalization—only capitalize the first word. For more info, see [Capitalization](https://docs.microsoft.com/style-guide/capitalization) in the Microsoft Writing Style Guide.
 #'
 #' @param allowTouchBodyScroll `boolean` \cr Allow body scroll on content and overlay on touch devices. Changing after mounting has no effect.
@@ -2083,9 +2083,9 @@ NULL
 #'
 #' @description
 #' The OverflowSet is a flexible container component that is useful for displaying a primary set of content with additional content in an overflow callout. Note that the example below is only an example of how to render the component, not a specific use case.
-#' 
+#'
 #' ### Accessibility
-#' 
+#'
 #' By default, the OverflowSet is simply `role=group`. If you used as a menu, you will need to add `role="menubar"` and add proper aria roles to each rendered item (`menuitem`, `menuitemcheckbox`, `menuitemradio`)
 #'
 #' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/OverflowSet).
@@ -2128,7 +2128,7 @@ NULL
 #' @param className `string` \cr Additional css class to apply to the Overlay
 #' @param componentRef `IRefObject<IOverlay>` \cr Gets the component ref.
 #' @param isDarkThemed `boolean` \cr Whether to use the dark-themed overlay.
-#' @param onClick `() => void` \cr 
+#' @param onClick `() => void` \cr
 #' @param styles `IStyleFunctionOrObject<IOverlayStyleProps, IOverlayStyles>` \cr Call to provide customized styling that will layer on top of the variant rules
 #' @param theme `ITheme` \cr Theme provided by HOC.
 #'
@@ -2147,40 +2147,40 @@ NULL
 #'
 #' # Best practices
 #' ### Layout
-#' 
+#'
 #' - Use for self-contained experiences where someone doesn’t need to interact with the app view to complete the task.
 #' - Consider how the panel and its contained contents will scale across responsive web breakpoints.
-#' 
+#'
 #' #### Header
-#' 
+#'
 #' - Include a close button in the top-right corner.
 #' - Lock the title to the top of the panel.
 #' - The header can contain a variety of components. Components are stacked under the main title, locked to the top, and push content down.
-#' 
+#'
 #' #### Body
-#' 
+#'
 #' - The body is a flexible container that can house a wide variety of components, content, and formatting.
 #' - Content can scroll.
-#' 
+#'
 #' #### Footer
-#' 
+#'
 #' - Standard footers include primary and secondary buttons to confirm or cancel the changes or task.
 #' - Read-only panels may contain a single Close button.
 #' - Lock the footer to the bottom of the panel.
-#' 
+#'
 #' ### Content
-#' 
+#'
 #' #### Title
-#' 
+#'
 #' - Titles should explain the panel content in clear, concise, and specific terms.
 #' - Keep the length of the title to one line, if possible.
 #' - Use sentence-style capitalization—only capitalize the first word. For more info, see [Capitalization] in the Microsoft Writing Style Guide.
 #' - Don’t put a period at the end of the title.
-#' 
+#'
 #' [capitalization]: https://docs.microsoft.com/style-guide/capitalization
-#' 
+#'
 #' #### Button labels
-#' 
+#'
 #' - Be concise. Limit labels to one or two words. Usually a single verb is best. Include a noun if there’s any room for interpretation about what the verb means. For example, “Save” or “Save settings.”
 #'
 #' @param allowTouchBodyScroll `boolean` \cr Allow body scroll on content and overlay on touch devices. Changing after mounting has no effect.
@@ -2236,12 +2236,12 @@ NULL
 #'
 #' # Best practices
 #' ### Layout
-#' 
+#'
 #' - Use the people picker to add someone to the To line of an email, or to add someone to a list.
 #' - Use the `MemberList PeoplePicker` to display selections below the input field.
 #'
 #' @param styles `IStyleFunctionOrObject<IPeoplePickerItemSelectedStyleProps, IPeoplePickerItemSelectedStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
-#' @param ValidationState `ValidationState` \cr 
+#' @param ValidationState `ValidationState` \cr
 #' @param className `string` \cr Additional CSS class(es) to apply to the PeoplePickerItem root element.
 #' @param theme `ITheme` \cr Theme provided by High-Order Component.
 #' @param compact `boolean` \cr Flag that controls whether each suggested PeoplePicker item (Persona) is rendered with or without secondary text for compact look.
@@ -2257,9 +2257,9 @@ NULL
 #'
 #' @description
 #' A persona is a visual representation of a person across products, typically showcasing the image that person has chosen to upload themselves. The control can also be used to show that person's online status.
-#' 
+#'
 #' The complete control inclues an individual's avatar (an uploaded image or a composition of the person’s initials on a background color), their name or identification, and online status.
-#' 
+#'
 #' The persona control is used in the `PeoplePicker` and `Facepile` controls.
 #'
 #' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Persona).
@@ -2268,14 +2268,14 @@ NULL
 #'
 #' # Best practices
 #' ### Layout
-#' 
+#'
 #' - Use the 24-pixel persona in text fields in read-only mode or in experiences like multicolumn lists which need compact persona representations.
 #' - Use the 32-pixel persona in text fields in edit mode.
 #' - Use the 32-pixel, 40-pixel, and 48-pixel persona in menus and list views.
 #' - Use the 72-pixel and 100-pixel persona in profile cards and views.
-#' 
+#'
 #' ### Content
-#' 
+#'
 #' - Change the values of the color swatches in high contrast mode.
 #'
 #' @param className `string` \cr Additional css class to apply to the PersonaCoin
@@ -2312,7 +2312,7 @@ NULL
 #' @param primaryText `string` \cr Primary text to display, usually the name of the person.
 #' @param secondaryText `string` \cr Secondary text to display, usually the role of the user.
 #' @param showInitialsUntilImageLoads `boolean` \cr If true renders the initials while the image is loading. This only applies when an imageUrl is provided.
-#' @param showSecondaryText `boolean` \cr 
+#' @param showSecondaryText `boolean` \cr
 #' @param showUnknownPersonaCoin `boolean` \cr If true, show the special coin for unknown persona. It has '?' in place of initials, with static font and background colors
 #' @param size `PersonaSize` \cr Decides the size of the control.
 #' @param tertiaryText `string` \cr Tertiary text to display, usually the status of the user. The tertiary text will only be shown when using size72 or size100.
@@ -2326,7 +2326,7 @@ NULL
 #' Pickers
 #'
 #' @description
-#' 
+#'
 #'
 #' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Pickers).
 #' The R package can not handle each and every case, so for advanced use cases
@@ -2403,7 +2403,7 @@ NULL
 #' @param onRenderSuggestion `(props: T, suggestionItemProps: ISuggestionItemProps<T>) => JSX.Element` \cr How the suggestion should look in the suggestion list.
 #' @param onSuggestionClick `(ev?: React.MouseEvent<HTMLElement>, item?: any, index?: number) => void` \cr What should occur when a suggestion is clicked
 #' @param onSuggestionRemove `(ev?: React.MouseEvent<HTMLElement>, item?: T | IPersonaProps, index?: number) => void` \cr Function to fire when one of the optional remove buttons on a suggestion is clicked.
-#' 
+#'
 #' TODO (adjective-object) remove IPersonaprops before the next major version bump
 #' @param refocusSuggestions `(keyCode: KeyCodes) => void` \cr A function that resets focus to the expected item in the suggestion list
 #' @param removeSuggestionAriaLabel `string` \cr An ARIA label to use for the buttons to remove individual suggestions.
@@ -2433,9 +2433,9 @@ NULL
 #'
 #' @description
 #' The Pivot control and related tabs pattern are used for navigating frequently accessed, distinct content categories. Pivots allow for navigation between two or more content views and relies on text headers to articulate the different sections of content.
-#' 
+#'
 #' - Tapping on a pivot item header navigates to that header's section content.
-#' 
+#'
 #' Tabs are a visual variant of Pivot that use a combination of icons and text or just icons to articulate section content.
 #'
 #' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Pivot).
@@ -2445,17 +2445,17 @@ NULL
 #'
 #' @param alwaysRender `boolean` \cr Defines whether to always render the pivot item (regardless of whether it is selected or not). Useful if you're rendering content that is expensive to mount.
 #' @param ariaLabel `string` \cr The aria label of each pivot link which will read by screen reader instead of linkText.
-#' 
+#'
 #' Note that unless you have compelling requirements you should not override aria-label.
 #' @param componentRef `IRefObject<{}>` \cr Gets the component ref.
 #' @param headerButtonProps `IButtonProps | { [key: string]: string | number | boolean; }` \cr Props for the header command button. This provides a way to pass in native props, such as data-* and aria-*, for each pivot header/link element.
 #' @param headerText `string` \cr The text displayed of each pivot link.
 #' @param itemCount `number | string` \cr Defines an optional item count displayed in parentheses just after the `linkText`.
-#' 
+#'
 #' Examples: completed (4), Unread (99+)
 #' @param itemIcon `string` \cr An optional icon to show next to the pivot link.
 #' @param itemKey `string` \cr An required key to uniquely identify a pivot item.
-#' 
+#'
 #' Note: The 'key' from react props cannot be used inside component.
 #' @param keytipProps `IKeytipProps` \cr Optional keytip for this PivotItem.
 #' @param linkText `string` \cr The text displayed of each pivot link - renaming to `headerText`.
@@ -2463,10 +2463,10 @@ NULL
 #' @param className `string` \cr Additional css class to apply to the Pivot
 #' @param componentRef `IRefObject<IPivot>` \cr Optional callback to access the IPivot interface. Use this instead of ref for accessing the public methods and properties of the component.
 #' @param defaultSelectedIndex `number` \cr Default selected index for the pivot. Only provide this if the pivot is an uncontrolled component; otherwise, use the `selectedKey` property.
-#' 
+#'
 #' This property is also mutually exclusive with `defaultSelectedKey`.
 #' @param defaultSelectedKey `string` \cr Default selected key for the pivot. Only provide this if the pivot is an uncontrolled component; otherwise, use the `selectedKey` property.
-#' 
+#'
 #' This property is also mutually exclusive with `defaultSelectedIndex`.
 #' @param getTabId `(itemKey: string, index: number) => string` \cr Callback to customize how IDs are generated for each tab header. Useful if you're rendering content outside and need to connect aria-labelledby.
 #' @param headersOnly `boolean` \cr Whether to skip rendering the tabpanel with the content of the selected tab. Use this prop if you plan to separately render the tab content and don't want to leave an empty tabpanel in the page that may confuse Screen Readers.
@@ -2486,7 +2486,7 @@ NULL
 #' Popup
 #'
 #' @description
-#' 
+#'
 #'
 #' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Popup).
 #' The R package can not handle each and every case, so for advanced use cases
@@ -2510,15 +2510,15 @@ NULL
 #'
 #' @description
 #' ProgressIndicators are used to show the completion status of an operation lasting more than 2 seconds. If the state of progress cannot be determined, use a Spinner instead. ProgressIndicators can appear in a new panel, a flyout, under the UI initiating the operation, or even replacing the initiating UI, as long as the UI can return if the operation is canceled or is stopped.
-#' 
+#'
 #' ProgressIndicators feature a bar showing total units to completion, and total units finished. The description of the operation appears above the bar, and the status in text appears below. The description should tell someone exactly what the operation is doing. Examples of formatting include:
-#' 
-#' - **[Object]** is being **[operation name]**, or
-#' - **[Object]** is being **[operation name]** to **[destination name]** or
-#' - **[Object]** is being **[operation name]** from **[source name]** to **[destination name]**
-#' 
+#'
+#' - `**[Object]** is being **[operation name]**`, or
+#' - `**[Object]** is being **[operation name]** to **[destination name]**` or
+#' - `**[Object]** is being **[operation name]** from **[source name]** to **[destination name]**`
+#'
 #' Status text is generally in units elapsed and total units. If the operation can be canceled, an “X” icon is used and should be placed in the upper right, aligned with the baseline of the operation name. When an error occurs, replace the status text with the error description using ms-fontColor-redDark.
-#' 
+#'
 #' Real-world examples include copying files to a storage location, saving edits to a file, and more. Use units that are informative and relevant to give the best idea to users of how long the operation will take to complete. Avoid time units as they are rarely accurate enough to be trustworthy. Also, combine steps of a complex operation into one total bar to avoid “rewinding” the bar. Instead change the operation description to reflect the change if necessary. Bars moving backwards reduce confidence in the service.
 #'
 #' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/ProgressIndicator).
@@ -2553,12 +2553,12 @@ NULL
 #'
 #' # Best practices
 #' ### Layout
-#' 
+#'
 #' - Make it clear which item the rating pertains to by making sure the layout and grouping are clear when several items are on the page.
 #' - Don't use the rating component for data that has a continuous range, such as the brightness of a photo. Instead, use a slider.
-#' 
+#'
 #' ### Content
-#' 
+#'
 #' - Use a five-star rating system.
 #' - Use sentence-style capitalization—only capitalize the first word. For more info, see [Capitalization](https://docs.microsoft.com/style-guide/capitalization) in the Microsoft Writing Style Guide.
 #'
@@ -2566,12 +2566,12 @@ NULL
 #' @param ariaLabelFormat `string` \cr Optional label format for a rating star that will be read by screen readers. Can be used like "\{0\} of \{1\} stars selected", where \{0\} will be substituted by the current rating and \{1\} will be substituted by the max rating.
 #' @param ariaLabelId `string` \cr Deprecated: Optional id of label describing this instance of Rating.
 #' @param componentRef `IRefObject<IRating>` \cr Optional callback to access the IRating interface. Use this instead of ref for accessing the public methods and properties of the component.
-#' @param getAriaLabel `(rating: number, max: number) => string` \cr 
+#' @param getAriaLabel `(rating: number, max: number) => string` \cr
 #' @param icon `string` \cr Custom icon
 #' @param max `number` \cr Maximum rating, defaults to 5, has to be \>= min
 #' @param min `number` \cr Minimum rating, defaults to 1, has to be \>= 0
 #' @param onChange `(event: React.FocusEvent<HTMLElement>, rating?: number) => void` \cr Callback issued when the rating changes.
-#' @param onChanged `(rating: number) => void` \cr 
+#' @param onChanged `(rating: number) => void` \cr
 #' @param rating `number` \cr Selected rating, has to be an integer between min and max
 #' @param readOnly `boolean` \cr Optional flag to mark rating control as readOnly
 #' @param size `RatingSize` \cr Size of rating, defaults to small
@@ -2587,11 +2587,11 @@ NULL
 #'
 #' @description
 #' ResizeGroup is a React component that can be used to help fit the right amount of content within a container. The consumer of the ResizeGroup provides some initial data, a reduce function, and a render function. The render function is responsible for populating the contents of a the container when given some data. The initial data should represent the data that should be rendered when the ResizeGroup has infinite width. If the contents returned by the render function do not fit within the ResizeGroup, the reduce function is called to get a version of the data whose rendered width should be smaller than the data that was just rendered.
-#' 
+#'
 #' An example scenario is shown below, where controls that do not fit on screen are rendered in an overflow menu. The data in this situation is a list of 'primary' controls that are rendered on the top level and a set of overflow controls rendered in the overflow menu. The initial data in this case has all the controls in the primary set. The implementation of onReduceData moves a control from the overflow well into the primary control set.
-#' 
+#'
 #' This component queries the DOM for the dimensions of elements. Too many of these dimension queries will negatively affect the performance of the component and could cause poor interactive performance on websites. One way to reduce the number of measurements performed by the component is to provide a cacheKey in the initial data and in the return value of onReduceData. Two data objects with the same cacheKey are assumed to have the same width, resulting in measurements being skipped for that data object. In the controls with an overflow example, the cacheKey is simply the concatenation of the keys of the controls that appear in the top level.
-#' 
+#'
 #' There is a boolean context property (isMeasured) added to let child components know if they are only being used for measurement purposes. When isMeasured is true, it will signify that the component is not the instance visible to the user. This will not be needed for most scenarios. It is intended to be used to to skip unwanted side effects of mounting a child component more than once. This includes cases where the component makes API requests, requests focus to one of its elements, expensive computations, and/or renders markup unrelated to its size. Be careful not to use this property to change the components rendered output in a way that effects it size in any way.
 #'
 #' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/ResizeGroup).
@@ -2625,7 +2625,7 @@ NULL
 #'
 #' # Best practices
 #' ### Layout
-#' 
+#'
 #' - Use the sticky component on block-level elements.
 #' - Sticky components should ideally be section headers and/or footers.
 #' - Use `position: absolute`. Ensure that the parent element has an explicit `height` and `position: relative`, or has space already allocated for the scrollable pane.
@@ -2634,7 +2634,7 @@ NULL
 #' @param className `string` \cr Additional css class to apply to the ScrollablePane
 #' @param componentRef `IRefObject<IScrollablePane>` \cr Optional callback to access the IScrollablePane interface. Use this instead of ref for accessing the public methods and properties of the component.
 #' @param initialScrollPosition `number` \cr Sets the initial scroll position of the ScrollablePane
-#' @param scrollbarVisibility `ScrollbarVisibility` \cr 
+#' @param scrollbarVisibility `ScrollbarVisibility` \cr
 #' @param styles `IStyleFunctionOrObject<IScrollablePaneStyleProps, IScrollablePaneStyles>` \cr Call to provide customized styling that will layer on top of the variant rules
 #' @param theme `ITheme` \cr Theme provided by HOC.
 #'
@@ -2653,12 +2653,12 @@ NULL
 #'
 #' # Best practices
 #' ### Layout
-#' 
+#'
 #' - Don't build a custom search control based on the default text box or any other control.
 #' - Use a search box without a parent container when it's not restricted to a certain width to accommodate other content. This search box will span the entire width of the space it's in.
-#' 
+#'
 #' ### Content
-#' 
+#'
 #' - Use placeholder text in the search box to describe what people can search for. For example, "Search", "Search files", or "Search contacts list".
 #' - Although search entry points tend to be similarly visualized, they can provide access to results that range from broad to narrow. By effectively communicating the scope of a search, you can ensure that people's expectations are met by the capabilities of the search you're performing, which will reduce the possibility of frustration. The search entry point should be placed near the content being searched.<br/><br/>Some common search scopes include:
 #'   - **Global**: Search across multiple sources of cloud and local content. Varied results include URLs, documents, media, actions, apps, and more.
@@ -2691,29 +2691,29 @@ NULL
 #' SelectedPeopleList
 #'
 #' @description
-#' 
+#'
 #'
 #' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/SelectedPeopleList).
 #' The R package can not handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #'
-#' @param blockRecipientRemoval `boolean` \cr 
-#' @param canExpand `boolean` \cr 
-#' @param isEditing `boolean` \cr 
-#' @param isValid `boolean` \cr 
-#' @param key `React.Key` \cr 
-#' @param shouldBlockSelection `boolean` \cr 
-#' @param onExpandItem `() => void` \cr 
-#' @param renderPersonaCoin `IRenderFunction<IPersonaProps>` \cr 
-#' @param renderPrimaryText `IRenderFunction<IPersonaProps>` \cr 
-#' @param copyMenuItemText `string` \cr 
-#' @param editMenuItemText `string` \cr 
-#' @param floatingPickerProps `IBaseFloatingPickerProps<IPersonaProps>` \cr 
-#' @param getEditingItemText `(item: IExtendedPersonaProps) => string` \cr 
-#' @param onExpandGroup `(item: IExtendedPersonaProps) => void` \cr 
-#' @param onRenderFloatingPicker `React.ComponentType<IBaseFloatingPickerProps<IPersonaProps>>` \cr 
-#' @param removeMenuItemText `string` \cr 
+#' @param blockRecipientRemoval `boolean` \cr
+#' @param canExpand `boolean` \cr
+#' @param isEditing `boolean` \cr
+#' @param isValid `boolean` \cr
+#' @param key `React.Key` \cr
+#' @param shouldBlockSelection `boolean` \cr
+#' @param onExpandItem `() => void` \cr
+#' @param renderPersonaCoin `IRenderFunction<IPersonaProps>` \cr
+#' @param renderPrimaryText `IRenderFunction<IPersonaProps>` \cr
+#' @param copyMenuItemText `string` \cr
+#' @param editMenuItemText `string` \cr
+#' @param floatingPickerProps `IBaseFloatingPickerProps<IPersonaProps>` \cr
+#' @param getEditingItemText `(item: IExtendedPersonaProps) => string` \cr
+#' @param onExpandGroup `(item: IExtendedPersonaProps) => void` \cr
+#' @param onRenderFloatingPicker `React.ComponentType<IBaseFloatingPickerProps<IPersonaProps>>` \cr
+#' @param removeMenuItemText `string` \cr
 #'
 #' @md
 #' @name SelectedPeopleList
@@ -2723,7 +2723,7 @@ NULL
 #'
 #' @description
 #' A separator visually separates content into groups.
-#' 
+#'
 #' You can render content in the separator by specifying the component's children.
 #' The component's children can be plain text or a component like Icon.
 #' The content is center-aligned by default.
@@ -2746,7 +2746,7 @@ NULL
 #'
 #' @description
 #' Shimmer is a temporary animation placeholder for when a service call takes time to return data and we don't want to block rendering the rest of the UI.
-#' 
+#'
 #' If a smooth transition from Shimmer to content is desired, wrap the content node with a Shimmer element and use the `isDataLoaded` prop to trigger the transition. In cases where the content node is not wrapped in a Shimmer, use the `shimmerElements` or `customElementsGroup` props, and once data arrives, manually replace the Shimmer UI with the intended content. See the examples below for reference.
 #'
 #' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Shimmer).
@@ -2805,14 +2805,14 @@ NULL
 #'
 #' # Best practices
 #' ### Layout
-#' 
+#'
 #' - Don't use a slider for binary settings.
 #' - Don't use a continuous slider if the range of values is large.
 #' - Don't use for a range with fewer than three values.
 #' - Sliders are typically horizontal but can be vertical, when needed.
-#' 
+#'
 #' ### Content
-#' 
+#'
 #' - Include a label indicating what value the slider changes.
 #' - Use step points if you don't want the slider to allow arbitrary values between minimum and maximum.
 #'
@@ -2853,16 +2853,16 @@ NULL
 #'
 #' # Best practices
 #' ### Layout
-#' 
+#'
 #' - Use a spin button when you need to incrementally change a value.
 #' - Use a spin button when values are tied to a unit of measure.
 #' - Don't use a spin button for binary settings.
 #' - Don't use a spin button for a range of three values or less.
 #' - Place labels to the left of the spin button control. For example, "Length of ruler (cm)".
 #' - Spin button width should adjust to fit the number values.
-#' 
+#'
 #' ### Content
-#' 
+#'
 #' - Include a label indicating what value the spin button changes.
 #'
 #' @param ariaDescribedBy `string` \cr ID of a label which describes the control, if not using the default label.
@@ -2870,17 +2870,17 @@ NULL
 #' @param ariaPositionInSet `number` \cr The position in the parent set (if in a set).
 #' @param ariaSetSize `number` \cr The total size of the parent set (if in a set).
 #' @param ariaValueNow `number` \cr Sets the control's aria-valuenow. This is the numeric form of `value`. Providing this only makes sense when using as a controlled component.
-#' @param ariaValueText `string` \cr 
+#' @param ariaValueText `string` \cr
 #' @param className `string` \cr Custom className for the control.
 #' @param componentRef `IRefObject<ISpinButton>` \cr Gets the component ref.
 #' @param decrementButtonAriaLabel `string` \cr Accessible label text for the decrement button (for screen reader users).
 #' @param decrementButtonIcon `IIconProps` \cr Custom props for the decrement button.
 #' @param defaultValue `string` \cr Initial value of the control. Updates to this prop will not be respected.
-#' 
+#'
 #' Use this if you intend for the SpinButton to be an uncontrolled component which maintains its own value. Mutually exclusive with `value`.
 #' @param disabled `boolean` \cr Whether or not the control is disabled.
 #' @param downArrowButtonStyles `Partial<IButtonStyles>` \cr Custom styles for the down arrow button.
-#' 
+#'
 #' Note: The buttons are in a checked state when arrow keys are used to incremenent/decrement the SpinButton. Use `rootChecked` instead of `rootPressed` for styling when that is the case.
 #' @param getClassNames `(theme: ITheme, disabled: boolean, isFocused: boolean, keyboardSpinDirection: KeyboardSpinDirection, labelPosition?: Position, className?: string) => ISpinButtonClassNames` \cr Custom function for providing the classNames for the control. Can be used to provide all styles for the component instead of applying them on top of the default styles.
 #' @param iconButtonProps `IButtonProps` \cr Additional props for the up and down arrow buttons.
@@ -2899,17 +2899,17 @@ NULL
 #' @param onIncrement `(value: string, event?: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>) => string | void` \cr Callback for when the increment button or up arrow key is pressed.
 #' @param onValidate `(value: string, event?: React.SyntheticEvent<HTMLElement>) => string | void` \cr Callback for when the entered value should be validated.
 #' @param precision `number` \cr How many decimal places the value should be rounded to.
-#' 
+#'
 #' The default is calculated based on the precision of `step`: i.e. if step = 1, precision = 0. step = 0.0089, precision = 4. step = 300, precision = 2. step = 23.00, precision = 2.
 #' @param step `number` \cr Difference between two adjacent values of the control. This value is used to calculate the precision of the input if no `precision` is given. The precision calculated this way will always be \>= 0.
 #' @param styles `Partial<ISpinButtonStyles>` \cr Custom styling for individual elements within the control.
 #' @param theme `ITheme` \cr Theme provided by HOC.
 #' @param title `string` \cr A more descriptive title for the control, visible on its tooltip.
 #' @param upArrowButtonStyles `Partial<IButtonStyles>` \cr Custom styles for the up arrow button.
-#' 
+#'
 #' Note: The buttons are in a checked state when arrow keys are used to incremenent/decrement the SpinButton. Use `rootChecked` instead of `rootPressed` for styling when that is the case.
 #' @param value `string` \cr Current value of the control.
-#' 
+#'
 #' Use this if you intend to pass in a new value as a result of change events. Mutually exclusive with `defaultValue`.
 #'
 #' @md
@@ -2945,29 +2945,29 @@ NULL
 #'
 #' @description
 #' A `Stack` is a container-type component that abstracts the implementation of a flexbox in order to define the layout of its children components.
-#' 
+#'
 #' ### Stack Properties
-#' 
+#'
 #' Although the `Stack` component has a number of different properties, there are three in particular that define the overall layout that the component has:
-#' 
+#'
 #' 1. Direction: Refers to whether the stacking of children components is horizontal or vertical. By default the `Stack` component is vertical, but can be turned horizontal by adding the `horizontal` property when using the component.
 #' 2. Alignment: Refers to how the children components are aligned inside the container. This is controlled via the `verticalAlign` and `horizontalAlign` properties. One thing to notice here is that while flexbox containers align always across the cross axis, `Stack` aims to remove the mental strain involved in this process by making the `verticalAlign` and `horizontalAlign` properties always follow the vertical and horizontal axes, respectively, regardless of the direction of the `Stack`.
 #' 3. Spacing: Refers to the space that exists between children components inside the `Stack`. This is controlled via the `gap` and `verticalGap` properties.
-#' 
+#'
 #' ## Stack Items
-#' 
+#'
 #' The `Stack` component provides an abstraction of a flexbox container but there are some flexbox related properties that are applied on specific children of the flexbox instead of being applied on the container. This is where `Stack Items` comes into play.
-#' 
+#'
 #' A `Stack Item` abstracts those properties that are or can be specifically applied on flexbox's children, like `grow` and `shrink`.
-#' 
+#'
 #' To use a `Stack Item` in an application, the `Stack` component should be imported and `Stack.Item` should be used inside of a `Stack`. This is done so that the existence of the `Stack Item` is inherently linked to the `Stack` component.
-#' 
+#'
 #' ### Stack Wrapping
-#' 
+#'
 #' Aside from the previously mentioned properties, there is another property called `wrap` that determines if items overflow the `Stack` container or wrap around it. The wrap property only works in the direction of the `Stack`, which means that the children components can still overflow in the perpendicular direction (i.e. in a `Vertical Stack`, items might overflow horizontally and vice versa).
-#' 
+#'
 #' ### Stack Nesting
-#' 
+#'
 #' `Stacks` can be nested inside one another in order to be able to configure the layout of the application as desired.
 #'
 #' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Stack).
@@ -3011,7 +3011,7 @@ NULL
 #'
 #' # Best practices
 #' ### Layout
-#' 
+#'
 #' - Use a swatch color picker when there are multiple color options that can be grouped or collapsed under one title.
 #' - Don’t use a swatch color picker when there’s a large number of color options. The best component for that is a color picker.
 #'
@@ -3030,13 +3030,13 @@ NULL
 #' @param item `IColorCellProps` \cr Item to render
 #' @param label `string` \cr Tooltip and aria label for this item
 #' @param onClick `(item: IColorCellProps) => void` \cr Handler for when a color cell is clicked.
-#' @param onFocus `(item: IColorCellProps) => void` \cr 
-#' @param onHover `(item?: IColorCellProps) => void` \cr 
-#' @param onKeyDown `(ev: React.KeyboardEvent<HTMLButtonElement>) => void` \cr 
+#' @param onFocus `(item: IColorCellProps) => void` \cr
+#' @param onHover `(item?: IColorCellProps) => void` \cr
+#' @param onKeyDown `(ev: React.KeyboardEvent<HTMLButtonElement>) => void` \cr
 #' @param onMouseEnter `(ev: React.MouseEvent<HTMLButtonElement>) => boolean` \cr Mouse enter handler. Returns true if the event should be processed, false otherwise.
-#' @param onMouseLeave `(ev: React.MouseEvent<HTMLButtonElement>) => void` \cr 
+#' @param onMouseLeave `(ev: React.MouseEvent<HTMLButtonElement>) => void` \cr
 #' @param onMouseMove `(ev: React.MouseEvent<HTMLButtonElement>) => boolean` \cr Mouse move handler. Returns true if the event should be processed, false otherwise.
-#' @param onWheel `(ev: React.MouseEvent<HTMLButtonElement>) => void` \cr 
+#' @param onWheel `(ev: React.MouseEvent<HTMLButtonElement>) => void` \cr
 #' @param selected `boolean` \cr Whether this cell is currently selected
 #' @param styles `IStyleFunctionOrObject<IColorPickerGridCellStyleProps, IColorPickerGridCellStyles>` \cr Custom styles for the component.
 #' @param theme `ITheme` \cr The theme object to use for styling.
@@ -3050,7 +3050,7 @@ NULL
 #' @param cellWidth `number` \cr Width of an individual cell, in pixels
 #' @param className `string` \cr Additional class name to provide on the root element
 #' @param colorCells `IColorCellProps[]` \cr The color cells that will be made available to the user.
-#' 
+#'
 #' Note: When the reference to this prop changes, regardless of how many color cells change, all of the color cells will be re-rendered (potentially bad perf) because we memoize based on this prop's reference.
 #' @param columnCount `number` \cr Number of columns for the swatch color picker
 #' @param disabled `boolean` \cr Whether the control is disabled.
@@ -3059,15 +3059,15 @@ NULL
 #' @param getColorGridCellStyles `IStyleFunctionOrObject<IColorPickerGridCellStyleProps, IColorPickerGridCellStyles>` \cr Styles for the grid cells.
 #' @param id `string` \cr ID for the swatch color picker's root element. Also used as a prefix for the IDs of color cells.
 #' @param isControlled `boolean` \cr Indicates whether the SwatchColorPicker is fully controlled. When true, the component will not set its internal state to track the selected color. Instead, the parent component will be responsible for handling state in the callbacks like `onColorChanged`.
-#' 
+#'
 #' NOTE: This property is a temporary workaround to force the component to be fully controllable without breaking existing behavior
 #' @param mouseLeaveParentSelector `string | undefined` \cr Selector to focus on mouse leave. Should only be used in conjunction with `focusOnHover`.
 #' @param onCellFocused `(id?: string, color?: string) => void` \cr Callback for when the user focuses a color cell. If `id` and `color` are unspecified, cells are no longer being focused.
 #' @param onCellHovered `(id?: string, color?: string) => void` \cr Callback for when the user hovers over a color cell. If `id` and `color` are unspecified, cells are no longer being hovered.
 #' @param onColorChanged `(id?: string, color?: string) => void` \cr Callback for when the user changes the color. If `id` and `color` are unspecified, there is no selected cell. (e.g. the user executed the currently selected cell to unselect it)
-#' @param positionInSet `number` \cr 
+#' @param positionInSet `number` \cr
 #' @param selectedId `string` \cr The ID of color cell that is currently selected
-#' @param setSize `number` \cr 
+#' @param setSize `number` \cr
 #' @param shouldFocusCircularNavigate `boolean` \cr Whether focus should cycle back to the beginning once the user navigates past the end (and vice versa). Only relevant if `doNotContainWithinFocusZone` is not true.
 #' @param styles `IStyleFunctionOrObject<ISwatchColorPickerStyleProps, ISwatchColorPickerStyles>` \cr Styles for the component.
 #' @param theme `ITheme` \cr Theme to apply to the component.
@@ -3080,7 +3080,7 @@ NULL
 #'
 #' @description
 #' A teaching bubble (`TeachingBubble`) brings attention to a new or important feature, with the goal of increasing engagement with the feature. A teaching bubble typically follows a coach mark.
-#' 
+#'
 #' Use teaching bubbles sparingly. Consider how frequently people will see it, and how many they’ll see across their entire experience.
 #'
 #' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/TeachingBubble).
@@ -3089,31 +3089,31 @@ NULL
 #'
 #' # Best practices
 #' ### Layout
-#' 
+#'
 #' - Teaching bubbles can be used in sequence to walk people through complex, multistep interactions only. And only show one teaching bubble at a time.
 #' - A maximum of no more than 3 sequenced teaching bubbles should be used in a single experience.
 #' - Sequenced teaching bubbles should have “x of y” text to indicate progress through the sequence. For example, the first teaching bubble in a sequence might be “1 of 3”.)
 #' - Always place the primary button on the left, the secondary button just to the right of it.
 #' - Show only one primary button that inherits theme color at rest state. In the event there are more than two buttons with equal priority, all buttons should have neutral backgrounds.
-#' 
+#'
 #' ### Content
-#' 
+#'
 #' A teaching bubble should include:
-#' 
+#'
 #' #### Title
-#' 
+#'
 #' You have 25 characters (including spaces) to draw people in and get them interested. Limit to one line of text, and use sentence casing (capitalize only the first word and any proper nouns) with no punctuation.
-#' 
+#'
 #' #### Body copy
-#' 
+#'
 #' Lead with why the feature is useful rather than describe what it is. What does it make possible? Keep it within 120 characters (including spaces).
-#' 
+#'
 #' #### Action buttons
-#' 
+#'
 #' Limit button labels to 15 characters (including spaces). Provide people with an explicit action to dismiss the teaching bubble, such as “Got it”. Include a secondary button to give people the option to take action, such as “Show me” or “Edit settings”. When two buttons are needed, make the call-to-action button the primary button and the dismissal button (such as “No thanks”) the secondary button. Use sentence casing (capitalize only the first word and any proper nouns) with no punctuation. On a sequenced teaching bubble, use "Next" for the action button label and "Got it" for the final sequenced teaching bubble action button with text that closes the experience.
-#' 
+#'
 #' #### Link (Optional)
-#' 
+#'
 #' If there are additional steps people need to know about, or helpful information they may want to read, consider linking to a help article. Typically, these links are labeled “Learn more” with no punctuation at the end.
 #'
 #' @param ariaDescribedBy `string` \cr Defines the element id referencing the element containing the description for the TeachingBubble.
@@ -3123,7 +3123,7 @@ NULL
 #' @param focusTrapZoneProps `IFocusTrapZoneProps` \cr Properties to pass through for FocusTrapZone, reference detail properties in IFocusTrapZoneProps
 #' @param footerContent `string | JSX.Element` \cr Text that will be rendered in the footer of the TeachingBubble. May be rendered alongside primary and secondary buttons.
 #' @param hasCloseButton `boolean` \cr Whether the TeachingBubble renders close button in the top right corner.
-#' @param hasCloseIcon `boolean` \cr 
+#' @param hasCloseIcon `boolean` \cr
 #' @param hasCondensedHeadline `boolean` \cr A variation with smaller bold headline and no margins.
 #' @param hasSmallHeadline `boolean` \cr A variation with smaller bold headline and margins to the body. (`hasCondensedHeadline` takes precedence if it is also set to true.)
 #' @param headline `string` \cr A headline for the Teaching Bubble.
@@ -3134,7 +3134,7 @@ NULL
 #' @param secondaryButtonProps `IButtonProps` \cr The Secondary interaction button
 #' @param styles `IStyleFunctionOrObject<ITeachingBubbleStyleProps, ITeachingBubbleStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
 #' @param target `Target` \cr Element, MouseEvent, Point, or querySelector string that the TeachingBubble should anchor to.
-#' @param targetElement `HTMLElement` \cr 
+#' @param targetElement `HTMLElement` \cr
 #' @param theme `ITheme` \cr Theme provided by High-Order Component.
 #'
 #' @md
@@ -3145,9 +3145,9 @@ NULL
 #'
 #' @description
 #' Text is a component for displaying text. You can use Text to standardize text across your web app.
-#' 
+#'
 #' You can specify the `variant` prop to apply font styles to Text. This variant pulls from the Fluent UI React theme loaded on the page. If you do not specify the `variant` prop, by default, Text applies the styling from specifying the `variant` value to `medium`.
-#' 
+#'
 #' The Text control is inline wrap by default. You can specify `block` to enable block and `nowrap` to enable `nowrap`. For ellipsis on overflow to work properly, `block` and `nowrap` should be manually set to `true`.
 #'
 #' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Text).
@@ -3157,10 +3157,10 @@ NULL
 #'
 #' @param as `React.ElementType<React.HTMLAttributes<HTMLElement>>` \cr Optionally render the component as another component type or primitive.
 #' @param block `boolean` \cr Whether the text is displayed as a block element.
-#' 
+#'
 #' Note that in order for ellipsis on overflow to work properly, `block` and `nowrap` should be set to true.
 #' @param nowrap `boolean` \cr Whether the text is not wrapped.
-#' 
+#'
 #' Note that in order for ellipsis on overflow to work properly, `block` and `nowrap` should be set to true.
 #' @param variant `keyof IFontStyles` \cr Optional font type for Text.
 #'
@@ -3179,13 +3179,13 @@ NULL
 #'
 #' # Best practices
 #' ### Layout
-#' 
+#'
 #' - Use a multiline text field when long entries are expected.
-#' - Don't place a text field in the middle of a sentence, because the sentence structure might not make sense in all languages. For example, "Remind me in [textfield] weeks" should instead read, "Remind me in this many weeks: [textfield]".
+#' - Don't place a text field in the middle of a sentence, because the sentence structure might not make sense in all languages. For example, `"Remind me in [textfield] weeks"` should instead read, `"Remind me in this many weeks: [textfield]"`.
 #' - Format the text field for the expected entry. For example, when someone needs to enter a phone number, use an input mask to indicate that three sets of digits should be entered.
-#' 
+#'
 #' ### Content
-#' 
+#'
 #' - Include a short label above the text field to communicate what information should be entered. Don't use placeholder text instead of a label. Placeholder text poses a variety of accessibility issues (including possible problems with color/contrast, and people thinking the form input is already filled out).
 #' - When part of a form, make it clear which fields are required vs. optional. If the input is required, add "(required)" to the label. Don't exclusively use "\*" to indicate required inputs as it is often not read by screen readers. For example, "First name (required)".
 #' - Use sentence-style capitalization—only capitalize the first word. For more info, see [Capitalization](https://docs.microsoft.com/style-guide/capitalization) in the Microsoft Writing Style Guide.
@@ -3204,15 +3204,15 @@ NULL
 #' @param iconProps `IIconProps` \cr Props for an optional icon, displayed in the far right end of the text field.
 #' @param inputClassName `string` \cr Optional class name that is added specifically to the input/textarea element.
 #' @param label `string` \cr Label displayed above the text field (and read by screen readers).
-#' @param mask `string` \cr Only used by MaskedTextField: The masking string that defines the mask's behavior. A backslash will escape any character. Special format characters are: '9': [0-9] 'a': [a-zA-Z] '*': [a-zA-Z0-9]
+#' @param mask `string` \cr Only used by MaskedTextField: The masking string that defines the mask's behavior. A backslash will escape any character. Special format characters are: '9': `[0-9]` 'a': `[a-zA-Z]` '*': `[a-zA-Z0-9]`
 #' @param maskChar `string` \cr Only used by MaskedTextField: The character to show in place of unfilled characters of the mask.
-#' @param maskFormat `{ [key: string]: RegExp; }` \cr Only used by MaskedTextField: An object defining the format characters and corresponding regexp values. Default format characters: \{ '9': /[0-9]/, 'a': /[a-zA-Z]/, '*': /[a-zA-Z0-9]/ \}
+#' @param maskFormat `{ [key: string]: RegExp; }` \cr Only used by MaskedTextField: An object defining the format characters and corresponding regexp values. Default format characters: `\{ '9': /[0-9]/, 'a': /[a-zA-Z]/, '*': /[a-zA-Z0-9]/ \}`
 #' @param multiline `boolean` \cr Whether or not the text field is a multiline text field.
 #' @param onChange `(event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, newValue?: string) => void` \cr Callback for when the input value changes. This is called on both `input` and `change` events. (In a later version, this will probably only be called for the `change` event.)
 #' @param onGetErrorMessage `(value: string) => string | JSX.Element | PromiseLike<string | JSX.Element> | undefined` \cr Function used to determine whether the input value is valid and get an error message if not. Mutually exclusive with the static string `errorMessage` (it will take precedence over this).
-#' 
+#'
 #' When it returns `string | JSX.Element`: - If valid, it returns empty string. - If invalid, it returns the error message and the text field will show a red border and show an error message below the text field.
-#' 
+#'
 #' When it returns `Promise<string | JSX.Element>`: - The resolved value is displayed as the error message. - If rejected, the value is thrown away.
 #' @param onNotifyValidationResult `(errorMessage: string | JSX.Element, value: string | undefined) => void` \cr Function called after validation completes.
 #' @param onRenderDescription `IRenderFunction<ITextFieldProps>` \cr Custom renderer for the description.
@@ -3227,10 +3227,10 @@ NULL
 #' @param theme `ITheme` \cr Theme (provided through customization).
 #' @param underlined `boolean` \cr Whether or not the text field is underlined.
 #' @param validateOnFocusIn `boolean` \cr Run validation when focus moves into the input, and **do not** validate on change.
-#' 
+#'
 #' (Unless this prop and/or `validateOnFocusOut` is set to true, validation will run on every change.)
 #' @param validateOnFocusOut `boolean` \cr Run validation when focus moves out of the input, and **do not** validate on change.
-#' 
+#'
 #' (Unless this prop and/or `validateOnFocusIn` is set to true, validation will run on every change.)
 #' @param validateOnLoad `boolean` \cr Whether validation should run when the input is initially rendered.
 #' @param value `string` \cr Current value of the text field. Only provide this if the text field is a controlled component where you are maintaining its current state; otherwise, use the `defaultValue` property.
@@ -3250,11 +3250,11 @@ NULL
 #'
 #' # Best practices
 #' ### Layout
-#' 
+#'
 #' - When people need to perform extra steps for changes to take effect, use a check box instead. For example, if they must click a "Submit", "Next", or "OK" button to apply changes, use a check box.
-#' 
+#'
 #' ### Content
-#' 
+#'
 #' - Only replace the On/Off labels if there are more specific labels for the setting. For example, you might use Show/Hide if the setting is "Show images".
 #' - Keep descriptive text short and concise—two to four words; preferably nouns. For example, "Focused inbox" or "WiFi".
 #'
@@ -3267,11 +3267,11 @@ NULL
 #' @param inlineLabel `boolean` \cr Whether the label (not the onText/offText) should be positioned inline with the toggle control. Left (right in RTL) side when on/off text provided VS right (left in RTL) side when no on/off text. Caution: when not providing on/off text user may get confused in differentiating the on/off states of the toggle.
 #' @param keytipProps `IKeytipProps` \cr Optional keytip for this toggle
 #' @param label `string | JSX.Element` \cr A label for the toggle.
-#' @param offAriaLabel `string` \cr 
+#' @param offAriaLabel `string` \cr
 #' @param offText `string` \cr Text to display when toggle is OFF. Caution: when not providing on/off text user may get confused in differentiating the on/off states of the toggle.
-#' @param onAriaLabel `string` \cr 
+#' @param onAriaLabel `string` \cr
 #' @param onChange `(event: React.MouseEvent<HTMLElement>, checked?: boolean) => void` \cr Callback issued when the value changes.
-#' @param onChanged `(checked: boolean) => void` \cr 
+#' @param onChanged `(checked: boolean) => void` \cr
 #' @param onText `string` \cr Text to display when toggle is ON. Caution: when not providing on/off text user may get confused in differentiating the on/off states of the toggle.
 #' @param role `'checkbox' | 'switch' | 'menuitemcheckbox'` \cr (Optional) Specify whether to use the "switch" role (ARIA 1.1) or the checkbox role (ARIA 1.0). If unspecified, defaults to "switch".
 #' @param styles `IStyleFunctionOrObject<IToggleStyleProps, IToggleStyles>` \cr Optional styles for the component.
@@ -3285,9 +3285,9 @@ NULL
 #'
 #' @description
 #' A good tooltip briefly describes unlabeled controls or provides a bit of additional information about labeled controls, when this is useful. It can also help customers navigate the UI by offering additional—not redundant—information about control labels, icons, and links. A tooltip should always add valuable information; use sparingly.
-#' 
+#'
 #' There are two components you can use to display a tooltip:
-#' 
+#'
 #' - **Tooltip:** A styled tooltip that you can display on a chosen target.
 #' - **TooltipHost:** A wrapper that automatically shows a tooltip when the wrapped element is hovered or focused.
 #'
@@ -3297,20 +3297,20 @@ NULL
 #'
 #' # Best practices
 #' ### Content
-#' 
+#'
 #' - Don’t use a tooltip to restate a button name that’s already shown in the UI.
 #' - When a control or UI element is unlabeled, use a simple, descriptive noun phrase. For example: “Highlighting pen”. Only capitalize the first word (unless a subsequent word is a proper noun), and don’t use a period.
 #' - For a disabled control that could use an explanation, provide a brief description of the state in which the control will be enabled. For example: “This feature is available for line charts.”
 #' - Only use periods for complete sentences.
-#' 
+#'
 #' For a UI label that needs some explanation:
-#' 
+#'
 #' - Briefly describe what you can do with the UI element.
 #' - Use the imperative verb form. For example, "Find text in this file" (not "Finds text in this file").
 #' - Don't include end punctuation unless there is at least one complete sentence.
-#' 
+#'
 #' For a truncated label or a label that’s likely to truncate in some languages:
-#' 
+#'
 #' - Provide the untruncated label in the tooltip.
 #' - Don't provide a tooltip if the untruncated info is provided elsewhere on the page or flow.
 #' - Optional: On another line, provide a clarifying description, but only if needed.
@@ -3327,9 +3327,9 @@ NULL
 #' @param id `string` \cr Optional ID to pass through to the tooltip (not used on the host itself). Auto-generated if not provided.
 #' @param onTooltipToggle `onTooltipToggle?(isTooltipVisible: boolean): void;` \cr Notifies when tooltip becomes visible or hidden, whatever the trigger was.
 #' @param overflowMode `TooltipOverflowMode` \cr If this is unset (the default), the tooltip is always shown even if there's no overflow.
-#' 
+#'
 #' If set, only show the tooltip if the specified element (`Self` or `Parent`) has overflow. When set to `Parent`, the parent element is also used as the tooltip's target element.
-#' 
+#'
 #' Note that even with `Self` mode, the TooltipHost *does not* check whether any children have overflow.
 #' @param setAriaDescribedBy `boolean` \cr Whether or not to mark the TooltipHost root element as described by the tooltip. If not specified, the caller should pass an `id` to the TooltipHost (to be passed through to the Tooltip) and mark the appropriate element as `aria-describedby` the `id`.
 #' @param styles `IStyleFunctionOrObject<ITooltipHostStyleProps, ITooltipHostStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
@@ -3362,9 +3362,9 @@ NULL
 #'
 #' # Best practices
 #' Use a divider component to show a sectional or continuity change in the content between two blocks of information. The spacing around the divider is generally determined by the content surrounding it.
-#' 
+#'
 #' There are two recommended divider color combinations:
-#' 
+#'
 #' 1. #C8C8C8/neutralTertiaryAlt divider when used within an #F4F4F4/neutralLighter layout
 #' 1. #EAEAEA/neutralLight divider when used within an #FFFFFF/white layout
 #'
@@ -3376,7 +3376,7 @@ NULL
 #' ExtendedPicker
 #'
 #' @description
-#' 
+#'
 #'
 #' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/ExtendedPicker).
 #' The R package can not handle each and every case, so for advanced use cases
@@ -3392,11 +3392,11 @@ NULL
 #'
 #' @description
 #' A Keytip is a small popup near a component that indicates a key sequence that will trigger that component. These are not to be confused with keyboard shortcuts; they are instead key sequences to traverse through levels of UI components. Technically, a Keytip is a wrapper around a Callout where the target element is discovered through a 'data-ktp-target' attribute on that element.
-#' 
+#'
 #' To enable Keytips on your page, a developer will add the KeytipLayer component somewhere in their document. It can be added anywhere in your document, but must only be added once. Use the registerKeytip utility helper to add a Keytip. A user will enter and exit keytip mode with a IKeytipTransitionSequence, which is a key with any amount of modifiers (Alt, Shift, etc).
-#' 
+#'
 #' By default, the entry and exit sequence is 'Alt-Windows' (Meta) on Windows and 'Option-Control' on macOS. There is also a sequence to 'return' up a level of keytips while traversing. This is by default 'Esc'.
-#' 
+#'
 #' Fluent UI React components that have keytips enabled have an optional 'keytipProps' prop which handles registering, unregistering, and rendering of the keytip. The keySequences of the Keytip should be the full sequence to get to that keytip. There is a 'buildKeytipConfigMap' helper which will build a map of ID -> IKeytipProps to assist in defining your keytips.
 #'
 #' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Keytip).
@@ -3412,7 +3412,7 @@ NULL
 #' Theme
 #'
 #' @description
-#' 
+#'
 #'
 #' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Theme).
 #' The R package can not handle each and every case, so for advanced use cases
@@ -3427,7 +3427,7 @@ NULL
 #' SelectedItemsList
 #'
 #' @description
-#' 
+#'
 #'
 #' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/SelectedItemsList).
 #' The R package can not handle each and every case, so for advanced use cases
@@ -3450,7 +3450,7 @@ NULL
 #'
 #' # Best practices
 #' ### Layout
-#' 
+#'
 #' - Use a picker to quickly search for a few tags or files.
 #' - Use a picker to manage a group of tags or files.
 #'
@@ -3458,4 +3458,3 @@ NULL
 #' @md
 #' @name Pickers
 NULL
-
