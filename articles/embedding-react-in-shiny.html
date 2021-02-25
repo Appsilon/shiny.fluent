@@ -44,6 +44,9 @@
   </a>
 </li>
 <li>
+  <a href="../articles/shiny-fluent.html">Get started</a>
+</li>
+<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
@@ -55,9 +58,6 @@
   <ul class="dropdown-menu" role="menu">
 <li>
       <a href="../articles/embedding-react-in-shiny.html">Topic guide: withReact and reactOutput - what's the difference?</a>
-    </li>
-    <li>
-      <a href="../articles/first-app.html">Tutorial: Create your first Fluent dashboard</a>
     </li>
     <li>
       <a href="../articles/how-to-shiny-modules.html">How to: use shiny.fluent with Shiny modules</a>
@@ -76,8 +76,18 @@
     </li>
   </ul>
 </li>
+<li>
+  <a href="../news/index.html">Changelog</a>
+</li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/appsilon/shiny.fluent/">
+    <span class="fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -93,7 +103,7 @@
       <h1 data-toc-skip>Topic guide: withReact and reactOutput - what’s the difference?</h1>
             
       
-      
+      <small class="dont-index">Source: <a href="https://github.com/appsilon/shiny.fluent/blob/master/vignettes/embedding-react-in-shiny.Rmd"><code>vignettes/embedding-react-in-shiny.Rmd</code></a></small>
       <div class="hidden name"><code>embedding-react-in-shiny.Rmd</code></div>
 
     </div>
@@ -101,7 +111,7 @@
     
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">shiny.fluent</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent">shiny.fluent</a></span><span class="op">)</span></code></pre></div>
 <p>A call to <code>withReact</code> is something to get used to. You can mix and match React and standard HTML tags. You can also insert other Shiny outputs inside (like a <code>uiOutput</code> or <code>leafletOutput</code>).</p>
 <p>There is a special category of components defined as Shiny inputs, like various Buttons, TextField, Toggle, Calendar, etc. They all have a companion <code>updateMyComponent</code> functions defined. To see a full list of these components, start typing <code><a href="https://rdrr.io/r/stats/update.html">shiny.fluent::update</a></code>.</p>
 <p>There is also an alternative to withReact available. It is less convenient because it requires you to define an output. However, it is more powerful because it maintains the internal state of React components. It is needed when inserting, e.g., a Modal or Dialog. To use it, insert <code><a href="https://rdrr.io/pkg/shiny.react/man/reactOutput.html">reactOutput("myReactOutput")</a></code> and then define this output like <code>output$myReactOutput &lt;- reactOutput(reactWidget({ ... React or HTML tags here }))</code>. Look at the examples for Modal, Dialog, TeachingBubble for details.</p>
