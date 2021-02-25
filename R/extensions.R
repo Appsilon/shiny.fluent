@@ -9,6 +9,7 @@
 #' @param icon optional name of an icon
 #' @param subitems optional list of CommandBar items
 #' @seealso CommandBar
+#' @export
 CommandBarItem <- function(text, icon = NULL, subitems = NULL, ...) {
   props <- rlang::dots_list(...)
   

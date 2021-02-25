@@ -10,7 +10,7 @@ jobs:
   pkgdown:
     runs-on: macOS-latest
     env:
-      GITHUB_PAT: ${{ secrets.ACTIONS_PAT }}
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v2
 
@@ -34,7 +34,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          remotes::install_git("ssh://git@github.com/Appsilon/shiny.react.git")
+          remotes::install_github("Appsilon/shiny.react")
           remotes::install_deps(dependencies = TRUE)
           install.packages("pkgdown", type = "binary")
         shell: Rscript {0}

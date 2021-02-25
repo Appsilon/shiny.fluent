@@ -30,7 +30,7 @@ jobs:
     env:
       R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
       RSPM: ${{ matrix.config.rspm }}
-      GITHUB_PAT: ${{ secrets.ACTIONS_PAT }}
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - uses: actions/checkout@v2
@@ -66,7 +66,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          remotes::install_git("ssh://git@github.com/Appsilon/shiny.react.git")
+          remotes::install_github("Appsilon/shiny.react")
           remotes::install_deps(dependencies = TRUE)
           remotes::install_cran("rcmdcheck")
         shell: Rscript {0}
