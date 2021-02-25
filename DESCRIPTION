@@ -29,5 +29,9 @@ Suggests:
     jsonlite,
     tibble,
     knitr,
-    rmarkdown
+    rmarkdown,
+    dplyr,
+    sass,
+    purrr,
+    shiny.router
 VignetteBuilder: knitr

@@ -1284,35 +1284,27 @@ makePeoplePicker <- function() {
     7, "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-male.png", "MS", "Maor Sharett", "UX Designer", "In a meeting", "Available at 4:00pm", TRUE, 3, NA
   )
 
-  suggestionProps <- list(
-    suggestionsHeaderText='Suggested People',
-    mostRecentlyUsedHeaderText='Suggested Contacts',
-    noResultsFoundText='No results found',
-    loadingText='Loading',
-    showRemoveButtons=TRUE,
-    suggestionsAvailableAlertText='People Picker Suggestions available',
-    suggestionsContainerAriaLabel='Suggested contacts'
-  );
-
-  people_json <- jsonlite::toJSON(people)
-
   ui = tagList(
     textOutput("selectedPeople"),
     NormalPeoplePicker(
-      onResolveSuggestions=JS(paste("function(filterText) { return ", people_json, ".filter(item => item.text.toLowerCase().indexOf(filterText.toLowerCase()) === 0) }")),
-      onEmptyInputFocus=JS(paste("function() { return ", people_json, "}")),
-      getTextFromItem=JS("function(item) { return item.text }"),
-      pickerSuggestionsProps=suggestionProps,
-      className="ms-PeoplePicker",
-      onChange=JS("function(selection) { Shiny.setInputValue('selectedPeople', JSON.stringify(selection)) }")
+      "selectedPeople",
+      className = "my_class",
+      options = people,
+      pickerSuggestionsProps = list(
+        suggestionsHeaderText = 'Matching people',
+        mostRecentlyUsedHeaderText = 'Sales reps',
+        noResultsFoundText = 'No results found',
+        showRemoveButtons = TRUE
+      )
     )
   )
   server = function(input, output) {
     output$selectedPeople <- renderText({
-      if (is.null(input$selectedPeople)) {
+      if (is.null(input$selectedPeople) || input$selectedPeople == "") {
         "Select recipients below:"
       } else {
-        paste("You have selected:", paste(jsonlite::fromJSON(input$selectedPeople)$text, collapse=", "))
+        selectedPeople <- dplyr::filter(people, key %in% input$selectedPeople)
+        paste("You have selected:", paste(selectedPeople$text, collapse=", "))
       }
     })
   }

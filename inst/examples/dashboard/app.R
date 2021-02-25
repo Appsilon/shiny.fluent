@@ -1,6 +1,6 @@
 library(shiny)
 library(shiny.fluent)
-library(shiny.router) # devtools::install_cran("shiny.router")
+library(shiny.router)
 library(sass)
 library(stringi)
 library(purrr)
