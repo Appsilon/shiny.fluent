@@ -1,0 +1,10 @@
+reference:
+- title: General
+  desc:  Functions that help with building a UI, but are not components.
+  contents:
+  - -matches("^[A-Z].*")
+  
+- title: Fluent UI Components
+  desc:  Functions corresponding to components in Fluent UI.
+  contents:
+  - matches("^[A-Z].*")

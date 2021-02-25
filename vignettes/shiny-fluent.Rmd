@@ -1,8 +1,8 @@
 ---
-title: "Tutorial: Create your first Fluent dashboard"
+title: "Tutorial: Create your first shiny.fluent dashboard"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Tutorial: Create your first Fluent dashboard}
+  %\VignetteIndexEntry{Tutorial: Create your first shiny.fluent dashboard}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
