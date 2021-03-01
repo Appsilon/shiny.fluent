@@ -1,3 +1,10 @@
+template:
+  params:
+    bootswatch: yeti
+
+navbar:
+  type: inverse
+
 reference:
 - title: General
   desc:  Functions that help with building a UI, but are not components.
