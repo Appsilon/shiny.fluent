@@ -2,12 +2,12 @@ pandoc: 2.7.3
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
-  sales-reps-dashboard: sales-reps-dashboard.html
   shiny-fluent: shiny-fluent.html
+  st-sales-reps-dashboard-advanced: st-sales-reps-dashboard-advanced.html
+  st-sales-reps-dashboard: st-sales-reps-dashboard.html
   sz-how-to-shiny-modules: sz-how-to-shiny-modules.html
   sz-how-to-troubleshoot: sz-how-to-troubleshoot.html
   sz-how-to-use-fluent-docs: sz-how-to-use-fluent-docs.html
-  sz-sales-reps-dashboard-advanced: sz-sales-reps-dashboard-advanced.html
   topic_embedding-react-in-shiny: topic_embedding-react-in-shiny.html
-last_built: 2021-03-01T15:41Z
+last_built: 2021-03-01T15:44Z
 
