@@ -111,8 +111,61 @@
 
     
     
+<p>Shiny.fluent components work in <a href="https://shiny.rstudio.com/articles/modules.html">Shiny modules</a> out of the box. In this example, a calculator module defined by <code>calcUI()</code> and <code>calcServer()</code> allows the user to choose a mathematical operation and input two numeric values. The server function returns a reactive value with the result.</p>
+<p>A few things to note:</p>
+<ul>
+<li>The <code>ns()</code> function is used to wrap the IDs of the inputs in the module UI, but not when accessing them via <code>input$</code> in the module server.</li>
+<li>The <code>calcUI()</code> and <code>calcServer()</code> are called with the same ID in the UI and server parts of the Shiny app.</li>
+</ul>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent">shiny.fluent</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://shiny.rstudio.com/">shiny</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent">shiny.fluent</a></span><span class="op">)</span>
+
+<span class="va">calcModes</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"add"</span>, text <span class="op">=</span> <span class="st">"Addition"</span><span class="op">)</span>,
+  <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"mul"</span>, text <span class="op">=</span> <span class="st">"Multiplication"</span><span class="op">)</span>
+<span class="op">)</span>
+
+<span class="va">calcUI</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">{</span>
+  <span class="va">ns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/NS.html">NS</a></span><span class="op">(</span><span class="va">id</span><span class="op">)</span>
+  <span class="fu"><a href="https://rdrr.io/pkg/shiny.react/man/withReact.html">withReact</a></span><span class="op">(</span>
+    <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html">div</a></span><span class="op">(</span>style <span class="op">=</span> <span class="st">"margin: 15px 0px 15px"</span>,
+      <span class="fu"><a href="../reference/ChoiceGroup.html">ChoiceGroup</a></span><span class="op">(</span><span class="fu">ns</span><span class="op">(</span><span class="st">"mode"</span><span class="op">)</span>, label <span class="op">=</span> <span class="st">"Operation"</span>, value <span class="op">=</span> <span class="st">"add"</span>, options <span class="op">=</span> <span class="va">calcModes</span><span class="op">)</span>,
+      <span class="fu"><a href="../reference/Label.html">Label</a></span><span class="op">(</span><span class="st">"Values"</span><span class="op">)</span>,
+      <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/flowLayout.html">flowLayout</a></span><span class="op">(</span>
+        <span class="fu"><a href="../reference/SpinButton.html">SpinButton</a></span><span class="op">(</span><span class="fu">ns</span><span class="op">(</span><span class="st">"a"</span><span class="op">)</span>, label <span class="op">=</span> <span class="st">"A = "</span>, value <span class="op">=</span> <span class="fl">3</span><span class="op">)</span>,
+        <span class="fu"><a href="../reference/SpinButton.html">SpinButton</a></span><span class="op">(</span><span class="fu">ns</span><span class="op">(</span><span class="st">"b"</span><span class="op">)</span>, label <span class="op">=</span> <span class="st">"B = "</span>, value <span class="op">=</span> <span class="fl">5</span><span class="op">)</span>
+      <span class="op">)</span>
+    <span class="op">)</span>
+  <span class="op">)</span>
+<span class="op">}</span>
+
+<span class="va">calcServer</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/moduleServer.html">moduleServer</a></span><span class="op">(</span><span class="va">id</span>, <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span>
+    <span class="va">result</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/reactive.html">reactive</a></span><span class="op">(</span><span class="op">{</span>
+      <span class="kw"><a href="https://rdrr.io/r/base/switch.html">switch</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/req.html">req</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">mode</span><span class="op">)</span>,
+        add <span class="op">=</span> <span class="va">input</span><span class="op">$</span><span class="va">a</span> <span class="op">+</span> <span class="va">input</span><span class="op">$</span><span class="va">b</span>,
+        mul <span class="op">=</span> <span class="va">input</span><span class="op">$</span><span class="va">a</span> <span class="op">*</span> <span class="va">input</span><span class="op">$</span><span class="va">b</span>
+      <span class="op">)</span>
+    <span class="op">}</span><span class="op">)</span>
+    <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">result</span><span class="op">)</span>
+  <span class="op">}</span><span class="op">)</span>
+<span class="op">}</span>
+
+<span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html">shinyApp</a></span><span class="op">(</span>
+  ui <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/fluidPage.html">fluidPage</a></span><span class="op">(</span>
+    <span class="fu">calcUI</span><span class="op">(</span><span class="st">"calc"</span><span class="op">)</span>,
+    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/textOutput.html">textOutput</a></span><span class="op">(</span><span class="st">"result"</span><span class="op">)</span>
+  <span class="op">)</span>,
+  server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span>
+    <span class="va">result</span> <span class="op">&lt;-</span> <span class="fu">calcServer</span><span class="op">(</span><span class="st">"calc"</span><span class="op">)</span>
+    <span class="va">output</span><span class="op">$</span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/renderPrint.html">renderText</a></span><span class="op">(</span>
+      <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"The module returned"</span>, <span class="fu">result</span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
+    <span class="op">)</span>
+  <span class="op">}</span>
+<span class="op">)</span></code></pre></div>
+<p></p>
+<div style="width: 100% ; height: 400px ; text-align: center; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;" class="muted well">Shiny applications not supported in static R Markdown documents</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
