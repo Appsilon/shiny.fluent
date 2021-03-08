@@ -27,7 +27,7 @@ A few things to note:
 * The `calcUI()` and `calcServer()` are called with the same ID
   in the UI and server parts of the Shiny app.
 
-```{r setup}
+```r
 library(shiny)
 library(shiny.fluent)
 
@@ -75,3 +75,5 @@ shinyApp(
   }
 )
 ```
+
+![](images/calc_module.png)
