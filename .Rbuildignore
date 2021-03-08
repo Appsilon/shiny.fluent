@@ -12,3 +12,4 @@
 ^pkgdown$
 ^\.github$
 ^doc$
+^data-raw$
