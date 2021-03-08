@@ -14,7 +14,18 @@ knitr::opts_chunk$set(
 )
 ```
 
-Shiny.fluent components work in Shiny modules out of the box:
+Shiny.fluent components work in [Shiny modules](https://shiny.rstudio.com/articles/modules.html)
+out of the box.
+In this example, a calculator module defined by `calcUI()` and `calcServer()`
+allows the user to choose a mathematical operation and input two numeric values.
+The server function returns a reactive value with the result.
+
+A few things to note:
+
+* The `ns()` function is used to wrap the IDs of the inputs in the module UI,
+  but not when accessing them via `input$` in the module server.
+* The `calcUI()` and `calcServer()` are called with the same ID
+  in the UI and server parts of the Shiny app.
 
 ```{r setup}
 library(shiny)
