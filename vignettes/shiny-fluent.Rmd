@@ -87,13 +87,17 @@ In addition to `DetailsList` and `Text`, in the code above we used `Stack`, whic
 
 
 ```{r, echo=FALSE}
-knitr::include_graphics("02_detailed_list.png")
+knitr::include_graphics("images/02_detailed_list.png")
 ```
 
 # Adding filtering
 
 Okay, that already looks good! But it's hard to explore these data without some filtering options - let's add that now. 
 We will start by adding an option to find transations between selected dates.
+
+We will need two `DatePicker`s stacked together. They are shiny.fluent inputs, so behave in a very similar way to regular Shiny inputs: they expect an id as the first argument, and optionally an initial value.
+
+** TODO **
 
 # More filters
 
