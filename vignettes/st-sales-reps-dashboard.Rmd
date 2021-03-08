@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Full dashboard in Fluent UI"
+title: "Tutorial: Full dashboard UI in Shiny and Fluent"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Tutorial: Full dashboard in Fluent UI}
@@ -17,3 +17,8 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(shiny.fluent)
 ```
+
+
+This is Part 2 of shiny.fluent tutorial. In [Part 1]() we built an app that lets us filter sales transactions data, and view the results on a plot and a map and in a table. It has nice features, but is not looking that good. Let's now build a dashboard UI for that app, with top command bar and a sidebar with navigation.
+
+*TODO - at least a basic, short version that can be improved*

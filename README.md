@@ -68,24 +68,3 @@ To insert Fluent components inside your Shiny app, wrap them inside a `withReact
 **The easiest way to get started** is to look at an example dashboard. There's one you can look at immediately after installing the library: simply run `shiny.fluent::run_example("dashboard")`
 
 There are also usage examples for individual components. For a list of all available examples, use `shiny.fluent::run_example()`.
-
-## Solving installation credentials issues
-
-_This section will be removed once the package is published_
-
-If installation fails, configure Git credentials using `usethis::use_git_credentials` and `git2r::cred_ssh_key` or `git2r::cred_token`. This should help
-
-If you run into errors with installing as above, try installing SSH dependencies and re-installing git2r
-
-```sh
-sudo apt-get install libssh2-1 libssh2-1-dev
-Rscript -e 'remotes::install_cran("git2r", force = TRUE)'
-```
-
-For Mac OSX use:
-
-```sh
-brew install libssh2
-brew install libgit2
-install.packages("git2r", type = "source", configure.vars = "autobrew=yes")
-```
