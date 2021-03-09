@@ -1,6 +1,7 @@
 ---
 name  : Bug report
 about : Report a bug in shiny.fluent.
+labels: bug
 ---
 
 <!--
