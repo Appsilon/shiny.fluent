@@ -1,0 +1,76 @@
+/* Step 1: basic css for pages */
+
+body {
+  background-color: rgba(225, 223, 221, 0.2);
+  min-height: 611px;
+  margin: 0;
+}
+
+.page-title {
+  padding: 52px 0px;
+}
+
+.card {
+  background: #fff;
+  padding: 28px;
+  margin-bottom: 28px;
+  border-radius: 2px;
+  background-clip: padding-box;
+}
+
+
+/* Step 2: dashboard layout */
+
+/* Assign grid instructions to our parent grid container */
+.grid-container {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  grid-template-rows: 54px 1fr 45px;
+  grid-template-areas: "header header" "sidenav main" "footer footer";
+  height: 100vh;
+}
+
+.header {
+  grid-area: header;
+  background-color: #fff;
+  padding: 6px 0px 6px 10px;
+  display: flex;
+}
+
+.main {
+  grid-area: main;
+  background-color: #faf9f8;
+  padding-left: 40px;
+  padding-right: 32px;
+  max-width: calc(100vw - 400px);
+  max-height: calc(100vh - 100px);
+  overflow: auto;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #f3f2f1;
+  padding: 12px 20px;
+}
+
+.sidenav {
+  grid-area: sidenav;
+  background-color: #fff;
+  padding: 25px;
+}
+
+/* Header */
+
+.title {
+  padding: 0px 14px 0px 14px;
+  color: #737373;
+  margin: 6px 0px 6px 10px;
+  border-left: 1px solid darkgray;
+  width: 220px;
+}
+
+
+.logo {
+  height: 44px;
+}
+
