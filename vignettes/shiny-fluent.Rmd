@@ -21,7 +21,7 @@ library(tidyverse)
 
 Let's learn shiny.fluent by building an example app.
 
-In this tutorial, we'll build a basic application for analysing sales results data. The app will allow for filtering the data, and viewing in on a plot, on a map and in a table.
+In this tutorial, we'll build a basic application for analysing sales results data. The app will allow for filtering the data, and viewing it on a plot, on a map and in a table.
 
 We'll assume that you have [Shiny](https://shiny.rstudio.com/) and `shiny.fluent` [already installed](https://appsilon.github.io/shiny.fluent/#installation).
 
@@ -44,7 +44,10 @@ do.call(knitr::read_chunk, list(path = "../inst/examples/tutorial/05_more_output
 
 That gives us all we need to run a basic application! To create a UI showing a welcome message, we will use a Fluent component named `?Text`. Let's add it to our code.
 
-For the text to actually appear, we need to put it inside a `withReact` function call. `withReact` takes care of rendering [Fluent components in user's browsers using React](). **TODO add link** Use `fluentPage` to create the UI, as it will add proper CSS classes and disable adding Bootstrap (you should not use both Bootstrap and Fluent UI at the same time).
+For the text to actually appear, we need to put it inside a `withReact` function call
+which takes care of rendering Fluent components in user's browsers using React.
+Use `fluentPage` to create the UI, as it will add proper CSS classes and suppress Bootstrap
+(you should not use both Bootstrap and Fluent UI at the same time).
 
 ```{r helloworld, eval=FALSE}
 ```
@@ -59,7 +62,8 @@ Yay! It may not look very impressive, but this text is rendered in Shiny with th
 
 # Showing data in a table
 
-Let's now grab some data and show them for our users in a nice, good looking table. shiny.fluent already includes some example data that we can use.
+Let's now grab some data and show it to our users in a table.
+shiny.fluent already includes some example data that we can use.
 
 `fluent_people` is a list of imaginary people in a format expected by some Fluent components.
 
@@ -73,7 +77,7 @@ fluent_people %>% glimpse()
 fluent_sales_deals %>% glimpse()
 ```
 
-We now need a Fluent component to insert a table. A good way find a component that suits our needs is to go to [shiny.fluent components live demo](https://demo.appsilon.ai/apps/fluentui) or to thew [official Fluent UI docs](https://developer.microsoft.com/en-us/fluentui#/controls). Browsing through the list of components, we find `?DetailsList`, which gives a table component with rich configuration options.
+We now need a Fluent component to insert a table. A good way find a component that suits our needs is to go to [shiny.fluent components live demo](https://demo.appsilon.ai/apps/fluentui) or to the [official Fluent UI docs](https://developer.microsoft.com/en-us/fluentui#/controls). Browsing through the list of components, we find `?DetailsList`, which gives a table component with rich configuration options.
 
 First, we need to define which columns from our deals data we want to see and how to label them.
 ```{r details_list_columns, eval=FALSE}
@@ -96,7 +100,7 @@ knitr::include_graphics("images/02_detailed_list.png")
 # Adding filtering
 
 Okay, that already looks good! But it's hard to explore these data without some filtering options - let's add that now.
-We will start by adding an option to find transations between selected dates.
+We will start by adding an option to find transactions between selected dates.
 
 We will need two `DatePicker`s stacked together. They are shiny.fluent inputs, so behave in a very similar way to regular Shiny inputs: they expect an id as the first argument, and optionally an initial value.
 
