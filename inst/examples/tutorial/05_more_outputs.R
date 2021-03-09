@@ -118,8 +118,8 @@ server <- function(input, output, session) {
         makeCard("Map", leafletOutput("map"))
       )
     )
-  })
 # ----
+  })
 }
 
 shinyApp(ui, server)

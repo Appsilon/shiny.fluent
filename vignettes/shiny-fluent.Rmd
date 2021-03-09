@@ -176,17 +176,24 @@ knitr::include_graphics("images/04_more_filters.png")
 
 # More outputs
 
-- Plotly plot
-- Leaflet Map
+We are not limited to shiny.fluent components - we can seamlessly use other libraries in our app!
+Let's add a Plotly plot and a Leaflet map.
+We start by adding a `plotlyOutput()` to our UI:
 
 ```{r 05_ui, eval=FALSE}
 ```
 
-```{r 05_render, eval=FALSE}
-```
+We also add a `leafletOutput()` to the UI generated in the server function:
 
 ```{r 05_outputs, eval=FALSE}
 ```
+
+Now we can add the following code to the server function to render a bar chart and a map:
+
+```{r 05_render, eval=FALSE}
+```
+
+Look at our dashboard now!
 
 ```{r, echo=FALSE}
 knitr::include_graphics("images/05_more_outputs.png")
