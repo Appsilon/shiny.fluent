@@ -44,9 +44,10 @@ do.call(knitr::read_chunk, list(path = "../inst/examples/tutorial/05_more_output
 
 That gives us all we need to run a basic application! To create a UI showing a welcome message, we will use a Fluent component named `?Text`. Let's add it to our code.
 
-For the text to actually appear, we need to put it inside a `withReact` function call
+For the text to actually appear, we need to put it inside a
+[`withReact`](https://appsilon.github.io/shiny.react/reference/withReact.html) function call
 which takes care of rendering Fluent components in user's browsers using React.
-Use `fluentPage` to create the UI, as it will add proper CSS classes and suppress Bootstrap
+Use `?fluentPage` to create the UI, as it will add proper CSS classes and suppress Bootstrap
 (you should not use both Bootstrap and Fluent UI at the same time).
 
 ```{r helloworld, eval=FALSE}
@@ -90,7 +91,7 @@ Let's now display our sales deals in a table. As we plan to later make the table
 
 As you can see, you can simply put `withReact` inside a `renderUI` in your server part. In some more advanced cases, you may need to use an [alternative mechanism](https://appsilon.github.io/shiny.fluent/articles/topic_embedding-react-in-shiny.html#reactoutput).
 
-In addition to `DetailsList` and `Text`, in the code above we used `Stack`, which arranges elements in its area.
+In addition to `?DetailsList` and `?Text`, in the code above we used `?Stack`, which arranges elements in its area.
 
 
 ```{r, echo=FALSE}
@@ -102,16 +103,27 @@ knitr::include_graphics("images/02_detailed_list.png")
 Okay, that already looks good! But it's hard to explore these data without some filtering options - let's add that now.
 We will start by adding an option to find transactions between selected dates.
 
-We will need two `DatePicker`s stacked together. They are shiny.fluent inputs, so behave in a very similar way to regular Shiny inputs: they expect an id as the first argument, and optionally an initial value.
+We will use two `?DatePicker` components to allow users to choose a date range.
+They are shiny.fluent inputs and behave in a very similar way to regular Shiny inputs:
+they take an ID as the first argument, and optionally an initial value.
 
 ```{r 03_filters_ui, eval=FALSE}
 ```
 
+Let's add the filters to our UI:
+
 ```{r 03_ui, eval=FALSE}
 ```
 
+In the server function of our application,
+we can now access the input values using the IDs we provided
+in the same way as with any other Shiny input.
+Let's use the selected dates to apply additional filtering to the deals:
+
 ```{r 03_filters_server, eval=FALSE}
 ```
+
+This is what our application looks like now:
 
 ```{r, echo=FALSE}
 knitr::include_graphics("images/03_adding_filtering.png")
@@ -119,21 +131,43 @@ knitr::include_graphics("images/03_adding_filtering.png")
 
 # More filters
 
-- NormalPeoplePicker
-- Slider
-- Toggle
+Let's add more filtering options to our app!
+We will use the following components:
+- [`?NormalPeoplePicker`](../reference/PeoplePicker.html) to limit the search to selected sales representatives,
+- `?Slider` to define a minimum deal size,
+- `?Toggle` to show only the closed deals.
 
-```{r 04_helpers, eval=FALSE}
-```
+In addition we'll use `?Stack` and `?Label` to visually arrange the filtering controls.
 
 ```{r 04_filters_ui, eval=FALSE}
 ```
 
+Now that we have multiple filtering controls,
+it would be a good idea to add some visual separation between them and the table.
+Let's define a helper function to create Fluent UI cards:
+
+```{r 04_helpers, eval=FALSE}
+```
+
+Now we can wrap the filters in a call to `makeCard()`.
+Additionally, we include a `style` tag
+to add some padding and margin to the cards created by our helper function.
+
 ```{r 04_ui, eval=FALSE}
 ```
 
+Let's move our attention to the server function.
+We can access the values of the filtering controls using the provided IDs just like before.
+
+```{r 04_filters_server, eval=FALSE}
+```
+
+Finally, let's refactor the table output and wrap it in a card.
+
 ```{r 04_table, eval=FALSE}
 ```
+
+Our filtering is much more useful now!
 
 ```{r, echo=FALSE}
 knitr::include_graphics("images/04_more_filters.png")
