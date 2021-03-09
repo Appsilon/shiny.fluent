@@ -33,13 +33,14 @@ Let's start by creating an app that shows "Hello world!", but does this with Flu
 # HACK: running via do.call because otherwise read_chunk breaks pkgdown::build_site (see https://github.com/r-lib/pkgdown/issues/1159)
 do.call(knitr::read_chunk, list(path = "../inst/examples/tutorial/01_hello_world.R"))
 do.call(knitr::read_chunk, list(path = "../inst/examples/tutorial/02_basic_app.R"))
+do.call(knitr::read_chunk, list(path = "../inst/examples/tutorial/03_adding_filtering.R"))
 ```
 
 
 ```{r helloworld-dependencies, eval=FALSE}
 ```
 
-That gives us all we need to run a basic application! To create a UI showing a welcome message, we will use a Fluent component named `?Text`. Let's add it to our code. 
+That gives us all we need to run a basic application! To create a UI showing a welcome message, we will use a Fluent component named `?Text`. Let's add it to our code.
 
 For the text to actually appear, we need to put it inside a `withReact` function call. `withReact` takes care of rendering [Fluent components in user's browsers using React](). **TODO add link** Use `fluentPage` to create the UI, as it will add proper CSS classes and disable adding Bootstrap (you should not use both Bootstrap and Fluent UI at the same time).
 
@@ -92,12 +93,24 @@ knitr::include_graphics("images/02_detailed_list.png")
 
 # Adding filtering
 
-Okay, that already looks good! But it's hard to explore these data without some filtering options - let's add that now. 
+Okay, that already looks good! But it's hard to explore these data without some filtering options - let's add that now.
 We will start by adding an option to find transations between selected dates.
 
 We will need two `DatePicker`s stacked together. They are shiny.fluent inputs, so behave in a very similar way to regular Shiny inputs: they expect an id as the first argument, and optionally an initial value.
 
-** TODO **
+```{r 03_filters_ui, eval=FALSE}
+```
+
+```{r 03_ui, eval=FALSE}
+```
+
+```{r 03_filters_server, eval=FALSE}
+```
+
+```{r, echo=FALSE}
+knitr::include_graphics("images/03_adding_filtering.png")
+```
+
 
 # More filters
 
