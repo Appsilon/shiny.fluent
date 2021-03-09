@@ -65,6 +65,11 @@ To insert Fluent components inside your Shiny app, wrap them inside a `withReact
 
 ### Examples
 
-**The easiest way to get started** is to look at an example dashboard. There's one you can look at immediately after installing the library: simply run `shiny.fluent::run_example("dashboard")`
+A good way to learn more is to look at the examples.
+Once you install the library, you can run them with `shiny.fluent::run_example("example_name")`.
+We recommend the following for starters:
+* `demo`: a demo app for analyzing sales reps performance,
+* `dashboard`: a showcase of all available components along with documentation.
 
-There are also usage examples for individual components. For a list of all available examples, use `shiny.fluent::run_example()`.
+There are also usage examples for individual components.
+Use `shiny.fluent::run_example()` to list all available examples.

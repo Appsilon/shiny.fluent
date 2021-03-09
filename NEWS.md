@@ -1,3 +1,6 @@
+# shiny.fluent (development version)
+
+* ...
 # shiny.fluent 0.0.2
 
 * Improved documentation and developer experience.
