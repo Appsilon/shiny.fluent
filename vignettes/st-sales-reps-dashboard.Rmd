@@ -18,8 +18,20 @@ knitr::opts_chunk$set(
 library(shiny.fluent)
 ```
 
+```{r, include=FALSE, cache=FALSE}
+do.call(knitr::read_chunk, list(path = "../inst/examples/tutorial/dashboard_layout.R"))
+```
 
-This is Part 2 of shiny.fluent tutorial. In [Part 1]() we built an app that lets us filter sales transactions data, and view the results on a plot and a map and in a table. It has nice features, but is not looking that good. Let's now build a dashboard UI for that app, with top command bar and a sidebar with navigation.
+This is Part 2 of shiny.fluent tutorial.
+
+In [Part 1](../articles/shiny-fluent.html) we built a pretty functional app, but it doesn't look great. Let's now build a dashboard UI for that app. It will have a top command bar with a title, a sidebar with navigation, and nicely arranged cards on the analysis page.
+
+# Prerequisites
+
+Let's start by loading all libraries that we will use in this example
+
+```{r libraries, eval=FALSE}
+```
 
 # Styling the page
 
