@@ -19,29 +19,23 @@ CommandBarItem <- function(text, icon = NULL, subitems = NULL, ...) {
   props
 }
 
-#' Basic Fluent UI page. Replacement for shiny::*Page family of functions.
+#' Basic Fluent UI page
 #'
-#' Creates a Fluent UI page with sensible defaults (included Fabric CSS classes, proper class given to the body tag,
-#' suppressed Bootstrap). You can also use shiny.fluent directly, without using this function.
-#' `bodyContent` does not get inserted as React to allow for flexibility. Use \code{\link{withReact}} or \code{\link{reactOutput}}
-#' to insert React content.
+#' Creates a Fluent UI page with sensible defaults (included Fabric CSS classes, proper class given
+#' to the body tag, suppressed Bootstrap). You can also use shiny.fluent directly, without using
+#' this function. You still need to use \code{\link{withReact}} or \code{\link{reactOutput}}
+#' to insert React components.
 #'
-#' @param bodyContent This argument will be inserted into the body tag directly.
-#' @param ... Additional tags that will be inserted into the page. Useful particularly for including head tag content like CSS.
+#' @param ... The contents of the document body.
 #' @export
-fluentPage <- function(bodyContent, ...){
-  fluidPage(
-    shiny::suppressDependencies("bootstrap"),
-    ...,
+fluentPage <- function(...) {
+  shiny::tags$body(class = "ms-Fabric",
     htmltools::htmlDependency(
-      "office-ui-fabric-core",
-      "11.0.0",
-      list(href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/"),
+      name = "office-ui-fabric-core",
+      version = "11.0.0",
+      src = list(href = "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/"),
       stylesheet = "fabric.min.css"
     ),
-    shiny::tags$body(
-      class = "ms-Fabric",
-      bodyContent
-    )
+    ...
   )
 }

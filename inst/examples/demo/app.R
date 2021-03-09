@@ -93,13 +93,14 @@ sass(
 )
 
 ui <- fluentPage(
-  withReact(
-    layout(router$ui)
-  ),
   tags$head(
     tags$link(href = "style.css", rel = "stylesheet", type = "text/css"),
     shiny_router_script_tag
-  ))
+  ),
+  withReact(
+    layout(router$ui)
+  )
+)
 
 
 #### SERVER

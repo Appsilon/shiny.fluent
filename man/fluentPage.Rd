@@ -2,18 +2,16 @@
 % Please edit documentation in R/extensions.R
 \name{fluentPage}
 \alias{fluentPage}
-\title{Basic Fluent UI page. Replacement for shiny::*Page family of functions.}
+\title{Basic Fluent UI page}
 \usage{
-fluentPage(bodyContent, ...)
+fluentPage(...)
 }
 \arguments{
-\item{bodyContent}{This argument will be inserted into the body tag directly.}
-
-\item{...}{Additional tags that will be inserted into the page. Useful particularly for including head tag content like CSS.}
+\item{...}{The contents of the document body.}
 }
 \description{
-Creates a Fluent UI page with sensible defaults (included Fabric CSS classes, proper class given to the body tag,
-suppressed Bootstrap). You can also use shiny.fluent directly, without using this function.
-\code{bodyContent} does not get inserted as React to allow for flexibility. Use \code{\link{withReact}} or \code{\link{reactOutput}}
-to insert React content.
+Creates a Fluent UI page with sensible defaults (included Fabric CSS classes, proper class given
+to the body tag, suppressed Bootstrap). You can also use shiny.fluent directly, without using
+this function. You still need to use \code{\link{withReact}} or \code{\link{reactOutput}}
+to insert React components.
 }
