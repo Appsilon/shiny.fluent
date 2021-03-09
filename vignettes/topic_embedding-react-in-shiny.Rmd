@@ -18,6 +18,13 @@ knitr::opts_chunk$set(
 library(shiny.fluent)
 ```
 
+Using Fluent components means that showing the UI pieces in user's browser needs to happen in a different way than normally. This is because we need to use React rendering. `shiny.react` solves this for us by providing two mechanisms:
+
+- `withReact`: the most convenient, but will not work in some advanced cases
+- `reactOutput`: slightly more verbose, but also more powerful and flexible.
+
+# withReact
+
 A call to `withReact` is something to get used to. You can mix and match React and standard HTML tags. You can also insert other Shiny outputs inside (like a `uiOutput` or `leafletOutput`).
 
 There is a special category of components defined as Shiny inputs, like various Buttons, TextField, Toggle, Calendar, etc. They all have a companion `updateMyComponent` functions defined. To see a full list of these components, start typing `shiny.fluent::update`.
@@ -30,4 +37,20 @@ A couple of things to remember:
 1. `withReact` currently expects just one argument - if you want to pass more tags, use a div or a tagList.
 2. It is enough to use a single `withReact` call for each structure of tags. Do not wrap a `withReact` call inside another `withReact` call - this will not work. However, if you have a `withReact(uiOutput("myOutput"))`, then it is perfectly fine to have `output$myOutput <- renderUI(withReact(...))`
 3. In some cases, Buttons may not work correctly out of the box due to Shiny bindings. In this case, try wrapping them in a `ShinyComponentWrapper(...)` call. Typically, they work without it when placed high in the UI tree, but the wrapper is necessary. They are nested, for example, inside a Pivot page.
-4. By default `reactOutput()` creates a div with a size which affects the display (a problem e.g. when using it to render modal). This is the default for HTML widgets. Pass a `reactOutput("myOutput", height=NULL)` to avoid that.
+
+# reactOutput
+
+You use `reactOutput` in the same way as all HTML widgets in Shiny:
+
+```r
+# In your server part
+output$myReactOutput <- renderReact({
+  text <- "MyLabel"
+  reactOutput(Label(text))
+})
+
+# Somewhere else in your UI
+reactOutput("myReactOutput")
+```
+
+By default `reactOutput()` creates a div with a size which affects the display (a problem e.g. when using it to render modal). This is the default for HTML widgets. Pass a `reactOutput("myOutput", height=NULL)` to avoid that.
