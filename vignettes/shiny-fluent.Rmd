@@ -34,6 +34,7 @@ Let's start by creating an app that shows "Hello world!", but does this with Flu
 do.call(knitr::read_chunk, list(path = "../inst/examples/tutorial/01_hello_world.R"))
 do.call(knitr::read_chunk, list(path = "../inst/examples/tutorial/02_basic_app.R"))
 do.call(knitr::read_chunk, list(path = "../inst/examples/tutorial/03_adding_filtering.R"))
+do.call(knitr::read_chunk, list(path = "../inst/examples/tutorial/04_more_filters.R"))
 ```
 
 
@@ -111,12 +112,27 @@ We will need two `DatePicker`s stacked together. They are shiny.fluent inputs, s
 knitr::include_graphics("images/03_adding_filtering.png")
 ```
 
-
 # More filters
 
 - NormalPeoplePicker
 - Slider
 - Toggle
+
+```{r 04_helpers, eval=FALSE}
+```
+
+```{r 04_filters_ui, eval=FALSE}
+```
+
+```{r 04_ui, eval=FALSE}
+```
+
+```{r 04_table, eval=FALSE}
+```
+
+```{r, echo=FALSE}
+knitr::include_graphics("images/04_more_filters.png")
+```
 
 # More outputs
 
