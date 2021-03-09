@@ -35,6 +35,7 @@ do.call(knitr::read_chunk, list(path = "../inst/examples/tutorial/01_hello_world
 do.call(knitr::read_chunk, list(path = "../inst/examples/tutorial/02_basic_app.R"))
 do.call(knitr::read_chunk, list(path = "../inst/examples/tutorial/03_adding_filtering.R"))
 do.call(knitr::read_chunk, list(path = "../inst/examples/tutorial/04_more_filters.R"))
+do.call(knitr::read_chunk, list(path = "../inst/examples/tutorial/05_more_outputs.R"))
 ```
 
 
@@ -134,10 +135,24 @@ knitr::include_graphics("images/03_adding_filtering.png")
 knitr::include_graphics("images/04_more_filters.png")
 ```
 
+
 # More outputs
 
 - Plotly plot
 - Leaflet Map
+
+```{r 05_ui, eval=FALSE}
+```
+
+```{r 05_render, eval=FALSE}
+```
+
+```{r 05_outputs, eval=FALSE}
+```
+
+```{r, echo=FALSE}
+knitr::include_graphics("images/05_more_outputs.png")
+```
 
 # The End Result
 
