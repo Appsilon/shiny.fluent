@@ -58,10 +58,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/st-sales-reps-dashboard-advanced.html">Tutorial: Adding advanced components (dashboard part 2)</a>
-    </li>
-    <li>
-      <a href="../articles/st-sales-reps-dashboard.html">Tutorial: Full dashboard in Fluent UI</a>
+      <a href="../articles/st-sales-reps-dashboard.html">Tutorial: Full dashboard UI in Shiny and Fluent</a>
     </li>
     <li>
       <a href="../articles/sz-how-to-shiny-modules.html">How to: use shiny.fluent with Shiny modules</a>
@@ -111,63 +108,301 @@
 
     
     
+<p>Let’s learn shiny.fluent by building an example app.</p>
+<p>In this tutorial, we’ll build a basic application for analysing sales results data. The app will allow for filtering the data, and viewing it on a plot, on a map and in a table.</p>
+<p>We’ll assume that you have <a href="https://shiny.rstudio.com/">Shiny</a> and <code>shiny.fluent</code> <a href="https://appsilon.github.io/shiny.fluent/#installation">already installed</a>.</p>
+<div id="shiny-fluent-hello-world-app" class="section level1">
+<h1 class="hasAnchor">
+<a href="#shiny-fluent-hello-world-app" class="anchor"></a>shiny.fluent “Hello world!” app</h1>
+<p>Let’s start by creating an app that shows “Hello world!”, but does this with Fluent UI. First, we need to load <code>shiny.fluent</code>.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent">shiny.fluent</a></span><span class="op">)</span></code></pre></div>
-<p>Let’s start by creating something simple first - a dashboard allowing you to make a scatter plot displaying any two columns from the <code>mtcars</code> dataset. We’ll also add the option for adding a custom title:</p>
-<pre><code><a href="https://appsilon.github.io/shiny.fluent">library(shiny.fluent)
-library(ggplot2)
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://shiny.rstudio.com/">shiny</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent">shiny.fluent</a></span><span class="op">)</span></code></pre></div>
+<p>That gives us all we need to run a basic application! To create a UI showing a welcome message, we will use a Fluent component named <code><a href="../reference/Text.html">?Text</a></code>. Let’s add it to our code.</p>
+<p>For the text to actually appear, we need to put it inside a <a href="https://appsilon.github.io/shiny.react/reference/withReact.html"><code>withReact</code></a> function call which takes care of rendering Fluent components in user’s browsers using React. Use <code><a href="../reference/fluentPage.html">?fluentPage</a></code> to create the UI, as it will add proper CSS classes and suppress Bootstrap (you should not use both Bootstrap and Fluent UI at the same time).</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/fluentPage.html">fluentPage</a></span><span class="op">(</span>
+  <span class="fu"><a href="https://rdrr.io/pkg/shiny.react/man/withReact.html">withReact</a></span><span class="op">(</span>
+    <span class="fu"><a href="../reference/Text.html">Text</a></span><span class="op">(</span>variant <span class="op">=</span> <span class="st">"xxLarge"</span>, <span class="st">"Hello world!"</span><span class="op">)</span>
+  <span class="op">)</span>
+<span class="op">)</span>
 
-axisOptions &lt;- list(
-  list(key = "mpg", text = "mpg"), list(key = "cyl", text = "cyl"),
-  list(key = "disp", text = "disp"), list(key = "hp", text = "hp"),
-  list(key = "drat", text = "drat"), list(key = "wt", text = "wt"),
-  list(key = "qsec", text = "qsec"), list(key = "vs", text = "vs"),
-  list(key = "am", text = "am"), list(key = "gear", text = "gear"),
-  list(key = "carb", text = "carb")
-)
+<span class="va">server</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span>
 
-ui &lt;- withReact(
-  div(
-    style = "display: flex; padding: 2rem",
-    div(
-      style = "width: 30vw; margin-right: 3rem",
-      Label("Title:"),
-      TextField(input_id = "displayTitle", value = "Chart"),
-      Label("X-axis:"),
-      Dropdown(input_id = "dropdownX", value = "mpg", options = axisOptions),
-      Label("Y-axis:"),
-      Dropdown(input_id = "dropdownY", value = "mpg", options = axisOptions)
-    ),
-    div(
-      style = "width: 65vw",
-      plotOutput(outputId = "chart")
-    )
-  )
-)
-
-server &lt;- function(input, output) {
-  output$chart &lt;- renderPlot({
-    colX &lt;- sym(input$dropdownX)
-    colY &lt;- sym(input$dropdownY)
-    ggplot(mtcars, aes(x = !!colX, y = !!colY)) +
-      geom_point() +
-      labs(title = input$displayTitle) +
-      theme_classic() +
-      theme(plot.title = element_text(size = 20))
-  })
-}
-
-shinyApp(ui, server)</a></code></pre>
-<div class="figure">
-<img src="images/first_dashboard.gif" alt=""><p class="caption">Fluent UI app for mtcars data</p>
+<span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html">shinyApp</a></span><span class="op">(</span><span class="va">ui</span>, <span class="va">server</span><span class="op">)</span></code></pre></div>
+<p>Let’s see what our app looks like right now.</p>
+<p><img src="images/01_hello_world.png"><!-- --></p>
+<p>Yay! It may not look very impressive, but this text is rendered in Shiny with the whole power of Fluent UI and <a href="https://reactjs.org">React</a>.</p>
 </div>
-<p>As you can see, <code>shiny.fluid</code> behaves almost identical to stock <code>shiny</code>, so it shouldn’t take you much time to learn.</p>
-<p><br><br></p>
+<div id="showing-data-in-a-table" class="section level1">
+<h1 class="hasAnchor">
+<a href="#showing-data-in-a-table" class="anchor"></a>Showing data in a table</h1>
+<p>Let’s now grab some data and show it to our users in a table. shiny.fluent already includes some example data that we can use.</p>
+<p><code>fluent_people</code> is a list of imaginary people in a format expected by some Fluent components.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">fluent_people</span> <span class="op">%&gt;%</span> <span class="fu">glimpse</span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt; Rows: 7</span>
+<span class="co">#&gt; Columns: 11</span>
+<span class="co">#&gt; $ key           &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7</span>
+<span class="co">#&gt; $ imageUrl      &lt;chr&gt; "https://static2.sharepointonline.com/files/fabric/offic…</span>
+<span class="co">#&gt; $ imageInitials &lt;chr&gt; "PV", "AR", "AL", "RK", "CB", "VL", "MS"</span>
+<span class="co">#&gt; $ text          &lt;chr&gt; "Annie Lindqvist", "Aaron Reid", "Alex Lundberg", "Roko …</span>
+<span class="co">#&gt; $ secondaryText &lt;chr&gt; "Senior Sales Rep", "Sales Rep", "Junior Sales Rep", "Se…</span>
+<span class="co">#&gt; $ tertiaryText  &lt;chr&gt; "In a meeting", "In a meeting", "In a meeting", "In a me…</span>
+<span class="co">#&gt; $ optionalText  &lt;chr&gt; "Available at 4:00pm", "Available at 4:00pm", "Available…</span>
+<span class="co">#&gt; $ isValid       &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE</span>
+<span class="co">#&gt; $ presence      &lt;dbl&gt; 2, 6, 4, 1, 2, 2, 3</span>
+<span class="co">#&gt; $ canExpand     &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA</span>
+<span class="co">#&gt; $ color         &lt;chr&gt; "#8DD3C7", "#FFFFB3", "#BEBADA", "#FB8072", "#80B1D3", "…</span></code></pre></div>
+<p><code>fluent_sales_data</code> is a data frame of randomly generated “sales deals”, which are assigned to one of the <code>fluent_people</code>, have a date and an amount, and are associated with one of the top 10 companies from the Fortune 500 list (including its name, city and map coordinates).</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">fluent_sales_deals</span> <span class="op">%&gt;%</span> <span class="fu">glimpse</span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt; Rows: 92</span>
+<span class="co">#&gt; Columns: 30</span>
+<span class="co">#&gt; $ X           &lt;dbl&gt; -8286952, -8629185, -8234473, -13595427, -13584364, -82869…</span>
+<span class="co">#&gt; $ Y           &lt;dbl&gt; 4938582, 4523106, 4976860, 6047180, 4485453, 4938582, 4485…</span>
+<span class="co">#&gt; $ FID         &lt;dbl&gt; 493, 217, 341, 234, 441, 493, 441, 217, 234, 493, 425, 441…</span>
+<span class="co">#&gt; $ OBJECTID    &lt;dbl&gt; 493, 217, 341, 234, 441, 493, 441, 217, 234, 493, 425, 441…</span>
+<span class="co">#&gt; $ RANK        &lt;dbl&gt; 35, 148, 30, 28, 3, 35, 3, 148, 28, 35, 25, 3, 30, 3, 28, …</span>
+<span class="co">#&gt; $ NAME        &lt;chr&gt; "JOHNSON &amp; JOHNSON", "ALTRIA GROUP", "CITIGROUP", "MICROSO…</span>
+<span class="co">#&gt; $ ADDRESS     &lt;chr&gt; "1 JOHNSON AND JOHNSON PLAZA", "6601 WEST BROAD STREET", "…</span>
+<span class="co">#&gt; $ ADDRESS2    &lt;chr&gt; "NOT AVAILABLE", "NOT AVAILABLE", "NOT AVAILABLE", "NOT AV…</span>
+<span class="co">#&gt; $ CITY        &lt;chr&gt; "NEW BRUNSWICK", "RICHMOND", "NEW YORK", "REDMOND", "CUPER…</span>
+<span class="co">#&gt; $ STATE       &lt;chr&gt; "NJ", "VA", "NY", "WA", "CA", "NJ", "CA", "VA", "WA", "NJ"…</span>
+<span class="co">#&gt; $ ZIP         &lt;chr&gt; "08933", "23230", "10022", "98052", "95014", "08933", "950…</span>
+<span class="co">#&gt; $ COUNTY      &lt;chr&gt; "MIDDLESEX", "HENRICO", "NEW YORK", "KING", "SANTA CLARA",…</span>
+<span class="co">#&gt; $ EMPLOYEES   &lt;dbl&gt; 126400, 8300, 219000, 114000, 116000, 126400, 116000, 8300…</span>
+<span class="co">#&gt; $ REVENUES    &lt;dbl&gt; 71890, 19337, 82386, 85320, 215639, 71890, 215639, 19337, …</span>
+<span class="co">#&gt; $ LATITUDE    &lt;dbl&gt; 40.49804, 37.60024, 40.75901, 47.64005, 37.33177, 40.49804…</span>
+<span class="co">#&gt; $ LONGITUDE   &lt;dbl&gt; -74.44296, -77.51729, -73.97153, -122.12980, -122.03042, -…</span>
+<span class="co">#&gt; $ SOURCE      &lt;chr&gt; "MANUAL", "BING MAPS", "BING MAPS", "BING MAPS", "BING MAP…</span>
+<span class="co">#&gt; $ PRC         &lt;chr&gt; "ON-ENTITY", "ADDRESS", "ADDRESS", "ADDRESS", "ADDRESS", "…</span>
+<span class="co">#&gt; $ COUNTYFIPS  &lt;chr&gt; "34023", "51087", "36061", "53033", "06085", "34023", "060…</span>
+<span class="co">#&gt; $ COMMENTS    &lt;chr&gt; "NOT AVAILABLE", "NOT AVAILABLE", "NOT AVAILABLE", "NOT AV…</span>
+<span class="co">#&gt; $ WEBSITE     &lt;chr&gt; "HTTPS://WWW.JNJ.COM/", "HTTP://WWW.ALTRIA.COM/PAGES/DEFAU…</span>
+<span class="co">#&gt; $ PROFIT      &lt;dbl&gt; 16540, 14239, 14912, 16798, 45687, 16540, 45687, 14239, 16…</span>
+<span class="co">#&gt; $ deal_amount &lt;dbl&gt; 892075, 375775, 463526, 723438, 463824, 354757, 948121, 44…</span>
+<span class="co">#&gt; $ rep_id      &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2…</span>
+<span class="co">#&gt; $ rep_name    &lt;chr&gt; "Annie Lindqvist", "Annie Lindqvist", "Annie Lindqvist", "…</span>
+<span class="co">#&gt; $ date        &lt;date&gt; 2020-09-06, 2020-05-20, 2020-09-28, 2020-06-29, 2020-02-2…</span>
+<span class="co">#&gt; $ client_name &lt;chr&gt; "JOHNSON &amp; JOHNSON", "ALTRIA GROUP", "CITIGROUP", "MICROSO…</span>
+<span class="co">#&gt; $ city        &lt;chr&gt; "NEW BRUNSWICK", "RICHMOND", "NEW YORK", "REDMOND", "CUPER…</span>
+<span class="co">#&gt; $ color       &lt;chr&gt; "#8DD3C7", "#8DD3C7", "#8DD3C7", "#8DD3C7", "#8DD3C7", "#8…</span>
+<span class="co">#&gt; $ is_closed   &lt;int&gt; 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1…</span></code></pre></div>
+<p>We now need a Fluent component to insert a table. A good way find a component that suits our needs is to go to <a href="https://demo.appsilon.ai/apps/fluentui">shiny.fluent components live demo</a> or to the <a href="https://developer.microsoft.com/en-us/fluentui#/controls">official Fluent UI docs</a>. Browsing through the list of components, we find <code><a href="../reference/DetailsList.html">?DetailsList</a></code>, which gives a table component with rich configuration options.</p>
+<p>First, we need to define which columns from our deals data we want to see and how to label them.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">details_list_columns</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span>
+  fieldName <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"rep_name"</span>, <span class="st">"date"</span>, <span class="st">"deal_amount"</span>, <span class="st">"client_name"</span>, <span class="st">"city"</span>, <span class="st">"is_closed"</span><span class="op">)</span>,
+  name <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Sales rep"</span>, <span class="st">"Close date"</span>, <span class="st">"Amount"</span>, <span class="st">"Client"</span>, <span class="st">"City"</span>, <span class="st">"Is closed?"</span><span class="op">)</span>,
+  key <span class="op">=</span> <span class="va">fieldName</span><span class="op">)</span></code></pre></div>
+<p>Let’s now display our sales deals in a table. As we plan to later make the table change dynamically, we put it in a regular Shiny <code>uiOutput</code>. Let’s also assume that for now we want to filter out deals that have <code>is_closed</code> equal to <code>1</code>.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/fluentPage.html">fluentPage</a></span><span class="op">(</span>
+  <span class="fu"><a href="https://rdrr.io/pkg/shiny.react/man/withReact.html">withReact</a></span><span class="op">(</span>
+    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/htmlOutput.html">uiOutput</a></span><span class="op">(</span><span class="st">"analysis"</span><span class="op">)</span>
+  <span class="op">)</span>
+<span class="op">)</span>
+
+<span class="va">server</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span>
+  <span class="va">filtered_deals</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/reactive.html">reactive</a></span><span class="op">(</span><span class="op">{</span>
+    <span class="va">filtered_deals</span> <span class="op">&lt;-</span> <span class="va">fluent_sales_deals</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">is_closed</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span>
+  <span class="op">}</span><span class="op">)</span>
+
+  <span class="va">output</span><span class="op">$</span><span class="va">analysis</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/renderUI.html">renderUI</a></span><span class="op">(</span><span class="op">{</span>
+    <span class="va">items_list</span> <span class="op">&lt;-</span> <span class="kw">if</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="fu">filtered_deals</span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span><span class="op">{</span>
+      <span class="fu"><a href="../reference/DetailsList.html">DetailsList</a></span><span class="op">(</span>items <span class="op">=</span> <span class="fu">filtered_deals</span><span class="op">(</span><span class="op">)</span>, columns <span class="op">=</span> <span class="va">details_list_columns</span><span class="op">)</span>
+    <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span>
+      <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html">p</a></span><span class="op">(</span><span class="st">"No matching transactions."</span><span class="op">)</span>
+    <span class="op">}</span>
+
+    <span class="fu"><a href="https://rdrr.io/pkg/shiny.react/man/withReact.html">withReact</a></span><span class="op">(</span>
+      <span class="fu"><a href="../reference/Stack.html">Stack</a></span><span class="op">(</span>
+        tokens <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>childrenGap <span class="op">=</span> <span class="fl">5</span><span class="op">)</span>,
+        <span class="fu"><a href="../reference/Text.html">Text</a></span><span class="op">(</span>variant <span class="op">=</span> <span class="st">"large"</span>, <span class="st">"Sales deals details"</span>, block <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,
+        <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html">div</a></span><span class="op">(</span>style<span class="op">=</span><span class="st">"max-height: 500px; overflow: auto"</span>, <span class="va">items_list</span><span class="op">)</span>
+      <span class="op">)</span>
+    <span class="op">)</span>
+  <span class="op">}</span><span class="op">)</span>
+<span class="op">}</span>
+
+<span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html">shinyApp</a></span><span class="op">(</span><span class="va">ui</span>, <span class="va">server</span><span class="op">)</span></code></pre></div>
+<p>As you can see, you can simply put <code>withReact</code> inside a <code>renderUI</code> in your server part. In some more advanced cases, you may need to use an <a href="https://appsilon.github.io/shiny.fluent/articles/topic_embedding-react-in-shiny.html#reactoutput">alternative mechanism</a>.</p>
+<p>In addition to <code><a href="../reference/DetailsList.html">?DetailsList</a></code> and <code><a href="../reference/Text.html">?Text</a></code>, in the code above we used <code><a href="../reference/Stack.html">?Stack</a></code>, which arranges elements in its area.</p>
+<p><img src="images/02_detailed_list.png"><!-- --></p>
+</div>
+<div id="adding-filtering" class="section level1">
+<h1 class="hasAnchor">
+<a href="#adding-filtering" class="anchor"></a>Adding filtering</h1>
+<p>Okay, that already looks good! But it’s hard to explore these data without some filtering options - let’s add that now. We will start by adding an option to find transactions between selected dates.</p>
+<p>We will use two <code><a href="../reference/DatePicker.html">?DatePicker</a></code> components to allow users to choose a date range. They are shiny.fluent inputs and behave in a very similar way to regular Shiny inputs: they take an ID as the first argument, and optionally an initial value.</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">filters</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/tag.html">tagList</a></span><span class="op">(</span>
+  <span class="fu"><a href="../reference/DatePicker.html">DatePicker</a></span><span class="op">(</span><span class="st">"fromDate"</span>, value <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">'2020/01/01'</span><span class="op">)</span>, label <span class="op">=</span> <span class="st">"From date"</span><span class="op">)</span>,
+  <span class="fu"><a href="../reference/DatePicker.html">DatePicker</a></span><span class="op">(</span><span class="st">"toDate"</span>, value <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">'2020/12/31'</span><span class="op">)</span>, label <span class="op">=</span> <span class="st">"To date"</span><span class="op">)</span>
+<span class="op">)</span></code></pre></div>
+<p>Let’s add the filters to our UI:</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/fluentPage.html">fluentPage</a></span><span class="op">(</span>
+  <span class="fu"><a href="https://rdrr.io/pkg/shiny.react/man/withReact.html">withReact</a></span><span class="op">(</span>
+    <span class="va">filters</span>,
+    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/htmlOutput.html">uiOutput</a></span><span class="op">(</span><span class="st">"analysis"</span><span class="op">)</span>
+  <span class="op">)</span>
+<span class="op">)</span></code></pre></div>
+<p>In the server function of our application, we can now access the input values using the IDs we provided in the same way as with any other Shiny input. Let’s use the selected dates to apply additional filtering to the deals:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
+<span id="cb9-2"><a href="#cb9-2"></a>  filtered_deals &lt;-<span class="st"> </span><span class="kw">reactive</span>({</span>
+<span id="cb9-3"><a href="#cb9-3"></a>    filtered_deals &lt;-<span class="st"> </span>fluent_sales_deals <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(</span>
+<span id="cb9-4"><a href="#cb9-4"></a>      date <span class="op">&gt;=</span><span class="st"> </span>input<span class="op">$</span>fromDate,</span>
+<span id="cb9-5"><a href="#cb9-5"></a>      date <span class="op">&lt;=</span><span class="st"> </span>input<span class="op">$</span>toDate,</span>
+<span id="cb9-6"><a href="#cb9-6"></a>      is_closed <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span></span>
+<span id="cb9-7"><a href="#cb9-7"></a>    )</span>
+<span id="cb9-8"><a href="#cb9-8"></a>  })</span></code></pre></div>
+<p>This is what our application looks like now:</p>
+<p><img src="images/03_adding_filtering.png"><!-- --></p>
+</div>
+<div id="more-filters" class="section level1">
+<h1 class="hasAnchor">
+<a href="#more-filters" class="anchor"></a>More filters</h1>
+<p>Let’s add more filtering options to our app! We will use the following components: - <a href="../reference/PeoplePicker.html"><code>?NormalPeoplePicker</code></a> to limit the search to selected sales representatives, - <code><a href="../reference/Slider.html">?Slider</a></code> to define a minimum deal size, - <code><a href="../reference/Toggle.html">?Toggle</a></code> to show only the closed deals.</p>
+<p>In addition we’ll use <code><a href="../reference/Stack.html">?Stack</a></code> and <code><a href="../reference/Label.html">?Label</a></code> to visually arrange the filtering controls.</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">filters</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/Stack.html">Stack</a></span><span class="op">(</span>
+  tokens <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>childrenGap <span class="op">=</span> <span class="fl">10</span><span class="op">)</span>,
+  <span class="fu"><a href="../reference/Stack.html">Stack</a></span><span class="op">(</span>
+    tokens <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>childrenGap <span class="op">=</span> <span class="fl">10</span><span class="op">)</span>, horizontal <span class="op">=</span> <span class="cn">TRUE</span>,
+    <span class="fu"><a href="../reference/DatePicker.html">DatePicker</a></span><span class="op">(</span><span class="st">"fromDate"</span>, value <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">'2020/01/01'</span><span class="op">)</span>, label <span class="op">=</span> <span class="st">"From date"</span><span class="op">)</span>,
+    <span class="fu"><a href="../reference/DatePicker.html">DatePicker</a></span><span class="op">(</span><span class="st">"toDate"</span>, value <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">'2020/12/31'</span><span class="op">)</span>, label <span class="op">=</span> <span class="st">"To date"</span><span class="op">)</span>
+  <span class="op">)</span>,
+  <span class="fu"><a href="../reference/Label.html">Label</a></span><span class="op">(</span><span class="st">"Filter by sales reps"</span><span class="op">)</span>,
+  <span class="fu"><a href="../reference/NormalPeoplePicker.html">NormalPeoplePicker</a></span><span class="op">(</span><span class="st">"selectedPeople"</span>,
+    options <span class="op">=</span> <span class="va">fluent_people</span>,
+    pickerSuggestionsProps <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>
+      suggestionsHeaderText <span class="op">=</span> <span class="st">'Matching people'</span>,
+      mostRecentlyUsedHeaderText <span class="op">=</span> <span class="st">'Sales reps'</span>,
+      noResultsFoundText <span class="op">=</span> <span class="st">'No results found'</span>,
+      showRemoveButtons <span class="op">=</span> <span class="cn">TRUE</span>
+    <span class="op">)</span>
+  <span class="op">)</span>,
+  <span class="fu"><a href="../reference/Slider.html">Slider</a></span><span class="op">(</span><span class="st">"slider"</span>,
+    value <span class="op">=</span> <span class="fl">0</span>, min <span class="op">=</span> <span class="fl">0</span>, max <span class="op">=</span> <span class="fl">1000000</span>, step <span class="op">=</span> <span class="fl">100000</span>,
+    label <span class="op">=</span> <span class="st">"Minimum amount"</span>,
+    valueFormat <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/htmlwidgets/man/JS.html">JS</a></span><span class="op">(</span><span class="st">"function(x) { return '$' + x}"</span><span class="op">)</span>,
+    snapToStep <span class="op">=</span> <span class="cn">TRUE</span>
+  <span class="op">)</span>,
+  <span class="fu"><a href="../reference/Toggle.html">Toggle</a></span><span class="op">(</span><span class="st">"closedOnly"</span>, value <span class="op">=</span> <span class="cn">TRUE</span>, label <span class="op">=</span> <span class="st">"Include closed deals only?"</span><span class="op">)</span>
+<span class="op">)</span></code></pre></div>
+<p>Now that we have multiple filtering controls, it would be a good idea to add some visual separation between them and the table. Let’s define a helper function to create Fluent UI cards:</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">makeCard</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">title</span>, <span class="va">content</span>, <span class="va">size</span> <span class="op">=</span> <span class="fl">12</span>, <span class="va">style</span> <span class="op">=</span> <span class="st">""</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html">div</a></span><span class="op">(</span>
+    class <span class="op">=</span> <span class="fu">glue</span><span class="op">(</span><span class="st">"card ms-depth-8 ms-sm{size} ms-xl{size}"</span><span class="op">)</span>,
+    style <span class="op">=</span> <span class="va">style</span>,
+    <span class="fu"><a href="../reference/Stack.html">Stack</a></span><span class="op">(</span>
+      tokens <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>childrenGap <span class="op">=</span> <span class="fl">5</span><span class="op">)</span>,
+      <span class="fu"><a href="../reference/Text.html">Text</a></span><span class="op">(</span>variant <span class="op">=</span> <span class="st">"large"</span>, <span class="va">title</span>, block <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,
+      <span class="va">content</span>
+    <span class="op">)</span>
+  <span class="op">)</span>
+<span class="op">}</span></code></pre></div>
+<p>Now we can wrap the filters in a call to <code>makeCard()</code>. Additionally, we include a <code>style</code> tag to add some padding and margin to the cards created by our helper function.</p>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/fluentPage.html">fluentPage</a></span><span class="op">(</span>
+  <span class="va">tags</span><span class="op">$</span><span class="fu">style</span><span class="op">(</span><span class="st">".card { padding: 28px; margin-bottom: 28px; }"</span><span class="op">)</span>,
+  <span class="fu"><a href="https://rdrr.io/pkg/shiny.react/man/withReact.html">withReact</a></span><span class="op">(</span>
+    <span class="fu">makeCard</span><span class="op">(</span><span class="st">"Filters"</span>, <span class="va">filters</span>, size <span class="op">=</span> <span class="fl">4</span>, style <span class="op">=</span> <span class="st">"max-height: 320px;"</span><span class="op">)</span>,
+    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/htmlOutput.html">uiOutput</a></span><span class="op">(</span><span class="st">"analysis"</span><span class="op">)</span>
+  <span class="op">)</span>
+<span class="op">)</span></code></pre></div>
+<p>Let’s move our attention to the server function. We can access the values of the filtering controls using the provided IDs just like before.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
+<span id="cb13-2"><a href="#cb13-2"></a>  filtered_deals &lt;-<span class="st"> </span><span class="kw">reactive</span>({</span>
+<span id="cb13-3"><a href="#cb13-3"></a>    <span class="cf">if</span> (<span class="op">!</span><span class="kw">is.null</span>(input<span class="op">$</span>selectedPeople) <span class="op">&amp;&amp;</span><span class="st"> </span>input<span class="op">$</span>selectedPeople <span class="op">!=</span><span class="st"> ""</span>) {</span>
+<span id="cb13-4"><a href="#cb13-4"></a>      selectedPeopleKeys &lt;-<span class="st"> </span>input<span class="op">$</span>selectedPeople</span>
+<span id="cb13-5"><a href="#cb13-5"></a>    } <span class="cf">else</span> {</span>
+<span id="cb13-6"><a href="#cb13-6"></a>      selectedPeopleKeys &lt;-<span class="st"> </span><span class="kw">list</span>()</span>
+<span id="cb13-7"><a href="#cb13-7"></a>    }</span>
+<span id="cb13-8"><a href="#cb13-8"></a>    <span class="cf">if</span> (<span class="kw">length</span>(selectedPeopleKeys) <span class="op">==</span><span class="st"> </span><span class="dv">0</span>) {</span>
+<span id="cb13-9"><a href="#cb13-9"></a>      selectedPeopleKeys &lt;-<span class="st"> </span>fluent_people<span class="op">$</span>key</span>
+<span id="cb13-10"><a href="#cb13-10"></a>    }</span>
+<span id="cb13-11"><a href="#cb13-11"></a>    minClosedVal &lt;-<span class="st"> </span><span class="cf">if</span> (input<span class="op">$</span>closedOnly <span class="op">==</span><span class="st"> </span><span class="ot">TRUE</span>) <span class="dv">1</span> <span class="cf">else</span> <span class="dv">0</span></span>
+<span id="cb13-12"><a href="#cb13-12"></a></span>
+<span id="cb13-13"><a href="#cb13-13"></a>    filtered_deals &lt;-<span class="st"> </span>fluent_sales_deals <span class="op">%&gt;%</span></span>
+<span id="cb13-14"><a href="#cb13-14"></a><span class="st">      </span><span class="kw">filter</span>(</span>
+<span id="cb13-15"><a href="#cb13-15"></a>        rep_id <span class="op">%in%</span><span class="st"> </span>selectedPeopleKeys,</span>
+<span id="cb13-16"><a href="#cb13-16"></a>        date <span class="op">&gt;=</span><span class="st"> </span>input<span class="op">$</span>fromDate,</span>
+<span id="cb13-17"><a href="#cb13-17"></a>        date <span class="op">&lt;=</span><span class="st"> </span>input<span class="op">$</span>toDate,</span>
+<span id="cb13-18"><a href="#cb13-18"></a>        deal_amount <span class="op">&gt;=</span><span class="st"> </span>input<span class="op">$</span>slider,</span>
+<span id="cb13-19"><a href="#cb13-19"></a>        is_closed <span class="op">&gt;=</span><span class="st"> </span>minClosedVal</span>
+<span id="cb13-20"><a href="#cb13-20"></a>      ) <span class="op">%&gt;%</span></span>
+<span id="cb13-21"><a href="#cb13-21"></a><span class="st">      </span><span class="kw">mutate</span>(<span class="dt">is_closed =</span> <span class="kw">ifelse</span>(is_closed <span class="op">==</span><span class="st"> </span><span class="dv">1</span>, <span class="st">"Yes"</span>, <span class="st">"No"</span>))</span>
+<span id="cb13-22"><a href="#cb13-22"></a>  })</span></code></pre></div>
+<p>Finally, let’s refactor the table output and wrap it in a card.</p>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R">    <span class="fu"><a href="https://rdrr.io/pkg/shiny.react/man/withReact.html">withReact</a></span><span class="op">(</span>
+      <span class="fu">makeCard</span><span class="op">(</span><span class="st">"Top results"</span>, <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html">div</a></span><span class="op">(</span>style<span class="op">=</span><span class="st">"max-height: 500px; overflow: auto"</span>, <span class="va">items_list</span><span class="op">)</span><span class="op">)</span>
+    <span class="op">)</span></code></pre></div>
+<p>Our filtering is much more useful now!</p>
+<p><img src="images/04_more_filters.png"><!-- --></p>
+</div>
+<div id="more-outputs" class="section level1">
+<h1 class="hasAnchor">
+<a href="#more-outputs" class="anchor"></a>More outputs</h1>
+<p>We are not limited to shiny.fluent components - we can seamlessly use other libraries in our app! Let’s add a Plotly plot and a Leaflet map. We start by adding a <code>plotlyOutput()</code> to our UI:</p>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/fluentPage.html">fluentPage</a></span><span class="op">(</span>
+  <span class="va">tags</span><span class="op">$</span><span class="fu">style</span><span class="op">(</span><span class="st">".card { padding: 28px; margin-bottom: 28px; }"</span><span class="op">)</span>,
+  <span class="fu"><a href="https://rdrr.io/pkg/shiny.react/man/withReact.html">withReact</a></span><span class="op">(</span>
+    <span class="fu"><a href="../reference/Stack.html">Stack</a></span><span class="op">(</span>
+      tokens <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>childrenGap <span class="op">=</span> <span class="fl">10</span><span class="op">)</span>, horizontal <span class="op">=</span> <span class="cn">TRUE</span>,
+      <span class="fu">makeCard</span><span class="op">(</span><span class="st">"Filters"</span>, <span class="va">filters</span>, size <span class="op">=</span> <span class="fl">4</span>, style <span class="op">=</span> <span class="st">"max-height: 320px"</span><span class="op">)</span>,
+      <span class="fu">makeCard</span><span class="op">(</span><span class="st">"Deals count"</span>, <span class="fu">plotlyOutput</span><span class="op">(</span><span class="st">"plot"</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">8</span>, style <span class="op">=</span> <span class="st">"max-height: 320px"</span><span class="op">)</span>
+    <span class="op">)</span>,
+    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/htmlOutput.html">uiOutput</a></span><span class="op">(</span><span class="st">"analysis"</span><span class="op">)</span>
+  <span class="op">)</span>
+<span class="op">)</span></code></pre></div>
+<p>We also add a <code>leafletOutput()</code> to the UI generated in the server function:</p>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R">    <span class="fu"><a href="https://rdrr.io/pkg/shiny.react/man/withReact.html">withReact</a></span><span class="op">(</span>
+      <span class="fu"><a href="../reference/Stack.html">Stack</a></span><span class="op">(</span>
+        tokens <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>childrenGap <span class="op">=</span> <span class="fl">10</span><span class="op">)</span>, horizontal <span class="op">=</span> <span class="cn">TRUE</span>,
+        <span class="fu">makeCard</span><span class="op">(</span><span class="st">"Top results"</span>, <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html">div</a></span><span class="op">(</span>style<span class="op">=</span><span class="st">"max-height: 500px; overflow: auto"</span>, <span class="va">items_list</span><span class="op">)</span><span class="op">)</span>,
+        <span class="fu">makeCard</span><span class="op">(</span><span class="st">"Map"</span>, <span class="fu">leafletOutput</span><span class="op">(</span><span class="st">"map"</span><span class="op">)</span><span class="op">)</span>
+      <span class="op">)</span>
+    <span class="op">)</span></code></pre></div>
+<p>Now we can add the following code to the server function to render a bar chart and a map:</p>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<code class="sourceCode R">  <span class="va">output</span><span class="op">$</span><span class="va">map</span> <span class="op">&lt;-</span> <span class="fu">renderLeaflet</span><span class="op">(</span><span class="op">{</span>
+    <span class="va">points</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="fu">filtered_deals</span><span class="op">(</span><span class="op">)</span><span class="op">$</span><span class="va">LONGITUDE</span>, <span class="fu">filtered_deals</span><span class="op">(</span><span class="op">)</span><span class="op">$</span><span class="va">LATITUDE</span><span class="op">)</span>
+    <span class="fu">leaflet</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span>
+      <span class="fu">addProviderTiles</span><span class="op">(</span><span class="va">providers</span><span class="op">$</span><span class="va">Stamen.TonerLite</span>, options <span class="op">=</span> <span class="fu">providerTileOptions</span><span class="op">(</span>noWrap <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
+      <span class="fu">addMarkers</span><span class="op">(</span>data <span class="op">=</span> <span class="va">points</span><span class="op">)</span>
+  <span class="op">}</span><span class="op">)</span>
+
+  <span class="va">output</span><span class="op">$</span><span class="va">plot</span> <span class="op">&lt;-</span> <span class="fu">renderPlotly</span><span class="op">(</span><span class="op">{</span>
+    <span class="va">p</span> <span class="op">&lt;-</span> <span class="fu">ggplot</span><span class="op">(</span><span class="fu">filtered_deals</span><span class="op">(</span><span class="op">)</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">rep_name</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+      <span class="fu">geom_bar</span><span class="op">(</span>fill <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="fu">filtered_deals</span><span class="op">(</span><span class="op">)</span><span class="op">$</span><span class="va">color</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+      <span class="fu">ylab</span><span class="op">(</span><span class="st">"Number of deals"</span><span class="op">)</span> <span class="op">+</span>
+      <span class="fu">xlab</span><span class="op">(</span><span class="st">"Sales rep"</span><span class="op">)</span> <span class="op">+</span>
+      <span class="fu">theme_light</span><span class="op">(</span><span class="op">)</span>
+    <span class="fu">ggplotly</span><span class="op">(</span><span class="va">p</span>, height <span class="op">=</span> <span class="fl">300</span><span class="op">)</span>
+  <span class="op">}</span><span class="op">)</span></code></pre></div>
+<p>Look at our dashboard now!</p>
+<p><img src="images/05_more_outputs.png"><!-- --></p>
+</div>
+<div id="the-end-result" class="section level1">
+<h1 class="hasAnchor">
+<a href="#the-end-result" class="anchor"></a>The end result</h1>
+<p>In this tutorial we built a simple dashboard for exploring sales representatives data. We learned how to use shiny.fluent inputs and outputs, how to add components from other libraries and how to use Fluent UI capabilities for visually arranging the elements.</p>
+<p><img src="images/part_1_end_result.gif"><!-- --></p>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-      </div>
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
+    </nav>
+</div>
 
 </div>
 

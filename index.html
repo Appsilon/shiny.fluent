@@ -58,10 +58,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="articles/st-sales-reps-dashboard-advanced.html">Tutorial: Adding advanced components (dashboard part 2)</a>
-    </li>
-    <li>
-      <a href="articles/st-sales-reps-dashboard.html">Tutorial: Full dashboard in Fluent UI</a>
+      <a href="articles/st-sales-reps-dashboard.html">Tutorial: Full dashboard UI in Shiny and Fluent</a>
     </li>
     <li>
       <a href="articles/sz-how-to-shiny-modules.html">How to: use shiny.fluent with Shiny modules</a>
@@ -165,19 +162,6 @@
 </ul>
 <p>There are also usage examples for individual components. Use <code><a href="reference/run_example.html">shiny.fluent::run_example()</a></code> to list all available examples.</p>
 </div>
-</div>
-<div id="solving-installation-credentials-issues" class="section level2">
-<h2 class="hasAnchor">
-<a href="#solving-installation-credentials-issues" class="anchor"></a>Solving installation credentials issues</h2>
-<p><em>This section will be removed once the package is published</em></p>
-<p>If installation fails, configure Git credentials using <code>usethis::use_git_credentials</code> and <code>git2r::cred_ssh_key</code> or <code>git2r::cred_token</code>. This should help</p>
-<p>If you run into errors with installing as above, try installing SSH dependencies and re-installing git2r</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">sudo</span> apt-get install libssh2-1 libssh2-1-dev</span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="ex">Rscript</span> -e <span class="st">'remotes::install_cran("git2r", force = TRUE)'</span></span></code></pre></div>
-<p>For Mac OSX use:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="ex">brew</span> install libssh2</span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="ex">brew</span> install libgit2</span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="ex">install.packages</span>(<span class="st">"git2r"</span>, type = <span class="st">"source"</span>, configure.vars = <span class="st">"autobrew=yes"</span>)</span></code></pre></div>
 </div>
 </div>
 

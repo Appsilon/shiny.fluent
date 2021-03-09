@@ -58,10 +58,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/st-sales-reps-dashboard-advanced.html">Tutorial: Adding advanced components (dashboard part 2)</a>
-    </li>
-    <li>
-      <a href="../articles/st-sales-reps-dashboard.html">Tutorial: Full dashboard in Fluent UI</a>
+      <a href="../articles/st-sales-reps-dashboard.html">Tutorial: Full dashboard UI in Shiny and Fluent</a>
     </li>
     <li>
       <a href="../articles/sz-how-to-shiny-modules.html">How to: use shiny.fluent with Shiny modules</a>
@@ -113,16 +110,44 @@
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent">shiny.fluent</a></span><span class="op">)</span></code></pre></div>
+<p>Using Fluent components means that showing the UI pieces in user’s browser needs to happen in a different way than normally. This is because we need to use React rendering. <code>shiny.react</code> solves this for us by providing two mechanisms:</p>
+<ul>
+<li>
+<code>withReact</code>: the most convenient, but will not work in some advanced cases</li>
+<li>
+<code>reactOutput</code>: slightly more verbose, but also more powerful and flexible.</li>
+</ul>
+<div id="withreact" class="section level1">
+<h1 class="hasAnchor">
+<a href="#withreact" class="anchor"></a>withReact</h1>
 <p>A call to <code>withReact</code> is something to get used to. You can mix and match React and standard HTML tags. You can also insert other Shiny outputs inside (like a <code>uiOutput</code> or <code>leafletOutput</code>).</p>
 <p>There is a special category of components defined as Shiny inputs, like various Buttons, TextField, Toggle, Calendar, etc. They all have a companion <code>updateMyComponent</code> functions defined. To see a full list of these components, start typing <code><a href="https://rdrr.io/r/stats/update.html">shiny.fluent::update</a></code>.</p>
 <p>There is also an alternative to withReact available. It is less convenient because it requires you to define an output. However, it is more powerful because it maintains the internal state of React components. It is needed when inserting, e.g., a Modal or Dialog. To use it, insert <code><a href="https://rdrr.io/pkg/shiny.react/man/reactOutput.html">reactOutput("myReactOutput")</a></code> and then define this output like <code>output$myReactOutput &lt;- reactOutput(reactWidget({ ... React or HTML tags here }))</code>. Look at the examples for Modal, Dialog, TeachingBubble for details.</p>
 <p>You can pass raw JavaScript code as parameters to components. To do that, use <code>param = JS("my js code")</code>. See <code>008_custom_js</code> for an example.</p>
-<p>A couple of things to remember: 1. <code>withReact</code> currently expects just one argument - if you want to pass more tags, use a div or a tagList. 2. It is enough to use a single <code>withReact</code> call for each structure of tags. Do not wrap a <code>withReact</code> call inside another <code>withReact</code> call - this will not work. However, if you have a <code><a href="https://rdrr.io/pkg/shiny.react/man/withReact.html">withReact(uiOutput("myOutput"))</a></code>, then it is perfectly fine to have <code>output$myOutput &lt;- renderUI(withReact(...))</code> 3. In some cases, Buttons may not work correctly out of the box due to Shiny bindings. In this case, try wrapping them in a <code><a href="https://rdrr.io/pkg/shiny.react/man/ShinyComponentWrapper.html">ShinyComponentWrapper(...)</a></code> call. Typically, they work without it when placed high in the UI tree, but the wrapper is necessary. They are nested, for example, inside a Pivot page. 4. By default <code><a href="https://rdrr.io/pkg/shiny.react/man/reactOutput.html">reactOutput()</a></code> creates a div with a size which affects the display (a problem e.g. when using it to render modal). This is the default for HTML widgets. Pass a <code><a href="https://rdrr.io/pkg/shiny.react/man/reactOutput.html">reactOutput("myOutput", height=NULL)</a></code> to avoid that.</p>
+<p>A couple of things to remember: 1. <code>withReact</code> currently expects just one argument - if you want to pass more tags, use a div or a tagList. 2. It is enough to use a single <code>withReact</code> call for each structure of tags. Do not wrap a <code>withReact</code> call inside another <code>withReact</code> call - this will not work. However, if you have a <code><a href="https://rdrr.io/pkg/shiny.react/man/withReact.html">withReact(uiOutput("myOutput"))</a></code>, then it is perfectly fine to have <code>output$myOutput &lt;- renderUI(withReact(...))</code> 3. In some cases, Buttons may not work correctly out of the box due to Shiny bindings. In this case, try wrapping them in a <code><a href="https://rdrr.io/pkg/shiny.react/man/ShinyComponentWrapper.html">ShinyComponentWrapper(...)</a></code> call. Typically, they work without it when placed high in the UI tree, but the wrapper is necessary. They are nested, for example, inside a Pivot page.</p>
+</div>
+<div id="reactoutput" class="section level1">
+<h1 class="hasAnchor">
+<a href="#reactoutput" class="anchor"></a>reactOutput</h1>
+<p>You use <code>reactOutput</code> in the same way as all HTML widgets in Shiny:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># In your server part</span>
+<span class="va">output</span><span class="op">$</span><span class="va">myReactOutput</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny.react/man/renderReact.html">renderReact</a></span><span class="op">(</span><span class="op">{</span>
+  <span class="va">text</span> <span class="op">&lt;-</span> <span class="st">"MyLabel"</span>
+  <span class="fu"><a href="https://rdrr.io/pkg/shiny.react/man/reactOutput.html">reactOutput</a></span><span class="op">(</span><span class="fu"><a href="../reference/Label.html">Label</a></span><span class="op">(</span><span class="va">text</span><span class="op">)</span><span class="op">)</span>
+<span class="op">}</span><span class="op">)</span>
+
+<span class="co"># Somewhere else in your UI</span>
+<span class="fu"><a href="https://rdrr.io/pkg/shiny.react/man/reactOutput.html">reactOutput</a></span><span class="op">(</span><span class="st">"myReactOutput"</span><span class="op">)</span></code></pre></div>
+<p>By default <code><a href="https://rdrr.io/pkg/shiny.react/man/reactOutput.html">reactOutput()</a></code> creates a div with a size which affects the display (a problem e.g. when using it to render modal). This is the default for HTML widgets. Pass a <code><a href="https://rdrr.io/pkg/shiny.react/man/reactOutput.html">reactOutput("myOutput", height=NULL)</a></code> to avoid that.</p>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-      </div>
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
+    </nav>
+</div>
 
 </div>
 
