@@ -56,7 +56,7 @@ Use `?fluentPage` to create the UI, as it will add proper CSS classes and suppre
 Let's see what our app looks like right now.
 
 ```{r, echo=FALSE}
-knitr::include_graphics("images/01_hello_world.png")
+knitr::include_graphics("images/tutorial-part1-step1.png")
 ```
 
 Yay! It may not look very impressive, but this text is rendered in Shiny with the whole power of Fluent UI and [React](https://reactjs.org).
@@ -95,7 +95,7 @@ In addition to `?DetailsList` and `?Text`, in the code above we used `?Stack`, w
 
 
 ```{r, echo=FALSE}
-knitr::include_graphics("images/02_detailed_list.png")
+knitr::include_graphics("images/tutorial-part1-step2.png")
 ```
 
 # Adding filtering
@@ -126,13 +126,14 @@ Let's use the selected dates to apply additional filtering to the deals:
 This is what our application looks like now:
 
 ```{r, echo=FALSE}
-knitr::include_graphics("images/03_adding_filtering.png")
+knitr::include_graphics("images/tutorial-part1-step3.png")
 ```
 
 # More filters
 
 Let's add more filtering options to our app!
 We will use the following components:
+
 - [`?NormalPeoplePicker`](../reference/PeoplePicker.html) to limit the search to selected sales representatives,
 - `?Slider` to define a minimum deal size,
 - `?Toggle` to show only the closed deals.
@@ -170,7 +171,7 @@ Finally, let's refactor the table output and wrap it in a card.
 Our filtering is much more useful now!
 
 ```{r, echo=FALSE}
-knitr::include_graphics("images/04_more_filters.png")
+knitr::include_graphics("images/tutorial-part1-step4.png")
 ```
 
 
@@ -196,7 +197,7 @@ Now we can add the following code to the server function to render a bar chart a
 Look at our dashboard now!
 
 ```{r, echo=FALSE}
-knitr::include_graphics("images/05_more_outputs.png")
+knitr::include_graphics("images/tutorial-part1-step5.png")
 ```
 
 # The end result
@@ -207,5 +208,5 @@ how to add components from other libraries
 and how to use Fluent UI capabilities for visually arranging the elements.
 
 ```{r, echo=FALSE}
-knitr::include_graphics("images/part_1_end_result.gif")
+knitr::include_graphics("images/tutorial-part1-final.gif")
 ```
