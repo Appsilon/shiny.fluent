@@ -1,6 +1,6 @@
 # shiny.fluent (development version)
 
-* ...
+* (placeholder)
 # shiny.fluent 0.0.2
 
 * Improved documentation and developer experience.
