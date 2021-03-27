@@ -296,7 +296,7 @@ ui <- fluentPage(
 # ---- server ----
 
 server <- function(input, output, session) {
-  # ---- server-router ----
+  # ---- router-server ----
   router$server(input, output, session)
 
   # ---- server-rest ----
