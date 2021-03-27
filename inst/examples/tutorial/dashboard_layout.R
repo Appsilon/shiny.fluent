@@ -296,10 +296,11 @@ ui <- fluentPage(
 # ---- server ----
 
 server <- function(input, output, session) {
-  # ---- server-router ----
+
+# ---- router-server ----
   router$server(input, output, session)
 
-  # ---- server-rest ----
+# ---- server-rest ----
   filtered_deals <- reactive({
     if (!is.null(input$selectedPeople) && input$selectedPeople != "") {
       selectedPeopleKeys <- input$selectedPeople
