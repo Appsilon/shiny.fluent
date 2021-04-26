@@ -24,18 +24,15 @@ CommandBarItem <- function(text, icon = NULL, subitems = NULL, ...) {
 #' Creates a Fluent UI page with sensible defaults (included Fabric CSS classes, proper class given
 #' to the body tag, suppressed Bootstrap).
 #'
-#' You can also use shiny.fluent directly, without using this function. You still need to use
-#' \code{\link{withReact}} or \code{\link{reactOutput}} to insert React components.
-#'
 #' The Bootstrap library is suppressed by default,
 #' as it doesn't work well with Fluent UI in general.
 #'
 #' @param ... The contents of the document body.
-#' @param suppress_bootstrap Whether to suppress Bootstrap.
+#' @param suppressBootstrap Whether to suppress Bootstrap.
 #' @export
-fluentPage <- function(..., suppress_bootstrap = TRUE) {
+fluentPage <- function(..., suppressBootstrap = TRUE) {
   htmltools::tags$body(class = "ms-Fabric",
-    if (suppress_bootstrap) htmltools::suppressDependencies("bootstrap"),
+    if (suppressBootstrap) htmltools::suppressDependencies("bootstrap"),
     htmltools::htmlDependency(
       name = "office-ui-fabric-core",
       version = "11.0.0",
