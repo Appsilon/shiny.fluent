@@ -1,9 +1,5 @@
 ^\.Rproj\.user$
-^node_modules$
-^srcjs$
-^package\.json$
-^webpack\.config\.js$
-^yarn\.lock$
+^node$
 ^.*\.Rproj$
 ^install\.sh$
 ^inst/examples/dashboard/rsconnect/
