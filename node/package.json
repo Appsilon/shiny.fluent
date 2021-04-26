@@ -1,13 +1,32 @@
 {
   "private": true,
+  "scripts": {
+    "lint": "eslint --ext .js,.jsx src"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
   "devDependencies": {
-    "@fluentui/react": "^7.130.0",
     "@babel/core": "^7.2.0",
     "@babel/preset-env": "^7.2.0",
+    "@babel/preset-react": "^7.12.10",
+    "@babel/register": "^7.12.10",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.4",
-    "css-loader": "^4.3.0",
-    "style-loader": "^1.2.1",
-    "webpack": "^4.27.1",
-    "webpack-cli": "^3.1.2"
+    "eslint": "7.24.0",
+    "eslint-config-airbnb": "18.2.1",
+    "eslint-import-resolver-webpack": "^0.13.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "4.0.0",
+    "webpack": "^5.17.0",
+    "webpack-cli": "^4.4.0"
+  },
+  "dependencies": {
+    "@fluentui/react": "^8.6.1"
   }
 }
