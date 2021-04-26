@@ -2,18 +2,16 @@ library(shiny.fluent)
 
 if (interactive()) {
   shinyApp(
-    ui = withReact(
-      div(
-        DefaultButton("toggleContextualMenu", text = "Toggle menu"),
-        reactOutput("contextualMenu")
-      )
+    ui = div(
+      DefaultButton.shinyInput("toggleContextualMenu", id = "target", text = "Toggle menu"),
+      reactOutput("contextualMenu")
     ),
     server = function(input, output) {
       showContextualMenu <- reactiveVal(FALSE)
       observeEvent(input$toggleContextualMenu, {
-        showContextualMenu(isolate(!showContextualMenu()))
+        showContextualMenu(!showContextualMenu())
       })
-      
+
       output$contextualMenu <- renderReact({
         menuItems <- JS("[
           {
@@ -67,17 +65,14 @@ if (interactive()) {
             disabled: true,
             onClick: () => console.error('Disabled item should not be clickable.'),
           },
-        ];
-        ");
-        
-        reactWidget(
-          ContextualMenu(
-            items=menuItems,
-            hidden=!showContextualMenu(),
-            target="#toggleContextualMenu",
-            onItemClick=JS("function() { Shiny.setInputValue('toggleContextualMenu', Math.random()); }"),
-            onDismiss=JS("function() { Shiny.setInputValue('toggleContextualMenu', Math.random()); }")
-          )
+        ]")
+
+        ContextualMenu(
+          items = menuItems,
+          hidden = !showContextualMenu(),
+          target = "#target",
+          onItemClick = JS("function() { Shiny.setInputValue('toggleContextualMenu', Math.random()); }"),
+          onDismiss = JS("function() { Shiny.setInputValue('toggleContextualMenu', Math.random()); }")
         )
       })
     }

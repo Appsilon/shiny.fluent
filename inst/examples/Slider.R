@@ -2,11 +2,9 @@ library(shiny.fluent)
 
 if (interactive()) {
   shinyApp(
-    ui = withReact(
-      div(
-        Slider("slider", 42, min = -100, max = 100),
-        textOutput("sliderValue")
-      )
+    ui = div(
+      Slider.shinyInput("slider", value = 42, min = -100, max = 100),
+      textOutput("sliderValue")
     ),
     server = function(input, output) {
       output$sliderValue <- renderText({

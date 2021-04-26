@@ -2,11 +2,9 @@ library(shiny.fluent)
 
 if (interactive()) {
   shinyApp(
-    ui = withReact(
-      div(
-        Toggle("toggle", TRUE),
-        textOutput("toggleValue")
-      )
+    ui = div(
+      Toggle.shinyInput("toggle", value = TRUE),
+      textOutput("toggleValue")
     ),
     server = function(input, output) {
       output$toggleValue <- renderText({

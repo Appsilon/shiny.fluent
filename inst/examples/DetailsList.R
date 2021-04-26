@@ -12,10 +12,7 @@ if (interactive()) {
   )
 
   shinyApp(
-    ui = withReact(
-      DetailsList(items = items, columns = columns)
-    ),
-    server = function(input, output) {
-    }
+    ui = DetailsList(items = items, columns = columns),
+    server = function(input, output) {}
   )
 }

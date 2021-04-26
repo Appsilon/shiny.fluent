@@ -4,8 +4,8 @@ library(dplyr)
 
 # ---- 03_filters_ui
 filters <- tagList(
-  DatePicker("fromDate", value = as.Date('2020/01/01'), label = "From date"),
-  DatePicker("toDate", value = as.Date('2020/12/31'), label = "To date")
+  DatePicker.shinyInput("fromDate", value = as.Date('2020/01/01'), label = "From date"),
+  DatePicker.shinyInput("toDate", value = as.Date('2020/12/31'), label = "To date")
 )
 # ----
 
@@ -16,17 +16,16 @@ details_list_columns <- tibble(
 
 # ---- 03_ui
 ui <- fluentPage(
-  withReact(
-    filters,
-    uiOutput("analysis")
-  )
+  filters,
+  uiOutput("analysis")
 )
 # ----
 
 # ---- 03_filters_server
 server <- function(input, output, session) {
   filtered_deals <- reactive({
-    filtered_deals <- fluent_sales_deals %>% filter(
+    req(input$fromDate)
+    filtered_deals <- fluentSalesDeals %>% filter(
       date >= input$fromDate,
       date <= input$toDate,
       is_closed > 0
@@ -40,12 +39,10 @@ server <- function(input, output, session) {
       p("No matching transactions.")
     }
 
-    withReact(
-      Stack(
-        tokens = list(childrenGap = 5),
-        Text(variant = "large", "Sales deals details", block = TRUE),
-        div(style="max-height: 500px; overflow: auto", items_list)
-      )
+    Stack(
+      tokens = list(childrenGap = 5),
+      Text(variant = "large", "Sales deals details", block = TRUE),
+      div(style="max-height: 500px; overflow: auto", items_list)
     )
   })
 }

@@ -8,16 +8,15 @@ if (interactive()) {
   )
 
   shinyApp(
-    ui = withReact(
-      div(
-        ComboBox("combo", "some text", options = options, allowFreeform = TRUE),
-        textOutput("comboValue")
-      )
+    ui = div(
+      ComboBox.shinyInput("combo", value = list(text = "some text"),
+        options = options, allowFreeform = TRUE
+      ),
+      textOutput("comboValue")
     ),
     server = function(input, output) {
       output$comboValue <- renderText({
-        v <- input$combo
-        sprintf("Value: %s", if (is.character(v)) v else v$key)
+        sprintf("Value: %s", input$combo$text)
       })
     }
   )

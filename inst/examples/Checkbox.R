@@ -2,11 +2,9 @@ library(shiny.fluent)
 
 if (interactive()) {
   shinyApp(
-    ui = withReact(
-      div(
-        Checkbox("checkbox", FALSE),
-        textOutput("checkboxValue")
-      )
+    ui = div(
+      Checkbox.shinyInput("checkbox", value = FALSE),
+      textOutput("checkboxValue")
     ),
     server = function(input, output) {
       output$checkboxValue <- renderText({

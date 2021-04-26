@@ -7,33 +7,31 @@ ui <- fluidPage(
   actionButton("toggle", "Toggle visibility"),
   uiOutput("main"),
   h1("UI Components tests"),
-  withReact(
+  Stack(
     div("placeholder")
   ),
   h1("Scenarios tests"),
-  withReact(
-    div(
-      Pivot(
-        PivotItem(headerText = "Tab 1", Label("Hello 1")),
-        PivotItem(headerText = "Tab 2", Label("Hello 2")),
-        onLinkClick = JS("function() { alert('Pivot tab switched') }")
-      ),
-      Pivot(
-        PivotItem(headerText = "Tab 1", Label("Hello 1")),
-        PivotItem(headerText = "Initially hidden components",
-          div(
-            textInput("scenarioInput1", "Label"),
-            textOutput("scenarioTextOutput1")
-          )
+  div(
+    Pivot(
+      PivotItem(headerText = "Tab 1", Label("Hello 1")),
+      PivotItem(headerText = "Tab 2", Label("Hello 2")),
+      onLinkClick = JS("function() { alert('Pivot tab switched') }")
+    ),
+    Pivot(
+      PivotItem(headerText = "Tab 1", Label("Hello 1")),
+      PivotItem(headerText = "Initially hidden components",
+        div(
+          textInput("scenarioInput1", "Label"),
+          textOutput("scenarioTextOutput1")
         )
       )
     )
   ),
-  h2("Update button inside withReact"),
-  withReact(
+  h2("Update button inside React"),
+  Stack(
     div(
       actionButton("updateInputs2", "Update text"),
-      TextField("scenarioInput2"),
+      TextField.shinyInput("scenarioInput2"),
       textOutput("scenarioTextOutput2")
     )
   )
@@ -47,18 +45,16 @@ server <- function(input, output, session) {
 
   output$main <- renderUI({
     if (show()) {
-      withReact(
-        div(
-          h4("TextField"),
-          TextField("input1"),
-          textOutput("textOutput1"),
-          h4("textAreaInput"),
-          textAreaInput("input2", NULL),
-          textOutput("textOutput2"),
-          h4("checkboxInput"),
-          checkboxInput("input3", NULL),
-          textOutput("textOutput3")
-        )
+      div(
+        h4("TextField"),
+        TextField.shinyInput("input1"),
+        textOutput("textOutput1"),
+        h4("textAreaInput"),
+        textAreaInput("input2", NULL),
+        textOutput("textOutput2"),
+        h4("checkboxInput"),
+        checkboxInput("input3", NULL),
+        textOutput("textOutput3")
       )
     } else {
       NULL
@@ -79,13 +75,13 @@ server <- function(input, output, session) {
   lapply(1:2, wireInputToOutput("scenarioInput", "scenarioTextOutput"))
 
   observeEvent(input$updateInputs, {
-    updateTextField(session, "input1", value = paste(input$input1, "new text"))
+    updateTextField.shinyInput(session, "input1", value = paste(input$input1, "new text"))
     updateTextAreaInput(session, "input2", value = paste(input$input1, "new text"))
     updateCheckboxInput(session, "input3", value = FALSE)
   })
 
   observeEvent(input$updateInputs2, {
-    updateTextField(session, "scenarioInput2", value = "new text")
+    updateTextField.shinyInput(session, "scenarioInput2", value = "new text")
   })
 }
 

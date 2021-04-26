@@ -8,10 +8,7 @@ if (interactive()) {
   )
 
   shinyApp(
-    ui = withReact(
-      Facepile(personas = personas)
-    ),
-    server = function(input, output) {
-    }
+    ui = Facepile(personas = personas),
+    server = function(input, output) {}
   )
 }

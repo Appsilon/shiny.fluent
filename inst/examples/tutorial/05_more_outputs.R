@@ -20,13 +20,16 @@ makeCard <- function(title, content, size = 12, style = "") {
 filters <- Stack(
   tokens = list(childrenGap = 10),
   Stack(
-    tokens = list(childrenGap = 10), horizontal = TRUE,
-    DatePicker("fromDate", value = as.Date('2020/01/01'), label = "From date"),
-    DatePicker("toDate", value = as.Date('2020/12/31'), label = "To date")
+    horizontal = TRUE,
+    tokens = list(childrenGap = 10),
+    DatePicker.shinyInput("fromDate", value = as.Date('2020/01/01'), label = "From date"),
+    DatePicker.shinyInput("toDate", value = as.Date('2020/12/31'), label = "To date")
   ),
-  Label("Filter by sales reps"),
-  NormalPeoplePicker("selectedPeople",
-    options = fluent_people,
+  Label("Filter by sales reps", className = "my_class"),
+  NormalPeoplePicker.shinyInput(
+    "selectedPeople",
+    class = "my_class",
+    options = fluentPeople,
     pickerSuggestionsProps = list(
       suggestionsHeaderText = 'Matching people',
       mostRecentlyUsedHeaderText = 'Sales reps',
@@ -34,13 +37,13 @@ filters <- Stack(
       showRemoveButtons = TRUE
     )
   ),
-  Slider("slider",
+  Slider.shinyInput("slider",
     value = 0, min = 0, max = 1000000, step = 100000,
     label = "Minimum amount",
     valueFormat = JS("function(x) { return '$' + x}"),
     snapToStep = TRUE
   ),
-  Toggle("closedOnly", value = TRUE, label = "Include closed deals only?")
+  Toggle.shinyInput("closedOnly", value = TRUE, label = "Include closed deals only?")
 )
 
 details_list_columns <- tibble(
@@ -51,32 +54,27 @@ details_list_columns <- tibble(
 # ---- 05_ui
 ui <- fluentPage(
   tags$style(".card { padding: 28px; margin-bottom: 28px; }"),
-  withReact(
-    Stack(
-      tokens = list(childrenGap = 10), horizontal = TRUE,
-      makeCard("Filters", filters, size = 4, style = "max-height: 320px"),
-      makeCard("Deals count", plotlyOutput("plot"), size = 8, style = "max-height: 320px")
-    ),
-    uiOutput("analysis")
-  )
+  Stack(
+    tokens = list(childrenGap = 10), horizontal = TRUE,
+    makeCard("Filters", filters, size = 4, style = "max-height: 320px"),
+    makeCard("Deals count", plotlyOutput("plot"), size = 8, style = "max-height: 320px")
+  ),
+  uiOutput("analysis")
 )
 # ----
 
 server <- function(input, output, session) {
   filtered_deals <- reactive({
-    if (!is.null(input$selectedPeople) && input$selectedPeople != "") {
-      selectedPeopleKeys <- input$selectedPeople
-    } else {
-      selectedPeopleKeys <- list()
-    }
-    if (length(selectedPeopleKeys) == 0) {
-      selectedPeopleKeys <- fluent_people$key
-    }
-    minClosedVal <- if (input$closedOnly == TRUE) 1 else 0
+    req(input$fromDate)
+    selectedPeople <- (
+      if (length(input$selectedPeople) > 0) input$selectedPeople
+      else fluentPeople$key
+    )
+    minClosedVal <- if (isTRUE(input$closedOnly)) 1 else 0
 
-    filtered_deals <- fluent_sales_deals %>%
+    filtered_deals <- fluentSalesDeals %>%
       filter(
-        rep_id %in% selectedPeopleKeys,
+        rep_id %in% selectedPeople,
         date >= input$fromDate,
         date <= input$toDate,
         deal_amount >= input$slider,
@@ -111,12 +109,10 @@ server <- function(input, output, session) {
     }
 
 # ---- 05_outputs
-    withReact(
-      Stack(
-        tokens = list(childrenGap = 10), horizontal = TRUE,
-        makeCard("Top results", div(style="max-height: 500px; overflow: auto", items_list)),
-        makeCard("Map", leafletOutput("map"))
-      )
+    Stack(
+      tokens = list(childrenGap = 10), horizontal = TRUE,
+      makeCard("Top results", div(style="max-height: 500px; overflow: auto", items_list)),
+      makeCard("Map", leafletOutput("map"))
     )
 # ----
   })

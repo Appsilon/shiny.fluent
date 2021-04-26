@@ -9,7 +9,7 @@ if (interactive()) {
   )
   onRenderData <- JS("data =>
     data.items.map(item =>
-      React.createElement('div',
+      jsmodule['react'].createElement('div',
         {
           style: {
             display: 'inline-block',
@@ -25,17 +25,14 @@ if (interactive()) {
   ")
   onReduceData <- JS("data => ({ items: data.items.slice(0, -1) })")
   shinyApp(
-    ui = withReact(
-      div(
-        p("Resize the browser to see how the elements are hidden when they do not fit:"),
-        ResizeGroup(
-          data = data,
-          onRenderData = onRenderData,
-          onReduceData = onReduceData
-        )
+    ui = div(
+      p("Resize the browser to see how the elements are hidden when they do not fit:"),
+      ResizeGroup(
+        data = data,
+        onRenderData = onRenderData,
+        onReduceData = onReduceData
       )
     ),
-    server = function(input, output) {
-    }
+    server = function(input, output) {}
   )
 }

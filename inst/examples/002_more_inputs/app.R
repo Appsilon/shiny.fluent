@@ -1,4 +1,3 @@
-library(shiny)
 library(shiny.fluent)
 
 dayPickerStrings <- jsonlite::fromJSON('{"months":["January","February","March","April","May","June","July","August","September","October","November","December"],"shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"days":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"shortDays":["S","M","T","W","T","F","S"],"goToToday":"Go to today","weekNumberFormatString":"Week number {0}","prevMonthAriaLabel":"Previous month","nextMonthAriaLabel":"Next month","prevYearAriaLabel":"Previous year","nextYearAriaLabel":"Next year","prevYearRangeAriaLabel":"Previous year range","nextYearRangeAriaLabel":"Next year range","closeButtonAriaLabel":"Close"}')
@@ -32,84 +31,79 @@ server <- function(input, output, session) {
 
   output$main <- renderUI({
     if (show()) {
-      withReact(
-        div(
-          h4("Checkbox"),
-          Checkbox("input1", FALSE),
-          textOutput("textOutput1"),
-          h4("Rating"),
-          Rating("input2", 2),
-          textOutput("textOutput2"),
-          h4("Slider"),
-          Slider("input3", 42, min = -100, max = 100),
-          textOutput("textOutput3"),
-          h4("TextField"),
-          TextField("input4"),
-          textOutput("textOutput4"),
-          h4("SpinButton"),
-          SpinButton("input5", 15, min = 0, max = 50, step = 5),
-          textOutput("textOutput5"),
-          h4("Calendar"),
-          Calendar("input6", "2020-06-25T22:00:00.000Z", strings = dayPickerStrings),
-          textOutput("textOutput6"),
-          h4("ChoiceGroup"),
-          ChoiceGroup("input7", "B", options = options),
-          textOutput("textOutput7"),
-          h4("ColorPicker"),
-          ColorPicker("input8", "#00FF01"),
-          textOutput("textOutput8"),
-          h4("ComboBox"),
-          ComboBox("input9", "some text", options = options, allowFreeform = TRUE),
-          textOutput("textOutput9"),
-          h4("Dropdown"),
-          Dropdown("input10", "A", options = options),
-          textOutput("textOutput10"),
-          h4("DatePicker"),
-          DatePicker("input11", "2020-06-25T22:00:00.000Z", strings = dayPickerStrings),
-          textOutput("textOutput11"),
-          h4("SwatchColorPicker"),
-          SwatchColorPicker("input12", "orange", colorCells = colorCells, columnCount = length(colorCells)),
-          textOutput("textOutput12"),
-          h4("Toggle"),
-          Toggle("input13", TRUE),
-          textOutput("textOutput13"),
-          h4("SearchBox"),
-          SearchBox("input14", placeholder = "Search"),
-          textOutput("textOutput14"),
-        )
+      div(
+        h4("Checkbox"),
+        Checkbox.shinyInput("value1", value = FALSE),
+        textOutput("text1"),
+        h4("Rating"),
+        Rating.shinyInput("value2", value = 2),
+        textOutput("text2"),
+        h4("Slider"),
+        Slider.shinyInput("value3", value = 42, min = -100, max = 100),
+        textOutput("text3"),
+        h4("TextField"),
+        TextField.shinyInput("value4"),
+        textOutput("text4"),
+        h4("SpinButton"),
+        SpinButton.shinyInput("value5", value = 15, min = 0, max = 50, step = 5),
+        textOutput("text5"),
+        h4("Calendar"),
+        Calendar.shinyInput("value6", value = "2020-06-25T22:00:00.000Z", strings = dayPickerStrings),
+        textOutput("text6"),
+        h4("ChoiceGroup"),
+        ChoiceGroup.shinyInput("value7", value = "B", options = options),
+        textOutput("text7"),
+        h4("ColorPicker"),
+        ColorPicker.shinyInput("value8", value = "#00FF01"),
+        textOutput("text8"),
+        h4("ComboBox"),
+        ComboBox.shinyInput("value9", value = list(text = "some text"), options = options, allowFreeform = TRUE),
+        textOutput("text9"),
+        h4("Dropdown"),
+        Dropdown.shinyInput("value10", value = "A", options = options),
+        textOutput("text10"),
+        h4("DatePicker"),
+        DatePicker.shinyInput("value11", value = "2020-06-25T22:00:00.000Z", strings = dayPickerStrings),
+        textOutput("text11"),
+        h4("SwatchColorPicker"),
+        SwatchColorPicker.shinyInput("value12", value = "orange", colorCells = colorCells, columnCount = length(colorCells)),
+        textOutput("text12"),
+        h4("Toggle"),
+        Toggle.shinyInput("value13", value = TRUE),
+        textOutput("text13"),
+        h4("SearchBox"),
+        SearchBox.shinyInput("value14", placeholder = "Search"),
+        textOutput("text14"),
       )
     } else {
       NULL
     }
   })
 
-  lapply(c(1:8, 10:14), function(i) {
-    inputName <- paste0("input", i)
-    outputName <- paste0("textOutput", i)
+  lapply(1:14, function(i) {
+    inputName <- paste0("value", i)
+    outputName <- paste0("text", i)
     output[[outputName]] <- renderText({
-      sprintf("Value: %s", input[[inputName]])
+      value <- capture.output(dput(input[[inputName]]))
+      paste("Value:", value)
     })
-  })
-  output$textOutput9 <- renderText({
-    v <- input$input9
-    sprintf("Value: %s", if (is.character(v)) v else v$key)
   })
 
   observeEvent(input$updateInputs, {
-    shiny.fluent::updateCheckbox(session, "input1", value = !input$input1)
-    shiny.fluent::updateRating(session, "input2", value = 6 - input$input2)
-    shiny.fluent::updateSlider(session, "input3", value = input$input3 + 12)
-    updateTextField(session, "input4", value = paste(input$input4, "new text"))
-    updateSpinButton(session, "input5", value = input$input5 + 1)
-    updateCalendar(session, "input6", value = "2015-06-25T22:00:00.000Z")
-    updateChoiceGroup(session, "input7", value = "C")
-    updateColorPicker(session, "input8", value = "#FFFFFF")
-    updateComboBox(session, "input9", value = options[[2]])
-    updateDropdown(session, "input10", value = "C")
-    updateCalendar(session, "input11", value = "2015-06-25T22:00:00.000Z")
-    updateSwatchColorPicker(session, "input12", value = "white")
-    updateToggle(session, "input13", value = !input$input13)
-    updateSearchBox(session, "input14", value = "query")
+    updateCheckbox.shinyInput(session, "value1", value = !input$value1)
+    updateRating.shinyInput(session, "value2", value = 6 - input$value2)
+    updateSlider.shinyInput(session, "value3", value = input$value3 + 12)
+    updateTextField.shinyInput(session, "value4", value = paste(input$value4, "new text"))
+    updateSpinButton.shinyInput(session, "value5", value = input$value5 + 1)
+    updateCalendar.shinyInput(session, "value6", value = "2015-06-25T22:00:00.000Z")
+    updateChoiceGroup.shinyInput(session, "value7", value = "C")
+    updateColorPicker.shinyInput(session, "value8", value = "#FFFFFF")
+    updateComboBox.shinyInput(session, "value9", value = options[[2]])
+    updateDropdown.shinyInput(session, "value10", value = "C")
+    updateCalendar.shinyInput(session, "value11", value = "2015-06-25T22:00:00.000Z")
+    updateSwatchColorPicker.shinyInput(session, "value12", value = "white")
+    updateToggle.shinyInput(session, "value13", value = !input$value13)
+    updateSearchBox.shinyInput(session, "value14", value = "query")
   })
 }
 

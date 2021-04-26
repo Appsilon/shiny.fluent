@@ -10,11 +10,11 @@ if (interactive()) {
   )
 
   shinyApp(
-    ui = withReact(
-      div(
-        SwatchColorPicker("color", "orange", colorCells = colorCells, columnCount = length(colorCells)),
-        textOutput("swatchValue")
-      )
+    ui = div(
+      SwatchColorPicker.shinyInput("color", value = "orange",
+        colorCells = colorCells, columnCount = length(colorCells)
+      ),
+      textOutput("swatchValue")
     ),
     server = function(input, output) {
       output$swatchValue <- renderText({

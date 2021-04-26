@@ -1,25 +1,25 @@
-library(shiny)
 library(shiny.fluent)
 
 ui <- fluidPage(
   titlePanel("Action buttons"),
   p("When the button is first rendered, no event is generated - exactly like with actionButton"),
   h4("Click any button to refresh the plot."),
-  withReact(
-    Stack(
-      DefaultButton("button1", text="Default Button", styles=list("background: green")),
-      PrimaryButton("button2", text="Primary Button"),
-      CompoundButton("button3", secondaryText="Compound Button has additional text", text="Compound Button"),
-      ActionButton("button4", iconProps=list("iconName" = 'AddFriend'), text="Action Button"),
-      horizontal=TRUE,
-      tokens=list(childrenGap=20)
+  Stack(horizontal = TRUE, tokens = list(childrenGap = 20),
+    DefaultButton.shinyInput("button1", text = "Default Button"),
+    PrimaryButton.shinyInput("button2", text = "Primary Button"),
+    CompoundButton.shinyInput("button3",
+      text="Compound Button",
+      secondaryText = "Compound Button has additional text"
+    ),
+    ActionButton.shinyInput("button4",
+      text = "Action Button",
+      iconProps = list("iconName" = 'AddFriend')
     )
   ),
   plotOutput("plot")
 )
 
-server <- function(input, output, session) {
-
+server <- function(input, output) {
   randomVals <- reactiveVal(runif(50))
 
   observe({
@@ -34,6 +34,5 @@ server <- function(input, output, session) {
     hist(randomVals())
   })
 }
-
 
 shinyApp(ui, server)

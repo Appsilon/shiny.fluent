@@ -8,11 +8,9 @@ if (interactive()) {
   )
 
   shinyApp(
-    ui = withReact(
-      div(
-        ChoiceGroup("choice", "B", options = options),
-        textOutput("groupValue")
-      )
+    ui = div(
+      ChoiceGroup.shinyInput("choice", value = "B", options = options),
+      textOutput("groupValue")
     ),
     server = function(input, output) {
       output$groupValue <- renderText({

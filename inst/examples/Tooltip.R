@@ -2,14 +2,11 @@ library(shiny.fluent)
 
 if (interactive()) {
   shinyApp(
-    ui = withReact(
-      TooltipHost(
-        content = "This is the tooltip content",
-        delay = 0,
-        Text("Hover over me")
-      )
+    ui = TooltipHost(
+      content = "This is the tooltip content",
+      delay = 0,
+      Text("Hover over me")
     ),
-    server = function(input, output) {
-    }
+    server = function(input, output) {}
   )
 }

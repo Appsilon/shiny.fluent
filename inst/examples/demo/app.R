@@ -9,8 +9,6 @@ library(plotly)
 library(glue)
 library(dplyr)
 
-#shiny.react::enable_react_debug_mode()
-
 source("layout.R")
 
 #### HOME PAGE
@@ -42,14 +40,14 @@ homePage <- makePage(
 filters <- Stack(
   tokens = list(childrenGap = 10),
   HorizontalStack(
-    DatePicker("fromDate", value = as.Date('2020/01/01'), label = "From date"),
-    DatePicker("toDate", value = as.Date('2020/12/31'), label = "To date")
+    DatePicker.shinyInput("fromDate", value = as.Date('2020/01/01'), label = "From date"),
+    DatePicker.shinyInput("toDate", value = as.Date('2020/12/31'), label = "To date")
   ),
   Label("Filter by sales reps", className = "my_class"),
-  NormalPeoplePicker(
+  NormalPeoplePicker.shinyInput(
     "selectedPeople",
-    className = "my_class",
-    options = fluent_people,
+    class = "my_class",
+    options = fluentPeople,
     pickerSuggestionsProps = list(
       suggestionsHeaderText = 'Matching people',
       mostRecentlyUsedHeaderText = 'Sales reps',
@@ -57,15 +55,13 @@ filters <- Stack(
       showRemoveButtons = TRUE
     )
   ),
-  Slider("slider",
-         0,
-         min = 0,
-         max = 1000000,
-         label = "Minimum amount",
-         step = 100000,
-         valueFormat = JS("function(x) { return '$' + x}"),
-         snapToStep = TRUE),
-  Toggle("closedOnly", value = TRUE, label = "Include closed deals only?")
+  Slider.shinyInput("slider",
+    value = 0, min = 0, max = 1000000, step = 100000,
+    label = "Minimum amount",
+    valueFormat = JS("function(x) { return '$' + x}"),
+    snapToStep = TRUE
+  ),
+  Toggle.shinyInput("closedOnly", value = TRUE, label = "Include closed deals only?")
 )
 
 analysisPage <- makePage(
@@ -97,9 +93,7 @@ ui <- fluentPage(
     tags$link(href = "style.css", rel = "stylesheet", type = "text/css"),
     shiny_router_script_tag
   ),
-  withReact(
-    layout(router$ui)
-  )
+  layout(router$ui)
 )
 
 
@@ -114,26 +108,27 @@ server <- function(input, output, session) {
   router$server(input, output, session)
 
   filteredDeals <- reactive({
-    selectedPeopleKeys <- if (!is.null(input$selectedPeople) && input$selectedPeople != "") input$selectedPeople else list()
-    if (length(selectedPeopleKeys) == 0) {
-      selectedPeopleKeys <- fluent_people$key
-    }
-    minClosedVal <- if(input$closedOnly == TRUE) 1 else 0
+    req(input$fromDate)
+    selectedPeople <- (
+      if (length(input$selectedPeople) > 0) input$selectedPeople
+      else fluentPeople$key
+    )
+    minClosedVal <- if (isTRUE(input$closedOnly)) 1 else 0
 
-    filteredDeals <- fluent_sales_deals %>% filter(
-      rep_id %in% selectedPeopleKeys,
-      date >= input$fromDate,
-      date <= input$toDate,
-      deal_amount >= input$slider,
-      is_closed >= minClosedVal) %>%
+    filteredDeals <- fluentSalesDeals %>%
+      filter(
+        rep_id %in% selectedPeople,
+        date >= input$fromDate,
+        date <= input$toDate,
+        deal_amount >= input$slider,
+        is_closed >= minClosedVal
+      ) %>%
       mutate(is_closed = ifelse(is_closed == 1, "Yes", "No"))
   })
 
   output$map <- renderLeaflet({
     points <- cbind(filteredDeals()$LONGITUDE, filteredDeals()$LATITUDE)
-    leaflet() %>%
-      addProviderTiles(providers$Stamen.TonerLite, options = providerTileOptions(noWrap = TRUE)) %>%
-      addMarkers(data = points)
+    leaflet() %>% addTiles() %>% addMarkers(data = points)
   })
 
   output$plot <- renderPlotly({
@@ -152,11 +147,9 @@ server <- function(input, output, session) {
       p("No matching transactions.")
     }
 
-    withReact(
-      HorizontalStack(
-        makeCard("Top results", div(style="max-height: 500px; overflow: auto", items_list)),
-        makeCard("Map", leafletOutput("map"))
-      )
+    HorizontalStack(
+      makeCard("Top results", div(style="max-height: 500px; overflow: auto", items_list)),
+      makeCard("Map", leafletOutput("map"))
     )
   })
 }

@@ -77,14 +77,11 @@ if (interactive()) {
   )
 
   shinyApp(
-    ui = withReact(
-      Nav(
-        groups = link_groups,
-        selectedKey = "key1",
-        styles = navigation_styles
-      )
+    ui = Nav(
+      groups = link_groups,
+      selectedKey = "key1",
+      styles = navigation_styles
     ),
-    server = function(input, output) {
-    }
+    server = function(input, output) {}
   )
 }

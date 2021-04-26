@@ -1,4 +1,3 @@
-library(shiny)
 library(shiny.fluent)
 library(shiny.router)
 library(sass)
@@ -48,8 +47,8 @@ ui <- fluidPage(
   ),
   shiny::tags$body(
     class = "ms-Fabric",
-    dir="ltr",
-    withReact(layout)
+    dir = "ltr",
+    layout
   )
 )
 

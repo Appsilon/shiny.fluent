@@ -2,28 +2,22 @@ library(shiny.fluent)
 
 if (interactive()) {
   shinyApp(
-    ui = withReact(
-      div(
-        DefaultButton("toggleCallout", text = "Toggle Callout"),
-        reactOutput("callout")
-      )
+    ui = div(
+      DefaultButton.shinyInput("toggleCallout", text = "Toggle Callout"),
+      reactOutput("callout")
     ),
     server = function(input, output) {
       show <- reactiveVal(FALSE)
-      observeEvent(input$toggleCallout, {
-        show(isolate(!show()))
-      })
+      observeEvent(input$toggleCallout, show(!show()))
       output$callout <- renderReact({
-        reactWidget(
-          if (show()) {
-            Callout(
-              tags$div(
-                style = "margin: 10px",
-                "Callout contents"
-              )
+        if (show()) {
+          Callout(
+            tags$div(
+              style = "margin: 10px",
+              "Callout contents"
             )
-          }
-        )
+          )
+        }
       })
     }
   )

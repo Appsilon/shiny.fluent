@@ -1,7 +1,4 @@
 // tagPicker
-
-Fluent = window['shiny.fluent']
-
 testTags = [
   'black',
   'blue',
@@ -35,11 +32,9 @@ function filterSuggestedTags(filterText, tagList) {
     : [];
 };
 
-
-
 // Keytips
-
 const btnExecute = (el) => {
+  console.log(el);
   el.click();
 };
 
@@ -86,7 +81,7 @@ const keytipConfig = {
   ],
 };
 
-keytipMap = window['shiny.fluent'].buildKeytipConfigMap(keytipConfig);
+keytipMap = jsmodule['@fluentui/react'].buildKeytipConfigMap(keytipConfig);
 
 const buttonProps = {
   items: [
@@ -94,18 +89,21 @@ const buttonProps = {
       key: 'buttonMenuItem1',
       text: 'Menu Item 1',
       keytipProps: keytipMap.ButtonMenuItem1,
-      onClick: () => Shiny.setInputValue('buttonk3', Math.random())
+      onClick: () => Shiny.setInputValue('button3', Math.random())
     },
     {
       key: 'buttonMenuItem2',
       text: 'Menu Item 2',
       keytipProps: keytipMap.ButtonMenuItem2,
-      onClick: () => Shiny.setInputValue('buttonk3', Math.random())
+      onClick: () => Shiny.setInputValue('button3', Math.random())
     },
   ],
 };
 
 // Marquee
+const React = jsmodule['react'];
+const Fluent = jsmodule['@fluentui/react'];
+
 const theme = Fluent.getTheme();
 const styles = Fluent.mergeStyleSets({
   photoList: {
@@ -143,8 +141,8 @@ const useForceUpdate = () => {
   return () => setIt(it => !it);
 };
 
-window.exampleApp = {}
-window.exampleApp.MarqueeSelectionExample = function(params) {
+jsmodule.exampleApp = {}
+jsmodule.exampleApp.MarqueeSelectionExample = function(params) {
   const forceUpdate = useForceUpdate();
   const name = params['name'];
   const photos = params['photos'];

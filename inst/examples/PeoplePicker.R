@@ -15,23 +15,20 @@ if (interactive()) {
   shinyApp(
     ui = tagList(
       textOutput("selectedPeople"),
-      withReact(
-        NormalPeoplePicker(
-          "selectedPeople",
-          className = "my_class",
-          options = people,
-          pickerSuggestionsProps = list(
-            suggestionsHeaderText = 'Matching people',
-            mostRecentlyUsedHeaderText = 'Sales reps',
-            noResultsFoundText = 'No results found',
-            showRemoveButtons = TRUE
-          )
+      NormalPeoplePicker.shinyInput(
+        "selectedPeople",
+        options = people,
+        pickerSuggestionsProps = list(
+          suggestionsHeaderText = 'Matching people',
+          mostRecentlyUsedHeaderText = 'Sales reps',
+          noResultsFoundText = 'No results found',
+          showRemoveButtons = TRUE
         )
       )
     ),
     server = function(input, output) {
       output$selectedPeople <- renderText({
-        if (is.null(input$selectedPeople) || input$selectedPeople == "") {
+        if (length(input$selectedPeople) == 0) {
           "Select recipients below:"
         } else {
           selectedPeople <- dplyr::filter(people, key %in% input$selectedPeople)
