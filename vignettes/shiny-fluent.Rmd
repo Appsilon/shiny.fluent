@@ -66,16 +66,16 @@ Yay! It may not look very impressive, but this text is rendered in Shiny with th
 Let's now grab some data and show it to our users in a table.
 shiny.fluent already includes some example data that we can use.
 
-`fluent_people` is a list of imaginary people in a format expected by some Fluent components.
+`fluentPeople` is a list of imaginary people in a format expected by some Fluent components.
 
 ```{r}
-fluent_people %>% glimpse()
+fluentPeople %>% glimpse()
 ```
 
-`fluent_sales_data` is a data frame of randomly generated "sales deals", which are assigned to one of the `fluent_people`, have a date and an amount, and are associated with one of the top 10 companies from the Fortune 500 list (including its name, city and map coordinates).
+`fluent_sales_data` is a data frame of randomly generated "sales deals", which are assigned to one of the `fluentPeople`, have a date and an amount, and are associated with one of the top 10 companies from the Fortune 500 list (including its name, city and map coordinates).
 
 ```{r}
-fluent_sales_deals %>% glimpse()
+fluentSalesDeals %>% glimpse()
 ```
 
 We now need a Fluent component to insert a table. A good way find a component that suits our needs is to go to [shiny.fluent components live demo](https://demo.appsilon.ai/apps/fluentui) or to the [official Fluent UI docs](https://developer.microsoft.com/en-us/fluentui#/controls). Browsing through the list of components, we find `?DetailsList`, which gives a table component with rich configuration options.
