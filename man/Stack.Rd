@@ -5,6 +5,8 @@
 \title{Stack}
 \usage{
 Stack(...)
+
+Stack(...)
 }
 \arguments{
 \item{align}{\code{'auto' | 'stretch' | 'baseline' | 'start' | 'center' | 'end'} \cr Defines how to align the StackItem along the x-axis (for vertical Stacks) or the y-axis (for horizontal Stacks).}
@@ -81,19 +83,14 @@ library(shiny.fluent)
 
 if (interactive()) {
   shinyApp(
-    ui = withReact(
-      div(
-        Stack(
-          tokens = list(childrenGap = 10),
-          reversed = TRUE,
-          span("Item One"),
-          span("Item Two"),
-          span("Item Three")
-        )
-      )
+    ui = Stack(
+      tokens = list(childrenGap = 10),
+      reversed = TRUE,
+      span("Item One"),
+      span("Item Two"),
+      span("Item Three")
     ),
-    server = function(input, output) {
-    }
+    server = function(input, output) {}
   )
 }
 }

@@ -64,7 +64,7 @@ if (interactive()) {
     list(key = "item5", icon = "Calendar", name = "Overflow Link 2")
   )
   onRenderItem <- JS("item =>
-    React.createElement(window['shiny.fluent'].CommandBarButton, {
+    jsmodule['react'].createElement(jsmodule['@fluentui/react'].CommandBarButton, {
       role: 'menuitem',
       iconProps: { iconName: item.icon },
       styles: {
@@ -73,7 +73,7 @@ if (interactive()) {
     })
   ")
   onRenderOverflowButton <- JS("overflowItems =>
-    React.createElement(window['shiny.fluent'].CommandBarButton, {
+    jsmodule['react'].createElement(jsmodule['@fluentui/react'].CommandBarButton, {
       role: 'menuitem',
       title: 'More items',
       styles: {
@@ -85,17 +85,14 @@ if (interactive()) {
   ")
 
   shinyApp(
-    ui = withReact(
-      OverflowSet(
-        vertical = TRUE,
-        items = items,
-        overflowItems = overflowItems,
-        onRenderItem = onRenderItem,
-        onRenderOverflowButton = onRenderOverflowButton
-      )
+    ui = OverflowSet(
+      vertical = TRUE,
+      items = items,
+      overflowItems = overflowItems,
+      onRenderItem = onRenderItem,
+      onRenderOverflowButton = onRenderOverflowButton
     ),
-    server = function(input, output) {
-    }
+    server = function(input, output) {}
   )
 }
 }

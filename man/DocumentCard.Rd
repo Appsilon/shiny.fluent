@@ -133,21 +133,18 @@ if (interactive()) {
   )
 
   shinyApp(
-    ui = withReact(
-      DocumentCard(
-        DocumentCardPreview(previewImages = previewImages),
-        DocumentCardTitle(
-          title = title,
-          shouldTruncate = TRUE
-        ),
-        DocumentCardActivity(
-          activity = "Created a few minutes ago",
-          people = list(list(name = "Annie Lindqvist"))
-        )
+    ui = DocumentCard(
+      DocumentCardPreview(previewImages = previewImages),
+      DocumentCardTitle(
+        title = title,
+        shouldTruncate = TRUE
+      ),
+      DocumentCardActivity(
+        activity = "Created a few minutes ago",
+        people = list(list(name = "Annie Lindqvist"))
       )
     ),
-    server = function(input, output) {
-    }
+    server = function(input, output) {}
   )
 }
 }

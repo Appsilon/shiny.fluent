@@ -42,7 +42,6 @@ you need to work using the original docs to achieve the desired result.
 
 \examples{
 library(shiny.fluent)
-library(stringi)
 
 if (interactive()) {
   pane <- function(header, paragraphs) (
@@ -53,22 +52,19 @@ if (interactive()) {
           header
         )
       ),
-      stri_rand_lipsum(paragraphs)
+      stringi::stri_rand_lipsum(paragraphs)
     )
   )
   shinyApp(
-    ui = withReact(
-      ScrollablePane(
-        styles = list(
-          root = list(height = "500px", width = "400px")
-        ),
-        pane("Some text", 3),
-        pane("A lot of text", 5),
-        pane("Just a short ending", 1)
-      )
+    ui = ScrollablePane(
+      styles = list(
+        root = list(position = "relative", height = "500px", width = "400px")
+      ),
+      pane("Some text", 3),
+      pane("A lot of text", 5),
+      pane("Just a short ending", 1)
     ),
-    server = function(input, output) {
-    }
+    server = function(input, output) {}
   )
 }
 }
