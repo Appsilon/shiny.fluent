@@ -14,7 +14,9 @@ colorCells <- list(
   list(id = "blueMagenta", color = "#8764b8"),
   list(id = "magenta", color = "#881798"),
   list(id = "white", color = "#ffffff")
-);
+)
+
+toString <- function(x) capture.output(dput(x))
 
 ui <- fluidPage(
   h1("More React inputs"),
@@ -84,8 +86,7 @@ server <- function(input, output, session) {
     inputName <- paste0("value", i)
     outputName <- paste0("text", i)
     output[[outputName]] <- renderText({
-      value <- capture.output(dput(input[[inputName]]))
-      paste("Value:", value)
+      paste("Value:", toString(input[[inputName]]))
     })
   })
 
