@@ -5,7 +5,8 @@ ui <- fluidPage(
   fluentInputsUI("fluentInputs"),
   shinyInReactUI("shinyInReact"),
   scenariosUI("scenarios"),
-  actionButtonsUI("actionButtons")
+  actionButtonsUI("actionButtons"),
+  reactInShinyUI("reactInShiny")
 )
 
 server <- function(input, output, session) {
@@ -14,6 +15,7 @@ server <- function(input, output, session) {
   shinyInReactServer("shinyInReact")
   scenariosServer("scenarios")
   actionButtonsServer("actionButtons")
+  reactInShinyServer("reactInShiny")
   
 }
 
