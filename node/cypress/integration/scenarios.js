@@ -16,10 +16,10 @@ describe('Shiny input and output inside an initially hidden Pivot tab', () => {
     cy.visit('/');
 
     cy.get('button[data-content="Initially hidden components"]').click().then(() => {
-      cy.get('#scenarioInput1')
+      cy.get('#shinyInReact-textInputHidden')
         .type('my text').should('have.value', 'my text');
 
-      cy.get('#scenarioTextOutput1').should('contain', 'Value: my text');
+      cy.get('#shinyInReact-textInputHiddenValue').should('contain', 'Value: my text');
     });
   });
 });
@@ -28,8 +28,8 @@ describe('Update input values', () => {
   it('can happen on button click', () => {
     cy.visit('/');
 
-    cy.get('button#updateInputs2').click().then(() => {
-      cy.get('#scenarioTextOutput2').should('contain', 'Value: new text');
+    cy.get('button#shinyInReact-updateInputs').click().then(() => {
+      cy.get('#shinyInReact-textInputButtonValue').should('contain', 'Value: new text');
     });
   });
 });
