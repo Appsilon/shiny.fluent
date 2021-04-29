@@ -1,19 +1,15 @@
 library(shiny)
 library(shiny.fluent)
 
-source("utils.R")
-source("toggle_visibility.R")
-source("scenarios.R")
-
 ui <- fluidPage(
-  toggleVisibilityUI("toggleVisibility"),
+  fluentInputsUI("fluentInputs"),
   shinyInReactUI("shinyInReact"),
   scenariosUI("scenarios")
 )
 
 server <- function(input, output, session) {
   
-  toggleVisibilityServer("toggleVisibility")
+  fluentInputsServer("fluentInputs")
   shinyInReactServer("shinyInReact")
   scenariosServer("scenarios")
   

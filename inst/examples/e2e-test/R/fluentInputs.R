@@ -14,12 +14,12 @@ colorCells <- list(
   list(id = "white", color = "#ffffff")
 )
 
-toggleVisibilityUI <- function(id) {
+fluentInputsUI <- function(id) {
   ns <- NS(id)
   tagList(
     h1("Inputs tests"),
     Separator(strong("Toggle visibility")),
-    h2("Fluent inputs tests"),
+    h1("Fluent inputs tests"),
     actionButton(ns("updateInputs"), "Update inputs"),
     actionButton(ns("toggleInputs"), "Toggle visibility"),
     wellPanel(
@@ -28,7 +28,7 @@ toggleVisibilityUI <- function(id) {
   )
 }
 
-toggleVisibilityServer <- function(id) {
+fluentInputsServer <- function(id) {
   moduleServer(id, function(input, output, session) {
     ns <- session$ns
     show <- reactiveVal(TRUE)
