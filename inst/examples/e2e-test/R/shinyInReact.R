@@ -20,8 +20,12 @@ shinyInReactUI <- function(id) {
       div(
         actionButton(ns("updateInputs"), "Update text"),
         TextField.shinyInput(ns("textInputButton")),
-        textOutput(ns("textInputButtonValue"))
+        textOutput(ns("textInputButtonValue")),
       )
+    ),
+    Stack(
+      textInput(ns("textInputShiny"), "Shiny input test", value = "aaa"),
+      textOutput(ns("textInputShinyValue"))
     )
   )
 }
@@ -50,7 +54,8 @@ shinyInReactServer <- function(id) {
       updateTextField.shinyInput(session, ns("textInputButton"), value = "new text")
     })
     
-    ids <- c("textInput", "textAreaInput", "checkboxInput", "textInputHidden", "textInputButton") 
+    ids <- c("textInput", "textAreaInput", "checkboxInput",
+             "textInputHidden", "textInputButton", "textInputShiny") 
     wireInputToOutput(ids, input, output)
   })
 }
