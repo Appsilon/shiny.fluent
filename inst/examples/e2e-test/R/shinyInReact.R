@@ -15,7 +15,7 @@ shinyInReactUI <- function(id) {
     ),
     Separator(strong("Shiny components dynamic rendering")),
     uiOutput(ns("shinyInReact")),
-    Separator(strong("Update button inside React")),
+    Separator(strong("Shiny components static rendering")),
     Stack(
       div(
         actionButton(ns("updateInputs"), "Update text"),
@@ -54,8 +54,10 @@ shinyInReactServer <- function(id) {
       updateTextField.shinyInput(session, ns("textInputButton"), value = "new text")
     })
     
-    ids <- c("textInput", "textAreaInput", "checkboxInput",
-             "textInputHidden", "textInputButton", "textInputShiny") 
+    ids <- c(
+      "textInput", "textAreaInput", "checkboxInput",
+      "textInputHidden", "textInputButton", "textInputShiny"
+    ) 
     wireInputToOutput(ids, input, output)
   })
 }
