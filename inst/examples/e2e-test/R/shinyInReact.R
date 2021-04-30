@@ -8,8 +8,17 @@ shinyInReactUI <- function(id) {
       PivotItem(
         headerText = "Initially hidden components",
         div(
-          textInput(ns("textInputHidden"), "Label"),
-          textOutput(ns("textInputHiddenValue"))
+          h4("textInput"),
+          textInput(ns("textInputHidden"), NULL),
+          textOutput(ns("textInputHiddenValue")),
+          
+          h4("textAreaInput"),
+          textAreaInput(ns("textAreaInputHidden"), NULL),
+          textOutput(ns("textAreaInputHiddenValue")),
+          
+          h4("checkboxInput"),
+          checkboxInput(ns("checkboxInputHidden"), NULL),
+          textOutput(ns("checkboxInputHiddenValue"))
         )
       )
     ),
@@ -17,15 +26,19 @@ shinyInReactUI <- function(id) {
     uiOutput(ns("shinyInReact")),
     Separator(strong("Shiny components static rendering")),
     Stack(
-      div(
-        actionButton(ns("updateInputs"), "Update text"),
-        TextField.shinyInput(ns("textInputButton")),
-        textOutput(ns("textInputButtonValue")),
-      )
-    ),
-    Stack(
-      textInput(ns("textInputShiny"), "Shiny input test", value = "aaa"),
-      textOutput(ns("textInputShinyValue"))
+      actionButton(ns("updateInputs"), "Update text", width = "100px"),
+      
+      h4("textInput"),
+      textInput(ns("textInputStatic"), "Shiny input test"),
+      textOutput(ns("textInputStaticValue")),
+      
+      h4("textAreaInput"),
+      textAreaInput(ns("textAreaInputStatic"), NULL),
+      textOutput(ns("textAreaInputStaticValue")),
+      
+      h4("checkboxInput"),
+      checkboxInput(ns("checkboxInputStatic"), NULL),
+      textOutput(ns("checkboxInputStaticValue"))
     )
   )
 }
@@ -37,26 +50,27 @@ shinyInReactServer <- function(id) {
     output$shinyInReact <- renderUI({
       Stack(
         h4("textInput"),
-        textInput(ns("textInput"), NULL),
-        textOutput(ns("textInputValue")),
+        textInput(ns("textInputDynamic"), NULL),
+        textOutput(ns("textInputDynamicValue")),
         
         h4("textAreaInput"),
-        textAreaInput(ns("textAreaInput"), NULL),
-        textOutput(ns("textAreaInputValue")),
+        textAreaInput(ns("textAreaInputDynamic"), NULL),
+        textOutput(ns("textAreaInputDynamicValue")),
         
         h4("checkboxInput"),
-        checkboxInput(ns("checkboxInput"), NULL),
-        textOutput(ns("checkboxInputValue"))
+        checkboxInput(ns("checkboxInputDynamic"), NULL),
+        textOutput(ns("checkboxInputDynamicValue"))
       )
     })
     
     observeEvent(input$updateInputs, {
-      updateTextField.shinyInput(session, ns("textInputButton"), value = "new text")
+      updateTextInput(session, "textInputStatic", value = "new text")
     })
     
     ids <- c(
-      "textInput", "textAreaInput", "checkboxInput",
-      "textInputHidden", "textInputButton", "textInputShiny"
+      "textInputStatic", "textAreaInputStatic", "checkboxInputStatic",
+      "textInputDynamic", "textAreaInputDynamic", "checkboxInputDynamic",
+      "textInputHidden", "textAreaInputHidden", "checkboxInputHidden"
     ) 
     wireInputToOutput(ids, input, output)
   })
