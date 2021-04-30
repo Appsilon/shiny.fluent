@@ -49,10 +49,3 @@ reactInShinyUI <- function(id) {
     )
   )
 }
-
-reactInShinyServer <- function(id) {
-  moduleServer(id, function(input, output, session) {
-    ns <- session$ns
-    
-  })
-}
