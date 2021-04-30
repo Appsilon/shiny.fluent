@@ -73,6 +73,6 @@ jobs:
         with:
           start: yarn start-e2e-test-app
           working-directory: 'node'
-        #   record: true
-        # env:
-        #   CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          record: true
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
