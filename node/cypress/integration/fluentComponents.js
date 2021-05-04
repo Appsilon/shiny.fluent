@@ -32,7 +32,7 @@ describe('Rating.shinyInput()', () => {
     cy.visit('/');
 
     cy.get('#fluentInputs-rating').within(() => {
-      cy.get('button#Rating71-star-1').should('have.attr', 'aria-checked', 'true');
+      cy.get('[id$=star-1]').should('have.attr', 'aria-checked', 'true');
     });
     cy.get('#fluentInputs-ratingValue').should('contain', 'Value: 2');
   });
