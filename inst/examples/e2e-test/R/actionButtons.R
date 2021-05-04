@@ -3,7 +3,7 @@ actionButtonsUI <- function(id) {
   tagList(
     h1("Action buttons"),
     p("When the button is first rendered, no event is generated - exactly like with actionButton"),
-    h4("Click any button to refresh the plot."),
+    h4("Click any button to increment the counter."),
     Stack(
       horizontal = TRUE,
       tokens = list(childrenGap = 20),
@@ -19,26 +19,23 @@ actionButtonsUI <- function(id) {
         text = "Action Button",
         iconProps = list("iconName" = 'AddFriend')
       )
-    ), 
-    plotOutput(ns("plot"))
+    ),
+    textOutput(ns("clicks"))
   )
 }
 
 actionButtonsServer <- function(id) {
   moduleServer(id, function(input, output, session) {
     ns <- session$ns
-    randomVals <- reactiveVal(runif(50))
+    nClicks <- reactiveVal(0)
     
-    observe({
-      input$defaultButton
-      input$primaryButton
-      input$compoundButton
-      input$actionButton
-      randomVals(runif(50))
-    })
+    observeEvent(input$defaultButton, nClicks(nClicks() + 1))
+    observeEvent(input$primaryButton, nClicks(nClicks() + 1))
+    observeEvent(input$compoundButton, nClicks(nClicks() + 1))
+    observeEvent(input$actionButton, nClicks(nClicks() + 1))
     
-    output$plot <- renderPlot({
-      hist(randomVals())
+    output$clicks <- renderText({
+      sprintf("Number of clicks: %d", nClicks())
     })
   })
 }
