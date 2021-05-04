@@ -1,5 +1,5 @@
 describe('defaultButton.shinyInput()', () => {
-  it('contents gets sent to server and displayed in an output', () => {
+  it('click works', () => {
     cy.visit('/');
 
     cy.get('button#actionButtons-defaultButton').click().then(() => {
@@ -9,7 +9,7 @@ describe('defaultButton.shinyInput()', () => {
 });
 
 describe('primaryButton.shinyInput()', () => {
-  it('contents gets sent to server and displayed in an output', () => {
+  it('click works', () => {
     cy.visit('/');
 
     cy.get('button#actionButtons-primaryButton').click().then(() => {
@@ -19,7 +19,7 @@ describe('primaryButton.shinyInput()', () => {
 });
 
 describe('compoundButton.shinyInput()', () => {
-  it('contents gets sent to server and displayed in an output', () => {
+  it('click works', () => {
     cy.visit('/');
 
     cy.get('button#actionButtons-compoundButton').click().then(() => {
@@ -29,7 +29,7 @@ describe('compoundButton.shinyInput()', () => {
 });
 
 describe('actionButton.shinyInput()', () => {
-  it('contents gets sent to server and displayed in an output', () => {
+  it('click works', () => {
     cy.visit('/');
 
     cy.get('button#actionButtons-actionButton').click().then(() => {
