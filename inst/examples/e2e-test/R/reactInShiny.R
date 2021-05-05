@@ -7,45 +7,19 @@ reactInShinyUI <- function(id) {
   div(
     h1("React components in a Shiny layout"),
     h3("Label"),
-    Label("I'm a Label"),
-    Stack(
-      horizontal = TRUE,
-      tokens = list(childrenGap = 20),
-      PrimaryButton(text = "Button 1"),
-      PrimaryButton(text = "Button 2"),
-      PrimaryButton(text = "Button 3")
-    ),
+    Label("I'm a Label", id = ns("label")),
     h3("Icons"),
     Stack(
       horizontal = TRUE,
-      FontIcon(iconName = "CompassNW", style = iconStyle),
-      FontIcon(iconName = "Dictionary", style = iconStyle),
-      FontIcon(iconName = "TrainSolid", style = iconStyle)
+      FontIcon(iconName = "CompassNW", style = iconStyle, id = ns("compass"))
     ),
     h3("Spinners"),
     Stack(
       tokens = list(childrenGap = 20, maxWidth = 250),
       div(
         Label("Spinner with label positioned below"),
-        Spinner(label = "I am definitely loading...")
-      ),
-      div(
-        Label("Spinner with label positioned above"),
-        Spinner(label = "Seriously, still loading...", labelPosition = "top")
-      ),
-      div(
-        Label("Spinner with label positioned to right"),
-        Spinner(label = "Wait, wait...", labelPosition = "right")
-      ),
-      div(
-        Label("Spinner with label positioned to left"),
-        Spinner(label = "Nope, still loading...", labelPosition = "left")
+        Spinner(label = "I am definitely loading...", id = ns("spinner"))
       )
-    ),
-    h3("Pivot"),
-    Pivot(
-      PivotItem(headerText = ns("Tab 1"), Label("Hello 1")),
-      PivotItem(headerText = ns("Tab 2"), Label("Hello 2"))
     )
   )
 }
