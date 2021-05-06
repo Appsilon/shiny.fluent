@@ -85,7 +85,7 @@ to the body tag, suppressed Bootstrap)." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">shiny.fluent</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
       </span>
     </div>
 
@@ -161,7 +161,7 @@ to the body tag, suppressed Bootstrap)." />
 to the body tag, suppressed Bootstrap).</p>
     </div>
 
-    <pre class="usage"><span class='fu'>fluentPage</span><span class='op'>(</span><span class='va'>...</span>, suppress_bootstrap <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>fluentPage</span><span class='op'>(</span><span class='va'>...</span>, suppressBootstrap <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -171,16 +171,14 @@ to the body tag, suppressed Bootstrap).</p>
       <td><p>The contents of the document body.</p></td>
     </tr>
     <tr>
-      <th>suppress_bootstrap</th>
+      <th>suppressBootstrap</th>
       <td><p>Whether to suppress Bootstrap.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>You can also use shiny.fluent directly, without using this function. You still need to use
-<code><a href='https://rdrr.io/pkg/shiny.react/man/withReact.html'>withReact</a></code> or <code><a href='https://rdrr.io/pkg/shiny.react/man/reactOutput.html'>reactOutput</a></code> to insert React components.</p>
-<p>The Bootstrap library is suppressed by default,
+    <p>The Bootstrap library is suppressed by default,
 as it doesn't work well with Fluent UI in general.</p>
 
   </div>

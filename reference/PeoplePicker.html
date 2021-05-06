@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>PeoplePicker — NormalPeoplePicker • shiny.fluent</title>
+<title>PeoplePicker — CompactPeoplePicker • shiny.fluent</title>
 
 
 <!-- jquery -->
@@ -41,7 +41,7 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="PeoplePicker — NormalPeoplePicker" />
+<meta property="og:title" content="PeoplePicker — CompactPeoplePicker" />
 <meta property="og:description" content="The people picker (PeoplePicker) is used to select one or more entities, such as people or groups, from a list. It makes composing an email to someone, or adding them to a group, easy if you don’t know their full name or email address.
 For more details and examples visit the official docs.
 The R package can not handle each and every case, so for advanced use cases
@@ -87,7 +87,7 @@ you need to work using the original docs to achieve the desired result." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">shiny.fluent</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
       </span>
     </div>
 
@@ -154,7 +154,7 @@ you need to work using the original docs to achieve the desired result." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>PeoplePicker</h1>
-    <small class="dont-index">Source: <a href='https://github.com/appsilon/shiny.fluent/blob/master/R/components.R'><code>R/components.R</code></a>, <a href='https://github.com/appsilon/shiny.fluent/blob/master/R/documentation.R'><code>R/documentation.R</code></a>, <a href='https://github.com/appsilon/shiny.fluent/blob/master/R/examples.R'><code>R/examples.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/appsilon/shiny.fluent/blob/master/R/components.R'><code>R/components.R</code></a>, <a href='https://github.com/appsilon/shiny.fluent/blob/master/R/documentation.R'><code>R/documentation.R</code></a>, <a href='https://github.com/appsilon/shiny.fluent/blob/master/R/examples.R'><code>R/examples.R</code></a>, and 1 more</small>
     <div class="hidden name"><code>PeoplePicker.Rd</code></div>
     </div>
 
@@ -165,11 +165,17 @@ The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>NormalPeoplePicker</span><span class='op'>(</span><span class='va'>input_id</span>, value <span class='op'>=</span> <span class='va'>default_value</span>, <span class='va'>...</span><span class='op'>)</span>
+    <pre class="usage"><span class='fu'>CompactPeoplePicker</span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span>
 
-<span class='fu'>updateNormalPeoplePicker</span><span class='op'>(</span><span class='va'>session</span>, <span class='va'>input_id</span>, value <span class='op'>=</span> <span class='cn'>NULL</span>, <span class='va'>...</span><span class='op'>)</span>
+<span class='fu'>NormalPeoplePicker</span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span>
 
-<span class='fu'>CompactPeoplePicker</span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span></pre>
+<span class='fu'>NormalPeoplePicker.shinyInput</span><span class='op'>(</span><span class='va'>inputId</span>, <span class='va'>...</span>, value <span class='op'>=</span> <span class='va'>defaultValue</span><span class='op'>)</span>
+
+<span class='fu'>updateNormalPeoplePicker.shinyInput</span><span class='op'>(</span>
+  session <span class='op'>=</span> <span class='fu'>shiny</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/shiny/man/domains.html'>getDefaultReactiveDomain</a></span><span class='op'>(</span><span class='op'>)</span>,
+  <span class='va'>inputId</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -234,23 +240,20 @@ you need to work using the original docs to achieve the desired result.</p>
   <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/shinyApp.html'>shinyApp</a></span><span class='op'>(</span>
     ui <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/tag.html'>tagList</a></span><span class='op'>(</span>
       <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/textOutput.html'>textOutput</a></span><span class='op'>(</span><span class='st'>"selectedPeople"</span><span class='op'>)</span>,
-      <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/withReact.html'>withReact</a></span><span class='op'>(</span>
-        <span class='fu'>NormalPeoplePicker</span><span class='op'>(</span>
-          <span class='st'>"selectedPeople"</span>,
-          className <span class='op'>=</span> <span class='st'>"my_class"</span>,
-          options <span class='op'>=</span> <span class='va'>people</span>,
-          pickerSuggestionsProps <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
-            suggestionsHeaderText <span class='op'>=</span> <span class='st'>'Matching people'</span>,
-            mostRecentlyUsedHeaderText <span class='op'>=</span> <span class='st'>'Sales reps'</span>,
-            noResultsFoundText <span class='op'>=</span> <span class='st'>'No results found'</span>,
-            showRemoveButtons <span class='op'>=</span> <span class='cn'>TRUE</span>
-          <span class='op'>)</span>
+      <span class='fu'>NormalPeoplePicker.shinyInput</span><span class='op'>(</span>
+        <span class='st'>"selectedPeople"</span>,
+        options <span class='op'>=</span> <span class='va'>people</span>,
+        pickerSuggestionsProps <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
+          suggestionsHeaderText <span class='op'>=</span> <span class='st'>'Matching people'</span>,
+          mostRecentlyUsedHeaderText <span class='op'>=</span> <span class='st'>'Sales reps'</span>,
+          noResultsFoundText <span class='op'>=</span> <span class='st'>'No results found'</span>,
+          showRemoveButtons <span class='op'>=</span> <span class='cn'>TRUE</span>
         <span class='op'>)</span>
       <span class='op'>)</span>
     <span class='op'>)</span>,
     server <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span><span class='op'>)</span> <span class='op'>{</span>
       <span class='va'>output</span><span class='op'>$</span><span class='va'>selectedPeople</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/renderPrint.html'>renderText</a></span><span class='op'>(</span><span class='op'>{</span>
-        <span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/NULL.html'>is.null</a></span><span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>selectedPeople</span><span class='op'>)</span> <span class='op'>||</span> <span class='va'>input</span><span class='op'>$</span><span class='va'>selectedPeople</span> <span class='op'>==</span> <span class='st'>""</span><span class='op'>)</span> <span class='op'>{</span>
+        <span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span><span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>selectedPeople</span><span class='op'>)</span> <span class='op'>==</span> <span class='fl'>0</span><span class='op'>)</span> <span class='op'>{</span>
           <span class='st'>"Select recipients below:"</span>
         <span class='op'>}</span> <span class='kw'>else</span> <span class='op'>{</span>
           <span class='va'>selectedPeople</span> <span class='op'>&lt;-</span> <span class='fu'>dplyr</span><span class='fu'>::</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>people</span>, <span class='va'>key</span> <span class='op'>%in%</span> <span class='va'>input</span><span class='op'>$</span><span class='va'>selectedPeople</span><span class='op'>)</span>

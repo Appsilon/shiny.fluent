@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Image — Image • shiny.fluent</title>
+<title>A randomly generated dataset of imaginary sales deals — fluentSalesDeals • shiny.fluent</title>
 
 
 <!-- jquery -->
@@ -41,11 +41,10 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Image — Image" />
-<meta property="og:description" content="An image is a graphic representation of something (e.g photo or illustration). The borders have been added to these examples in order to help visualize empty space in the image frame.
-For more details and examples visit the official docs.
-The R package can not handle each and every case, so for advanced use cases
-you need to work using the original docs to achieve the desired result." />
+<meta property="og:title" content="A randomly generated dataset of imaginary sales deals — fluentSalesDeals" />
+<meta property="og:description" content="Sales deals to Top 10 companies from the Fortune 500 dataset (located at
+https://hifld-geoplatform.opendata.arcgis.com/datasets/fortune-500-corporate-headquarters)
+are randomly generated for each person in fluentPeople." />
 
 
 
@@ -153,65 +152,23 @@ you need to work using the original docs to achieve the desired result." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Image</h1>
-    <small class="dont-index">Source: <a href='https://github.com/appsilon/shiny.fluent/blob/master/R/components.R'><code>R/components.R</code></a>, <a href='https://github.com/appsilon/shiny.fluent/blob/master/R/documentation.R'><code>R/documentation.R</code></a></small>
-    <div class="hidden name"><code>Image.Rd</code></div>
+    <h1>A randomly generated dataset of imaginary sales deals</h1>
+    <small class="dont-index">Source: <a href='https://github.com/appsilon/shiny.fluent/blob/master/R/data.R'><code>R/data.R</code></a></small>
+    <div class="hidden name"><code>fluentSalesDeals.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>An image is a graphic representation of something (e.g photo or illustration). The borders have been added to these examples in order to help visualize empty space in the image frame.</p>
-<p>For more details and examples visit the official <a href='https://developer.microsoft.com/en-us/fluentui#/controls/web/Image'>docs</a>.
-The R package can not handle each and every case, so for advanced use cases
-you need to work using the original docs to achieve the desired result.</p>
+    <p>Sales deals to Top 10 companies from the Fortune 500 dataset (located at
+<a href='https://hifld-geoplatform.opendata.arcgis.com/datasets/fortune-500-corporate-headquarters'>https://hifld-geoplatform.opendata.arcgis.com/datasets/fortune-500-corporate-headquarters</a>)
+are randomly generated for each person in <code>fluentPeople</code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>Image</span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='va'>fluentSalesDeals</span></pre>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>className</th>
-      <td><p><code>string</code> <br /> Additional css class to apply to the Component</p></td>
-    </tr>
-    <tr>
-      <th>coverStyle</th>
-      <td><p><code>ImageCoverStyle</code> <br /> Specifies the cover style to be used for this image. If not specified, this will be dynamically calculated based on the aspect ratio for the image.</p></td>
-    </tr>
-    <tr>
-      <th>errorSrc</th>
-      <td><p><code>string</code> <br /> Deprecated at v1.3.6, to replace the src in case of errors, use <code>onLoadingStateChange</code> instead and rerender the Image with a difference src.</p></td>
-    </tr>
-    <tr>
-      <th>imageFit</th>
-      <td><p><code>ImageFit</code> <br /> Used to determine how the image is scaled and cropped to fit the frame.</p></td>
-    </tr>
-    <tr>
-      <th>maximizeFrame</th>
-      <td><p><code>boolean</code> <br /> If true, the image frame will expand to fill its parent container.</p></td>
-    </tr>
-    <tr>
-      <th>onLoadingStateChange</th>
-      <td><p><code>(loadState: ImageLoadState) =&gt; void</code> <br /> Optional callback method for when the image load state has changed. The 'loadState' parameter indicates the current state of the Image.</p></td>
-    </tr>
-    <tr>
-      <th>shouldFadeIn</th>
-      <td><p><code>boolean</code> <br /> If true, fades the image in when loaded.</p></td>
-    </tr>
-    <tr>
-      <th>shouldStartVisible</th>
-      <td><p><code>boolean</code> <br /> If true, the image starts as visible and is hidden on error. Otherwise, the image is hidden until it is successfully loaded. This disables shouldFadeIn.</p></td>
-    </tr>
-    <tr>
-      <th>styles</th>
-      <td><p><code>IStyleFunctionOrObject&lt;IImageStyleProps, IImageStyles&gt;</code> <br /> Call to provide customized styling that will layer on top of the variant rules</p></td>
-    </tr>
-    <tr>
-      <th>theme</th>
-      <td><p><code>ITheme</code> <br /> Theme provided by HOC.</p></td>
-    </tr>
-    </table>
 
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+
+    <p>An object of class <code>tbl_df</code> (inherits from <code>tbl</code>, <code>data.frame</code>) with 100 rows and 30 columns.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

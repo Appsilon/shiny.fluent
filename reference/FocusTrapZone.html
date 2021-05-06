@@ -88,7 +88,7 @@ you need to work using the original docs to achieve the desired result." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">shiny.fluent</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
       </span>
     </div>
 
@@ -226,43 +226,40 @@ you need to work using the original docs to achieve the desired result.</p>
 
 <span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
   <span class='fu'>shinyApp</span><span class='op'>(</span>
-    ui <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/withReact.html'>withReact</a></span><span class='op'>(</span>
-      <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/reactOutput.html'>reactOutput</a></span><span class='op'>(</span><span class='st'>"focusTrapZone"</span><span class='op'>)</span>
-    <span class='op'>)</span>,
+    ui <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/reactOutput.html'>reactOutput</a></span><span class='op'>(</span><span class='st'>"focusTrapZone"</span><span class='op'>)</span>,
     server <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span><span class='op'>)</span> <span class='op'>{</span>
       <span class='va'>output</span><span class='op'>$</span><span class='va'>focusTrapZone</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/renderReact.html'>renderReact</a></span><span class='op'>(</span><span class='op'>{</span>
-        <span class='va'>useTrapZone</span> <span class='op'>&lt;-</span> <span class='op'>!</span><span class='fu'><a href='https://rdrr.io/r/base/NULL.html'>is.null</a></span><span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>useTrapZone</span><span class='op'>)</span> <span class='op'>&amp;&amp;</span> <span class='va'>input</span><span class='op'>$</span><span class='va'>useTrapZone</span>
-        <span class='va'>stackStyles</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>root <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>border <span class='op'>=</span> <span class='kw'>if</span><span class='op'>(</span><span class='va'>useTrapZone</span><span class='op'>)</span> <span class='st'>'2px solid #ababab'</span> <span class='kw'>else</span> <span class='st'>'transparent'</span>, padding <span class='op'>=</span> <span class='fl'>10</span><span class='op'>)</span><span class='op'>)</span>
+        <span class='va'>useTrapZone</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/Logic.html'>isTRUE</a></span><span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>useTrapZone</span><span class='op'>)</span>
+        <span class='va'>stackStyles</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>root <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
+          border <span class='op'>=</span> <span class='kw'>if</span> <span class='op'>(</span><span class='va'>useTrapZone</span><span class='op'>)</span> <span class='st'>'2px solid #ababab'</span> <span class='kw'>else</span> <span class='st'>'transparent'</span>,
+          padding <span class='op'>=</span> <span class='fl'>10</span>
+        <span class='op'>)</span><span class='op'>)</span>
         <span class='va'>textFieldStyles</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>root <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>width <span class='op'>=</span> <span class='fl'>300</span><span class='op'>)</span><span class='op'>)</span>;
         <span class='va'>stackTokens</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>childrenGap <span class='op'>=</span> <span class='fl'>8</span><span class='op'>)</span>;
-        
-        <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/reactWidget.html'>reactWidget</a></span><span class='op'>(</span><span class='op'>{</span>
-          <span class='fu'>div</span><span class='op'>(</span>
-            <span class='fu'>FocusTrapZone</span><span class='op'>(</span>
-              disabled<span class='op'>=</span><span class='op'>!</span><span class='va'>useTrapZone</span>,
-              <span class='fu'><a href='Stack.html'>Stack</a></span><span class='op'>(</span>
-                horizontalAlign<span class='op'>=</span><span class='st'>"start"</span>,
-                tokens<span class='op'>=</span><span class='va'>stackTokens</span>,
-                styles<span class='op'>=</span><span class='va'>stackStyles</span>,
-                <span class='fu'><a href='Toggle.html'>Toggle</a></span><span class='op'>(</span>
-                  <span class='st'>"useTrapZone"</span>,
-                  value<span class='op'>=</span><span class='va'>input</span><span class='op'>$</span><span class='va'>useTrapZone</span>,
-                  label<span class='op'>=</span><span class='st'>"Use trap zone"</span>,
-                  onText<span class='op'>=</span><span class='st'>"On (toggle to exit)"</span>,
-                  offText<span class='op'>=</span><span class='st'>"Off (toggle to trap focus)"</span>
-                <span class='op'>)</span>,
-                <span class='fu'><a href='MaskedTextField.html'>TextField</a></span><span class='op'>(</span><span class='st'>"textInput"</span>, label<span class='op'>=</span><span class='st'>"Input inside trap zone"</span>, styles<span class='op'>=</span><span class='va'>textFieldStyles</span><span class='op'>)</span>,
-                <span class='fu'><a href='Link.html'>Link</a></span><span class='op'>(</span>href<span class='op'>=</span><span class='st'>"https://bing.com"</span>, target<span class='op'>=</span><span class='st'>"_blank"</span>, <span class='st'>"Hyperlink inside trap zone"</span><span class='op'>)</span>
-              <span class='op'>)</span><span class='op'>)</span>,
-            <span class='fu'><a href='Link.html'>Link</a></span><span class='op'>(</span>href<span class='op'>=</span><span class='st'>"https://bing.com"</span>, target<span class='op'>=</span><span class='st'>"_blank"</span>, <span class='st'>"Hyperlink outside trap zone"</span><span class='op'>)</span>
-          <span class='op'>)</span>
-          <span class='op'>}</span>
+
+        <span class='fu'>div</span><span class='op'>(</span>
+          <span class='fu'>FocusTrapZone</span><span class='op'>(</span>
+            disabled <span class='op'>=</span> <span class='op'>!</span><span class='va'>useTrapZone</span>,
+            <span class='fu'><a href='Stack.html'>Stack</a></span><span class='op'>(</span>
+              horizontalAlign <span class='op'>=</span> <span class='st'>"start"</span>,
+              tokens <span class='op'>=</span> <span class='va'>stackTokens</span>,
+              styles <span class='op'>=</span> <span class='va'>stackStyles</span>,
+              <span class='fu'><a href='Toggle.html'>Toggle.shinyInput</a></span><span class='op'>(</span><span class='st'>"useTrapZone"</span>,
+                value <span class='op'>=</span> <span class='cn'>FALSE</span>,
+                label <span class='op'>=</span> <span class='st'>"Use trap zone"</span>,
+                onText <span class='op'>=</span> <span class='st'>"On (toggle to exit)"</span>,
+                offText <span class='op'>=</span> <span class='st'>"Off (toggle to trap focus)"</span>
+              <span class='op'>)</span>,
+              <span class='fu'><a href='MaskedTextField.html'>TextField.shinyInput</a></span><span class='op'>(</span><span class='st'>"textInput"</span>, label <span class='op'>=</span> <span class='st'>"Input inside trap zone"</span>, styles <span class='op'>=</span> <span class='va'>textFieldStyles</span><span class='op'>)</span>,
+              <span class='fu'><a href='Link.html'>Link</a></span><span class='op'>(</span>href <span class='op'>=</span> <span class='st'>"https://bing.com"</span>, target <span class='op'>=</span> <span class='st'>"_blank"</span>, <span class='st'>"Hyperlink inside trap zone"</span><span class='op'>)</span>
+            <span class='op'>)</span>
+          <span class='op'>)</span>,
+          <span class='fu'><a href='Link.html'>Link</a></span><span class='op'>(</span>href<span class='op'>=</span><span class='st'>"https://bing.com"</span>, target<span class='op'>=</span><span class='st'>"_blank"</span>, <span class='st'>"Hyperlink outside trap zone"</span><span class='op'>)</span>
         <span class='op'>)</span>
       <span class='op'>}</span><span class='op'>)</span>
     <span class='op'>}</span>
   <span class='op'>)</span>
 <span class='op'>}</span>
-  
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

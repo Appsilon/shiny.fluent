@@ -87,7 +87,7 @@ you need to work using the original docs to achieve the desired result." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">shiny.fluent</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
       </span>
     </div>
 
@@ -284,25 +284,29 @@ you need to work using the original docs to achieve the desired result.</p>
 
 <span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
   <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/shinyApp.html'>shinyApp</a></span><span class='op'>(</span>
-    ui <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/withReact.html'>withReact</a></span><span class='op'>(</span>
-      <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span><span class='op'>(</span>
-        <span class='fu'><a href='ActionButton.html'>DefaultButton</a></span><span class='op'>(</span><span class='st'>"showModal"</span>, text <span class='op'>=</span> <span class='st'>"Open modal"</span><span class='op'>)</span>,
-        <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/reactOutput.html'>reactOutput</a></span><span class='op'>(</span><span class='st'>"reactModal"</span><span class='op'>)</span>
-      <span class='op'>)</span>
+    ui <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/tag.html'>tagList</a></span><span class='op'>(</span>
+      <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/reactOutput.html'>reactOutput</a></span><span class='op'>(</span><span class='st'>"modal"</span><span class='op'>)</span>,
+      <span class='fu'><a href='ActionButton.html'>PrimaryButton.shinyInput</a></span><span class='op'>(</span><span class='st'>"showModal"</span>, text <span class='op'>=</span> <span class='st'>"Show modal"</span><span class='op'>)</span>,
     <span class='op'>)</span>,
     server <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span><span class='op'>)</span> <span class='op'>{</span>
-      <span class='va'>isModalOpen</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/reactiveVal.html'>reactiveVal</a></span><span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span>
-      <span class='va'>output</span><span class='op'>$</span><span class='va'>reactModal</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/renderReact.html'>renderReact</a></span><span class='op'>(</span><span class='op'>{</span>
-        <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/reactWidget.html'>reactWidget</a></span><span class='op'>(</span>
-          <span class='fu'>Modal</span><span class='op'>(</span>isOpen<span class='op'>=</span><span class='fu'>isModalOpen</span><span class='op'>(</span><span class='op'>)</span>, isBlocking<span class='op'>=</span><span class='cn'>FALSE</span>, <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span><span class='op'>(</span>
-            style <span class='op'>=</span> <span class='st'>"margin: 20px"</span>,
-            <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>h1</a></span><span class='op'>(</span><span class='st'>"This is an important message"</span><span class='op'>)</span>,
-            <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>p</a></span><span class='op'>(</span><span class='st'>"Read this text to learn more."</span><span class='op'>)</span>,
-            <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/ShinyComponentWrapper.html'>ShinyComponentWrapper</a></span><span class='op'>(</span><span class='fu'><a href='ActionButton.html'>DefaultButton</a></span><span class='op'>(</span><span class='st'>"hideModal"</span>, text<span class='op'>=</span><span class='st'>"Close"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+      <span class='va'>modalVisible</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/reactiveVal.html'>reactiveVal</a></span><span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span>
+      <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/observeEvent.html'>observeEvent</a></span><span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>showModal</span>, <span class='fu'>modalVisible</span><span class='op'>(</span><span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
+      <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/observeEvent.html'>observeEvent</a></span><span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>hideModal</span>, <span class='fu'>modalVisible</span><span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span><span class='op'>)</span>
+      <span class='va'>output</span><span class='op'>$</span><span class='va'>modal</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/renderReact.html'>renderReact</a></span><span class='op'>(</span><span class='op'>{</span>
+        <span class='fu'>Modal</span><span class='op'>(</span>isOpen <span class='op'>=</span> <span class='fu'>modalVisible</span><span class='op'>(</span><span class='op'>)</span>,
+          <span class='fu'><a href='Stack.html'>Stack</a></span><span class='op'>(</span>tokens <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>padding <span class='op'>=</span> <span class='st'>"15px"</span>, childrenGap <span class='op'>=</span> <span class='st'>"10px"</span><span class='op'>)</span>,
+            <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span><span class='op'>(</span>style <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>display <span class='op'>=</span> <span class='st'>"flex"</span><span class='op'>)</span>,
+              <span class='fu'><a href='Text.html'>Text</a></span><span class='op'>(</span><span class='st'>"Title"</span>, variant <span class='op'>=</span> <span class='st'>"large"</span><span class='op'>)</span>,
+              <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span><span class='op'>(</span>style <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>flexGrow <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span>,
+              <span class='fu'><a href='ActionButton.html'>IconButton.shinyInput</a></span><span class='op'>(</span><span class='st'>"hideModal"</span>, iconProps <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>iconName <span class='op'>=</span> <span class='st'>"Cancel"</span><span class='op'>)</span><span class='op'>)</span>,
+            <span class='op'>)</span>,
+            <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span><span class='op'>(</span>
+              <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>p</a></span><span class='op'>(</span><span class='st'>"A paragraph of text."</span><span class='op'>)</span>,
+              <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>p</a></span><span class='op'>(</span><span class='st'>"Another paragraph."</span><span class='op'>)</span>
+            <span class='op'>)</span>
+          <span class='op'>)</span>
         <span class='op'>)</span>
       <span class='op'>}</span><span class='op'>)</span>
-      <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/observeEvent.html'>observeEvent</a></span><span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>showModal</span>, <span class='op'>{</span> <span class='fu'>isModalOpen</span><span class='op'>(</span><span class='cn'>TRUE</span><span class='op'>)</span> <span class='op'>}</span><span class='op'>)</span>
-      <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/observeEvent.html'>observeEvent</a></span><span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>hideModal</span>, <span class='op'>{</span> <span class='fu'>isModalOpen</span><span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>}</span><span class='op'>)</span>
     <span class='op'>}</span>
   <span class='op'>)</span>
 <span class='op'>}</span>

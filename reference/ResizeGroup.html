@@ -90,7 +90,7 @@ you need to work using the original docs to achieve the desired result." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">shiny.fluent</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
       </span>
     </div>
 
@@ -229,9 +229,9 @@ you need to work using the original docs to achieve the desired result.</p>
       <span class='st'>"other"</span>, <span class='st'>"times"</span>, <span class='st'>"extraordinarily"</span>, <span class='st'>"long"</span>
     <span class='op'>)</span>
   <span class='op'>)</span>
-  <span class='va'>onRenderData</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/htmlwidgets/man/JS.html'>JS</a></span><span class='op'>(</span><span class='st'>"data =&gt;
+  <span class='va'>onRenderData</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/JS.html'>JS</a></span><span class='op'>(</span><span class='st'>"data =&gt;
     data.items.map(item =&gt;
-      React.createElement('div',
+      jsmodule['react'].createElement('div',
         {
           style: {
             display: 'inline-block',
@@ -245,20 +245,17 @@ you need to work using the original docs to achieve the desired result.</p>
       )
     )
   "</span><span class='op'>)</span>
-  <span class='va'>onReduceData</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/htmlwidgets/man/JS.html'>JS</a></span><span class='op'>(</span><span class='st'>"data =&gt; ({ items: data.items.slice(0, -1) })"</span><span class='op'>)</span>
+  <span class='va'>onReduceData</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/JS.html'>JS</a></span><span class='op'>(</span><span class='st'>"data =&gt; ({ items: data.items.slice(0, -1) })"</span><span class='op'>)</span>
   <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/shinyApp.html'>shinyApp</a></span><span class='op'>(</span>
-    ui <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/withReact.html'>withReact</a></span><span class='op'>(</span>
-      <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span><span class='op'>(</span>
-        <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>p</a></span><span class='op'>(</span><span class='st'>"Resize the browser to see how the elements are hidden when they do not fit:"</span><span class='op'>)</span>,
-        <span class='fu'>ResizeGroup</span><span class='op'>(</span>
-          data <span class='op'>=</span> <span class='va'>data</span>,
-          onRenderData <span class='op'>=</span> <span class='va'>onRenderData</span>,
-          onReduceData <span class='op'>=</span> <span class='va'>onReduceData</span>
-        <span class='op'>)</span>
+    ui <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span><span class='op'>(</span>
+      <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>p</a></span><span class='op'>(</span><span class='st'>"Resize the browser to see how the elements are hidden when they do not fit:"</span><span class='op'>)</span>,
+      <span class='fu'>ResizeGroup</span><span class='op'>(</span>
+        data <span class='op'>=</span> <span class='va'>data</span>,
+        onRenderData <span class='op'>=</span> <span class='va'>onRenderData</span>,
+        onReduceData <span class='op'>=</span> <span class='va'>onReduceData</span>
       <span class='op'>)</span>
     <span class='op'>)</span>,
-    server <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span><span class='op'>)</span> <span class='op'>{</span>
-    <span class='op'>}</span>
+    server <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span><span class='op'>)</span> <span class='op'>{</span><span class='op'>}</span>
   <span class='op'>)</span>
 <span class='op'>}</span>
 </div></pre>

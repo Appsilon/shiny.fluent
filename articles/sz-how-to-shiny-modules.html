@@ -38,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">shiny.fluent</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
       </span>
     </div>
 
@@ -131,7 +131,7 @@
 
 <span class="va">calcUI</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">{</span>
   <span class="va">ns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/NS.html">NS</a></span><span class="op">(</span><span class="va">id</span><span class="op">)</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/shiny.react/man/withReact.html">withReact</a></span><span class="op">(</span>
+  <span class="fu">withReact</span><span class="op">(</span>
     <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html">div</a></span><span class="op">(</span>style <span class="op">=</span> <span class="st">"margin: 15px 0px 15px"</span>,
       <span class="fu"><a href="../reference/ChoiceGroup.html">ChoiceGroup</a></span><span class="op">(</span><span class="fu">ns</span><span class="op">(</span><span class="st">"mode"</span><span class="op">)</span>, label <span class="op">=</span> <span class="st">"Operation"</span>, value <span class="op">=</span> <span class="st">"add"</span>, options <span class="op">=</span> <span class="va">calcModes</span><span class="op">)</span>,
       <span class="fu"><a href="../reference/Label.html">Label</a></span><span class="op">(</span><span class="st">"Values"</span><span class="op">)</span>,
