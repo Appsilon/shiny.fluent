@@ -94,14 +94,6 @@ function calendarDefaultTest(date = 'June 25, 2020', dttm = '2020-06-25T12:00:00
   cy.get('#fluentInputs-calendarValue').should('contain', `Value: ${dttm}`);
 }
 
-function calendarChangeTest() {
-  cy.get('.ms-DatePicker').within(() => {
-    cy.get('button[aria-label="January"]').click();
-    cy.get('button[aria-label="January 15, 2020"]').click();
-  });
-  cy.get('#fluentInputs-calendarValue').should('contain', 'Value: 2020-01-14T23:00:00.000Z');
-}
-
 function choiceGroupDefaultTest(selected = 'B') {
   cy.get('#fluentInputs-choiceGroup').within(() => {
     cy.get(`label[class^=ms-ChoiceField][class*=is-checked] > span[id^=ChoiceGroupLabel][id$=-${selected}]`)
@@ -181,15 +173,6 @@ function dropdownChangeTest() {
 function datePickerDefaultTest(date = 'Thu Jun 25 2020', dttm = '2020-06-25T12:00:00.000Z') {
   cy.get('#fluentInputs-datePicker-label').should('have.attr', 'value', date);
   cy.get('#fluentInputs-datePickerValue').should('contain', `Value: ${dttm}`);
-}
-
-function datePickerChangeTest() {
-  cy.get('#fluentInputs-datePicker-label').click();
-  cy.get('[id*=DatePicker-Callout').within(() => {
-    cy.get('button[aria-label="January"]').click();
-    cy.get('button[aria-label="January 15, 2020"]').click();
-  });
-  cy.get('#fluentInputs-datePickerValue').should('contain', 'Value: 2020-01-14T23:00:00.000Z');
 }
 
 function swatchColorPickerDefaultTest(color = 'orange', pos = 0) {
@@ -298,10 +281,6 @@ describe('Calendar.shinyInput()', () => {
   it('setting default values works', () => {
     calendarDefaultTest();
   });
-
-  it('value change works', () => {
-    calendarChangeTest();
-  });
 });
 
 describe('ChoiceGroup.shinyInput()', () => {
@@ -347,10 +326,6 @@ describe('Dropdown.shinyInput()', () => {
 describe('DatePicker.shinyInput()', () => {
   it('setting default values works', () => {
     datePickerDefaultTest();
-  });
-
-  it('value change works', () => {
-    datePickerChangeTest();
   });
 });
 
@@ -423,12 +398,6 @@ describe('Reset after toggled visibility', () => {
     spinButtonDefaultTest();
   });
 
-  it('Calendar.shinyInput() works', () => {
-    calendarChangeTest();
-    toggleVisibility();
-    calendarDefaultTest();
-  });
-
   it('ChoiceGroup.shinyInput() works', () => {
     choiceGroupDefaultTest();
     toggleVisibility();
@@ -451,12 +420,6 @@ describe('Reset after toggled visibility', () => {
     dropdownChangeTest();
     toggleVisibility();
     dropdownDefaultTest();
-  });
-
-  it('DatePicker.shinyInput() works', () => {
-    datePickerChangeTest();
-    toggleVisibility();
-    datePickerDefaultTest();
   });
 
   it('SwatchColorPicker.shinyInput() works', () => {
