@@ -2,10 +2,10 @@
 set -eu
 
 # Install the JavaScript dependencies
-(cd node && yarn)
+(cd js && yarn)
 
 # Bundle the JavaScript code into a single file
-(cd node && yarn webpack)
+(cd js && yarn webpack)
 
 # Generate the NAMESPACE file and documentation
 Rscript -e 'devtools::document()'
