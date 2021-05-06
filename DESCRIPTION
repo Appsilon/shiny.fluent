@@ -1,17 +1,12 @@
 Package: shiny.fluent
 Title: Microsoft Fluent UI for Shiny Apps
-Version: 0.0.1
+Version: 0.1.0
 Authors@R:
-    c(person(given = "Marek",
-             family = "Rogala",
-             role = c("aut", "cre"),
-             email = "marek@appsilon.com"),
-      person(given = "Kamil",
-             family = "Zyla",
-             role = "aut",
-             email = "kamil@appsilon.com"),
-      person(given = "Appsilon sp. z o.o.",
-             role = "cph"))
+  c(
+    person(given = "Marek", family = "Rogala", role = c("aut", "cre"), email = "marek@appsilon.com"),
+    person(given = "Kamil", family = "Zyla", role = "aut", email = "kamil@appsilon.com"),
+    person(given = "Appsilon sp. z o.o.", role = "cph")
+  )
 Description: It provides all controls from Microsoft Fluent UI.
 URL: https://appsilon.github.io/shiny.fluent, https://github.com/appsilon/shiny.fluent
 License: LGPL-3 + file LICENSE
@@ -19,22 +14,22 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
-Imports:
-    shiny.react,
-    shiny,
-    rlang,
-    htmltools
-Suggests:
-    stringi,
-    jsonlite,
-    tibble,
-    knitr,
-    rmarkdown,
-    dplyr,
-    sass,
-    purrr,
-    shiny.router,
-    tidyverse
 VignetteBuilder: knitr
 Depends:
-    R (>= 2.10)
+  R (>= 2.10)
+Imports:
+  htmltools,
+  rlang,
+  shiny,
+  shiny.react
+Suggests:
+  dplyr,
+  jsonlite,
+  knitr,
+  purrr,
+  rmarkdown,
+  sass,
+  shiny.router,
+  stringi,
+  tibble,
+  tidyverse

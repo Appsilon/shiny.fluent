@@ -2,11 +2,9 @@ library(shiny.fluent)
 
 if (interactive()) {
   shinyApp(
-    ui = withReact(
-      div(
-        TextField("text"),
-        textOutput("textValue")
-      )
+    ui = div(
+      TextField.shinyInput("text"),
+      textOutput("textValue")
     ),
     server = function(input, output) {
       output$textValue <- renderText({

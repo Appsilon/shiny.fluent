@@ -2,25 +2,29 @@ library(shiny.fluent)
 
 if (interactive()) {
   shinyApp(
-    ui = withReact(
-      div(
-        DefaultButton("showModal", text = "Open modal"),
-        reactOutput("reactModal")
-      )
+    ui = tagList(
+      reactOutput("modal"),
+      PrimaryButton.shinyInput("showModal", text = "Show modal"),
     ),
     server = function(input, output) {
-      isModalOpen <- reactiveVal(FALSE)
-      output$reactModal <- renderReact({
-        reactWidget(
-          Modal(isOpen=isModalOpen(), isBlocking=FALSE, div(
-            style = "margin: 20px",
-            h1("This is an important message"),
-            p("Read this text to learn more."),
-            ShinyComponentWrapper(DefaultButton("hideModal", text="Close"))))
+      modalVisible <- reactiveVal(FALSE)
+      observeEvent(input$showModal, modalVisible(TRUE))
+      observeEvent(input$hideModal, modalVisible(FALSE))
+      output$modal <- renderReact({
+        Modal(isOpen = modalVisible(),
+          Stack(tokens = list(padding = "15px", childrenGap = "10px"),
+            div(style = list(display = "flex"),
+              Text("Title", variant = "large"),
+              div(style = list(flexGrow = 1)),
+              IconButton.shinyInput("hideModal", iconProps = list(iconName = "Cancel")),
+            ),
+            div(
+              p("A paragraph of text."),
+              p("Another paragraph.")
+            )
+          )
         )
       })
-      observeEvent(input$showModal, { isModalOpen(TRUE) })
-      observeEvent(input$hideModal, { isModalOpen(FALSE) })
     }
   )
 }

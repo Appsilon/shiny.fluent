@@ -46,12 +46,10 @@ library(shiny.fluent)
 
 if (interactive()) {
   shinyApp(
-    ui = withReact(
-      div(
-        style="margin-top: 60px; border: 1px solid navy; padding: 10px; background: #eee;",
-        Checkbox("useLayer", FALSE, label = "Display a message in a layer"),
-        reactOutput("layer")
-      )
+    ui = div(
+      style = "margin-top: 60px; border: 1px solid navy; padding: 10px; background: #eee;",
+      Checkbox.shinyInput("useLayer", value = FALSE, label = "Display a message in a layer"),
+      reactOutput("layer")
     ),
     server = function(input, output) {
       output$layer <- renderReact({
@@ -59,13 +57,7 @@ if (interactive()) {
           style = "background-color: #60C7FF; margin: 10px; padding: 10px",
           "Hello!"
         )
-        reactWidget(
-          if (input$useLayer) {
-            Layer(box)
-          } else {
-            NULL
-          }
-        )
+        if (isTRUE(input$useLayer)) Layer(box)
       })
     }
   )
@@ -74,15 +66,12 @@ library(shiny.fluent)
 
 if (interactive()) {
   shinyApp(
-    ui = withReact(
-      div(
-        LayerHost(id = "host", style = list(border = "1px dashed", padding = 10)),
-        "Layer children are rendered in the LayerHost",
-        Layer(hostId = "host", "Content")
-      )
+    ui = div(
+      LayerHost(id = "host", style = list(border = "1px dashed", padding = 10)),
+      "Layer children are rendered in the LayerHost",
+      Layer(hostId = "host", "Content")
     ),
-    server = function(input, output) {
-    }
+    server = function(input, output) {}
   )
 }
 }

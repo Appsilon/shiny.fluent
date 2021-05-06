@@ -8,11 +8,9 @@ if (interactive()) {
   )
 
   shinyApp(
-    ui = withReact(
-      div(
-        Dropdown("dropdown", "A", options = options),
-        textOutput("dropdownValue")
-      )
+    ui = div(
+      Dropdown.shinyInput("dropdown", value = "A", options = options),
+      textOutput("dropdownValue")
     ),
     server = function(input, output) {
       output$dropdownValue <- renderText({

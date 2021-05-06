@@ -57,10 +57,7 @@ if (interactive()) {
   )
 
   shinyApp(
-    ui = withReact(
-      CommandBar(items = items, farItems = farItems)
-    ),
-    server = function(input, output) {
-    }
+    ui = CommandBar(items = items, farItems = farItems),
+    server = function(input, output) {}
   )
 }

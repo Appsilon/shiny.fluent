@@ -2,11 +2,9 @@ library(shiny.fluent)
 
 if (interactive()) {
   shinyApp(
-    ui = withReact(
-      div(
-        ColorPicker("color", "#00FF01"),
-        textOutput("colorValue")
-      )
+    ui = div(
+      ColorPicker.shinyInput("color", value = "#00FF01"),
+      textOutput("colorValue")
     ),
     server = function(input, output) {
       output$colorValue <- renderText({

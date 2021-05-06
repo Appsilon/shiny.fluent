@@ -64,16 +64,13 @@ if (interactive()) {
   )
 
   shinyApp(
-    ui = withReact(
-      Breadcrumb(
-        items = items,
-        maxDisplayedItems = 3,
-        ariaLabel = "Breadcrumb with items rendered as links",
-        overflowAriaLabel = "More links"
-      )
+    ui = Breadcrumb(
+      items = items,
+      maxDisplayedItems = 3,
+      ariaLabel = "Breadcrumb with items rendered as links",
+      overflowAriaLabel = "More links"
     ),
-    server = function(input, output) {
-    }
+    server = function(input, output) {}
   )
 }
 }

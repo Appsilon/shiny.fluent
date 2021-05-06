@@ -2,13 +2,10 @@ library(shiny.fluent)
 
 if (interactive()) {
   shinyApp(
-    ui = withReact(
-      ProgressIndicator(
-        label = "Example title",
-        description = "Example description"
-      )
+    ui = ProgressIndicator(
+      label = "Example title",
+      description = "Example description"
     ),
-    server = function(input, output) {
-    }
+    server = function(input, output) {}
   )
 }
