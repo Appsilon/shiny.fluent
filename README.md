@@ -28,14 +28,11 @@ All of this is easily accessible on the [package's website](https://appsilon.git
 
 ### Installation
 
-Currently the packages are only available from Github, and are private - you need to have access to these repositories.
-
+To install the packages, run:
 ```R
-remotes::install_git("ssh://git@github.com/Appsilon/shiny.react.git")
-remotes::install_git("ssh://git@github.com/Appsilon/shiny.fluent.git")
+remotes::install_github("Appsilon/shiny.react")
+remotes::install_github("Appsilon/shiny.fluent")
 ```
-
-This should work out of the box, assuming you have SSH keys that authenticate you to GitHub in the standard path. If you run into issues, check the [Solving installation credentials issues](#solving-installation-credentials-issues) section.
 
 ### Quick start
 
