@@ -128,11 +128,10 @@
 <div id="installation" class="section level3">
 <h3 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h3>
-<p>Currently the packages are only available from Github, and are private - you need to have access to these repositories.</p>
+<p>To install the packages, run:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_git.html">install_git</a></span><span class="op">(</span><span class="st">"ssh://git@github.com/Appsilon/shiny.react.git"</span><span class="op">)</span>
-<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_git.html">install_git</a></span><span class="op">(</span><span class="st">"ssh://git@github.com/Appsilon/shiny.fluent.git"</span><span class="op">)</span></code></pre></div>
-<p>This should work out of the box, assuming you have SSH keys that authenticate you to GitHub in the standard path. If you run into issues, check the <a href="#solving-installation-credentials-issues">Solving installation credentials issues</a> section.</p>
+<code class="sourceCode R"><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"Appsilon/shiny.react"</span><span class="op">)</span>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"Appsilon/shiny.fluent"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="quick-start" class="section level3">
 <h3 class="hasAnchor">
