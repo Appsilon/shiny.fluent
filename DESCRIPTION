@@ -1,6 +1,6 @@
 Package: shiny.fluent
 Title: Microsoft Fluent UI for Shiny Apps
-Version: 0.1.0
+Version: 0.2.0
 Authors@R:
   c(
     person(given = "Marek", family = "Rogala", role = c("aut", "cre"), email = "marek@appsilon.com"),
@@ -21,7 +21,7 @@ Imports:
   htmltools,
   rlang,
   shiny,
-  shiny.react
+  shiny.react (>= 0.2.0)
 Suggests:
   dplyr,
   jsonlite,
