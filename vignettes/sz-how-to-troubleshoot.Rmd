@@ -14,11 +14,5 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
-library(shiny.fluent)
-```
-
-- enable debug mode
-- look at the console
-- see what is tried to be inserted
-- possibly you passed a wrong argument and React complains
+- Enable debug mode with `shiny.react::enableReactDebugMode()`.
+- Check for errors in the browser console.
