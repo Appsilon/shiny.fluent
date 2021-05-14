@@ -1,0 +1,90 @@
+---
+title: "Topic guide: React in Shiny"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Topic guide: React in Shiny}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+With shiny.fluent we strived to build an interface for Microsoft's Fluent UI
+which would be straightforward and natural to use in Shiny.
+However [React](https://reactjs.org/), the underlying JavaScript technology,
+works in a vastly different manner, so the abstractions aren't perfect.
+Here are a few things you need to know in order to effectively work with shiny.fluent.
+
+### Fluent inputs
+
+Shiny has a notion of "inputs", which does not exist in React.
+Still, you can connect React components to Shiny using appropriate arguments -
+in particular event handlers and default values.
+For example, you can use `Checkbox` in the following way:
+
+```r
+shinyApp(
+  ui = tagList(
+    Checkbox(onChange = setInput("checkbox", 2), defaultChecked = TRUE, label = "Checkbox"),
+    textOutput("value")
+  ),
+  server = function(input, output) {
+    output$value <- renderText(deparse(input$checkbox))
+  }
+)
+```
+
+With `setInput("checkbox", 2)` we create a JavaScript function which takes its second argument
+and sends it to Shiny as `input$checkbox`.
+The same effect could be achieved with `JS("(e, value) => Shiny.setInputValue('checkbox', value)")`.
+
+The React interface is powerful, but somewhat inconvenient.
+To make it easier to use components as Shiny inputs,
+we provide wrappers with `.shinyInput` suffix.
+They provide an interface analogous to vanilla Shiny inputs: `inputId` and optional `value`.
+The checkbox usage above can be translated to:
+
+```r
+Checkbox.shinyInput("checkbox", value = TRUE, label = "Checkbox")
+```
+
+Additionally, the wrapper:
+
+* can be updated using `updateCheckbox.shinyInput()`,
+* sends its initial value to Shiny when it is first rendered.
+
+### Dynamic rendering
+
+When you need to dynamically render UI,
+most of the time you can just go with `uiOutput` and `renderUI`.
+However in some cases you might want to use the analogous `?reactOutput` and `?renderReact`,
+which preserve the state of components on rerenders.
+To understand what that means, consider the following example:
+
+```r
+shinyApp(
+  ui = div(
+    Checkbox.shinyInput("disabled", label = "Disable"),
+    reactOutput("ui")
+  ),
+  server = function(input, output) {
+    output$ui <- renderReact({
+      TextField.shinyInput("text", label = "TextField", disabled = input$disabled)
+    })
+  }
+)
+```
+
+This app displays a checkbox and a text field.
+The text field is rendered dynamically,
+and whether it is enabled or not depends on the value of the checkbox.
+
+If we input some text into the text field and toggle the checkbox,
+the text field will become disabled, but its contents will be preserved.
+If we replaced `reactOutput` and `renderReact` with `uiOutput` and `renderUI`,
+the contents would be cleared each time we toggled the checkbox.

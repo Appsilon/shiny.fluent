@@ -38,14 +38,12 @@ calcModes <- list(
 
 calcUI <- function(id) {
   ns <- NS(id)
-  withReact(
-    div(style = "margin: 15px 0px 15px",
-      ChoiceGroup(ns("mode"), label = "Operation", value = "add", options = calcModes),
-      Label("Values"),
-      flowLayout(
-        SpinButton(ns("a"), label = "A = ", value = 3),
-        SpinButton(ns("b"), label = "B = ", value = 5)
-      )
+  div(style = "margin: 15px 0px 15px",
+    ChoiceGroup(ns("mode"), label = "Operation", value = "add", options = calcModes),
+    Label("Values"),
+    flowLayout(
+      SpinButton(ns("a"), label = "A = ", value = 3),
+      SpinButton(ns("b"), label = "B = ", value = 5)
     )
   )
 }
