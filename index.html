@@ -76,7 +76,7 @@
       <a href="articles/sz-how-to-use-fluent-docs.html">Topic guide: Using Fluent components documentation</a>
     </li>
     <li>
-      <a href="articles/topic_embedding-react-in-shiny.html">Topic guide: withReact and reactOutput - what's the difference?</a>
+      <a href="articles/topic_react-in-shiny.html">Topic guide: React in Shiny</a>
     </li>
   </ul>
 </li>
@@ -118,13 +118,11 @@
 <blockquote>
 <p>A big game-changer for companies already using Microsoft tools on a daily basis, because everyone is already familiar and pleased by the Microsoft UI.</p>
 </blockquote>
-<p><em>This package is now in early-access mode. The API may change. Feedback regarding using the package is welcome (please submit GitHub issues with questions, bug reports and feature requests)</em></p>
-<p><strong>Note:</strong> This package strives to be as easy to use as possible, while providing most of Fluent UI possibilities. That said, Fluent UI is more flexible and low level than Bootstrap, and there is additional complexity coming from using React in Shiny. You should expect using shiny.fluent to be somewhat more complex than vanilla Shiny or shiny.semantic (at some point you will likely want to browse the original Fluent UI documentation), but give more power, flexibility and better UI in return.</p>
+<p><strong>Note:</strong> This package strives to be as easy to use as possible, while providing most of Fluent UI possibilities. That said, Fluent UI is more flexible and low level than Bootstrap, and there is additional complexity coming from using React in Shiny. You should expect using shiny.fluent to be somewhat more complex than vanilla Shiny or shiny.semantic (at some point you will likely want to browse the original Fluent UI documentation), but you get more power, flexibility and better UI in return.</p>
 <p><img src="https://user-images.githubusercontent.com/1421503/97004706-bc396b00-153d-11eb-8fb1-3856e8536f92.gif" alt="shinyfluentapp"></p>
 <div id="getting-started" class="section level2">
 <h2 class="hasAnchor">
 <a href="#getting-started" class="anchor"></a>Getting started</h2>
-<p>The best place to start is the <a href="#quick-start">Quick start</a> section below. You can then explore <a href="https://appsilon.github.io/shiny.fluent/articles/first-app.html">tutorials</a>, <a href="#examples">examples</a>, and <a href="https://appsilon.github.io/shiny.fluent/reference/index.html">reference docs</a>. All of this is easily accessible on the <a href="https://appsilon.github.io/shiny.fluent/">package’s website</a>.</p>
 <div id="installation" class="section level3">
 <h3 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h3>
@@ -139,11 +137,9 @@
 <p>Here’s how to make an app containing a Fluent UI checkbox:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">shinyApp</span><span class="op">(</span>
-    ui <span class="op">=</span> <span class="fu">withReact</span><span class="op">(</span>
-      <span class="fu">div</span><span class="op">(</span>
-        <span class="fu"><a href="reference/Checkbox.html">Checkbox</a></span><span class="op">(</span><span class="st">"checkbox"</span>, <span class="cn">FALSE</span><span class="op">)</span>,
-        <span class="fu">textOutput</span><span class="op">(</span><span class="st">"checkboxValue"</span><span class="op">)</span>
-      <span class="op">)</span>
+    ui <span class="op">=</span> <span class="fu">div</span><span class="op">(</span>
+      <span class="fu"><a href="reference/Checkbox.html">Checkbox.shinyInput</a></span><span class="op">(</span><span class="st">"checkbox"</span>, value <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,
+      <span class="fu">textOutput</span><span class="op">(</span><span class="st">"checkboxValue"</span><span class="op">)</span>
     <span class="op">)</span>,
     server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span>
       <span class="va">output</span><span class="op">$</span><span class="va">checkboxValue</span> <span class="op">&lt;-</span> <span class="fu">renderText</span><span class="op">(</span><span class="op">{</span>
@@ -151,21 +147,20 @@
       <span class="op">}</span><span class="op">)</span>
     <span class="op">}</span>
   <span class="op">)</span></code></pre></div>
-<p><code>shiny.fluent</code> provides all controls from <a href="https://developer.microsoft.com/en-us/fluentui#/controls/web">Fluent UI</a>. You can open that page or start typing <code>shiny.fluent::</code> in RStudio to see all available controls.</p>
+<p><code>shiny.fluent</code> provides all components from Microsoft’s Fluent UI library. Browse the <a href="https://developer.microsoft.com/en-us/fluentui#/controls/web">official docs</a> or start typing <code>shiny.fluent::</code> in RStudio to see all available controls.</p>
 <p>All components are documented, so if you run <code>?shiny.fluent::MyComponentName</code>, you’ll see documentation for this component in RStudio, along with examples. When in doubt, open Fluent UI docs for details.</p>
-<p>To insert Fluent components inside your Shiny app, wrap them inside a <code>withReact(...)</code> call, like above. Inside a <code>withReact</code> call, you can mix and match React and standard HTML tags. You can also insert other Shiny outputs inside (like a <code>uiOutput</code> or <code>leafletOutput</code>).</p>
 </div>
 <div id="examples" class="section level3">
 <h3 class="hasAnchor">
 <a href="#examples" class="anchor"></a>Examples</h3>
-<p>A good way to learn more is to look at the examples. Once you install the library, you can run them with <code>shiny.fluent::run_example("example_name")</code>. We recommend the following for starters:</p>
+<p>A good way to learn more is to look at the examples. Once you install the library, you can run them with <code><a href="reference/runExample.html">shiny.fluent::runExample("example_name")</a></code>. We recommend the following for starters:</p>
 <ul>
 <li>
 <code>demo</code>: a demo app for analyzing sales reps performance,</li>
 <li>
 <code>dashboard</code>: a showcase of all available components along with documentation.</li>
 </ul>
-<p>There are also usage examples for individual components. Use <code>shiny.fluent::run_example()</code> to list all available examples.</p>
+<p>There are also usage examples for individual components. Use <code><a href="reference/runExample.html">shiny.fluent::runExample()</a></code> to list all available examples.</p>
 </div>
 </div>
 </div>

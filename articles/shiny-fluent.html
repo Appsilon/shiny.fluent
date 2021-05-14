@@ -76,7 +76,7 @@
       <a href="../articles/sz-how-to-use-fluent-docs.html">Topic guide: Using Fluent components documentation</a>
     </li>
     <li>
-      <a href="../articles/topic_embedding-react-in-shiny.html">Topic guide: withReact and reactOutput - what's the difference?</a>
+      <a href="../articles/topic_react-in-shiny.html">Topic guide: React in Shiny</a>
     </li>
   </ul>
 </li>
@@ -124,8 +124,7 @@
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://shiny.rstudio.com/">shiny</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent">shiny.fluent</a></span><span class="op">)</span></code></pre></div>
-<p>That gives us all we need to run a basic application! To create a UI showing a welcome message, we will use a Fluent component named <code><a href="../reference/Text.html">?Text</a></code>. Let’s add it to our code.</p>
-<p>For the text to actually appear, we need to put it inside a <a href="https://appsilon.github.io/shiny.react/reference/withReact.html"><code>withReact</code></a> function call which takes care of rendering Fluent components in user’s browsers using React. Use <code><a href="../reference/fluentPage.html">?fluentPage</a></code> to create the UI, as it will add proper CSS classes and suppress Bootstrap (you should not use both Bootstrap and Fluent UI at the same time).</p>
+<p>That gives us all we need to run a basic application! To create a UI showing a welcome message, we will use a Fluent component named <code><a href="../reference/Text.html">?Text</a></code>. We’ll put it in a <code><a href="../reference/fluentPage.html">?fluentPage</a></code>, which will add proper CSS classes and suppress Bootstrap (you should not use both Bootstrap and Fluent UI at the same time).</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/fluentPage.html">fluentPage</a></span><span class="op">(</span>
   <span class="fu"><a href="../reference/Text.html">Text</a></span><span class="op">(</span>variant <span class="op">=</span> <span class="st">"xxLarge"</span>, <span class="st">"Hello world!"</span><span class="op">)</span>
@@ -158,7 +157,7 @@
 <span class="co">#&gt; $ presence      &lt;dbl&gt; 2, 6, 4, 1, 2, 2, 3</span>
 <span class="co">#&gt; $ canExpand     &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA</span>
 <span class="co">#&gt; $ color         &lt;chr&gt; "#8DD3C7", "#FFFFB3", "#BEBADA", "#FB8072", "#80B1D3", "…</span></code></pre></div>
-<p><code>fluent_sales_data</code> is a data frame of randomly generated “sales deals”, which are assigned to one of the <code>fluentPeople</code>, have a date and an amount, and are associated with one of the top 10 companies from the Fortune 500 list (including its name, city and map coordinates).</p>
+<p><code>fluentSalesData</code> is a data frame of randomly generated “sales deals”, which are assigned to one of the <code>fluentPeople</code>, have a date and an amount, and are associated with one of the top 10 companies from the Fortune 500 list (including its name, city and map coordinates).</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">fluentSalesDeals</span> <span class="op">%&gt;%</span> <span class="fu">glimpse</span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; Rows: 100</span>
@@ -227,7 +226,6 @@
 <span class="op">}</span>
 
 <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html">shinyApp</a></span><span class="op">(</span><span class="va">ui</span>, <span class="va">server</span><span class="op">)</span></code></pre></div>
-<p>As you can see, you can simply put <code>withReact</code> inside a <code>renderUI</code> in your server part. In some more advanced cases, you may need to use an <a href="https://appsilon.github.io/shiny.fluent/articles/topic_embedding-react-in-shiny.html#reactoutput">alternative mechanism</a>.</p>
 <p>In addition to <code><a href="../reference/DetailsList.html">?DetailsList</a></code> and <code><a href="../reference/Text.html">?Text</a></code>, in the code above we used <code><a href="../reference/Stack.html">?Stack</a></code>, which arranges elements in its area.</p>
 <p><img src="images/tutorial-part1-step2.png"><!-- --></p>
 </div>
@@ -235,7 +233,12 @@
 <h1 class="hasAnchor">
 <a href="#adding-filtering" class="anchor"></a>Adding filtering</h1>
 <p>Okay, that already looks good! But it’s hard to explore these data without some filtering options - let’s add that now. We will start by adding an option to find transactions between selected dates.</p>
-<p>We will use two <code><a href="../reference/DatePicker.html">?DatePicker</a></code> components to allow users to choose a date range. They are shiny.fluent inputs and behave in a very similar way to regular Shiny inputs: they take an ID as the first argument, and optionally an initial value.</p>
+<p>We will use two <code><a href="../reference/DatePicker.html">?DatePicker</a></code> components to allow users to choose a date range. To make the selected dates available in the server function, we have two options:</p>
+<ol style="list-style-type: decimal">
+<li>The simple way. Use the <code>DatePicker.shinyInput</code> convenience wrapper, which provides an interface analogous to vanilla Shiny inputs: <code>inputId</code> and optional <code>value</code>.</li>
+<li>The advanced way. Use the component directly and connect it to Shiny using its React interface: <code>onSelectDate</code> and <code>defaultValue</code> in this case.</li>
+</ol>
+<p>The second option is less convenient but might provide more power and flexibility in some cases. We’ll go with the first option in this tutorial, as the simplified interface is sufficient for our needs.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">filters</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/tag.html">tagList</a></span><span class="op">(</span>
   <span class="fu"><a href="../reference/DatePicker.html">DatePicker.shinyInput</a></span><span class="op">(</span><span class="st">"fromDate"</span>, value <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">'2020/01/01'</span><span class="op">)</span>, label <span class="op">=</span> <span class="st">"From date"</span><span class="op">)</span>,

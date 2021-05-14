@@ -76,7 +76,7 @@
       <a href="../articles/sz-how-to-use-fluent-docs.html">Topic guide: Using Fluent components documentation</a>
     </li>
     <li>
-      <a href="../articles/topic_embedding-react-in-shiny.html">Topic guide: withReact and reactOutput - what's the difference?</a>
+      <a href="../articles/topic_react-in-shiny.html">Topic guide: React in Shiny</a>
     </li>
   </ul>
 </li>
@@ -131,14 +131,12 @@
 
 <span class="va">calcUI</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">{</span>
   <span class="va">ns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/NS.html">NS</a></span><span class="op">(</span><span class="va">id</span><span class="op">)</span>
-  <span class="fu">withReact</span><span class="op">(</span>
-    <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html">div</a></span><span class="op">(</span>style <span class="op">=</span> <span class="st">"margin: 15px 0px 15px"</span>,
-      <span class="fu"><a href="../reference/ChoiceGroup.html">ChoiceGroup</a></span><span class="op">(</span><span class="fu">ns</span><span class="op">(</span><span class="st">"mode"</span><span class="op">)</span>, label <span class="op">=</span> <span class="st">"Operation"</span>, value <span class="op">=</span> <span class="st">"add"</span>, options <span class="op">=</span> <span class="va">calcModes</span><span class="op">)</span>,
-      <span class="fu"><a href="../reference/Label.html">Label</a></span><span class="op">(</span><span class="st">"Values"</span><span class="op">)</span>,
-      <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/flowLayout.html">flowLayout</a></span><span class="op">(</span>
-        <span class="fu"><a href="../reference/SpinButton.html">SpinButton</a></span><span class="op">(</span><span class="fu">ns</span><span class="op">(</span><span class="st">"a"</span><span class="op">)</span>, label <span class="op">=</span> <span class="st">"A = "</span>, value <span class="op">=</span> <span class="fl">3</span><span class="op">)</span>,
-        <span class="fu"><a href="../reference/SpinButton.html">SpinButton</a></span><span class="op">(</span><span class="fu">ns</span><span class="op">(</span><span class="st">"b"</span><span class="op">)</span>, label <span class="op">=</span> <span class="st">"B = "</span>, value <span class="op">=</span> <span class="fl">5</span><span class="op">)</span>
-      <span class="op">)</span>
+  <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html">div</a></span><span class="op">(</span>style <span class="op">=</span> <span class="st">"margin: 15px 0px 15px"</span>,
+    <span class="fu"><a href="../reference/ChoiceGroup.html">ChoiceGroup</a></span><span class="op">(</span><span class="fu">ns</span><span class="op">(</span><span class="st">"mode"</span><span class="op">)</span>, label <span class="op">=</span> <span class="st">"Operation"</span>, value <span class="op">=</span> <span class="st">"add"</span>, options <span class="op">=</span> <span class="va">calcModes</span><span class="op">)</span>,
+    <span class="fu"><a href="../reference/Label.html">Label</a></span><span class="op">(</span><span class="st">"Values"</span><span class="op">)</span>,
+    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/flowLayout.html">flowLayout</a></span><span class="op">(</span>
+      <span class="fu"><a href="../reference/SpinButton.html">SpinButton</a></span><span class="op">(</span><span class="fu">ns</span><span class="op">(</span><span class="st">"a"</span><span class="op">)</span>, label <span class="op">=</span> <span class="st">"A = "</span>, value <span class="op">=</span> <span class="fl">3</span><span class="op">)</span>,
+      <span class="fu"><a href="../reference/SpinButton.html">SpinButton</a></span><span class="op">(</span><span class="fu">ns</span><span class="op">(</span><span class="st">"b"</span><span class="op">)</span>, label <span class="op">=</span> <span class="st">"B = "</span>, value <span class="op">=</span> <span class="fl">5</span><span class="op">)</span>
     <span class="op">)</span>
   <span class="op">)</span>
 <span class="op">}</span>
