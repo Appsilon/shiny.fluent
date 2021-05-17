@@ -1,4 +1,4 @@
-### 0.2.0
+# shiny.fluent 0.2.0
 
 This is the first public release, with several big interface changes:
 
@@ -8,6 +8,6 @@ This is the first public release, with several big interface changes:
 * Changed naming convention to `camelCase`.
 * Added `setInput()` and `triggerEvent()` helpers.
 
-### 0.1.0
+# shiny.fluent 0.1.0
 
 Initial release made available to the early access group.
