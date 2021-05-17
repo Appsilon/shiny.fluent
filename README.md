@@ -1,9 +1,10 @@
+<img src="man/figures/shiny-fluent.png" align="right" alt="" width="130" />
+
+# shiny.fluent
 
 <!-- badges: start -->
 [![R build status](https://github.com/Appsilon/shiny.fluent/workflows/R-CMD-check/badge.svg)](https://github.com/Appsilon/shiny.fluent/actions)
 <!-- badges: end -->
-
-# shiny.fluent: Build beautiful Shiny apps using Microsoft's Fluent UI
 
 We believe that a great UI plays a huge role in the success of application projects. shiny.fluent gives your apps:
 - beautiful, professional look
