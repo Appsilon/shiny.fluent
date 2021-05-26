@@ -50,7 +50,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          remotes::install_github("Appsilon/shiny.react@kamil.core-rewrite")
+          remotes::install_github("Appsilon/shiny.react")
           remotes::install_cran("devtools")
           devtools::install()
         shell: Rscript {0}
