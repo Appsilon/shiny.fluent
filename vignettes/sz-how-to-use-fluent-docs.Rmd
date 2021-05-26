@@ -20,7 +20,7 @@ If you're trying to find a suitable component or want to see what's available,
 we recommend one of the two options:
 
 1. Browse the official [Fluent UI docs](https://developer.microsoft.com/en-us/fluentui#/controls/web).
-2. Run the showcase app with `shiny.fluent::run_example("dashboard")`.
+2. Run the showcase app with `shiny.fluent::runExample("dashboard")`.
 
 To get information on a specific component, e.g. `Toggle`, you can:
 

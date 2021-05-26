@@ -42,12 +42,10 @@ do.call(knitr::read_chunk, list(path = "../inst/examples/tutorial/05_more_output
 ```{r helloworld-dependencies, eval=FALSE}
 ```
 
-That gives us all we need to run a basic application! To create a UI showing a welcome message, we will use a Fluent component named `?Text`. Let's add it to our code.
-
-For the text to actually appear, we need to put it inside a
-[`withReact`](https://appsilon.github.io/shiny.react/reference/withReact.html) function call
-which takes care of rendering Fluent components in user's browsers using React.
-Use `?fluentPage` to create the UI, as it will add proper CSS classes and suppress Bootstrap
+That gives us all we need to run a basic application!
+To create a UI showing a welcome message, we will use a Fluent component named `?Text`.
+We'll put it in a `?fluentPage`,
+which will add proper CSS classes and suppress Bootstrap
 (you should not use both Bootstrap and Fluent UI at the same time).
 
 ```{r helloworld, eval=FALSE}
@@ -72,7 +70,7 @@ shiny.fluent already includes some example data that we can use.
 fluentPeople %>% glimpse()
 ```
 
-`fluent_sales_data` is a data frame of randomly generated "sales deals", which are assigned to one of the `fluentPeople`, have a date and an amount, and are associated with one of the top 10 companies from the Fortune 500 list (including its name, city and map coordinates).
+`fluentSalesData` is a data frame of randomly generated "sales deals", which are assigned to one of the `fluentPeople`, have a date and an amount, and are associated with one of the top 10 companies from the Fortune 500 list (including its name, city and map coordinates).
 
 ```{r}
 fluentSalesDeals %>% glimpse()
@@ -89,8 +87,6 @@ Let's now display our sales deals in a table. As we plan to later make the table
 ```{r deals_table, eval=FALSE}
 ```
 
-As you can see, you can simply put `withReact` inside a `renderUI` in your server part. In some more advanced cases, you may need to use an [alternative mechanism](https://appsilon.github.io/shiny.fluent/articles/topic_embedding-react-in-shiny.html#reactoutput).
-
 In addition to `?DetailsList` and `?Text`, in the code above we used `?Stack`, which arranges elements in its area.
 
 
@@ -104,8 +100,18 @@ Okay, that already looks good! But it's hard to explore these data without some 
 We will start by adding an option to find transactions between selected dates.
 
 We will use two `?DatePicker` components to allow users to choose a date range.
-They are shiny.fluent inputs and behave in a very similar way to regular Shiny inputs:
-they take an ID as the first argument, and optionally an initial value.
+To make the selected dates available in the server function, we have two options:
+
+1. The simple way.
+  Use the `DatePicker.shinyInput` convenience wrapper,
+  which provides an interface analogous to vanilla Shiny inputs: `inputId` and optional `value`.
+2. The advanced way.
+  Use the component directly and connect it to Shiny using its React interface:
+  `onSelectDate` and `defaultValue` in this case.
+
+The second option is less convenient but might provide more power and flexibility in some cases.
+We'll go with the first option in this tutorial,
+as the simplified interface is sufficient for our needs.
 
 ```{r 03_filters_ui, eval=FALSE}
 ```

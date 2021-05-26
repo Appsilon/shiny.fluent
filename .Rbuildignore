@@ -1,5 +1,5 @@
 ^\.Rproj\.user$
-^node$
+^js$
 ^.*\.Rproj$
 ^install\.sh$
 ^inst/examples/dashboard/rsconnect/

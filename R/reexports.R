@@ -14,7 +14,6 @@ shiny.react::renderReact
 #' @export
 shiny.react::setInput
 
-
 #' @importFrom shiny.react triggerEvent
 #' @export
 shiny.react::triggerEvent

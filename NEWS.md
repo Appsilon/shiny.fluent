@@ -1,11 +1,13 @@
-# shiny.fluent (development version)
+# shiny.fluent 0.2.0
 
-* (placeholder)
-# shiny.fluent 0.0.2
+This is the first public release, with several big interface changes:
 
-* Improved documentation and developer experience.
-* CMD CHECK issues resolved with CRAN submission in mind.
+* Removed `withReact()`. Components now work without it!
+* Added `.shinyInput` suffix to components with interface modified to match vanilla Shiny inputs.
+  The corresponding components without the suffix now expose unaltered React interface.
+* Changed naming convention to `camelCase`.
+* Added `setInput()` and `triggerEvent()` helpers.
 
-# shiny.fluent 0.0.1
+# shiny.fluent 0.1.0
 
-* This is the first release of shiny.fluent.
+Initial release made available to the early access group.

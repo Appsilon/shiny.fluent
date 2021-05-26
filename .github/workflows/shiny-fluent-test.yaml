@@ -1,4 +1,4 @@
-name: Node.js tests
+name: shiny.fluent JS test
 
 on: push
 
@@ -62,17 +62,17 @@ jobs:
 
       - name: yarn install
         run: yarn install
-        working-directory: 'node'
+        working-directory: js
 
       - name: yarn lint
         run: yarn lint
-        working-directory: 'node'
+        working-directory: js
 
       - name: cypress run
         uses: cypress-io/github-action@v2.2.7
         with:
           start: yarn start-e2e-test-app
-          working-directory: 'node'
+          working-directory: js
           record: true
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
