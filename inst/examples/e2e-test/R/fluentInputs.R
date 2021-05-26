@@ -48,7 +48,7 @@ fluentInputsServer <- function(id) {
         textOutput(ns("textFieldValue")),
         
         h4("Checkbox"),
-        Checkbox.shinyInput(ns("checkbox"), value = isolate(isTRUE(input$checkbox))),
+        Checkbox.shinyInput(ns("checkbox"), value = FALSE),
         textOutput(ns("checkboxValue")),
         
         h4("Rating"),
@@ -60,7 +60,7 @@ fluentInputsServer <- function(id) {
         textOutput(ns("spinButtonValue")),
         
         h4("Calendar"),
-        Calendar.shinyInput(ns("calendar"), value = "2020-06-25T22:00:00.000Z", strings = dayPickerStrings),
+        Calendar.shinyInput(ns("calendar"), value = "2020-06-25T12:00:00.000Z", strings = dayPickerStrings),
         textOutput(ns("calendarValue")),
         
         h4("ChoiceGroup"),
@@ -80,7 +80,7 @@ fluentInputsServer <- function(id) {
         textOutput(ns("dropdownValue")),
         
         h4("DatePicker"),
-        DatePicker.shinyInput(ns("datePicker"), value = "2020-06-25T22:00:00.000Z", strings = dayPickerStrings),
+        DatePicker.shinyInput(ns("datePicker"), value = "2020-06-25T12:00:00.000Z", strings = dayPickerStrings),
         textOutput(ns("datePickerValue")),
         
         h4("SwatchColorPicker"),
@@ -99,18 +99,18 @@ fluentInputsServer <- function(id) {
     
     observeEvent(input$updateInputs, {
       updateSlider.shinyInput(session, ns("sliderInput"), value = input$sliderInput + 100)
-      updateTextField.shinyInput(session, ns("textField"), value = paste(input$textField, "new text"))
-      updateCheckbox.shinyInput(session, ns("checkbox"), value = !input$checkbox)
-      updateRating.shinyInput(session, ns("rating"), value = 6 - input$rating)
-      updateSpinButton.shinyInput(session, ns("spinButton"), value = input$spinButton + 1)
-      updateCalendar.shinyInput(session, ns("calendar"), value = "2015-06-25T22:00:00.000Z")
+      updateTextField.shinyInput(session, ns("textField"), value = paste0(input$textField, "new text"))
+      updateCheckbox.shinyInput(session, ns("checkbox"), value = TRUE)
+      updateRating.shinyInput(session, ns("rating"), value = 5)
+      updateSpinButton.shinyInput(session, ns("spinButton"), value = 40)
+      updateCalendar.shinyInput(session, ns("calendar"), value = "2015-06-25T12:00:00.000Z")
       updateChoiceGroup.shinyInput(session, ns("choiceGroup"), value = "C")
       updateColorPicker.shinyInput(session, ns("colorPicker"), value = "#FFFFFF")
       updateComboBox.shinyInput(session, ns("comboBox"), value = options[[2]])
       updateDropdown.shinyInput(session, ns("dropdown"), value = "C")
-      updateCalendar.shinyInput(session, ns("datePicker"), value = "2015-06-25T22:00:00.000Z")
+      updateCalendar.shinyInput(session, ns("datePicker"), value = "2015-06-25T12:00:00.000Z")
       updateSwatchColorPicker.shinyInput(session, ns("swatchColorPicker"), value = "white")
-      updateToggle.shinyInput(session, ns("toggle"), value = !input$toggle)
+      updateToggle.shinyInput(session, ns("toggle"), value = FALSE)
       updateSearchBox.shinyInput(session, ns("searchBox"), value = "query")
     })
     
