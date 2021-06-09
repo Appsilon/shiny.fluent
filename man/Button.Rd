@@ -11,12 +11,19 @@
 \alias{PrimaryButton}
 \alias{Button}
 \alias{ActionButton.shinyInput}
+\alias{updateActionButton.shinyInput}
 \alias{CommandBarButton.shinyInput}
+\alias{updateCommandBarButton.shinyInput}
 \alias{CommandButton.shinyInput}
+\alias{updateCommandButton.shinyInput}
 \alias{CompoundButton.shinyInput}
+\alias{updateCompoundButton.shinyInput}
 \alias{DefaultButton.shinyInput}
+\alias{updateDefaultButton.shinyInput}
 \alias{IconButton.shinyInput}
+\alias{updateIconButton.shinyInput}
 \alias{PrimaryButton.shinyInput}
+\alias{updatePrimaryButton.shinyInput}
 \title{Button}
 \usage{
 ActionButton(...)
@@ -35,17 +42,59 @@ PrimaryButton(...)
 
 ActionButton.shinyInput(inputId, ...)
 
+updateActionButton.shinyInput(
+  session = shiny::getDefaultReactiveDomain(),
+  inputId,
+  ...
+)
+
 CommandBarButton.shinyInput(inputId, ...)
+
+updateCommandBarButton.shinyInput(
+  session = shiny::getDefaultReactiveDomain(),
+  inputId,
+  ...
+)
 
 CommandButton.shinyInput(inputId, ...)
 
+updateCommandButton.shinyInput(
+  session = shiny::getDefaultReactiveDomain(),
+  inputId,
+  ...
+)
+
 CompoundButton.shinyInput(inputId, ...)
+
+updateCompoundButton.shinyInput(
+  session = shiny::getDefaultReactiveDomain(),
+  inputId,
+  ...
+)
 
 DefaultButton.shinyInput(inputId, ...)
 
+updateDefaultButton.shinyInput(
+  session = shiny::getDefaultReactiveDomain(),
+  inputId,
+  ...
+)
+
 IconButton.shinyInput(inputId, ...)
 
+updateIconButton.shinyInput(
+  session = shiny::getDefaultReactiveDomain(),
+  inputId,
+  ...
+)
+
 PrimaryButton.shinyInput(inputId, ...)
+
+updatePrimaryButton.shinyInput(
+  session = shiny::getDefaultReactiveDomain(),
+  inputId,
+  ...
+)
 }
 \arguments{
 \item{baseClassName}{\code{string} \cr}
