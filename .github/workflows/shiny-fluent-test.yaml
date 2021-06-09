@@ -50,7 +50,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          remotes::install_github("Appsilon/shiny.react@jakub.updateinput-in-module")
+          remotes::install_github("Appsilon/shiny.react")
           remotes::install_cran("devtools")
           devtools::install()
         shell: Rscript {0}
