@@ -20,7 +20,8 @@ actionButtonsUI <- function(id) {
         iconProps = list("iconName" = 'AddFriend')
       )
     ),
-    textOutput(ns("clicks"))
+    textOutput(ns("clicks")),
+    actionButton(ns("update"), "Update buttons")
   )
 }
 
@@ -36,6 +37,24 @@ actionButtonsServer <- function(id) {
     
     output$clicks <- renderText({
       sprintf("Number of clicks: %d", nClicks())
+    })
+    
+    observeEvent(input$update, {
+      updateDefaultButton.shinyInput(session, "defaultButton", text = "Default Button Updated")
+      updatePrimaryButton.shinyInput(session, "primaryButton", text = "Primary Button Updated")
+      updateCompoundButton.shinyInput(
+        session,
+        "compoundButton",
+        text = "Compound Button Updated",
+        secondaryText = "Compound Button additional text updated"
+      )
+      updateActionButton.shinyInput(
+        session,
+        "actionButton",
+        text = "Action Button Disabled",
+        iconProps = list("iconName"= "Download"),
+        disabled = TRUE
+      )
     })
   })
 }
