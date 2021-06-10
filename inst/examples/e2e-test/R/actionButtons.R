@@ -18,7 +18,10 @@ actionButtonsUI <- function(id) {
         ns("actionButton"),
         text = "Action Button",
         iconProps = list("iconName" = 'AddFriend')
-      )
+      ),
+      CommandBarButton.shinyInput(ns("commandBarButton"), text = "Command Bar Button"),
+      CommandButton.shinyInput(ns("commandButton"), text = "Command Button"),
+      IconButton.shinyInput(ns("iconButton"), iconProps = list("iconName" = "Table"))
     ),
     textOutput(ns("clicks")),
     actionButton(ns("update"), "Update buttons")
@@ -34,6 +37,9 @@ actionButtonsServer <- function(id) {
     observeEvent(input$primaryButton, nClicks(nClicks() + 1))
     observeEvent(input$compoundButton, nClicks(nClicks() + 1))
     observeEvent(input$actionButton, nClicks(nClicks() + 1))
+    observeEvent(input$commandBarButton, nClicks(nClicks() + 1))
+    observeEvent(input$commandButton, nClicks(nClicks() + 1))
+    observeEvent(input$iconButton, nClicks(nClicks() + 1))
     
     output$clicks <- renderText({
       sprintf("Number of clicks: %d", nClicks())
@@ -55,6 +61,9 @@ actionButtonsServer <- function(id) {
         iconProps = list("iconName"= "Download"),
         disabled = TRUE
       )
+      updateCommandBarButton.shinyInput(session, "commandBarButton", text = "Command Bar Button Updated")
+      updateCommandButton.shinyInput(session, "commandButton", text = "Command Button Updated")
+      updateIconButton.shinyInput(session, "iconButton", iconProps = list("iconName" = "Download"))
     })
   })
 }
