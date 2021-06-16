@@ -44,10 +44,14 @@ export const Dropdown = InputAdapter(Fluent.Dropdown, (value, setValue, props) =
   selectedKeys: value,
   selectedKey: value,
   onChange: (e, v) => {
-      if(props.multiSelect) {
-            const asArray = Array.isArray(value) ? value : [value];
-            setValue(v.selected ? [...asArray, v.key] : asArray.filter(key => key !== v.key))
-      } else setValue(v.key);
+    if (props.multiSelect) {
+      const valAsArray = (Array.isArray(value) ? value : [value])
+        .filter((key) => props.options.map((item) => item.key).includes(key));
+      const newValues = v.selected
+        ? [...valAsArray, v.key]
+        : valAsArray.filter((key) => key !== v.key);
+      setValue(newValues);
+    } else setValue(v.key);
   },
 }));
 
