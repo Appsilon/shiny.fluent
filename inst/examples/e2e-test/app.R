@@ -14,7 +14,6 @@ ui <- fluidPage(
 server <- function(input, output, session) {
   fluentInputsServer("fluentInputs")
   shinyInReactServer("shinyInReact")
-  scenariosServer("scenarios")
   actionButtonsServer("actionButtons")
   deepMixingServer("deepMixing")
 }
