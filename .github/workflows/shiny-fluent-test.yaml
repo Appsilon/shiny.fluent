@@ -52,6 +52,7 @@ jobs:
         run: |
           remotes::install_github("Appsilon/shiny.react")
           remotes::install_cran("devtools")
+          install.packages("leaflet")
           devtools::install()
         shell: Rscript {0}
 

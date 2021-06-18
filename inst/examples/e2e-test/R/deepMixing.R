@@ -49,9 +49,9 @@ deepMixingServer <- function(id) {
     })
     
     points <- eventReactive(input$addPoint, {
-      n <- as.numeric(input$addPoint)
+      if (is.null(input$addPoint)) n <- 1 else n <- as.numeric(input$addPoint) + 1
       cbind(rnorm(n) * 2 + 13, rnorm(n) + 48)
-    }, ignoreNULL = FALSE, ignoreInit = FALSE)
+    }, ignoreNULL = FALSE)
     
     output$map <- renderLeaflet({
       leaflet() %>% addTiles() %>% addMarkers(data = points())

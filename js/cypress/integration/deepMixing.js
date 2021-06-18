@@ -16,34 +16,26 @@ describe('Fluent components inside Shiny tabset', () => {
 });
 
 describe('JSX inside uiOutput inside JSX', () => {
-  it('Leaflet inside Pivot is visible', () => {
+  before(() => {
     cy.get('[data-cy=deepMixing-pivot] > .ms-Pivot > button[name="Leaflet inside a Pivot"]').click();
-    cy.get('[data-cy=deepMixing-pivot] > div[role=tabpanel]').within(() => {
-      cy.get('#deepMixing-map').should('be.visible');
-    });
   });
 
-  it('Adding markers works', () => {
-    cy.get('[data-cy=deepMixing-addPoint]').click();
+  it('Leaflet inside Pivot is visible', () => {
     cy.get('[data-cy=deepMixing-pivot] > div[role=tabpanel]').within(() => {
-      cy.get('#deepMixing-map > .leaflet-pane > .leaflet-marker-pane').children().should('have.length', 1);
+      cy.get('#deepMixing-map').should('be.visible');
     });
   });
 });
 
 describe('Leaflet in Pivot in uiOutput in Pivot in uiOutput in JSX', () => {
-  it('Leaflet inside nested Pivot is visible', () => {
+  before(() => {
     cy.get('[data-cy=deepMixing-pivot] > .ms-Pivot > button[name="Another level of nesting"]').click();
     cy.get('[data-cy=deepMixing-nestedPivot] > .ms-Pivot > button[name="Leaflet inside a Pivot"]').click();
-    cy.get('[data-cy=deepMixing-nestedPivot] > div[role=tabpanel]').within(() => {
-      cy.get('#deepMixing-map').should('be.visible');
-    });
   });
 
-  it('Adding markers works', () => {
-    cy.get('[data-cy=deepMixing-addPoint]').click();
+  it('Leaflet inside nested Pivot is visible', () => {
     cy.get('[data-cy=deepMixing-nestedPivot] > div[role=tabpanel]').within(() => {
-      cy.get('#deepMixing-map > .leaflet-pane > .leaflet-marker-pane').children().should('have.length', 2);
+      cy.get('#deepMixing-map').should('be.visible');
     });
   });
 });
