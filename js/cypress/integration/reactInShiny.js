@@ -46,3 +46,40 @@ describe('Spinner()', () => {
     });
   });
 });
+
+describe('Dynamic rendering', () => {
+  it('Label works', () => {
+    cy.get('[data-cy=reactInShiny-label]').contains("I'm a Label with count value = 0");
+    cy.get('#reactInShiny-count').clear().type(10);
+    cy.get('[data-cy=reactInShiny-label]').contains("I'm a Label with count value = 10");
+  });
+
+  it('PrimaryButton works', () => {
+    cy.get('[data-cy=reactInShiny-primaryButton]').within(() => {
+      cy.get('.ms-Button-label').contains('PrimaryButton');
+    });
+  });
+
+  it('TeachingBubble works', () => {
+    cy.get('[data-cy=reactInShiny-toggle]').click();
+    cy.get('.ms-TeachingBubble-body > .ms-TeachingBubble-subText').contains('Very useful!');
+    cy.get('[data-cy=reactInShiny-toggle]').click();
+  });
+
+  it('Modal works', () => {
+    cy.get('[data-cy=reactInShiny-showModal]').click();
+    cy.get('[data-cy=reactInShiny-modal-h1]').contains('This is an important message');
+    cy.get('[data-cy=reactInShiny-modal-p]').contains('Read this text to learn more');
+    cy.get('[data-cy=reactInShiny-hideModal]').click();
+  });
+
+  it('Pivot works', () => {
+    cy.get('[data-cy=reactInShiny-pivot] > .ms-Pivot > button[name="Tab 2"]').click();
+    cy.get('[data-cy=reactInShiny-pivotLabel]').contains('Hello 2');
+  });
+
+  it('Leaflet in pivot works', () => {
+    cy.get('[data-cy=reactInShiny-pivot] > .ms-Pivot > button[name="Tab 2"]').click();
+    cy.get('#reactInShiny-map').should('be.visible');
+  });
+});
