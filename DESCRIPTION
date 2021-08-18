@@ -24,9 +24,14 @@ Imports:
   shiny.react (>= 0.2.2)
 Suggests:
   dplyr,
+  ggplot2,
+  glue,
   jsonlite,
   knitr,
+  leaflet,
+  plotly,
   purrr,
+  RColorBrewer,
   rmarkdown,
   sass,
   shiny.router,
