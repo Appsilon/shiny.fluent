@@ -15,6 +15,7 @@ server <- function(input, output, session) {
   fluentInputsServer("fluentInputs")
   shinyInReactServer("shinyInReact")
   actionButtonsServer("actionButtons")
+  reactInShinyServer("reactInShiny")
   deepMixingServer("deepMixing")
 }
 
