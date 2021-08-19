@@ -1,6 +1,7 @@
 library(shiny)
 library(shiny.fluent)
 library(leaflet)
+library(DT)
 
 ui <- fluidPage(
   fluentInputsUI("fluentInputs"),
@@ -8,6 +9,7 @@ ui <- fluidPage(
   scenariosUI("scenarios"),
   actionButtonsUI("actionButtons"),
   reactInShinyUI("reactInShiny"),
+  customOutputUI("customOutput"),
   deepMixingUI("deepMixing")
 )
 
@@ -16,6 +18,7 @@ server <- function(input, output, session) {
   shinyInReactServer("shinyInReact")
   actionButtonsServer("actionButtons")
   reactInShinyServer("reactInShiny")
+  customOutputServer("customOutput")
   deepMixingServer("deepMixing")
 }
 
