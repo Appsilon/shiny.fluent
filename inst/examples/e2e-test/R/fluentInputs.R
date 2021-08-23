@@ -6,6 +6,12 @@ options <- list(
   list(key = "C", text = "Option C")
 )
 
+updatedOptions <- list(
+  list(key = "X", text = "Option X"),
+  list(key = "Y", text = "Option Y"),
+  list(key = "Z", text = "Option Z")
+)
+
 colorCells <- list(
   list(id = "orange", color = "#ca5010"),
   list(id = "cyan", color = "#038387"),
@@ -78,6 +84,10 @@ fluentInputsServer <- function(id) {
         h4("Dropdown"),
         Dropdown.shinyInput(ns("dropdown"), value = "A", options = options),
         textOutput(ns("dropdownValue")),
+
+        h4("Dropdown - Multiselect"),
+        Dropdown.shinyInput(ns("dropdownMultiselect"), value = c("A", "C"), options = options, multiSelect = TRUE),
+        textOutput(ns("dropdownMultiselectValue")),
         
         h4("DatePicker"),
         DatePicker.shinyInput(ns("datePicker"), value = "2020-06-25T12:00:00.000Z", strings = dayPickerStrings),
@@ -108,6 +118,7 @@ fluentInputsServer <- function(id) {
       updateColorPicker.shinyInput(session, "colorPicker", value = "#FFFFFF")
       updateComboBox.shinyInput(session, "comboBox", value = options[[2]])
       updateDropdown.shinyInput(session, "dropdown", value = "C")
+      updateDropdown.shinyInput(session, "dropdownMultiselect", options = updatedOptions, value = c("X", "Z"))
       updateCalendar.shinyInput(session, "datePicker", value = "2015-06-25T12:00:00.000Z")
       updateSwatchColorPicker.shinyInput(session, "swatchColorPicker", value = "white")
       updateToggle.shinyInput(session, "toggle", value = FALSE)
@@ -116,7 +127,7 @@ fluentInputsServer <- function(id) {
     
     ids <- c(
       "sliderInput", "textField", "checkbox", "rating", "spinButton", "calendar", "choiceGroup",
-      "colorPicker", "comboBox", "dropdown", "datePicker", "swatchColorPicker", "toggle", "searchBox"
+      "colorPicker", "comboBox", "dropdown", "dropdownMultiselect", "datePicker", "swatchColorPicker", "toggle", "searchBox"
     )
     wireInputToOutput(ids, input, output)
   })

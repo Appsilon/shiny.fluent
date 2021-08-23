@@ -40,9 +40,22 @@ export const DatePicker = InputAdapter(Fluent.DatePicker, (value, setValue) => (
   onSelectDate: setValue,
 }));
 
-export const Dropdown = InputAdapter(Fluent.Dropdown, (value, setValue) => ({
+export const Dropdown = InputAdapter(Fluent.Dropdown, (value, setValue, props) => ({
+  selectedKeys: value,
   selectedKey: value,
-  onChange: (e, v) => setValue(v.key),
+  onChange: (e, v) => {
+    if (props.multiSelect) {
+      const options = new Set(props.options.map((item) => item.key));
+      let newValue = (Array.isArray(value) ? value : [value])
+        .filter((key) => options.has(key)); // Some options might have been removed.
+      newValue = v.selected
+        ? [...newValue, v.key]
+        : newValue.filter((key) => key !== v.key);
+      setValue(newValue);
+    } else {
+      setValue(v.key);
+    }
+  },
 }));
 
 export const NormalPeoplePicker = InputAdapter(
