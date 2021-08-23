@@ -12,7 +12,15 @@ ActionButton.shinyInput <- button("ActionButton")
 
 #' @rdname Button
 #' @export
+updateActionButton.shinyInput <- shiny.react::updateReactInput
+
+#' @rdname Button
+#' @export
 CommandBarButton.shinyInput <- button("CommandBarButton")
+
+#' @rdname Button
+#' @export
+updateCommandBarButton.shinyInput <- shiny.react::updateReactInput
 
 #' @rdname Button
 #' @export
@@ -20,7 +28,15 @@ CommandButton.shinyInput <- button("CommandButton")
 
 #' @rdname Button
 #' @export
+updateCommandButton.shinyInput <- shiny.react::updateReactInput
+
+#' @rdname Button
+#' @export
 CompoundButton.shinyInput <- button("CompoundButton")
+
+#' @rdname Button
+#' @export
+updateCompoundButton.shinyInput <- shiny.react::updateReactInput
 
 #' @rdname Button
 #' @export
@@ -28,11 +44,23 @@ DefaultButton.shinyInput <- button("DefaultButton")
 
 #' @rdname Button
 #' @export
+updateDefaultButton.shinyInput <- shiny.react::updateReactInput
+
+#' @rdname Button
+#' @export
 IconButton.shinyInput <- button("IconButton")
 
 #' @rdname Button
 #' @export
+updateIconButton.shinyInput <- shiny.react::updateReactInput
+
+#' @rdname Button
+#' @export
 PrimaryButton.shinyInput <- button("PrimaryButton")
+
+#' @rdname Button
+#' @export
+updatePrimaryButton.shinyInput <- shiny.react::updateReactInput
 
 input <- function(name, defaultValue) {
   function(inputId, ..., value = defaultValue) shiny.react::reactElement(
