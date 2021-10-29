@@ -10,7 +10,8 @@ ui <- fluidPage(
   actionButtonsUI("actionButtons"),
   reactInShinyUI("reactInShiny"),
   customOutputUI("customOutput"),
-  deepMixingUI("deepMixing")
+  deepMixingUI("deepMixing"),
+  shimmerUI("shimmer")
 )
 
 server <- function(input, output, session) {
@@ -20,6 +21,7 @@ server <- function(input, output, session) {
   reactInShinyServer("reactInShiny")
   customOutputServer("customOutput")
   deepMixingServer("deepMixing")
+  shimmerServer("shimmer")
 }
 
 shinyApp(ui, server)
