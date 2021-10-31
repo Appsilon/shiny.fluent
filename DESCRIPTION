@@ -5,7 +5,7 @@ Authors@R:
   c(
     person(given = "Marek", family = "Rogala", role = c("aut", "cre"), email = "marek@appsilon.com"),
     person(given = "Kamil", family = "Zyla", role = "aut", email = "kamil@appsilon.com"),
-    person(given = "Appsilon sp. z o.o.", role = "cph")
+    person(given = "Appsilon sp. z o.o.", role = "cph", email = "support+opensource@appsilon.com")
   )
 Description: It provides all controls from Microsoft Fluent UI.
 URL: https://appsilon.github.io/shiny.fluent, https://github.com/appsilon/shiny.fluent
