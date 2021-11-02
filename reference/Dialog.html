@@ -383,43 +383,43 @@ you need to work using the original docs to achieve the desired result.</p>
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://appsilon.github.io/shiny.fluent'>shiny.fluent</a></span><span class='op'>)</span>
-
-<span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
-  <span class='fu'>shinyApp</span><span class='op'>(</span>
-    ui <span class='op'>=</span> <span class='fu'>div</span><span class='op'>(</span>
-      <span class='fu'><a href='ActionButton.html'>DefaultButton.shinyInput</a></span><span class='op'>(</span><span class='st'>"showDialog"</span>, text <span class='op'>=</span> <span class='st'>"Open dialog"</span><span class='op'>)</span>,
-      <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/reactOutput.html'>reactOutput</a></span><span class='op'>(</span><span class='st'>"reactDialog"</span><span class='op'>)</span>
-    <span class='op'>)</span>,
-    server <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span><span class='op'>)</span> <span class='op'>{</span>
-      <span class='va'>isDialogOpen</span> <span class='op'>&lt;-</span> <span class='fu'>reactiveVal</span><span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span>
-      <span class='va'>output</span><span class='op'>$</span><span class='va'>reactDialog</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/renderReact.html'>renderReact</a></span><span class='op'>(</span><span class='op'>{</span>
-        <span class='va'>dialogContentProps</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
-          type<span class='op'>=</span><span class='fl'>0</span>,
-          title<span class='op'>=</span><span class='st'>'Missing Subject'</span>,
-          closeButtonAriaLabel<span class='op'>=</span><span class='st'>'Close'</span>,
-          subText<span class='op'>=</span><span class='st'>'Do you want to send this message without a subject?'</span>
-        <span class='op'>)</span>
-        <span class='fu'>Dialog</span><span class='op'>(</span>
-          hidden <span class='op'>=</span> <span class='op'>!</span><span class='fu'>isDialogOpen</span><span class='op'>(</span><span class='op'>)</span>,
-          onDismiss <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/JS.html'>JS</a></span><span class='op'>(</span><span class='st'>"function() { Shiny.setInputValue('hideDialog', Math.random()); }"</span><span class='op'>)</span>,
-          dialogContentProps <span class='op'>=</span> <span class='va'>dialogContentProps</span>,
-          modalProps <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='op'>)</span>,
-          <span class='fu'>DialogFooter</span><span class='op'>(</span>
-            <span class='fu'><a href='ActionButton.html'>PrimaryButton.shinyInput</a></span><span class='op'>(</span><span class='st'>"dialogSend"</span>, text <span class='op'>=</span> <span class='st'>"Send"</span><span class='op'>)</span>,
-            <span class='fu'><a href='ActionButton.html'>DefaultButton.shinyInput</a></span><span class='op'>(</span><span class='st'>"dialogDontSend"</span>, text <span class='op'>=</span> <span class='st'>"Don't send"</span><span class='op'>)</span>
-          <span class='op'>)</span>
-        <span class='op'>)</span>
-      <span class='op'>}</span><span class='op'>)</span>
-
-      <span class='fu'>observeEvent</span><span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>showDialog</span>, <span class='fu'>isDialogOpen</span><span class='op'>(</span><span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
-      <span class='fu'>observeEvent</span><span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>hideDialog</span>, <span class='fu'>isDialogOpen</span><span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span><span class='op'>)</span>
-      <span class='fu'>observeEvent</span><span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>dialogSend</span>, <span class='fu'>isDialogOpen</span><span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span><span class='op'>)</span>
-      <span class='fu'>observeEvent</span><span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>dialogDontSend</span>, <span class='fu'>isDialogOpen</span><span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span><span class='op'>)</span>
-    <span class='op'>}</span>
-  <span class='op'>)</span>
-<span class='op'>}</span>
-</div></pre>
+    <pre class="examples"><span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://appsilon.github.io/shiny.fluent'>shiny.fluent</a></span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span class='r-in'>  <span class='fu'>shinyApp</span><span class='op'>(</span></span>
+<span class='r-in'>    ui <span class='op'>=</span> <span class='fu'>div</span><span class='op'>(</span></span>
+<span class='r-in'>      <span class='fu'><a href='ActionButton.html'>DefaultButton.shinyInput</a></span><span class='op'>(</span><span class='st'>"showDialog"</span>, text <span class='op'>=</span> <span class='st'>"Open dialog"</span><span class='op'>)</span>,</span>
+<span class='r-in'>      <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/reactOutput.html'>reactOutput</a></span><span class='op'>(</span><span class='st'>"reactDialog"</span><span class='op'>)</span></span>
+<span class='r-in'>    <span class='op'>)</span>,</span>
+<span class='r-in'>    server <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span class='r-in'>      <span class='va'>isDialogOpen</span> <span class='op'>&lt;-</span> <span class='fu'>reactiveVal</span><span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span></span>
+<span class='r-in'>      <span class='va'>output</span><span class='op'>$</span><span class='va'>reactDialog</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/renderReact.html'>renderReact</a></span><span class='op'>(</span><span class='op'>{</span></span>
+<span class='r-in'>        <span class='va'>dialogContentProps</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span></span>
+<span class='r-in'>          type<span class='op'>=</span><span class='fl'>0</span>,</span>
+<span class='r-in'>          title<span class='op'>=</span><span class='st'>'Missing Subject'</span>,</span>
+<span class='r-in'>          closeButtonAriaLabel<span class='op'>=</span><span class='st'>'Close'</span>,</span>
+<span class='r-in'>          subText<span class='op'>=</span><span class='st'>'Do you want to send this message without a subject?'</span></span>
+<span class='r-in'>        <span class='op'>)</span></span>
+<span class='r-in'>        <span class='fu'>Dialog</span><span class='op'>(</span></span>
+<span class='r-in'>          hidden <span class='op'>=</span> <span class='op'>!</span><span class='fu'>isDialogOpen</span><span class='op'>(</span><span class='op'>)</span>,</span>
+<span class='r-in'>          onDismiss <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/JS.html'>JS</a></span><span class='op'>(</span><span class='st'>"function() { Shiny.setInputValue('hideDialog', Math.random()); }"</span><span class='op'>)</span>,</span>
+<span class='r-in'>          dialogContentProps <span class='op'>=</span> <span class='va'>dialogContentProps</span>,</span>
+<span class='r-in'>          modalProps <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='op'>)</span>,</span>
+<span class='r-in'>          <span class='fu'>DialogFooter</span><span class='op'>(</span></span>
+<span class='r-in'>            <span class='fu'><a href='ActionButton.html'>PrimaryButton.shinyInput</a></span><span class='op'>(</span><span class='st'>"dialogSend"</span>, text <span class='op'>=</span> <span class='st'>"Send"</span><span class='op'>)</span>,</span>
+<span class='r-in'>            <span class='fu'><a href='ActionButton.html'>DefaultButton.shinyInput</a></span><span class='op'>(</span><span class='st'>"dialogDontSend"</span>, text <span class='op'>=</span> <span class='st'>"Don't send"</span><span class='op'>)</span></span>
+<span class='r-in'>          <span class='op'>)</span></span>
+<span class='r-in'>        <span class='op'>)</span></span>
+<span class='r-in'>      <span class='op'>}</span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'>      <span class='fu'>observeEvent</span><span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>showDialog</span>, <span class='fu'>isDialogOpen</span><span class='op'>(</span><span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-in'>      <span class='fu'>observeEvent</span><span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>hideDialog</span>, <span class='fu'>isDialogOpen</span><span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-in'>      <span class='fu'>observeEvent</span><span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>dialogSend</span>, <span class='fu'>isDialogOpen</span><span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-in'>      <span class='fu'>observeEvent</span><span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>dialogDontSend</span>, <span class='fu'>isDialogOpen</span><span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-in'>    <span class='op'>}</span></span>
+<span class='r-in'>  <span class='op'>)</span></span>
+<span class='r-in'><span class='op'>}</span></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

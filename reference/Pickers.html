@@ -490,67 +490,67 @@ you need to work using the original docs to achieve the desired result.</p>
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://appsilon.github.io/shiny.fluent'>shiny.fluent</a></span><span class='op'>)</span>
-
-<span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
-  <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/shinyApp.html'>shinyApp</a></span><span class='op'>(</span>
-    ui <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/tag.html'>tagList</a></span><span class='op'>(</span>
-      <span class='va'>tags</span><span class='op'>$</span><span class='fu'>script</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/HTML.html'>HTML</a></span><span class='op'>(</span><span class='st'>"
-        testTags = [
-          'black',
-          'blue',
-          'brown',
-          'cyan',
-          'green',
-          'magenta',
-          'mauve',
-          'orange',
-          'pink',
-          'purple',
-          'red',
-          'rose',
-          'violet',
-          'white',
-          'yellow',
-        ].map(item =&gt; ({ key: item, name: item }));
-
-        function listContainsTagList(tag, tagList) {
-          if (!tagList || !tagList.length || tagList.length === 0) {
-            return false;
-          }
-          return tagList.some(compareTag =&gt; compareTag.key === tag.key);
-        };
-
-        function filterSuggestedTags(filterText, tagList) {
-          return filterText
-            ? testTags.filter(
-                tag =&gt; tag.name.toLowerCase().indexOf(filterText.toLowerCase()) === 0 &amp;&amp; !listContainsTagList(tag, tagList),
-              )
-            : [];
-        };
-      "</span><span class='op'>)</span><span class='op'>)</span>,
-      <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/textOutput.html'>textOutput</a></span><span class='op'>(</span><span class='st'>"selectedTags"</span><span class='op'>)</span>,
-      <span class='fu'>TagPicker</span><span class='op'>(</span>
-        onResolveSuggestions <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/JS.html'>JS</a></span><span class='op'>(</span><span class='st'>"filterSuggestedTags"</span><span class='op'>)</span>,
-        onEmptyInputFocus <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/JS.html'>JS</a></span><span class='op'>(</span><span class='st'>"function(tagList) { return testTags.filter(tag =&gt; !listContainsTagList(tag, tagList)); }"</span><span class='op'>)</span>,
-        getTextFromItem <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/JS.html'>JS</a></span><span class='op'>(</span><span class='st'>"function(item) { return item.text }"</span><span class='op'>)</span>,
-        pickerSuggestionsProps <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>suggestionsHeaderText <span class='op'>=</span> <span class='st'>'Suggested tags'</span>, noResultsFoundText <span class='op'>=</span> <span class='st'>'No color tags found'</span><span class='op'>)</span>,
-        itemLimit <span class='op'>=</span> <span class='fl'>2</span>,
-        onChange <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/JS.html'>JS</a></span><span class='op'>(</span><span class='st'>"function(selection) { Shiny.setInputValue('selectedTags', JSON.stringify(selection)) }"</span><span class='op'>)</span>
-      <span class='op'>)</span>
-    <span class='op'>)</span>,
-    server <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span><span class='op'>)</span> <span class='op'>{</span>
-      <span class='va'>output</span><span class='op'>$</span><span class='va'>selectedTags</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/renderPrint.html'>renderText</a></span><span class='op'>(</span><span class='op'>{</span>
-        <span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/NULL.html'>is.null</a></span><span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>selectedTags</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
-          <span class='st'>"Select up to 2 colors below:"</span>
-        <span class='op'>}</span> <span class='kw'>else</span> <span class='op'>{</span>
-          <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span><span class='op'>(</span><span class='st'>"You have selected:"</span>, <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span><span class='op'>(</span><span class='fu'>jsonlite</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/jsonlite/man/fromJSON.html'>fromJSON</a></span><span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>selectedTags</span><span class='op'>)</span><span class='op'>$</span><span class='va'>name</span>, collapse <span class='op'>=</span> <span class='st'>", "</span><span class='op'>)</span><span class='op'>)</span>
-        <span class='op'>}</span>
-      <span class='op'>}</span><span class='op'>)</span>
-    <span class='op'>}</span>
-  <span class='op'>)</span>
-<span class='op'>}</span>
-</div></pre>
+    <pre class="examples"><span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://appsilon.github.io/shiny.fluent'>shiny.fluent</a></span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span class='r-in'>  <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/shinyApp.html'>shinyApp</a></span><span class='op'>(</span></span>
+<span class='r-in'>    ui <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/tagList.html'>tagList</a></span><span class='op'>(</span></span>
+<span class='r-in'>      <span class='va'>tags</span><span class='op'>$</span><span class='fu'>script</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/HTML.html'>HTML</a></span><span class='op'>(</span><span class='st'>"</span>
+<span class='r-in'>        testTags = [</span>
+<span class='r-in'>          'black',</span>
+<span class='r-in'>          'blue',</span>
+<span class='r-in'>          'brown',</span>
+<span class='r-in'>          'cyan',</span>
+<span class='r-in'>          'green',</span>
+<span class='r-in'>          'magenta',</span>
+<span class='r-in'>          'mauve',</span>
+<span class='r-in'>          'orange',</span>
+<span class='r-in'>          'pink',</span>
+<span class='r-in'>          'purple',</span>
+<span class='r-in'>          'red',</span>
+<span class='r-in'>          'rose',</span>
+<span class='r-in'>          'violet',</span>
+<span class='r-in'>          'white',</span>
+<span class='r-in'>          'yellow',</span>
+<span class='r-in'>        ].map(item =&gt; ({ key: item, name: item }));</span>
+<span class='r-in'></span>
+<span class='r-in'>        function listContainsTagList(tag, tagList) {</span>
+<span class='r-in'>          if (!tagList || !tagList.length || tagList.length === 0) {</span>
+<span class='r-in'>            return false;</span>
+<span class='r-in'>          }</span>
+<span class='r-in'>          return tagList.some(compareTag =&gt; compareTag.key === tag.key);</span>
+<span class='r-in'>        };</span>
+<span class='r-in'></span>
+<span class='r-in'>        function filterSuggestedTags(filterText, tagList) {</span>
+<span class='r-in'>          return filterText</span>
+<span class='r-in'>            ? testTags.filter(</span>
+<span class='r-in'>                tag =&gt; tag.name.toLowerCase().indexOf(filterText.toLowerCase()) === 0 &amp;&amp; !listContainsTagList(tag, tagList),</span>
+<span class='r-in'>              )</span>
+<span class='r-in'>            : [];</span>
+<span class='r-in'>        };</span>
+<span class='r-in'>      "</span><span class='op'>)</span><span class='op'>)</span>,</span>
+<span class='r-in'>      <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/textOutput.html'>textOutput</a></span><span class='op'>(</span><span class='st'>"selectedTags"</span><span class='op'>)</span>,</span>
+<span class='r-in'>      <span class='fu'>TagPicker</span><span class='op'>(</span></span>
+<span class='r-in'>        onResolveSuggestions <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/JS.html'>JS</a></span><span class='op'>(</span><span class='st'>"filterSuggestedTags"</span><span class='op'>)</span>,</span>
+<span class='r-in'>        onEmptyInputFocus <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/JS.html'>JS</a></span><span class='op'>(</span><span class='st'>"function(tagList) { return testTags.filter(tag =&gt; !listContainsTagList(tag, tagList)); }"</span><span class='op'>)</span>,</span>
+<span class='r-in'>        getTextFromItem <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/JS.html'>JS</a></span><span class='op'>(</span><span class='st'>"function(item) { return item.text }"</span><span class='op'>)</span>,</span>
+<span class='r-in'>        pickerSuggestionsProps <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>suggestionsHeaderText <span class='op'>=</span> <span class='st'>'Suggested tags'</span>, noResultsFoundText <span class='op'>=</span> <span class='st'>'No color tags found'</span><span class='op'>)</span>,</span>
+<span class='r-in'>        itemLimit <span class='op'>=</span> <span class='fl'>2</span>,</span>
+<span class='r-in'>        onChange <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/JS.html'>JS</a></span><span class='op'>(</span><span class='st'>"function(selection) { Shiny.setInputValue('selectedTags', JSON.stringify(selection)) }"</span><span class='op'>)</span></span>
+<span class='r-in'>      <span class='op'>)</span></span>
+<span class='r-in'>    <span class='op'>)</span>,</span>
+<span class='r-in'>    server <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span class='r-in'>      <span class='va'>output</span><span class='op'>$</span><span class='va'>selectedTags</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/renderPrint.html'>renderText</a></span><span class='op'>(</span><span class='op'>{</span></span>
+<span class='r-in'>        <span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/NULL.html'>is.null</a></span><span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>selectedTags</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span class='r-in'>          <span class='st'>"Select up to 2 colors below:"</span></span>
+<span class='r-in'>        <span class='op'>}</span> <span class='kw'>else</span> <span class='op'>{</span></span>
+<span class='r-in'>          <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span><span class='op'>(</span><span class='st'>"You have selected:"</span>, <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span><span class='op'>(</span><span class='fu'>jsonlite</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/jsonlite/man/fromJSON.html'>fromJSON</a></span><span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>selectedTags</span><span class='op'>)</span><span class='op'>$</span><span class='va'>name</span>, collapse <span class='op'>=</span> <span class='st'>", "</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-in'>        <span class='op'>}</span></span>
+<span class='r-in'>      <span class='op'>}</span><span class='op'>)</span></span>
+<span class='r-in'>    <span class='op'>}</span></span>
+<span class='r-in'>  <span class='op'>)</span></span>
+<span class='r-in'><span class='op'>}</span></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

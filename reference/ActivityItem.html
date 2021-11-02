@@ -249,25 +249,25 @@ you need to work using the original docs to achieve the desired result.</p>
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://appsilon.github.io/shiny.fluent'>shiny.fluent</a></span><span class='op'>)</span>
-
-<span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
-  <span class='fu'>shinyApp</span><span class='op'>(</span>
-    ui <span class='op'>=</span> <span class='fu'>ActivityItem</span><span class='op'>(</span>
-      activityDescription <span class='op'>=</span> <span class='fu'>tagList</span><span class='op'>(</span>
-        <span class='fu'><a href='Link.html'>Link</a></span><span class='op'>(</span>key <span class='op'>=</span> <span class='fl'>1</span>, <span class='st'>"Philippe Lampros"</span><span class='op'>)</span>,
-        <span class='va'>tags</span><span class='op'>$</span><span class='fu'>span</span><span class='op'>(</span>key <span class='op'>=</span> <span class='fl'>2</span>, <span class='st'>" commented"</span><span class='op'>)</span>
-      <span class='op'>)</span>,
-      activityIcon <span class='op'>=</span> <span class='fu'><a href='FontIcon.html'>Icon</a></span><span class='op'>(</span>iconName <span class='op'>=</span> <span class='st'>"Message"</span><span class='op'>)</span>,
-      comments <span class='op'>=</span> <span class='fu'>tagList</span><span class='op'>(</span>
-        <span class='va'>tags</span><span class='op'>$</span><span class='fu'>span</span><span class='op'>(</span>key <span class='op'>=</span> <span class='fl'>1</span>, <span class='st'>"Hello! I am making a comment."</span><span class='op'>)</span>
-      <span class='op'>)</span>,
-      timeStamp <span class='op'>=</span> <span class='st'>"Just now"</span>
-    <span class='op'>)</span>,
-    server <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span><span class='op'>)</span> <span class='op'>{</span><span class='op'>}</span>
-  <span class='op'>)</span>
-<span class='op'>}</span>
-</div></pre>
+    <pre class="examples"><span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://appsilon.github.io/shiny.fluent'>shiny.fluent</a></span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span class='r-in'>  <span class='fu'>shinyApp</span><span class='op'>(</span></span>
+<span class='r-in'>    ui <span class='op'>=</span> <span class='fu'>ActivityItem</span><span class='op'>(</span></span>
+<span class='r-in'>      activityDescription <span class='op'>=</span> <span class='fu'>tagList</span><span class='op'>(</span></span>
+<span class='r-in'>        <span class='fu'><a href='Link.html'>Link</a></span><span class='op'>(</span>key <span class='op'>=</span> <span class='fl'>1</span>, <span class='st'>"Philippe Lampros"</span><span class='op'>)</span>,</span>
+<span class='r-in'>        <span class='va'>tags</span><span class='op'>$</span><span class='fu'>span</span><span class='op'>(</span>key <span class='op'>=</span> <span class='fl'>2</span>, <span class='st'>" commented"</span><span class='op'>)</span></span>
+<span class='r-in'>      <span class='op'>)</span>,</span>
+<span class='r-in'>      activityIcon <span class='op'>=</span> <span class='fu'><a href='FontIcon.html'>Icon</a></span><span class='op'>(</span>iconName <span class='op'>=</span> <span class='st'>"Message"</span><span class='op'>)</span>,</span>
+<span class='r-in'>      comments <span class='op'>=</span> <span class='fu'>tagList</span><span class='op'>(</span></span>
+<span class='r-in'>        <span class='va'>tags</span><span class='op'>$</span><span class='fu'>span</span><span class='op'>(</span>key <span class='op'>=</span> <span class='fl'>1</span>, <span class='st'>"Hello! I am making a comment."</span><span class='op'>)</span></span>
+<span class='r-in'>      <span class='op'>)</span>,</span>
+<span class='r-in'>      timeStamp <span class='op'>=</span> <span class='st'>"Just now"</span></span>
+<span class='r-in'>    <span class='op'>)</span>,</span>
+<span class='r-in'>    server <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span><span class='op'>)</span> <span class='op'>{</span><span class='op'>}</span></span>
+<span class='r-in'>  <span class='op'>)</span></span>
+<span class='r-in'><span class='op'>}</span></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

@@ -246,51 +246,51 @@ you need to work using the original docs to achieve the desired result.</p>
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://appsilon.github.io/shiny.fluent'>shiny.fluent</a></span><span class='op'>)</span>
-
-<span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
-  <span class='va'>items</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
-    <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>key <span class='op'>=</span> <span class='st'>"item1"</span>, icon <span class='op'>=</span> <span class='st'>"Add"</span>, name <span class='op'>=</span> <span class='st'>"Link 1"</span><span class='op'>)</span>,
-    <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>key <span class='op'>=</span> <span class='st'>"item2"</span>, icon <span class='op'>=</span> <span class='st'>"Upload"</span>, name <span class='op'>=</span> <span class='st'>"Link 2"</span><span class='op'>)</span>,
-    <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>key <span class='op'>=</span> <span class='st'>"item3"</span>, icon <span class='op'>=</span> <span class='st'>"Share"</span>, name <span class='op'>=</span> <span class='st'>"Link 3"</span><span class='op'>)</span>
-  <span class='op'>)</span>
-  <span class='va'>overflowItems</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
-    <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>key <span class='op'>=</span> <span class='st'>"item4"</span>, icon <span class='op'>=</span> <span class='st'>"Mail"</span>, name <span class='op'>=</span> <span class='st'>"Overflow Link 1"</span><span class='op'>)</span>,
-    <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>key <span class='op'>=</span> <span class='st'>"item5"</span>, icon <span class='op'>=</span> <span class='st'>"Calendar"</span>, name <span class='op'>=</span> <span class='st'>"Overflow Link 2"</span><span class='op'>)</span>
-  <span class='op'>)</span>
-  <span class='va'>onRenderItem</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/JS.html'>JS</a></span><span class='op'>(</span><span class='st'>"item =&gt;
-    jsmodule['react'].createElement(jsmodule['@fluentui/react'].CommandBarButton, {
-      role: 'menuitem',
-      iconProps: { iconName: item.icon },
-      styles: {
-        root: { padding: '10px' }
-      }
-    })
-  "</span><span class='op'>)</span>
-  <span class='va'>onRenderOverflowButton</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/JS.html'>JS</a></span><span class='op'>(</span><span class='st'>"overflowItems =&gt;
-    jsmodule['react'].createElement(jsmodule['@fluentui/react'].CommandBarButton, {
-      role: 'menuitem',
-      title: 'More items',
-      styles: {
-        root: { padding: '10px' }
-      },
-      menuIconProps: { iconName: 'More' },
-      menuProps: { items: overflowItems }
-    })
-  "</span><span class='op'>)</span>
-
-  <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/shinyApp.html'>shinyApp</a></span><span class='op'>(</span>
-    ui <span class='op'>=</span> <span class='fu'>OverflowSet</span><span class='op'>(</span>
-      vertical <span class='op'>=</span> <span class='cn'>TRUE</span>,
-      items <span class='op'>=</span> <span class='va'>items</span>,
-      overflowItems <span class='op'>=</span> <span class='va'>overflowItems</span>,
-      onRenderItem <span class='op'>=</span> <span class='va'>onRenderItem</span>,
-      onRenderOverflowButton <span class='op'>=</span> <span class='va'>onRenderOverflowButton</span>
-    <span class='op'>)</span>,
-    server <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span><span class='op'>)</span> <span class='op'>{</span><span class='op'>}</span>
-  <span class='op'>)</span>
-<span class='op'>}</span>
-</div></pre>
+    <pre class="examples"><span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://appsilon.github.io/shiny.fluent'>shiny.fluent</a></span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span class='r-in'>  <span class='va'>items</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span></span>
+<span class='r-in'>    <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>key <span class='op'>=</span> <span class='st'>"item1"</span>, icon <span class='op'>=</span> <span class='st'>"Add"</span>, name <span class='op'>=</span> <span class='st'>"Link 1"</span><span class='op'>)</span>,</span>
+<span class='r-in'>    <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>key <span class='op'>=</span> <span class='st'>"item2"</span>, icon <span class='op'>=</span> <span class='st'>"Upload"</span>, name <span class='op'>=</span> <span class='st'>"Link 2"</span><span class='op'>)</span>,</span>
+<span class='r-in'>    <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>key <span class='op'>=</span> <span class='st'>"item3"</span>, icon <span class='op'>=</span> <span class='st'>"Share"</span>, name <span class='op'>=</span> <span class='st'>"Link 3"</span><span class='op'>)</span></span>
+<span class='r-in'>  <span class='op'>)</span></span>
+<span class='r-in'>  <span class='va'>overflowItems</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span></span>
+<span class='r-in'>    <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>key <span class='op'>=</span> <span class='st'>"item4"</span>, icon <span class='op'>=</span> <span class='st'>"Mail"</span>, name <span class='op'>=</span> <span class='st'>"Overflow Link 1"</span><span class='op'>)</span>,</span>
+<span class='r-in'>    <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>key <span class='op'>=</span> <span class='st'>"item5"</span>, icon <span class='op'>=</span> <span class='st'>"Calendar"</span>, name <span class='op'>=</span> <span class='st'>"Overflow Link 2"</span><span class='op'>)</span></span>
+<span class='r-in'>  <span class='op'>)</span></span>
+<span class='r-in'>  <span class='va'>onRenderItem</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/JS.html'>JS</a></span><span class='op'>(</span><span class='st'>"item =&gt;</span>
+<span class='r-in'>    jsmodule['react'].createElement(jsmodule['@fluentui/react'].CommandBarButton, {</span>
+<span class='r-in'>      role: 'menuitem',</span>
+<span class='r-in'>      iconProps: { iconName: item.icon },</span>
+<span class='r-in'>      styles: {</span>
+<span class='r-in'>        root: { padding: '10px' }</span>
+<span class='r-in'>      }</span>
+<span class='r-in'>    })</span>
+<span class='r-in'>  "</span><span class='op'>)</span></span>
+<span class='r-in'>  <span class='va'>onRenderOverflowButton</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/JS.html'>JS</a></span><span class='op'>(</span><span class='st'>"overflowItems =&gt;</span>
+<span class='r-in'>    jsmodule['react'].createElement(jsmodule['@fluentui/react'].CommandBarButton, {</span>
+<span class='r-in'>      role: 'menuitem',</span>
+<span class='r-in'>      title: 'More items',</span>
+<span class='r-in'>      styles: {</span>
+<span class='r-in'>        root: { padding: '10px' }</span>
+<span class='r-in'>      },</span>
+<span class='r-in'>      menuIconProps: { iconName: 'More' },</span>
+<span class='r-in'>      menuProps: { items: overflowItems }</span>
+<span class='r-in'>    })</span>
+<span class='r-in'>  "</span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'>  <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/shinyApp.html'>shinyApp</a></span><span class='op'>(</span></span>
+<span class='r-in'>    ui <span class='op'>=</span> <span class='fu'>OverflowSet</span><span class='op'>(</span></span>
+<span class='r-in'>      vertical <span class='op'>=</span> <span class='cn'>TRUE</span>,</span>
+<span class='r-in'>      items <span class='op'>=</span> <span class='va'>items</span>,</span>
+<span class='r-in'>      overflowItems <span class='op'>=</span> <span class='va'>overflowItems</span>,</span>
+<span class='r-in'>      onRenderItem <span class='op'>=</span> <span class='va'>onRenderItem</span>,</span>
+<span class='r-in'>      onRenderOverflowButton <span class='op'>=</span> <span class='va'>onRenderOverflowButton</span></span>
+<span class='r-in'>    <span class='op'>)</span>,</span>
+<span class='r-in'>    server <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span><span class='op'>)</span> <span class='op'>{</span><span class='op'>}</span></span>
+<span class='r-in'>  <span class='op'>)</span></span>
+<span class='r-in'><span class='op'>}</span></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

@@ -304,70 +304,70 @@ you need to work using the original docs to achieve the desired result.</p>
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://appsilon.github.io/shiny.fluent'>shiny.fluent</a></span><span class='op'>)</span>
-
-<span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
-  <span class='va'>items</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
-    <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
-      key <span class='op'>=</span> <span class='st'>"newItem"</span>,
-      text <span class='op'>=</span> <span class='st'>"New"</span>,
-      cacheKey <span class='op'>=</span> <span class='st'>"myCacheKey"</span>,
-      iconProps <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>iconName <span class='op'>=</span> <span class='st'>"Add"</span><span class='op'>)</span>,
-      subMenuProps <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
-        items <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
-          <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
-            key <span class='op'>=</span> <span class='st'>"emailMessage"</span>,
-            text <span class='op'>=</span> <span class='st'>"Email message"</span>,
-            iconProps <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>iconName <span class='op'>=</span> <span class='st'>"Mail"</span><span class='op'>)</span>
-          <span class='op'>)</span>,
-          <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
-            key <span class='op'>=</span> <span class='st'>"calendarEvent"</span>,
-            text <span class='op'>=</span> <span class='st'>"Calendar event"</span>,
-            iconProps <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>iconName <span class='op'>=</span> <span class='st'>"Calendar"</span><span class='op'>)</span>
-          <span class='op'>)</span>
-        <span class='op'>)</span>
-      <span class='op'>)</span>
-    <span class='op'>)</span>,
-    <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
-      key <span class='op'>=</span> <span class='st'>"upload"</span>,
-      text <span class='op'>=</span> <span class='st'>"Upload"</span>,
-      iconProps <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>iconName <span class='op'>=</span> <span class='st'>"Upload"</span><span class='op'>)</span>
-    <span class='op'>)</span>,
-    <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
-      key <span class='op'>=</span> <span class='st'>"share"</span>,
-      text <span class='op'>=</span> <span class='st'>"Share"</span>,
-      iconProps <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>iconName <span class='op'>=</span> <span class='st'>"Share"</span><span class='op'>)</span>
-    <span class='op'>)</span>,
-    <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
-      key <span class='op'>=</span> <span class='st'>"download"</span>,
-      text <span class='op'>=</span> <span class='st'>"Download"</span>,
-      iconProps <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>iconName <span class='op'>=</span> <span class='st'>"Download"</span><span class='op'>)</span>
-    <span class='op'>)</span>
-  <span class='op'>)</span>
-
-  <span class='va'>farItems</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
-    <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
-      key <span class='op'>=</span> <span class='st'>"tile"</span>,
-      text <span class='op'>=</span> <span class='st'>"Grid view"</span>,
-      ariaLabel <span class='op'>=</span> <span class='st'>"Grid view"</span>,
-      iconOnly <span class='op'>=</span> <span class='cn'>TRUE</span>,
-      iconProps <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>iconName <span class='op'>=</span> <span class='st'>"Tiles"</span><span class='op'>)</span>
-    <span class='op'>)</span>,
-    <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
-      key <span class='op'>=</span> <span class='st'>"info"</span>,
-      text <span class='op'>=</span> <span class='st'>"Info"</span>,
-      ariaLabel <span class='op'>=</span> <span class='st'>"Info"</span>,
-      iconOnly <span class='op'>=</span> <span class='cn'>TRUE</span>,
-      iconProps <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>iconName <span class='op'>=</span> <span class='st'>"Info"</span><span class='op'>)</span>
-    <span class='op'>)</span>
-  <span class='op'>)</span>
-
-  <span class='fu'>shinyApp</span><span class='op'>(</span>
-    ui <span class='op'>=</span> <span class='fu'>CommandBar</span><span class='op'>(</span>items <span class='op'>=</span> <span class='va'>items</span>, farItems <span class='op'>=</span> <span class='va'>farItems</span><span class='op'>)</span>,
-    server <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span><span class='op'>)</span> <span class='op'>{</span><span class='op'>}</span>
-  <span class='op'>)</span>
-<span class='op'>}</span>
-</div></pre>
+    <pre class="examples"><span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://appsilon.github.io/shiny.fluent'>shiny.fluent</a></span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span class='r-in'>  <span class='va'>items</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span></span>
+<span class='r-in'>    <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span></span>
+<span class='r-in'>      key <span class='op'>=</span> <span class='st'>"newItem"</span>,</span>
+<span class='r-in'>      text <span class='op'>=</span> <span class='st'>"New"</span>,</span>
+<span class='r-in'>      cacheKey <span class='op'>=</span> <span class='st'>"myCacheKey"</span>,</span>
+<span class='r-in'>      iconProps <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>iconName <span class='op'>=</span> <span class='st'>"Add"</span><span class='op'>)</span>,</span>
+<span class='r-in'>      subMenuProps <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span></span>
+<span class='r-in'>        items <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span></span>
+<span class='r-in'>          <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span></span>
+<span class='r-in'>            key <span class='op'>=</span> <span class='st'>"emailMessage"</span>,</span>
+<span class='r-in'>            text <span class='op'>=</span> <span class='st'>"Email message"</span>,</span>
+<span class='r-in'>            iconProps <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>iconName <span class='op'>=</span> <span class='st'>"Mail"</span><span class='op'>)</span></span>
+<span class='r-in'>          <span class='op'>)</span>,</span>
+<span class='r-in'>          <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span></span>
+<span class='r-in'>            key <span class='op'>=</span> <span class='st'>"calendarEvent"</span>,</span>
+<span class='r-in'>            text <span class='op'>=</span> <span class='st'>"Calendar event"</span>,</span>
+<span class='r-in'>            iconProps <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>iconName <span class='op'>=</span> <span class='st'>"Calendar"</span><span class='op'>)</span></span>
+<span class='r-in'>          <span class='op'>)</span></span>
+<span class='r-in'>        <span class='op'>)</span></span>
+<span class='r-in'>      <span class='op'>)</span></span>
+<span class='r-in'>    <span class='op'>)</span>,</span>
+<span class='r-in'>    <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span></span>
+<span class='r-in'>      key <span class='op'>=</span> <span class='st'>"upload"</span>,</span>
+<span class='r-in'>      text <span class='op'>=</span> <span class='st'>"Upload"</span>,</span>
+<span class='r-in'>      iconProps <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>iconName <span class='op'>=</span> <span class='st'>"Upload"</span><span class='op'>)</span></span>
+<span class='r-in'>    <span class='op'>)</span>,</span>
+<span class='r-in'>    <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span></span>
+<span class='r-in'>      key <span class='op'>=</span> <span class='st'>"share"</span>,</span>
+<span class='r-in'>      text <span class='op'>=</span> <span class='st'>"Share"</span>,</span>
+<span class='r-in'>      iconProps <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>iconName <span class='op'>=</span> <span class='st'>"Share"</span><span class='op'>)</span></span>
+<span class='r-in'>    <span class='op'>)</span>,</span>
+<span class='r-in'>    <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span></span>
+<span class='r-in'>      key <span class='op'>=</span> <span class='st'>"download"</span>,</span>
+<span class='r-in'>      text <span class='op'>=</span> <span class='st'>"Download"</span>,</span>
+<span class='r-in'>      iconProps <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>iconName <span class='op'>=</span> <span class='st'>"Download"</span><span class='op'>)</span></span>
+<span class='r-in'>    <span class='op'>)</span></span>
+<span class='r-in'>  <span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'>  <span class='va'>farItems</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span></span>
+<span class='r-in'>    <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span></span>
+<span class='r-in'>      key <span class='op'>=</span> <span class='st'>"tile"</span>,</span>
+<span class='r-in'>      text <span class='op'>=</span> <span class='st'>"Grid view"</span>,</span>
+<span class='r-in'>      ariaLabel <span class='op'>=</span> <span class='st'>"Grid view"</span>,</span>
+<span class='r-in'>      iconOnly <span class='op'>=</span> <span class='cn'>TRUE</span>,</span>
+<span class='r-in'>      iconProps <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>iconName <span class='op'>=</span> <span class='st'>"Tiles"</span><span class='op'>)</span></span>
+<span class='r-in'>    <span class='op'>)</span>,</span>
+<span class='r-in'>    <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span></span>
+<span class='r-in'>      key <span class='op'>=</span> <span class='st'>"info"</span>,</span>
+<span class='r-in'>      text <span class='op'>=</span> <span class='st'>"Info"</span>,</span>
+<span class='r-in'>      ariaLabel <span class='op'>=</span> <span class='st'>"Info"</span>,</span>
+<span class='r-in'>      iconOnly <span class='op'>=</span> <span class='cn'>TRUE</span>,</span>
+<span class='r-in'>      iconProps <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>iconName <span class='op'>=</span> <span class='st'>"Info"</span><span class='op'>)</span></span>
+<span class='r-in'>    <span class='op'>)</span></span>
+<span class='r-in'>  <span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'>  <span class='fu'>shinyApp</span><span class='op'>(</span></span>
+<span class='r-in'>    ui <span class='op'>=</span> <span class='fu'>CommandBar</span><span class='op'>(</span>items <span class='op'>=</span> <span class='va'>items</span>, farItems <span class='op'>=</span> <span class='va'>farItems</span><span class='op'>)</span>,</span>
+<span class='r-in'>    server <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span><span class='op'>)</span> <span class='op'>{</span><span class='op'>}</span></span>
+<span class='r-in'>  <span class='op'>)</span></span>
+<span class='r-in'><span class='op'>}</span></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

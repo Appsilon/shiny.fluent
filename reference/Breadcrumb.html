@@ -244,29 +244,29 @@ you need to work using the original docs to achieve the desired result.</p>
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://appsilon.github.io/shiny.fluent'>shiny.fluent</a></span><span class='op'>)</span>
-
-<span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
-  <span class='va'>items</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
-    <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>text <span class='op'>=</span> <span class='st'>"Files"</span>, key <span class='op'>=</span> <span class='st'>"Files"</span>, href <span class='op'>=</span> <span class='st'>"#/page"</span><span class='op'>)</span>,
-    <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>text <span class='op'>=</span> <span class='st'>"Folder 1"</span>, key <span class='op'>=</span> <span class='st'>"f1"</span>, href <span class='op'>=</span> <span class='st'>"#/page"</span><span class='op'>)</span>,
-    <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>text <span class='op'>=</span> <span class='st'>"Folder 2"</span>, key <span class='op'>=</span> <span class='st'>"f2"</span>, href <span class='op'>=</span> <span class='st'>"#/page"</span><span class='op'>)</span>,
-    <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>text <span class='op'>=</span> <span class='st'>"Folder 3"</span>, key <span class='op'>=</span> <span class='st'>"f3"</span>, href <span class='op'>=</span> <span class='st'>"#/page"</span><span class='op'>)</span>,
-    <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>text <span class='op'>=</span> <span class='st'>"Folder 4 (non-clickable)"</span>, key <span class='op'>=</span> <span class='st'>"f4"</span><span class='op'>)</span>,
-    <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>text <span class='op'>=</span> <span class='st'>"Folder 5"</span>, key <span class='op'>=</span> <span class='st'>"f5"</span>, href <span class='op'>=</span> <span class='st'>"#/page"</span>, isCurrentItem <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
-  <span class='op'>)</span>
-
-  <span class='fu'>shinyApp</span><span class='op'>(</span>
-    ui <span class='op'>=</span> <span class='fu'>Breadcrumb</span><span class='op'>(</span>
-      items <span class='op'>=</span> <span class='va'>items</span>,
-      maxDisplayedItems <span class='op'>=</span> <span class='fl'>3</span>,
-      ariaLabel <span class='op'>=</span> <span class='st'>"Breadcrumb with items rendered as links"</span>,
-      overflowAriaLabel <span class='op'>=</span> <span class='st'>"More links"</span>
-    <span class='op'>)</span>,
-    server <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span><span class='op'>)</span> <span class='op'>{</span><span class='op'>}</span>
-  <span class='op'>)</span>
-<span class='op'>}</span>
-</div></pre>
+    <pre class="examples"><span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://appsilon.github.io/shiny.fluent'>shiny.fluent</a></span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span class='r-in'>  <span class='va'>items</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span></span>
+<span class='r-in'>    <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>text <span class='op'>=</span> <span class='st'>"Files"</span>, key <span class='op'>=</span> <span class='st'>"Files"</span>, href <span class='op'>=</span> <span class='st'>"#/page"</span><span class='op'>)</span>,</span>
+<span class='r-in'>    <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>text <span class='op'>=</span> <span class='st'>"Folder 1"</span>, key <span class='op'>=</span> <span class='st'>"f1"</span>, href <span class='op'>=</span> <span class='st'>"#/page"</span><span class='op'>)</span>,</span>
+<span class='r-in'>    <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>text <span class='op'>=</span> <span class='st'>"Folder 2"</span>, key <span class='op'>=</span> <span class='st'>"f2"</span>, href <span class='op'>=</span> <span class='st'>"#/page"</span><span class='op'>)</span>,</span>
+<span class='r-in'>    <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>text <span class='op'>=</span> <span class='st'>"Folder 3"</span>, key <span class='op'>=</span> <span class='st'>"f3"</span>, href <span class='op'>=</span> <span class='st'>"#/page"</span><span class='op'>)</span>,</span>
+<span class='r-in'>    <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>text <span class='op'>=</span> <span class='st'>"Folder 4 (non-clickable)"</span>, key <span class='op'>=</span> <span class='st'>"f4"</span><span class='op'>)</span>,</span>
+<span class='r-in'>    <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>text <span class='op'>=</span> <span class='st'>"Folder 5"</span>, key <span class='op'>=</span> <span class='st'>"f5"</span>, href <span class='op'>=</span> <span class='st'>"#/page"</span>, isCurrentItem <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></span>
+<span class='r-in'>  <span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'>  <span class='fu'>shinyApp</span><span class='op'>(</span></span>
+<span class='r-in'>    ui <span class='op'>=</span> <span class='fu'>Breadcrumb</span><span class='op'>(</span></span>
+<span class='r-in'>      items <span class='op'>=</span> <span class='va'>items</span>,</span>
+<span class='r-in'>      maxDisplayedItems <span class='op'>=</span> <span class='fl'>3</span>,</span>
+<span class='r-in'>      ariaLabel <span class='op'>=</span> <span class='st'>"Breadcrumb with items rendered as links"</span>,</span>
+<span class='r-in'>      overflowAriaLabel <span class='op'>=</span> <span class='st'>"More links"</span></span>
+<span class='r-in'>    <span class='op'>)</span>,</span>
+<span class='r-in'>    server <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span><span class='op'>)</span> <span class='op'>{</span><span class='op'>}</span></span>
+<span class='r-in'>  <span class='op'>)</span></span>
+<span class='r-in'><span class='op'>}</span></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

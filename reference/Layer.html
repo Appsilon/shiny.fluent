@@ -220,39 +220,39 @@ you need to work using the original docs to achieve the desired result.</p>
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://appsilon.github.io/shiny.fluent'>shiny.fluent</a></span><span class='op'>)</span>
-
-<span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
-  <span class='fu'>shinyApp</span><span class='op'>(</span>
-    ui <span class='op'>=</span> <span class='fu'>div</span><span class='op'>(</span>
-      style <span class='op'>=</span> <span class='st'>"margin-top: 60px; border: 1px solid navy; padding: 10px; background: #eee;"</span>,
-      <span class='fu'><a href='Checkbox.html'>Checkbox.shinyInput</a></span><span class='op'>(</span><span class='st'>"useLayer"</span>, value <span class='op'>=</span> <span class='cn'>FALSE</span>, label <span class='op'>=</span> <span class='st'>"Display a message in a layer"</span><span class='op'>)</span>,
-      <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/reactOutput.html'>reactOutput</a></span><span class='op'>(</span><span class='st'>"layer"</span><span class='op'>)</span>
-    <span class='op'>)</span>,
-    server <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span><span class='op'>)</span> <span class='op'>{</span>
-      <span class='va'>output</span><span class='op'>$</span><span class='va'>layer</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/renderReact.html'>renderReact</a></span><span class='op'>(</span><span class='op'>{</span>
-        <span class='va'>box</span> <span class='op'>&lt;-</span> <span class='fu'>div</span><span class='op'>(</span>
-          style <span class='op'>=</span> <span class='st'>"background-color: #60C7FF; margin: 10px; padding: 10px"</span>,
-          <span class='st'>"Hello!"</span>
-        <span class='op'>)</span>
-        <span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/Logic.html'>isTRUE</a></span><span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>useLayer</span><span class='op'>)</span><span class='op'>)</span> <span class='fu'>Layer</span><span class='op'>(</span><span class='va'>box</span><span class='op'>)</span>
-      <span class='op'>}</span><span class='op'>)</span>
-    <span class='op'>}</span>
-  <span class='op'>)</span>
-<span class='op'>}</span>
-<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://appsilon.github.io/shiny.fluent'>shiny.fluent</a></span><span class='op'>)</span>
-
-<span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
-  <span class='fu'>shinyApp</span><span class='op'>(</span>
-    ui <span class='op'>=</span> <span class='fu'>div</span><span class='op'>(</span>
-      <span class='fu'>LayerHost</span><span class='op'>(</span>id <span class='op'>=</span> <span class='st'>"host"</span>, style <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>border <span class='op'>=</span> <span class='st'>"1px dashed"</span>, padding <span class='op'>=</span> <span class='fl'>10</span><span class='op'>)</span><span class='op'>)</span>,
-      <span class='st'>"Layer children are rendered in the LayerHost"</span>,
-      <span class='fu'>Layer</span><span class='op'>(</span>hostId <span class='op'>=</span> <span class='st'>"host"</span>, <span class='st'>"Content"</span><span class='op'>)</span>
-    <span class='op'>)</span>,
-    server <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span><span class='op'>)</span> <span class='op'>{</span><span class='op'>}</span>
-  <span class='op'>)</span>
-<span class='op'>}</span>
-</div></pre>
+    <pre class="examples"><span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://appsilon.github.io/shiny.fluent'>shiny.fluent</a></span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span class='r-in'>  <span class='fu'>shinyApp</span><span class='op'>(</span></span>
+<span class='r-in'>    ui <span class='op'>=</span> <span class='fu'>div</span><span class='op'>(</span></span>
+<span class='r-in'>      style <span class='op'>=</span> <span class='st'>"margin-top: 60px; border: 1px solid navy; padding: 10px; background: #eee;"</span>,</span>
+<span class='r-in'>      <span class='fu'><a href='Checkbox.html'>Checkbox.shinyInput</a></span><span class='op'>(</span><span class='st'>"useLayer"</span>, value <span class='op'>=</span> <span class='cn'>FALSE</span>, label <span class='op'>=</span> <span class='st'>"Display a message in a layer"</span><span class='op'>)</span>,</span>
+<span class='r-in'>      <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/reactOutput.html'>reactOutput</a></span><span class='op'>(</span><span class='st'>"layer"</span><span class='op'>)</span></span>
+<span class='r-in'>    <span class='op'>)</span>,</span>
+<span class='r-in'>    server <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span class='r-in'>      <span class='va'>output</span><span class='op'>$</span><span class='va'>layer</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/renderReact.html'>renderReact</a></span><span class='op'>(</span><span class='op'>{</span></span>
+<span class='r-in'>        <span class='va'>box</span> <span class='op'>&lt;-</span> <span class='fu'>div</span><span class='op'>(</span></span>
+<span class='r-in'>          style <span class='op'>=</span> <span class='st'>"background-color: #60C7FF; margin: 10px; padding: 10px"</span>,</span>
+<span class='r-in'>          <span class='st'>"Hello!"</span></span>
+<span class='r-in'>        <span class='op'>)</span></span>
+<span class='r-in'>        <span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/Logic.html'>isTRUE</a></span><span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>useLayer</span><span class='op'>)</span><span class='op'>)</span> <span class='fu'>Layer</span><span class='op'>(</span><span class='va'>box</span><span class='op'>)</span></span>
+<span class='r-in'>      <span class='op'>}</span><span class='op'>)</span></span>
+<span class='r-in'>    <span class='op'>}</span></span>
+<span class='r-in'>  <span class='op'>)</span></span>
+<span class='r-in'><span class='op'>}</span></span>
+<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://appsilon.github.io/shiny.fluent'>shiny.fluent</a></span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span class='r-in'>  <span class='fu'>shinyApp</span><span class='op'>(</span></span>
+<span class='r-in'>    ui <span class='op'>=</span> <span class='fu'>div</span><span class='op'>(</span></span>
+<span class='r-in'>      <span class='fu'>LayerHost</span><span class='op'>(</span>id <span class='op'>=</span> <span class='st'>"host"</span>, style <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>border <span class='op'>=</span> <span class='st'>"1px dashed"</span>, padding <span class='op'>=</span> <span class='fl'>10</span><span class='op'>)</span><span class='op'>)</span>,</span>
+<span class='r-in'>      <span class='st'>"Layer children are rendered in the LayerHost"</span>,</span>
+<span class='r-in'>      <span class='fu'>Layer</span><span class='op'>(</span>hostId <span class='op'>=</span> <span class='st'>"host"</span>, <span class='st'>"Content"</span><span class='op'>)</span></span>
+<span class='r-in'>    <span class='op'>)</span>,</span>
+<span class='r-in'>    server <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span><span class='op'>)</span> <span class='op'>{</span><span class='op'>}</span></span>
+<span class='r-in'>  <span class='op'>)</span></span>
+<span class='r-in'><span class='op'>}</span></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

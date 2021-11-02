@@ -169,59 +169,59 @@ See https://developer.microsoft.com/en-us/fluentui#/controls/web/selection for d
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://shiny.rstudio.com/'>shiny</a></span><span class='op'>)</span>
-<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://appsilon.github.io/shiny.fluent'>shiny.fluent</a></span><span class='op'>)</span>
-
-<span class='co'># This is an advanced demo showing how you can use virtually all features of Fluent UI</span>
-<span class='co'># by creating custom components in JS and rendering them with shiny.react.</span>
-<span class='co'># This example is a translation of the example in https://developer.microsoft.com/en-us/fluentui#/controls/web/marqueeselection.</span>
-
-<span class='co'># Script showing how to:</span>
-<span class='co'># 1. Use mergeStyles and themes from Fluent</span>
-<span class='co'># 2. Define custom components</span>
-<span class='co'># 3. Send results back to Shiny.</span>
-<span class='va'>script</span> <span class='op'>&lt;-</span> <span class='va'>tags</span><span class='op'>$</span><span class='fu'>script</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/HTML.html'>HTML</a></span><span class='op'>(</span><span class='st'>[1931 chars quoted with '"']</span><span class='op'>)</span><span class='op'>)</span>
-
-<span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
-  <span class='va'>MarqueeSelectionExample</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span> <span class='fu'>shiny.react</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/reactElement.html'>reactElement</a></span><span class='op'>(</span>
-    module <span class='op'>=</span> <span class='st'>"exampleApp"</span>, name <span class='op'>=</span> <span class='st'>"MarqueeSelectionExample"</span>,
-    props <span class='op'>=</span> <span class='fu'>shiny.react</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/asProps.html'>asProps</a></span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span>,
-  <span class='op'>)</span>
-
-  <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/shinyApp.html'>shinyApp</a></span><span class='op'>(</span>
-    ui <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/tag.html'>tagList</a></span><span class='op'>(</span>
-      <span class='va'>script</span>,
-      <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span><span class='op'>(</span>
-        <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/textOutput.html'>textOutput</a></span><span class='op'>(</span><span class='st'>"marqueeResult"</span><span class='op'>)</span>,
-        <span class='fu'><a href='Label.html'>Label</a></span><span class='op'>(</span><span class='st'>"Drag a rectangle around the items below to select them"</span><span class='op'>)</span>, <span class='co'># Make sure Fluent dependency is loaded.</span>
-        <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/reactOutput.html'>reactOutput</a></span><span class='op'>(</span><span class='st'>"marqueeSelection"</span><span class='op'>)</span>
-      <span class='op'>)</span>
-    <span class='op'>)</span>,
-    server <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span><span class='op'>)</span> <span class='op'>{</span>
-      <span class='va'>photos</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>lapply</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>50</span>, <span class='kw'>function</span><span class='op'>(</span><span class='va'>index</span><span class='op'>)</span> <span class='op'>{</span>
-        <span class='va'>randomWidth</span> <span class='op'>&lt;-</span> <span class='fl'>50</span> <span class='op'>+</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample.int</a></span><span class='op'>(</span><span class='fl'>150</span>, <span class='fl'>1</span><span class='op'>)</span>
-        <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
-          key <span class='op'>=</span> <span class='va'>index</span>,
-          url <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>'http://placehold.it/'</span>, <span class='va'>randomWidth</span>, <span class='st'>'x100'</span><span class='op'>)</span>,
-          width <span class='op'>=</span> <span class='va'>randomWidth</span>,
-          height <span class='op'>=</span> <span class='fl'>100</span>
-        <span class='op'>)</span>
-      <span class='op'>}</span><span class='op'>)</span>
-
-      <span class='va'>output</span><span class='op'>$</span><span class='va'>marqueeResult</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/renderPrint.html'>renderText</a></span><span class='op'>(</span><span class='op'>{</span>
-        <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span><span class='op'>(</span><span class='st'>"You have selected: "</span>, <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span><span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>selectedIndices</span>, collapse <span class='op'>=</span> <span class='st'>", "</span><span class='op'>)</span><span class='op'>)</span>
-      <span class='op'>}</span><span class='op'>)</span>
-
-      <span class='va'>output</span><span class='op'>$</span><span class='va'>marqueeSelection</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/renderReact.html'>renderReact</a></span><span class='op'>(</span><span class='op'>{</span>
-        <span class='fu'>MarqueeSelectionExample</span><span class='op'>(</span>
-          name <span class='op'>=</span> <span class='st'>"selectedIndices"</span>,
-          photos <span class='op'>=</span> <span class='va'>photos</span>
-        <span class='op'>)</span>
-      <span class='op'>}</span><span class='op'>)</span>
-    <span class='op'>}</span>
-  <span class='op'>)</span>
-<span class='op'>}</span>
-</div></pre>
+    <pre class="examples"><span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://shiny.rstudio.com/'>shiny</a></span><span class='op'>)</span></span>
+<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://appsilon.github.io/shiny.fluent'>shiny.fluent</a></span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'># This is an advanced demo showing how you can use virtually all features of Fluent UI</span></span>
+<span class='r-in'><span class='co'># by creating custom components in JS and rendering them with shiny.react.</span></span>
+<span class='r-in'><span class='co'># This example is a translation of the example in https://developer.microsoft.com/en-us/fluentui#/controls/web/marqueeselection.</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'># Script showing how to:</span></span>
+<span class='r-in'><span class='co'># 1. Use mergeStyles and themes from Fluent</span></span>
+<span class='r-in'><span class='co'># 2. Define custom components</span></span>
+<span class='r-in'><span class='co'># 3. Send results back to Shiny.</span></span>
+<span class='r-in'><span class='va'>script</span> <span class='op'>&lt;-</span> <span class='va'>tags</span><span class='op'>$</span><span class='fu'>script</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/HTML.html'>HTML</a></span><span class='op'>(</span><span class='st'>[1931 chars quoted with '"']</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span class='r-in'>  <span class='va'>MarqueeSelectionExample</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span> <span class='fu'>shiny.react</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/reactElement.html'>reactElement</a></span><span class='op'>(</span></span>
+<span class='r-in'>    module <span class='op'>=</span> <span class='st'>"exampleApp"</span>, name <span class='op'>=</span> <span class='st'>"MarqueeSelectionExample"</span>,</span>
+<span class='r-in'>    props <span class='op'>=</span> <span class='fu'>shiny.react</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/asProps.html'>asProps</a></span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span>,</span>
+<span class='r-in'>  <span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'>  <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/shinyApp.html'>shinyApp</a></span><span class='op'>(</span></span>
+<span class='r-in'>    ui <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/tagList.html'>tagList</a></span><span class='op'>(</span></span>
+<span class='r-in'>      <span class='va'>script</span>,</span>
+<span class='r-in'>      <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span><span class='op'>(</span></span>
+<span class='r-in'>        <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/textOutput.html'>textOutput</a></span><span class='op'>(</span><span class='st'>"marqueeResult"</span><span class='op'>)</span>,</span>
+<span class='r-in'>        <span class='fu'><a href='Label.html'>Label</a></span><span class='op'>(</span><span class='st'>"Drag a rectangle around the items below to select them"</span><span class='op'>)</span>, <span class='co'># Make sure Fluent dependency is loaded.</span></span>
+<span class='r-in'>        <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/reactOutput.html'>reactOutput</a></span><span class='op'>(</span><span class='st'>"marqueeSelection"</span><span class='op'>)</span></span>
+<span class='r-in'>      <span class='op'>)</span></span>
+<span class='r-in'>    <span class='op'>)</span>,</span>
+<span class='r-in'>    server <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span class='r-in'>      <span class='va'>photos</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>lapply</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>50</span>, <span class='kw'>function</span><span class='op'>(</span><span class='va'>index</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span class='r-in'>        <span class='va'>randomWidth</span> <span class='op'>&lt;-</span> <span class='fl'>50</span> <span class='op'>+</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample.int</a></span><span class='op'>(</span><span class='fl'>150</span>, <span class='fl'>1</span><span class='op'>)</span></span>
+<span class='r-in'>        <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span></span>
+<span class='r-in'>          key <span class='op'>=</span> <span class='va'>index</span>,</span>
+<span class='r-in'>          url <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>'http://placehold.it/'</span>, <span class='va'>randomWidth</span>, <span class='st'>'x100'</span><span class='op'>)</span>,</span>
+<span class='r-in'>          width <span class='op'>=</span> <span class='va'>randomWidth</span>,</span>
+<span class='r-in'>          height <span class='op'>=</span> <span class='fl'>100</span></span>
+<span class='r-in'>        <span class='op'>)</span></span>
+<span class='r-in'>      <span class='op'>}</span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'>      <span class='va'>output</span><span class='op'>$</span><span class='va'>marqueeResult</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/renderPrint.html'>renderText</a></span><span class='op'>(</span><span class='op'>{</span></span>
+<span class='r-in'>        <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span><span class='op'>(</span><span class='st'>"You have selected: "</span>, <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span><span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>selectedIndices</span>, collapse <span class='op'>=</span> <span class='st'>", "</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-in'>      <span class='op'>}</span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'>      <span class='va'>output</span><span class='op'>$</span><span class='va'>marqueeSelection</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/renderReact.html'>renderReact</a></span><span class='op'>(</span><span class='op'>{</span></span>
+<span class='r-in'>        <span class='fu'>MarqueeSelectionExample</span><span class='op'>(</span></span>
+<span class='r-in'>          name <span class='op'>=</span> <span class='st'>"selectedIndices"</span>,</span>
+<span class='r-in'>          photos <span class='op'>=</span> <span class='va'>photos</span></span>
+<span class='r-in'>        <span class='op'>)</span></span>
+<span class='r-in'>      <span class='op'>}</span><span class='op'>)</span></span>
+<span class='r-in'>    <span class='op'>}</span></span>
+<span class='r-in'>  <span class='op'>)</span></span>
+<span class='r-in'><span class='op'>}</span></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

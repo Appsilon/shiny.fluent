@@ -395,37 +395,37 @@ you need to work using the original docs to achieve the desired result.</p>
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://appsilon.github.io/shiny.fluent'>shiny.fluent</a></span><span class='op'>)</span>
-
-<span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
-  <span class='fu'>shinyApp</span><span class='op'>(</span>
-    ui <span class='op'>=</span> <span class='fu'>tagList</span><span class='op'>(</span>
-      <span class='fu'>uiOutput</span><span class='op'>(</span><span class='st'>"coachmark"</span><span class='op'>)</span>,
-      <span class='fu'><a href='ActionButton.html'>DefaultButton.shinyInput</a></span><span class='op'>(</span><span class='st'>"toggleCoachmark"</span>,
-        id <span class='op'>=</span> <span class='st'>"target"</span>, text <span class='op'>=</span> <span class='st'>"Toggle coachmark"</span>
-      <span class='op'>)</span>
-    <span class='op'>)</span>,
-    server <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span><span class='op'>)</span> <span class='op'>{</span>
-      <span class='va'>coachmarkVisible</span> <span class='op'>&lt;-</span> <span class='fu'>reactiveVal</span><span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span>
-      <span class='fu'>observeEvent</span><span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>toggleCoachmark</span>, <span class='fu'>coachmarkVisible</span><span class='op'>(</span><span class='op'>!</span><span class='fu'>coachmarkVisible</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
-      <span class='fu'>observeEvent</span><span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>hideCoachmark</span>, <span class='fu'>coachmarkVisible</span><span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span><span class='op'>)</span>
-      <span class='va'>output</span><span class='op'>$</span><span class='va'>coachmark</span> <span class='op'>&lt;-</span> <span class='fu'>renderUI</span><span class='op'>(</span><span class='op'>{</span>
-        <span class='kw'>if</span> <span class='op'>(</span><span class='fu'>coachmarkVisible</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='fu'>Coachmark</span><span class='op'>(</span>
-          target <span class='op'>=</span> <span class='st'>"#target"</span>,
-          <span class='fu'><a href='TeachingBubble.html'>TeachingBubbleContent</a></span><span class='op'>(</span>
-            hasCloseButton <span class='op'>=</span> <span class='cn'>TRUE</span>,
-            onDismiss <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/triggerEvent.html'>triggerEvent</a></span><span class='op'>(</span><span class='st'>"hideCoachmark"</span><span class='op'>)</span>,
-            headline <span class='op'>=</span> <span class='st'>"Example title"</span>,
-            primaryButtonProps <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>text <span class='op'>=</span> <span class='st'>"Try it"</span><span class='op'>)</span>,
-            secondaryButtonProps <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>text <span class='op'>=</span> <span class='st'>"Try it again"</span><span class='op'>)</span>,
-            <span class='st'>"Welcome to the land of coachmarks!"</span>
-          <span class='op'>)</span>
-        <span class='op'>)</span>
-      <span class='op'>}</span><span class='op'>)</span>
-    <span class='op'>}</span>
-  <span class='op'>)</span>
-<span class='op'>}</span>
-</div></pre>
+    <pre class="examples"><span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://appsilon.github.io/shiny.fluent'>shiny.fluent</a></span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span class='r-in'>  <span class='fu'>shinyApp</span><span class='op'>(</span></span>
+<span class='r-in'>    ui <span class='op'>=</span> <span class='fu'>tagList</span><span class='op'>(</span></span>
+<span class='r-in'>      <span class='fu'>uiOutput</span><span class='op'>(</span><span class='st'>"coachmark"</span><span class='op'>)</span>,</span>
+<span class='r-in'>      <span class='fu'><a href='ActionButton.html'>DefaultButton.shinyInput</a></span><span class='op'>(</span><span class='st'>"toggleCoachmark"</span>,</span>
+<span class='r-in'>        id <span class='op'>=</span> <span class='st'>"target"</span>, text <span class='op'>=</span> <span class='st'>"Toggle coachmark"</span></span>
+<span class='r-in'>      <span class='op'>)</span></span>
+<span class='r-in'>    <span class='op'>)</span>,</span>
+<span class='r-in'>    server <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span class='r-in'>      <span class='va'>coachmarkVisible</span> <span class='op'>&lt;-</span> <span class='fu'>reactiveVal</span><span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span></span>
+<span class='r-in'>      <span class='fu'>observeEvent</span><span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>toggleCoachmark</span>, <span class='fu'>coachmarkVisible</span><span class='op'>(</span><span class='op'>!</span><span class='fu'>coachmarkVisible</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-in'>      <span class='fu'>observeEvent</span><span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>hideCoachmark</span>, <span class='fu'>coachmarkVisible</span><span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-in'>      <span class='va'>output</span><span class='op'>$</span><span class='va'>coachmark</span> <span class='op'>&lt;-</span> <span class='fu'>renderUI</span><span class='op'>(</span><span class='op'>{</span></span>
+<span class='r-in'>        <span class='kw'>if</span> <span class='op'>(</span><span class='fu'>coachmarkVisible</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='fu'>Coachmark</span><span class='op'>(</span></span>
+<span class='r-in'>          target <span class='op'>=</span> <span class='st'>"#target"</span>,</span>
+<span class='r-in'>          <span class='fu'><a href='TeachingBubble.html'>TeachingBubbleContent</a></span><span class='op'>(</span></span>
+<span class='r-in'>            hasCloseButton <span class='op'>=</span> <span class='cn'>TRUE</span>,</span>
+<span class='r-in'>            onDismiss <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/triggerEvent.html'>triggerEvent</a></span><span class='op'>(</span><span class='st'>"hideCoachmark"</span><span class='op'>)</span>,</span>
+<span class='r-in'>            headline <span class='op'>=</span> <span class='st'>"Example title"</span>,</span>
+<span class='r-in'>            primaryButtonProps <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>text <span class='op'>=</span> <span class='st'>"Try it"</span><span class='op'>)</span>,</span>
+<span class='r-in'>            secondaryButtonProps <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>text <span class='op'>=</span> <span class='st'>"Try it again"</span><span class='op'>)</span>,</span>
+<span class='r-in'>            <span class='st'>"Welcome to the land of coachmarks!"</span></span>
+<span class='r-in'>          <span class='op'>)</span></span>
+<span class='r-in'>        <span class='op'>)</span></span>
+<span class='r-in'>      <span class='op'>}</span><span class='op'>)</span></span>
+<span class='r-in'>    <span class='op'>}</span></span>
+<span class='r-in'>  <span class='op'>)</span></span>
+<span class='r-in'><span class='op'>}</span></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

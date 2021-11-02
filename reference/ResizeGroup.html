@@ -220,45 +220,45 @@ you need to work using the original docs to achieve the desired result.</p>
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://appsilon.github.io/shiny.fluent'>shiny.fluent</a></span><span class='op'>)</span>
-
-<span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
-  <span class='va'>data</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
-    items <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
-      <span class='st'>"many"</span>, <span class='st'>"strings"</span>, <span class='st'>"with"</span>, <span class='st'>"varying"</span>, <span class='st'>"length"</span>, <span class='st'>"sometimes"</span>, <span class='st'>"very"</span>, <span class='st'>"short"</span>,
-      <span class='st'>"other"</span>, <span class='st'>"times"</span>, <span class='st'>"extraordinarily"</span>, <span class='st'>"long"</span>
-    <span class='op'>)</span>
-  <span class='op'>)</span>
-  <span class='va'>onRenderData</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/JS.html'>JS</a></span><span class='op'>(</span><span class='st'>"data =&gt;
-    data.items.map(item =&gt;
-      jsmodule['react'].createElement('div',
-        {
-          style: {
-            display: 'inline-block',
-            backgroundColor: 'orange',
-            padding: '10px',
-            margin: '10px',
-            fontSize: '20px',
-          }
-        },
-        item
-      )
-    )
-  "</span><span class='op'>)</span>
-  <span class='va'>onReduceData</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/JS.html'>JS</a></span><span class='op'>(</span><span class='st'>"data =&gt; ({ items: data.items.slice(0, -1) })"</span><span class='op'>)</span>
-  <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/shinyApp.html'>shinyApp</a></span><span class='op'>(</span>
-    ui <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span><span class='op'>(</span>
-      <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>p</a></span><span class='op'>(</span><span class='st'>"Resize the browser to see how the elements are hidden when they do not fit:"</span><span class='op'>)</span>,
-      <span class='fu'>ResizeGroup</span><span class='op'>(</span>
-        data <span class='op'>=</span> <span class='va'>data</span>,
-        onRenderData <span class='op'>=</span> <span class='va'>onRenderData</span>,
-        onReduceData <span class='op'>=</span> <span class='va'>onReduceData</span>
-      <span class='op'>)</span>
-    <span class='op'>)</span>,
-    server <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span><span class='op'>)</span> <span class='op'>{</span><span class='op'>}</span>
-  <span class='op'>)</span>
-<span class='op'>}</span>
-</div></pre>
+    <pre class="examples"><span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://appsilon.github.io/shiny.fluent'>shiny.fluent</a></span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span class='r-in'>  <span class='va'>data</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span></span>
+<span class='r-in'>    items <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span></span>
+<span class='r-in'>      <span class='st'>"many"</span>, <span class='st'>"strings"</span>, <span class='st'>"with"</span>, <span class='st'>"varying"</span>, <span class='st'>"length"</span>, <span class='st'>"sometimes"</span>, <span class='st'>"very"</span>, <span class='st'>"short"</span>,</span>
+<span class='r-in'>      <span class='st'>"other"</span>, <span class='st'>"times"</span>, <span class='st'>"extraordinarily"</span>, <span class='st'>"long"</span></span>
+<span class='r-in'>    <span class='op'>)</span></span>
+<span class='r-in'>  <span class='op'>)</span></span>
+<span class='r-in'>  <span class='va'>onRenderData</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/JS.html'>JS</a></span><span class='op'>(</span><span class='st'>"data =&gt;</span>
+<span class='r-in'>    data.items.map(item =&gt;</span>
+<span class='r-in'>      jsmodule['react'].createElement('div',</span>
+<span class='r-in'>        {</span>
+<span class='r-in'>          style: {</span>
+<span class='r-in'>            display: 'inline-block',</span>
+<span class='r-in'>            backgroundColor: 'orange',</span>
+<span class='r-in'>            padding: '10px',</span>
+<span class='r-in'>            margin: '10px',</span>
+<span class='r-in'>            fontSize: '20px',</span>
+<span class='r-in'>          }</span>
+<span class='r-in'>        },</span>
+<span class='r-in'>        item</span>
+<span class='r-in'>      )</span>
+<span class='r-in'>    )</span>
+<span class='r-in'>  "</span><span class='op'>)</span></span>
+<span class='r-in'>  <span class='va'>onReduceData</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny.react/man/JS.html'>JS</a></span><span class='op'>(</span><span class='st'>"data =&gt; ({ items: data.items.slice(0, -1) })"</span><span class='op'>)</span></span>
+<span class='r-in'>  <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/shinyApp.html'>shinyApp</a></span><span class='op'>(</span></span>
+<span class='r-in'>    ui <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span><span class='op'>(</span></span>
+<span class='r-in'>      <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>p</a></span><span class='op'>(</span><span class='st'>"Resize the browser to see how the elements are hidden when they do not fit:"</span><span class='op'>)</span>,</span>
+<span class='r-in'>      <span class='fu'>ResizeGroup</span><span class='op'>(</span></span>
+<span class='r-in'>        data <span class='op'>=</span> <span class='va'>data</span>,</span>
+<span class='r-in'>        onRenderData <span class='op'>=</span> <span class='va'>onRenderData</span>,</span>
+<span class='r-in'>        onReduceData <span class='op'>=</span> <span class='va'>onReduceData</span></span>
+<span class='r-in'>      <span class='op'>)</span></span>
+<span class='r-in'>    <span class='op'>)</span>,</span>
+<span class='r-in'>    server <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span><span class='op'>)</span> <span class='op'>{</span><span class='op'>}</span></span>
+<span class='r-in'>  <span class='op'>)</span></span>
+<span class='r-in'><span class='op'>}</span></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
