@@ -306,6 +306,10 @@ Shimmer <- component("Shimmer")
 #' @export
 ShimmerElementsGroup <- component("ShimmerElementsGroup")
 
+#' @rdname Shimmer
+#' @export
+ShimmeredDetailsList <- component("ShimmeredDetailsList")
+
 #' @rdname Slider
 #' @export
 Slider <- component("Slider")

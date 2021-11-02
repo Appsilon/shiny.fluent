@@ -3,11 +3,14 @@
 \name{Shimmer}
 \alias{Shimmer}
 \alias{ShimmerElementsGroup}
+\alias{ShimmeredDetailsList}
 \title{Shimmer}
 \usage{
 Shimmer(...)
 
 ShimmerElementsGroup(...)
+
+ShimmeredDetailsList(...)
 }
 \arguments{
 \item{backgroundColor}{\code{string} \cr Defines the background color of the space in between and around shimmer elements.}
