@@ -1,3 +1,6 @@
+<a href = "https://appsilon.com/careers/" target="_blank"><img src="http://d2v95fjda94ghc.cloudfront.net/hiring.png" alt="We are hiring!"/></a>
+
+
 <img src="man/figures/shiny-fluent.png" align="right" alt="" width="130" />
 
 # shiny.fluent
@@ -64,3 +67,13 @@ We recommend the following for starters:
 
 There are also usage examples for individual components.
 Use `shiny.fluent::runExample()` to list all available examples.
+
+Appsilon
+--------
+
+<img src="https://avatars0.githubusercontent.com/u/6096772" align="right" alt="" width="6%" />
+
+Appsilon is the **Full Service Certified RStudio Partner**. Learn more
+at [appsilon.com](https://appsilon.com).
+
+Get in touch [support+opensource@appsilon.com](support+opensource@appsilon.com)
