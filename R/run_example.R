@@ -1,3 +1,5 @@
+resolve <- shiny:::resolve
+
 #' Run example shiny.fluent apps.
 #'
 #' Based on shiny::runExample, and takes the same arguments.
@@ -19,7 +21,7 @@ runExample <- function(
   display.mode = c("auto", "normal", "showcase") # nolint
 ) {
   examplesDir <- system.file("examples", package = "shiny.fluent", mustWork = TRUE)
-  appPath <- shiny:::resolve(examplesDir, example) # TODO: avoid :::
+  appPath <- resolve(examplesDir, example)
   if (is.null(appPath)) {
     examplesListMessage <- paste0(
       'Available examples: "',
