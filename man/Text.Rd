@@ -7,6 +7,8 @@
 Text(...)
 }
 \arguments{
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below}
+
 \item{as}{\verb{React.ElementType<React.HTMLAttributes<HTMLElement>>} \cr Optionally render the component as another component type or primitive.}
 
 \item{block}{\code{boolean} \cr Whether the text is displayed as a block element.

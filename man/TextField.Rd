@@ -23,6 +23,8 @@ updateTextField.shinyInput(
 )
 }
 \arguments{
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below}
+
 \item{value}{\code{string} \cr Current value of the text field. Only provide this if the text field is a controlled component where you are maintaining its current state; otherwise, use the \code{defaultValue} property.}
 
 \item{ariaLabel}{\code{string} \cr Aria label for the text field.}

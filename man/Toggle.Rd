@@ -18,6 +18,14 @@ updateToggle.shinyInput(
 )
 }
 \arguments{
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below}
+
+\item{inputId}{Id of the component}
+
+\item{value}{Value}
+
+\item{session}{Session}
+
 \item{ariaLabel}{\code{string} \cr Text for screen-reader to announce as the name of the toggle.}
 
 \item{as}{\verb{IComponentAs<React.HTMLAttributes<HTMLElement>>} \cr Render the root element as another type.}

@@ -8,6 +8,8 @@
 TooltipHost(...)
 }
 \arguments{
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below}
+
 \item{className}{\code{string} \cr Class name to apply to the \emph{tooltip itself}, not the host. To apply a class to the host, use \code{hostClassName} or \code{styles.root}.}
 
 \item{closeDelay}{\code{number} \cr Number of milliseconds to delay closing the tooltip, so that the user has time to hover over the tooltip and interact with it. Hovering over the tooltip will count as hovering over the host, so that the tooltip will stay open if the user is actively interacting with it.}

@@ -70,6 +70,14 @@ input <- function(name, defaultValue) {
   )
 }
 
+#' Input docs template
+#' @name inputDoc
+#' @param inputId Id of the component
+#' @param value Value 
+#' @param session Session
+#' @param ... Props to be passed
+NULL
+
 #' @rdname Calendar
 #' @export
 Calendar.shinyInput <- input("Calendar", NULL)
@@ -183,6 +191,7 @@ TextField.shinyInput <- input("TextField", "")
 updateTextField.shinyInput <- shiny.react::updateReactInput
 
 #' @rdname Toggle
+#' @inheritParams inputDoc
 #' @export
 Toggle.shinyInput <- input("Toggle", FALSE)
 

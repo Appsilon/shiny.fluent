@@ -6,6 +6,11 @@ component <- function(name) {
   )
 }
 
+#' Ellipsis documentation template
+#' @name doc
+#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below
+NULL
+
 #' @rdname Button
 #' @export
 ActionButton <- component("ActionButton")
@@ -223,6 +228,7 @@ List <- component("List")
 MarqueeSelection <- component("MarqueeSelection")
 
 #' @rdname TextField
+#' @inheritParams doc
 #' @export
 MaskedTextField <- component("MaskedTextField")
 
@@ -351,6 +357,7 @@ TeachingBubble <- component("TeachingBubble")
 TeachingBubbleContent <- component("TeachingBubbleContent")
 
 #' @rdname Text
+#' @inheritParams doc
 #' @export
 Text <- component("Text")
 
@@ -367,10 +374,12 @@ TextField <- component("TextField")
 ThemeProvider <- component("ThemeProvider")
 
 #' @rdname Toggle
+#' @inheritParams doc
 #' @export
 Toggle <- component("Toggle")
 
 #' @rdname Tooltip
+#' @inheritParams doc
 #' @export
 TooltipHost <- component("TooltipHost")
 
