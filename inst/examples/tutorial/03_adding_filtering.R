@@ -31,6 +31,7 @@ server <- function(input, output, session) {
       is_closed > 0
     )
   })
+}
 # ----
   output$analysis <- renderUI({
     items_list <- if(nrow(filtered_deals()) > 0){
