@@ -26,6 +26,8 @@
 </script>
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
@@ -38,18 +40,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">shiny.fluent</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.1</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="../articles/shiny-fluent.html">Get started</a>
 </li>
@@ -86,7 +82,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/appsilon/shiny.fluent/">
+  <a href="https://github.com/appsilon/shiny.fluent/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -107,26 +103,26 @@
       <h1 data-toc-skip>Topic guide: React in Shiny</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/appsilon/shiny.fluent/blob/master/vignettes/topic_react-in-shiny.Rmd"><code>vignettes/topic_react-in-shiny.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/appsilon/shiny.fluent/blob/HEAD/vignettes/topic_react-in-shiny.Rmd" class="external-link"><code>vignettes/topic_react-in-shiny.Rmd</code></a></small>
       <div class="hidden name"><code>topic_react-in-shiny.Rmd</code></div>
 
     </div>
 
     
     
-<p>With shiny.fluent we strived to build an interface for Microsoft’s Fluent UI which would be straightforward and natural to use in Shiny. However <a href="https://reactjs.org/">React</a>, the underlying JavaScript technology, works in a vastly different manner, so the abstractions aren’t perfect. Here are a few things you need to know in order to effectively work with shiny.fluent.</p>
-<div id="fluent-inputs" class="section level3">
-<h3 class="hasAnchor">
-<a href="#fluent-inputs" class="anchor"></a>Fluent inputs</h3>
+<p>With shiny.fluent we strived to build an interface for Microsoft’s Fluent UI which would be straightforward and natural to use in Shiny. However <a href="https://reactjs.org/" class="external-link">React</a>, the underlying JavaScript technology, works in a vastly different manner, so the abstractions aren’t perfect. Here are a few things you need to know in order to effectively work with shiny.fluent.</p>
+<div class="section level3">
+<h3 id="fluent-inputs">Fluent inputs<a class="anchor" aria-label="anchor" href="#fluent-inputs"></a>
+</h3>
 <p>Shiny has a notion of “inputs”, which does not exist in React. Still, you can connect React components to Shiny using appropriate arguments - in particular event handlers and default values. For example, you can use <code>Checkbox</code> in the following way:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html">shinyApp</a></span><span class="op">(</span>
-  ui <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/tagList.html">tagList</a></span><span class="op">(</span>
-    <span class="fu"><a href="../reference/Checkbox.html">Checkbox</a></span><span class="op">(</span>onChange <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny.react/man/setInput.html">setInput</a></span><span class="op">(</span><span class="st">"checkbox"</span>, <span class="fl">2</span><span class="op">)</span>, defaultChecked <span class="op">=</span> <span class="cn">TRUE</span>, label <span class="op">=</span> <span class="st">"Checkbox"</span><span class="op">)</span>,
-    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/textOutput.html">textOutput</a></span><span class="op">(</span><span class="st">"value"</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span>
+  ui <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/tagList.html" class="external-link">tagList</a></span><span class="op">(</span>
+    <span class="fu"><a href="../reference/Checkbox.html">Checkbox</a></span><span class="op">(</span>onChange <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny.react/man/setInput.html" class="external-link">setInput</a></span><span class="op">(</span><span class="st">"checkbox"</span>, <span class="fl">2</span><span class="op">)</span>, defaultChecked <span class="op">=</span> <span class="cn">TRUE</span>, label <span class="op">=</span> <span class="st">"Checkbox"</span><span class="op">)</span>,
+    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/textOutput.html" class="external-link">textOutput</a></span><span class="op">(</span><span class="st">"value"</span><span class="op">)</span>
   <span class="op">)</span>,
   server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span>
-    <span class="va">output</span><span class="op">$</span><span class="va">value</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/renderPrint.html">renderText</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/deparse.html">deparse</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">checkbox</span><span class="op">)</span><span class="op">)</span>
+    <span class="va">output</span><span class="op">$</span><span class="va">value</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/renderPrint.html" class="external-link">renderText</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/deparse.html" class="external-link">deparse</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">checkbox</span><span class="op">)</span><span class="op">)</span>
   <span class="op">}</span>
 <span class="op">)</span></code></pre></div>
 <p>With <code>setInput("checkbox", 2)</code> we create a JavaScript function which takes its second argument and sends it to Shiny as <code>input$checkbox</code>. The same effect could be achieved with <code>JS("(e, value) =&gt; Shiny.setInputValue('checkbox', value)")</code>.</p>
@@ -139,19 +135,19 @@
 <li>sends its initial value to Shiny when it is first rendered.</li>
 </ul>
 </div>
-<div id="dynamic-rendering" class="section level3">
-<h3 class="hasAnchor">
-<a href="#dynamic-rendering" class="anchor"></a>Dynamic rendering</h3>
-<p>When you need to dynamically render UI, most of the time you can just go with <code>uiOutput</code> and <code>renderUI</code>. However in some cases you might want to use the analogous <code><a href="https://rdrr.io/pkg/shiny.react/man/reactOutput.html">?reactOutput</a></code> and <code><a href="https://rdrr.io/pkg/shiny.react/man/renderReact.html">?renderReact</a></code>, which preserve the state of components on rerenders. To understand what that means, consider the following example:</p>
+<div class="section level3">
+<h3 id="dynamic-rendering">Dynamic rendering<a class="anchor" aria-label="anchor" href="#dynamic-rendering"></a>
+</h3>
+<p>When you need to dynamically render UI, most of the time you can just go with <code>uiOutput</code> and <code>renderUI</code>. However in some cases you might want to use the analogous <code><a href="https://rdrr.io/pkg/shiny.react/man/reactOutput.html" class="external-link">?reactOutput</a></code> and <code><a href="https://rdrr.io/pkg/shiny.react/man/renderReact.html" class="external-link">?renderReact</a></code>, which preserve the state of components on rerenders. To understand what that means, consider the following example:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html">shinyApp</a></span><span class="op">(</span>
-  ui <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html">div</a></span><span class="op">(</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span>
+  ui <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span>
     <span class="fu"><a href="../reference/Checkbox.html">Checkbox.shinyInput</a></span><span class="op">(</span><span class="st">"disabled"</span>, label <span class="op">=</span> <span class="st">"Disable"</span><span class="op">)</span>,
-    <span class="fu"><a href="https://rdrr.io/pkg/shiny.react/man/reactOutput.html">reactOutput</a></span><span class="op">(</span><span class="st">"ui"</span><span class="op">)</span>
+    <span class="fu"><a href="https://rdrr.io/pkg/shiny.react/man/reactOutput.html" class="external-link">reactOutput</a></span><span class="op">(</span><span class="st">"ui"</span><span class="op">)</span>
   <span class="op">)</span>,
   server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span>
-    <span class="va">output</span><span class="op">$</span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny.react/man/renderReact.html">renderReact</a></span><span class="op">(</span><span class="op">{</span>
-      <span class="fu"><a href="../reference/MaskedTextField.html">TextField.shinyInput</a></span><span class="op">(</span><span class="st">"text"</span>, label <span class="op">=</span> <span class="st">"TextField"</span>, disabled <span class="op">=</span> <span class="va">input</span><span class="op">$</span><span class="va">disabled</span><span class="op">)</span>
+    <span class="va">output</span><span class="op">$</span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny.react/man/renderReact.html" class="external-link">renderReact</a></span><span class="op">(</span><span class="op">{</span>
+      <span class="fu"><a href="../reference/TextField.html">TextField.shinyInput</a></span><span class="op">(</span><span class="st">"text"</span>, label <span class="op">=</span> <span class="st">"TextField"</span>, disabled <span class="op">=</span> <span class="va">input</span><span class="op">$</span><span class="va">disabled</span><span class="op">)</span>
     <span class="op">}</span><span class="op">)</span>
   <span class="op">}</span>
 <span class="op">)</span></code></pre></div>
@@ -169,11 +165,13 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Marek Rogala, Kamil Zyla.</p>
+  <p></p>
+<p>Developed by Marek Rogala, Kamil Zyla.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
 </div>
 
       </footer>
@@ -181,6 +179,8 @@
 
   
 
+
+  
 
   </body>
 </html>
