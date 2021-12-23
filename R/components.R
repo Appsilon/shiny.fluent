@@ -362,6 +362,7 @@ TextField <- component("TextField")
 #' @export
 TextField <- component("TextField")
 
+#' @rdname Theme
 #' @export
 ThemeProvider <- component("ThemeProvider")
 
