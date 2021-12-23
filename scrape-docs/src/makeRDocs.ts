@@ -45,26 +45,12 @@ function objectToArray(keyName: string, valueName = undefined, valueMap = (x) =>
   );
 }
 
-function replaceFromMap(docs: string, replaceMap: { regex: RegExp; replacement: string; }[]) {
-  let replacedDocs = docs;
-  for (const el of replaceMap) {
-    replacedDocs = replacedDocs.replace(el.regex, el.replacement);
-  }
-  return replacedDocs;
-}
-
-function makeDocs(
-  scrapedDocsPath: string,
-  docsTemplatePath: string,
-  docsPath: string,
-  replaceMap: { regex: RegExp; replacement: string; }[],
-) {
+function makeDocs(scrapedDocsPath: string, docsTemplatePath: string, docsPath: string) {
   const docs = JSON.parse(fs.readFileSync(scrapedDocsPath));
   const view = prepareView(docs);
   const template = fs.readFileSync(docsTemplatePath, 'utf-8');
-  const rendered = Mustache.render(template, view);
-  const replaced = replaceFromMap(rendered, replaceMap);
-  fs.writeFileSync(docsPath, replaced, 'utf-8');
+  const rendered = Mustache.render(template, view).replace(/\s+$/gm, "");
+  fs.writeFileSync(docsPath, rendered, 'utf-8');
 }
 
 export default makeDocs;
