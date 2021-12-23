@@ -33,7 +33,6 @@
 #' @md
 #' @name ActivityItem
 NULL
-
 #' Announced
 #'
 #' @description
@@ -64,7 +63,6 @@ NULL
 #' @md
 #' @name Announced
 NULL
-
 #' Breadcrumb
 #'
 #' @description
@@ -98,7 +96,6 @@ NULL
 #' @md
 #' @name Breadcrumb
 NULL
-
 #' Button
 #'
 #' @description
@@ -179,7 +176,6 @@ NULL
 #' @md
 #' @name Button
 NULL
-
 #' Calendar
 #'
 #' @description
@@ -234,7 +230,6 @@ NULL
 #' @md
 #' @name Calendar
 NULL
-
 #' Callout
 #'
 #' @description
@@ -308,7 +303,6 @@ NULL
 #' @md
 #' @name Callout
 NULL
-
 #' Checkbox
 #'
 #' @description
@@ -357,7 +351,6 @@ NULL
 #' @md
 #' @name Checkbox
 NULL
-
 #' ChoiceGroup
 #'
 #' @description
@@ -405,7 +398,6 @@ NULL
 #' @md
 #' @name ChoiceGroup
 NULL
-
 #' Coachmark
 #'
 #' @description
@@ -485,7 +477,6 @@ NULL
 #' @md
 #' @name Coachmark
 NULL
-
 #' ColorPicker
 #'
 #' @description
@@ -541,7 +532,6 @@ NULL
 #' @md
 #' @name ColorPicker
 NULL
-
 #' ComboBox
 #'
 #' @description
@@ -601,7 +591,6 @@ NULL
 #' @md
 #' @name ComboBox
 NULL
-
 #' CommandBar
 #'
 #' @description
@@ -660,7 +649,6 @@ NULL
 #' @md
 #' @name CommandBar
 NULL
-
 #' ContextualMenu
 #'
 #' @description
@@ -743,7 +731,6 @@ NULL
 #' @md
 #' @name ContextualMenu
 NULL
-
 #' DatePicker
 #'
 #' @description
@@ -806,7 +793,6 @@ NULL
 #' @md
 #' @name DatePicker
 NULL
-
 #' DetailsList
 #'
 #' @description
@@ -1050,7 +1036,6 @@ NULL
 #' @md
 #' @name DetailsList
 NULL
-
 #' Dialog
 #'
 #' @description
@@ -1160,7 +1145,6 @@ NULL
 #' @md
 #' @name Dialog
 NULL
-
 #' DocumentCard
 #'
 #' @description
@@ -1254,7 +1238,6 @@ NULL
 #' @md
 #' @name DocumentCard
 NULL
-
 #' Dropdown
 #'
 #' @description
@@ -1302,7 +1285,6 @@ NULL
 #' @md
 #' @name Dropdown
 NULL
-
 #' ExtendedPeoplePicker
 #'
 #' @description
@@ -1317,7 +1299,6 @@ NULL
 #' @md
 #' @name ExtendedPeoplePicker
 NULL
-
 #' Facepile
 #'
 #' @description
@@ -1359,7 +1340,6 @@ NULL
 #' @md
 #' @name Facepile
 NULL
-
 #' FloatingPeoplePicker
 #'
 #' @description
@@ -1374,7 +1354,6 @@ NULL
 #' @md
 #' @name FloatingPeoplePicker
 NULL
-
 #' FocusTrapZone
 #'
 #' @description
@@ -1402,7 +1381,6 @@ NULL
 #' @md
 #' @name FocusTrapZone
 NULL
-
 #' FocusZone
 #'
 #' @description
@@ -1452,7 +1430,6 @@ NULL
 #' @md
 #' @name FocusZone
 NULL
-
 #' GroupedList
 #'
 #' @description
@@ -1570,7 +1547,6 @@ NULL
 #' @md
 #' @name GroupedList
 NULL
-
 #' HoverCard
 #'
 #' @description
@@ -1621,7 +1597,6 @@ NULL
 #' @md
 #' @name HoverCard
 NULL
-
 #' Icon
 #'
 #' @description
@@ -1651,7 +1626,6 @@ NULL
 #' @md
 #' @name Icon
 NULL
-
 #' Image
 #'
 #' @description
@@ -1676,7 +1650,6 @@ NULL
 #' @md
 #' @name Image
 NULL
-
 #' Keytips
 #'
 #' @description
@@ -1712,7 +1685,6 @@ NULL
 #' @md
 #' @name Keytips
 NULL
-
 #' Label
 #'
 #' @description
@@ -1745,7 +1717,6 @@ NULL
 #' @md
 #' @name Label
 NULL
-
 #' Layer
 #'
 #' @description
@@ -1774,7 +1745,6 @@ NULL
 #' @md
 #' @name Layer
 NULL
-
 #' Link
 #'
 #' @description
@@ -1807,7 +1777,6 @@ NULL
 #' @md
 #' @name Link
 NULL
-
 #' List
 #'
 #' @description
@@ -1906,7 +1875,6 @@ NULL
 #' @md
 #' @name List
 NULL
-
 #' MarqueeSelection
 #'
 #' @description
@@ -1938,7 +1906,6 @@ NULL
 #' @md
 #' @name MarqueeSelection
 NULL
-
 #' MessageBar
 #'
 #' @description
@@ -1997,7 +1964,6 @@ NULL
 #' @md
 #' @name MessageBar
 NULL
-
 #' Modal
 #'
 #' @description
@@ -2046,7 +2012,6 @@ NULL
 #' @md
 #' @name Modal
 NULL
-
 #' Nav
 #'
 #' @description
@@ -2078,7 +2043,6 @@ NULL
 #' @md
 #' @name Nav
 NULL
-
 #' OverflowSet
 #'
 #' @description
@@ -2113,7 +2077,6 @@ NULL
 #' @md
 #' @name OverflowSet
 NULL
-
 #' Overlay
 #'
 #' @description
@@ -2135,7 +2098,6 @@ NULL
 #' @md
 #' @name Overlay
 NULL
-
 #' Panel
 #'
 #' @description
@@ -2224,7 +2186,6 @@ NULL
 #' @md
 #' @name Panel
 NULL
-
 #' PeoplePicker
 #'
 #' @description
@@ -2252,7 +2213,6 @@ NULL
 #' @md
 #' @name PeoplePicker
 NULL
-
 #' Persona
 #'
 #' @description
@@ -2322,7 +2282,6 @@ NULL
 #' @md
 #' @name Persona
 NULL
-
 #' Pickers
 #'
 #' @description
@@ -2428,7 +2387,6 @@ NULL
 #' @md
 #' @name Pickers
 NULL
-
 #' Pivot
 #'
 #' @description
@@ -2482,7 +2440,6 @@ NULL
 #' @md
 #' @name Pivot
 NULL
-
 #' Popup
 #'
 #' @description
@@ -2505,7 +2462,6 @@ NULL
 #' @md
 #' @name Popup
 NULL
-
 #' ProgressIndicator
 #'
 #' @description
@@ -2513,9 +2469,9 @@ NULL
 #'
 #' ProgressIndicators feature a bar showing total units to completion, and total units finished. The description of the operation appears above the bar, and the status in text appears below. The description should tell someone exactly what the operation is doing. Examples of formatting include:
 #'
-#' - `**[Object]** is being **[operation name]**`, or
-#' - `**[Object]** is being **[operation name]** to **[destination name]**` or
-#' - `**[Object]** is being **[operation name]** from **[source name]** to **[destination name]**`
+#' - **[Object]** is being **[operation name]**, or
+#' - **[Object]** is being **[operation name]** to **[destination name]** or
+#' - **[Object]** is being **[operation name]** from **[source name]** to **[destination name]**
 #'
 #' Status text is generally in units elapsed and total units. If the operation can be canceled, an “X” icon is used and should be placed in the upper right, aligned with the baseline of the operation name. When an error occurs, replace the status text with the error description using ms-fontColor-redDark.
 #'
@@ -2541,7 +2497,6 @@ NULL
 #' @md
 #' @name ProgressIndicator
 NULL
-
 #' Rating
 #'
 #' @description
@@ -2582,7 +2537,6 @@ NULL
 #' @md
 #' @name Rating
 NULL
-
 #' ResizeGroup
 #'
 #' @description
@@ -2613,7 +2567,6 @@ NULL
 #' @md
 #' @name ResizeGroup
 NULL
-
 #' ScrollablePane
 #'
 #' @description
@@ -2641,7 +2594,6 @@ NULL
 #' @md
 #' @name ScrollablePane
 NULL
-
 #' SearchBox
 #'
 #' @description
@@ -2687,7 +2639,6 @@ NULL
 #' @md
 #' @name SearchBox
 NULL
-
 #' SelectedPeopleList
 #'
 #' @description
@@ -2718,7 +2669,6 @@ NULL
 #' @md
 #' @name SelectedPeopleList
 NULL
-
 #' Separator
 #'
 #' @description
@@ -2741,7 +2691,6 @@ NULL
 #' @md
 #' @name Separator
 NULL
-
 #' Shimmer
 #'
 #' @description
@@ -2793,7 +2742,6 @@ NULL
 #' @md
 #' @name Shimmer
 NULL
-
 #' Slider
 #'
 #' @description
@@ -2841,7 +2789,6 @@ NULL
 #' @md
 #' @name Slider
 NULL
-
 #' SpinButton
 #'
 #' @description
@@ -2915,7 +2862,6 @@ NULL
 #' @md
 #' @name SpinButton
 NULL
-
 #' Spinner
 #'
 #' @description
@@ -2940,7 +2886,6 @@ NULL
 #' @md
 #' @name Spinner
 NULL
-
 #' Stack
 #'
 #' @description
@@ -2999,7 +2944,6 @@ NULL
 #' @md
 #' @name Stack
 NULL
-
 #' SwatchColorPicker
 #'
 #' @description
@@ -3075,7 +3019,6 @@ NULL
 #' @md
 #' @name SwatchColorPicker
 NULL
-
 #' TeachingBubble
 #'
 #' @description
@@ -3140,7 +3083,6 @@ NULL
 #' @md
 #' @name TeachingBubble
 NULL
-
 #' Text
 #'
 #' @description
@@ -3167,7 +3109,6 @@ NULL
 #' @md
 #' @name Text
 NULL
-
 #' TextField
 #'
 #' @description
@@ -3181,7 +3122,7 @@ NULL
 #' ### Layout
 #'
 #' - Use a multiline text field when long entries are expected.
-#' - Don't place a text field in the middle of a sentence, because the sentence structure might not make sense in all languages. For example, `"Remind me in [textfield] weeks"` should instead read, `"Remind me in this many weeks: [textfield]"`.
+#' - Don't place a text field in the middle of a sentence, because the sentence structure might not make sense in all languages. For example, "Remind me in [textfield] weeks" should instead read, "Remind me in this many weeks: [textfield]".
 #' - Format the text field for the expected entry. For example, when someone needs to enter a phone number, use an input mask to indicate that three sets of digits should be entered.
 #'
 #' ### Content
@@ -3204,9 +3145,9 @@ NULL
 #' @param iconProps `IIconProps` \cr Props for an optional icon, displayed in the far right end of the text field.
 #' @param inputClassName `string` \cr Optional class name that is added specifically to the input/textarea element.
 #' @param label `string` \cr Label displayed above the text field (and read by screen readers).
-#' @param mask `string` \cr Only used by MaskedTextField: The masking string that defines the mask's behavior. A backslash will escape any character. Special format characters are: '9': `[0-9]` 'a': `[a-zA-Z]` '*': `[a-zA-Z0-9]`
+#' @param mask `string` \cr Only used by MaskedTextField: The masking string that defines the mask's behavior. A backslash will escape any character. Special format characters are: '9': [0-9] 'a': [a-zA-Z] '*': [a-zA-Z0-9]
 #' @param maskChar `string` \cr Only used by MaskedTextField: The character to show in place of unfilled characters of the mask.
-#' @param maskFormat `{ [key: string]: RegExp; }` \cr Only used by MaskedTextField: An object defining the format characters and corresponding regexp values. Default format characters: `\{ '9': /[0-9]/, 'a': /[a-zA-Z]/, '*': /[a-zA-Z0-9]/ \}`
+#' @param maskFormat `{ [key: string]: RegExp; }` \cr Only used by MaskedTextField: An object defining the format characters and corresponding regexp values. Default format characters: \{ '9': /[0-9]/, 'a': /[a-zA-Z]/, '*': /[a-zA-Z0-9]/ \}
 #' @param multiline `boolean` \cr Whether or not the text field is a multiline text field.
 #' @param onChange `(event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, newValue?: string) => void` \cr Callback for when the input value changes. This is called on both `input` and `change` events. (In a later version, this will probably only be called for the `change` event.)
 #' @param onGetErrorMessage `(value: string) => string | JSX.Element | PromiseLike<string | JSX.Element> | undefined` \cr Function used to determine whether the input value is valid and get an error message if not. Mutually exclusive with the static string `errorMessage` (it will take precedence over this).
@@ -3238,7 +3179,6 @@ NULL
 #' @md
 #' @name TextField
 NULL
-
 #' Toggle
 #'
 #' @description
@@ -3280,7 +3220,6 @@ NULL
 #' @md
 #' @name Toggle
 NULL
-
 #' Tooltip
 #'
 #' @description
@@ -3350,7 +3289,6 @@ NULL
 #' @md
 #' @name Tooltip
 NULL
-
 #' Divider
 #'
 #' @description
@@ -3372,7 +3310,6 @@ NULL
 #' @md
 #' @name Divider
 NULL
-
 #' ExtendedPicker
 #'
 #' @description
@@ -3387,7 +3324,6 @@ NULL
 #' @md
 #' @name ExtendedPicker
 NULL
-
 #' Keytip
 #'
 #' @description
@@ -3408,7 +3344,6 @@ NULL
 #' @md
 #' @name Keytip
 NULL
-
 #' Theme
 #'
 #' @description
@@ -3423,7 +3358,6 @@ NULL
 #' @md
 #' @name Theme
 NULL
-
 #' SelectedItemsList
 #'
 #' @description
@@ -3438,7 +3372,6 @@ NULL
 #' @md
 #' @name SelectedItemsList
 NULL
-
 #' pickers
 #'
 #' @description
@@ -3456,5 +3389,5 @@ NULL
 #'
 #'
 #' @md
-#' @name Pickers
+#' @name pickers
 NULL

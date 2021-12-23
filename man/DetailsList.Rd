@@ -275,7 +275,7 @@ By default, the List used within DetailsList will use the \code{body} element as
 To determine if the List within DetailsList should re-render its contents, the component performs a referential equality check within its \code{shouldComponentUpdate} method. This is done to minimize the performance overhead associated with re-rendering the virtualized List pages, as recommended by the \href{https://reactjs.org/docs/optimizing-performance.html#the-power-of-not-mutating-data}{React documentation}.
 
 As a result of this implementation, the inner List will not determine it should re-render if the array values are mutated.
-To avoid this problem, we recommend re-creating the items array backing the DetailsList by using a method such as \code{Array.prototype.concat} or ES6 spread syntax shown below:\if{html}{\out{<div class="tsx">}}\preformatted{public appendItems(): void \{
+To avoid this problem, we recommend re-creating the items array backing the DetailsList by using a method such as \code{Array.prototype.concat} or ES6 spread syntax shown below:\if{html}{\out{<div class="sourceCode tsx">}}\preformatted{public appendItems(): void \{
   const \{ items \} = this.state;
 
   this.setState(\{
