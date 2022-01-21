@@ -45,16 +45,26 @@ function objectToArray(keyName: string, valueName = undefined, valueMap = (x) =>
   );
 }
 
-function makeDocs(scrapedDocsPath: string, docsTemplatePath: string, docsPath: string) {
+function replaceFromMap(docs: string, replaceMap: { regex: RegExp; replacement: string; }[]) {
+  let replacedDocs = docs;
+  for (const el of replaceMap) {
+    replacedDocs = replacedDocs.replace(el.regex, el.replacement);
+  }
+  return replacedDocs;
+}
+
+function makeDocs(
+  scrapedDocsPath: string,
+  docsTemplatePath: string,
+  docsPath: string,
+  replaceMap: { regex: RegExp; replacement: string; }[],
+) {
   const docs = JSON.parse(fs.readFileSync(scrapedDocsPath));
   const view = prepareView(docs);
   const template = fs.readFileSync(docsTemplatePath, 'utf-8');
-  const rendered = Mustache.render(template, view)
-    // Remove trailing whitespaces resulting from scraped docs
-    .replace(/\s+$/gm, '')
-    // Add a whitespace between documentation entries, each ends with "NULL"
-    .replace(/NULL/gm, 'NULL\n');
-  fs.writeFileSync(docsPath, rendered, 'utf-8');
+  const rendered = Mustache.render(template, view);
+  const replaced = replaceFromMap(rendered, replaceMap);
+  fs.writeFileSync(docsPath, replaced, 'utf-8');
 }
 
 export default makeDocs;
