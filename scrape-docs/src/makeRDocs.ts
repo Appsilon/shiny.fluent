@@ -49,7 +49,11 @@ function makeDocs(scrapedDocsPath: string, docsTemplatePath: string, docsPath: s
   const docs = JSON.parse(fs.readFileSync(scrapedDocsPath));
   const view = prepareView(docs);
   const template = fs.readFileSync(docsTemplatePath, 'utf-8');
-  const rendered = Mustache.render(template, view).replace(/\s+$/gm, "");
+  const rendered = Mustache.render(template, view)
+    // Remove trailing whitespaces resulting from scraped docs
+    .replace(/\s+$/gm, '')
+    // Add a whitespace between documentation entries, each ends with "NULL"
+    .replace(/NULL/gm, 'NULL\n');
   fs.writeFileSync(docsPath, rendered, 'utf-8');
 }
 

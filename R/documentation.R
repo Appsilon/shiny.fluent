@@ -33,6 +33,7 @@
 #' @md
 #' @name ActivityItem
 NULL
+
 #' Announced
 #'
 #' @description
@@ -63,6 +64,7 @@ NULL
 #' @md
 #' @name Announced
 NULL
+
 #' Breadcrumb
 #'
 #' @description
@@ -96,6 +98,7 @@ NULL
 #' @md
 #' @name Breadcrumb
 NULL
+
 #' Button
 #'
 #' @description
@@ -176,6 +179,7 @@ NULL
 #' @md
 #' @name Button
 NULL
+
 #' Calendar
 #'
 #' @description
@@ -230,6 +234,7 @@ NULL
 #' @md
 #' @name Calendar
 NULL
+
 #' Callout
 #'
 #' @description
@@ -303,6 +308,7 @@ NULL
 #' @md
 #' @name Callout
 NULL
+
 #' Checkbox
 #'
 #' @description
@@ -351,6 +357,7 @@ NULL
 #' @md
 #' @name Checkbox
 NULL
+
 #' ChoiceGroup
 #'
 #' @description
@@ -398,6 +405,7 @@ NULL
 #' @md
 #' @name ChoiceGroup
 NULL
+
 #' Coachmark
 #'
 #' @description
@@ -477,6 +485,7 @@ NULL
 #' @md
 #' @name Coachmark
 NULL
+
 #' ColorPicker
 #'
 #' @description
@@ -532,6 +541,7 @@ NULL
 #' @md
 #' @name ColorPicker
 NULL
+
 #' ComboBox
 #'
 #' @description
@@ -591,6 +601,7 @@ NULL
 #' @md
 #' @name ComboBox
 NULL
+
 #' CommandBar
 #'
 #' @description
@@ -649,6 +660,7 @@ NULL
 #' @md
 #' @name CommandBar
 NULL
+
 #' ContextualMenu
 #'
 #' @description
@@ -731,6 +743,7 @@ NULL
 #' @md
 #' @name ContextualMenu
 NULL
+
 #' DatePicker
 #'
 #' @description
@@ -793,6 +806,7 @@ NULL
 #' @md
 #' @name DatePicker
 NULL
+
 #' DetailsList
 #'
 #' @description
@@ -1036,6 +1050,7 @@ NULL
 #' @md
 #' @name DetailsList
 NULL
+
 #' Dialog
 #'
 #' @description
@@ -1145,6 +1160,7 @@ NULL
 #' @md
 #' @name Dialog
 NULL
+
 #' DocumentCard
 #'
 #' @description
@@ -1238,6 +1254,7 @@ NULL
 #' @md
 #' @name DocumentCard
 NULL
+
 #' Dropdown
 #'
 #' @description
@@ -1285,6 +1302,7 @@ NULL
 #' @md
 #' @name Dropdown
 NULL
+
 #' ExtendedPeoplePicker
 #'
 #' @description
@@ -1299,6 +1317,7 @@ NULL
 #' @md
 #' @name ExtendedPeoplePicker
 NULL
+
 #' Facepile
 #'
 #' @description
@@ -1340,6 +1359,7 @@ NULL
 #' @md
 #' @name Facepile
 NULL
+
 #' FloatingPeoplePicker
 #'
 #' @description
@@ -1354,6 +1374,7 @@ NULL
 #' @md
 #' @name FloatingPeoplePicker
 NULL
+
 #' FocusTrapZone
 #'
 #' @description
@@ -1381,6 +1402,7 @@ NULL
 #' @md
 #' @name FocusTrapZone
 NULL
+
 #' FocusZone
 #'
 #' @description
@@ -1430,6 +1452,7 @@ NULL
 #' @md
 #' @name FocusZone
 NULL
+
 #' GroupedList
 #'
 #' @description
@@ -1547,6 +1570,7 @@ NULL
 #' @md
 #' @name GroupedList
 NULL
+
 #' HoverCard
 #'
 #' @description
@@ -1597,6 +1621,7 @@ NULL
 #' @md
 #' @name HoverCard
 NULL
+
 #' Icon
 #'
 #' @description
@@ -1626,6 +1651,7 @@ NULL
 #' @md
 #' @name Icon
 NULL
+
 #' Image
 #'
 #' @description
@@ -1650,6 +1676,7 @@ NULL
 #' @md
 #' @name Image
 NULL
+
 #' Keytips
 #'
 #' @description
@@ -1685,6 +1712,7 @@ NULL
 #' @md
 #' @name Keytips
 NULL
+
 #' Label
 #'
 #' @description
@@ -1717,6 +1745,7 @@ NULL
 #' @md
 #' @name Label
 NULL
+
 #' Layer
 #'
 #' @description
@@ -1745,6 +1774,7 @@ NULL
 #' @md
 #' @name Layer
 NULL
+
 #' Link
 #'
 #' @description
@@ -1777,6 +1807,7 @@ NULL
 #' @md
 #' @name Link
 NULL
+
 #' List
 #'
 #' @description
@@ -1875,6 +1906,7 @@ NULL
 #' @md
 #' @name List
 NULL
+
 #' MarqueeSelection
 #'
 #' @description
@@ -1906,6 +1938,7 @@ NULL
 #' @md
 #' @name MarqueeSelection
 NULL
+
 #' MessageBar
 #'
 #' @description
@@ -1964,6 +1997,7 @@ NULL
 #' @md
 #' @name MessageBar
 NULL
+
 #' Modal
 #'
 #' @description
@@ -2012,6 +2046,7 @@ NULL
 #' @md
 #' @name Modal
 NULL
+
 #' Nav
 #'
 #' @description
@@ -2043,6 +2078,7 @@ NULL
 #' @md
 #' @name Nav
 NULL
+
 #' OverflowSet
 #'
 #' @description
@@ -2077,6 +2113,7 @@ NULL
 #' @md
 #' @name OverflowSet
 NULL
+
 #' Overlay
 #'
 #' @description
@@ -2098,6 +2135,7 @@ NULL
 #' @md
 #' @name Overlay
 NULL
+
 #' Panel
 #'
 #' @description
@@ -2186,6 +2224,7 @@ NULL
 #' @md
 #' @name Panel
 NULL
+
 #' PeoplePicker
 #'
 #' @description
@@ -2213,6 +2252,7 @@ NULL
 #' @md
 #' @name PeoplePicker
 NULL
+
 #' Persona
 #'
 #' @description
@@ -2282,6 +2322,7 @@ NULL
 #' @md
 #' @name Persona
 NULL
+
 #' Pickers
 #'
 #' @description
@@ -2387,6 +2428,7 @@ NULL
 #' @md
 #' @name Pickers
 NULL
+
 #' Pivot
 #'
 #' @description
@@ -2440,6 +2482,7 @@ NULL
 #' @md
 #' @name Pivot
 NULL
+
 #' Popup
 #'
 #' @description
@@ -2462,6 +2505,7 @@ NULL
 #' @md
 #' @name Popup
 NULL
+
 #' ProgressIndicator
 #'
 #' @description
@@ -2497,6 +2541,7 @@ NULL
 #' @md
 #' @name ProgressIndicator
 NULL
+
 #' Rating
 #'
 #' @description
@@ -2537,6 +2582,7 @@ NULL
 #' @md
 #' @name Rating
 NULL
+
 #' ResizeGroup
 #'
 #' @description
@@ -2567,6 +2613,7 @@ NULL
 #' @md
 #' @name ResizeGroup
 NULL
+
 #' ScrollablePane
 #'
 #' @description
@@ -2594,6 +2641,7 @@ NULL
 #' @md
 #' @name ScrollablePane
 NULL
+
 #' SearchBox
 #'
 #' @description
@@ -2639,6 +2687,7 @@ NULL
 #' @md
 #' @name SearchBox
 NULL
+
 #' SelectedPeopleList
 #'
 #' @description
@@ -2669,6 +2718,7 @@ NULL
 #' @md
 #' @name SelectedPeopleList
 NULL
+
 #' Separator
 #'
 #' @description
@@ -2691,6 +2741,7 @@ NULL
 #' @md
 #' @name Separator
 NULL
+
 #' Shimmer
 #'
 #' @description
@@ -2742,6 +2793,7 @@ NULL
 #' @md
 #' @name Shimmer
 NULL
+
 #' Slider
 #'
 #' @description
@@ -2789,6 +2841,7 @@ NULL
 #' @md
 #' @name Slider
 NULL
+
 #' SpinButton
 #'
 #' @description
@@ -2862,6 +2915,7 @@ NULL
 #' @md
 #' @name SpinButton
 NULL
+
 #' Spinner
 #'
 #' @description
@@ -2886,6 +2940,7 @@ NULL
 #' @md
 #' @name Spinner
 NULL
+
 #' Stack
 #'
 #' @description
@@ -2944,6 +2999,7 @@ NULL
 #' @md
 #' @name Stack
 NULL
+
 #' SwatchColorPicker
 #'
 #' @description
@@ -3019,6 +3075,7 @@ NULL
 #' @md
 #' @name SwatchColorPicker
 NULL
+
 #' TeachingBubble
 #'
 #' @description
@@ -3083,6 +3140,7 @@ NULL
 #' @md
 #' @name TeachingBubble
 NULL
+
 #' Text
 #'
 #' @description
@@ -3109,6 +3167,7 @@ NULL
 #' @md
 #' @name Text
 NULL
+
 #' TextField
 #'
 #' @description
@@ -3179,6 +3238,7 @@ NULL
 #' @md
 #' @name TextField
 NULL
+
 #' Toggle
 #'
 #' @description
@@ -3220,6 +3280,7 @@ NULL
 #' @md
 #' @name Toggle
 NULL
+
 #' Tooltip
 #'
 #' @description
@@ -3289,6 +3350,7 @@ NULL
 #' @md
 #' @name Tooltip
 NULL
+
 #' Divider
 #'
 #' @description
@@ -3310,6 +3372,7 @@ NULL
 #' @md
 #' @name Divider
 NULL
+
 #' ExtendedPicker
 #'
 #' @description
@@ -3324,6 +3387,7 @@ NULL
 #' @md
 #' @name ExtendedPicker
 NULL
+
 #' Keytip
 #'
 #' @description
@@ -3344,6 +3408,7 @@ NULL
 #' @md
 #' @name Keytip
 NULL
+
 #' Theme
 #'
 #' @description
@@ -3358,6 +3423,7 @@ NULL
 #' @md
 #' @name Theme
 NULL
+
 #' SelectedItemsList
 #'
 #' @description
@@ -3372,6 +3438,7 @@ NULL
 #' @md
 #' @name SelectedItemsList
 NULL
+
 #' pickers
 #'
 #' @description
