@@ -114,9 +114,9 @@
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></code></pre></div>
 <p>This is Part 2 of shiny.fluent tutorial.</p>
 <p>In <a href="../articles/shiny-fluent.html">Part 1</a> we built a pretty functional app, but honestly, it doesn’t look particularly great. Let’s now build a good looking dashboard UI for that app. It will have a top command bar with a title, a sidebar with navigation, and multiple pages handled by router.</p>
-<div class="section level1">
-<h1 id="prerequisites">Prerequisites<a class="anchor" aria-label="anchor" href="#prerequisites"></a>
-</h1>
+<div class="section level2">
+<h2 id="prerequisites">Prerequisites<a class="anchor" aria-label="anchor" href="#prerequisites"></a>
+</h2>
 <p>We are starting with the <a href="https://appsilon.github.io/shiny.fluent/articles/shiny-fluent.html" class="external-link">code Part 1 ends with</a>.</p>
 <p>Let’s start by changing the beginning of our file to load all libraries that we will use in this example. Make sure to install the ones you don’t have yet installed (if any).</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
@@ -130,9 +130,9 @@
 <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">shiny.router</span><span class="op">)</span></code></pre></div>
 </div>
-<div class="section level1">
-<h1 id="single-page-layout">Single page layout<a class="anchor" aria-label="anchor" href="#single-page-layout"></a>
-</h1>
+<div class="section level2">
+<h2 id="single-page-layout">Single page layout<a class="anchor" aria-label="anchor" href="#single-page-layout"></a>
+</h2>
 <p>As a next step, let’s add a title and subtitle to our current app. We’ll create a helper function and call it <code>makePage</code>, so that it is easy to add more pages in the same fashion.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">makePage</span> <span class="op">&lt;-</span> <span class="kw">function</span> <span class="op">(</span><span class="va">title</span>, <span class="va">subtitle</span>, <span class="va">contents</span><span class="op">)</span> <span class="op">{</span>
@@ -167,9 +167,9 @@
 <span class="op">)</span></code></pre></div>
 <p><img src="images/tutorial-part2-step1.png" width="682"></p>
 </div>
-<div class="section level1">
-<h1 id="dashboard-layout">Dashboard Layout<a class="anchor" aria-label="anchor" href="#dashboard-layout"></a>
-</h1>
+<div class="section level2">
+<h2 id="dashboard-layout">Dashboard Layout<a class="anchor" aria-label="anchor" href="#dashboard-layout"></a>
+</h2>
 <p>It’s time to create a place for our header, navigation sidebar and footer. We’ll use CSS grid for that. It’s a modern, flexible and staightforward way to achieve such a layout.</p>
 <p>We start by creating divs for each of the areas, with placeholder texts that we will later replace.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
@@ -249,13 +249,13 @@
   <span class="op">)</span><span class="op">)</span></code></pre></div>
 <p><img src="images/tutorial-part2-step2.png" width="913"></p>
 </div>
-<div class="section level1">
-<h1 id="filling-all-the-areas">Filling all the areas<a class="anchor" aria-label="anchor" href="#filling-all-the-areas"></a>
-</h1>
-<p>Great! Now it’s time to fill those areas with something. We can start with the header.</p>
 <div class="section level2">
-<h2 id="header">Header<a class="anchor" aria-label="anchor" href="#header"></a>
+<h2 id="filling-all-the-areas">Filling all the areas<a class="anchor" aria-label="anchor" href="#filling-all-the-areas"></a>
 </h2>
+<p>Great! Now it’s time to fill those areas with something. We can start with the header.</p>
+<div class="section level3">
+<h3 id="header">Header<a class="anchor" aria-label="anchor" href="#header"></a>
+</h3>
 <p>Let’s replace the previous header definition with:</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">header</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/tagList.html" class="external-link">tagList</a></span><span class="op">(</span>
@@ -290,9 +290,9 @@
 <span id="cb10-11"><a href="#cb10-11"></a>  <span class="kw">height</span>: <span class="dv">44</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb10-12"><a href="#cb10-12"></a>}</span></code></pre></div>
 </div>
-<div class="section level2">
-<h2 id="navigation-in-the-sidebar">Navigation in the sidebar<a class="anchor" aria-label="anchor" href="#navigation-in-the-sidebar"></a>
-</h2>
+<div class="section level3">
+<h3 id="navigation-in-the-sidebar">Navigation in the sidebar<a class="anchor" aria-label="anchor" href="#navigation-in-the-sidebar"></a>
+</h3>
 <p><code>Nav</code> is a very powerful component from Fluent UI. It has very rich configuration options, but we will use it to show just a couple of links:</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">navigation</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/Nav.html">Nav</a></span><span class="op">(</span>
@@ -315,9 +315,9 @@
   <span class="op">)</span>
 <span class="op">)</span></code></pre></div>
 </div>
-<div class="section level2">
-<h2 id="footer">Footer<a class="anchor" aria-label="anchor" href="#footer"></a>
-</h2>
+<div class="section level3">
+<h3 id="footer">Footer<a class="anchor" aria-label="anchor" href="#footer"></a>
+</h3>
 <p>Footer is relatively straightforward - we can put anything we want there. Here we use <code>Text</code> for typography (setting uniform font styling). We also use <code>Stack</code> to arrange elements horizontally and with bigger gaps.</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">footer</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/Stack.html">Stack</a></span><span class="op">(</span>
@@ -349,12 +349,12 @@
 <p><img src="images/tutorial-part2-step3.png" width="928"></p>
 </div>
 </div>
-<div class="section level1">
-<h1 id="additional-pages">Additional pages<a class="anchor" aria-label="anchor" href="#additional-pages"></a>
-</h1>
 <div class="section level2">
-<h2 id="home-page">Home page<a class="anchor" aria-label="anchor" href="#home-page"></a>
+<h2 id="additional-pages">Additional pages<a class="anchor" aria-label="anchor" href="#additional-pages"></a>
 </h2>
+<div class="section level3">
+<h3 id="home-page">Home page<a class="anchor" aria-label="anchor" href="#home-page"></a>
+</h3>
 <p>The one final step is to add additional pages. Let’s make a home page, consisting of two cards with some welcome text.</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">card1</span> <span class="op">&lt;-</span> <span class="fu">makeCard</span><span class="op">(</span>
@@ -379,9 +379,9 @@
 <span class="op">)</span></code></pre></div>
 <p>If we replace <code>analysis_page</code> with <code>home_page</code> in our <code>ui</code>, we can even see this page. However, there’s one problem: we don’t have a way to switch between pages! This is where so-called page routing comes into play.</p>
 </div>
-<div class="section level2">
-<h2 id="adding-shiny-router">Adding shiny.router<a class="anchor" aria-label="anchor" href="#adding-shiny-router"></a>
-</h2>
+<div class="section level3">
+<h3 id="adding-shiny-router">Adding shiny.router<a class="anchor" aria-label="anchor" href="#adding-shiny-router"></a>
+</h3>
 <p>To enable switching between pages we will use the <a href="https://appsilon.github.io/shiny.router/" class="external-link">shiny.router</a> package. This way we will also have shareable URLs to individual pages.</p>
 <p>The first step is to define the available routes:</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
@@ -407,9 +407,9 @@
 <code class="sourceCode R">  <span class="va">router</span><span class="op">$</span><span class="fu">server</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
-<div class="section level1">
-<h1 id="thats-it">That’s it!<a class="anchor" aria-label="anchor" href="#thats-it"></a>
-</h1>
+<div class="section level2">
+<h2 id="thats-it">That’s it!<a class="anchor" aria-label="anchor" href="#thats-it"></a>
+</h2>
 <p>That’s it - we have styled a shiny.fluent app into a solid dashboard layout!</p>
 <p>Here’s the final result:</p>
 <p><img src="images/tutorial-part2-final.gif"><!-- --></p>
@@ -428,12 +428,12 @@
 
       <footer><div class="copyright">
   <p></p>
-<p>Developed by Marek Rogala, Kamil Zyla.</p>
+<p>Developed by Marek Rogala, Kamil Zyla, Developers Appsilon.</p>
 </div>
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
 </div>
 
       </footer>

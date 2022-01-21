@@ -308,12 +308,12 @@ you need to work using the original docs to achieve the desired result.</p>
 <span class="r-in">      "</span><span class="op">)</span><span class="op">)</span>,</span>
 <span class="r-in">      <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/textOutput.html" class="external-link">textOutput</a></span><span class="op">(</span><span class="st">"selectedTags"</span><span class="op">)</span>,</span>
 <span class="r-in">      <span class="fu">TagPicker</span><span class="op">(</span></span>
-<span class="r-in">        onResolveSuggestions <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny.react/man/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"filterSuggestedTags"</span><span class="op">)</span>,</span>
-<span class="r-in">        onEmptyInputFocus <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny.react/man/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"function(tagList) { return testTags.filter(tag =&gt; !listContainsTagList(tag, tagList)); }"</span><span class="op">)</span>,</span>
-<span class="r-in">        getTextFromItem <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny.react/man/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"function(item) { return item.text }"</span><span class="op">)</span>,</span>
+<span class="r-in">        onResolveSuggestions <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"filterSuggestedTags"</span><span class="op">)</span>,</span>
+<span class="r-in">        onEmptyInputFocus <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"function(tagList) { return testTags.filter(tag =&gt; !listContainsTagList(tag, tagList)); }"</span><span class="op">)</span>,</span>
+<span class="r-in">        getTextFromItem <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"function(item) { return item.text }"</span><span class="op">)</span>,</span>
 <span class="r-in">        pickerSuggestionsProps <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>suggestionsHeaderText <span class="op">=</span> <span class="st">'Suggested tags'</span>, noResultsFoundText <span class="op">=</span> <span class="st">'No color tags found'</span><span class="op">)</span>,</span>
 <span class="r-in">        itemLimit <span class="op">=</span> <span class="fl">2</span>,</span>
-<span class="r-in">        onChange <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny.react/man/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"function(selection) { Shiny.setInputValue('selectedTags', JSON.stringify(selection)) }"</span><span class="op">)</span></span>
+<span class="r-in">        onChange <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"function(selection) { Shiny.setInputValue('selectedTags', JSON.stringify(selection)) }"</span><span class="op">)</span></span>
 <span class="r-in">      <span class="op">)</span></span>
 <span class="r-in">    <span class="op">)</span>,</span>
 <span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span>
@@ -337,11 +337,11 @@ you need to work using the original docs to achieve the desired result.</p>
 
 
       <footer><div class="copyright">
-  <p></p><p>Developed by Marek Rogala, Kamil Zyla.</p>
+  <p></p><p>Developed by Marek Rogala, Kamil Zyla, Developers Appsilon.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
 </div>
 
       </footer></div>

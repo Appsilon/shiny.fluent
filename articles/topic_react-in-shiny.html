@@ -118,7 +118,7 @@
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span>
   ui <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/tagList.html" class="external-link">tagList</a></span><span class="op">(</span>
-    <span class="fu"><a href="../reference/Checkbox.html">Checkbox</a></span><span class="op">(</span>onChange <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny.react/man/setInput.html" class="external-link">setInput</a></span><span class="op">(</span><span class="st">"checkbox"</span>, <span class="fl">2</span><span class="op">)</span>, defaultChecked <span class="op">=</span> <span class="cn">TRUE</span>, label <span class="op">=</span> <span class="st">"Checkbox"</span><span class="op">)</span>,
+    <span class="fu"><a href="../reference/Checkbox.html">Checkbox</a></span><span class="op">(</span>onChange <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/setInput.html" class="external-link">setInput</a></span><span class="op">(</span><span class="st">"checkbox"</span>, <span class="fl">2</span><span class="op">)</span>, defaultChecked <span class="op">=</span> <span class="cn">TRUE</span>, label <span class="op">=</span> <span class="st">"Checkbox"</span><span class="op">)</span>,
     <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/textOutput.html" class="external-link">textOutput</a></span><span class="op">(</span><span class="st">"value"</span><span class="op">)</span>
   <span class="op">)</span>,
   server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span>
@@ -138,15 +138,15 @@
 <div class="section level3">
 <h3 id="dynamic-rendering">Dynamic rendering<a class="anchor" aria-label="anchor" href="#dynamic-rendering"></a>
 </h3>
-<p>When you need to dynamically render UI, most of the time you can just go with <code>uiOutput</code> and <code>renderUI</code>. However in some cases you might want to use the analogous <code><a href="https://rdrr.io/pkg/shiny.react/man/reactOutput.html" class="external-link">?reactOutput</a></code> and <code><a href="https://rdrr.io/pkg/shiny.react/man/renderReact.html" class="external-link">?renderReact</a></code>, which preserve the state of components on rerenders. To understand what that means, consider the following example:</p>
+<p>When you need to dynamically render UI, most of the time you can just go with <code>uiOutput</code> and <code>renderUI</code>. However in some cases you might want to use the analogous <code><a href="https://appsilon.github.io/shiny.react/reference/reactOutput.html" class="external-link">?reactOutput</a></code> and <code><a href="https://appsilon.github.io/shiny.react/reference/renderReact.html" class="external-link">?renderReact</a></code>, which preserve the state of components on rerenders. To understand what that means, consider the following example:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span>
   ui <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span>
     <span class="fu"><a href="../reference/Checkbox.html">Checkbox.shinyInput</a></span><span class="op">(</span><span class="st">"disabled"</span>, label <span class="op">=</span> <span class="st">"Disable"</span><span class="op">)</span>,
-    <span class="fu"><a href="https://rdrr.io/pkg/shiny.react/man/reactOutput.html" class="external-link">reactOutput</a></span><span class="op">(</span><span class="st">"ui"</span><span class="op">)</span>
+    <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/reactOutput.html" class="external-link">reactOutput</a></span><span class="op">(</span><span class="st">"ui"</span><span class="op">)</span>
   <span class="op">)</span>,
   server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span>
-    <span class="va">output</span><span class="op">$</span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny.react/man/renderReact.html" class="external-link">renderReact</a></span><span class="op">(</span><span class="op">{</span>
+    <span class="va">output</span><span class="op">$</span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/renderReact.html" class="external-link">renderReact</a></span><span class="op">(</span><span class="op">{</span>
       <span class="fu"><a href="../reference/TextField.html">TextField.shinyInput</a></span><span class="op">(</span><span class="st">"text"</span>, label <span class="op">=</span> <span class="st">"TextField"</span>, disabled <span class="op">=</span> <span class="va">input</span><span class="op">$</span><span class="va">disabled</span><span class="op">)</span>
     <span class="op">}</span><span class="op">)</span>
   <span class="op">}</span>
@@ -166,12 +166,12 @@
 
       <footer><div class="copyright">
   <p></p>
-<p>Developed by Marek Rogala, Kamil Zyla.</p>
+<p>Developed by Marek Rogala, Kamil Zyla, Developers Appsilon.</p>
 </div>
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
 </div>
 
       </footer>

@@ -132,10 +132,10 @@ you need to work using the original docs to achieve the desired result.</p>
 <span class="r-in">    ui <span class="op">=</span> <span class="fu">div</span><span class="op">(</span></span>
 <span class="r-in">      style <span class="op">=</span> <span class="st">"margin-top: 60px; border: 1px solid navy; padding: 10px; background: #eee;"</span>,</span>
 <span class="r-in">      <span class="fu"><a href="Checkbox.html">Checkbox.shinyInput</a></span><span class="op">(</span><span class="st">"useLayer"</span>, value <span class="op">=</span> <span class="cn">FALSE</span>, label <span class="op">=</span> <span class="st">"Display a message in a layer"</span><span class="op">)</span>,</span>
-<span class="r-in">      <span class="fu"><a href="https://rdrr.io/pkg/shiny.react/man/reactOutput.html" class="external-link">reactOutput</a></span><span class="op">(</span><span class="st">"layer"</span><span class="op">)</span></span>
+<span class="r-in">      <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/reactOutput.html" class="external-link">reactOutput</a></span><span class="op">(</span><span class="st">"layer"</span><span class="op">)</span></span>
 <span class="r-in">    <span class="op">)</span>,</span>
 <span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">      <span class="va">output</span><span class="op">$</span><span class="va">layer</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny.react/man/renderReact.html" class="external-link">renderReact</a></span><span class="op">(</span><span class="op">{</span></span>
+<span class="r-in">      <span class="va">output</span><span class="op">$</span><span class="va">layer</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/renderReact.html" class="external-link">renderReact</a></span><span class="op">(</span><span class="op">{</span></span>
 <span class="r-in">        <span class="va">box</span> <span class="op">&lt;-</span> <span class="fu">div</span><span class="op">(</span></span>
 <span class="r-in">          style <span class="op">=</span> <span class="st">"background-color: #60C7FF; margin: 10px; padding: 10px"</span>,</span>
 <span class="r-in">          <span class="st">"Hello!"</span></span>
@@ -167,11 +167,11 @@ you need to work using the original docs to achieve the desired result.</p>
 
 
       <footer><div class="copyright">
-  <p></p><p>Developed by Marek Rogala, Kamil Zyla.</p>
+  <p></p><p>Developed by Marek Rogala, Kamil Zyla, Developers Appsilon.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
 </div>
 
       </footer></div>

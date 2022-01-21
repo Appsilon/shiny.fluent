@@ -113,9 +113,9 @@
 <p>Let’s learn shiny.fluent by building an example app.</p>
 <p>In this tutorial, we’ll build a basic application for analysing sales results data. The app will allow for filtering the data, and viewing it on a plot, on a map and in a table.</p>
 <p>We’ll assume that you have <a href="https://shiny.rstudio.com/" class="external-link">Shiny</a> and <code>shiny.fluent</code> <a href="https://appsilon.github.io/shiny.fluent/#installation" class="external-link">already installed</a>.</p>
-<div class="section level1">
-<h1 id="shiny-fluent-hello-world-app">shiny.fluent “Hello world!” app<a class="anchor" aria-label="anchor" href="#shiny-fluent-hello-world-app"></a>
-</h1>
+<div class="section level2">
+<h2 id="shiny-fluent-hello-world-app">shiny.fluent “Hello world!” app<a class="anchor" aria-label="anchor" href="#shiny-fluent-hello-world-app"></a>
+</h2>
 <p>Let’s start by creating an app that shows “Hello world!”, but does this with Fluent UI. First, we need to load <code>shiny.fluent</code>.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://shiny.rstudio.com/" class="external-link">shiny</a></span><span class="op">)</span>
@@ -133,9 +133,9 @@
 <p><img src="images/tutorial-part1-step1.png" width="143"></p>
 <p>Yay! It may not look very impressive, but this text is rendered in Shiny with the whole power of Fluent UI and <a href="https://reactjs.org" class="external-link">React</a>.</p>
 </div>
-<div class="section level1">
-<h1 id="showing-data-in-a-table">Showing data in a table<a class="anchor" aria-label="anchor" href="#showing-data-in-a-table"></a>
-</h1>
+<div class="section level2">
+<h2 id="showing-data-in-a-table">Showing data in a table<a class="anchor" aria-label="anchor" href="#showing-data-in-a-table"></a>
+</h2>
 <p>Let’s now grab some data and show it to our users in a table. shiny.fluent already includes some example data that we can use.</p>
 <p><code>fluentPeople</code> is a list of imaginary people in a format expected by some Fluent components.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
@@ -225,9 +225,9 @@
 <p>In addition to <code><a href="../reference/DetailsList.html">?DetailsList</a></code> and <code><a href="../reference/Text.html">?Text</a></code>, in the code above we used <code><a href="../reference/Stack.html">?Stack</a></code>, which arranges elements in its area.</p>
 <p><img src="images/tutorial-part1-step2.png" width="911"></p>
 </div>
-<div class="section level1">
-<h1 id="adding-filtering">Adding filtering<a class="anchor" aria-label="anchor" href="#adding-filtering"></a>
-</h1>
+<div class="section level2">
+<h2 id="adding-filtering">Adding filtering<a class="anchor" aria-label="anchor" href="#adding-filtering"></a>
+</h2>
 <p>Okay, that already looks good! But it’s hard to explore these data without some filtering options - let’s add that now. We will start by adding an option to find transactions between selected dates.</p>
 <p>We will use two <code><a href="../reference/DatePicker.html">?DatePicker</a></code> components to allow users to choose a date range. To make the selected dates available in the server function, we have two options:</p>
 <ol style="list-style-type: decimal">
@@ -259,9 +259,9 @@
 <p>This is what our application looks like now:</p>
 <p><img src="images/tutorial-part1-step3.png" width="632"></p>
 </div>
-<div class="section level1">
-<h1 id="more-filters">More filters<a class="anchor" aria-label="anchor" href="#more-filters"></a>
-</h1>
+<div class="section level2">
+<h2 id="more-filters">More filters<a class="anchor" aria-label="anchor" href="#more-filters"></a>
+</h2>
 <p>Let’s add more filtering options to our app! We will use the following components:</p>
 <ul>
 <li>
@@ -296,7 +296,7 @@
   <span class="fu"><a href="../reference/Slider.html">Slider.shinyInput</a></span><span class="op">(</span><span class="st">"slider"</span>,
     value <span class="op">=</span> <span class="fl">0</span>, min <span class="op">=</span> <span class="fl">0</span>, max <span class="op">=</span> <span class="fl">1000000</span>, step <span class="op">=</span> <span class="fl">100000</span>,
     label <span class="op">=</span> <span class="st">"Minimum amount"</span>,
-    valueFormat <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny.react/man/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"function(x) { return '$' + x}"</span><span class="op">)</span>,
+    valueFormat <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"function(x) { return '$' + x}"</span><span class="op">)</span>,
     snapToStep <span class="op">=</span> <span class="cn">TRUE</span>
   <span class="op">)</span>,
   <span class="fu"><a href="../reference/Toggle.html">Toggle.shinyInput</a></span><span class="op">(</span><span class="st">"closedOnly"</span>, value <span class="op">=</span> <span class="cn">TRUE</span>, label <span class="op">=</span> <span class="st">"Include closed deals only?"</span><span class="op">)</span>
@@ -347,9 +347,9 @@
 <p>Our filtering is much more useful now!</p>
 <p><img src="images/tutorial-part1-step4.png" width="634"></p>
 </div>
-<div class="section level1">
-<h1 id="more-outputs">More outputs<a class="anchor" aria-label="anchor" href="#more-outputs"></a>
-</h1>
+<div class="section level2">
+<h2 id="more-outputs">More outputs<a class="anchor" aria-label="anchor" href="#more-outputs"></a>
+</h2>
 <p>We are not limited to shiny.fluent components - we can seamlessly use other libraries in our app! Let’s add a Plotly plot and a Leaflet map. We start by adding a <code>plotlyOutput()</code> to our UI:</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/fluentPage.html">fluentPage</a></span><span class="op">(</span>
@@ -388,9 +388,9 @@
 <p>Look at our dashboard now!</p>
 <p><img src="images/tutorial-part1-step5.png" width="1033"></p>
 </div>
-<div class="section level1">
-<h1 id="the-end-result">The end result<a class="anchor" aria-label="anchor" href="#the-end-result"></a>
-</h1>
+<div class="section level2">
+<h2 id="the-end-result">The end result<a class="anchor" aria-label="anchor" href="#the-end-result"></a>
+</h2>
 <p>In this tutorial we built a simple dashboard for exploring sales representatives data. We learned how to use shiny.fluent inputs and outputs, how to add components from other libraries and how to use Fluent UI capabilities for visually arranging the elements.</p>
 <p><img src="images/tutorial-part1-final.gif"><!-- --></p>
 </div>
@@ -408,12 +408,12 @@
 
       <footer><div class="copyright">
   <p></p>
-<p>Developed by Marek Rogala, Kamil Zyla.</p>
+<p>Developed by Marek Rogala, Kamil Zyla, Developers Appsilon.</p>
 </div>
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
 </div>
 
       </footer>

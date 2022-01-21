@@ -146,9 +146,9 @@ you need to work using the original docs to achieve the desired result.</p>
 <span class="r-in"><span class="va">script</span> <span class="op">&lt;-</span> <span class="va">tags</span><span class="op">$</span><span class="fu">script</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/HTML.html" class="external-link">HTML</a></span><span class="op">(</span><span class="st">[1931 chars quoted with '"']</span><span class="op">)</span><span class="op">)</span></span>
 <span class="r-in"></span>
 <span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="va">MarqueeSelectionExample</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">...</span><span class="op">)</span> <span class="fu">shiny.react</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/shiny.react/man/reactElement.html" class="external-link">reactElement</a></span><span class="op">(</span></span>
+<span class="r-in">  <span class="va">MarqueeSelectionExample</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">...</span><span class="op">)</span> <span class="fu">shiny.react</span><span class="fu">::</span><span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">reactElement</a></span><span class="op">(</span></span>
 <span class="r-in">    module <span class="op">=</span> <span class="st">"exampleApp"</span>, name <span class="op">=</span> <span class="st">"MarqueeSelectionExample"</span>,</span>
-<span class="r-in">    props <span class="op">=</span> <span class="fu">shiny.react</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/shiny.react/man/asProps.html" class="external-link">asProps</a></span><span class="op">(</span><span class="va">...</span><span class="op">)</span>,</span>
+<span class="r-in">    props <span class="op">=</span> <span class="fu">shiny.react</span><span class="fu">::</span><span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/asProps.html" class="external-link">asProps</a></span><span class="op">(</span><span class="va">...</span><span class="op">)</span>,</span>
 <span class="r-in">  <span class="op">)</span></span>
 <span class="r-in"></span>
 <span class="r-in">  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span>
@@ -157,7 +157,7 @@ you need to work using the original docs to achieve the desired result.</p>
 <span class="r-in">      <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
 <span class="r-in">        <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/textOutput.html" class="external-link">textOutput</a></span><span class="op">(</span><span class="st">"marqueeResult"</span><span class="op">)</span>,</span>
 <span class="r-in">        <span class="fu"><a href="Label.html">Label</a></span><span class="op">(</span><span class="st">"Drag a rectangle around the items below to select them"</span><span class="op">)</span>, <span class="co"># Make sure Fluent dependency is loaded.</span></span>
-<span class="r-in">        <span class="fu"><a href="https://rdrr.io/pkg/shiny.react/man/reactOutput.html" class="external-link">reactOutput</a></span><span class="op">(</span><span class="st">"marqueeSelection"</span><span class="op">)</span></span>
+<span class="r-in">        <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/reactOutput.html" class="external-link">reactOutput</a></span><span class="op">(</span><span class="st">"marqueeSelection"</span><span class="op">)</span></span>
 <span class="r-in">      <span class="op">)</span></span>
 <span class="r-in">    <span class="op">)</span>,</span>
 <span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span>
@@ -175,7 +175,7 @@ you need to work using the original docs to achieve the desired result.</p>
 <span class="r-in">        <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"You have selected: "</span>, <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">selectedIndices</span>, collapse <span class="op">=</span> <span class="st">", "</span><span class="op">)</span><span class="op">)</span></span>
 <span class="r-in">      <span class="op">}</span><span class="op">)</span></span>
 <span class="r-in"></span>
-<span class="r-in">      <span class="va">output</span><span class="op">$</span><span class="va">marqueeSelection</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny.react/man/renderReact.html" class="external-link">renderReact</a></span><span class="op">(</span><span class="op">{</span></span>
+<span class="r-in">      <span class="va">output</span><span class="op">$</span><span class="va">marqueeSelection</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/renderReact.html" class="external-link">renderReact</a></span><span class="op">(</span><span class="op">{</span></span>
 <span class="r-in">        <span class="fu">MarqueeSelectionExample</span><span class="op">(</span></span>
 <span class="r-in">          name <span class="op">=</span> <span class="st">"selectedIndices"</span>,</span>
 <span class="r-in">          photos <span class="op">=</span> <span class="va">photos</span></span>
@@ -194,11 +194,11 @@ you need to work using the original docs to achieve the desired result.</p>
 
 
       <footer><div class="copyright">
-  <p></p><p>Developed by Marek Rogala, Kamil Zyla.</p>
+  <p></p><p>Developed by Marek Rogala, Kamil Zyla, Developers Appsilon.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
 </div>
 
       </footer></div>
