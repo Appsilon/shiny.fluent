@@ -1,7 +1,3 @@
-options <- list(
-  list(key = "A", text = "Option A"),
-  list(key = "B", text = "Option B")
-)
 theme <- list(
   palette = list(
     themePrimary = "#8dd400",
