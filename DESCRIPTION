@@ -19,23 +19,26 @@ VignetteBuilder: knitr
 Depends:
   R (>= 2.10)
 Imports:
-  htmltools,
-  rlang,
-  shiny,
-  shiny.react (>= 0.2.2)
+    jsonlite,
+    htmltools,
+    rlang,
+    shiny,
+    shiny.react (>= 0.2.2)
 Suggests:
-  dplyr,
-  ggplot2,
-  glue,
-  jsonlite,
-  knitr,
-  leaflet,
-  plotly,
-  purrr,
-  RColorBrewer,
-  rmarkdown,
-  sass,
-  shiny.router,
-  stringi,
-  tibble,
-  tidyverse
+    dplyr,
+    ggplot2,
+    glue,
+    knitr,
+    leaflet,
+    plotly,
+    purrr,
+    testthat (>= 3.0.0),
+    RColorBrewer,
+    rmarkdown,
+    sass,
+    shiny.router,
+    stringi,
+    tibble,
+    tidyverse,
+    mockery
+Config/testthat/edition: 3
