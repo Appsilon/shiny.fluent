@@ -1,7 +1,7 @@
 describe('ShimmeredDetailsList()', () => {
   const backgroundColor = 'rgb(50, 49, 48)';
   const primaryColor = 'rgb(141, 212, 0)';
-  
+
   before(() => {
     cy.visit('/');
   });
