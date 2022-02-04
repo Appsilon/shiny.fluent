@@ -12,6 +12,8 @@ CommandBarItem(text, icon = NULL, subitems = NULL, ...)
 \item{icon}{optional name of an icon}
 
 \item{subitems}{optional list of CommandBar items}
+
+\item{...}{Additional props to pass to CommandBarItem}
 }
 \description{
 CommandBar expects items definition as a nested structure, which gets lengthy and verbose.

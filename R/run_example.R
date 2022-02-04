@@ -5,6 +5,7 @@ resolve <- shiny:::resolve
 #' Based on shiny::runExample, and takes the same arguments.
 #'
 #' @param example Example to run. `NA` to list the examples.
+#' @param port The TCP port that the application should listen on
 #' @param launch.browser Whether to open the app in a browser
 #' @param host The IPv4 address to listen on.
 #' @param display.mode Display mode for the app.
