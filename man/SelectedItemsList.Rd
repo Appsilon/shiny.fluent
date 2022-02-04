@@ -3,8 +3,15 @@
 \name{SelectedItemsList}
 \alias{SelectedItemsList}
 \title{SelectedItemsList}
+\arguments{
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
+}
 \description{
 For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/SelectedItemsList}{docs}.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
+}
+\details{
+\itemize{
+}
 }

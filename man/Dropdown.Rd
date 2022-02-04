@@ -18,43 +18,13 @@ updateDropdown.shinyInput(
 )
 }
 \arguments{
-\item{defaultSelectedKeys}{\code{string[] | number[]} \cr Keys that will be initially used to set selected items. This prop is only used when \code{multiSelect} is true (use \code{defaultSelectedKey} for single select). Mutually exclusive with \code{selectedKeys}.}
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
 
-\item{dropdownWidth}{\code{number} \cr Custom width for dropdown. If value is 0, width of the input field is used.}
+\item{inputId}{Id of the component}
 
-\item{isDisabled}{\code{boolean} \cr Deprecated at v0.52.0, use \code{disabled} instead.}
+\item{value}{Value}
 
-\item{keytipProps}{\code{IKeytipProps} \cr Optional keytip for this dropdown}
-
-\item{multiSelectDelimiter}{\code{string} \cr When multiple items are selected, this will be used to separate values in the dropdown input.}
-
-\item{notifyOnReselect}{\code{boolean} \cr If true, \code{onChange} will still be called when an already-selected item is clicked again in single select mode. (Normally it would not be called in this case.)}
-
-\item{onChange}{\verb{(event: React.FormEvent<HTMLDivElement>, option?: IDropdownOption, index?: number) => void} \cr Callback for when the selected option changes.}
-
-\item{onChanged}{\verb{(option: IDropdownOption, index?: number) => void} \cr}
-
-\item{onRenderCaretDown}{\verb{IRenderFunction<IDropdownProps>} \cr Custom renderer for chevron icon}
-
-\item{onRenderLabel}{\verb{IRenderFunction<IDropdownProps>} \cr Custom renderer for the label.}
-
-\item{onRenderPlaceholder}{\verb{IRenderFunction<IDropdownProps>} \cr Custom renderer for placeholder text}
-
-\item{onRenderPlaceHolder}{\verb{IRenderFunction<IDropdownProps>} \cr Custom renderer for placeholder text}
-
-\item{onRenderTitle}{\verb{IRenderFunction<IDropdownOption[]>} \cr Custom renderer for selected option displayed in input}
-
-\item{options}{\code{IDropdownOption[]} \cr Options for the dropdown. If using \code{defaultSelectedKey} or \code{defaultSelectedKeys}, options must be pure for correct behavior.}
-
-\item{placeHolder}{\code{string} \cr Input placeholder text. Displayed until an option is selected.}
-
-\item{responsiveMode}{\code{ResponsiveMode} \cr By default, the dropdown will render the standard way for screen sizes \code{large} and above, or in a panel on \code{small} and \code{medium} screens. Manually set this prop to override this behavior.}
-
-\item{selectedKeys}{\code{string[] | number[] | null} \cr Keys of the selected items, only used when \code{multiSelect} is true (use \code{selectedKey} for single select). If you provide this, you must maintain selection state by observing onChange events and passing a new prop value in when changed. Passing null will clear the selection. Mutually exclusive with \code{defaultSelectedKeys}.}
-
-\item{styles}{\verb{IStyleFunctionOrObject<IDropdownStyleProps, IDropdownStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
-
-\item{theme}{\code{ITheme} \cr Theme provided by higher order component.}
+\item{session}{Session}
 }
 \description{
 A dropdown menu is a list in which the selected item is always visible while other items are visible on demand by clicking a dropdown button.
@@ -62,6 +32,29 @@ A dropdown menu is a list in which the selected item is always visible while ot
 For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/Dropdown}{docs}.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
+}
+\details{
+\itemize{
+\item {\bold{ defaultSelectedKeys }} {\code{string[] | number[]} \cr Keys that will be initially used to set selected items. This prop is only used when \code{multiSelect} is true (use \code{defaultSelectedKey} for single select). Mutually exclusive with \code{selectedKeys}.}
+\item {\bold{ dropdownWidth }} {\code{number} \cr Custom width for dropdown. If value is 0, width of the input field is used.}
+\item {\bold{ isDisabled }} {\code{boolean} \cr Deprecated at v0.52.0, use \code{disabled} instead.}
+\item {\bold{ keytipProps }} {\code{IKeytipProps} \cr Optional keytip for this dropdown}
+\item {\bold{ multiSelectDelimiter }} {\code{string} \cr When multiple items are selected, this will be used to separate values in the dropdown input.}
+\item {\bold{ notifyOnReselect }} {\code{boolean} \cr If true, \code{onChange} will still be called when an already-selected item is clicked again in single select mode. (Normally it would not be called in this case.)}
+\item {\bold{ onChange }} {\verb{(event: React.FormEvent<HTMLDivElement>, option?: IDropdownOption, index?: number) => void} \cr Callback for when the selected option changes.}
+\item {\bold{ onChanged }} {\verb{(option: IDropdownOption, index?: number) => void} \cr }
+\item {\bold{ onRenderCaretDown }} {\verb{IRenderFunction<IDropdownProps>} \cr Custom renderer for chevron icon}
+\item {\bold{ onRenderLabel }} {\verb{IRenderFunction<IDropdownProps>} \cr Custom renderer for the label.}
+\item {\bold{ onRenderPlaceholder }} {\verb{IRenderFunction<IDropdownProps>} \cr Custom renderer for placeholder text}
+\item {\bold{ onRenderPlaceHolder }} {\verb{IRenderFunction<IDropdownProps>} \cr Custom renderer for placeholder text}
+\item {\bold{ onRenderTitle }} {\verb{IRenderFunction<IDropdownOption[]>} \cr Custom renderer for selected option displayed in input}
+\item {\bold{ options }} {\code{IDropdownOption[]} \cr Options for the dropdown. If using \code{defaultSelectedKey} or \code{defaultSelectedKeys}, options must be pure for correct behavior.}
+\item {\bold{ placeHolder }} {\code{string} \cr Input placeholder text. Displayed until an option is selected.}
+\item {\bold{ responsiveMode }} {\code{ResponsiveMode} \cr By default, the dropdown will render the standard way for screen sizes \code{large} and above, or in a panel on \code{small} and \code{medium} screens. Manually set this prop to override this behavior.}
+\item {\bold{ selectedKeys }} {\code{string[] | number[] | null} \cr Keys of the selected items, only used when \code{multiSelect} is true (use \code{selectedKey} for single select). If you provide this, you must maintain selection state by observing onChange events and passing a new prop value in when changed. Passing null will clear the selection. Mutually exclusive with \code{defaultSelectedKeys}.}
+\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IDropdownStyleProps, IDropdownStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
+\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by higher order component.}
+}
 }
 \section{Best practices}{
 \subsection{Layout}{

@@ -18,35 +18,13 @@ updateChoiceGroup.shinyInput(
 )
 }
 \arguments{
-\item{focused}{\code{boolean} \cr Indicates if the ChoiceGroupOption should appear focused, visually}
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
 
-\item{name}{\code{string} \cr This value is used to group each ChoiceGroupOption into the same logical ChoiceGroup}
+\item{inputId}{Id of the component}
 
-\item{onBlur}{\verb{(ev: React.FocusEvent<HTMLElement>, props?: IChoiceGroupOption) => void} \cr A callback for receiving a notification when the choice has lost focus.}
+\item{value}{Value}
 
-\item{onFocus}{\verb{(ev?: React.FocusEvent<HTMLElement | HTMLInputElement>, props?: IChoiceGroupOption) => void | undefined} \cr A callback for receiving a notification when the choice has received focus.}
-
-\item{required}{\code{boolean} \cr If true, it specifies that an option must be selected in the ChoiceGroup before submitting the form}
-
-\item{ariaLabelledBy}{\code{string} \cr ID of an element to use as the aria label for this ChoiceGroup.}
-
-\item{componentRef}{\verb{IRefObject<IChoiceGroup>} \cr Optional callback to access the IChoiceGroup interface. Use this instead of ref for accessing the public methods and properties of the component.}
-
-\item{defaultSelectedKey}{\code{string | number} \cr The key of the option that will be initially checked.}
-
-\item{label}{\code{string} \cr Descriptive label for the choice group.}
-
-\item{onChange}{\verb{(ev?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IChoiceGroupOption) => void} \cr A callback for receiving a notification when the choice has been changed.}
-
-\item{onChanged}{\verb{(option: IChoiceGroupOption, evt?: React.FormEvent<HTMLElement | HTMLInputElement>) => void} \cr Deprecated and will be removed by 07/17/2017. Use \code{onChange} instead.}
-
-\item{options}{\code{IChoiceGroupOption[]} \cr The options for the choice group.}
-
-\item{selectedKey}{\code{string | number} \cr The key of the selected option. If you provide this, you must maintain selection state by observing onChange events and passing a new value in when changed.}
-
-\item{styles}{\verb{IStyleFunctionOrObject<IChoiceGroupStyleProps, IChoiceGroupStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
-
-\item{theme}{\code{ITheme} \cr Theme (provided through customization).}
+\item{session}{Session}
 }
 \description{
 Radio buttons (\code{ChoiceGroup}) let people select a single option from two or more choices.
@@ -54,6 +32,28 @@ Radio buttons (\code{ChoiceGroup}) let people select a single option from two
 For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/ChoiceGroup}{docs}.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
+}
+\details{
+\itemize{
+\item {\bold{ componentRef }} {\verb{IRefObject<IChoiceGroupOption>} \cr Optional callback to access the IChoiceGroup interface. Use this instead of ref for accessing the public methods and properties of the component.}
+\item {\bold{ focused }} {\code{boolean} \cr Indicates if the ChoiceGroupOption should appear focused, visually}
+\item {\bold{ name }} {\code{string} \cr This value is used to group each ChoiceGroupOption into the same logical ChoiceGroup}
+\item {\bold{ onBlur }} {\verb{(ev: React.FocusEvent<HTMLElement>, props?: IChoiceGroupOption) => void} \cr A callback for receiving a notification when the choice has lost focus.}
+\item {\bold{ onChange }} {\verb{(evt?: React.FormEvent<HTMLElement | HTMLInputElement>, props?: IChoiceGroupOption) => void} \cr A callback for receiving a notification when the choice has been changed.}
+\item {\bold{ onFocus }} {\verb{(ev?: React.FocusEvent<HTMLElement | HTMLInputElement>, props?: IChoiceGroupOption) => void | undefined} \cr A callback for receiving a notification when the choice has received focus.}
+\item {\bold{ required }} {\code{boolean} \cr If true, it specifies that an option must be selected in the ChoiceGroup before submitting the form}
+\item {\bold{ theme }} {\code{ITheme} \cr Theme (provided through customization.)}
+\item {\bold{ ariaLabelledBy }} {\code{string} \cr ID of an element to use as the aria label for this ChoiceGroup.}
+\item {\bold{ componentRef }} {\verb{IRefObject<IChoiceGroup>} \cr Optional callback to access the IChoiceGroup interface. Use this instead of ref for accessing the public methods and properties of the component.}
+\item {\bold{ defaultSelectedKey }} {\code{string | number} \cr The key of the option that will be initially checked.}
+\item {\bold{ label }} {\code{string} \cr Descriptive label for the choice group.}
+\item {\bold{ onChange }} {\verb{(ev?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IChoiceGroupOption) => void} \cr A callback for receiving a notification when the choice has been changed.}
+\item {\bold{ onChanged }} {\verb{(option: IChoiceGroupOption, evt?: React.FormEvent<HTMLElement | HTMLInputElement>) => void} \cr Deprecated and will be removed by 07/17/2017. Use \code{onChange} instead.}
+\item {\bold{ options }} {\code{IChoiceGroupOption[]} \cr The options for the choice group.}
+\item {\bold{ selectedKey }} {\code{string | number} \cr The key of the selected option. If you provide this, you must maintain selection state by observing onChange events and passing a new value in when changed.}
+\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IChoiceGroupStyleProps, IChoiceGroupStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
+\item {\bold{ theme }} {\code{ITheme} \cr Theme (provided through customization).}
+}
 }
 \section{Best practices}{
 \subsection{Layout}{

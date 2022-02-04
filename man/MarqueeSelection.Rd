@@ -7,23 +7,7 @@
 MarqueeSelection(...)
 }
 \arguments{
-\item{className}{\code{string} \cr Additional CSS class(es) to apply to the MarqueeSelection.}
-
-\item{componentRef}{\verb{IRefObject<IMarqueeSelection>} \cr Optional callback to access the IMarqueeSelection interface. Use this instead of ref for accessing the public methods and properties of the component.}
-
-\item{isDraggingConstrainedToRoot}{\code{boolean} \cr Optional flag to restrict the drag rect to the root element, instead of allowing the drag rect to start outside of the root element boundaries.}
-
-\item{isEnabled}{\code{boolean} \cr Optional flag to control the enabled state of marquee selection. This allows you to render it and have events all ready to go, but conditionally disable it. That way transitioning between enabled/disabled generate no difference in the DOM.}
-
-\item{onShouldStartSelection}{\verb{(ev: MouseEvent) => boolean} \cr Optional callback that is called, when the mouse down event occurs, in order to determine if we should start a marquee selection. If true is returned, we will cancel the mousedown event to prevent upstream mousedown handlers from executing.}
-
-\item{rootProps}{\verb{React.HTMLAttributes<HTMLDivElement>} \cr Optional props to mix into the root DIV element.}
-
-\item{selection}{\code{ISelection} \cr The selection object to interact with when updating selection changes.}
-
-\item{styles}{\verb{IStyleFunction<IMarqueeSelectionStyleProps, IMarqueeSelectionStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
-
-\item{theme}{\code{ITheme} \cr Theme (provided through customization.)}
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
 }
 \description{
 The MarqueeSelection component provides a service which allows the user to drag a rectangle to be drawn around
@@ -39,6 +23,19 @@ previous state until we know definitively if it's on/off. (In other words, this 
 For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/MarqueeSelection}{docs}.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
+}
+\details{
+\itemize{
+\item {\bold{ className }} {\code{string} \cr Additional CSS class(es) to apply to the MarqueeSelection.}
+\item {\bold{ componentRef }} {\verb{IRefObject<IMarqueeSelection>} \cr Optional callback to access the IMarqueeSelection interface. Use this instead of ref for accessing the public methods and properties of the component.}
+\item {\bold{ isDraggingConstrainedToRoot }} {\code{boolean} \cr Optional flag to restrict the drag rect to the root element, instead of allowing the drag rect to start outside of the root element boundaries.}
+\item {\bold{ isEnabled }} {\code{boolean} \cr Optional flag to control the enabled state of marquee selection. This allows you to render it and have events all ready to go, but conditionally disable it. That way transitioning between enabled/disabled generate no difference in the DOM.}
+\item {\bold{ onShouldStartSelection }} {\verb{(ev: MouseEvent) => boolean} \cr Optional callback that is called, when the mouse down event occurs, in order to determine if we should start a marquee selection. If true is returned, we will cancel the mousedown event to prevent upstream mousedown handlers from executing.}
+\item {\bold{ rootProps }} {\verb{React.HTMLAttributes<HTMLDivElement>} \cr Optional props to mix into the root DIV element.}
+\item {\bold{ selection }} {\code{ISelection} \cr The selection object to interact with when updating selection changes.}
+\item {\bold{ styles }} {\verb{IStyleFunction<IMarqueeSelectionStyleProps, IMarqueeSelectionStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
+\item {\bold{ theme }} {\code{ITheme} \cr Theme (provided through customization.)}
+}
 }
 \examples{
 library(shiny)

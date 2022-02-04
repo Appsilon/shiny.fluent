@@ -7,6 +7,7 @@ button <- function(name) {
 }
 
 #' @rdname Button
+#' @inheritParams inputDoc
 #' @export
 ActionButton.shinyInput <- button("ActionButton")
 
@@ -70,15 +71,8 @@ input <- function(name, defaultValue) {
   )
 }
 
-#' Input docs template
-#' @name inputDoc
-#' @param inputId Id of the component
-#' @param value Value 
-#' @param session Session
-#' @param ... Props to be passed
-NULL
-
 #' @rdname Calendar
+#' @inheritParams inputDoc
 #' @export
 Calendar.shinyInput <- input("Calendar", NULL)
 

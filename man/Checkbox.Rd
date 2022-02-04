@@ -9,8 +9,6 @@
 \usage{
 Checkbox(...)
 
-Checkbox(...)
-
 Checkbox.shinyInput(inputId, ..., value = defaultValue)
 
 updateCheckbox.shinyInput(
@@ -20,47 +18,13 @@ updateCheckbox.shinyInput(
 )
 }
 \arguments{
-\item{ariaDescribedBy}{\code{string} \cr ID for element that provides extended information for the checkbox.}
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
 
-\item{ariaLabel}{\code{string} \cr Accessible label for the checkbox.}
+\item{inputId}{Id of the component}
 
-\item{ariaLabelledBy}{\code{string} \cr ID for element that contains label information for the checkbox.}
+\item{value}{Value}
 
-\item{ariaPositionInSet}{\code{number} \cr The position in the parent set (if in a set) for aria-posinset.}
-
-\item{ariaSetSize}{\code{number} \cr The total size of the parent set (if in a set) for aria-setsize.}
-
-\item{boxSide}{\code{'start' | 'end'} \cr Allows you to set the checkbox to be at the before (start) or after (end) the label.}
-
-\item{checked}{\code{boolean} \cr Checked state. Mutually exclusive to "defaultChecked". Use this if you control the checked state at a higher level and plan to pass in the correct value based on handling onChange events and re-rendering.}
-
-\item{checkmarkIconProps}{\code{IIconProps} \cr Custom icon props for the check mark rendered by the checkbox}
-
-\item{className}{\code{string} \cr Additional class name to provide on the root element, in addition to the ms-Checkbox class.}
-
-\item{componentRef}{\verb{IRefObject<ICheckbox>} \cr Optional callback to access the ICheckbox interface. Use this instead of ref for accessing the public methods and properties of the component.}
-
-\item{defaultChecked}{\code{boolean} \cr Default checked state. Mutually exclusive to "checked". Use this if you want an uncontrolled component, and want the Checkbox instance to maintain its own state.}
-
-\item{defaultIndeterminate}{\code{boolean} \cr Optional uncontrolled indeterminate visual state for checkbox. Setting indeterminate state takes visual precedence over checked or defaultChecked props given but does not affect checked state. This is not a toggleable state. On load the checkbox will receive indeterminate visual state and after the user's first click it will be removed exposing the true state of the checkbox.}
-
-\item{disabled}{\code{boolean} \cr Disabled state of the checkbox.}
-
-\item{indeterminate}{\code{boolean} \cr Optional controlled indeterminate visual state for checkbox. Setting indeterminate state takes visual precedence over checked or defaultChecked props given but does not affect checked state. This should not be a toggleable state. On load the checkbox will receive indeterminate visual state and after the first user click it should be removed by your supplied onChange callback function exposing the true state of the checkbox.}
-
-\item{inputProps}{\verb{React.ButtonHTMLAttributes<HTMLElement | HTMLButtonElement>} \cr Optional input props that will be mixed into the input element, \emph{before} other props are applied. This allows you to extend the input element with additional attributes, such as data-automation-id needed for automation. Note that if you provide, for example, "disabled" as well as "inputProps.disabled", the former will take precedence over the later.}
-
-\item{keytipProps}{\code{IKeytipProps} \cr Optional keytip for this checkbox}
-
-\item{label}{\code{string} \cr Label to display next to the checkbox.}
-
-\item{onChange}{\verb{(ev?: React.FormEvent<HTMLElement | HTMLInputElement>, checked?: boolean) => void} \cr Callback that is called when the checked value has changed.}
-
-\item{onRenderLabel}{\verb{IRenderFunction<ICheckboxProps>} \cr Custom render function for the label.}
-
-\item{styles}{\verb{IStyleFunctionOrObject<ICheckboxStyleProps, ICheckboxStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
-
-\item{theme}{\code{ITheme} \cr Theme provided by HOC.}
+\item{session}{Session}
 }
 \description{
 Check boxes (\code{Checkbox}) give people a way to select one or more items from a group, or switch between two mutually exclusive options (checked or unchecked, on or off).
@@ -68,6 +32,31 @@ Check boxes (\code{Checkbox}) give people a way to select one or more items 
 For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/Checkbox}{docs}.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
+}
+\details{
+\itemize{
+\item {\bold{ ariaDescribedBy }} {\code{string} \cr ID for element that provides extended information for the checkbox.}
+\item {\bold{ ariaLabel }} {\code{string} \cr Accessible label for the checkbox.}
+\item {\bold{ ariaLabelledBy }} {\code{string} \cr ID for element that contains label information for the checkbox.}
+\item {\bold{ ariaPositionInSet }} {\code{number} \cr The position in the parent set (if in a set) for aria-posinset.}
+\item {\bold{ ariaSetSize }} {\code{number} \cr The total size of the parent set (if in a set) for aria-setsize.}
+\item {\bold{ boxSide }} {\code{'start' | 'end'} \cr Allows you to set the checkbox to be at the before (start) or after (end) the label.}
+\item {\bold{ checked }} {\code{boolean} \cr Checked state. Mutually exclusive to "defaultChecked". Use this if you control the checked state at a higher level and plan to pass in the correct value based on handling onChange events and re-rendering.}
+\item {\bold{ checkmarkIconProps }} {\code{IIconProps} \cr Custom icon props for the check mark rendered by the checkbox}
+\item {\bold{ className }} {\code{string} \cr Additional class name to provide on the root element, in addition to the ms-Checkbox class.}
+\item {\bold{ componentRef }} {\verb{IRefObject<ICheckbox>} \cr Optional callback to access the ICheckbox interface. Use this instead of ref for accessing the public methods and properties of the component.}
+\item {\bold{ defaultChecked }} {\code{boolean} \cr Default checked state. Mutually exclusive to "checked". Use this if you want an uncontrolled component, and want the Checkbox instance to maintain its own state.}
+\item {\bold{ defaultIndeterminate }} {\code{boolean} \cr Optional uncontrolled indeterminate visual state for checkbox. Setting indeterminate state takes visual precedence over checked or defaultChecked props given but does not affect checked state. This is not a toggleable state. On load the checkbox will receive indeterminate visual state and after the user's first click it will be removed exposing the true state of the checkbox.}
+\item {\bold{ disabled }} {\code{boolean} \cr Disabled state of the checkbox.}
+\item {\bold{ indeterminate }} {\code{boolean} \cr Optional controlled indeterminate visual state for checkbox. Setting indeterminate state takes visual precedence over checked or defaultChecked props given but does not affect checked state. This should not be a toggleable state. On load the checkbox will receive indeterminate visual state and after the first user click it should be removed by your supplied onChange callback function exposing the true state of the checkbox.}
+\item {\bold{ inputProps }} {\verb{React.ButtonHTMLAttributes<HTMLElement | HTMLButtonElement>} \cr Optional input props that will be mixed into the input element, \emph{before} other props are applied. This allows you to extend the input element with additional attributes, such as data-automation-id needed for automation. Note that if you provide, for example, "disabled" as well as "inputProps.disabled", the former will take precedence over the later.}
+\item {\bold{ keytipProps }} {\code{IKeytipProps} \cr Optional keytip for this checkbox}
+\item {\bold{ label }} {\code{string} \cr Label to display next to the checkbox.}
+\item {\bold{ onChange }} {\verb{(ev?: React.FormEvent<HTMLElement | HTMLInputElement>, checked?: boolean) => void} \cr Callback that is called when the checked value has changed.}
+\item {\bold{ onRenderLabel }} {\verb{IRenderFunction<ICheckboxProps>} \cr Custom render function for the label.}
+\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<ICheckboxStyleProps, ICheckboxStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
+\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by HOC.}
+}
 }
 \section{Best practices}{
 \subsection{Layout}{

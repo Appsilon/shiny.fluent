@@ -1,8 +1,11 @@
 {{#pages}}
 #' {{name}}
 #'
+#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
+#'
 #' @description
 #' {{docs.overview}}
+#'
 #'
 {{#link}}
 #' For more details and examples visit the official [docs]({{.}}).
@@ -15,12 +18,26 @@
 #' {{.}}
 {{/docs.bestPractices}}
 #'
+#' @details
+#' 
+#' \itemize{
 {{#props}}
-#' @param {{name}} `{{type}}` \cr {{description}}
+#' \item {\bold{ {{name}} }} {`{{type}}` \cr {{description}}}
 {{/props}}
-#'
+#' }
+#' 
 #' @md
 #' @name {{name}}
 NULL
 
 {{/pages}}
+
+
+#' Input docs template
+#' 
+#' @param inputId Id of the component
+#' @param value Value 
+#' @param session Session
+#' @param ... Props to be passed
+#' @name inputDoc
+NULL

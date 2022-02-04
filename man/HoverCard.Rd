@@ -7,61 +7,7 @@
 HoverCard(...)
 }
 \arguments{
-\item{compactCardHeight}{\code{number} \cr Height of compact card}
-
-\item{expandedCardHeight}{\code{number} \cr Height of expanded card}
-
-\item{mode}{\code{ExpandingCardMode} \cr Use to open the card in expanded format and not wait for the delay}
-
-\item{onRenderCompactCard}{\verb{IRenderFunction<any>} \cr Render function to populate compact content area}
-
-\item{onRenderExpandedCard}{\verb{IRenderFunction<any>} \cr Render function to populate expanded content area}
-
-\item{cardDismissDelay}{\code{number} \cr Length of card dismiss delay. A min number is necessary for pointer to hop between target and card}
-
-\item{cardOpenDelay}{\code{number} \cr Length of compact card delay}
-
-\item{className}{\code{string} \cr Additional CSS class(es) to apply to the HoverCard root element.}
-
-\item{componentRef}{\verb{IRefObject<IHoverCard>} \cr Optional callback to access the IHoverCardHost interface. Use this instead of ref for accessing the public methods and properties of the component.}
-
-\item{eventListenerTarget}{\code{HTMLElement | string | null} \cr This prop is to separate the target to anchor hover card from the target to attach event listener. If set, this prop separates the target to anchor the hover card from the target to attach the event listener. When no \code{eventListenerTarget} given, HoverCard will use \code{target} prop or its root to set event listener.}
-
-\item{expandedCardOpenDelay}{\code{number} \cr Time in ms when expanded card should open after compact card}
-
-\item{expandingCardProps}{\code{IExpandingCardProps} \cr Additional ExpandingCard props to pass through HoverCard like renderers, target. gapSpace etc. Used along with 'type' prop set to HoverCardType.expanding. Reference detail properties in ICardProps and IExpandingCardProps.}
-
-\item{instantOpenOnClick}{\code{boolean} \cr Enables instant open of the full card upon click}
-
-\item{onCardExpand}{\verb{() => void} \cr Callback when visible card is expanded.}
-
-\item{onCardHide}{\verb{() => void} \cr Callback when card hides}
-
-\item{onCardVisible}{\verb{() => void} \cr Callback when card becomes visible}
-
-\item{openHotKey}{\code{KeyCodes} \cr HotKey used for opening the HoverCard when tabbed to target.}
-
-\item{plainCardProps}{\code{IPlainCardProps} \cr Additional PlainCard props to pass through HoverCard like renderers, target, gapSpace etc. Used along with 'type' prop set to HoverCardType.plain. See for more details ICardProps and IPlainCardProps interfaces.}
-
-\item{setAriaDescribedBy}{\code{boolean} \cr Whether or not to mark the container as described by the hover card. If not specified, the caller should mark as element as described by the hover card id.}
-
-\item{setInitialFocus}{\code{boolean} \cr Set to true to set focus on the first focusable element in the card. Works in pair with the 'trapFocus' prop.}
-
-\item{shouldBlockHoverCard}{\verb{() => void} \cr Should block hover card or not}
-
-\item{sticky}{\code{boolean} \cr If true disables Card dismiss upon mouse leave, so that card sticks around.}
-
-\item{styles}{\verb{IStyleFunctionOrObject<IHoverCardStyleProps, IHoverCardStyles>} \cr Custom styles for this component}
-
-\item{target}{\code{HTMLElement | string | null} \cr Optional target element to tag hover card on. If not provided and using HoverCard as a wrapper, don't set the 'data-is-focusable=true' attribute to the root of the wrapped child. If no target is given, HoverCard will use its root as a target and become the focusable element with a focus listener attached to it.}
-
-\item{theme}{\code{ITheme} \cr Theme provided by higher order component.}
-
-\item{trapFocus}{\code{boolean} \cr Set to true if you want to render the content of the HoverCard in a FocusTrapZone for accessibility reasons. Optionally 'setInitialFocus' prop can be set to true to move focus inside the FocusTrapZone.}
-
-\item{type}{\code{HoverCardType} \cr Type of the hover card to render.}
-
-\item{onRenderPlainCard}{\verb{IRenderFunction<any>} \cr Render function to populate compact content area}
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
 }
 \description{
 Hover cards (\code{HoverCard}) show commands and information, such as metadata and activity, when someone hovers over an item.
@@ -73,6 +19,38 @@ Hover cards (\code{HoverCard}) show commands and information, such as metada
 For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/HoverCard}{docs}.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
+}
+\details{
+\itemize{
+\item {\bold{ compactCardHeight }} {\code{number} \cr Height of compact card}
+\item {\bold{ expandedCardHeight }} {\code{number} \cr Height of expanded card}
+\item {\bold{ mode }} {\code{ExpandingCardMode} \cr Use to open the card in expanded format and not wait for the delay}
+\item {\bold{ onRenderCompactCard }} {\verb{IRenderFunction<any>} \cr Render function to populate compact content area}
+\item {\bold{ onRenderExpandedCard }} {\verb{IRenderFunction<any>} \cr Render function to populate expanded content area}
+\item {\bold{ cardDismissDelay }} {\code{number} \cr Length of card dismiss delay. A min number is necessary for pointer to hop between target and card}
+\item {\bold{ cardOpenDelay }} {\code{number} \cr Length of compact card delay}
+\item {\bold{ className }} {\code{string} \cr Additional CSS class(es) to apply to the HoverCard root element.}
+\item {\bold{ componentRef }} {\verb{IRefObject<IHoverCard>} \cr Optional callback to access the IHoverCardHost interface. Use this instead of ref for accessing the public methods and properties of the component.}
+\item {\bold{ eventListenerTarget }} {\code{HTMLElement | string | null} \cr This prop is to separate the target to anchor hover card from the target to attach event listener. If set, this prop separates the target to anchor the hover card from the target to attach the event listener. When no \code{eventListenerTarget} given, HoverCard will use \code{target} prop or its root to set event listener.}
+\item {\bold{ expandedCardOpenDelay }} {\code{number} \cr Time in ms when expanded card should open after compact card}
+\item {\bold{ expandingCardProps }} {\code{IExpandingCardProps} \cr Additional ExpandingCard props to pass through HoverCard like renderers, target. gapSpace etc. Used along with 'type' prop set to HoverCardType.expanding. Reference detail properties in ICardProps and IExpandingCardProps.}
+\item {\bold{ instantOpenOnClick }} {\code{boolean} \cr Enables instant open of the full card upon click}
+\item {\bold{ onCardExpand }} {\verb{() => void} \cr Callback when visible card is expanded.}
+\item {\bold{ onCardHide }} {\verb{() => void} \cr Callback when card hides}
+\item {\bold{ onCardVisible }} {\verb{() => void} \cr Callback when card becomes visible}
+\item {\bold{ openHotKey }} {\code{KeyCodes} \cr HotKey used for opening the HoverCard when tabbed to target.}
+\item {\bold{ plainCardProps }} {\code{IPlainCardProps} \cr Additional PlainCard props to pass through HoverCard like renderers, target, gapSpace etc. Used along with 'type' prop set to HoverCardType.plain. See for more details ICardProps and IPlainCardProps interfaces.}
+\item {\bold{ setAriaDescribedBy }} {\code{boolean} \cr Whether or not to mark the container as described by the hover card. If not specified, the caller should mark as element as described by the hover card id.}
+\item {\bold{ setInitialFocus }} {\code{boolean} \cr Set to true to set focus on the first focusable element in the card. Works in pair with the 'trapFocus' prop.}
+\item {\bold{ shouldBlockHoverCard }} {\verb{() => void} \cr Should block hover card or not}
+\item {\bold{ sticky }} {\code{boolean} \cr If true disables Card dismiss upon mouse leave, so that card sticks around.}
+\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IHoverCardStyleProps, IHoverCardStyles>} \cr Custom styles for this component}
+\item {\bold{ target }} {\code{HTMLElement | string | null} \cr Optional target element to tag hover card on. If not provided and using HoverCard as a wrapper, don't set the 'data-is-focusable=true' attribute to the root of the wrapped child. If no target is given, HoverCard will use its root as a target and become the focusable element with a focus listener attached to it.}
+\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by higher order component.}
+\item {\bold{ trapFocus }} {\code{boolean} \cr Set to true if you want to render the content of the HoverCard in a FocusTrapZone for accessibility reasons. Optionally 'setInitialFocus' prop can be set to true to move focus inside the FocusTrapZone.}
+\item {\bold{ type }} {\code{HoverCardType} \cr Type of the hover card to render.}
+\item {\bold{ onRenderPlainCard }} {\verb{IRenderFunction<any>} \cr Render function to populate compact content area}
+}
 }
 \section{Best practices}{
 \subsection{Layout}{

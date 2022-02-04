@@ -22,19 +22,13 @@ updateNormalPeoplePicker.shinyInput(
 )
 }
 \arguments{
-\item{ValidationState}{\code{ValidationState} \cr}
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
 
-\item{className}{\code{string} \cr Additional CSS class(es) to apply to the PeoplePickerItem root element.}
+\item{inputId}{Id of the component}
 
-\item{theme}{\code{ITheme} \cr Theme provided by High-Order Component.}
+\item{value}{Value}
 
-\item{compact}{\code{boolean} \cr Flag that controls whether each suggested PeoplePicker item (Persona) is rendered with or without secondary text for compact look.}
-
-\item{personaProps}{\code{IPersonaProps} \cr Persona props for each suggested for picking PeoplePicker item.}
-
-\item{styles}{\verb{IStyleFunctionOrObject<IPeoplePickerItemSuggestionStyleProps, IPeoplePickerItemSuggestionStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
-
-\item{suggestionsProps}{\code{IBasePickerSuggestionsProps} \cr General common props for all PeoplePicker items suggestions.}
+\item{session}{Session}
 }
 \description{
 The people picker (\code{PeoplePicker}) is used to select one or more entities, such as people or groups, from a list. It makes composing an email to someone, or adding them to a group, easy if you don’t know their full name or email address.
@@ -42,6 +36,18 @@ The people picker (\code{PeoplePicker}) is used to select one or more entitie
 For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/PeoplePicker}{docs}.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
+}
+\details{
+\itemize{
+\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IPeoplePickerItemSelectedStyleProps, IPeoplePickerItemSelectedStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
+\item {\bold{ ValidationState }} {\code{ValidationState} \cr }
+\item {\bold{ className }} {\code{string} \cr Additional CSS class(es) to apply to the PeoplePickerItem root element.}
+\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by High-Order Component.}
+\item {\bold{ compact }} {\code{boolean} \cr Flag that controls whether each suggested PeoplePicker item (Persona) is rendered with or without secondary text for compact look.}
+\item {\bold{ personaProps }} {\code{IPersonaProps} \cr Persona props for each suggested for picking PeoplePicker item.}
+\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IPeoplePickerItemSuggestionStyleProps, IPeoplePickerItemSuggestionStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
+\item {\bold{ suggestionsProps }} {\code{IBasePickerSuggestionsProps} \cr General common props for all PeoplePicker items suggestions.}
+}
 }
 \section{Best practices}{
 \subsection{Layout}{

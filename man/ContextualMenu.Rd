@@ -7,113 +7,7 @@
 ContextualMenu(...)
 }
 \arguments{
-\item{classNames}{\code{IMenuItemClassNames} \cr Classnames for different aspects of a menu item}
-
-\item{dismissMenu}{\verb{(ev?: any, dismissAll?: boolean) => void} \cr This prop will get set by ContextualMenu and can be called to close the menu this item belongs to. If dismissAll is true, all menus will be closed.}
-
-\item{dismissSubMenu}{\verb{() => void} \cr This prop will get set by ContextualMenu and can be called to close this item's subMenu, if present.}
-
-\item{getSubmenuTarget}{\verb{() => HTMLElement | undefined} \cr This prop will get set by the wrapping component and will return the element that wraps this ContextualMenuItem. Used for openSubMenu.}
-
-\item{item}{\code{IContextualMenuItem} \cr The item to display}
-
-\item{onCheckmarkClick}{\verb{(item: IContextualMenuItem, ev: React.MouseEvent<HTMLElement>) => void} \cr Click handler for the checkmark}
-
-\item{openSubMenu}{\verb{(item: any, target: HTMLElement) => void} \cr This prop will get set by ContextualMenu and can be called to open this item's subMenu, if present.}
-
-\item{focusableElementIndex}{\code{number} \cr}
-
-\item{index}{\code{number} \cr}
-
-\item{defaultMenuItemRenderer}{\verb{(item: IContextualMenuItemRenderProps) => React.ReactNode} \cr}
-
-\item{hasCheckmarks}{\code{boolean} \cr}
-
-\item{hasIcons}{\code{boolean} \cr}
-
-\item{role}{\code{string} \cr}
-
-\item{totalItemCount}{\code{number} \cr}
-
-\item{alignTargetEdge}{\code{boolean} \cr If true the positioning logic will prefer to flip edges rather than to nudge the rectangle to fit within bounds, thus making sure the element aligns perfectly with target's alignment edge}
-
-\item{ariaLabel}{\code{string} \cr Accessible label for the ContextualMenu's root element (inside the callout).}
-
-\item{beakWidth}{\code{number} \cr The width of the beak.}
-
-\item{bounds}{\verb{IRectangle | ((target?: Target, targetWindow?: Window) => IRectangle | undefined)} \cr The bounding rectangle (or callback that returns a rectangle) which the contextual menu can appear in.}
-
-\item{calloutProps}{\code{ICalloutProps} \cr Additional custom props for the Callout.}
-
-\item{className}{\code{string} \cr Additional CSS class to apply to the ContextualMenu.}
-
-\item{componentRef}{\verb{IRefObject<IContextualMenu>} \cr Optional callback to access the IContextualMenu interface. Use this instead of ref for accessing the public methods and properties of the component.}
-
-\item{contextualMenuItemAs}{\verb{React.ComponentClass<IContextualMenuItemProps> | React.FunctionComponent<IContextualMenuItemProps>} \cr Custom component to use for rendering individual menu items.}
-
-\item{coverTarget}{\code{boolean} \cr If true, the menu will be positioned to cover the target. If false, it will be positioned next to the target.}
-
-\item{delayUpdateFocusOnHover}{\code{boolean} \cr If true, the contextual menu will not be updated until focus enters the menu via other means. This will only result in different behavior when \code{shouldFocusOnMount = false}.}
-
-\item{directionalHint}{\code{DirectionalHint} \cr How the menu should be positioned}
-
-\item{directionalHintFixed}{\code{boolean} \cr If true the position will not change sides in an attempt to fit the ContextualMenu within bounds. It will still attempt to align it to whatever bounds are given.}
-
-\item{directionalHintForRTL}{\code{DirectionalHint} \cr How the menu should be positioned in RTL layouts. If not specified, a mirror of \code{directionalHint} will be used.}
-
-\item{doNotLayer}{\code{boolean} \cr If true do not render on a new layer. If false render on a new layer.}
-
-\item{focusZoneProps}{\code{IFocusZoneProps} \cr Props to pass down to the FocusZone. NOTE: the default FocusZoneDirection will be used unless a direction is specified in the focusZoneProps (even if other focusZoneProps are defined)}
-
-\item{gapSpace}{\code{number} \cr The gap between the ContextualMenu and the target}
-
-\item{getMenuClassNames}{\verb{(theme: ITheme, className?: string) => IContextualMenuClassNames} \cr Method to provide the classnames to style the contextual menu.}
-
-\item{hidden}{\code{boolean} \cr If true, renders the ContextualMenu in a hidden state. Use this flag, rather than rendering a ContextualMenu conditionally based on visibility, to improve rendering performance when it becomes visible. Note: When ContextualMenu is hidden its content will not be rendered. It will only render once the ContextualMenu is visible.}
-
-\item{id}{\code{string} \cr ID for the ContextualMenu's root element (inside the callout). Should be used for \code{aria-owns} and other such uses, rather than direct reference for programmatic purposes.}
-
-\item{isBeakVisible}{\code{boolean} \cr If true then the beak is visible. If false it will not be shown.}
-
-\item{isSubMenu}{\code{boolean} \cr Whether this menu is a submenu of another menu.}
-
-\item{items}{\code{IContextualMenuItem[]} \cr Menu items to display.}
-
-\item{labelElementId}{\code{string} \cr Used as \code{aria-labelledby} for the menu element inside the callout.}
-
-\item{onDismiss}{\verb{(ev?: React.MouseEvent | React.KeyboardEvent, dismissAll?: boolean) => void} \cr Callback when the ContextualMenu tries to close. If \code{dismissAll} is true then all submenus will be dismissed.}
-
-\item{onItemClick}{\verb{(ev?: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>, item?: IContextualMenuItem) => boolean | void} \cr Click handler which is invoked if \code{onClick} is not passed for individual contextual menu item. Returning true will dismiss the menu even if \code{ev.preventDefault()} was called.}
-
-\item{onMenuDismissed}{\verb{(contextualMenu?: IContextualMenuProps) => void} \cr Callback for when the menu is being closed (removing from the DOM).}
-
-\item{onMenuOpened}{\verb{(contextualMenu?: IContextualMenuProps) => void} \cr Callback for when the menu has been opened.}
-
-\item{onRenderMenuList}{\verb{IRenderFunction<IContextualMenuListProps>} \cr Method to override the render of the list of menu items.}
-
-\item{onRenderSubMenu}{\verb{IRenderFunction<IContextualMenuProps>} \cr Custom render function for a submenu.}
-
-\item{onRestoreFocus}{\verb{(options: \{ originalElement?: HTMLElement | Window; containsFocus: boolean; \}) => void} \cr Called when the component is unmounting, and focus needs to be restored. Argument passed down contains two variables, the element that the underlying popup believes focus should go to and whether or not the popup currently contains focus. If this prop is provided, focus will not be restored automatically, you'll need to call originalElement.focus()}
-
-\item{shouldFocusOnContainer}{\code{boolean} \cr Whether to focus on the contextual menu container (as opposed to the first menu item).}
-
-\item{shouldFocusOnMount}{\code{boolean} \cr Whether to focus on the menu when mounted.}
-
-\item{shouldUpdateWhenHidden}{\code{boolean} \cr If true, the menu will be updated even when \code{hidden=true}. Note that this will consume resources to update even when nothing is being shown to the user. This might be helpful if your updates are small and you want the menu to display quickly when \code{hidden} is set to false.}
-
-\item{styles}{\verb{IStyleFunctionOrObject<IContextualMenuStyleProps, IContextualMenuStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
-
-\item{subMenuHoverDelay}{\code{number} \cr Delay (in milliseconds) to wait before expanding / dismissing a submenu on mouseEnter or mouseLeave}
-
-\item{target}{\code{Target} \cr The target that the ContextualMenu should try to position itself based on. It can be either an element, a query selector string resolving to a valid element, or a MouseEvent. If a MouseEvent is given, the origin point of the event will be used.}
-
-\item{theme}{\code{ITheme} \cr Theme provided by higher-order component.}
-
-\item{title}{\code{string} \cr Title to be displayed at the top of the menu, above the items.}
-
-\item{useTargetAsMinWidth}{\code{boolean} \cr If true the context menu will have a minimum width equal to the width of the target element}
-
-\item{useTargetWidth}{\code{boolean} \cr If true the context menu will render as the same width as the target element}
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
 }
 \description{
 ContextualMenus are lists of commands that are based on the context of selection, mouse hover or keyboard focus. They are one of the most effective and highly used command surfaces, and can be used in a variety of places.
@@ -125,6 +19,74 @@ Organize commands in groups divided by rules. This helps users remember command 
 For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/ContextualMenu}{docs}.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
+}
+\details{
+\itemize{
+\item {\bold{ className }} {\code{string} \cr Additional css class to apply to the ContextualMenuItem}
+\item {\bold{ classNames }} {\code{IMenuItemClassNames} \cr Classnames for different aspects of a menu item}
+\item {\bold{ componentRef }} {\verb{IRefObject<IContextualMenuRenderItem>} \cr Optional callback to access the IContextualMenuRenderItem interface. Use this instead of ref for accessing the public methods and properties of the component.}
+\item {\bold{ dismissMenu }} {\verb{(ev?: any, dismissAll?: boolean) => void} \cr This prop will get set by ContextualMenu and can be called to close the menu this item belongs to. If dismissAll is true, all menus will be closed.}
+\item {\bold{ dismissSubMenu }} {\verb{() => void} \cr This prop will get set by ContextualMenu and can be called to close this item's subMenu, if present.}
+\item {\bold{ getSubmenuTarget }} {\verb{() => HTMLElement | undefined} \cr This prop will get set by the wrapping component and will return the element that wraps this ContextualMenuItem. Used for openSubMenu.}
+\item {\bold{ hasIcons }} {\code{boolean | undefined} \cr If this item has icons}
+\item {\bold{ index }} {\code{number} \cr Index of the item}
+\item {\bold{ item }} {\code{IContextualMenuItem} \cr The item to display}
+\item {\bold{ onCheckmarkClick }} {\verb{(item: IContextualMenuItem, ev: React.MouseEvent<HTMLElement>) => void} \cr Click handler for the checkmark}
+\item {\bold{ openSubMenu }} {\verb{(item: any, target: HTMLElement) => void} \cr This prop will get set by ContextualMenu and can be called to open this item's subMenu, if present.}
+\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IContextualMenuItemStyleProps, IContextualMenuItemStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
+\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by High-Order Component.}
+\item {\bold{ focusableElementIndex }} {\code{number} \cr }
+\item {\bold{ hasCheckmarks }} {\code{boolean} \cr }
+\item {\bold{ hasIcons }} {\code{boolean} \cr }
+\item {\bold{ index }} {\code{number} \cr }
+\item {\bold{ totalItemCount }} {\code{number} \cr }
+\item {\bold{ defaultMenuItemRenderer }} {\verb{(item: IContextualMenuItemRenderProps) => React.ReactNode} \cr }
+\item {\bold{ hasCheckmarks }} {\code{boolean} \cr }
+\item {\bold{ hasIcons }} {\code{boolean} \cr }
+\item {\bold{ items }} {\code{IContextualMenuItem[]} \cr }
+\item {\bold{ role }} {\code{string} \cr }
+\item {\bold{ totalItemCount }} {\code{number} \cr }
+\item {\bold{ alignTargetEdge }} {\code{boolean} \cr If true the positioning logic will prefer to flip edges rather than to nudge the rectangle to fit within bounds, thus making sure the element aligns perfectly with target's alignment edge}
+\item {\bold{ ariaLabel }} {\code{string} \cr Accessible label for the ContextualMenu's root element (inside the callout).}
+\item {\bold{ beakWidth }} {\code{number} \cr The width of the beak.}
+\item {\bold{ bounds }} {\verb{IRectangle | ((target?: Target, targetWindow?: Window) => IRectangle | undefined)} \cr The bounding rectangle (or callback that returns a rectangle) which the contextual menu can appear in.}
+\item {\bold{ calloutProps }} {\code{ICalloutProps} \cr Additional custom props for the Callout.}
+\item {\bold{ className }} {\code{string} \cr Additional CSS class to apply to the ContextualMenu.}
+\item {\bold{ componentRef }} {\verb{IRefObject<IContextualMenu>} \cr Optional callback to access the IContextualMenu interface. Use this instead of ref for accessing the public methods and properties of the component.}
+\item {\bold{ contextualMenuItemAs }} {\verb{React.ComponentClass<IContextualMenuItemProps> | React.FunctionComponent<IContextualMenuItemProps>} \cr Custom component to use for rendering individual menu items.}
+\item {\bold{ coverTarget }} {\code{boolean} \cr If true, the menu will be positioned to cover the target. If false, it will be positioned next to the target.}
+\item {\bold{ delayUpdateFocusOnHover }} {\code{boolean} \cr If true, the contextual menu will not be updated until focus enters the menu via other means. This will only result in different behavior when \code{shouldFocusOnMount = false}.}
+\item {\bold{ directionalHint }} {\code{DirectionalHint} \cr How the menu should be positioned}
+\item {\bold{ directionalHintFixed }} {\code{boolean} \cr If true the position will not change sides in an attempt to fit the ContextualMenu within bounds. It will still attempt to align it to whatever bounds are given.}
+\item {\bold{ directionalHintForRTL }} {\code{DirectionalHint} \cr How the menu should be positioned in RTL layouts. If not specified, a mirror of \code{directionalHint} will be used.}
+\item {\bold{ doNotLayer }} {\code{boolean} \cr If true do not render on a new layer. If false render on a new layer.}
+\item {\bold{ focusZoneProps }} {\code{IFocusZoneProps} \cr Props to pass down to the FocusZone. NOTE: the default FocusZoneDirection will be used unless a direction is specified in the focusZoneProps (even if other focusZoneProps are defined)}
+\item {\bold{ gapSpace }} {\code{number} \cr The gap between the ContextualMenu and the target}
+\item {\bold{ getMenuClassNames }} {\verb{(theme: ITheme, className?: string) => IContextualMenuClassNames} \cr Method to provide the classnames to style the contextual menu.}
+\item {\bold{ hidden }} {\code{boolean} \cr If true, renders the ContextualMenu in a hidden state. Use this flag, rather than rendering a ContextualMenu conditionally based on visibility, to improve rendering performance when it becomes visible. Note: When ContextualMenu is hidden its content will not be rendered. It will only render once the ContextualMenu is visible.}
+\item {\bold{ id }} {\code{string} \cr ID for the ContextualMenu's root element (inside the callout). Should be used for \code{aria-owns} and other such uses, rather than direct reference for programmatic purposes.}
+\item {\bold{ isBeakVisible }} {\code{boolean} \cr If true then the beak is visible. If false it will not be shown.}
+\item {\bold{ isSubMenu }} {\code{boolean} \cr Whether this menu is a submenu of another menu.}
+\item {\bold{ items }} {\code{IContextualMenuItem[]} \cr Menu items to display.}
+\item {\bold{ labelElementId }} {\code{string} \cr Used as \code{aria-labelledby} for the menu element inside the callout.}
+\item {\bold{ onDismiss }} {\verb{(ev?: React.MouseEvent | React.KeyboardEvent, dismissAll?: boolean) => void} \cr Callback when the ContextualMenu tries to close. If \code{dismissAll} is true then all submenus will be dismissed.}
+\item {\bold{ onItemClick }} {\verb{(ev?: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>, item?: IContextualMenuItem) => boolean | void} \cr Click handler which is invoked if \code{onClick} is not passed for individual contextual menu item. Returning true will dismiss the menu even if \code{ev.preventDefault()} was called.}
+\item {\bold{ onMenuDismissed }} {\verb{(contextualMenu?: IContextualMenuProps) => void} \cr Callback for when the menu is being closed (removing from the DOM).}
+\item {\bold{ onMenuOpened }} {\verb{(contextualMenu?: IContextualMenuProps) => void} \cr Callback for when the menu has been opened.}
+\item {\bold{ onRenderMenuList }} {\verb{IRenderFunction<IContextualMenuListProps>} \cr Method to override the render of the list of menu items.}
+\item {\bold{ onRenderSubMenu }} {\verb{IRenderFunction<IContextualMenuProps>} \cr Custom render function for a submenu.}
+\item {\bold{ onRestoreFocus }} {\verb{(options: \{ originalElement?: HTMLElement | Window; containsFocus: boolean; \}) => void} \cr Called when the component is unmounting, and focus needs to be restored. Argument passed down contains two variables, the element that the underlying popup believes focus should go to and whether or not the popup currently contains focus. If this prop is provided, focus will not be restored automatically, you'll need to call originalElement.focus()}
+\item {\bold{ shouldFocusOnContainer }} {\code{boolean} \cr Whether to focus on the contextual menu container (as opposed to the first menu item).}
+\item {\bold{ shouldFocusOnMount }} {\code{boolean} \cr Whether to focus on the menu when mounted.}
+\item {\bold{ shouldUpdateWhenHidden }} {\code{boolean} \cr If true, the menu will be updated even when \code{hidden=true}. Note that this will consume resources to update even when nothing is being shown to the user. This might be helpful if your updates are small and you want the menu to display quickly when \code{hidden} is set to false.}
+\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IContextualMenuStyleProps, IContextualMenuStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
+\item {\bold{ subMenuHoverDelay }} {\code{number} \cr Delay (in milliseconds) to wait before expanding / dismissing a submenu on mouseEnter or mouseLeave}
+\item {\bold{ target }} {\code{Target} \cr The target that the ContextualMenu should try to position itself based on. It can be either an element, a query selector string resolving to a valid element, or a MouseEvent. If a MouseEvent is given, the origin point of the event will be used.}
+\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by higher-order component.}
+\item {\bold{ title }} {\code{string} \cr Title to be displayed at the top of the menu, above the items.}
+\item {\bold{ useTargetAsMinWidth }} {\code{boolean} \cr If true the context menu will have a minimum width equal to the width of the target element}
+\item {\bold{ useTargetWidth }} {\code{boolean} \cr If true the context menu will render as the same width as the target element}
+}
 }
 \examples{
 library(shiny.fluent)

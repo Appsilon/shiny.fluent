@@ -7,19 +7,7 @@
 Text(...)
 }
 \arguments{
-\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below}
-
-\item{as}{\verb{React.ElementType<React.HTMLAttributes<HTMLElement>>} \cr Optionally render the component as another component type or primitive.}
-
-\item{block}{\code{boolean} \cr Whether the text is displayed as a block element.
-
-Note that in order for ellipsis on overflow to work properly, \code{block} and \code{nowrap} should be set to true.}
-
-\item{nowrap}{\code{boolean} \cr Whether the text is not wrapped.
-
-Note that in order for ellipsis on overflow to work properly, \code{block} and \code{nowrap} should be set to true.}
-
-\item{variant}{\verb{keyof IFontStyles} \cr Optional font type for Text.}
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
 }
 \description{
 Text is a component for displaying text. You can use Text to standardize text across your web app.
@@ -31,6 +19,18 @@ The Text control is inline wrap by default. You can specify \code{block} to enab
 For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/Text}{docs}.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
+}
+\details{
+\itemize{
+\item {\bold{ as }} {\verb{React.ElementType<React.HTMLAttributes<HTMLElement>>} \cr Optionally render the component as another component type or primitive.}
+\item {\bold{ block }} {\code{boolean} \cr Whether the text is displayed as a block element.
+
+Note that in order for ellipsis on overflow to work properly, \code{block} and \code{nowrap} should be set to true.}
+\item {\bold{ nowrap }} {\code{boolean} \cr Whether the text is not wrapped.
+
+Note that in order for ellipsis on overflow to work properly, \code{block} and \code{nowrap} should be set to true.}
+\item {\bold{ variant }} {\verb{keyof IFontStyles} \cr Optional font type for Text.}
+}
 }
 \examples{
 library(shiny.fluent)

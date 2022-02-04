@@ -7,17 +7,7 @@
 Label(...)
 }
 \arguments{
-\item{as}{\verb{IComponentAs<React.AllHTMLAttributes<HTMLElement>>} \cr Render the root element as another type.}
-
-\item{componentRef}{\verb{IRefObject<ILabel>} \cr Optional callback to access the ILabel interface. Use this instead of ref for accessing the public methods and properties of the component.}
-
-\item{disabled}{\code{boolean} \cr Renders the label as disabled.}
-
-\item{required}{\code{boolean} \cr Whether the associated form field is required or not}
-
-\item{styles}{\verb{IStyleFunctionOrObject<ILabelStyleProps, ILabelStyles>} \cr Styles for the label.}
-
-\item{theme}{\code{ITheme} \cr Theme provided by HOC.}
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
 }
 \description{
 Labels give a name or title to a control or group of controls, including text fields, check boxes, combo boxes, radio buttons, and drop-down menus.
@@ -25,6 +15,16 @@ Labels give a name or title to a control or group of controls, including text
 For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/Label}{docs}.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
+}
+\details{
+\itemize{
+\item {\bold{ as }} {\verb{IComponentAs<React.AllHTMLAttributes<HTMLElement>>} \cr Render the root element as another type.}
+\item {\bold{ componentRef }} {\verb{IRefObject<ILabel>} \cr Optional callback to access the ILabel interface. Use this instead of ref for accessing the public methods and properties of the component.}
+\item {\bold{ disabled }} {\code{boolean} \cr Renders the label as disabled.}
+\item {\bold{ required }} {\code{boolean} \cr Whether the associated form field is required or not}
+\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<ILabelStyleProps, ILabelStyles>} \cr Styles for the label.}
+\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by HOC.}
+}
 }
 \section{Best practices}{
 \subsection{Layout}{

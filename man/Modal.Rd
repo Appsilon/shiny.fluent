@@ -7,47 +7,7 @@
 Modal(...)
 }
 \arguments{
-\item{allowTouchBodyScroll}{\code{boolean} \cr Allow body scroll on content and overlay on touch devices. Changing after mounting has no effect.}
-
-\item{className}{\code{string} \cr Optional class name to be added to the root class}
-
-\item{componentRef}{\verb{IRefObject<IModal>} \cr Optional callback to access the IDialog interface. Use this instead of ref for accessing the public methods and properties of the component.}
-
-\item{containerClassName}{\code{string} \cr Optional override for container class}
-
-\item{dragOptions}{\code{IDragOptions} \cr The options to make the modal draggable}
-
-\item{enableAriaHiddenSiblings}{\code{boolean} \cr Puts aria-hidden=true on all non-ancestors of the current modal, for screen readers. This is an experimental feature that will be graduated to default behavior after testing. This flag will be removed with the next major release.}
-
-\item{isBlocking}{\code{boolean} \cr Whether the dialog can be light dismissed by clicking outside the dialog (on the overlay).}
-
-\item{isDarkOverlay}{\code{boolean} \cr Whether the overlay is dark themed.}
-
-\item{isModeless}{\code{boolean} \cr Whether the dialog should be modeless (e.g. not dismiss when focusing/clicking outside of the dialog). if true: isBlocking is ignored, there will be no overlay (isDarkOverlay is ignored), isClickableOutsideFocusTrap is true, and forceFocusInsideTrap is false}
-
-\item{isOpen}{\code{boolean} \cr Whether the dialog is displayed.}
-
-\item{layerProps}{\code{ILayerProps} \cr Defines an optional set of props to be passed through to Layer}
-
-\item{onDismiss}{\verb{(ev?: React.MouseEvent<HTMLButtonElement>) => any} \cr A callback function for when the Modal is dismissed light dismiss, before the animation completes.}
-
-\item{onDismissed}{\verb{() => any} \cr A callback function which is called after the Modal is dismissed and the animation is complete.}
-
-\item{onLayerDidMount}{\verb{() => void} \cr A callback function for when the Modal content is mounted on the overlay layer}
-
-\item{overlay}{\code{IOverlayProps} \cr Defines an optional set of props to be passed through to Overlay}
-
-\item{scrollableContentClassName}{\code{string} \cr Optional override for scrollable content class}
-
-\item{styles}{\verb{IStyleFunctionOrObject<IModalStyleProps, IModalStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
-
-\item{subtitleAriaId}{\code{string} \cr ARIA id for the subtitle of the Modal, if any}
-
-\item{theme}{\code{ITheme} \cr Theme provided by High-Order Component.}
-
-\item{titleAriaId}{\code{string} \cr ARIA id for the title of the Modal, if any}
-
-\item{topOffsetFixed}{\code{boolean} \cr Whether the modal should have top offset fixed once opened and expand from the bottom only when the content changes dynamically.}
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
 }
 \description{
 Modals are temporary pop-ups that take focus from the page or app and require people to interact with them. Unlike a dialog box (\code{Dialog}), a modal should be used for hosting lengthy content, such as privacy statements or license agreements, or for asking people to perform complex or multiple actions, such as changing settings.
@@ -55,6 +15,31 @@ Modals are temporary pop-ups that take focus from the page or app and requi
 For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/Modal}{docs}.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
+}
+\details{
+\itemize{
+\item {\bold{ allowTouchBodyScroll }} {\code{boolean} \cr Allow body scroll on content and overlay on touch devices. Changing after mounting has no effect.}
+\item {\bold{ className }} {\code{string} \cr Optional class name to be added to the root class}
+\item {\bold{ componentRef }} {\verb{IRefObject<IModal>} \cr Optional callback to access the IDialog interface. Use this instead of ref for accessing the public methods and properties of the component.}
+\item {\bold{ containerClassName }} {\code{string} \cr Optional override for container class}
+\item {\bold{ dragOptions }} {\code{IDragOptions} \cr The options to make the modal draggable}
+\item {\bold{ enableAriaHiddenSiblings }} {\code{boolean} \cr Puts aria-hidden=true on all non-ancestors of the current modal, for screen readers. This is an experimental feature that will be graduated to default behavior after testing. This flag will be removed with the next major release.}
+\item {\bold{ isBlocking }} {\code{boolean} \cr Whether the dialog can be light dismissed by clicking outside the dialog (on the overlay).}
+\item {\bold{ isDarkOverlay }} {\code{boolean} \cr Whether the overlay is dark themed.}
+\item {\bold{ isModeless }} {\code{boolean} \cr Whether the dialog should be modeless (e.g. not dismiss when focusing/clicking outside of the dialog). if true: isBlocking is ignored, there will be no overlay (isDarkOverlay is ignored), isClickableOutsideFocusTrap is true, and forceFocusInsideTrap is false}
+\item {\bold{ isOpen }} {\code{boolean} \cr Whether the dialog is displayed.}
+\item {\bold{ layerProps }} {\code{ILayerProps} \cr Defines an optional set of props to be passed through to Layer}
+\item {\bold{ onDismiss }} {\verb{(ev?: React.MouseEvent<HTMLButtonElement>) => any} \cr A callback function for when the Modal is dismissed light dismiss, before the animation completes.}
+\item {\bold{ onDismissed }} {\verb{() => any} \cr A callback function which is called after the Modal is dismissed and the animation is complete.}
+\item {\bold{ onLayerDidMount }} {\verb{() => void} \cr A callback function for when the Modal content is mounted on the overlay layer}
+\item {\bold{ overlay }} {\code{IOverlayProps} \cr Defines an optional set of props to be passed through to Overlay}
+\item {\bold{ scrollableContentClassName }} {\code{string} \cr Optional override for scrollable content class}
+\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IModalStyleProps, IModalStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
+\item {\bold{ subtitleAriaId }} {\code{string} \cr ARIA id for the subtitle of the Modal, if any}
+\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by High-Order Component.}
+\item {\bold{ titleAriaId }} {\code{string} \cr ARIA id for the title of the Modal, if any}
+\item {\bold{ topOffsetFixed }} {\code{boolean} \cr Whether the modal should have top offset fixed once opened and expand from the bottom only when the content changes dynamically.}
+}
 }
 \section{Best practices}{
 \subsection{Layout}{

@@ -18,97 +18,13 @@ updateSwatchColorPicker.shinyInput(
 )
 }
 \arguments{
-\item{borderWidth}{\code{number} \cr Width of the border that indicates a selected/hovered cell, in pixels.}
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
 
-\item{circle}{\code{boolean} \cr True if this cell should be rendered as a circle, false if it should be a square.  @default \code{true} (render as circle)}
+\item{inputId}{Id of the component}
 
-\item{color}{\code{string} \cr The CSS-compatible string to describe the color}
+\item{value}{Value}
 
-\item{height}{\code{number} \cr Height of the cell, in pixels}
-
-\item{idPrefix}{\code{string} \cr Prefix for this cell's ID. Will be required in a future version once \code{id} is removed.}
-
-\item{index}{\code{number} \cr Index for this option}
-
-\item{item}{\code{IColorCellProps} \cr Item to render}
-
-\item{label}{\code{string} \cr Tooltip and aria label for this item}
-
-\item{onClick}{\verb{(item: IColorCellProps) => void} \cr Handler for when a color cell is clicked.}
-
-\item{onFocus}{\verb{(item: IColorCellProps) => void} \cr}
-
-\item{onHover}{\verb{(item?: IColorCellProps) => void} \cr}
-
-\item{onKeyDown}{\verb{(ev: React.KeyboardEvent<HTMLButtonElement>) => void} \cr}
-
-\item{onMouseEnter}{\verb{(ev: React.MouseEvent<HTMLButtonElement>) => boolean} \cr Mouse enter handler. Returns true if the event should be processed, false otherwise.}
-
-\item{onMouseLeave}{\verb{(ev: React.MouseEvent<HTMLButtonElement>) => void} \cr}
-
-\item{onMouseMove}{\verb{(ev: React.MouseEvent<HTMLButtonElement>) => boolean} \cr Mouse move handler. Returns true if the event should be processed, false otherwise.}
-
-\item{onWheel}{\verb{(ev: React.MouseEvent<HTMLButtonElement>) => void} \cr}
-
-\item{selected}{\code{boolean} \cr Whether this cell is currently selected}
-
-\item{width}{\code{number} \cr Width of the cell, in pixels}
-
-\item{ariaPosInSet}{\code{number} \cr Position this grid is in the parent set (index in a parent menu, for example)}
-
-\item{ariaSetSize}{\code{number} \cr Size of the parent set (size of parent menu, for example)}
-
-\item{cellBorderWidth}{\code{number} \cr Width of the border indicating a hovered/selected cell, in pixels}
-
-\item{cellHeight}{\code{number} \cr Height of an individual cell, in pixels}
-
-\item{cellMargin}{\code{number} \cr The distance between cells, in pixels}
-
-\item{cellShape}{\code{'circle' | 'square'} \cr The shape of the color cells.  @default 'circle'}
-
-\item{cellWidth}{\code{number} \cr Width of an individual cell, in pixels}
-
-\item{className}{\code{string} \cr Additional class name to provide on the root element}
-
-\item{colorCells}{\code{IColorCellProps[]} \cr The color cells that will be made available to the user.
-
-Note: When the reference to this prop changes, regardless of how many color cells change, all of the color cells will be re-rendered (potentially bad perf) because we memoize based on this prop's reference.}
-
-\item{columnCount}{\code{number} \cr Number of columns for the swatch color picker}
-
-\item{disabled}{\code{boolean} \cr Whether the control is disabled.}
-
-\item{doNotContainWithinFocusZone}{\code{boolean} \cr If false (the default), the grid is contained inside a FocusZone. If true, a FocusZone is not used.  @default false}
-
-\item{focusOnHover}{\code{boolean} \cr Whether to update focus when a cell is hovered.}
-
-\item{getColorGridCellStyles}{\verb{IStyleFunctionOrObject<IColorPickerGridCellStyleProps, IColorPickerGridCellStyles>} \cr Styles for the grid cells.}
-
-\item{id}{\code{string} \cr ID for the swatch color picker's root element. Also used as a prefix for the IDs of color cells.}
-
-\item{isControlled}{\code{boolean} \cr Indicates whether the SwatchColorPicker is fully controlled. When true, the component will not set its internal state to track the selected color. Instead, the parent component will be responsible for handling state in the callbacks like \code{onColorChanged}.
-
-NOTE: This property is a temporary workaround to force the component to be fully controllable without breaking existing behavior}
-
-\item{mouseLeaveParentSelector}{\code{string | undefined} \cr Selector to focus on mouse leave. Should only be used in conjunction with \code{focusOnHover}.}
-
-\item{onCellFocused}{\verb{(id?: string, color?: string) => void} \cr Callback for when the user focuses a color cell. If \code{id} and \code{color} are unspecified, cells are no longer being focused.}
-
-\item{onCellHovered}{\verb{(id?: string, color?: string) => void} \cr Callback for when the user hovers over a color cell. If \code{id} and \code{color} are unspecified, cells are no longer being hovered.}
-
-\item{onColorChanged}{\verb{(id?: string, color?: string) => void} \cr Callback for when the user changes the color. If \code{id} and \code{color} are unspecified, there is no selected cell. (e.g. the user executed the currently selected cell to unselect it)}
-
-\item{positionInSet}{\code{number} \cr}
-
-\item{selectedId}{\code{string} \cr The ID of color cell that is currently selected}
-
-\item{setSize}{\code{number} \cr}
-
-\item{shouldFocusCircularNavigate}{\code{boolean} \cr Whether focus should cycle back to the beginning once the user navigates past the end (and vice versa). Only relevant if \code{doNotContainWithinFocusZone} is not true.}
-
-\item{styles}{\verb{IStyleFunctionOrObject<ISwatchColorPickerStyleProps, ISwatchColorPickerStyles>} \cr Styles for the component.}
-
-\item{theme}{\code{ITheme} \cr Theme to apply to the component.}
+\item{session}{Session}
 }
 \description{
 A swatch color picker (\code{SwatchColorPicker}) displays color options as a grid. It can be shown by itself, with a header and dividers, or as a button that expands to show the swatch color picker.
@@ -116,6 +32,66 @@ A swatch color picker (\code{SwatchColorPicker}) displays color options as 
 For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/SwatchColorPicker}{docs}.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
+}
+\details{
+\itemize{
+\item {\bold{ color }} {\code{string} \cr The CSS-compatible string to describe the color}
+\item {\bold{ id }} {\code{string} \cr Arbitrary unique string associated with this option}
+\item {\bold{ index }} {\code{number} \cr Index for this option}
+\item {\bold{ label }} {\code{string} \cr Tooltip and aria label for this item}
+\item {\bold{ borderWidth }} {\code{number} \cr Width of the border that indicates a selected/hovered cell, in pixels.}
+\item {\bold{ circle }} {\code{boolean} \cr True if this cell should be rendered as a circle, false if it should be a square.  @default \code{true} (render as circle)}
+\item {\bold{ color }} {\code{string} \cr The CSS-compatible string to describe the color}
+\item {\bold{ disabled }} {\code{boolean} \cr Whether this cell should be disabled  @default false}
+\item {\bold{ height }} {\code{number} \cr Height of the cell, in pixels}
+\item {\bold{ id }} {\code{string} \cr Used as a PREFIX for the cell's ID (the cell will not have this literal string as its ID).}
+\item {\bold{ idPrefix }} {\code{string} \cr Prefix for this cell's ID. Will be required in a future version once \code{id} is removed.}
+\item {\bold{ index }} {\code{number} \cr Index for this option}
+\item {\bold{ item }} {\code{IColorCellProps} \cr Item to render}
+\item {\bold{ label }} {\code{string} \cr Tooltip and aria label for this item}
+\item {\bold{ onClick }} {\verb{(item: IColorCellProps) => void} \cr Handler for when a color cell is clicked.}
+\item {\bold{ onFocus }} {\verb{(item: IColorCellProps) => void} \cr }
+\item {\bold{ onHover }} {\verb{(item?: IColorCellProps) => void} \cr }
+\item {\bold{ onKeyDown }} {\verb{(ev: React.KeyboardEvent<HTMLButtonElement>) => void} \cr }
+\item {\bold{ onMouseEnter }} {\verb{(ev: React.MouseEvent<HTMLButtonElement>) => boolean} \cr Mouse enter handler. Returns true if the event should be processed, false otherwise.}
+\item {\bold{ onMouseLeave }} {\verb{(ev: React.MouseEvent<HTMLButtonElement>) => void} \cr }
+\item {\bold{ onMouseMove }} {\verb{(ev: React.MouseEvent<HTMLButtonElement>) => boolean} \cr Mouse move handler. Returns true if the event should be processed, false otherwise.}
+\item {\bold{ onWheel }} {\verb{(ev: React.MouseEvent<HTMLButtonElement>) => void} \cr }
+\item {\bold{ selected }} {\code{boolean} \cr Whether this cell is currently selected}
+\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IColorPickerGridCellStyleProps, IColorPickerGridCellStyles>} \cr Custom styles for the component.}
+\item {\bold{ theme }} {\code{ITheme} \cr The theme object to use for styling.}
+\item {\bold{ width }} {\code{number} \cr Width of the cell, in pixels}
+\item {\bold{ ariaPosInSet }} {\code{number} \cr Position this grid is in the parent set (index in a parent menu, for example)}
+\item {\bold{ ariaSetSize }} {\code{number} \cr Size of the parent set (size of parent menu, for example)}
+\item {\bold{ cellBorderWidth }} {\code{number} \cr Width of the border indicating a hovered/selected cell, in pixels}
+\item {\bold{ cellHeight }} {\code{number} \cr Height of an individual cell, in pixels}
+\item {\bold{ cellMargin }} {\code{number} \cr The distance between cells, in pixels}
+\item {\bold{ cellShape }} {\code{'circle' | 'square'} \cr The shape of the color cells.  @default 'circle'}
+\item {\bold{ cellWidth }} {\code{number} \cr Width of an individual cell, in pixels}
+\item {\bold{ className }} {\code{string} \cr Additional class name to provide on the root element}
+\item {\bold{ colorCells }} {\code{IColorCellProps[]} \cr The color cells that will be made available to the user.
+
+Note: When the reference to this prop changes, regardless of how many color cells change, all of the color cells will be re-rendered (potentially bad perf) because we memoize based on this prop's reference.}
+\item {\bold{ columnCount }} {\code{number} \cr Number of columns for the swatch color picker}
+\item {\bold{ disabled }} {\code{boolean} \cr Whether the control is disabled.}
+\item {\bold{ doNotContainWithinFocusZone }} {\code{boolean} \cr If false (the default), the grid is contained inside a FocusZone. If true, a FocusZone is not used.  @default false}
+\item {\bold{ focusOnHover }} {\code{boolean} \cr Whether to update focus when a cell is hovered.}
+\item {\bold{ getColorGridCellStyles }} {\verb{IStyleFunctionOrObject<IColorPickerGridCellStyleProps, IColorPickerGridCellStyles>} \cr Styles for the grid cells.}
+\item {\bold{ id }} {\code{string} \cr ID for the swatch color picker's root element. Also used as a prefix for the IDs of color cells.}
+\item {\bold{ isControlled }} {\code{boolean} \cr Indicates whether the SwatchColorPicker is fully controlled. When true, the component will not set its internal state to track the selected color. Instead, the parent component will be responsible for handling state in the callbacks like \code{onColorChanged}.
+
+NOTE: This property is a temporary workaround to force the component to be fully controllable without breaking existing behavior}
+\item {\bold{ mouseLeaveParentSelector }} {\code{string | undefined} \cr Selector to focus on mouse leave. Should only be used in conjunction with \code{focusOnHover}.}
+\item {\bold{ onCellFocused }} {\verb{(id?: string, color?: string) => void} \cr Callback for when the user focuses a color cell. If \code{id} and \code{color} are unspecified, cells are no longer being focused.}
+\item {\bold{ onCellHovered }} {\verb{(id?: string, color?: string) => void} \cr Callback for when the user hovers over a color cell. If \code{id} and \code{color} are unspecified, cells are no longer being hovered.}
+\item {\bold{ onColorChanged }} {\verb{(id?: string, color?: string) => void} \cr Callback for when the user changes the color. If \code{id} and \code{color} are unspecified, there is no selected cell. (e.g. the user executed the currently selected cell to unselect it)}
+\item {\bold{ positionInSet }} {\code{number} \cr }
+\item {\bold{ selectedId }} {\code{string} \cr The ID of color cell that is currently selected}
+\item {\bold{ setSize }} {\code{number} \cr }
+\item {\bold{ shouldFocusCircularNavigate }} {\code{boolean} \cr Whether focus should cycle back to the beginning once the user navigates past the end (and vice versa). Only relevant if \code{doNotContainWithinFocusZone} is not true.}
+\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<ISwatchColorPickerStyleProps, ISwatchColorPickerStyles>} \cr Styles for the component.}
+\item {\bold{ theme }} {\code{ITheme} \cr Theme to apply to the component.}
+}
 }
 \section{Best practices}{
 \subsection{Layout}{

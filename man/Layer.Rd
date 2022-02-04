@@ -10,25 +10,7 @@ Layer(...)
 LayerHost(...)
 }
 \arguments{
-\item{className}{\code{string} \cr Additional css class to apply to the Layer}
-
-\item{componentRef}{\verb{IRefObject<ILayer>} \cr Optional callback to access the ILayer interface. Use this instead of ref for accessing the public methods and properties of the component.}
-
-\item{eventBubblingEnabled}{\code{boolean} \cr When enabled, Layer allows events to bubble up from Layer content. Traditionally Layer has not had this behavior. This prop preserves backwards compatibility by default while allowing users to opt in to the new event bubbling functionality.}
-
-\item{hostId}{\code{string} \cr The optional id property provided on a LayerHost that this Layer should render within. The LayerHost does not need to be immediately available but once has been rendered, and if missing, we'll avoid trying to render the Layer content until the host is available. If an id is not provided, we will render the Layer content in a fixed position element rendered at the end of the document.}
-
-\item{insertFirst}{\code{boolean} \cr Whether the layer should be added as the first child of the host. If true, the layer will be inserted as the first child of the host By default, the layer will be appended at the end to the host}
-
-\item{onLayerDidMount}{\verb{() => void} \cr Callback for when the layer is mounted.}
-
-\item{onLayerMounted}{\verb{() => void} \cr Callback for when the layer is mounted.}
-
-\item{onLayerWillUnmount}{\verb{() => void} \cr Callback for when the layer is unmounted.}
-
-\item{styles}{\verb{IStyleFunctionOrObject<ILayerStyleProps, ILayerStyles>} \cr Call to provide customized styling that will layer on top of the variant rules}
-
-\item{theme}{\code{ITheme} \cr Theme provided by HOC.}
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
 }
 \description{
 A Layer is a technical component that does not have specific Design guidance.
@@ -40,6 +22,20 @@ There are some special considerations. Due to the nature of rendering content el
 For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/Layer}{docs}.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
+}
+\details{
+\itemize{
+\item {\bold{ className }} {\code{string} \cr Additional css class to apply to the Layer}
+\item {\bold{ componentRef }} {\verb{IRefObject<ILayer>} \cr Optional callback to access the ILayer interface. Use this instead of ref for accessing the public methods and properties of the component.}
+\item {\bold{ eventBubblingEnabled }} {\code{boolean} \cr When enabled, Layer allows events to bubble up from Layer content. Traditionally Layer has not had this behavior. This prop preserves backwards compatibility by default while allowing users to opt in to the new event bubbling functionality.}
+\item {\bold{ hostId }} {\code{string} \cr The optional id property provided on a LayerHost that this Layer should render within. The LayerHost does not need to be immediately available but once has been rendered, and if missing, we'll avoid trying to render the Layer content until the host is available. If an id is not provided, we will render the Layer content in a fixed position element rendered at the end of the document.}
+\item {\bold{ insertFirst }} {\code{boolean} \cr Whether the layer should be added as the first child of the host. If true, the layer will be inserted as the first child of the host By default, the layer will be appended at the end to the host}
+\item {\bold{ onLayerDidMount }} {\verb{() => void} \cr Callback for when the layer is mounted.}
+\item {\bold{ onLayerMounted }} {\verb{() => void} \cr Callback for when the layer is mounted.}
+\item {\bold{ onLayerWillUnmount }} {\verb{() => void} \cr Callback for when the layer is unmounted.}
+\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<ILayerStyleProps, ILayerStyles>} \cr Call to provide customized styling that will layer on top of the variant rules}
+\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by HOC.}
+}
 }
 \examples{
 library(shiny.fluent)

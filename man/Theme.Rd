@@ -4,8 +4,13 @@
 \alias{ThemeProvider}
 \alias{Theme}
 \title{Theme}
+<<<<<<< HEAD
 \usage{
 ThemeProvider(...)
+=======
+\arguments{
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
+>>>>>>> 1f7de22 (Move Fluent arguments docs to Details section, add missing arguments docs for inputs)
 }
 \description{
 For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/Theme}{docs}.
@@ -64,5 +69,9 @@ if (interactive()) {
     ),
     server = function(input, output) { }
   )
+}
+}
+\details{
+\itemize{
 }
 }

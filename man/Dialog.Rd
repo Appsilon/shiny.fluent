@@ -10,69 +10,7 @@ Dialog(...)
 DialogFooter(...)
 }
 \arguments{
-\item{closeButtonAriaLabel}{\code{string} \cr Label to be passed to to aria-label of close button}
-
-\item{draggableHeaderClassName}{\code{string} \cr The classname for when the header is draggable}
-
-\item{isMultiline}{\code{boolean} \cr Is inside a multiline wrapper}
-
-\item{responsiveMode}{\code{ResponsiveMode} \cr Responsive mode passed in from decorator.}
-
-\item{showCloseButton}{\code{boolean} \cr Show an 'x' close button in the upper-right corner}
-
-\item{subTextId}{\code{string} \cr The Id for subText container}
-
-\item{titleId}{\code{string} \cr The Id for title container}
-
-\item{titleProps}{\verb{React.HTMLAttributes<HTMLDivElement>} \cr The props for title container.}
-
-\item{ariaDescribedById}{\code{string} \cr Optional id for aria-DescribedBy}
-
-\item{ariaLabelledById}{\code{string} \cr Optional id for aria-LabelledBy}
-
-\item{className}{\code{string} \cr Optional class name to be added to the root class}
-
-\item{componentRef}{\verb{IRefObject<IDialog>} \cr Optional callback to access the IDialog interface. Use this instead of ref for accessing the public methods and properties of the component.}
-
-\item{containerClassName}{\code{string} \cr Optional override for container class}
-
-\item{contentClassName}{\code{string} \cr Optional override content class}
-
-\item{dialogContentProps}{\code{IDialogContentProps} \cr Props to be passed through to Dialog Content}
-
-\item{hidden}{\code{boolean} \cr Whether the dialog is hidden.}
-
-\item{isBlocking}{\code{boolean} \cr Whether the dialog can be light dismissed by clicking outside the dialog (on the overlay).}
-
-\item{isDarkOverlay}{\code{boolean} \cr Whether the overlay is dark themed.}
-
-\item{isOpen}{\code{boolean} \cr Whether the dialog is displayed. Deprecated, use \code{hidden} instead.}
-
-\item{maxWidth}{\code{ICSSRule | ICSSPixelUnitRule} \cr Sets the maximum width for the dialog. It limits the width property to be larger than the value specified in max-width.}
-
-\item{minWidth}{\code{ICSSRule | ICSSPixelUnitRule} \cr Sets the minimum width of the dialog. It limits the width property to be not smaller than the value specified in min-width.}
-
-\item{modalProps}{\code{IModalProps} \cr Props to be passed through to Modal}
-
-\item{onDismiss}{\verb{(ev?: React.MouseEvent<HTMLButtonElement>) => any} \cr A callback function for when the Dialog is dismissed from the close button or light dismiss. Can also be specified separately in content and modal.}
-
-\item{onDismissed}{\verb{() => any} \cr A callback function which is called after the Dialog is dismissed and the animation is complete.}
-
-\item{onLayerDidMount}{\verb{() => void} \cr A callback function for when the Dialog content is mounted on the overlay layer}
-
-\item{onLayerMounted}{\verb{() => void} \cr Deprecated at 0.81.2, use \code{onLayerDidMount} instead.}
-
-\item{styles}{\verb{IStyleFunctionOrObject<IDialogStyleProps, IDialogStyles>} \cr Call to provide customized styling that will layer on top of the variant rules}
-
-\item{subText}{\code{string} \cr The subtext to display in the dialog.}
-
-\item{theme}{\code{ITheme} \cr Theme provided by HOC.}
-
-\item{title}{\code{string | JSX.Element} \cr The title text to display at the top of the dialog.}
-
-\item{topButtonsProps}{\code{IButtonProps[]} \cr Other top buttons that will show up next to the close button}
-
-\item{type}{\code{DialogType} \cr The type of Dialog to display.}
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
 }
 \description{
 A dialog box (\code{Dialog}) is a temporary pop-up that takes focus from the page or app and requires people to interact with it. It’s primarily used for confirming actions, such as deleting a file, or asking people to make a choice.
@@ -80,6 +18,55 @@ A dialog box (\code{Dialog}) is a temporary pop-up that takes focus from
 For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/Dialog}{docs}.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
+}
+\details{
+\itemize{
+\item {\bold{ className }} {\code{string} \cr Optional override class name}
+\item {\bold{ closeButtonAriaLabel }} {\code{string} \cr Label to be passed to to aria-label of close button}
+\item {\bold{ componentRef }} {\verb{IRefObject<IDialogContent>} \cr Optional callback to access the IDialogContent interface. Use this instead of ref for accessing the public methods and properties of the component.}
+\item {\bold{ draggableHeaderClassName }} {\code{string} \cr The classname for when the header is draggable}
+\item {\bold{ isMultiline }} {\code{boolean} \cr Is inside a multiline wrapper}
+\item {\bold{ onDismiss }} {\verb{(ev?: React.MouseEvent<HTMLButtonElement>) => any} \cr Callback for when the Dialog is dismissed from the close button or light dismiss, before the animation completes.}
+\item {\bold{ responsiveMode }} {\code{ResponsiveMode} \cr Responsive mode passed in from decorator.}
+\item {\bold{ showCloseButton }} {\code{boolean} \cr Show an 'x' close button in the upper-right corner}
+\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IDialogContentStyleProps, IDialogContentStyles>} \cr Call to provide customized styling that will layer on top of the variant rules}
+\item {\bold{ subText }} {\code{string} \cr The subtext to display in the dialog}
+\item {\bold{ subTextId }} {\code{string} \cr The Id for subText container}
+\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by HOC.}
+\item {\bold{ title }} {\code{string | JSX.Element} \cr The title text to display at the top of the dialog.}
+\item {\bold{ titleId }} {\code{string} \cr The Id for title container}
+\item {\bold{ titleProps }} {\verb{React.HTMLAttributes<HTMLDivElement>} \cr The props for title container.}
+\item {\bold{ topButtonsProps }} {\code{IButtonProps[]} \cr Other top buttons that will show up next to the close button}
+\item {\bold{ type }} {\code{DialogType} \cr The type of Dialog to display.}
+\item {\bold{ className }} {\code{string} \cr Optional override class name}
+\item {\bold{ componentRef }} {\verb{IRefObject<IDialogFooter>} \cr Gets the component ref.}
+\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IDialogFooterStyleProps, IDialogFooterStyles>} \cr Call to provide customized styling that will layer on top of the variant rules}
+\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by HOC.}
+\item {\bold{ ariaDescribedById }} {\code{string} \cr Optional id for aria-DescribedBy}
+\item {\bold{ ariaLabelledById }} {\code{string} \cr Optional id for aria-LabelledBy}
+\item {\bold{ className }} {\code{string} \cr Optional class name to be added to the root class}
+\item {\bold{ componentRef }} {\verb{IRefObject<IDialog>} \cr Optional callback to access the IDialog interface. Use this instead of ref for accessing the public methods and properties of the component.}
+\item {\bold{ containerClassName }} {\code{string} \cr Optional override for container class}
+\item {\bold{ contentClassName }} {\code{string} \cr Optional override content class}
+\item {\bold{ dialogContentProps }} {\code{IDialogContentProps} \cr Props to be passed through to Dialog Content}
+\item {\bold{ hidden }} {\code{boolean} \cr Whether the dialog is hidden.}
+\item {\bold{ isBlocking }} {\code{boolean} \cr Whether the dialog can be light dismissed by clicking outside the dialog (on the overlay).}
+\item {\bold{ isDarkOverlay }} {\code{boolean} \cr Whether the overlay is dark themed.}
+\item {\bold{ isOpen }} {\code{boolean} \cr Whether the dialog is displayed. Deprecated, use \code{hidden} instead.}
+\item {\bold{ maxWidth }} {\code{ICSSRule | ICSSPixelUnitRule} \cr Sets the maximum width for the dialog. It limits the width property to be larger than the value specified in max-width.}
+\item {\bold{ minWidth }} {\code{ICSSRule | ICSSPixelUnitRule} \cr Sets the minimum width of the dialog. It limits the width property to be not smaller than the value specified in min-width.}
+\item {\bold{ modalProps }} {\code{IModalProps} \cr Props to be passed through to Modal}
+\item {\bold{ onDismiss }} {\verb{(ev?: React.MouseEvent<HTMLButtonElement>) => any} \cr A callback function for when the Dialog is dismissed from the close button or light dismiss. Can also be specified separately in content and modal.}
+\item {\bold{ onDismissed }} {\verb{() => any} \cr A callback function which is called after the Dialog is dismissed and the animation is complete.}
+\item {\bold{ onLayerDidMount }} {\verb{() => void} \cr A callback function for when the Dialog content is mounted on the overlay layer}
+\item {\bold{ onLayerMounted }} {\verb{() => void} \cr Deprecated at 0.81.2, use \code{onLayerDidMount} instead.}
+\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IDialogStyleProps, IDialogStyles>} \cr Call to provide customized styling that will layer on top of the variant rules}
+\item {\bold{ subText }} {\code{string} \cr The subtext to display in the dialog.}
+\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by HOC.}
+\item {\bold{ title }} {\code{string | JSX.Element} \cr The title text to display at the top of the dialog.}
+\item {\bold{ topButtonsProps }} {\code{IButtonProps[]} \cr Other top buttons that will show up next to the close button}
+\item {\bold{ type }} {\code{DialogType} \cr The type of Dialog to display.}
+}
 }
 \section{Best practices}{
 \subsection{Layout}{

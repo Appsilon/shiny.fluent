@@ -18,41 +18,13 @@ updateSearchBox.shinyInput(
 )
 }
 \arguments{
-\item{value}{\code{string} \cr The value of the text in the SearchBox.}
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
 
-\item{ariaLabel}{\code{string} \cr The aria label of the SearchBox for the benefit of screen readers.}
+\item{inputId}{Id of the component}
 
-\item{className}{\code{string} \cr CSS class to apply to the SearchBox.}
+\item{value}{Value}
 
-\item{clearButtonProps}{\code{IButtonProps} \cr The props for the clear button.}
-
-\item{componentRef}{\verb{IRefObject<ISearchBox>} \cr Optional callback to access the ISearchBox interface. Use this instead of ref for accessing the public methods and properties of the component.}
-
-\item{defaultValue}{\code{string} \cr The default value of the text in the SearchBox, in the case of an uncontrolled component. This prop is being deprecated since so far, uncontrolled behavior has not been implemented.}
-
-\item{disableAnimation}{\code{boolean} \cr Whether or not to animate the SearchBox icon on focus.}
-
-\item{iconProps}{\verb{Pick<IIconProps, Exclude<keyof IIconProps, 'className'>>} \cr The props for the icon.}
-
-\item{labelText}{\code{string} \cr Deprecated. Use \code{placeholder} instead.}
-
-\item{onChange}{\verb{(event?: React.ChangeEvent<HTMLInputElement>, newValue?: string) => void} \cr Callback function for when the typed input for the SearchBox has changed.}
-
-\item{onChanged}{\verb{(newValue: any) => void} \cr Deprecated at v0.52.2, use \code{onChange} instead.}
-
-\item{onClear}{\verb{(ev?: any) => void} \cr Callback executed when the user clears the search box by either clicking 'X' or hitting escape.}
-
-\item{onEscape}{\verb{(ev?: any) => void} \cr Callback executed when the user presses escape in the search box.}
-
-\item{onSearch}{\verb{(newValue: any) => void} \cr Callback executed when the user presses enter in the search box.}
-
-\item{placeholder}{\code{string} \cr Placeholder for the search box.}
-
-\item{styles}{\verb{IStyleFunctionOrObject<ISearchBoxStyleProps, ISearchBoxStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
-
-\item{theme}{\code{ITheme} \cr Theme (provided through customization).}
-
-\item{underlined}{\code{boolean} \cr Whether or not the SearchBox is underlined.}
+\item{session}{Session}
 }
 \description{
 A search box (\code{SearchBox}) provides an input field for searching content within a site or app to find specific items.
@@ -60,6 +32,28 @@ A search box (\code{SearchBox}) provides an input field for searching content�
 For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/SearchBox}{docs}.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
+}
+\details{
+\itemize{
+\item {\bold{ ariaLabel }} {\code{string} \cr The aria label of the SearchBox for the benefit of screen readers.}
+\item {\bold{ className }} {\code{string} \cr CSS class to apply to the SearchBox.}
+\item {\bold{ clearButtonProps }} {\code{IButtonProps} \cr The props for the clear button.}
+\item {\bold{ componentRef }} {\verb{IRefObject<ISearchBox>} \cr Optional callback to access the ISearchBox interface. Use this instead of ref for accessing the public methods and properties of the component.}
+\item {\bold{ defaultValue }} {\code{string} \cr The default value of the text in the SearchBox, in the case of an uncontrolled component. This prop is being deprecated since so far, uncontrolled behavior has not been implemented.}
+\item {\bold{ disableAnimation }} {\code{boolean} \cr Whether or not to animate the SearchBox icon on focus.}
+\item {\bold{ iconProps }} {\verb{Pick<IIconProps, Exclude<keyof IIconProps, 'className'>>} \cr The props for the icon.}
+\item {\bold{ labelText }} {\code{string} \cr Deprecated. Use \code{placeholder} instead.}
+\item {\bold{ onChange }} {\verb{(event?: React.ChangeEvent<HTMLInputElement>, newValue?: string) => void} \cr Callback function for when the typed input for the SearchBox has changed.}
+\item {\bold{ onChanged }} {\verb{(newValue: any) => void} \cr Deprecated at v0.52.2, use \code{onChange} instead.}
+\item {\bold{ onClear }} {\verb{(ev?: any) => void} \cr Callback executed when the user clears the search box by either clicking 'X' or hitting escape.}
+\item {\bold{ onEscape }} {\verb{(ev?: any) => void} \cr Callback executed when the user presses escape in the search box.}
+\item {\bold{ onSearch }} {\verb{(newValue: any) => void} \cr Callback executed when the user presses enter in the search box.}
+\item {\bold{ placeholder }} {\code{string} \cr Placeholder for the search box.}
+\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<ISearchBoxStyleProps, ISearchBoxStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
+\item {\bold{ theme }} {\code{ITheme} \cr Theme (provided through customization).}
+\item {\bold{ underlined }} {\code{boolean} \cr Whether or not the SearchBox is underlined.}
+\item {\bold{ value }} {\code{string} \cr The value of the text in the SearchBox.}
+}
 }
 \section{Best practices}{
 \subsection{Layout}{

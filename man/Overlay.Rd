@@ -7,19 +7,7 @@
 Overlay(...)
 }
 \arguments{
-\item{allowTouchBodyScroll}{\code{boolean} \cr Allow body scroll on touch devices. Changing after mounting has no effect.}
-
-\item{className}{\code{string} \cr Additional css class to apply to the Overlay}
-
-\item{componentRef}{\verb{IRefObject<IOverlay>} \cr Gets the component ref.}
-
-\item{isDarkThemed}{\code{boolean} \cr Whether to use the dark-themed overlay.}
-
-\item{onClick}{\verb{() => void} \cr}
-
-\item{styles}{\verb{IStyleFunctionOrObject<IOverlayStyleProps, IOverlayStyles>} \cr Call to provide customized styling that will layer on top of the variant rules}
-
-\item{theme}{\code{ITheme} \cr Theme provided by HOC.}
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
 }
 \description{
 Overlays are used to render a semi-transparent layer on top of existing UI. Overlays help focus the user on the content that sits above the added layer and are often used to help designate a modal or blocking experience. Overlays can be seen used in conjunction with Panels and Dialogs.
@@ -27,6 +15,17 @@ Overlays are used to render a semi-transparent layer on top of existing UI. Over
 For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/Overlay}{docs}.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
+}
+\details{
+\itemize{
+\item {\bold{ allowTouchBodyScroll }} {\code{boolean} \cr Allow body scroll on touch devices. Changing after mounting has no effect.}
+\item {\bold{ className }} {\code{string} \cr Additional css class to apply to the Overlay}
+\item {\bold{ componentRef }} {\verb{IRefObject<IOverlay>} \cr Gets the component ref.}
+\item {\bold{ isDarkThemed }} {\code{boolean} \cr Whether to use the dark-themed overlay.}
+\item {\bold{ onClick }} {\verb{() => void} \cr }
+\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IOverlayStyleProps, IOverlayStyles>} \cr Call to provide customized styling that will layer on top of the variant rules}
+\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by HOC.}
+}
 }
 \examples{
 library(shiny.fluent)
