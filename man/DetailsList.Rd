@@ -215,8 +215,10 @@ Falls back to window 'resize' event.}
 
 \subsection{Content}{
 \itemize{
-\item Use sentence-style capitalization for column headers—only capitalize the first word. For more info, see \href{https://docs.microsoft.com/style-guide/capitalization}{Capitalization} in the Microsoft Writing Style Guide.
+\item Use sentence-style capitalization for column headers—only capitalize the first word. For more info, see \verb{[Capitalization]} in the Microsoft Writing Style Guide.
 }
+
+\verb{[capitalization]}: https://docs.microsoft.com/style-guide/capitalization
 }
 
 \subsection{FAQ}{

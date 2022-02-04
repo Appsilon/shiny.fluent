@@ -54,9 +54,9 @@ you need to work using the original docs to achieve the desired result.
 \item {\bold{ iconProps }} {\code{IIconProps} \cr Props for an optional icon, displayed in the far right end of the text field.}
 \item {\bold{ inputClassName }} {\code{string} \cr Optional class name that is added specifically to the input/textarea element.}
 \item {\bold{ label }} {\code{string} \cr Label displayed above the text field (and read by screen readers).}
-\item {\bold{ mask }} {\code{string} \cr Only used by MaskedTextField: The masking string that defines the mask's behavior. A backslash will escape any character. Special format characters are: '9': \link{0-9} 'a': \link{a-zA-Z} '\emph{': \link{a-zA-Z0-9}}
+\item {\bold{ mask }} {\code{string} \cr Only used by MaskedTextField: The masking string that defines the mask's behavior. A backslash will escape any character. Special format characters are: '9': \verb{[0-9]} 'a': \verb{[a-zA-Z]} '\emph{': \verb{[a-zA-Z0-9]}}
 \item {\bold{ maskChar }} {\code{string} \cr Only used by MaskedTextField: The character to show in place of unfilled characters of the mask.}
-\item {\bold{ maskFormat }} {\verb{\{ [key: string]: RegExp; \}} \cr Only used by MaskedTextField: An object defining the format characters and corresponding regexp values. Default format characters: \{ '9': /\link{0-9}/, 'a': /\link{a-zA-Z}/, '}': /\link{a-zA-Z0-9}/ \}}
+\item {\bold{ maskFormat }} {\verb{\{ [key: string]: RegExp; \}} \cr Only used by MaskedTextField: An object defining the format characters and corresponding regexp values. Default format characters: \{ '9': /\verb{[0-9]}/, 'a': /\verb{[a-zA-Z]}/, '}': /\verb{[a-zA-Z0-9]}/ \}}
 \item {\bold{ multiline }} {\code{boolean} \cr Whether or not the text field is a multiline text field.}
 \item {\bold{ onChange }} {\verb{(event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, newValue?: string) => void} \cr Callback for when the input value changes. This is called on both \code{input} and \code{change} events. (In a later version, this will probably only be called for the \code{change} event.)}
 \item {\bold{ onGetErrorMessage }} {\verb{(value: string) => string | JSX.Element | PromiseLike<string | JSX.Element> | undefined} \cr Function used to determine whether the input value is valid and get an error message if not. Mutually exclusive with the static string \code{errorMessage} (it will take precedence over this).
@@ -90,7 +90,7 @@ When it returns \verb{Promise<string | JSX.Element>}: - The resolved value is di
 \subsection{Layout}{
 \itemize{
 \item Use a multiline text field when long entries are expected.
-\item Don't place a text field in the middle of a sentence, because the sentence structure might not make sense in all languages. For example, "Remind me in \link{textfield} weeks" should instead read, "Remind me in this many weeks: \link{textfield}".
+\item Don't place a text field in the middle of a sentence, because the sentence structure might not make sense in all languages. For example, "Remind me in \verb{[textfield]} weeks" should instead read, "Remind me in this many weeks: \verb{[textfield]}".
 \item Format the text field for the expected entry. For example, when someone needs to enter a phone number, use an input mask to indicate that three sets of digits should be entered.
 }
 }

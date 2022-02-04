@@ -927,9 +927,9 @@ NULL
 #'
 #' ### Content
 #'
-#' - Use sentence-style capitalization for column headers—only capitalize the first word. For more info, see [Capitalization] in the Microsoft Writing Style Guide.
+#' - Use sentence-style capitalization for column headers—only capitalize the first word. For more info, see `[Capitalization]` in the Microsoft Writing Style Guide.
 #'
-#' [capitalization]: https://docs.microsoft.com/style-guide/capitalization
+#' `[capitalization]`: https://docs.microsoft.com/style-guide/capitalization
 #'
 #' ### FAQ
 #'
@@ -2443,10 +2443,10 @@ NULL
 #'
 #' - Titles should explain the panel content in clear, concise, and specific terms.
 #' - Keep the length of the title to one line, if possible.
-#' - Use sentence-style capitalization—only capitalize the first word. For more info, see [Capitalization] in the Microsoft Writing Style Guide.
+#' - Use sentence-style capitalization—only capitalize the first word. For more info, see `[Capitalization]` in the Microsoft Writing Style Guide.
 #' - Don’t put a period at the end of the title.
 #'
-#' [capitalization]: https://docs.microsoft.com/style-guide/capitalization
+#' `[capitalization]`: https://docs.microsoft.com/style-guide/capitalization
 #'
 #' #### Button labels
 #'
@@ -2823,9 +2823,9 @@ NULL
 #'
 #' ProgressIndicators feature a bar showing total units to completion, and total units finished. The description of the operation appears above the bar, and the status in text appears below. The description should tell someone exactly what the operation is doing. Examples of formatting include:
 #'
-#' - **[Object]** is being **[operation name]**, or
-#' - **[Object]** is being **[operation name]** to **[destination name]** or
-#' - **[Object]** is being **[operation name]** from **[source name]** to **[destination name]**
+#' - **`[Object]`** is being **`[operation name]`**, or
+#' - **`[Object]`** is being **`[operation name]`** to **`[destination name]`** or
+#' - **`[Object]`** is being **`[operation name]`** from **`[source name]`** to **`[destination name]`**
 #'
 #' Status text is generally in units elapsed and total units. If the operation can be canceled, an “X” icon is used and should be placed in the upper right, aligned with the baseline of the operation name. When an error occurs, replace the status text with the error description using ms-fontColor-redDark.
 #'
@@ -3597,7 +3597,7 @@ NULL
 #' ### Layout
 #'
 #' - Use a multiline text field when long entries are expected.
-#' - Don't place a text field in the middle of a sentence, because the sentence structure might not make sense in all languages. For example, "Remind me in [textfield] weeks" should instead read, "Remind me in this many weeks: [textfield]".
+#' - Don't place a text field in the middle of a sentence, because the sentence structure might not make sense in all languages. For example, "Remind me in `[textfield]` weeks" should instead read, "Remind me in this many weeks: `[textfield]`".
 #' - Format the text field for the expected entry. For example, when someone needs to enter a phone number, use an input mask to indicate that three sets of digits should be entered.
 #'
 #' ### Content
@@ -3623,9 +3623,9 @@ NULL
 #' \item {\bold{ iconProps }} {`IIconProps` \cr Props for an optional icon, displayed in the far right end of the text field.}
 #' \item {\bold{ inputClassName }} {`string` \cr Optional class name that is added specifically to the input/textarea element.}
 #' \item {\bold{ label }} {`string` \cr Label displayed above the text field (and read by screen readers).}
-#' \item {\bold{ mask }} {`string` \cr Only used by MaskedTextField: The masking string that defines the mask's behavior. A backslash will escape any character. Special format characters are: '9': [0-9] 'a': [a-zA-Z] '*': [a-zA-Z0-9]}
+#' \item {\bold{ mask }} {`string` \cr Only used by MaskedTextField: The masking string that defines the mask's behavior. A backslash will escape any character. Special format characters are: '9': `[0-9]` 'a': `[a-zA-Z]` '*': `[a-zA-Z0-9]`}
 #' \item {\bold{ maskChar }} {`string` \cr Only used by MaskedTextField: The character to show in place of unfilled characters of the mask.}
-#' \item {\bold{ maskFormat }} {`{ [key: string]: RegExp; }` \cr Only used by MaskedTextField: An object defining the format characters and corresponding regexp values. Default format characters: \{ '9': /[0-9]/, 'a': /[a-zA-Z]/, '*': /[a-zA-Z0-9]/ \}}
+#' \item {\bold{ maskFormat }} {`{ [key: string]: RegExp; }` \cr Only used by MaskedTextField: An object defining the format characters and corresponding regexp values. Default format characters: \{ '9': /`[0-9]`/, 'a': /`[a-zA-Z]`/, '*': /`[a-zA-Z0-9]`/ \}}
 #' \item {\bold{ multiline }} {`boolean` \cr Whether or not the text field is a multiline text field.}
 #' \item {\bold{ onChange }} {`(event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, newValue?: string) => void` \cr Callback for when the input value changes. This is called on both `input` and `change` events. (In a later version, this will probably only be called for the `change` event.)}
 #' \item {\bold{ onGetErrorMessage }} {`(value: string) => string | JSX.Element | PromiseLike<string | JSX.Element> | undefined` \cr Function used to determine whether the input value is valid and get an error message if not. Mutually exclusive with the static string `errorMessage` (it will take precedence over this).

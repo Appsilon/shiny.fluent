@@ -93,9 +93,11 @@ you need to work using the original docs to achieve the desired result.
 \itemize{
 \item Titles should explain the panel content in clear, concise, and specific terms.
 \item Keep the length of the title to one line, if possible.
-\item Use sentence-style capitalization—only capitalize the first word. For more info, see \href{https://docs.microsoft.com/style-guide/capitalization}{Capitalization} in the Microsoft Writing Style Guide.
+\item Use sentence-style capitalization—only capitalize the first word. For more info, see \verb{[Capitalization]} in the Microsoft Writing Style Guide.
 \item Don’t put a period at the end of the title.
 }
+
+\verb{[capitalization]}: https://docs.microsoft.com/style-guide/capitalization
 }
 
 \subsection{Button labels}{

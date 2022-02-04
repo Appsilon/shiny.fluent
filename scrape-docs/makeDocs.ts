@@ -21,6 +21,16 @@ const REPLACE_MAP = [
     regex: /@name pickers/gm,
     replacement: '@name Pickers',
   },
+  // Quote empty markdown links, e.g. "[Object]" as it throws roxygen warning about missing url
+  {
+    regex: /(\[(\w+\s?\w+)\])(?!\(.*\))/gm,
+    replacement: '`\$1`', // eslint-disable-line
+  },
+  // Quote regexes in text
+  {
+    regex: /(\[(0-9|a-zA-Z|a-zA-Z0-9)\])/gm,
+    replacement: '`\$1`', // eslint-disable-line
+  },
 ];
 
 async function main() {

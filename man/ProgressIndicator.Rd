@@ -14,9 +14,9 @@ ProgressIndicators are used to show the completion status of an operation lastin
 
 ProgressIndicators feature a bar showing total units to completion, and total units finished. The description of the operation appears above the bar, and the status in text appears below. The description should tell someone exactly what the operation is doing. Examples of formatting include:
 \itemize{
-\item \strong{\link{Object}} is being \strong{\link{operation name}}, or
-\item \strong{\link{Object}} is being \strong{\link{operation name}} to \strong{\link{destination name}} or
-\item \strong{\link{Object}} is being \strong{\link{operation name}} from \strong{\link{source name}} to \strong{\link{destination name}}
+\item \strong{\verb{[Object]}} is being \strong{\verb{[operation name]}}, or
+\item \strong{\verb{[Object]}} is being \strong{\verb{[operation name]}} to \strong{\verb{[destination name]}} or
+\item \strong{\verb{[Object]}} is being \strong{\verb{[operation name]}} from \strong{\verb{[source name]}} to \strong{\verb{[destination name]}}
 }
 
 Status text is generally in units elapsed and total units. If the operation can be canceled, an “X” icon is used and should be placed in the upper right, aligned with the baseline of the operation name. When an error occurs, replace the status text with the error description using ms-fontColor-redDark.
