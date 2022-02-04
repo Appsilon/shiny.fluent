@@ -88,7 +88,11 @@ library(shiny.fluent)
 if (interactive()) {
   shinyApp(
     ui = div(
-      DefaultButton.shinyInput("toggleTeachingBubble", id = "target", text = "Toggle TeachingBubble"),
+      DefaultButton.shinyInput(
+        "toggleTeachingBubble",
+        id = "target",
+        text = "Toggle TeachingBubble"
+      ),
       reactOutput("teachingBubble")
     ),
     server = function(input, output) {

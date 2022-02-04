@@ -1,14 +1,60 @@
 library(shiny.fluent)
 
-people <- tibble::tribble(
-  ~key, ~imageUrl, ~imageInitials, ~text, ~secondaryText, ~tertiaryText, ~optionalText, ~isValid, ~presence, ~canExpand,
-  1, "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-female.png", "PV", "Annie Lindqvist", "Designer", "In a meeting", "Available at 4:00pm", TRUE, 2, NA,
-  2, "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-male.png", "AR", "Aaron Reid", "Designer", "In a meeting", "Available at 4:00pm", TRUE, 6, NA,
-  3, "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-male.png", "AL", "Alex Lundberg", "Software Developer", "In a meeting", "Available at 4:00pm", TRUE, 4, NA,
-  4, "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-male.png", "RK", "Roko Kolar", "Financial Analyst", "In a meeting", "Available at 4:00pm", TRUE, 1, NA,
-  5, "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-male.png", "CB", "Christian Bergqvist", "Sr. Designer", "In a meeting", "Available at 4:00pm", TRUE, 2, NA,
-  6, "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-female.png", "VL", "Valentina Lovric", "Design Developer", "In a meeting", "Available at 4:00pm", TRUE, 2, NA,
-  7, "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-male.png", "MS", "Maor Sharett", "UX Designer", "In a meeting", "Available at 4:00pm", TRUE, 3, NA
+assetsUrl <- "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/"
+malePersonaUrl <- paste0(assetsUrl, "persona-male.png")
+femalePersonaUrl <- paste0(assetsUrl, "persona-female.png")
+
+people <- tibble::tibble(
+  key = c(1, 2, 3, 4, 5, 6, 7),
+  imageUrl = c(
+    femalePersonaUrl,
+    malePersonaUrl,
+    malePersonaUrl,
+    malePersonaUrl,
+    malePersonaUrl,
+    femalePersonaUrl,
+    malePersonaUrl
+  ), 
+  imageInitials = c("PV", "AR", "AL", "RK", "CB", "VL", "MS"),
+  text = c(
+    "Annie Lindqvist",
+    "Aaron Reid",
+    "Alex Lundberg",
+    "Roko Kolar",
+    "Christian Bergqvist",
+    "Valentina Lovric",
+    "Maor Sharett"
+  ),
+  secondaryText = c(
+    "Designer",
+    "Designer",
+    "Software Developer",
+    "Financial Analyst",
+    "Sr. Designer",
+    "Design Developer",
+    "UX Designer"
+  ),
+  tertiaryText = c(
+    "In a meeting",
+    "In a meeting",
+    "In a meeting",
+    "In a meeting",
+    "In a meeting",
+    "In a meeting",
+    "In a meeting"
+  ),
+  optionalText = c(
+    "Available at 4:00pm",
+    "Available at 4:00pm",
+    "Available at 4:00pm",
+    "Available at 4:00pm",
+    "Available at 4:00pm",
+    "Available at 4:00pm",
+    "Available at 4:00pm"
+  ),
+  isValid = c(TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE),
+  presence = c(2, 6, 4, 1, 2, 2, 3),
+  canExpand = c(NA, NA, NA, NA, NA, NA, NA)
 )
 
 if (interactive()) {

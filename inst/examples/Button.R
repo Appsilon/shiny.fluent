@@ -5,11 +5,26 @@ if (interactive()) {
 
   shinyApp(
     ui = div(
-        Stack(
-        DefaultButton.shinyInput("button1", text = "Default Button", styles = list("background: green")),
-        PrimaryButton.shinyInput("button2", text = "Primary Button"),
-        CompoundButton.shinyInput("button3", secondaryText = "Compound Button has additional text", text = "Compound Button"),
-        ActionButton.shinyInput("button4", iconProps = list("iconName" = "AddFriend"), text = "Action Button"),
+      Stack(
+        DefaultButton.shinyInput(
+          "button1",
+          text = "Default Button",
+          styles = list("background: green")
+        ),
+        PrimaryButton.shinyInput(
+          "button2",
+          text = "Primary Button"
+        ),
+        CompoundButton.shinyInput(
+          "button3",
+          secondaryText = "Compound Button has additional text",
+          text = "Compound Button"
+        ),
+        ActionButton.shinyInput(
+          "button4",
+          iconProps = list("iconName" = "AddFriend"),
+          text = "Action Button"
+        ),
         horizontal = TRUE,
         tokens = tokens
       ),

@@ -73,11 +73,25 @@ if (interactive()) {
       ")),
       textOutput("keytipsResult"),
       div(
-        Label("To open keytips, hit 'Alt-Windows' on Windows/Linux and 'Option-Control' on macOS. Keytips will appear. Type what you see, e.g. 1 and then A to 'click' the first button."),
-        Label("When multiple Keytips start with the same character, typing that character will filter the visible keytips."),
+        Label(
+          paste0(
+            "To open keytips, hit 'Alt-Windows' on Windows/Linux and 'Option-Control' on macOS.",
+            "Keytips will appear. Type what you see, e.g. 1 and then A to 'click' the first button."
+          )
+        ),
+        Label(
+          paste0(
+            "When multiple Keytips start with the same character,",
+            "typing that character will filter the visible keytips."
+          )
+        ),
         KeytipLayer(),
         Stack(horizontal = TRUE, tokens = list(childrenGap = 20),
-          DefaultButton.shinyInput("button1", keytipProps = JS("keytipMap.Button"), text = "Button"),
+          DefaultButton.shinyInput(
+            "button1",
+            keytipProps = JS("keytipMap.Button"),
+            text = "Button"
+          ),
           CompoundButton.shinyInput("button2",
             style = list(marginBottom = 28),
             keytipProps = JS("keytipMap.CompoundButton"),

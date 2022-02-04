@@ -65,11 +65,23 @@ if (interactive()) {
                 onText = "On (toggle to exit)",
                 offText = "Off (toggle to trap focus)"
               ),
-              TextField.shinyInput("textInput", label = "Input inside trap zone", styles = textFieldStyles),
-              Link(href = "https://bing.com", target = "_blank", "Hyperlink inside trap zone")
+              TextField.shinyInput(
+                "textInput",
+                label = "Input inside trap zone",
+                styles = textFieldStyles
+              ),
+              Link(
+                href = "https://bing.com",
+                target = "_blank",
+                "Hyperlink inside trap zone"
+              )
             )
           ),
-          Link(href="https://bing.com", target="_blank", "Hyperlink outside trap zone")
+          Link(
+            href = "https://bing.com",
+            target = "_blank",
+            "Hyperlink outside trap zone"
+          )
         )
       })
     }

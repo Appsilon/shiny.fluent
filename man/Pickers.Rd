@@ -166,7 +166,8 @@ if (interactive()) {
         function filterSuggestedTags(filterText, tagList) {
           return filterText
             ? testTags.filter(
-                tag => tag.name.toLowerCase().indexOf(filterText.toLowerCase()) === 0 && !listContainsTagList(tag, tagList),
+                tag => tag.name.toLowerCase().indexOf(filterText.toLowerCase()) === 0 &&
+                 !listContainsTagList(tag, tagList),
               )
             : [];
         };
@@ -174,11 +175,18 @@ if (interactive()) {
       textOutput("selectedTags"),
       TagPicker(
         onResolveSuggestions = JS("filterSuggestedTags"),
-        onEmptyInputFocus = JS("function(tagList) { return testTags.filter(tag => !listContainsTagList(tag, tagList)); }"),
+        onEmptyInputFocus = JS(
+          "function(tagList) { return testTags.filter(tag => !listContainsTagList(tag, tagList)); }"
+        ),
         getTextFromItem = JS("function(item) { return item.text }"),
-        pickerSuggestionsProps = list(suggestionsHeaderText = 'Suggested tags', noResultsFoundText = 'No color tags found'),
+        pickerSuggestionsProps = list(
+          suggestionsHeaderText = 'Suggested tags',
+          noResultsFoundText = 'No color tags found'
+        ),
         itemLimit = 2,
-        onChange = JS("function(selection) { Shiny.setInputValue('selectedTags', JSON.stringify(selection)) }")
+        onChange = JS(
+          "function(selection) { Shiny.setInputValue('selectedTags', JSON.stringify(selection)) }"
+        )
       )
     ),
     server = function(input, output) {
@@ -186,7 +194,10 @@ if (interactive()) {
         if (is.null(input$selectedTags)) {
           "Select up to 2 colors below:"
         } else {
-          paste("You have selected:", paste(jsonlite::fromJSON(input$selectedTags)$name, collapse = ", "))
+          paste(
+            "You have selected:",
+            paste(jsonlite::fromJSON(input$selectedTags)$name, collapse = ", ")
+          )
         }
       })
     }

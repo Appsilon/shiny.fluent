@@ -43,7 +43,8 @@ library(shiny.fluent)
 
 # This is an advanced demo showing how you can use virtually all features of Fluent UI
 # by creating custom components in JS and rendering them with shiny.react.
-# This example is a translation of the example in https://developer.microsoft.com/en-us/fluentui#/controls/web/marqueeselection.
+# This example is a translation of the example in
+# https://developer.microsoft.com/en-us/fluentui#/controls/web/marqueeselection.
 
 # Script showing how to:
 # 1. Use mergeStyles and themes from Fluent
@@ -111,7 +112,10 @@ jsmodule.exampleApp.MarqueeSelectionExample = function(params) {
       {
         key: index,
         'data-is-focusable': true,
-        className: Fluent.css(styles.photoCell, window.selection.isIndexSelected(index) && 'is-selected'),
+        className: Fluent.css(
+          styles.photoCell,
+          window.selection.isIndexSelected(index) && 'is-selected'
+        ),
         'data-selection-index': index,
         style: { width: photo.width, height: photo.height }
       }, index)
@@ -136,7 +140,7 @@ if (interactive()) {
       script,
       div(
         textOutput("marqueeResult"),
-        Label("Drag a rectangle around the items below to select them"), # Make sure Fluent dependency is loaded.
+        Label("Drag a rectangle around the items below to select them"),
         reactOutput("marqueeSelection")
       )
     ),

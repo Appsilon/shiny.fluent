@@ -71,8 +71,12 @@ if (interactive()) {
           items = menuItems,
           hidden = !showContextualMenu(),
           target = "#target",
-          onItemClick = JS("function() { Shiny.setInputValue('toggleContextualMenu', Math.random()); }"),
-          onDismiss = JS("function() { Shiny.setInputValue('toggleContextualMenu', Math.random()); }")
+          onItemClick = JS(
+            "function() { Shiny.setInputValue('toggleContextualMenu', Math.random()); }"
+          ),
+          onDismiss = JS(
+            "function() { Shiny.setInputValue('toggleContextualMenu', Math.random()); }"
+          )
         )
       })
     }
