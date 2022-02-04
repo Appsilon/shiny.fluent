@@ -219,9 +219,3 @@ One final step is to add this single line to our `server` function, which otherw
 # That's it!
 
 That's it - we have styled a shiny.fluent app into a solid dashboard layout!
-
-Here's the final result:
-
-```{r, echo=FALSE}
-knitr::include_graphics("images/tutorial-part2-final.gif")
-```
