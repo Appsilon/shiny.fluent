@@ -1,5 +1,5 @@
 #!/bin/bash
-set -eu
+set +eu
 
 # Install the JavaScript dependencies
 (cd js && yarn)
@@ -12,3 +12,7 @@ Rscript -e 'devtools::document()'
 
 # Install the package
 Rscript -e 'devtools::install()'
+
+# prevent terminal close
+printf "\n"
+read -p "Press enter to continue..."
