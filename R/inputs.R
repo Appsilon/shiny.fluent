@@ -72,7 +72,7 @@ input <- function(name, defaultValue) {
 
 #' @rdname Calendar
 #' @export
-Calendar.shinyInput <- input("Calendar", NULL)
+Calendar.shinyInput <- input("Calendar", shiny.react::JS("new Date()"))
 
 #' @rdname Calendar
 #' @export
@@ -112,7 +112,7 @@ updateComboBox.shinyInput <- shiny.react::updateReactInput
 
 #' @rdname DatePicker
 #' @export
-DatePicker.shinyInput <- input("DatePicker", NULL)
+DatePicker.shinyInput <- input("DatePicker", shiny.react::JS("new Date()"))
 
 #' @rdname DatePicker
 #' @export
