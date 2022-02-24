@@ -53,11 +53,11 @@ updateTextField.shinyInput(
 
 \item{label}{\code{string} \cr Label displayed above the text field (and read by screen readers).}
 
-\item{mask}{\code{string} \cr Only used by MaskedTextField: The masking string that defines the mask's behavior. A backslash will escape any character. Special format characters are: '9': \verb{[0-9]} 'a': \verb{[a-zA-Z]} '*': \verb{[a-zA-Z0-9]}}
+\item{mask}{\code{string} \cr Only used by MaskedTextField: The masking string that defines the mask's behavior. A backslash will escape any character. Special format characters are: '9': \link{0-9} 'a': \link{a-zA-Z} '*': \link{a-zA-Z0-9}}
 
 \item{maskChar}{\code{string} \cr Only used by MaskedTextField: The character to show in place of unfilled characters of the mask.}
 
-\item{maskFormat}{\verb{\{ [key: string]: RegExp; \}} \cr Only used by MaskedTextField: An object defining the format characters and corresponding regexp values. Default format characters: \verb{\\\{ '9': /[0-9]/, 'a': /[a-zA-Z]/, '*': /[a-zA-Z0-9]/ \\\}}}
+\item{maskFormat}{\verb{\{ [key: string]: RegExp; \}} \cr Only used by MaskedTextField: An object defining the format characters and corresponding regexp values. Default format characters: \{ '9': /\link{0-9}/, 'a': /\link{a-zA-Z}/, '*': /\link{a-zA-Z0-9}/ \}}
 
 \item{multiline}{\code{boolean} \cr Whether or not the text field is a multiline text field.}
 
@@ -114,7 +114,7 @@ you need to work using the original docs to achieve the desired result.
 \subsection{Layout}{
 \itemize{
 \item Use a multiline text field when long entries are expected.
-\item Don't place a text field in the middle of a sentence, because the sentence structure might not make sense in all languages. For example, \code{"Remind me in [textfield] weeks"} should instead read, \code{"Remind me in this many weeks: [textfield]"}.
+\item Don't place a text field in the middle of a sentence, because the sentence structure might not make sense in all languages. For example, "Remind me in \link{textfield} weeks" should instead read, "Remind me in this many weeks: \link{textfield}".
 \item Format the text field for the expected entry. For example, when someone needs to enter a phone number, use an input mask to indicate that three sets of digits should be entered.
 }
 }

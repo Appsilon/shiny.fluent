@@ -2513,9 +2513,9 @@ NULL
 #'
 #' ProgressIndicators feature a bar showing total units to completion, and total units finished. The description of the operation appears above the bar, and the status in text appears below. The description should tell someone exactly what the operation is doing. Examples of formatting include:
 #'
-#' - `**[Object]** is being **[operation name]**`, or
-#' - `**[Object]** is being **[operation name]** to **[destination name]**` or
-#' - `**[Object]** is being **[operation name]** from **[source name]** to **[destination name]**`
+#' - **[Object]** is being **[operation name]**, or
+#' - **[Object]** is being **[operation name]** to **[destination name]** or
+#' - **[Object]** is being **[operation name]** from **[source name]** to **[destination name]**
 #'
 #' Status text is generally in units elapsed and total units. If the operation can be canceled, an “X” icon is used and should be placed in the upper right, aligned with the baseline of the operation name. When an error occurs, replace the status text with the error description using ms-fontColor-redDark.
 #'
@@ -3181,7 +3181,7 @@ NULL
 #' ### Layout
 #'
 #' - Use a multiline text field when long entries are expected.
-#' - Don't place a text field in the middle of a sentence, because the sentence structure might not make sense in all languages. For example, `"Remind me in [textfield] weeks"` should instead read, `"Remind me in this many weeks: [textfield]"`.
+#' - Don't place a text field in the middle of a sentence, because the sentence structure might not make sense in all languages. For example, "Remind me in [textfield] weeks" should instead read, "Remind me in this many weeks: [textfield]".
 #' - Format the text field for the expected entry. For example, when someone needs to enter a phone number, use an input mask to indicate that three sets of digits should be entered.
 #'
 #' ### Content
@@ -3204,9 +3204,9 @@ NULL
 #' @param iconProps `IIconProps` \cr Props for an optional icon, displayed in the far right end of the text field.
 #' @param inputClassName `string` \cr Optional class name that is added specifically to the input/textarea element.
 #' @param label `string` \cr Label displayed above the text field (and read by screen readers).
-#' @param mask `string` \cr Only used by MaskedTextField: The masking string that defines the mask's behavior. A backslash will escape any character. Special format characters are: '9': `[0-9]` 'a': `[a-zA-Z]` '*': `[a-zA-Z0-9]`
+#' @param mask `string` \cr Only used by MaskedTextField: The masking string that defines the mask's behavior. A backslash will escape any character. Special format characters are: '9': [0-9] 'a': [a-zA-Z] '*': [a-zA-Z0-9]
 #' @param maskChar `string` \cr Only used by MaskedTextField: The character to show in place of unfilled characters of the mask.
-#' @param maskFormat `{ [key: string]: RegExp; }` \cr Only used by MaskedTextField: An object defining the format characters and corresponding regexp values. Default format characters: `\{ '9': /[0-9]/, 'a': /[a-zA-Z]/, '*': /[a-zA-Z0-9]/ \}`
+#' @param maskFormat `{ [key: string]: RegExp; }` \cr Only used by MaskedTextField: An object defining the format characters and corresponding regexp values. Default format characters: \{ '9': /[0-9]/, 'a': /[a-zA-Z]/, '*': /[a-zA-Z0-9]/ \}
 #' @param multiline `boolean` \cr Whether or not the text field is a multiline text field.
 #' @param onChange `(event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, newValue?: string) => void` \cr Callback for when the input value changes. This is called on both `input` and `change` events. (In a later version, this will probably only be called for the `change` event.)
 #' @param onGetErrorMessage `(value: string) => string | JSX.Element | PromiseLike<string | JSX.Element> | undefined` \cr Function used to determine whether the input value is valid and get an error message if not. Mutually exclusive with the static string `errorMessage` (it will take precedence over this).
