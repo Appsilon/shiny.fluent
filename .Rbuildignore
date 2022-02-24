@@ -9,4 +9,4 @@
 ^\.github$
 ^doc$
 ^data-raw$
-scrape-docs/
+^scrape-docs/

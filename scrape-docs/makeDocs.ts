@@ -15,6 +15,8 @@ const REPLACE_MAP = [
     regex: /NULL/gm,
     replacement: 'NULL\n',
   },
+  // Replace "pickers" from scraped documentation to "Pickers" to ensure that
+  // proper documentation entry shows when fetching "Pickers" help pages in R session
   {
     regex: /@name pickers/gm,
     replacement: '@name Pickers',
