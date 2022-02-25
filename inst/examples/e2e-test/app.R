@@ -11,7 +11,8 @@ ui <- fluidPage(
   reactInShinyUI("reactInShiny"),
   customOutputUI("customOutput"),
   deepMixingUI("deepMixing"),
-  shimmerUI("shimmer")
+  shimmerUI("shimmer"),
+  themeProviderUI("themeProvider")
 )
 
 server <- function(input, output, session) {

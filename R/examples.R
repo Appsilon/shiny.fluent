@@ -237,8 +237,8 @@ NULL
 #' Themes is not a component, but a way to override the default theme in the app.
 #' See https://developer.microsoft.com/en-us/fluentui#/controls/web/themes for details.
 #'
-#' @example inst/examples/Themes.R
-#' @name Themes
+#' @example inst/examples/Theme.R
+#' @name Theme
 NULL
 
 #' @example inst/examples/Toggle.R
