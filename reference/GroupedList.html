@@ -229,20 +229,7 @@ you need to work using the original docs to achieve the desired result.</p>
 <p>To determine if the list within the grouped list should re-render its contents, the component performs a referential equality check within its <code>shouldComponentUpdate</code> method.
 This is done to minimize the performance overhead associating with re-rendering the virtualized List pages, as recommended by the <a href="https://reactjs.org/docs/optimizing-performance.html#the-power-of-not-mutating-data" class="external-link">React documentation</a>.</p>
 <p>As a result of this implementation, the inner list will not determine it should re-render if the array values are mutated.
-To avoid this problem, we recommend re-creating the items array backing the grouped list by using a method such as <code>Array.prototype.concat</code> or ES6 spread syntax shown below:</p><div class="tsx"><div class="sourceCode"><pre><code>public appendItems(): void {
-  const { items } = this.state;
-
-  this.setState({
-    items: [...items, ...['Foo', 'Bar']]
-  })
-}
-
-public render(): JSX.Element {
-  const { items } = this.state;
-
-  return &lt;GroupedList items={items} /&gt;;
-}
-</code></pre></div><p></p></div>
+To avoid this problem, we recommend re-creating the items array backing the grouped list by using a method such as <code>Array.prototype.concat</code> or ES6 spread syntax shown below:</p><div class="sourceCode tsx"><pre><code></code></pre><p></p></div>
 <p>By re-creating the items array without mutating the values, the inner List will correctly determine its contents have changed and then it should re-render with the new values.</p>
 </div>
 
