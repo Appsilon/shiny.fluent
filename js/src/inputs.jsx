@@ -10,7 +10,7 @@ export const IconButton = ButtonAdapter(Fluent.IconButton);
 export const PrimaryButton = ButtonAdapter(Fluent.PrimaryButton);
 
 export const Calendar = InputAdapter(Fluent.Calendar, (value, setValue) => ({
-  value: value ? new Date(value) : undefined,
+  value: value ? new Date(value) : new Date(),
   onSelectDate: setValue,
 }));
 
