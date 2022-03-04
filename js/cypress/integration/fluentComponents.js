@@ -88,10 +88,23 @@ function spinButtonChangeButtonsTest() {
 }
 
 function calendarDefaultTest(date = 'June 25, 2020', dttm = '2020-06-25T12:00:00.000Z') {
-  cy.get('.ms-DatePicker').within(() => {
+  cy.get('.ms-DatePicker.calendar').within(() => {
     cy.get(`button[aria-label="${date}"]`).should('have.attr', 'aria-selected', 'true');
   });
   cy.get('#fluentInputs-calendarValue').should('contain', `Value: ${dttm}`);
+}
+
+function calendarOnLoadTest() {
+  const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  const today = new Date();
+  const date = month[today.getMonth()] + " " + today.getDate() + ", " + today.getFullYear();
+  
+  cy.get('.ms-DatePicker.calendarDefault').within(() => {
+    cy.get(`button[aria-label="${date}"]`).should('have.attr', 'aria-selected', 'true');
+  });
+  cy.get('.ms-DatePicker.calendarNull').within(() => {
+    cy.get(`button[aria-label="${date}"]`).should('have.attr', 'aria-selected', 'true');
+  });
 }
 
 function choiceGroupDefaultTest(selected = 'B') {
@@ -188,6 +201,13 @@ function dropdownMultiselectChangeTest() {
 function datePickerDefaultTest(date = 'Thu Jun 25 2020', dttm = '2020-06-25T12:00:00.000Z') {
   cy.get('#fluentInputs-datePicker-label').should('have.attr', 'value', date);
   cy.get('#fluentInputs-datePickerValue').should('contain', `Value: ${dttm}`);
+}
+
+function datePickerOnLoadTest() {
+  const date = (new Date()).toDateString();
+  
+  cy.get('#fluentInputs-datePickerDefault-label').should('have.attr', 'value', date);
+  cy.get('#fluentInputs-datePickerNull-label').should('have.attr', 'placeholder', "I am placeholder!");
 }
 
 function swatchColorPickerDefaultTest(color = 'orange', pos = 0) {
@@ -294,6 +314,7 @@ describe('SpinButton.shinyInput()', () => {
 
 describe('Calendar.shinyInput()', () => {
   it('setting default values works', () => {
+    calendarOnLoadTest();
     calendarDefaultTest();
   });
 });
@@ -348,6 +369,7 @@ describe('Dropdown.shinyInput()', () => {
 
 describe('DatePicker.shinyInput()', () => {
   it('setting default values works', () => {
+    datePickerOnLoadTest();
     datePickerDefaultTest();
   });
 });
