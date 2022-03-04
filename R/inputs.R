@@ -72,7 +72,16 @@ input <- function(name, defaultValue) {
 
 #' @rdname Calendar
 #' @export
-Calendar.shinyInput <- input("Calendar", shiny.react::JS("new Date()"))
+Calendar.shinyInput <- function(inputId, ..., value = shiny.react::JS("new Date()")) {
+  if (is.null(value)) {
+    value <- shiny.react::JS("new Date()")
+  }
+  shiny.react::reactElement(
+    module = "@/shiny.fluent", name = "Calendar",
+    props = shiny.react::asProps(inputId = inputId, ..., value = value),
+    deps = shinyFluentDependency()
+  )
+}
 
 #' @rdname Calendar
 #' @export
