@@ -8,7 +8,7 @@ if (interactive()) {
       h3("If `value` is missing, default to system date"),
       Calendar.shinyInput("calendar2"),
       textOutput("calendarDefault"),
-      h3("If `value` is NULL, return NULL"),
+      h3("If `value` is NULL, also default to system date"),
       Calendar.shinyInput("calendar3", value = NULL),
       textOutput("calendarNull")
     ),
@@ -20,7 +20,7 @@ if (interactive()) {
         sprintf("Value: %s", input$calendar2)
       })
       output$calendarNull <- renderText({
-        sprintf("Value: %s", deparse(input$calendar3))
+        sprintf("Value: %s", input$calendar3)
       })
     }
   )
