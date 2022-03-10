@@ -76,4 +76,4 @@ Appsilon
 Appsilon is the **Full Service Certified RStudio Partner**. Learn more
 at [appsilon.com](https://appsilon.com).
 
-Get in touch [support+opensource@appsilon.com](support+opensource@appsilon.com)
+Get in touch [support+opensource@appsilon.com](mailto:support+opensource@appsilon.com)
