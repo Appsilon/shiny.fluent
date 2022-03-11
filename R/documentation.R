@@ -1442,10 +1442,7 @@ NULL
 #' you need to work using the original docs to achieve the desired result.
 #'
 #'
-#' @details
 #'
-#' \itemize{
-#' }
 #'
 #' @md
 #' @name ExtendedPeoplePicker
@@ -1513,10 +1510,7 @@ NULL
 #' you need to work using the original docs to achieve the desired result.
 #'
 #'
-#' @details
 #'
-#' \itemize{
-#' }
 #'
 #' @md
 #' @name FloatingPeoplePicker
@@ -3805,10 +3799,7 @@ NULL
 #' 1. #C8C8C8/neutralTertiaryAlt divider when used within an #F4F4F4/neutralLighter layout
 #' 1. #EAEAEA/neutralLight divider when used within an #FFFFFF/white layout
 #'
-#' @details
 #'
-#' \itemize{
-#' }
 #'
 #' @md
 #' @name Divider
@@ -3827,10 +3818,7 @@ NULL
 #' you need to work using the original docs to achieve the desired result.
 #'
 #'
-#' @details
 #'
-#' \itemize{
-#' }
 #'
 #' @md
 #' @name ExtendedPicker
@@ -3855,10 +3843,7 @@ NULL
 #' you need to work using the original docs to achieve the desired result.
 #'
 #'
-#' @details
 #'
-#' \itemize{
-#' }
 #'
 #' @md
 #' @name Keytip
@@ -3877,10 +3862,7 @@ NULL
 #' you need to work using the original docs to achieve the desired result.
 #'
 #'
-#' @details
 #'
-#' \itemize{
-#' }
 #'
 #' @md
 #' @name Theme
@@ -3899,10 +3881,7 @@ NULL
 #' you need to work using the original docs to achieve the desired result.
 #'
 #'
-#' @details
 #'
-#' \itemize{
-#' }
 #'
 #' @md
 #' @name SelectedItemsList
@@ -3926,10 +3905,7 @@ NULL
 #' - Use a picker to quickly search for a few tags or files.
 #' - Use a picker to manage a group of tags or files.
 #'
-#' @details
 #'
-#' \itemize{
-#' }
 #'
 #' @md
 #' @name Pickers

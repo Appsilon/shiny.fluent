@@ -19,7 +19,3 @@ For more details and examples visit the official \href{https://developer.microso
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
 }
-\details{
-\itemize{
-}
-}

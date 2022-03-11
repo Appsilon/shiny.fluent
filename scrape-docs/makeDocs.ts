@@ -31,6 +31,11 @@ const REPLACE_MAP = [
     regex: /(\[(0-9|a-zA-Z|a-zA-Z0-9)\])/gm,
     replacement: '`\$1`', // eslint-disable-line
   },
+  // Remove empty @details
+  {
+    regex: /#'\s+@details[\n\s]+#'[\n\s]+#'[\n\s]+\\itemize\{\n#'\s\}/gm,
+    replacement: '#\''
+  }
 ];
 
 async function main() {

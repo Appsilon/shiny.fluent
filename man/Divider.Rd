@@ -17,10 +17,6 @@ For more details and examples visit the official \href{https://developer.microso
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
 }
-\details{
-\itemize{
-}
-}
 \section{Best practices}{
 Use a divider component to show a sectional or continuity change in the content between two blocks of information. The spacing around the divider is generally determined by the content surrounding it.
 

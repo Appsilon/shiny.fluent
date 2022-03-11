@@ -118,9 +118,6 @@ TODO (adjective-object) remove IPersonaprops before the next major version bump}
 \item {\bold{ suggestionsListId }} {\code{string} \cr The string that will be used as the suggestionsListId. Will be used by the BasePicker to keep track of the list for aria.}
 \item {\bold{ theme }} {\code{ITheme} \cr Theme provided by High-Order Component.}
 }
-
-\itemize{
-}
 }
 \section{Best practices}{
 \subsection{Layout}{
