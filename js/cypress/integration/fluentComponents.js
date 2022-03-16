@@ -95,10 +95,10 @@ function calendarDefaultTest(date = 'June 25, 2020', dttm = '2020-06-25T12:00:00
 }
 
 function calendarOnLoadTest() {
-  const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  const month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   const today = new Date();
   const date = `${month[today.getMonth()]} ${today.getDate()}, ${today.getFullYear()}`;
-  
+
   cy.get('.ms-DatePicker.calendarDefault').within(() => {
     cy.get(`button[aria-label="${date}"]`).should('have.attr', 'aria-selected', 'true');
   });
@@ -205,9 +205,9 @@ function datePickerDefaultTest(date = 'Thu Jun 25 2020', dttm = '2020-06-25T12:0
 
 function datePickerOnLoadTest() {
   const date = (new Date()).toDateString();
-  
+
   cy.get('#fluentInputs-datePickerDefault-label').should('have.attr', 'value', date);
-  cy.get('#fluentInputs-datePickerNull-label').should('have.attr', 'placeholder', "I am placeholder!");
+  cy.get('#fluentInputs-datePickerNull-label').should('have.attr', 'placeholder', 'I am placeholder!');
 }
 
 function swatchColorPickerDefaultTest(color = 'orange', pos = 0) {
