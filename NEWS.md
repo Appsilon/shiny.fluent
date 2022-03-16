@@ -1,6 +1,6 @@
-# shiny.fluent 0.2.1
+# shiny.fluent 0.2.2
 
-* Ensure `Calendar.shinyInput` and `DatePicker.shinyInput` with `value = NULL` to behave
+* Ensure `DatePicker.shinyInput` with `value = NULL` to behave
   consistently with the official behavior. [#118](https://github.com/Appsilon/shiny.fluent/pull/118)
 
 # shiny.fluent 0.2.0
