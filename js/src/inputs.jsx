@@ -36,7 +36,7 @@ export const ComboBox = InputAdapter(Fluent.ComboBox, (value, setValue) => ({
 }));
 
 export const DatePicker = InputAdapter(Fluent.DatePicker, (value, setValue) => ({
-  value: value ? new Date(value) : new Date(),
+  value: value ? new Date(value) : undefined,
   onSelectDate: setValue,
 }));
 

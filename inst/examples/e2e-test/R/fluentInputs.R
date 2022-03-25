@@ -66,8 +66,16 @@ fluentInputsServer <- function(id) {
         textOutput(ns("spinButtonValue")),
         
         h4("Calendar"),
-        Calendar.shinyInput(ns("calendar"), value = "2020-06-25T12:00:00.000Z", strings = dayPickerStrings),
+        Calendar.shinyInput(ns("calendar"), className = "calendar", value = "2020-06-25T12:00:00.000Z", strings = dayPickerStrings),
         textOutput(ns("calendarValue")),
+        
+        h4("Calendar - Default value"),
+        Calendar.shinyInput(ns("calendarDefault"), className = "calendarDefault", strings = dayPickerStrings),
+        textOutput(ns("calendarDefaultValue")),
+        
+        h4("Calendar - NULL value"),
+        Calendar.shinyInput(ns("calendarNull"), className = "calendarNull", value = NULL, strings = dayPickerStrings),
+        textOutput(ns("calendarNullValue")),
         
         h4("ChoiceGroup"),
         ChoiceGroup.shinyInput(ns("choiceGroup"), value = "B", options = options),
@@ -92,6 +100,14 @@ fluentInputsServer <- function(id) {
         h4("DatePicker"),
         DatePicker.shinyInput(ns("datePicker"), value = "2020-06-25T12:00:00.000Z", strings = dayPickerStrings),
         textOutput(ns("datePickerValue")),
+        
+        h4("DatePicker - Default value"),
+        DatePicker.shinyInput(ns("datePickerDefault"), strings = dayPickerStrings),
+        textOutput(ns("datePickerDefaultValue")),
+        
+        h4("DatePicker - NULL value"),
+        DatePicker.shinyInput(ns("datePickerNull"), value = NULL, strings = dayPickerStrings, placeholder = "I am placeholder!"),
+        textOutput(ns("datePickerNullValue")),
         
         h4("SwatchColorPicker"),
         SwatchColorPicker.shinyInput(ns("swatchColorPicker"), value = "orange", colorCells = colorCells, columnCount = length(colorCells)),
@@ -126,8 +142,8 @@ fluentInputsServer <- function(id) {
     })
     
     ids <- c(
-      "sliderInput", "textField", "checkbox", "rating", "spinButton", "calendar", "choiceGroup",
-      "colorPicker", "comboBox", "dropdown", "dropdownMultiselect", "datePicker", "swatchColorPicker", "toggle", "searchBox"
+      "sliderInput", "textField", "checkbox", "rating", "spinButton", "calendar", "calendarDefault", "calendarNull", "choiceGroup",
+      "colorPicker", "comboBox", "dropdown", "dropdownMultiselect", "datePicker", "datePickerDefault", "datePickerNull", "swatchColorPicker", "toggle", "searchBox"
     )
     wireInputToOutput(ids, input, output)
   })

@@ -1,3 +1,8 @@
+# shiny.fluent 0.2.2
+
+* Ensure `DatePicker.shinyInput` with `value = NULL` to behave
+  consistently with the official behavior. [#118](https://github.com/Appsilon/shiny.fluent/pull/118)
+
 # shiny.fluent 0.2.0
 
 This is the first public release, with several big interface changes:
