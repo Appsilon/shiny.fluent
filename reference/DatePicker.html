@@ -209,11 +209,23 @@ you need to work using the original docs to achieve the desired result.</p>
 <span class="r-in">  <span class="fu">shinyApp</span><span class="op">(</span></span>
 <span class="r-in">    ui <span class="op">=</span> <span class="fu">div</span><span class="op">(</span></span>
 <span class="r-in">      <span class="fu">DatePicker.shinyInput</span><span class="op">(</span><span class="st">"date"</span>, value <span class="op">=</span> <span class="st">"2020-06-25T22:00:00.000Z"</span><span class="op">)</span>,</span>
-<span class="r-in">      <span class="fu">textOutput</span><span class="op">(</span><span class="st">"dateValue"</span><span class="op">)</span></span>
+<span class="r-in">      <span class="fu">textOutput</span><span class="op">(</span><span class="st">"dateValue"</span><span class="op">)</span>,</span>
+<span class="r-in">      <span class="fu">h3</span><span class="op">(</span><span class="st">"If `value` is missing, default to system date"</span><span class="op">)</span>,</span>
+<span class="r-in">      <span class="fu">DatePicker.shinyInput</span><span class="op">(</span><span class="st">"date2"</span><span class="op">)</span>,</span>
+<span class="r-in">      <span class="fu">textOutput</span><span class="op">(</span><span class="st">"dateDefault"</span><span class="op">)</span>,</span>
+<span class="r-in">      <span class="fu">h3</span><span class="op">(</span><span class="st">"If `value` is NULL, return NULL"</span><span class="op">)</span>,</span>
+<span class="r-in">      <span class="fu">DatePicker.shinyInput</span><span class="op">(</span><span class="st">"date3"</span>, value <span class="op">=</span> <span class="cn">NULL</span>, placeholder <span class="op">=</span> <span class="st">"I am placeholder!"</span><span class="op">)</span>,</span>
+<span class="r-in">      <span class="fu">textOutput</span><span class="op">(</span><span class="st">"dateNull"</span><span class="op">)</span></span>
 <span class="r-in">    <span class="op">)</span>,</span>
 <span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span>
 <span class="r-in">      <span class="va">output</span><span class="op">$</span><span class="va">dateValue</span> <span class="op">&lt;-</span> <span class="fu">renderText</span><span class="op">(</span><span class="op">{</span></span>
 <span class="r-in">        <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Value: %s"</span>, <span class="va">input</span><span class="op">$</span><span class="va">date</span><span class="op">)</span></span>
+<span class="r-in">      <span class="op">}</span><span class="op">)</span></span>
+<span class="r-in">      <span class="va">output</span><span class="op">$</span><span class="va">dateDefault</span> <span class="op">&lt;-</span> <span class="fu">renderText</span><span class="op">(</span><span class="op">{</span></span>
+<span class="r-in">        <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Value: %s"</span>, <span class="va">input</span><span class="op">$</span><span class="va">date2</span><span class="op">)</span></span>
+<span class="r-in">      <span class="op">}</span><span class="op">)</span></span>
+<span class="r-in">      <span class="va">output</span><span class="op">$</span><span class="va">dateNull</span> <span class="op">&lt;-</span> <span class="fu">renderText</span><span class="op">(</span><span class="op">{</span></span>
+<span class="r-in">        <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Value: %s"</span>, <span class="fu"><a href="https://rdrr.io/r/base/deparse.html" class="external-link">deparse</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">date3</span><span class="op">)</span><span class="op">)</span></span>
 <span class="r-in">      <span class="op">}</span><span class="op">)</span></span>
 <span class="r-in">    <span class="op">}</span></span>
 <span class="r-in">  <span class="op">)</span></span>
