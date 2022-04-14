@@ -1,7 +1,7 @@
 library(shiny)
 library(shiny.fluent)
 
-if (interactive()) { 
+if (interactive()) {
   options <- list(
     list(key = "A", text = "Option A"),
     list(key = "B", text = "Option B")
@@ -49,6 +49,10 @@ if (interactive()) {
 }
 
 if (interactive()) {
+  options <- list(
+    list(key = "A", text = "Option A"),
+    list(key = "B", text = "Option B")
+  )
   # Use JSON created in Theme Designer
   # https://fabricweb.z5.web.core.windows.net/pr-deploy-site/refs/heads/master/theming-designer/
   theme <- '{
@@ -75,11 +79,10 @@ if (interactive()) {
     "black": "#0b0b0b",
     "white": "#fff2d4"
   }'
-  writeLines(theme, "theme.json")
 
   shinyApp(
     ui = ThemeProvider(
-      theme = "theme.json",
+      theme = parseTheme(theme),
       applyTo = "body",
       Stack(
         tokens = list(childrenGap = "10px"),

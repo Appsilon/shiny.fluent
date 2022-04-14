@@ -22,7 +22,7 @@ See https://developer.microsoft.com/en-us/fluentui#/controls/web/themes for deta
 library(shiny)
 library(shiny.fluent)
 
-if (interactive()) { 
+if (interactive()) {
   options <- list(
     list(key = "A", text = "Option A"),
     list(key = "B", text = "Option B")
@@ -68,10 +68,12 @@ if (interactive()) {
     server = function(input, output) { }
   )
 }
-<<<<<<< HEAD
-=======
 
 if (interactive()) {
+  options <- list(
+    list(key = "A", text = "Option A"),
+    list(key = "B", text = "Option B")
+  )
   # Use JSON created in Theme Designer
   # https://fabricweb.z5.web.core.windows.net/pr-deploy-site/refs/heads/master/theming-designer/
   theme <- '{
@@ -98,11 +100,10 @@ if (interactive()) {
     "black": "#0b0b0b",
     "white": "#fff2d4"
   }'
-  writeLines(theme, "theme.json")
 
   shinyApp(
     ui = ThemeProvider(
-      theme = "theme.json",
+      theme = parseTheme(theme),
       applyTo = "body",
       Stack(
         tokens = list(childrenGap = "10px"),
@@ -115,5 +116,4 @@ if (interactive()) {
     server = function(input, output) { }
   )
 }
->>>>>>> 6105b05 (Use theme created in Theme Designer as ThemeProvider input)
 }

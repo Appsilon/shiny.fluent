@@ -373,17 +373,7 @@ TextField <- component("TextField")
 
 #' @rdname Theme
 #' @export
-ThemeProvider <- function(...) {
-  args <- list(...)
-  if (!is.null(args$theme) & grepl("\\.json$", args$theme)) {
-    args$theme <- readTheme(args$theme)
-  }
-  shiny.react::reactElement(
-    module = "@fluentui/react", name = "ThemeProvider",
-    props = do.call(shiny.react::asProps, args),
-    deps = shinyFluentDependency()
-  )
-}
+ThemeProvider <- component("ThemeProvider")
 
 #' @rdname Toggle
 #' @export
