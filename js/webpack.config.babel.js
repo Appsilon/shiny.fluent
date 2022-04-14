@@ -26,5 +26,4 @@ export default {
     maxAssetSize: 1048576, // 1 MiB
   },
   stats: { colors: true },
-  devtool: 'source-map',
 };
