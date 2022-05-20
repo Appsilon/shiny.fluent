@@ -22,19 +22,13 @@ updateNormalPeoplePicker.shinyInput(
 )
 }
 \arguments{
-\item{ValidationState}{\code{ValidationState} \cr}
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
 
-\item{className}{\code{string} \cr Additional CSS class(es) to apply to the PeoplePickerItem root element.}
+\item{inputId}{Id of the component}
 
-\item{theme}{\code{ITheme} \cr Theme provided by High-Order Component.}
+\item{value}{Value}
 
-\item{compact}{\code{boolean} \cr Flag that controls whether each suggested PeoplePicker item (Persona) is rendered with or without secondary text for compact look.}
-
-\item{personaProps}{\code{IPersonaProps} \cr Persona props for each suggested for picking PeoplePicker item.}
-
-\item{styles}{\verb{IStyleFunctionOrObject<IPeoplePickerItemSuggestionStyleProps, IPeoplePickerItemSuggestionStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
-
-\item{suggestionsProps}{\code{IBasePickerSuggestionsProps} \cr General common props for all PeoplePicker items suggestions.}
+\item{session}{Session}
 }
 \description{
 The people picker (\code{PeoplePicker}) is used to select one or more entities, such as people or groups, from a list. It makes composing an email to someone, or adding them to a group, easy if you don’t know their full name or email address.
@@ -42,6 +36,18 @@ The people picker (\code{PeoplePicker}) is used to select one or more entitie
 For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/PeoplePicker}{docs}.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
+}
+\details{
+\itemize{
+\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IPeoplePickerItemSelectedStyleProps, IPeoplePickerItemSelectedStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
+\item {\bold{ ValidationState }} {\code{ValidationState} \cr }
+\item {\bold{ className }} {\code{string} \cr Additional CSS class(es) to apply to the PeoplePickerItem root element.}
+\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by High-Order Component.}
+\item {\bold{ compact }} {\code{boolean} \cr Flag that controls whether each suggested PeoplePicker item (Persona) is rendered with or without secondary text for compact look.}
+\item {\bold{ personaProps }} {\code{IPersonaProps} \cr Persona props for each suggested for picking PeoplePicker item.}
+\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IPeoplePickerItemSuggestionStyleProps, IPeoplePickerItemSuggestionStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
+\item {\bold{ suggestionsProps }} {\code{IBasePickerSuggestionsProps} \cr General common props for all PeoplePicker items suggestions.}
+}
 }
 \section{Best practices}{
 \subsection{Layout}{
@@ -55,15 +61,61 @@ you need to work using the original docs to achieve the desired result.
 \examples{
 library(shiny.fluent)
 
-people <- tibble::tribble(
-  ~key, ~imageUrl, ~imageInitials, ~text, ~secondaryText, ~tertiaryText, ~optionalText, ~isValid, ~presence, ~canExpand,
-  1, "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-female.png", "PV", "Annie Lindqvist", "Designer", "In a meeting", "Available at 4:00pm", TRUE, 2, NA,
-  2, "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-male.png", "AR", "Aaron Reid", "Designer", "In a meeting", "Available at 4:00pm", TRUE, 6, NA,
-  3, "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-male.png", "AL", "Alex Lundberg", "Software Developer", "In a meeting", "Available at 4:00pm", TRUE, 4, NA,
-  4, "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-male.png", "RK", "Roko Kolar", "Financial Analyst", "In a meeting", "Available at 4:00pm", TRUE, 1, NA,
-  5, "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-male.png", "CB", "Christian Bergqvist", "Sr. Designer", "In a meeting", "Available at 4:00pm", TRUE, 2, NA,
-  6, "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-female.png", "VL", "Valentina Lovric", "Design Developer", "In a meeting", "Available at 4:00pm", TRUE, 2, NA,
-  7, "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-male.png", "MS", "Maor Sharett", "UX Designer", "In a meeting", "Available at 4:00pm", TRUE, 3, NA
+assetsUrl <- "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/"
+malePersonaUrl <- paste0(assetsUrl, "persona-male.png")
+femalePersonaUrl <- paste0(assetsUrl, "persona-female.png")
+
+people <- tibble::tibble(
+  key = c(1, 2, 3, 4, 5, 6, 7),
+  imageUrl = c(
+    femalePersonaUrl,
+    malePersonaUrl,
+    malePersonaUrl,
+    malePersonaUrl,
+    malePersonaUrl,
+    femalePersonaUrl,
+    malePersonaUrl
+  ), 
+  imageInitials = c("PV", "AR", "AL", "RK", "CB", "VL", "MS"),
+  text = c(
+    "Annie Lindqvist",
+    "Aaron Reid",
+    "Alex Lundberg",
+    "Roko Kolar",
+    "Christian Bergqvist",
+    "Valentina Lovric",
+    "Maor Sharett"
+  ),
+  secondaryText = c(
+    "Designer",
+    "Designer",
+    "Software Developer",
+    "Financial Analyst",
+    "Sr. Designer",
+    "Design Developer",
+    "UX Designer"
+  ),
+  tertiaryText = c(
+    "In a meeting",
+    "In a meeting",
+    "In a meeting",
+    "In a meeting",
+    "In a meeting",
+    "In a meeting",
+    "In a meeting"
+  ),
+  optionalText = c(
+    "Available at 4:00pm",
+    "Available at 4:00pm",
+    "Available at 4:00pm",
+    "Available at 4:00pm",
+    "Available at 4:00pm",
+    "Available at 4:00pm",
+    "Available at 4:00pm"
+  ),
+  isValid = c(TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE),
+  presence = c(2, 6, 4, 1, 2, 2, 3),
+  canExpand = c(NA, NA, NA, NA, NA, NA, NA)
 )
 
 if (interactive()) {

@@ -7,37 +7,7 @@
 OverflowSet(...)
 }
 \arguments{
-\item{key}{\code{string} \cr Unique id to identify the item.}
-
-\item{keytipProps}{\code{IKeytipProps} \cr Optional keytip for the overflowSetItem.}
-
-\item{className}{\code{string} \cr Class name}
-
-\item{componentRef}{\verb{IRefObject<IOverflowSet>} \cr Gets the component ref.}
-
-\item{doNotContainWithinFocusZone}{\code{boolean} \cr If true do not contain the OverflowSet inside of a FocusZone, otherwise the OverflowSet will contain a FocusZone. If this is set to true focusZoneProps will be ignored. Use one or the other.}
-
-\item{focusZoneProps}{\code{IFocusZoneProps} \cr Custom properties for OverflowSet's FocusZone. If doNotContainWithinFocusZone is set to true focusZoneProps will be ignored. Use one or the other.}
-
-\item{items}{\code{IOverflowSetItemProps[]} \cr An array of items to be rendered by your onRenderItem function in the primary content area}
-
-\item{itemSubMenuProvider}{\verb{(item: IOverflowSetItemProps) => any[] | undefined} \cr Function that will take in an IOverflowSetItemProps and return the subMenu for that item. If not provided, will use 'item.subMenuProps.items' by default. This is only used if your overflow set has keytips.}
-
-\item{keytipSequences}{\code{string[]} \cr Optional full keytip sequence for the overflow button, if it will have a keytip.}
-
-\item{onRenderItem}{\verb{(item: IOverflowSetItemProps) => any} \cr Method to call when trying to render an item.}
-
-\item{onRenderOverflowButton}{\verb{IRenderFunction<any[]>} \cr Rendering method for overflow button and contextual menu. The argument to the function is the overflowItems passed in as props to this function.}
-
-\item{overflowItems}{\code{IOverflowSetItemProps[]} \cr An array of items to be passed to overflow contextual menu}
-
-\item{overflowSide}{\code{'start' | 'end'} \cr Controls wether or not the overflow button is placed at the start or end of the items. This gives a reveresed visual behavior but maintains correct keyboard navigation.}
-
-\item{role}{\code{string} \cr The role for the OverflowSet.}
-
-\item{styles}{\verb{IStyleFunctionOrObject<IOverflowSetProps, IOverflowSetStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
-
-\item{vertical}{\code{boolean} \cr Change item layout direction to vertical/stacked. If role is set to \code{menubar}, \code{vertical={true}} will also add proper \code{aria-orientation}.}
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
 }
 \description{
 The OverflowSet is a flexible container component that is useful for displaying a primary set of content with additional content in an overflow callout. Note that the example below is only an example of how to render the component, not a specific use case.
@@ -48,6 +18,26 @@ By default, the OverflowSet is simply \code{role=group}. If you used as a menu, 
 For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/OverflowSet}{docs}.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
+}
+}
+\details{
+\itemize{
+\item {\bold{ key }} {\code{string} \cr Unique id to identify the item.}
+\item {\bold{ keytipProps }} {\code{IKeytipProps} \cr Optional keytip for the overflowSetItem.}
+\item {\bold{ className }} {\code{string} \cr Class name}
+\item {\bold{ componentRef }} {\verb{IRefObject<IOverflowSet>} \cr Gets the component ref.}
+\item {\bold{ doNotContainWithinFocusZone }} {\code{boolean} \cr If true do not contain the OverflowSet inside of a FocusZone, otherwise the OverflowSet will contain a FocusZone. If this is set to true focusZoneProps will be ignored. Use one or the other.}
+\item {\bold{ focusZoneProps }} {\code{IFocusZoneProps} \cr Custom properties for OverflowSet's FocusZone. If doNotContainWithinFocusZone is set to true focusZoneProps will be ignored. Use one or the other.}
+\item {\bold{ items }} {\code{IOverflowSetItemProps[]} \cr An array of items to be rendered by your onRenderItem function in the primary content area}
+\item {\bold{ itemSubMenuProvider }} {\verb{(item: IOverflowSetItemProps) => any[] | undefined} \cr Function that will take in an IOverflowSetItemProps and return the subMenu for that item. If not provided, will use 'item.subMenuProps.items' by default. This is only used if your overflow set has keytips.}
+\item {\bold{ keytipSequences }} {\code{string[]} \cr Optional full keytip sequence for the overflow button, if it will have a keytip.}
+\item {\bold{ onRenderItem }} {\verb{(item: IOverflowSetItemProps) => any} \cr Method to call when trying to render an item.}
+\item {\bold{ onRenderOverflowButton }} {\verb{IRenderFunction<any[]>} \cr Rendering method for overflow button and contextual menu. The argument to the function is the overflowItems passed in as props to this function.}
+\item {\bold{ overflowItems }} {\code{IOverflowSetItemProps[]} \cr An array of items to be passed to overflow contextual menu}
+\item {\bold{ overflowSide }} {\code{'start' | 'end'} \cr Controls wether or not the overflow button is placed at the start or end of the items. This gives a reveresed visual behavior but maintains correct keyboard navigation.}
+\item {\bold{ role }} {\code{string} \cr The role for the OverflowSet.}
+\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IOverflowSetProps, IOverflowSetStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
+\item {\bold{ vertical }} {\code{boolean} \cr Change item layout direction to vertical/stacked. If role is set to \code{menubar}, \code{vertical={true}} will also add proper \code{aria-orientation}.}
 }
 }
 \examples{

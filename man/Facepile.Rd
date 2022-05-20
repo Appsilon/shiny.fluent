@@ -7,41 +7,7 @@
 Facepile(...)
 }
 \arguments{
-\item{addButtonProps}{\code{IButtonProps} \cr Button properties for the add face button}
-
-\item{ariaDescription}{\code{string} \cr ARIA label for persona list}
-
-\item{ariaLabel}{\code{string} \cr Defines the aria label that the screen readers use when focus goes on a list of personas.}
-
-\item{chevronButtonProps}{\code{IButtonProps} \cr Deprecated at v0.70, use \code{overflowButtonProps} instead.}
-
-\item{className}{\code{string} \cr Additional css class to apply to the Facepile}
-
-\item{componentRef}{\verb{IRefObject<IFacepile>} \cr Optional callback to access the IFacepile interface. Use this instead of ref for accessing the public methods and properties of the component.}
-
-\item{getPersonaProps}{\verb{(persona: IFacepilePersona) => IPersonaSharedProps} \cr Method to access properties on the underlying Persona control}
-
-\item{maxDisplayablePersonas}{\code{number} \cr Maximum number of personas to show}
-
-\item{onRenderPersona}{\verb{IRenderFunction<IFacepilePersona>} \cr Optional custom renderer for the persona, gets called when there is one persona in personas array}
-
-\item{onRenderPersonaCoin}{\verb{IRenderFunction<IFacepilePersona>} \cr Optional custom renderer for the persona coins, gets called when there are multiple persona in personas array}
-
-\item{overflowButtonProps}{\code{IButtonProps} \cr Properties for the overflow icon}
-
-\item{overflowButtonType}{\code{OverflowButtonType} \cr Type of overflow icon to use}
-
-\item{overflowPersonas}{\code{IFacepilePersona[]} \cr Personas to place in the overflow}
-
-\item{personas}{\code{IFacepilePersona[]} \cr Array of IPersonaProps that define each Persona.}
-
-\item{personaSize}{\code{PersonaSize} \cr Size to display the personas}
-
-\item{showAddButton}{\code{boolean} \cr Show add person button}
-
-\item{styles}{\verb{IStyleFunctionOrObject<IFacepileStyleProps, IFacepileStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
-
-\item{theme}{\code{ITheme} \cr Theme provided by High-Order Component.}
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
 }
 \description{
 A face pile (\code{Facepile}) displays a list of personas. Each circle represents a person and contains their image or initials. Often this control is used when sharing who has access to a specific view or file, or when assigning someone a task within a workflow.
@@ -49,6 +15,28 @@ A face pile (\code{Facepile}) displays a list of personas. Each circle represe
 For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/Facepile}{docs}.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
+}
+\details{
+\itemize{
+\item {\bold{ addButtonProps }} {\code{IButtonProps} \cr Button properties for the add face button}
+\item {\bold{ ariaDescription }} {\code{string} \cr ARIA label for persona list}
+\item {\bold{ ariaLabel }} {\code{string} \cr Defines the aria label that the screen readers use when focus goes on a list of personas.}
+\item {\bold{ chevronButtonProps }} {\code{IButtonProps} \cr Deprecated at v0.70, use \code{overflowButtonProps} instead.}
+\item {\bold{ className }} {\code{string} \cr Additional css class to apply to the Facepile}
+\item {\bold{ componentRef }} {\verb{IRefObject<IFacepile>} \cr Optional callback to access the IFacepile interface. Use this instead of ref for accessing the public methods and properties of the component.}
+\item {\bold{ getPersonaProps }} {\verb{(persona: IFacepilePersona) => IPersonaSharedProps} \cr Method to access properties on the underlying Persona control}
+\item {\bold{ maxDisplayablePersonas }} {\code{number} \cr Maximum number of personas to show}
+\item {\bold{ onRenderPersona }} {\verb{IRenderFunction<IFacepilePersona>} \cr Optional custom renderer for the persona, gets called when there is one persona in personas array}
+\item {\bold{ onRenderPersonaCoin }} {\verb{IRenderFunction<IFacepilePersona>} \cr Optional custom renderer for the persona coins, gets called when there are multiple persona in personas array}
+\item {\bold{ overflowButtonProps }} {\code{IButtonProps} \cr Properties for the overflow icon}
+\item {\bold{ overflowButtonType }} {\code{OverflowButtonType} \cr Type of overflow icon to use}
+\item {\bold{ overflowPersonas }} {\code{IFacepilePersona[]} \cr Personas to place in the overflow}
+\item {\bold{ personas }} {\code{IFacepilePersona[]} \cr Array of IPersonaProps that define each Persona.}
+\item {\bold{ personaSize }} {\code{PersonaSize} \cr Size to display the personas}
+\item {\bold{ showAddButton }} {\code{boolean} \cr Show add person button}
+\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IFacepileStyleProps, IFacepileStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
+\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by High-Order Component.}
+}
 }
 \section{Best practices}{
 \subsection{Layout}{

@@ -35,14 +35,12 @@ Calendar <- component("Calendar")
 Callout <- component("Callout")
 
 #' @rdname Checkbox
-#' @export
-Checkbox <- component("Checkbox")
-
-#' @rdname Checkbox
+#' @inheritParams inputDoc
 #' @export
 Checkbox <- component("Checkbox")
 
 #' @rdname ChoiceGroup
+#' @inheritParams inputDoc
 #' @export
 ChoiceGroup <- component("ChoiceGroup")
 
@@ -51,10 +49,12 @@ ChoiceGroup <- component("ChoiceGroup")
 Coachmark <- component("Coachmark")
 
 #' @rdname ColorPicker
+#' @inheritParams inputDoc
 #' @export
 ColorPicker <- component("ColorPicker")
 
 #' @rdname ComboBox
+#' @inheritParams inputDoc
 #' @export
 ComboBox <- component("ComboBox")
 
@@ -71,6 +71,7 @@ CommandBarButton <- component("CommandBarButton")
 CommandButton <- component("CommandButton")
 
 #' @rdname PeoplePicker
+#' @inheritParams inputDoc
 #' @export
 CompactPeoplePicker <- component("CompactPeoplePicker")
 
@@ -83,6 +84,7 @@ CompoundButton <- component("CompoundButton")
 ContextualMenu <- component("ContextualMenu")
 
 #' @rdname DatePicker
+#' @inheritParams inputDoc
 #' @export
 DatePicker <- component("DatePicker")
 
@@ -143,6 +145,7 @@ DocumentCardStatus <- component("DocumentCardStatus")
 DocumentCardTitle <- component("DocumentCardTitle")
 
 #' @rdname Dropdown
+#' @inheritParams inputDoc
 #' @export
 Dropdown <- component("Dropdown")
 
@@ -223,6 +226,7 @@ List <- component("List")
 MarqueeSelection <- component("MarqueeSelection")
 
 #' @rdname TextField
+#' @inheritParams inputDoc
 #' @export
 MaskedTextField <- component("MaskedTextField")
 
@@ -279,6 +283,7 @@ PrimaryButton <- component("PrimaryButton")
 ProgressIndicator <- component("ProgressIndicator")
 
 #' @rdname Rating
+#' @inheritParams inputDoc
 #' @export
 Rating <- component("Rating")
 
@@ -291,6 +296,7 @@ ResizeGroup <- component("ResizeGroup")
 ScrollablePane <- component("ScrollablePane")
 
 #' @rdname SearchBox
+#' @inheritParams inputDoc
 #' @export
 SearchBox <- component("SearchBox")
 
@@ -311,10 +317,12 @@ ShimmerElementsGroup <- component("ShimmerElementsGroup")
 ShimmeredDetailsList <- component("ShimmeredDetailsList")
 
 #' @rdname Slider
+#' @inheritParams inputDoc
 #' @export
 Slider <- component("Slider")
 
 #' @rdname SpinButton
+#' @inheritParams inputDoc
 #' @export
 SpinButton <- component("SpinButton")
 
@@ -335,6 +343,7 @@ Stack <- component("Stack")
 Sticky <- component("Sticky")
 
 #' @rdname SwatchColorPicker
+#' @inheritParams inputDoc
 #' @export
 SwatchColorPicker <- component("SwatchColorPicker")
 

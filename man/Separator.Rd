@@ -7,13 +7,7 @@
 Separator(...)
 }
 \arguments{
-\item{alignContent}{\code{'start' | 'center' | 'end'} \cr Where the content should be aligned in the separator.}
-
-\item{styles}{\verb{IStyleFunctionOrObject<ISeparatorStyleProps, ISeparatorStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
-
-\item{theme}{\code{ITheme} \cr Theme (provided through customization.)}
-
-\item{vertical}{\code{boolean} \cr Whether the element is a vertical separator.}
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
 }
 \description{
 A separator visually separates content into groups.
@@ -25,6 +19,14 @@ The content is center-aligned by default.
 For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/Separator}{docs}.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
+}
+\details{
+\itemize{
+\item {\bold{ alignContent }} {\code{'start' | 'center' | 'end'} \cr Where the content should be aligned in the separator.}
+\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<ISeparatorStyleProps, ISeparatorStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
+\item {\bold{ theme }} {\code{ITheme} \cr Theme (provided through customization.)}
+\item {\bold{ vertical }} {\code{boolean} \cr Whether the element is a vertical separator.}
+}
 }
 \examples{
 library(shiny.fluent)

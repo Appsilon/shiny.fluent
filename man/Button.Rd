@@ -97,105 +97,11 @@ updatePrimaryButton.shinyInput(
 )
 }
 \arguments{
-\item{baseClassName}{\code{string} \cr}
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
 
-\item{variantClassName}{\code{string} \cr}
+\item{inputId}{Id of the component}
 
-\item{allowDisabledFocus}{\code{boolean} \cr Whether the button can have focus in disabled mode}
-
-\item{ariaDescription}{\code{string} \cr Detailed description of the button for the benefit of screen readers.
-
-Besides the compound button, other button types will need more information provided to screen reader.}
-
-\item{ariaHidden}{\code{boolean} \cr If provided and is true it adds an 'aria-hidden' attribute instructing screen readers to ignore the element.}
-
-\item{ariaLabel}{\code{string} \cr The aria label of the button for the benefit of screen readers.}
-
-\item{buttonType}{\code{ButtonType} \cr Deprecated at v1.2.3, to be removed at \>= v2.0.0. Use specific button component instead.}
-
-\item{checked}{\code{boolean} \cr Whether the button is checked}
-
-\item{className}{\code{string} \cr If provided, additional class name to provide on the root element.}
-
-\item{componentRef}{\verb{IRefObject<IButton>} \cr Optional callback to access the IButton interface. Use this instead of ref for accessing the public methods and properties of the component.}
-
-\item{data}{\code{any} \cr Any custom data the developer wishes to associate with the menu item.}
-
-\item{defaultRender}{\code{any} \cr yet unknown docs}
-
-\item{description}{\code{IStyle} \cr Style for the description text if applicable (for compound buttons.) Deprecated, use \code{secondaryText} instead.}
-
-\item{disabled}{\code{boolean} \cr Whether the button is disabled}
-
-\item{getClassNames}{\verb{(theme: ITheme, className: string, variantClassName: string, iconClassName: string | undefined, menuIconClassName: string | undefined, disabled: boolean, checked: boolean, expanded: boolean, hasMenu: boolean, isSplit: boolean | undefined, allowDisabledFocus: boolean) => IButtonClassNames} \cr Method to provide the classnames to style a button. The default value for this prop is the getClassnames func defined in BaseButton.classnames.}
-
-\item{getSplitButtonClassNames}{\verb{(disabled: boolean, expanded: boolean, checked: boolean, allowDisabledFocus: boolean) => ISplitButtonClassNames} \cr Method to provide the classnames to style a button. The default value for this prop is the getClassnames func defined in BaseButton.classnames.}
-
-\item{href}{\code{string} \cr If provided, this component will be rendered as an anchor.}
-
-\item{iconProps}{\code{IIconProps} \cr The props for the icon shown in the button.}
-
-\item{keytipProps}{\code{IKeytipProps} \cr Optional keytip for this button}
-
-\item{menuAs}{\verb{IComponentAs<IContextualMenuProps>} \cr Render a custom menu in place of the normal one.}
-
-\item{menuIconProps}{\code{IIconProps} \cr The props for the icon shown when providing a menu dropdown.}
-
-\item{menuProps}{\code{IContextualMenuProps} \cr Props for button menu. Providing this will default to showing the menu icon. See menuIconProps for overriding how the default icon looks. Providing this in addition of onClick and setting the split property to true will render a SplitButton.}
-
-\item{menuTriggerKeyCode}{\code{KeyCodes | null} \cr Provides a custom KeyCode that can be used to open the button menu. The default KeyCode is the down arrow. A value of null can be provided to disable the key codes for opening the button menu.}
-
-\item{onAfterMenuDismiss}{\verb{() => void} \cr Callback that runs after Button's contextualmenu was closed (removed from the DOM)}
-
-\item{onMenuClick}{\verb{(ev?: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>, button?: IButtonProps) => void} \cr Optional callback when menu is clicked.}
-
-\item{onRenderAriaDescription}{\verb{IRenderFunction<IButtonProps>} \cr Custom render function for the aria description element.}
-
-\item{onRenderChildren}{\verb{IRenderFunction<IButtonProps>} \cr Custom render function for rendering the button children.}
-
-\item{onRenderDescription}{\verb{IRenderFunction<IButtonProps>} \cr Custom render function for the desciption text.}
-
-\item{onRenderIcon}{\verb{IRenderFunction<IButtonProps>} \cr Custom render function for the icon}
-
-\item{onRenderMenu}{\verb{IRenderFunction<IContextualMenuProps>} \cr Deprecated at v6.3.2, to be removed at \>= v7.0.0. Use \code{menuAs} instead.}
-
-\item{onRenderMenuIcon}{\verb{IRenderFunction<IButtonProps>} \cr Custom render function for button menu icon}
-
-\item{onRenderText}{\verb{IRenderFunction<IButtonProps>} \cr Custom render function for the label text.}
-
-\item{persistMenu}{\code{boolean} \cr Menu will not be created or destroyed when opened or closed, instead it will be hidden. This will improve perf of the menu opening but could potentially impact overall perf by having more elements in the dom. Should only be used when perf is important. Note: This may increase the amount of time it takes for the button itself to mount.}
-
-\item{primary}{\code{boolean} \cr Changes the visual presentation of the button to be emphasized (if defined)}
-
-\item{primaryActionButtonProps}{\code{IButtonProps} \cr Optional props to be applied only to the primary action button of SplitButton and not to the overall SplitButton container}
-
-\item{primaryDisabled}{\code{boolean} \cr If set to true and if this is a splitButton (split == true) then the primary action of a split button is disabled.}
-
-\item{renderPersistedMenuHiddenOnMount}{\code{boolean} \cr If true, the persisted menu is rendered hidden when the button initially mounts. Non-persisted menus will not be in the component tree unless they are being shown
-
-Note: This increases the time the button will take to mount, but can improve perceived menu open perf. when the user opens the menu.}
-
-\item{rootProps}{\verb{React.ButtonHTMLAttributes<HTMLButtonElement> | React.AnchorHTMLAttributes<HTMLAnchorElement>} \cr Deprecated at v0.56.2, to be removed at \>= v1.0.0. Just pass in button props instead. they will be mixed into the button/anchor element rendered by the component.}
-
-\item{secondaryText}{\code{string} \cr Description of the action this button takes. Only used for compound buttons}
-
-\item{split}{\code{boolean} \cr If set to true, and if menuProps and onClick are provided, the button will render as a SplitButton.}
-
-\item{splitButtonAriaLabel}{\code{string} \cr Accessible label for the dropdown chevron button if this button is split.}
-
-\item{splitButtonMenuProps}{\code{IButtonProps} \cr Experimental prop that get passed into the menuButton that's rendered as part of split button. Anything passed in will likely need to have accompanying style changes.}
-
-\item{styles}{\code{IButtonStyles} \cr Custom styling for individual elements within the button DOM.}
-
-\item{text}{\code{string} \cr Text to render button label. If text is supplied, it will override any string in button children. Other children components will be passed through after the text.}
-
-\item{theme}{\code{ITheme} \cr Theme provided by HOC.}
-
-\item{toggle}{\code{boolean} \cr Whether button is a toggle button with distinct on and off states. This should be true for buttons that permanently change state when a press event finishes, such as a volume mute button.}
-
-\item{toggled}{\code{boolean} \cr Any custom data the developer wishes to associate with the menu item. Deprecated, use \code{checked} if setting state.}
-
-\item{uniqueId}{\code{string | number} \cr Unique id to identify the item. Typically a duplicate of key value.}
+\item{session}{Session}
 }
 \description{
 Buttons give people a way to trigger an action. They’re typically found in forms, dialog panels, and dialogs. Some buttons are specialized for particular tasks, such as navigation, repeated actions, or presenting menus.
@@ -203,6 +109,62 @@ Buttons give people a way to trigger an action. They’re typically found in for
 For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/Button}{docs}.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
+}
+\details{
+\itemize{
+\item {\bold{ baseClassName }} {\code{string} \cr }
+\item {\bold{ variantClassName }} {\code{string} \cr }
+\item {\bold{ allowDisabledFocus }} {\code{boolean} \cr Whether the button can have focus in disabled mode}
+\item {\bold{ ariaDescription }} {\code{string} \cr Detailed description of the button for the benefit of screen readers.
+
+Besides the compound button, other button types will need more information provided to screen reader.}
+\item {\bold{ ariaHidden }} {\code{boolean} \cr If provided and is true it adds an 'aria-hidden' attribute instructing screen readers to ignore the element.}
+\item {\bold{ ariaLabel }} {\code{string} \cr The aria label of the button for the benefit of screen readers.}
+\item {\bold{ buttonType }} {\code{ButtonType} \cr Deprecated at v1.2.3, to be removed at \>= v2.0.0. Use specific button component instead.}
+\item {\bold{ checked }} {\code{boolean} \cr Whether the button is checked}
+\item {\bold{ className }} {\code{string} \cr If provided, additional class name to provide on the root element.}
+\item {\bold{ componentRef }} {\verb{IRefObject<IButton>} \cr Optional callback to access the IButton interface. Use this instead of ref for accessing the public methods and properties of the component.}
+\item {\bold{ data }} {\code{any} \cr Any custom data the developer wishes to associate with the menu item.}
+\item {\bold{ defaultRender }} {\code{any} \cr yet unknown docs}
+\item {\bold{ description }} {\code{IStyle} \cr Style for the description text if applicable (for compound buttons.) Deprecated, use \code{secondaryText} instead.}
+\item {\bold{ disabled }} {\code{boolean} \cr Whether the button is disabled}
+\item {\bold{ getClassNames }} {\verb{(theme: ITheme, className: string, variantClassName: string, iconClassName: string | undefined, menuIconClassName: string | undefined, disabled: boolean, checked: boolean, expanded: boolean, hasMenu: boolean, isSplit: boolean | undefined, allowDisabledFocus: boolean) => IButtonClassNames} \cr Method to provide the classnames to style a button. The default value for this prop is the getClassnames func defined in BaseButton.classnames.}
+\item {\bold{ getSplitButtonClassNames }} {\verb{(disabled: boolean, expanded: boolean, checked: boolean, allowDisabledFocus: boolean) => ISplitButtonClassNames} \cr Method to provide the classnames to style a button. The default value for this prop is the getClassnames func defined in BaseButton.classnames.}
+\item {\bold{ href }} {\code{string} \cr If provided, this component will be rendered as an anchor.}
+\item {\bold{ iconProps }} {\code{IIconProps} \cr The props for the icon shown in the button.}
+\item {\bold{ keytipProps }} {\code{IKeytipProps} \cr Optional keytip for this button}
+\item {\bold{ menuAs }} {\verb{IComponentAs<IContextualMenuProps>} \cr Render a custom menu in place of the normal one.}
+\item {\bold{ menuIconProps }} {\code{IIconProps} \cr The props for the icon shown when providing a menu dropdown.}
+\item {\bold{ menuProps }} {\code{IContextualMenuProps} \cr Props for button menu. Providing this will default to showing the menu icon. See menuIconProps for overriding how the default icon looks. Providing this in addition of onClick and setting the split property to true will render a SplitButton.}
+\item {\bold{ menuTriggerKeyCode }} {\code{KeyCodes | null} \cr Provides a custom KeyCode that can be used to open the button menu. The default KeyCode is the down arrow. A value of null can be provided to disable the key codes for opening the button menu.}
+\item {\bold{ onAfterMenuDismiss }} {\verb{() => void} \cr Callback that runs after Button's contextualmenu was closed (removed from the DOM)}
+\item {\bold{ onMenuClick }} {\verb{(ev?: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>, button?: IButtonProps) => void} \cr Optional callback when menu is clicked.}
+\item {\bold{ onRenderAriaDescription }} {\verb{IRenderFunction<IButtonProps>} \cr Custom render function for the aria description element.}
+\item {\bold{ onRenderChildren }} {\verb{IRenderFunction<IButtonProps>} \cr Custom render function for rendering the button children.}
+\item {\bold{ onRenderDescription }} {\verb{IRenderFunction<IButtonProps>} \cr Custom render function for the desciption text.}
+\item {\bold{ onRenderIcon }} {\verb{IRenderFunction<IButtonProps>} \cr Custom render function for the icon}
+\item {\bold{ onRenderMenu }} {\verb{IRenderFunction<IContextualMenuProps>} \cr Deprecated at v6.3.2, to be removed at \>= v7.0.0. Use \code{menuAs} instead.}
+\item {\bold{ onRenderMenuIcon }} {\verb{IRenderFunction<IButtonProps>} \cr Custom render function for button menu icon}
+\item {\bold{ onRenderText }} {\verb{IRenderFunction<IButtonProps>} \cr Custom render function for the label text.}
+\item {\bold{ persistMenu }} {\code{boolean} \cr Menu will not be created or destroyed when opened or closed, instead it will be hidden. This will improve perf of the menu opening but could potentially impact overall perf by having more elements in the dom. Should only be used when perf is important. Note: This may increase the amount of time it takes for the button itself to mount.}
+\item {\bold{ primary }} {\code{boolean} \cr Changes the visual presentation of the button to be emphasized (if defined)}
+\item {\bold{ primaryActionButtonProps }} {\code{IButtonProps} \cr Optional props to be applied only to the primary action button of SplitButton and not to the overall SplitButton container}
+\item {\bold{ primaryDisabled }} {\code{boolean} \cr If set to true and if this is a splitButton (split == true) then the primary action of a split button is disabled.}
+\item {\bold{ renderPersistedMenuHiddenOnMount }} {\code{boolean} \cr If true, the persisted menu is rendered hidden when the button initially mounts. Non-persisted menus will not be in the component tree unless they are being shown
+
+Note: This increases the time the button will take to mount, but can improve perceived menu open perf. when the user opens the menu.}
+\item {\bold{ rootProps }} {\verb{React.ButtonHTMLAttributes<HTMLButtonElement> | React.AnchorHTMLAttributes<HTMLAnchorElement>} \cr Deprecated at v0.56.2, to be removed at \>= v1.0.0. Just pass in button props instead. they will be mixed into the button/anchor element rendered by the component.}
+\item {\bold{ secondaryText }} {\code{string} \cr Description of the action this button takes. Only used for compound buttons}
+\item {\bold{ split }} {\code{boolean} \cr If set to true, and if menuProps and onClick are provided, the button will render as a SplitButton.}
+\item {\bold{ splitButtonAriaLabel }} {\code{string} \cr Accessible label for the dropdown chevron button if this button is split.}
+\item {\bold{ splitButtonMenuProps }} {\code{IButtonProps} \cr Experimental prop that get passed into the menuButton that's rendered as part of split button. Anything passed in will likely need to have accompanying style changes.}
+\item {\bold{ styles }} {\code{IButtonStyles} \cr Custom styling for individual elements within the button DOM.}
+\item {\bold{ text }} {\code{string} \cr Text to render button label. If text is supplied, it will override any string in button children. Other children components will be passed through after the text.}
+\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by HOC.}
+\item {\bold{ toggle }} {\code{boolean} \cr Whether button is a toggle button with distinct on and off states. This should be true for buttons that permanently change state when a press event finishes, such as a volume mute button.}
+\item {\bold{ toggled }} {\code{boolean} \cr Any custom data the developer wishes to associate with the menu item. Deprecated, use \code{checked} if setting state.}
+\item {\bold{ uniqueId }} {\code{string | number} \cr Unique id to identify the item. Typically a duplicate of key value.}
+}
 }
 \section{Best practices}{
 \subsection{Layout}{
@@ -232,11 +194,26 @@ if (interactive()) {
 
   shinyApp(
     ui = div(
-        Stack(
-        DefaultButton.shinyInput("button1", text = "Default Button", styles = list("background: green")),
-        PrimaryButton.shinyInput("button2", text = "Primary Button"),
-        CompoundButton.shinyInput("button3", secondaryText = "Compound Button has additional text", text = "Compound Button"),
-        ActionButton.shinyInput("button4", iconProps = list("iconName" = "AddFriend"), text = "Action Button"),
+      Stack(
+        DefaultButton.shinyInput(
+          "button1",
+          text = "Default Button",
+          styles = list("background: green")
+        ),
+        PrimaryButton.shinyInput(
+          "button2",
+          text = "Primary Button"
+        ),
+        CompoundButton.shinyInput(
+          "button3",
+          secondaryText = "Compound Button has additional text",
+          text = "Compound Button"
+        ),
+        ActionButton.shinyInput(
+          "button4",
+          iconProps = list("iconName" = "AddFriend"),
+          text = "Action Button"
+        ),
         horizontal = TRUE,
         tokens = tokens
       ),

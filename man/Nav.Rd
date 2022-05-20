@@ -7,39 +7,7 @@
 Nav(...)
 }
 \arguments{
-\item{link}{\code{INavLink} \cr (Optional) Link to be rendered.}
-
-\item{ariaLabel}{\code{string} \cr (Optional) The nav container aria label.}
-
-\item{className}{\code{string} \cr Additional css class to apply to the Nav}
-
-\item{componentRef}{\verb{IRefObject<INav>} \cr Optional callback to access the INav interface. Use this instead of ref for accessing the public methods and properties of the component.}
-
-\item{expandButtonAriaLabel}{\code{string} \cr (Optional) The nav container aria label. The link name is prepended to this label. If not provided, the aria label will default to the link name.}
-
-\item{groups}{\code{INavLinkGroup[] | null} \cr A collection of link groups to display in the navigation bar}
-
-\item{initialSelectedKey}{\code{string} \cr (Optional) The key of the nav item initially selected.}
-
-\item{isOnTop}{\code{boolean} \cr Indicates whether the navigation component renders on top of other content in the UI}
-
-\item{linkAs}{\verb{IComponentAs<INavButtonProps>} \cr Render a custom link in place of the normal one. This replaces the entire button rather than simply button content}
-
-\item{onLinkClick}{\verb{(ev?: React.MouseEvent<HTMLElement>, item?: INavLink) => void} \cr Function callback invoked when a link in the navigation is clicked}
-
-\item{onLinkExpandClick}{\verb{(ev?: React.MouseEvent<HTMLElement>, item?: INavLink) => void} \cr Function callback invoked when the chevron on a link is clicked}
-
-\item{onRenderGroupHeader}{\verb{IRenderFunction<IRenderGroupHeaderProps>} \cr Used to customize how content inside the group header is rendered}
-
-\item{onRenderLink}{\verb{IRenderFunction<INavLink>} \cr Used to customize how content inside the link tag is rendered}
-
-\item{selectedAriaLabel}{\code{string} \cr (Deprecated) Use ariaCurrent on links instead}
-
-\item{selectedKey}{\code{string} \cr (Optional) The key of the nav item selected by caller.}
-
-\item{styles}{\verb{IStyleFunctionOrObject<INavStyleProps, INavStyles>} \cr Call to provide customized styling that will layer on top of the variant rules}
-
-\item{theme}{\code{ITheme} \cr Theme provided by HOC.}
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
 }
 \description{
 Navs (also called "left nav" or "navigation pane") provide links to the main areas of an app or a site. In larger configurations, the Nav is always on-screen, usually on the left of the view. In smaller configurations, the Nav may collapse into a skinnier version or be completely hidden until the user taps an icon.
@@ -47,6 +15,27 @@ Navs (also called "left nav" or "navigation pane") provide links to the main are
 For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/Nav}{docs}.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
+}
+\details{
+\itemize{
+\item {\bold{ link }} {\code{INavLink} \cr (Optional) Link to be rendered.}
+\item {\bold{ ariaLabel }} {\code{string} \cr (Optional) The nav container aria label.}
+\item {\bold{ className }} {\code{string} \cr Additional css class to apply to the Nav}
+\item {\bold{ componentRef }} {\verb{IRefObject<INav>} \cr Optional callback to access the INav interface. Use this instead of ref for accessing the public methods and properties of the component.}
+\item {\bold{ expandButtonAriaLabel }} {\code{string} \cr (Optional) The nav container aria label. The link name is prepended to this label. If not provided, the aria label will default to the link name.}
+\item {\bold{ groups }} {\code{INavLinkGroup[] | null} \cr A collection of link groups to display in the navigation bar}
+\item {\bold{ initialSelectedKey }} {\code{string} \cr (Optional) The key of the nav item initially selected.}
+\item {\bold{ isOnTop }} {\code{boolean} \cr Indicates whether the navigation component renders on top of other content in the UI}
+\item {\bold{ linkAs }} {\verb{IComponentAs<INavButtonProps>} \cr Render a custom link in place of the normal one. This replaces the entire button rather than simply button content}
+\item {\bold{ onLinkClick }} {\verb{(ev?: React.MouseEvent<HTMLElement>, item?: INavLink) => void} \cr Function callback invoked when a link in the navigation is clicked}
+\item {\bold{ onLinkExpandClick }} {\verb{(ev?: React.MouseEvent<HTMLElement>, item?: INavLink) => void} \cr Function callback invoked when the chevron on a link is clicked}
+\item {\bold{ onRenderGroupHeader }} {\verb{IRenderFunction<IRenderGroupHeaderProps>} \cr Used to customize how content inside the group header is rendered}
+\item {\bold{ onRenderLink }} {\verb{IRenderFunction<INavLink>} \cr Used to customize how content inside the link tag is rendered}
+\item {\bold{ selectedAriaLabel }} {\code{string} \cr (Deprecated) Use ariaCurrent on links instead}
+\item {\bold{ selectedKey }} {\code{string} \cr (Optional) The key of the nav item selected by caller.}
+\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<INavStyleProps, INavStyles>} \cr Call to provide customized styling that will layer on top of the variant rules}
+\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by HOC.}
+}
 }
 \examples{
 library(shiny.fluent)

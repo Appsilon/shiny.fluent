@@ -1,8 +1,11 @@
+resolve <- shiny:::resolve
+
 #' Run example shiny.fluent apps.
 #'
 #' Based on shiny::runExample, and takes the same arguments.
 #'
 #' @param example Example to run. `NA` to list the examples.
+#' @param port The TCP port that the application should listen on
 #' @param launch.browser Whether to open the app in a browser
 #' @param host The IPv4 address to listen on.
 #' @param display.mode Display mode for the app.
@@ -19,7 +22,7 @@ runExample <- function(
   display.mode = c("auto", "normal", "showcase") # nolint
 ) {
   examplesDir <- system.file("examples", package = "shiny.fluent", mustWork = TRUE)
-  appPath <- shiny:::resolve(examplesDir, example) # TODO: avoid :::
+  appPath <- resolve(examplesDir, example)
   if (is.null(appPath)) {
     examplesListMessage <- paste0(
       'Available examples: "',

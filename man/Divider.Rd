@@ -7,6 +7,9 @@
 \usage{
 VerticalDivider(...)
 }
+\arguments{
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
+}
 \description{
 A Divider is a line that is used to visually differentiate different parts of a UI. They are commonly used in headers and command bars. This divider automatically center algins itself within the parent container and can be customized to be shown in different heights and colors.
 

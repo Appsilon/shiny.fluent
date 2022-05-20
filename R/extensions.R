@@ -8,6 +8,7 @@
 #' @param text text to be displayed on the menu
 #' @param icon optional name of an icon
 #' @param subitems optional list of CommandBar items
+#' @param ... Additional props to pass to CommandBarItem
 #' @seealso CommandBar
 #' @export
 CommandBarItem <- function(text, icon = NULL, subitems = NULL, ...) {

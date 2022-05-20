@@ -10,63 +10,7 @@ Pivot(...)
 PivotItem(...)
 }
 \arguments{
-\item{alwaysRender}{\code{boolean} \cr Defines whether to always render the pivot item (regardless of whether it is selected or not). Useful if you're rendering content that is expensive to mount.}
-
-\item{ariaLabel}{\code{string} \cr The aria label of each pivot link which will read by screen reader instead of linkText.
-
-Note that unless you have compelling requirements you should not override aria-label.}
-
-\item{headerButtonProps}{\verb{IButtonProps | \{ [key: string]: string | number | boolean; \}} \cr Props for the header command button. This provides a way to pass in native props, such as data-* and aria-*, for each pivot header/link element.}
-
-\item{headerText}{\code{string} \cr The text displayed of each pivot link.}
-
-\item{itemCount}{\code{number | string} \cr Defines an optional item count displayed in parentheses just after the \code{linkText}.
-
-Examples: completed (4), Unread (99+)}
-
-\item{itemIcon}{\code{string} \cr An optional icon to show next to the pivot link.}
-
-\item{itemKey}{\code{string} \cr An required key to uniquely identify a pivot item.
-
-Note: The 'key' from react props cannot be used inside component.}
-
-\item{keytipProps}{\code{IKeytipProps} \cr Optional keytip for this PivotItem.}
-
-\item{linkText}{\code{string} \cr The text displayed of each pivot link - renaming to \code{headerText}.}
-
-\item{onRenderItemLink}{\verb{IRenderFunction<IPivotItemProps>} \cr Optional custom renderer for the pivot item link.}
-
-\item{className}{\code{string} \cr Additional css class to apply to the Pivot}
-
-\item{componentRef}{\verb{IRefObject<IPivot>} \cr Optional callback to access the IPivot interface. Use this instead of ref for accessing the public methods and properties of the component.}
-
-\item{defaultSelectedIndex}{\code{number} \cr Default selected index for the pivot. Only provide this if the pivot is an uncontrolled component; otherwise, use the \code{selectedKey} property.
-
-This property is also mutually exclusive with \code{defaultSelectedKey}.}
-
-\item{defaultSelectedKey}{\code{string} \cr Default selected key for the pivot. Only provide this if the pivot is an uncontrolled component; otherwise, use the \code{selectedKey} property.
-
-This property is also mutually exclusive with \code{defaultSelectedIndex}.}
-
-\item{getTabId}{\verb{(itemKey: string, index: number) => string} \cr Callback to customize how IDs are generated for each tab header. Useful if you're rendering content outside and need to connect aria-labelledby.}
-
-\item{headersOnly}{\code{boolean} \cr Whether to skip rendering the tabpanel with the content of the selected tab. Use this prop if you plan to separately render the tab content and don't want to leave an empty tabpanel in the page that may confuse Screen Readers.}
-
-\item{initialSelectedIndex}{\code{number} \cr Index of the pivot item initially selected. Mutually exclusive with \code{initialSelectedKey}. Only provide this if the pivot is an uncontrolled component; otherwise, use \code{selectedKey}.}
-
-\item{initialSelectedKey}{\code{string} \cr Key of the pivot item initially selected. Mutually exclusive with \code{initialSelectedIndex}. Only provide this if the pivot is an uncontrolled component; otherwise, use \code{selectedKey}.}
-
-\item{linkFormat}{\code{PivotLinkFormat} \cr PivotLinkFormat to use (links, tabs)}
-
-\item{linkSize}{\code{PivotLinkSize} \cr PivotLinkSize to use (normal, large)}
-
-\item{onLinkClick}{\verb{(item?: PivotItem, ev?: React.MouseEvent<HTMLElement>) => void} \cr Callback for when the selected pivot item is changed.}
-
-\item{selectedKey}{\code{string | null} \cr Key of the selected pivot item. Updating this will override the Pivot's selected item state. Only provide this if the pivot is a controlled component where you are maintaining the current state; otherwise, use \code{defaultSelectedKey}.}
-
-\item{styles}{\verb{IStyleFunctionOrObject<IPivotStyleProps, IPivotStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
-
-\item{theme}{\code{ITheme} \cr Theme provided by High-Order Component.}
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
 }
 \description{
 The Pivot control and related tabs pattern are used for navigating frequently accessed, distinct content categories. Pivots allow for navigation between two or more content views and relies on text headers to articulate the different sections of content.
@@ -79,6 +23,45 @@ Tabs are a visual variant of Pivot that use a combination of icons and text or j
 For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/Pivot}{docs}.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
+}
+\details{
+\itemize{
+\item {\bold{ alwaysRender }} {\code{boolean} \cr Defines whether to always render the pivot item (regardless of whether it is selected or not). Useful if you're rendering content that is expensive to mount.}
+\item {\bold{ ariaLabel }} {\code{string} \cr The aria label of each pivot link which will read by screen reader instead of linkText.
+
+Note that unless you have compelling requirements you should not override aria-label.}
+\item {\bold{ componentRef }} {\verb{IRefObject<\{\}>} \cr Gets the component ref.}
+\item {\bold{ headerButtonProps }} {\verb{IButtonProps | \{ [key: string]: string | number | boolean; \}} \cr Props for the header command button. This provides a way to pass in native props, such as data-* and aria-*, for each pivot header/link element.}
+\item {\bold{ headerText }} {\code{string} \cr The text displayed of each pivot link.}
+\item {\bold{ itemCount }} {\code{number | string} \cr Defines an optional item count displayed in parentheses just after the \code{linkText}.
+
+Examples: completed (4), Unread (99+)}
+\item {\bold{ itemIcon }} {\code{string} \cr An optional icon to show next to the pivot link.}
+\item {\bold{ itemKey }} {\code{string} \cr An required key to uniquely identify a pivot item.
+
+Note: The 'key' from react props cannot be used inside component.}
+\item {\bold{ keytipProps }} {\code{IKeytipProps} \cr Optional keytip for this PivotItem.}
+\item {\bold{ linkText }} {\code{string} \cr The text displayed of each pivot link - renaming to \code{headerText}.}
+\item {\bold{ onRenderItemLink }} {\verb{IRenderFunction<IPivotItemProps>} \cr Optional custom renderer for the pivot item link.}
+\item {\bold{ className }} {\code{string} \cr Additional css class to apply to the Pivot}
+\item {\bold{ componentRef }} {\verb{IRefObject<IPivot>} \cr Optional callback to access the IPivot interface. Use this instead of ref for accessing the public methods and properties of the component.}
+\item {\bold{ defaultSelectedIndex }} {\code{number} \cr Default selected index for the pivot. Only provide this if the pivot is an uncontrolled component; otherwise, use the \code{selectedKey} property.
+
+This property is also mutually exclusive with \code{defaultSelectedKey}.}
+\item {\bold{ defaultSelectedKey }} {\code{string} \cr Default selected key for the pivot. Only provide this if the pivot is an uncontrolled component; otherwise, use the \code{selectedKey} property.
+
+This property is also mutually exclusive with \code{defaultSelectedIndex}.}
+\item {\bold{ getTabId }} {\verb{(itemKey: string, index: number) => string} \cr Callback to customize how IDs are generated for each tab header. Useful if you're rendering content outside and need to connect aria-labelledby.}
+\item {\bold{ headersOnly }} {\code{boolean} \cr Whether to skip rendering the tabpanel with the content of the selected tab. Use this prop if you plan to separately render the tab content and don't want to leave an empty tabpanel in the page that may confuse Screen Readers.}
+\item {\bold{ initialSelectedIndex }} {\code{number} \cr Index of the pivot item initially selected. Mutually exclusive with \code{initialSelectedKey}. Only provide this if the pivot is an uncontrolled component; otherwise, use \code{selectedKey}.}
+\item {\bold{ initialSelectedKey }} {\code{string} \cr Key of the pivot item initially selected. Mutually exclusive with \code{initialSelectedIndex}. Only provide this if the pivot is an uncontrolled component; otherwise, use \code{selectedKey}.}
+\item {\bold{ linkFormat }} {\code{PivotLinkFormat} \cr PivotLinkFormat to use (links, tabs)}
+\item {\bold{ linkSize }} {\code{PivotLinkSize} \cr PivotLinkSize to use (normal, large)}
+\item {\bold{ onLinkClick }} {\verb{(item?: PivotItem, ev?: React.MouseEvent<HTMLElement>) => void} \cr Callback for when the selected pivot item is changed.}
+\item {\bold{ selectedKey }} {\code{string | null} \cr Key of the selected pivot item. Updating this will override the Pivot's selected item state. Only provide this if the pivot is a controlled component where you are maintaining the current state; otherwise, use \code{defaultSelectedKey}.}
+\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IPivotStyleProps, IPivotStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
+\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by High-Order Component.}
+}
 }
 \examples{
 library(shiny.fluent)

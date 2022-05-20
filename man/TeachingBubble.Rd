@@ -10,45 +10,7 @@ TeachingBubble(...)
 TeachingBubbleContent(...)
 }
 \arguments{
-\item{ariaDescribedBy}{\code{string} \cr Defines the element id referencing the element containing the description for the TeachingBubble.}
-
-\item{ariaLabelledBy}{\code{string} \cr Defines the element id referencing the element containing label text for TeachingBubble.}
-
-\item{calloutProps}{\code{ICalloutProps} \cr Properties to pass through for Callout, reference detail properties in ICalloutProps}
-
-\item{componentRef}{\verb{IRefObject<ITeachingBubble>} \cr Optional callback to access the ITeachingBubble interface. Use this instead of ref for accessing the public methods and properties of the component.}
-
-\item{focusTrapZoneProps}{\code{IFocusTrapZoneProps} \cr Properties to pass through for FocusTrapZone, reference detail properties in IFocusTrapZoneProps}
-
-\item{footerContent}{\code{string | JSX.Element} \cr Text that will be rendered in the footer of the TeachingBubble. May be rendered alongside primary and secondary buttons.}
-
-\item{hasCloseButton}{\code{boolean} \cr Whether the TeachingBubble renders close button in the top right corner.}
-
-\item{hasCloseIcon}{\code{boolean} \cr}
-
-\item{hasCondensedHeadline}{\code{boolean} \cr A variation with smaller bold headline and no margins.}
-
-\item{hasSmallHeadline}{\code{boolean} \cr A variation with smaller bold headline and margins to the body. (\code{hasCondensedHeadline} takes precedence if it is also set to true.)}
-
-\item{headline}{\code{string} \cr A headline for the Teaching Bubble.}
-
-\item{illustrationImage}{\code{IImageProps} \cr An Image for the TeachingBubble.}
-
-\item{isWide}{\code{boolean} \cr Whether or not the TeachingBubble is wide, with image on the left side.}
-
-\item{onDismiss}{\verb{(ev?: any) => void} \cr Callback when the TeachingBubble tries to close.}
-
-\item{primaryButtonProps}{\code{IButtonProps} \cr The Primary interaction button}
-
-\item{secondaryButtonProps}{\code{IButtonProps} \cr The Secondary interaction button}
-
-\item{styles}{\verb{IStyleFunctionOrObject<ITeachingBubbleStyleProps, ITeachingBubbleStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
-
-\item{target}{\code{Target} \cr Element, MouseEvent, Point, or querySelector string that the TeachingBubble should anchor to.}
-
-\item{targetElement}{\code{HTMLElement} \cr}
-
-\item{theme}{\code{ITheme} \cr Theme provided by High-Order Component.}
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
 }
 \description{
 A teaching bubble (\code{TeachingBubble}) brings attention to a new or important feature, with the goal of increasing engagement with the feature. A teaching bubble typically follows a coach mark.
@@ -58,6 +20,30 @@ Use teaching bubbles sparingly. Consider how frequently people will see it, an
 For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/TeachingBubble}{docs}.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
+}
+\details{
+\itemize{
+\item {\bold{ ariaDescribedBy }} {\code{string} \cr Defines the element id referencing the element containing the description for the TeachingBubble.}
+\item {\bold{ ariaLabelledBy }} {\code{string} \cr Defines the element id referencing the element containing label text for TeachingBubble.}
+\item {\bold{ calloutProps }} {\code{ICalloutProps} \cr Properties to pass through for Callout, reference detail properties in ICalloutProps}
+\item {\bold{ componentRef }} {\verb{IRefObject<ITeachingBubble>} \cr Optional callback to access the ITeachingBubble interface. Use this instead of ref for accessing the public methods and properties of the component.}
+\item {\bold{ focusTrapZoneProps }} {\code{IFocusTrapZoneProps} \cr Properties to pass through for FocusTrapZone, reference detail properties in IFocusTrapZoneProps}
+\item {\bold{ footerContent }} {\code{string | JSX.Element} \cr Text that will be rendered in the footer of the TeachingBubble. May be rendered alongside primary and secondary buttons.}
+\item {\bold{ hasCloseButton }} {\code{boolean} \cr Whether the TeachingBubble renders close button in the top right corner.}
+\item {\bold{ hasCloseIcon }} {\code{boolean} \cr }
+\item {\bold{ hasCondensedHeadline }} {\code{boolean} \cr A variation with smaller bold headline and no margins.}
+\item {\bold{ hasSmallHeadline }} {\code{boolean} \cr A variation with smaller bold headline and margins to the body. (\code{hasCondensedHeadline} takes precedence if it is also set to true.)}
+\item {\bold{ headline }} {\code{string} \cr A headline for the Teaching Bubble.}
+\item {\bold{ illustrationImage }} {\code{IImageProps} \cr An Image for the TeachingBubble.}
+\item {\bold{ isWide }} {\code{boolean} \cr Whether or not the TeachingBubble is wide, with image on the left side.}
+\item {\bold{ onDismiss }} {\verb{(ev?: any) => void} \cr Callback when the TeachingBubble tries to close.}
+\item {\bold{ primaryButtonProps }} {\code{IButtonProps} \cr The Primary interaction button}
+\item {\bold{ secondaryButtonProps }} {\code{IButtonProps} \cr The Secondary interaction button}
+\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<ITeachingBubbleStyleProps, ITeachingBubbleStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
+\item {\bold{ target }} {\code{Target} \cr Element, MouseEvent, Point, or querySelector string that the TeachingBubble should anchor to.}
+\item {\bold{ targetElement }} {\code{HTMLElement} \cr }
+\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by High-Order Component.}
+}
 }
 \section{Best practices}{
 \subsection{Layout}{
@@ -102,7 +88,11 @@ library(shiny.fluent)
 if (interactive()) {
   shinyApp(
     ui = div(
-      DefaultButton.shinyInput("toggleTeachingBubble", id = "target", text = "Toggle TeachingBubble"),
+      DefaultButton.shinyInput(
+        "toggleTeachingBubble",
+        id = "target",
+        text = "Toggle TeachingBubble"
+      ),
       reactOutput("teachingBubble")
     ),
     server = function(input, output) {

@@ -10,33 +10,7 @@ MessageBar(...)
 MessageBarButton(...)
 }
 \arguments{
-\item{actions}{\code{JSX.Element} \cr The actions you want to show on the other side.}
-
-\item{ariaLabel}{\code{string} \cr A description of the message bar for the benefit of screen readers.}
-
-\item{className}{\code{string} \cr Additional CSS class(es) to apply to the MessageBar.}
-
-\item{componentRef}{\verb{IRefObject<IMessageBar>} \cr Optional callback to access the IMessageBar interface. Use this instead of ref for accessing the public methods and properties of the component.}
-
-\item{dismissButtonAriaLabel}{\code{string} \cr Aria label on dismiss button if onDismiss is defined.}
-
-\item{dismissIconProps}{\code{IIconProps} \cr Custom icon prop to replace the dismiss icon. If unset, default will be the Fabric Clear icon.}
-
-\item{isMultiline}{\code{boolean} \cr Determines if the message bar is multi lined. If false, and the text overflows over buttons or to another line, it is clipped.}
-
-\item{messageBarIconProps}{\code{IIconProps} \cr Custom icon prop to replace the message bar icon. If unset, default will be the icon set by messageBarType.}
-
-\item{messageBarType}{\code{MessageBarType} \cr The type of MessageBar to render.}
-
-\item{onDismiss}{\verb{(ev?: React.MouseEvent<HTMLElement | BaseButton | Button>) => any} \cr Whether the message bar has a dismiss button and its callback. If null, we don't show a dismiss button.}
-
-\item{overflowButtonAriaLabel}{\code{string} \cr Aria label on overflow button if truncated is defined.}
-
-\item{styles}{\verb{IStyleFunctionOrObject<IMessageBarStyleProps, IMessageBarStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
-
-\item{theme}{\code{ITheme} \cr Theme (provided through customization.)}
-
-\item{truncated}{\code{boolean} \cr Determines if the message bar text is truncated. If true, a button will render to toggle between a single line view and multiline view. This prop is for single line message bars with no buttons only in a limited space scenario.}
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
 }
 \description{
 A banner (\code{MessageBar}) displays errors, warnings, or important information about an open app or file. For example, if a file failed to upload an error message bar should appear.
@@ -44,6 +18,24 @@ A banner (\code{MessageBar}) displays errors, warnings, or important informati
 For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/MessageBar}{docs}.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
+}
+\details{
+\itemize{
+\item {\bold{ actions }} {\code{JSX.Element} \cr The actions you want to show on the other side.}
+\item {\bold{ ariaLabel }} {\code{string} \cr A description of the message bar for the benefit of screen readers.}
+\item {\bold{ className }} {\code{string} \cr Additional CSS class(es) to apply to the MessageBar.}
+\item {\bold{ componentRef }} {\verb{IRefObject<IMessageBar>} \cr Optional callback to access the IMessageBar interface. Use this instead of ref for accessing the public methods and properties of the component.}
+\item {\bold{ dismissButtonAriaLabel }} {\code{string} \cr Aria label on dismiss button if onDismiss is defined.}
+\item {\bold{ dismissIconProps }} {\code{IIconProps} \cr Custom icon prop to replace the dismiss icon. If unset, default will be the Fabric Clear icon.}
+\item {\bold{ isMultiline }} {\code{boolean} \cr Determines if the message bar is multi lined. If false, and the text overflows over buttons or to another line, it is clipped.}
+\item {\bold{ messageBarIconProps }} {\code{IIconProps} \cr Custom icon prop to replace the message bar icon. If unset, default will be the icon set by messageBarType.}
+\item {\bold{ messageBarType }} {\code{MessageBarType} \cr The type of MessageBar to render.}
+\item {\bold{ onDismiss }} {\verb{(ev?: React.MouseEvent<HTMLElement | BaseButton | Button>) => any} \cr Whether the message bar has a dismiss button and its callback. If null, we don't show a dismiss button.}
+\item {\bold{ overflowButtonAriaLabel }} {\code{string} \cr Aria label on overflow button if truncated is defined.}
+\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IMessageBarStyleProps, IMessageBarStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
+\item {\bold{ theme }} {\code{ITheme} \cr Theme (provided through customization.)}
+\item {\bold{ truncated }} {\code{boolean} \cr Determines if the message bar text is truncated. If true, a button will render to toggle between a single line view and multiline view. This prop is for single line message bars with no buttons only in a limited space scenario.}
+}
 }
 \section{Best practices}{
 \subsection{Layout}{

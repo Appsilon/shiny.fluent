@@ -7,67 +7,7 @@
 List(...)
 }
 \arguments{
-\item{rootRef}{\verb{React.Ref<HTMLDivElement>} \cr The ref to be applied to the list root. The \code{List} uses this element to track scroll position and sizing.}
-
-\item{surfaceElement}{\code{JSX.Element | null} \cr The content to be rendered as the list surface element. This will have been rendered using \code{onRenderSurface}.}
-
-\item{divProps}{\verb{React.HTMLAttributes<HTMLDivElement>} \cr Props to apply to the list surface element.}
-
-\item{pageElements}{\code{JSX.Element[]} \cr The content to be rendered representing all active pages.}
-
-\item{pages}{\verb{IPage<T>[]} \cr The active pages to be rendered into the list. These will have been rendered using \code{onRenderPage}.}
-
-\item{surfaceRef}{\verb{React.Ref<HTMLDivElement>} \cr A ref to be applied to the surface element. The \code{List} uses this element to track content size and focus.}
-
-\item{className}{\code{string} \cr Optional classname to append to root list.}
-
-\item{componentRef}{\verb{IRefObject<IList>} \cr Optional callback to access the IList interface. Use this instead of ref for accessing the public methods and properties of the component.}
-
-\item{getItemCountForPage}{\verb{(itemIndex?: number, visibleRect?: IRectangle) => number} \cr Method called by the list to get how many items to render per page from specified index. In general, use \code{getPageSpecification} instead.}
-
-\item{getKey}{\verb{(item: T, index?: number) => string} \cr Optional callback to get the item key, to be used on render.}
-
-\item{getPageHeight}{\verb{(itemIndex?: number, visibleRect?: IRectangle, itemCount?: number) => number} \cr Method called by the list to get the pixel height for a given page. By default, we measure the first page's height and default all other pages to that height when calculating the surface space. It is ideal to be able to adequately predict page heights in order to keep the surface space from jumping in pixels, which has been seen to cause browser performance issues. In general, use \code{getPageSpecification} instead.}
-
-\item{getPageSpecification}{\verb{(itemIndex?: number, visibleRect?: IRectangle) => IPageSpecification} \cr Called by the list to get the specification for a page. Use this method to provide an allocation of items per page, as well as an estimated rendered height for the page. The list will use this to optimize virtualization.}
-
-\item{getPageStyle}{\verb{(page: IPage<T>) => any} \cr Method called by the list to derive the page style object. For spacer pages, the list will derive the height and passed in heights will be ignored.}
-
-\item{ignoreScrollingState}{\code{boolean} \cr Whether to disable scroll state updates. This causes the isScrolling arg in onRenderCell to always be undefined. This is a performance optimization to let List skip a render cycle by not updating its scrolling state.}
-
-\item{items}{\code{T[]} \cr Items to render.}
-
-\item{onPageAdded}{\verb{(page: IPage<T>) => void} \cr Optional callback for monitoring when a page is added.}
-
-\item{onPageRemoved}{\verb{(page: IPage<T>) => void} \cr Optional callback for monitoring when a page is removed.}
-
-\item{onPagesUpdated}{\verb{(pages: IPage<T>[]) => void} \cr Optional callback invoked when List rendering completed. This can be on initial mount or on re-render due to scrolling. This method will be called as a result of changes in List pages (added or removed), and after ALL the changes complete. To track individual page Add / Remove use onPageAdded / onPageRemoved instead.}
-
-\item{onRenderCell}{\verb{(item?: T, index?: number, isScrolling?: boolean) => React.ReactNode} \cr Method to call when trying to render an item.}
-
-\item{onRenderPage}{\verb{IRenderFunction<IPageProps<T>>} \cr Called when the List will render a page. Override this to control how cells are rendered within a page.}
-
-\item{onRenderRoot}{\verb{IRenderFunction<IListOnRenderRootProps<T>>} \cr Render override for the element at the root of the \code{List}. Use this to apply some final attributes or structure to the content each time the list is updated with new active pages or items.}
-
-\item{onRenderSurface}{\verb{IRenderFunction<IListOnRenderSurfaceProps<T>>} \cr Render override for the element representing the surface of the \code{List}. Use this to alter the structure of the rendered content if necessary on each update.}
-
-\item{onShouldVirtualize}{\verb{(props: IListProps<T>) => boolean} \cr Optional callback to determine whether the list should be rendered in full, or virtualized. Virtualization will add and remove pages of items as the user scrolls them into the visible range. This benefits larger list scenarios by reducing the DOM on the screen, but can negatively affect performance for smaller lists. The default implementation will virtualize when this callback is not provided.}
-
-\item{renderCount}{\code{number} \cr Number of items to render. Defaults to items.length.}
-
-\item{renderedWindowsAhead}{\code{number} \cr In addition to the visible window, how many windowHeights should we render ahead.}
-
-\item{renderedWindowsBehind}{\code{number} \cr In addition to the visible window, how many windowHeights should we render behind.}
-
-\item{startIndex}{\code{number} \cr Index in items array to start rendering from. Defaults to 0.}
-
-\item{usePageCache}{\code{boolean} \cr Boolean value to enable render page caching. This is an experimental performance optimization that is off by default.}
-
-\item{version}{\code{{}} \cr An object which can be passed in as a fresh instance to 'force update' the list.}
-
-\item{page}{\verb{IPage<T>} \cr The allocation data for the page.}
-
-\item{role}{\code{string} \cr The role being assigned to the rendered page element by the list.}
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
 }
 \description{
 A list provides a base component for rendering large sets of items. It’s agnostic of layout, the tile component used, and selection management.
@@ -75,6 +15,44 @@ A list provides a base component for rendering large sets of items. It’s agno
 For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/List}{docs}.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
+}
+\details{
+\itemize{
+\item {\bold{ divProps }} {\verb{React.HTMLAttributes<HTMLDivElement>} \cr Props to apply to the list root element.}
+\item {\bold{ pages }} {\verb{IPage<T>[]} \cr The active pages to be rendered into the list. These will have been rendered using \code{onRenderPage}.}
+\item {\bold{ rootRef }} {\verb{React.Ref<HTMLDivElement>} \cr The ref to be applied to the list root. The \code{List} uses this element to track scroll position and sizing.}
+\item {\bold{ surfaceElement }} {\code{JSX.Element | null} \cr The content to be rendered as the list surface element. This will have been rendered using \code{onRenderSurface}.}
+\item {\bold{ divProps }} {\verb{React.HTMLAttributes<HTMLDivElement>} \cr Props to apply to the list surface element.}
+\item {\bold{ pageElements }} {\code{JSX.Element[]} \cr The content to be rendered representing all active pages.}
+\item {\bold{ pages }} {\verb{IPage<T>[]} \cr The active pages to be rendered into the list. These will have been rendered using \code{onRenderPage}.}
+\item {\bold{ surfaceRef }} {\verb{React.Ref<HTMLDivElement>} \cr A ref to be applied to the surface element. The \code{List} uses this element to track content size and focus.}
+\item {\bold{ className }} {\code{string} \cr Optional classname to append to root list.}
+\item {\bold{ componentRef }} {\verb{IRefObject<IList>} \cr Optional callback to access the IList interface. Use this instead of ref for accessing the public methods and properties of the component.}
+\item {\bold{ getItemCountForPage }} {\verb{(itemIndex?: number, visibleRect?: IRectangle) => number} \cr Method called by the list to get how many items to render per page from specified index. In general, use \code{getPageSpecification} instead.}
+\item {\bold{ getKey }} {\verb{(item: T, index?: number) => string} \cr Optional callback to get the item key, to be used on render.}
+\item {\bold{ getPageHeight }} {\verb{(itemIndex?: number, visibleRect?: IRectangle, itemCount?: number) => number} \cr Method called by the list to get the pixel height for a given page. By default, we measure the first page's height and default all other pages to that height when calculating the surface space. It is ideal to be able to adequately predict page heights in order to keep the surface space from jumping in pixels, which has been seen to cause browser performance issues. In general, use \code{getPageSpecification} instead.}
+\item {\bold{ getPageSpecification }} {\verb{(itemIndex?: number, visibleRect?: IRectangle) => IPageSpecification} \cr Called by the list to get the specification for a page. Use this method to provide an allocation of items per page, as well as an estimated rendered height for the page. The list will use this to optimize virtualization.}
+\item {\bold{ getPageStyle }} {\verb{(page: IPage<T>) => any} \cr Method called by the list to derive the page style object. For spacer pages, the list will derive the height and passed in heights will be ignored.}
+\item {\bold{ ignoreScrollingState }} {\code{boolean} \cr Whether to disable scroll state updates. This causes the isScrolling arg in onRenderCell to always be undefined. This is a performance optimization to let List skip a render cycle by not updating its scrolling state.}
+\item {\bold{ items }} {\code{T[]} \cr Items to render.}
+\item {\bold{ onPageAdded }} {\verb{(page: IPage<T>) => void} \cr Optional callback for monitoring when a page is added.}
+\item {\bold{ onPageRemoved }} {\verb{(page: IPage<T>) => void} \cr Optional callback for monitoring when a page is removed.}
+\item {\bold{ onPagesUpdated }} {\verb{(pages: IPage<T>[]) => void} \cr Optional callback invoked when List rendering completed. This can be on initial mount or on re-render due to scrolling. This method will be called as a result of changes in List pages (added or removed), and after ALL the changes complete. To track individual page Add / Remove use onPageAdded / onPageRemoved instead.}
+\item {\bold{ onRenderCell }} {\verb{(item?: T, index?: number, isScrolling?: boolean) => React.ReactNode} \cr Method to call when trying to render an item.}
+\item {\bold{ onRenderPage }} {\verb{IRenderFunction<IPageProps<T>>} \cr Called when the List will render a page. Override this to control how cells are rendered within a page.}
+\item {\bold{ onRenderRoot }} {\verb{IRenderFunction<IListOnRenderRootProps<T>>} \cr Render override for the element at the root of the \code{List}. Use this to apply some final attributes or structure to the content each time the list is updated with new active pages or items.}
+\item {\bold{ onRenderSurface }} {\verb{IRenderFunction<IListOnRenderSurfaceProps<T>>} \cr Render override for the element representing the surface of the \code{List}. Use this to alter the structure of the rendered content if necessary on each update.}
+\item {\bold{ onShouldVirtualize }} {\verb{(props: IListProps<T>) => boolean} \cr Optional callback to determine whether the list should be rendered in full, or virtualized. Virtualization will add and remove pages of items as the user scrolls them into the visible range. This benefits larger list scenarios by reducing the DOM on the screen, but can negatively affect performance for smaller lists. The default implementation will virtualize when this callback is not provided.}
+\item {\bold{ renderCount }} {\code{number} \cr Number of items to render. Defaults to items.length.}
+\item {\bold{ renderedWindowsAhead }} {\code{number} \cr In addition to the visible window, how many windowHeights should we render ahead.}
+\item {\bold{ renderedWindowsBehind }} {\code{number} \cr In addition to the visible window, how many windowHeights should we render behind.}
+\item {\bold{ role }} {\code{string} \cr The role to assign to the list root element. Use this to override the default assignment of 'list' to the root and 'listitem' to the cells.}
+\item {\bold{ startIndex }} {\code{number} \cr Index in items array to start rendering from. Defaults to 0.}
+\item {\bold{ usePageCache }} {\code{boolean} \cr Boolean value to enable render page caching. This is an experimental performance optimization that is off by default.}
+\item {\bold{ version }} {\code{{}} \cr An object which can be passed in as a fresh instance to 'force update' the list.}
+\item {\bold{ page }} {\verb{IPage<T>} \cr The allocation data for the page.}
+\item {\bold{ role }} {\code{string} \cr The role being assigned to the rendered page element by the list.}
+}
 }
 \section{Best practices}{
 \subsection{Layout}{

@@ -4,40 +4,30 @@
 \alias{SelectedPeopleList}
 \title{SelectedPeopleList}
 \arguments{
-\item{blockRecipientRemoval}{\code{boolean} \cr}
-
-\item{canExpand}{\code{boolean} \cr}
-
-\item{isEditing}{\code{boolean} \cr}
-
-\item{isValid}{\code{boolean} \cr}
-
-\item{key}{\code{React.Key} \cr}
-
-\item{shouldBlockSelection}{\code{boolean} \cr}
-
-\item{onExpandItem}{\verb{() => void} \cr}
-
-\item{renderPersonaCoin}{\verb{IRenderFunction<IPersonaProps>} \cr}
-
-\item{renderPrimaryText}{\verb{IRenderFunction<IPersonaProps>} \cr}
-
-\item{copyMenuItemText}{\code{string} \cr}
-
-\item{editMenuItemText}{\code{string} \cr}
-
-\item{floatingPickerProps}{\verb{IBaseFloatingPickerProps<IPersonaProps>} \cr}
-
-\item{getEditingItemText}{\verb{(item: IExtendedPersonaProps) => string} \cr}
-
-\item{onExpandGroup}{\verb{(item: IExtendedPersonaProps) => void} \cr}
-
-\item{onRenderFloatingPicker}{\verb{React.ComponentType<IBaseFloatingPickerProps<IPersonaProps>>} \cr}
-
-\item{removeMenuItemText}{\code{string} \cr}
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
 }
 \description{
 For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/SelectedPeopleList}{docs}.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
+}
+\details{
+\itemize{
+\item {\bold{ blockRecipientRemoval }} {\code{boolean} \cr }
+\item {\bold{ canExpand }} {\code{boolean} \cr }
+\item {\bold{ isEditing }} {\code{boolean} \cr }
+\item {\bold{ isValid }} {\code{boolean} \cr }
+\item {\bold{ key }} {\code{React.Key} \cr }
+\item {\bold{ shouldBlockSelection }} {\code{boolean} \cr }
+\item {\bold{ onExpandItem }} {\verb{() => void} \cr }
+\item {\bold{ renderPersonaCoin }} {\verb{IRenderFunction<IPersonaProps>} \cr }
+\item {\bold{ renderPrimaryText }} {\verb{IRenderFunction<IPersonaProps>} \cr }
+\item {\bold{ copyMenuItemText }} {\code{string} \cr }
+\item {\bold{ editMenuItemText }} {\code{string} \cr }
+\item {\bold{ floatingPickerProps }} {\verb{IBaseFloatingPickerProps<IPersonaProps>} \cr }
+\item {\bold{ getEditingItemText }} {\verb{(item: IExtendedPersonaProps) => string} \cr }
+\item {\bold{ onExpandGroup }} {\verb{(item: IExtendedPersonaProps) => void} \cr }
+\item {\bold{ onRenderFloatingPicker }} {\verb{React.ComponentType<IBaseFloatingPickerProps<IPersonaProps>>} \cr }
+\item {\bold{ removeMenuItemText }} {\code{string} \cr }
+}
 }

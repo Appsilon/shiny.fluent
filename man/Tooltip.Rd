@@ -8,47 +8,7 @@
 TooltipHost(...)
 }
 \arguments{
-\item{className}{\code{string} \cr Class name to apply to the \emph{tooltip itself}, not the host. To apply a class to the host, use \code{hostClassName} or \code{styles.root}.}
-
-\item{closeDelay}{\code{number} \cr Number of milliseconds to delay closing the tooltip, so that the user has time to hover over the tooltip and interact with it. Hovering over the tooltip will count as hovering over the host, so that the tooltip will stay open if the user is actively interacting with it.}
-
-\item{hostClassName}{\code{string} \cr Class name to apply to tooltip host.}
-
-\item{id}{\code{string} \cr Optional ID to pass through to the tooltip (not used on the host itself). Auto-generated if not provided.}
-
-\item{onTooltipToggle}{\code{onTooltipToggle?(isTooltipVisible: boolean): void;} \cr Notifies when tooltip becomes visible or hidden, whatever the trigger was.}
-
-\item{overflowMode}{\code{TooltipOverflowMode} \cr If this is unset (the default), the tooltip is always shown even if there's no overflow.
-
-If set, only show the tooltip if the specified element (\code{Self} or \code{Parent}) has overflow. When set to \code{Parent}, the parent element is also used as the tooltip's target element.
-
-Note that even with \code{Self} mode, the TooltipHost \emph{does not} check whether any children have overflow.}
-
-\item{setAriaDescribedBy}{\code{boolean} \cr Whether or not to mark the TooltipHost root element as described by the tooltip. If not specified, the caller should pass an \code{id} to the TooltipHost (to be passed through to the Tooltip) and mark the appropriate element as \code{aria-describedby} the \code{id}.}
-
-\item{tooltipProps}{\code{ITooltipProps} \cr Additional properties to pass through for Tooltip.}
-
-\item{calloutProps}{\code{ICalloutProps} \cr Properties to pass through for Callout.}
-
-\item{componentRef}{\verb{IRefObject<ITooltip>} \cr Optional callback to access the ITooltip interface. Use this instead of ref for accessing the public methods and properties of the component.}
-
-\item{content}{\code{string | JSX.Element | JSX.Element[]} \cr Content to be passed to the tooltip}
-
-\item{delay}{\code{TooltipDelay} \cr Length of delay. Set to \code{TooltipDelay.zero} if you do not want a delay.}
-
-\item{directionalHint}{\code{DirectionalHint} \cr How the tooltip should be anchored to its \code{targetElement}.}
-
-\item{directionalHintForRTL}{\code{DirectionalHint} \cr How the element should be positioned in RTL layouts. If not specified, a mirror of \code{directionalHint} will be used instead}
-
-\item{maxWidth}{\code{string | null} \cr Max width of tooltip}
-
-\item{onRenderContent}{\verb{IRenderFunction<ITooltipProps>} \cr Render function to populate tooltip content.}
-
-\item{styles}{\verb{IStyleFunctionOrObject<ITooltipStyleProps, ITooltipStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
-
-\item{targetElement}{\code{HTMLElement} \cr Element to anchor the Tooltip to.}
-
-\item{theme}{\code{ITheme} \cr Theme provided by higher-order component.}
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
 }
 \description{
 A good tooltip briefly describes unlabeled controls or provides a bit of additional information about labeled controls, when this is useful. It can also help customers navigate the UI by offering additional—not redundant—information about control labels, icons, and links. A tooltip should always add valuable information; use sparingly.
@@ -62,6 +22,41 @@ There are two components you can use to display a tooltip:
 For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/Tooltip}{docs}.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
+}
+\details{
+\itemize{
+\item {\bold{ calloutProps }} {\code{ICalloutProps} \cr Additional properties to pass through for Callout.}
+\item {\bold{ className }} {\code{string} \cr Class name to apply to the \emph{tooltip itself}, not the host. To apply a class to the host, use \code{hostClassName} or \code{styles.root}.}
+\item {\bold{ closeDelay }} {\code{number} \cr Number of milliseconds to delay closing the tooltip, so that the user has time to hover over the tooltip and interact with it. Hovering over the tooltip will count as hovering over the host, so that the tooltip will stay open if the user is actively interacting with it.}
+\item {\bold{ componentRef }} {\verb{IRefObject<ITooltipHost>} \cr Optional callback to access the ITooltipHost interface. Use this instead of ref for accessing the public methods and properties of the component.}
+\item {\bold{ content }} {\code{string | JSX.Element | JSX.Element[]} \cr Content to display in the Tooltip.}
+\item {\bold{ delay }} {\code{TooltipDelay} \cr Length of delay before showing the tooltip on hover.}
+\item {\bold{ directionalHint }} {\code{DirectionalHint} \cr How the tooltip should be anchored to its \code{targetElement}.}
+\item {\bold{ directionalHintForRTL }} {\code{DirectionalHint} \cr How the element should be positioned in RTL layouts. If not specified, a mirror of \code{directionalHint} will be used.}
+\item {\bold{ hostClassName }} {\code{string} \cr Class name to apply to tooltip host.}
+\item {\bold{ id }} {\code{string} \cr Optional ID to pass through to the tooltip (not used on the host itself). Auto-generated if not provided.}
+\item {\bold{ onTooltipToggle }} {\code{onTooltipToggle?(isTooltipVisible: boolean): void;} \cr Notifies when tooltip becomes visible or hidden, whatever the trigger was.}
+\item {\bold{ overflowMode }} {\code{TooltipOverflowMode} \cr If this is unset (the default), the tooltip is always shown even if there's no overflow.
+
+If set, only show the tooltip if the specified element (\code{Self} or \code{Parent}) has overflow. When set to \code{Parent}, the parent element is also used as the tooltip's target element.
+
+Note that even with \code{Self} mode, the TooltipHost \emph{does not} check whether any children have overflow.}
+\item {\bold{ setAriaDescribedBy }} {\code{boolean} \cr Whether or not to mark the TooltipHost root element as described by the tooltip. If not specified, the caller should pass an \code{id} to the TooltipHost (to be passed through to the Tooltip) and mark the appropriate element as \code{aria-describedby} the \code{id}.}
+\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<ITooltipHostStyleProps, ITooltipHostStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
+\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by higher-order component.}
+\item {\bold{ tooltipProps }} {\code{ITooltipProps} \cr Additional properties to pass through for Tooltip.}
+\item {\bold{ calloutProps }} {\code{ICalloutProps} \cr Properties to pass through for Callout.}
+\item {\bold{ componentRef }} {\verb{IRefObject<ITooltip>} \cr Optional callback to access the ITooltip interface. Use this instead of ref for accessing the public methods and properties of the component.}
+\item {\bold{ content }} {\code{string | JSX.Element | JSX.Element[]} \cr Content to be passed to the tooltip}
+\item {\bold{ delay }} {\code{TooltipDelay} \cr Length of delay. Set to \code{TooltipDelay.zero} if you do not want a delay.}
+\item {\bold{ directionalHint }} {\code{DirectionalHint} \cr How the tooltip should be anchored to its \code{targetElement}.}
+\item {\bold{ directionalHintForRTL }} {\code{DirectionalHint} \cr How the element should be positioned in RTL layouts. If not specified, a mirror of \code{directionalHint} will be used instead}
+\item {\bold{ maxWidth }} {\code{string | null} \cr Max width of tooltip}
+\item {\bold{ onRenderContent }} {\verb{IRenderFunction<ITooltipProps>} \cr Render function to populate tooltip content.}
+\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<ITooltipStyleProps, ITooltipStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
+\item {\bold{ targetElement }} {\code{HTMLElement} \cr Element to anchor the Tooltip to.}
+\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by higher-order component.}
+}
 }
 \section{Best practices}{
 \subsection{Content}{

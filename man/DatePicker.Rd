@@ -18,85 +18,13 @@ updateDatePicker.shinyInput(
 )
 }
 \arguments{
-\item{value}{\code{Date} \cr Default value of the DatePicker, if any}
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
 
-\item{allFocusable}{\code{boolean} \cr Allows all elements to be focused, including disabled ones}
+\item{inputId}{Id of the component}
 
-\item{allowTextInput}{\code{boolean} \cr Whether the DatePicker allows input a date string directly or not}
+\item{value}{Value}
 
-\item{ariaLabel}{\code{string} \cr Aria Label for TextField of the DatePicker for screen reader users.}
-
-\item{borderless}{\code{boolean} \cr Determines if DatePicker has a border.}
-
-\item{calendarAs}{\verb{IComponentAs<ICalendarProps>} \cr Custom Calendar to be used for date picking}
-
-\item{calendarProps}{\code{ICalendarProps} \cr Pass calendar props to calendar component}
-
-\item{calloutProps}{\code{ICalloutProps} \cr Pass callout props to callout component}
-
-\item{className}{\code{string} \cr Optional Classname for datepicker root element .}
-
-\item{componentRef}{\verb{IRefObject<IDatePicker>} \cr Optional callback to access the IDatePicker interface. Use this instead of ref for accessing the public methods and properties of the component.}
-
-\item{dateTimeFormatter}{\code{ICalendarFormatDateCallbacks} \cr Apply additional formating to dates, for example localized date formatting.}
-
-\item{disableAutoFocus}{\code{boolean} \cr Whether the DatePicker should open automatically when the control is focused}
-
-\item{disabled}{\code{boolean} \cr Disabled state of the DatePicker.}
-
-\item{firstDayOfWeek}{\code{DayOfWeek} \cr The first day of the week for your locale.}
-
-\item{firstWeekOfYear}{\code{FirstWeekOfYear} \cr Defines when the first week of the year should start, FirstWeekOfYear.FirstDay, FirstWeekOfYear.FirstFullWeek or FirstWeekOfYear.FirstFourDayWeek are the possible values}
-
-\item{formatDate}{\verb{(date?: Date) => string} \cr Optional method to format the chosen date to a string to display in the DatePicker}
-
-\item{highlightCurrentMonth}{\code{boolean} \cr Whether the month picker should highlight the current month}
-
-\item{highlightSelectedMonth}{\code{boolean} \cr Whether the month picker should highlight the selected month}
-
-\item{initialPickerDate}{\code{Date} \cr The initially highlighted date in the calendar picker}
-
-\item{isMonthPickerVisible}{\code{boolean} \cr Whether the month picker is shown beside the day picker or hidden.}
-
-\item{isRequired}{\code{boolean} \cr Whether the DatePicker is a required field or not}
-
-\item{label}{\code{string} \cr Label for the DatePicker}
-
-\item{maxDate}{\code{Date} \cr The maximum allowable date.}
-
-\item{minDate}{\code{Date} \cr The minimum allowable date.}
-
-\item{onAfterMenuDismiss}{\verb{() => void} \cr Callback that runs after DatePicker's menu (Calendar) is closed}
-
-\item{onSelectDate}{\verb{(date: Date | null | undefined) => void} \cr Callback issued when a date is selected}
-
-\item{parseDateFromString}{\verb{(dateStr: string) => Date | null} \cr Optional method to parse the text input value to date, it is only useful when allowTextInput is set to true}
-
-\item{pickerAriaLabel}{\code{string} \cr Aria label for date picker popup for screen reader users.}
-
-\item{placeholder}{\code{string} \cr Placeholder text for the DatePicker}
-
-\item{showCloseButton}{\code{boolean} \cr Whether the CalendarDay close button should be shown or not.}
-
-\item{showGoToToday}{\code{boolean} \cr Whether the "Go to today" link should be shown or not}
-
-\item{showMonthPickerAsOverlay}{\code{boolean} \cr Show month picker on top of date picker when visible.}
-
-\item{showWeekNumbers}{\code{boolean} \cr Whether the calendar should show the week number (weeks 1 to 53) before each week row}
-
-\item{strings}{\code{IDatePickerStrings} \cr Localized strings to use in the DatePicker}
-
-\item{styles}{\verb{IStyleFunctionOrObject<IDatePickerStyleProps, IDatePickerStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
-
-\item{tabIndex}{\code{number} \cr The tabIndex of the TextField}
-
-\item{textField}{\code{ITextFieldProps} \cr Pass textField props to textField component. Prop name is "textField" for compatiblity with upcoming slots work.}
-
-\item{theme}{\code{ITheme} \cr Theme provided by High-Order Component.}
-
-\item{today}{\code{Date} \cr Value of today. If null, current time in client machine will be used.}
-
-\item{underlined}{\code{boolean} \cr Whether or not the Textfield of the DatePicker is underlined.}
+\item{session}{Session}
 }
 \description{
 Picking a date can be tough without context. A date picker (\code{DatePicker}) offers a drop-down control that’s optimized for picking a single date from a calendar view where contextual information like the day of the week or fullness of the calendar is important. You can modify the calendar to provide additional context or to limit available dates.
@@ -104,6 +32,50 @@ Picking a date can be tough without context. A date picker (\code{DatePicker}) o
 For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/DatePicker}{docs}.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
+}
+\details{
+\itemize{
+\item {\bold{ allFocusable }} {\code{boolean} \cr Allows all elements to be focused, including disabled ones}
+\item {\bold{ allowTextInput }} {\code{boolean} \cr Whether the DatePicker allows input a date string directly or not}
+\item {\bold{ ariaLabel }} {\code{string} \cr Aria Label for TextField of the DatePicker for screen reader users.}
+\item {\bold{ borderless }} {\code{boolean} \cr Determines if DatePicker has a border.}
+\item {\bold{ calendarAs }} {\verb{IComponentAs<ICalendarProps>} \cr Custom Calendar to be used for date picking}
+\item {\bold{ calendarProps }} {\code{ICalendarProps} \cr Pass calendar props to calendar component}
+\item {\bold{ calloutProps }} {\code{ICalloutProps} \cr Pass callout props to callout component}
+\item {\bold{ className }} {\code{string} \cr Optional Classname for datepicker root element .}
+\item {\bold{ componentRef }} {\verb{IRefObject<IDatePicker>} \cr Optional callback to access the IDatePicker interface. Use this instead of ref for accessing the public methods and properties of the component.}
+\item {\bold{ dateTimeFormatter }} {\code{ICalendarFormatDateCallbacks} \cr Apply additional formating to dates, for example localized date formatting.}
+\item {\bold{ disableAutoFocus }} {\code{boolean} \cr Whether the DatePicker should open automatically when the control is focused}
+\item {\bold{ disabled }} {\code{boolean} \cr Disabled state of the DatePicker.}
+\item {\bold{ firstDayOfWeek }} {\code{DayOfWeek} \cr The first day of the week for your locale.}
+\item {\bold{ firstWeekOfYear }} {\code{FirstWeekOfYear} \cr Defines when the first week of the year should start, FirstWeekOfYear.FirstDay, FirstWeekOfYear.FirstFullWeek or FirstWeekOfYear.FirstFourDayWeek are the possible values}
+\item {\bold{ formatDate }} {\verb{(date?: Date) => string} \cr Optional method to format the chosen date to a string to display in the DatePicker}
+\item {\bold{ highlightCurrentMonth }} {\code{boolean} \cr Whether the month picker should highlight the current month}
+\item {\bold{ highlightSelectedMonth }} {\code{boolean} \cr Whether the month picker should highlight the selected month}
+\item {\bold{ initialPickerDate }} {\code{Date} \cr The initially highlighted date in the calendar picker}
+\item {\bold{ isMonthPickerVisible }} {\code{boolean} \cr Whether the month picker is shown beside the day picker or hidden.}
+\item {\bold{ isRequired }} {\code{boolean} \cr Whether the DatePicker is a required field or not}
+\item {\bold{ label }} {\code{string} \cr Label for the DatePicker}
+\item {\bold{ maxDate }} {\code{Date} \cr The maximum allowable date.}
+\item {\bold{ minDate }} {\code{Date} \cr The minimum allowable date.}
+\item {\bold{ onAfterMenuDismiss }} {\verb{() => void} \cr Callback that runs after DatePicker's menu (Calendar) is closed}
+\item {\bold{ onSelectDate }} {\verb{(date: Date | null | undefined) => void} \cr Callback issued when a date is selected}
+\item {\bold{ parseDateFromString }} {\verb{(dateStr: string) => Date | null} \cr Optional method to parse the text input value to date, it is only useful when allowTextInput is set to true}
+\item {\bold{ pickerAriaLabel }} {\code{string} \cr Aria label for date picker popup for screen reader users.}
+\item {\bold{ placeholder }} {\code{string} \cr Placeholder text for the DatePicker}
+\item {\bold{ showCloseButton }} {\code{boolean} \cr Whether the CalendarDay close button should be shown or not.}
+\item {\bold{ showGoToToday }} {\code{boolean} \cr Whether the "Go to today" link should be shown or not}
+\item {\bold{ showMonthPickerAsOverlay }} {\code{boolean} \cr Show month picker on top of date picker when visible.}
+\item {\bold{ showWeekNumbers }} {\code{boolean} \cr Whether the calendar should show the week number (weeks 1 to 53) before each week row}
+\item {\bold{ strings }} {\code{IDatePickerStrings} \cr Localized strings to use in the DatePicker}
+\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IDatePickerStyleProps, IDatePickerStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
+\item {\bold{ tabIndex }} {\code{number} \cr The tabIndex of the TextField}
+\item {\bold{ textField }} {\code{ITextFieldProps} \cr Pass textField props to textField component. Prop name is "textField" for compatiblity with upcoming slots work.}
+\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by High-Order Component.}
+\item {\bold{ today }} {\code{Date} \cr Value of today. If null, current time in client machine will be used.}
+\item {\bold{ underlined }} {\code{boolean} \cr Whether or not the Textfield of the DatePicker is underlined.}
+\item {\bold{ value }} {\code{Date} \cr Default value of the DatePicker, if any}
+}
 }
 \section{Best practices}{
 \subsection{Layout}{

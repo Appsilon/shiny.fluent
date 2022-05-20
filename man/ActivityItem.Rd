@@ -7,37 +7,7 @@
 ActivityItem(...)
 }
 \arguments{
-\item{activityDescription}{\code{React.ReactNode[] | React.ReactNode} \cr An element describing the activity that took place. If no activityDescription, activityDescriptionText, or onRenderActivityDescription are included, no description of the activity is shown.}
-
-\item{activityDescriptionText}{\code{string} \cr Text describing the activity that occurred and naming the people involved in it. Deprecated, use \code{activityDescription} instead.}
-
-\item{activityIcon}{\code{React.ReactNode} \cr An element containing an icon shown next to the activity item.}
-
-\item{activityPersonas}{\verb{Array<IPersonaSharedProps>} \cr If activityIcon is not set, then the persona props in this array will be used as the icon for this activity item.}
-
-\item{animateBeaconSignal}{\code{boolean} \cr Enables/Disables the beacon that radiates from the center of the center of the activity icon. Signals an activity has started.}
-
-\item{beaconColorOne}{\code{string} \cr Beacon color one}
-
-\item{beaconColorTwo}{\code{string} \cr Beacon color two}
-
-\item{comments}{\code{React.ReactNode[] | React.ReactNode} \cr An element containing the text of comments or \@mention messages. If no comments, commentText, or onRenderComments are included, no comments are shown.}
-
-\item{commentText}{\code{string} \cr Text of comments or \@mention messages. Deprecated, use \code{comments} instead.}
-
-\item{isCompact}{\code{boolean} \cr Indicated if the compact styling should be used.}
-
-\item{onRenderActivityDescription}{\verb{IRenderFunction<IActivityItemProps>} \cr A renderer for the description of the current activity.}
-
-\item{onRenderComments}{\verb{IRenderFunction<IActivityItemProps>} \cr A renderer that adds the text of a comment below the activity description.}
-
-\item{onRenderIcon}{\verb{IRenderFunction<IActivityItemProps>} \cr A renderer to create the icon next to the activity item.}
-
-\item{onRenderTimeStamp}{\verb{IRenderFunction<IActivityItemProps>} \cr A renderer adds a time stamp. If not included, timeStamp is shown as plain text below the activity.}
-
-\item{styles}{\code{IActivityItemStyles} \cr Optional styling for the elements within the Activity Item.}
-
-\item{timeStamp}{\code{string | React.ReactNode[] | React.ReactNode} \cr Element shown as a timestamp on this activity. If not included, no timestamp is shown.}
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
 }
 \description{
 An activity item (\code{ActivityItem}) represents a person's actions, such as making a comment, mentioning someone with an @mention, editing a document, or moving a file.
@@ -45,6 +15,26 @@ An activity item (\code{ActivityItem}) represents a person's actions, such as
 For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/ActivityItem}{docs}.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
+}
+\details{
+\itemize{
+\item {\bold{ activityDescription }} {\code{React.ReactNode[] | React.ReactNode} \cr An element describing the activity that took place. If no activityDescription, activityDescriptionText, or onRenderActivityDescription are included, no description of the activity is shown.}
+\item {\bold{ activityDescriptionText }} {\code{string} \cr Text describing the activity that occurred and naming the people involved in it. Deprecated, use \code{activityDescription} instead.}
+\item {\bold{ activityIcon }} {\code{React.ReactNode} \cr An element containing an icon shown next to the activity item.}
+\item {\bold{ activityPersonas }} {\verb{Array<IPersonaSharedProps>} \cr If activityIcon is not set, then the persona props in this array will be used as the icon for this activity item.}
+\item {\bold{ animateBeaconSignal }} {\code{boolean} \cr Enables/Disables the beacon that radiates from the center of the center of the activity icon. Signals an activity has started.}
+\item {\bold{ beaconColorOne }} {\code{string} \cr Beacon color one}
+\item {\bold{ beaconColorTwo }} {\code{string} \cr Beacon color two}
+\item {\bold{ comments }} {\code{React.ReactNode[] | React.ReactNode} \cr An element containing the text of comments or \@mention messages. If no comments, commentText, or onRenderComments are included, no comments are shown.}
+\item {\bold{ commentText }} {\code{string} \cr Text of comments or \@mention messages. Deprecated, use \code{comments} instead.}
+\item {\bold{ isCompact }} {\code{boolean} \cr Indicated if the compact styling should be used.}
+\item {\bold{ onRenderActivityDescription }} {\verb{IRenderFunction<IActivityItemProps>} \cr A renderer for the description of the current activity.}
+\item {\bold{ onRenderComments }} {\verb{IRenderFunction<IActivityItemProps>} \cr A renderer that adds the text of a comment below the activity description.}
+\item {\bold{ onRenderIcon }} {\verb{IRenderFunction<IActivityItemProps>} \cr A renderer to create the icon next to the activity item.}
+\item {\bold{ onRenderTimeStamp }} {\verb{IRenderFunction<IActivityItemProps>} \cr A renderer adds a time stamp. If not included, timeStamp is shown as plain text below the activity.}
+\item {\bold{ styles }} {\code{IActivityItemStyles} \cr Optional styling for the elements within the Activity Item.}
+\item {\bold{ timeStamp }} {\code{string | React.ReactNode[] | React.ReactNode} \cr Element shown as a timestamp on this activity. If not included, no timestamp is shown.}
+}
 }
 \section{Best practices}{
 \subsection{Layout}{

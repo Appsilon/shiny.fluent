@@ -7,13 +7,7 @@
 Announced(...)
 }
 \arguments{
-\item{"aria-live"}{\code{'off' | 'polite' | 'assertive'} \cr Priority with which the screen reader should treat updates to this region  @default 'polite'}
-
-\item{as}{\code{React.ElementType} \cr Optionally render the root of this component as another component type or primitive. The custom type \strong{must} preserve any children or native props passed in.  @default 'div'}
-
-\item{message}{\code{string} \cr The status message provided as screen reader output}
-
-\item{styles}{\verb{IStyleFunctionOrObject<\{\}, IAnnouncedStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
 }
 \description{
 The Announced component aims to fill several of the accessibility gaps that exist in various web application experiences.
@@ -34,6 +28,14 @@ The Announced component currently has the following documented use cases:
 For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/Announced}{docs}.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
+}
+\details{
+\itemize{
+\item {\bold{ "aria-live" }} {\code{'off' | 'polite' | 'assertive'} \cr Priority with which the screen reader should treat updates to this region  @default 'polite'}
+\item {\bold{ as }} {\code{React.ElementType} \cr Optionally render the root of this component as another component type or primitive. The custom type \strong{must} preserve any children or native props passed in.  @default 'div'}
+\item {\bold{ message }} {\code{string} \cr The status message provided as screen reader output}
+\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<\{\}, IAnnouncedStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
+}
 }
 \examples{
 library(shiny.fluent)

@@ -7,109 +7,7 @@
 Coachmark(...)
 }
 \arguments{
-\item{ariaAlertText}{\code{string} \cr Text to announce to screen reader / narrator when Coachmark is displayed}
-
-\item{ariaDescribedByText}{\code{string} \cr Defines the text content for the ariaDescribedBy element}
-
-\item{ariaLabelledByText}{\code{string} \cr Defines the text content for the ariaLabelledBy element}
-
-\item{beaconColorOne}{\code{string} \cr Beacon color one.}
-
-\item{beaconColorTwo}{\code{string} \cr Beacon color two.}
-
-\item{beakHeight}{\code{number} \cr The height of the Beak component.}
-
-\item{beakWidth}{\code{number} \cr The width of the Beak component.}
-
-\item{collapsed}{\code{boolean} \cr The starting collapsed state for the Coachmark. Use \code{isCollapsed} instead.}
-
-\item{color}{\code{string} \cr Color of the Coachmark/TeachingBubble.}
-
-\item{delayBeforeCoachmarkAnimation}{\code{number} \cr Delay in milliseconds before Coachmark animation appears.}
-
-\item{delayBeforeMouseOpen}{\code{number} \cr Delay before allowing mouse movements to open the Coachmark.}
-
-\item{height}{\code{number} \cr The height of the Coachmark.}
-
-\item{isCollapsed}{\code{boolean} \cr The starting collapsed state for the Coachmark.}
-
-\item{isPositionForced}{\code{boolean} \cr Whether or not to force the Coachmark/TeachingBubble content to fit within the window bounds.}
-
-\item{mouseProximityOffset}{\code{number} \cr The distance in pixels the mouse is located before opening up the Coachmark.}
-
-\item{onAnimationOpenEnd}{\verb{() => void} \cr Callback when the opening animation completes.}
-
-\item{onAnimationOpenStart}{\verb{() => void} \cr Callback when the opening animation begins.}
-
-\item{onMouseMove}{\verb{(e: MouseEvent) => void} \cr Callback to run when the mouse moves.}
-
-\item{persistentBeak}{\code{boolean} \cr If true then the Coachmark beak (arrow pointing towards target) will always be visible as long as Coachmark is visible}
-
-\item{positioningContainerProps}{\code{IPositioningContainerProps} \cr Props to pass to the PositioningContainer component. Specify the \code{directionalHint} to indicate on which edge the Coachmark/TeachingBubble should be positioned.}
-
-\item{preventDismissOnLostFocus}{\code{boolean} \cr If true then the Coachmark will not dismiss when it loses focus}
-
-\item{preventFocusOnMount}{\code{boolean} \cr If true then focus will not be set to the Coachmark when it mounts. Useful in cases where focus on coachmark is causing other components in page to dismiss upon losing focus.}
-
-\item{styles}{\verb{IStyleFunctionOrObject<ICoachmarkStyleProps, ICoachmarkStyles>} \cr Call to provide customized styling that will layer on top of the variant rules}
-
-\item{teachingBubbleRef}{\code{ITeachingBubble} \cr Ref for TeachingBubble}
-
-\item{theme}{\code{ITheme} \cr Theme provided by higher order component.}
-
-\item{width}{\code{number} \cr The width of the Coachmark.}
-
-\item{ariaDescribedBy}{\code{string} \cr Defines the element id referencing the element containing the description for the positioningContainer.}
-
-\item{ariaLabel}{\code{string} \cr Accessible label text for positioningContainer.}
-
-\item{ariaLabelledBy}{\code{string} \cr Defines the element id referencing the element containing label text for positioningContainer.}
-
-\item{backgroundColor}{\code{string} \cr The background color of the positioningContainer in hex format ie. #ffffff.}
-
-\item{bounds}{\code{IRectangle} \cr The bounding rectangle for which the contextual menu can appear in.}
-
-\item{className}{\code{string} \cr CSS class to apply to the positioningContainer.}
-
-\item{componentRef}{\verb{IRefObject<IPositioningContainer>} \cr All props for your component are to be defined here.}
-
-\item{coverTarget}{\code{boolean} \cr If true the position returned will have the menu element cover the target. If false then it will position next to the target;}
-
-\item{directionalHint}{\code{DirectionalHint} \cr How the element should be positioned}
-
-\item{directionalHintFixed}{\code{boolean} \cr If true the position will not change sides in an attempt to fit the positioningContainer within bounds. It will still attempt to align it to whatever bounds are given.}
-
-\item{directionalHintForRTL}{\code{DirectionalHint} \cr How the element should be positioned in RTL layouts. If not specified, a mirror of \code{directionalHint} will be used instead}
-
-\item{doNotLayer}{\code{boolean} \cr If true do not render on a new layer. If false render on a new layer.}
-
-\item{finalHeight}{\code{number} \cr Specify the final height of the content. To be used when expanding the content dynamically so that positioningContainer can adjust its position.}
-
-\item{minPagePadding}{\code{number} \cr The minimum distance the positioningContainer will be away from the edge of the screen.}
-
-\item{offsetFromTarget}{\code{number} \cr The gap between the positioningContainer and the target}
-
-\item{onDismiss}{\verb{(ev?: any) => void} \cr Callback when the positioningContainer tries to close.}
-
-\item{onLayerMounted}{\verb{() => void} \cr Optional callback when the layer content has mounted.}
-
-\item{onPositioned}{\verb{(positions?: IPositionedData) => void} \cr Optional callback that is called once the positioningContainer has been correctly positioned.}
-
-\item{positioningContainerMaxHeight}{\code{number} \cr Set max height of positioningContainer When not set the positioningContainer will expand with contents up to the bottom of the screen}
-
-\item{positioningContainerWidth}{\code{number} \cr Custom width for positioningContainer including borders. If value is 0, no width is applied.}
-
-\item{preventDismissOnScroll}{\code{boolean} \cr If true then the onClose will not not dismiss on scroll}
-
-\item{role}{\code{string} \cr Aria role assigned to the positioningContainer (Eg. dialog, alertdialog).}
-
-\item{setInitialFocus}{\code{boolean} \cr If true then the positioningContainer will attempt to focus the first focusable element that it contains. If it doesn't find an element, no focus will be set and the method will return false. This means that it's the contents responsibility to either set focus or have focusable items.}
-
-\item{target}{\code{HTMLElement | string | MouseEvent | Point | null} \cr The target that the positioningContainer should try to position itself based on. It can be either an HTMLElement a querySelector string of a valid HTMLElement or a MouseEvent. If MouseEvent is given then the origin point of the event will be used.}
-
-\item{targetPoint}{\code{Point} \cr Point used to position the positioningContainer. Deprecated, use \code{target} instead.}
-
-\item{useTargetPoint}{\code{boolean} \cr If true use a point rather than rectangle to position the positioningContainer. For example it can be used to position based on a click.}
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
 }
 \description{
 Coach marks (\code{Coachmark}) are used to draw a person’s attention to parts of the UI and increase engagement with those elements. A teaching bubble appears on hover or selection of the coach mark.
@@ -117,6 +15,68 @@ Coach marks (\code{Coachmark}) are used to draw a person’s attention to 
 For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/Coachmark}{docs}.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
+}
+\details{
+\itemize{
+\item {\bold{ ariaAlertText }} {\code{string} \cr Text to announce to screen reader / narrator when Coachmark is displayed}
+\item {\bold{ ariaDescribedBy }} {\code{string} \cr Defines the element id referencing the element containing the description for the Coachmark.}
+\item {\bold{ ariaDescribedByText }} {\code{string} \cr Defines the text content for the ariaDescribedBy element}
+\item {\bold{ ariaLabelledBy }} {\code{string} \cr Defines the element id referencing the element containing label text for Coachmark.}
+\item {\bold{ ariaLabelledByText }} {\code{string} \cr Defines the text content for the ariaLabelledBy element}
+\item {\bold{ beaconColorOne }} {\code{string} \cr Beacon color one.}
+\item {\bold{ beaconColorTwo }} {\code{string} \cr Beacon color two.}
+\item {\bold{ beakHeight }} {\code{number} \cr The height of the Beak component.}
+\item {\bold{ beakWidth }} {\code{number} \cr The width of the Beak component.}
+\item {\bold{ className }} {\code{string} \cr If provided, additional class name to provide on the root element.}
+\item {\bold{ collapsed }} {\code{boolean} \cr The starting collapsed state for the Coachmark. Use \code{isCollapsed} instead.}
+\item {\bold{ color }} {\code{string} \cr Color of the Coachmark/TeachingBubble.}
+\item {\bold{ componentRef }} {\verb{IRefObject<ICoachmark>} \cr Optional callback to access the ICoachmark interface. Use this instead of ref for accessing the public methods and properties of the component.}
+\item {\bold{ delayBeforeCoachmarkAnimation }} {\code{number} \cr Delay in milliseconds before Coachmark animation appears.}
+\item {\bold{ delayBeforeMouseOpen }} {\code{number} \cr Delay before allowing mouse movements to open the Coachmark.}
+\item {\bold{ height }} {\code{number} \cr The height of the Coachmark.}
+\item {\bold{ isCollapsed }} {\code{boolean} \cr The starting collapsed state for the Coachmark.}
+\item {\bold{ isPositionForced }} {\code{boolean} \cr Whether or not to force the Coachmark/TeachingBubble content to fit within the window bounds.}
+\item {\bold{ mouseProximityOffset }} {\code{number} \cr The distance in pixels the mouse is located before opening up the Coachmark.}
+\item {\bold{ onAnimationOpenEnd }} {\verb{() => void} \cr Callback when the opening animation completes.}
+\item {\bold{ onAnimationOpenStart }} {\verb{() => void} \cr Callback when the opening animation begins.}
+\item {\bold{ onDismiss }} {\verb{(ev?: any) => void} \cr Callback when the Coachmark tries to close.}
+\item {\bold{ onMouseMove }} {\verb{(e: MouseEvent) => void} \cr Callback to run when the mouse moves.}
+\item {\bold{ persistentBeak }} {\code{boolean} \cr If true then the Coachmark beak (arrow pointing towards target) will always be visible as long as Coachmark is visible}
+\item {\bold{ positioningContainerProps }} {\code{IPositioningContainerProps} \cr Props to pass to the PositioningContainer component. Specify the \code{directionalHint} to indicate on which edge the Coachmark/TeachingBubble should be positioned.}
+\item {\bold{ preventDismissOnLostFocus }} {\code{boolean} \cr If true then the Coachmark will not dismiss when it loses focus}
+\item {\bold{ preventFocusOnMount }} {\code{boolean} \cr If true then focus will not be set to the Coachmark when it mounts. Useful in cases where focus on coachmark is causing other components in page to dismiss upon losing focus.}
+\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<ICoachmarkStyleProps, ICoachmarkStyles>} \cr Call to provide customized styling that will layer on top of the variant rules}
+\item {\bold{ target }} {\code{HTMLElement | string | null} \cr The target that the Coachmark should try to position itself based on.}
+\item {\bold{ teachingBubbleRef }} {\code{ITeachingBubble} \cr Ref for TeachingBubble}
+\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by higher order component.}
+\item {\bold{ width }} {\code{number} \cr The width of the Coachmark.}
+\item {\bold{ ariaDescribedBy }} {\code{string} \cr Defines the element id referencing the element containing the description for the positioningContainer.}
+\item {\bold{ ariaLabel }} {\code{string} \cr Accessible label text for positioningContainer.}
+\item {\bold{ ariaLabelledBy }} {\code{string} \cr Defines the element id referencing the element containing label text for positioningContainer.}
+\item {\bold{ backgroundColor }} {\code{string} \cr The background color of the positioningContainer in hex format ie. #ffffff.}
+\item {\bold{ bounds }} {\code{IRectangle} \cr The bounding rectangle for which the contextual menu can appear in.}
+\item {\bold{ className }} {\code{string} \cr CSS class to apply to the positioningContainer.}
+\item {\bold{ componentRef }} {\verb{IRefObject<IPositioningContainer>} \cr All props for your component are to be defined here.}
+\item {\bold{ coverTarget }} {\code{boolean} \cr If true the position returned will have the menu element cover the target. If false then it will position next to the target;}
+\item {\bold{ directionalHint }} {\code{DirectionalHint} \cr How the element should be positioned}
+\item {\bold{ directionalHintFixed }} {\code{boolean} \cr If true the position will not change sides in an attempt to fit the positioningContainer within bounds. It will still attempt to align it to whatever bounds are given.}
+\item {\bold{ directionalHintForRTL }} {\code{DirectionalHint} \cr How the element should be positioned in RTL layouts. If not specified, a mirror of \code{directionalHint} will be used instead}
+\item {\bold{ doNotLayer }} {\code{boolean} \cr If true do not render on a new layer. If false render on a new layer.}
+\item {\bold{ finalHeight }} {\code{number} \cr Specify the final height of the content. To be used when expanding the content dynamically so that positioningContainer can adjust its position.}
+\item {\bold{ minPagePadding }} {\code{number} \cr The minimum distance the positioningContainer will be away from the edge of the screen.}
+\item {\bold{ offsetFromTarget }} {\code{number} \cr The gap between the positioningContainer and the target}
+\item {\bold{ onDismiss }} {\verb{(ev?: any) => void} \cr Callback when the positioningContainer tries to close.}
+\item {\bold{ onLayerMounted }} {\verb{() => void} \cr Optional callback when the layer content has mounted.}
+\item {\bold{ onPositioned }} {\verb{(positions?: IPositionedData) => void} \cr Optional callback that is called once the positioningContainer has been correctly positioned.}
+\item {\bold{ positioningContainerMaxHeight }} {\code{number} \cr Set max height of positioningContainer When not set the positioningContainer will expand with contents up to the bottom of the screen}
+\item {\bold{ positioningContainerWidth }} {\code{number} \cr Custom width for positioningContainer including borders. If value is 0, no width is applied.}
+\item {\bold{ preventDismissOnScroll }} {\code{boolean} \cr If true then the onClose will not not dismiss on scroll}
+\item {\bold{ role }} {\code{string} \cr Aria role assigned to the positioningContainer (Eg. dialog, alertdialog).}
+\item {\bold{ setInitialFocus }} {\code{boolean} \cr If true then the positioningContainer will attempt to focus the first focusable element that it contains. If it doesn't find an element, no focus will be set and the method will return false. This means that it's the contents responsibility to either set focus or have focusable items.}
+\item {\bold{ target }} {\code{HTMLElement | string | MouseEvent | Point | null} \cr The target that the positioningContainer should try to position itself based on. It can be either an HTMLElement a querySelector string of a valid HTMLElement or a MouseEvent. If MouseEvent is given then the origin point of the event will be used.}
+\item {\bold{ targetPoint }} {\code{Point} \cr Point used to position the positioningContainer. Deprecated, use \code{target} instead.}
+\item {\bold{ useTargetPoint }} {\code{boolean} \cr If true use a point rather than rectangle to position the positioningContainer. For example it can be used to position based on a click.}
+}
 }
 \section{Best practices}{
 \subsection{Layout}{

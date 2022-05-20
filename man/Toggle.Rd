@@ -18,41 +18,13 @@ updateToggle.shinyInput(
 )
 }
 \arguments{
-\item{ariaLabel}{\code{string} \cr Text for screen-reader to announce as the name of the toggle.}
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
 
-\item{as}{\verb{IComponentAs<React.HTMLAttributes<HTMLElement>>} \cr Render the root element as another type.}
+\item{inputId}{Id of the component}
 
-\item{checked}{\code{boolean} \cr Checked state of the toggle. If you are maintaining state yourself, use this property. Otherwise use \code{defaultChecked}.}
+\item{value}{Value}
 
-\item{componentRef}{\verb{IRefObject<IToggle>} \cr Optional callback to access the IToggle interface. Use this instead of ref for accessing the public methods and properties of the component.}
-
-\item{defaultChecked}{\code{boolean} \cr Initial state of the toggle. If you want the toggle to maintain its own state, use this. Otherwise use \code{checked}.}
-
-\item{disabled}{\code{boolean} \cr Optional disabled flag.}
-
-\item{inlineLabel}{\code{boolean} \cr Whether the label (not the onText/offText) should be positioned inline with the toggle control. Left (right in RTL) side when on/off text provided VS right (left in RTL) side when no on/off text. Caution: when not providing on/off text user may get confused in differentiating the on/off states of the toggle.}
-
-\item{keytipProps}{\code{IKeytipProps} \cr Optional keytip for this toggle}
-
-\item{label}{\code{string | JSX.Element} \cr A label for the toggle.}
-
-\item{offAriaLabel}{\code{string} \cr}
-
-\item{offText}{\code{string} \cr Text to display when toggle is OFF. Caution: when not providing on/off text user may get confused in differentiating the on/off states of the toggle.}
-
-\item{onAriaLabel}{\code{string} \cr}
-
-\item{onChange}{\verb{(event: React.MouseEvent<HTMLElement>, checked?: boolean) => void} \cr Callback issued when the value changes.}
-
-\item{onChanged}{\verb{(checked: boolean) => void} \cr}
-
-\item{onText}{\code{string} \cr Text to display when toggle is ON. Caution: when not providing on/off text user may get confused in differentiating the on/off states of the toggle.}
-
-\item{role}{\code{'checkbox' | 'switch' | 'menuitemcheckbox'} \cr (Optional) Specify whether to use the "switch" role (ARIA 1.1) or the checkbox role (ARIA 1.0). If unspecified, defaults to "switch".}
-
-\item{styles}{\verb{IStyleFunctionOrObject<IToggleStyleProps, IToggleStyles>} \cr Optional styles for the component.}
-
-\item{theme}{\code{ITheme} \cr Theme provided by HOC.}
+\item{session}{Session}
 }
 \description{
 A toggle represents a physical switch that allows someone to choose between two mutually exclusive options.  For example, “On/Off”, “Show/Hide”. Choosing an option should produce an immediate result.
@@ -60,6 +32,28 @@ A toggle represents a physical switch that allows someone to choose between�
 For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/Toggle}{docs}.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
+}
+\details{
+\itemize{
+\item {\bold{ ariaLabel }} {\code{string} \cr Text for screen-reader to announce as the name of the toggle.}
+\item {\bold{ as }} {\verb{IComponentAs<React.HTMLAttributes<HTMLElement>>} \cr Render the root element as another type.}
+\item {\bold{ checked }} {\code{boolean} \cr Checked state of the toggle. If you are maintaining state yourself, use this property. Otherwise use \code{defaultChecked}.}
+\item {\bold{ componentRef }} {\verb{IRefObject<IToggle>} \cr Optional callback to access the IToggle interface. Use this instead of ref for accessing the public methods and properties of the component.}
+\item {\bold{ defaultChecked }} {\code{boolean} \cr Initial state of the toggle. If you want the toggle to maintain its own state, use this. Otherwise use \code{checked}.}
+\item {\bold{ disabled }} {\code{boolean} \cr Optional disabled flag.}
+\item {\bold{ inlineLabel }} {\code{boolean} \cr Whether the label (not the onText/offText) should be positioned inline with the toggle control. Left (right in RTL) side when on/off text provided VS right (left in RTL) side when no on/off text. Caution: when not providing on/off text user may get confused in differentiating the on/off states of the toggle.}
+\item {\bold{ keytipProps }} {\code{IKeytipProps} \cr Optional keytip for this toggle}
+\item {\bold{ label }} {\code{string | JSX.Element} \cr A label for the toggle.}
+\item {\bold{ offAriaLabel }} {\code{string} \cr }
+\item {\bold{ offText }} {\code{string} \cr Text to display when toggle is OFF. Caution: when not providing on/off text user may get confused in differentiating the on/off states of the toggle.}
+\item {\bold{ onAriaLabel }} {\code{string} \cr }
+\item {\bold{ onChange }} {\verb{(event: React.MouseEvent<HTMLElement>, checked?: boolean) => void} \cr Callback issued when the value changes.}
+\item {\bold{ onChanged }} {\verb{(checked: boolean) => void} \cr }
+\item {\bold{ onText }} {\code{string} \cr Text to display when toggle is ON. Caution: when not providing on/off text user may get confused in differentiating the on/off states of the toggle.}
+\item {\bold{ role }} {\code{'checkbox' | 'switch' | 'menuitemcheckbox'} \cr (Optional) Specify whether to use the "switch" role (ARIA 1.1) or the checkbox role (ARIA 1.0). If unspecified, defaults to "switch".}
+\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IToggleStyleProps, IToggleStyles>} \cr Optional styles for the component.}
+\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by HOC.}
+}
 }
 \section{Best practices}{
 \subsection{Layout}{

@@ -212,7 +212,3 @@ In this tutorial we built a simple dashboard for exploring sales representatives
 We learned how to use shiny.fluent inputs and outputs,
 how to add components from other libraries
 and how to use Fluent UI capabilities for visually arranging the elements.
-
-```{r, echo=FALSE}
-knitr::include_graphics("images/tutorial-part1-final.gif")
-```

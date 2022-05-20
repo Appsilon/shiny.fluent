@@ -15,6 +15,8 @@ runExample(
 \arguments{
 \item{example}{Example to run. \code{NA} to list the examples.}
 
+\item{port}{The TCP port that the application should listen on}
+
 \item{launch.browser}{Whether to open the app in a browser}
 
 \item{host}{The IPv4 address to listen on.}

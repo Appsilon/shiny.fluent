@@ -7,25 +7,7 @@
 Spinner(...)
 }
 \arguments{
-\item{ariaLabel}{\code{string} \cr Alternative status label for screen reader}
-
-\item{ariaLive}{\code{'assertive' | 'polite' | 'off'} \cr Politeness setting for label update announcement.}
-
-\item{className}{\code{string} \cr Additional CSS class(es) to apply to the Spinner.}
-
-\item{componentRef}{\verb{IRefObject<ISpinner>} \cr Optional callback to access the ISpinner interface. Use this instead of ref for accessing the public methods and properties of the component.}
-
-\item{label}{\code{string} \cr The label to show next to the Spinner. Label updates will be announced to the screen readers. Use ariaLive to control politeness level.}
-
-\item{labelPosition}{\code{SpinnerLabelPosition} \cr The position of the label in regards of the spinner animation.}
-
-\item{size}{\code{SpinnerSize} \cr The size of Spinner to render. \{ extraSmall, small, medium, large \}}
-
-\item{styles}{\verb{IStyleFunctionOrObject<ISpinnerStyleProps, ISpinnerStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
-
-\item{theme}{\code{ITheme} \cr Theme (provided through customization.)}
-
-\item{type}{\code{SpinnerType} \cr Deprecated and will be removed at \>= 2.0.0. Use \code{SpinnerSize} instead.}
+\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
 }
 \description{
 A Spinner is an outline of a circle which animates around itself indicating to the user that things are processing. A Spinner is shown when it's unsure how long a task will take making it the indeterminate version of a ProgressIndicator. They can be various sizes, located inline with content or centered. They generally appear after an action is being processed or committed. They are subtle and generally do not take up much space, but are transitions from the completed task.
@@ -33,6 +15,20 @@ A Spinner is an outline of a circle which animates around itself indicating to t
 For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/Spinner}{docs}.
 The R package can not handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
+}
+\details{
+\itemize{
+\item {\bold{ ariaLabel }} {\code{string} \cr Alternative status label for screen reader}
+\item {\bold{ ariaLive }} {\code{'assertive' | 'polite' | 'off'} \cr Politeness setting for label update announcement.}
+\item {\bold{ className }} {\code{string} \cr Additional CSS class(es) to apply to the Spinner.}
+\item {\bold{ componentRef }} {\verb{IRefObject<ISpinner>} \cr Optional callback to access the ISpinner interface. Use this instead of ref for accessing the public methods and properties of the component.}
+\item {\bold{ label }} {\code{string} \cr The label to show next to the Spinner. Label updates will be announced to the screen readers. Use ariaLive to control politeness level.}
+\item {\bold{ labelPosition }} {\code{SpinnerLabelPosition} \cr The position of the label in regards of the spinner animation.}
+\item {\bold{ size }} {\code{SpinnerSize} \cr The size of Spinner to render. \{ extraSmall, small, medium, large \}}
+\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<ISpinnerStyleProps, ISpinnerStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
+\item {\bold{ theme }} {\code{ITheme} \cr Theme (provided through customization.)}
+\item {\bold{ type }} {\code{SpinnerType} \cr Deprecated and will be removed at \>= 2.0.0. Use \code{SpinnerSize} instead.}
+}
 }
 \examples{
 library(shiny.fluent)
