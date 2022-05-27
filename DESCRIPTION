@@ -20,22 +20,26 @@ Depends:
   R (>= 2.10)
 Imports:
   htmltools,
+  jsonlite,
   rlang,
   shiny,
   shiny.react (>= 0.2.2)
 Suggests:
+  RColorBrewer,
   dplyr,
   ggplot2,
   glue,
-  jsonlite,
   knitr,
   leaflet,
+  mockery,
   plotly,
   purrr,
-  RColorBrewer,
   rmarkdown,
   sass,
   shiny.router,
   stringi,
+  testthat (>= 3.0.0),
   tibble,
-  tidyverse
+  tidyverse,
+  withr
+Config/testthat/edition: 3
