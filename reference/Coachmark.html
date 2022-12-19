@@ -90,116 +90,77 @@ you need to work using the original docs to achieve the desired result.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">Coachmark</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">Coachmark</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>ariaAlertText</dt>
-<dd><p><code>string</code> <br> Text to announce to screen reader / narrator when Coachmark is displayed</p></dd>
-<dt>ariaDescribedByText</dt>
-<dd><p><code>string</code> <br> Defines the text content for the ariaDescribedBy element</p></dd>
-<dt>ariaLabelledByText</dt>
-<dd><p><code>string</code> <br> Defines the text content for the ariaLabelledBy element</p></dd>
-<dt>beaconColorOne</dt>
-<dd><p><code>string</code> <br> Beacon color one.</p></dd>
-<dt>beaconColorTwo</dt>
-<dd><p><code>string</code> <br> Beacon color two.</p></dd>
-<dt>beakHeight</dt>
-<dd><p><code>number</code> <br> The height of the Beak component.</p></dd>
-<dt>beakWidth</dt>
-<dd><p><code>number</code> <br> The width of the Beak component.</p></dd>
-<dt>collapsed</dt>
-<dd><p><code>boolean</code> <br> The starting collapsed state for the Coachmark. Use <code>isCollapsed</code> instead.</p></dd>
-<dt>color</dt>
-<dd><p><code>string</code> <br> Color of the Coachmark/TeachingBubble.</p></dd>
-<dt>delayBeforeCoachmarkAnimation</dt>
-<dd><p><code>number</code> <br> Delay in milliseconds before Coachmark animation appears.</p></dd>
-<dt>delayBeforeMouseOpen</dt>
-<dd><p><code>number</code> <br> Delay before allowing mouse movements to open the Coachmark.</p></dd>
-<dt>height</dt>
-<dd><p><code>number</code> <br> The height of the Coachmark.</p></dd>
-<dt>isCollapsed</dt>
-<dd><p><code>boolean</code> <br> The starting collapsed state for the Coachmark.</p></dd>
-<dt>isPositionForced</dt>
-<dd><p><code>boolean</code> <br> Whether or not to force the Coachmark/TeachingBubble content to fit within the window bounds.</p></dd>
-<dt>mouseProximityOffset</dt>
-<dd><p><code>number</code> <br> The distance in pixels the mouse is located before opening up the Coachmark.</p></dd>
-<dt>onAnimationOpenEnd</dt>
-<dd><p><code>() =&gt; void</code> <br> Callback when the opening animation completes.</p></dd>
-<dt>onAnimationOpenStart</dt>
-<dd><p><code>() =&gt; void</code> <br> Callback when the opening animation begins.</p></dd>
-<dt>onMouseMove</dt>
-<dd><p><code>(e: MouseEvent) =&gt; void</code> <br> Callback to run when the mouse moves.</p></dd>
-<dt>persistentBeak</dt>
-<dd><p><code>boolean</code> <br> If true then the Coachmark beak (arrow pointing towards target) will always be visible as long as Coachmark is visible</p></dd>
-<dt>positioningContainerProps</dt>
-<dd><p><code>IPositioningContainerProps</code> <br> Props to pass to the PositioningContainer component. Specify the <code>directionalHint</code> to indicate on which edge the Coachmark/TeachingBubble should be positioned.</p></dd>
-<dt>preventDismissOnLostFocus</dt>
-<dd><p><code>boolean</code> <br> If true then the Coachmark will not dismiss when it loses focus</p></dd>
-<dt>preventFocusOnMount</dt>
-<dd><p><code>boolean</code> <br> If true then focus will not be set to the Coachmark when it mounts. Useful in cases where focus on coachmark is causing other components in page to dismiss upon losing focus.</p></dd>
-<dt>styles</dt>
-<dd><p><code>IStyleFunctionOrObject&lt;ICoachmarkStyleProps, ICoachmarkStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules</p></dd>
-<dt>teachingBubbleRef</dt>
-<dd><p><code>ITeachingBubble</code> <br> Ref for TeachingBubble</p></dd>
-<dt>theme</dt>
-<dd><p><code>ITheme</code> <br> Theme provided by higher order component.</p></dd>
-<dt>width</dt>
-<dd><p><code>number</code> <br> The width of the Coachmark.</p></dd>
-<dt>ariaDescribedBy</dt>
-<dd><p><code>string</code> <br> Defines the element id referencing the element containing the description for the positioningContainer.</p></dd>
-<dt>ariaLabel</dt>
-<dd><p><code>string</code> <br> Accessible label text for positioningContainer.</p></dd>
-<dt>ariaLabelledBy</dt>
-<dd><p><code>string</code> <br> Defines the element id referencing the element containing label text for positioningContainer.</p></dd>
-<dt>backgroundColor</dt>
-<dd><p><code>string</code> <br> The background color of the positioningContainer in hex format ie. #ffffff.</p></dd>
-<dt>bounds</dt>
-<dd><p><code>IRectangle</code> <br> The bounding rectangle for which the contextual menu can appear in.</p></dd>
-<dt>className</dt>
-<dd><p><code>string</code> <br> CSS class to apply to the positioningContainer.</p></dd>
-<dt>componentRef</dt>
-<dd><p><code>IRefObject&lt;IPositioningContainer&gt;</code> <br> All props for your component are to be defined here.</p></dd>
-<dt>coverTarget</dt>
-<dd><p><code>boolean</code> <br> If true the position returned will have the menu element cover the target. If false then it will position next to the target;</p></dd>
-<dt>directionalHint</dt>
-<dd><p><code>DirectionalHint</code> <br> How the element should be positioned</p></dd>
-<dt>directionalHintFixed</dt>
-<dd><p><code>boolean</code> <br> If true the position will not change sides in an attempt to fit the positioningContainer within bounds. It will still attempt to align it to whatever bounds are given.</p></dd>
-<dt>directionalHintForRTL</dt>
-<dd><p><code>DirectionalHint</code> <br> How the element should be positioned in RTL layouts. If not specified, a mirror of <code>directionalHint</code> will be used instead</p></dd>
-<dt>doNotLayer</dt>
-<dd><p><code>boolean</code> <br> If true do not render on a new layer. If false render on a new layer.</p></dd>
-<dt>finalHeight</dt>
-<dd><p><code>number</code> <br> Specify the final height of the content. To be used when expanding the content dynamically so that positioningContainer can adjust its position.</p></dd>
-<dt>minPagePadding</dt>
-<dd><p><code>number</code> <br> The minimum distance the positioningContainer will be away from the edge of the screen.</p></dd>
-<dt>offsetFromTarget</dt>
-<dd><p><code>number</code> <br> The gap between the positioningContainer and the target</p></dd>
-<dt>onDismiss</dt>
-<dd><p><code>(ev?: any) =&gt; void</code> <br> Callback when the positioningContainer tries to close.</p></dd>
-<dt>onLayerMounted</dt>
-<dd><p><code>() =&gt; void</code> <br> Optional callback when the layer content has mounted.</p></dd>
-<dt>onPositioned</dt>
-<dd><p><code>(positions?: IPositionedData) =&gt; void</code> <br> Optional callback that is called once the positioningContainer has been correctly positioned.</p></dd>
-<dt>positioningContainerMaxHeight</dt>
-<dd><p><code>number</code> <br> Set max height of positioningContainer When not set the positioningContainer will expand with contents up to the bottom of the screen</p></dd>
-<dt>positioningContainerWidth</dt>
-<dd><p><code>number</code> <br> Custom width for positioningContainer including borders. If value is 0, no width is applied.</p></dd>
-<dt>preventDismissOnScroll</dt>
-<dd><p><code>boolean</code> <br> If true then the onClose will not not dismiss on scroll</p></dd>
-<dt>role</dt>
-<dd><p><code>string</code> <br> Aria role assigned to the positioningContainer (Eg. dialog, alertdialog).</p></dd>
-<dt>setInitialFocus</dt>
-<dd><p><code>boolean</code> <br> If true then the positioningContainer will attempt to focus the first focusable element that it contains. If it doesn't find an element, no focus will be set and the method will return false. This means that it's the contents responsibility to either set focus or have focusable items.</p></dd>
-<dt>target</dt>
-<dd><p><code>HTMLElement | string | MouseEvent | Point | null</code> <br> The target that the positioningContainer should try to position itself based on. It can be either an HTMLElement a querySelector string of a valid HTMLElement or a MouseEvent. If MouseEvent is given then the origin point of the event will be used.</p></dd>
-<dt>targetPoint</dt>
-<dd><p><code>Point</code> <br> Point used to position the positioningContainer. Deprecated, use <code>target</code> instead.</p></dd>
-<dt>useTargetPoint</dt>
-<dd><p><code>boolean</code> <br> If true use a point rather than rectangle to position the positioningContainer. For example it can be used to position based on a click.</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> ariaAlertText </b> <code>string</code> <br> Text to announce to screen reader / narrator when Coachmark is displayed</p></li>
+<li><p><b> ariaDescribedBy </b> <code>string</code> <br> Defines the element id referencing the element containing the description for the Coachmark.</p></li>
+<li><p><b> ariaDescribedByText </b> <code>string</code> <br> Defines the text content for the ariaDescribedBy element</p></li>
+<li><p><b> ariaLabelledBy </b> <code>string</code> <br> Defines the element id referencing the element containing label text for Coachmark.</p></li>
+<li><p><b> ariaLabelledByText </b> <code>string</code> <br> Defines the text content for the ariaLabelledBy element</p></li>
+<li><p><b> beaconColorOne </b> <code>string</code> <br> Beacon color one.</p></li>
+<li><p><b> beaconColorTwo </b> <code>string</code> <br> Beacon color two.</p></li>
+<li><p><b> beakHeight </b> <code>number</code> <br> The height of the Beak component.</p></li>
+<li><p><b> beakWidth </b> <code>number</code> <br> The width of the Beak component.</p></li>
+<li><p><b> className </b> <code>string</code> <br> If provided, additional class name to provide on the root element.</p></li>
+<li><p><b> collapsed </b> <code>boolean</code> <br> The starting collapsed state for the Coachmark. Use <code>isCollapsed</code> instead.</p></li>
+<li><p><b> color </b> <code>string</code> <br> Color of the Coachmark/TeachingBubble.</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;ICoachmark&gt;</code> <br> Optional callback to access the ICoachmark interface. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> delayBeforeCoachmarkAnimation </b> <code>number</code> <br> Delay in milliseconds before Coachmark animation appears.</p></li>
+<li><p><b> delayBeforeMouseOpen </b> <code>number</code> <br> Delay before allowing mouse movements to open the Coachmark.</p></li>
+<li><p><b> height </b> <code>number</code> <br> The height of the Coachmark.</p></li>
+<li><p><b> isCollapsed </b> <code>boolean</code> <br> The starting collapsed state for the Coachmark.</p></li>
+<li><p><b> isPositionForced </b> <code>boolean</code> <br> Whether or not to force the Coachmark/TeachingBubble content to fit within the window bounds.</p></li>
+<li><p><b> mouseProximityOffset </b> <code>number</code> <br> The distance in pixels the mouse is located before opening up the Coachmark.</p></li>
+<li><p><b> onAnimationOpenEnd </b> <code>() =&gt; void</code> <br> Callback when the opening animation completes.</p></li>
+<li><p><b> onAnimationOpenStart </b> <code>() =&gt; void</code> <br> Callback when the opening animation begins.</p></li>
+<li><p><b> onDismiss </b> <code>(ev?: any) =&gt; void</code> <br> Callback when the Coachmark tries to close.</p></li>
+<li><p><b> onMouseMove </b> <code>(e: MouseEvent) =&gt; void</code> <br> Callback to run when the mouse moves.</p></li>
+<li><p><b> persistentBeak </b> <code>boolean</code> <br> If true then the Coachmark beak (arrow pointing towards target) will always be visible as long as Coachmark is visible</p></li>
+<li><p><b> positioningContainerProps </b> <code>IPositioningContainerProps</code> <br> Props to pass to the PositioningContainer component. Specify the <code>directionalHint</code> to indicate on which edge the Coachmark/TeachingBubble should be positioned.</p></li>
+<li><p><b> preventDismissOnLostFocus </b> <code>boolean</code> <br> If true then the Coachmark will not dismiss when it loses focus</p></li>
+<li><p><b> preventFocusOnMount </b> <code>boolean</code> <br> If true then focus will not be set to the Coachmark when it mounts. Useful in cases where focus on coachmark is causing other components in page to dismiss upon losing focus.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;ICoachmarkStyleProps, ICoachmarkStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules</p></li>
+<li><p><b> target </b> <code>HTMLElement | string | null</code> <br> The target that the Coachmark should try to position itself based on.</p></li>
+<li><p><b> teachingBubbleRef </b> <code>ITeachingBubble</code> <br> Ref for TeachingBubble</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by higher order component.</p></li>
+<li><p><b> width </b> <code>number</code> <br> The width of the Coachmark.</p></li>
+<li><p><b> ariaDescribedBy </b> <code>string</code> <br> Defines the element id referencing the element containing the description for the positioningContainer.</p></li>
+<li><p><b> ariaLabel </b> <code>string</code> <br> Accessible label text for positioningContainer.</p></li>
+<li><p><b> ariaLabelledBy </b> <code>string</code> <br> Defines the element id referencing the element containing label text for positioningContainer.</p></li>
+<li><p><b> backgroundColor </b> <code>string</code> <br> The background color of the positioningContainer in hex format ie. #ffffff.</p></li>
+<li><p><b> bounds </b> <code>IRectangle</code> <br> The bounding rectangle for which the contextual menu can appear in.</p></li>
+<li><p><b> className </b> <code>string</code> <br> CSS class to apply to the positioningContainer.</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IPositioningContainer&gt;</code> <br> All props for your component are to be defined here.</p></li>
+<li><p><b> coverTarget </b> <code>boolean</code> <br> If true the position returned will have the menu element cover the target. If false then it will position next to the target;</p></li>
+<li><p><b> directionalHint </b> <code>DirectionalHint</code> <br> How the element should be positioned</p></li>
+<li><p><b> directionalHintFixed </b> <code>boolean</code> <br> If true the position will not change sides in an attempt to fit the positioningContainer within bounds. It will still attempt to align it to whatever bounds are given.</p></li>
+<li><p><b> directionalHintForRTL </b> <code>DirectionalHint</code> <br> How the element should be positioned in RTL layouts. If not specified, a mirror of <code>directionalHint</code> will be used instead</p></li>
+<li><p><b> doNotLayer </b> <code>boolean</code> <br> If true do not render on a new layer. If false render on a new layer.</p></li>
+<li><p><b> finalHeight </b> <code>number</code> <br> Specify the final height of the content. To be used when expanding the content dynamically so that positioningContainer can adjust its position.</p></li>
+<li><p><b> minPagePadding </b> <code>number</code> <br> The minimum distance the positioningContainer will be away from the edge of the screen.</p></li>
+<li><p><b> offsetFromTarget </b> <code>number</code> <br> The gap between the positioningContainer and the target</p></li>
+<li><p><b> onDismiss </b> <code>(ev?: any) =&gt; void</code> <br> Callback when the positioningContainer tries to close.</p></li>
+<li><p><b> onLayerMounted </b> <code>() =&gt; void</code> <br> Optional callback when the layer content has mounted.</p></li>
+<li><p><b> onPositioned </b> <code>(positions?: IPositionedData) =&gt; void</code> <br> Optional callback that is called once the positioningContainer has been correctly positioned.</p></li>
+<li><p><b> positioningContainerMaxHeight </b> <code>number</code> <br> Set max height of positioningContainer When not set the positioningContainer will expand with contents up to the bottom of the screen</p></li>
+<li><p><b> positioningContainerWidth </b> <code>number</code> <br> Custom width for positioningContainer including borders. If value is 0, no width is applied.</p></li>
+<li><p><b> preventDismissOnScroll </b> <code>boolean</code> <br> If true then the onClose will not not dismiss on scroll</p></li>
+<li><p><b> role </b> <code>string</code> <br> Aria role assigned to the positioningContainer (Eg. dialog, alertdialog).</p></li>
+<li><p><b> setInitialFocus </b> <code>boolean</code> <br> If true then the positioningContainer will attempt to focus the first focusable element that it contains. If it doesn't find an element, no focus will be set and the method will return false. This means that it's the contents responsibility to either set focus or have focusable items.</p></li>
+<li><p><b> target </b> <code>HTMLElement | string | MouseEvent | Point | null</code> <br> The target that the positioningContainer should try to position itself based on. It can be either an HTMLElement a querySelector string of a valid HTMLElement or a MouseEvent. If MouseEvent is given then the origin point of the event will be used.</p></li>
+<li><p><b> targetPoint </b> <code>Point</code> <br> Point used to position the positioningContainer. Deprecated, use <code>target</code> instead.</p></li>
+<li><p><b> useTargetPoint </b> <code>boolean</code> <br> If true use a point rather than rectangle to position the positioningContainer. For example it can be used to position based on a click.</p></li>
+</ul></div>
     <div id="best-practices">
     <h2>Best practices</h2>
     
@@ -216,36 +177,36 @@ you need to work using the original docs to achieve the desired result.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="fu">shinyApp</span><span class="op">(</span></span>
-<span class="r-in">    ui <span class="op">=</span> <span class="fu">tagList</span><span class="op">(</span></span>
-<span class="r-in">      <span class="fu">uiOutput</span><span class="op">(</span><span class="st">"coachmark"</span><span class="op">)</span>,</span>
-<span class="r-in">      <span class="fu"><a href="Button.html">DefaultButton.shinyInput</a></span><span class="op">(</span><span class="st">"toggleCoachmark"</span>,</span>
-<span class="r-in">        id <span class="op">=</span> <span class="st">"target"</span>, text <span class="op">=</span> <span class="st">"Toggle coachmark"</span></span>
-<span class="r-in">      <span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span>,</span>
-<span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">      <span class="va">coachmarkVisible</span> <span class="op">&lt;-</span> <span class="fu">reactiveVal</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span>
-<span class="r-in">      <span class="fu">observeEvent</span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">toggleCoachmark</span>, <span class="fu">coachmarkVisible</span><span class="op">(</span><span class="op">!</span><span class="fu">coachmarkVisible</span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">      <span class="fu">observeEvent</span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">hideCoachmark</span>, <span class="fu">coachmarkVisible</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">      <span class="va">output</span><span class="op">$</span><span class="va">coachmark</span> <span class="op">&lt;-</span> <span class="fu">renderUI</span><span class="op">(</span><span class="op">{</span></span>
-<span class="r-in">        <span class="kw">if</span> <span class="op">(</span><span class="fu">coachmarkVisible</span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="fu">Coachmark</span><span class="op">(</span></span>
-<span class="r-in">          target <span class="op">=</span> <span class="st">"#target"</span>,</span>
-<span class="r-in">          <span class="fu"><a href="TeachingBubble.html">TeachingBubbleContent</a></span><span class="op">(</span></span>
-<span class="r-in">            hasCloseButton <span class="op">=</span> <span class="cn">TRUE</span>,</span>
-<span class="r-in">            onDismiss <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/triggerEvent.html" class="external-link">triggerEvent</a></span><span class="op">(</span><span class="st">"hideCoachmark"</span><span class="op">)</span>,</span>
-<span class="r-in">            headline <span class="op">=</span> <span class="st">"Example title"</span>,</span>
-<span class="r-in">            primaryButtonProps <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>text <span class="op">=</span> <span class="st">"Try it"</span><span class="op">)</span>,</span>
-<span class="r-in">            secondaryButtonProps <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>text <span class="op">=</span> <span class="st">"Try it again"</span><span class="op">)</span>,</span>
-<span class="r-in">            <span class="st">"Welcome to the land of coachmarks!"</span></span>
-<span class="r-in">          <span class="op">)</span></span>
-<span class="r-in">        <span class="op">)</span></span>
-<span class="r-in">      <span class="op">}</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">}</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="fu">shinyApp</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    ui <span class="op">=</span> <span class="fu">tagList</span><span class="op">(</span></span></span>
+<span class="r-in"><span>      <span class="fu">uiOutput</span><span class="op">(</span><span class="st">"coachmark"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      <span class="fu"><a href="Button.html">DefaultButton.shinyInput</a></span><span class="op">(</span><span class="st">"toggleCoachmark"</span>,</span></span>
+<span class="r-in"><span>        id <span class="op">=</span> <span class="st">"target"</span>, text <span class="op">=</span> <span class="st">"Toggle coachmark"</span></span></span>
+<span class="r-in"><span>      <span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>      <span class="va">coachmarkVisible</span> <span class="op">&lt;-</span> <span class="fu">reactiveVal</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="fu">observeEvent</span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">toggleCoachmark</span>, <span class="fu">coachmarkVisible</span><span class="op">(</span><span class="op">!</span><span class="fu">coachmarkVisible</span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="fu">observeEvent</span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">hideCoachmark</span>, <span class="fu">coachmarkVisible</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="va">output</span><span class="op">$</span><span class="va">coachmark</span> <span class="op">&lt;-</span> <span class="fu">renderUI</span><span class="op">(</span><span class="op">{</span></span></span>
+<span class="r-in"><span>        <span class="kw">if</span> <span class="op">(</span><span class="fu">coachmarkVisible</span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="fu">Coachmark</span><span class="op">(</span></span></span>
+<span class="r-in"><span>          target <span class="op">=</span> <span class="st">"#target"</span>,</span></span>
+<span class="r-in"><span>          <span class="fu"><a href="TeachingBubble.html">TeachingBubbleContent</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>            hasCloseButton <span class="op">=</span> <span class="cn">TRUE</span>,</span></span>
+<span class="r-in"><span>            onDismiss <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/triggerEvent.html" class="external-link">triggerEvent</a></span><span class="op">(</span><span class="st">"hideCoachmark"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>            headline <span class="op">=</span> <span class="st">"Example title"</span>,</span></span>
+<span class="r-in"><span>            primaryButtonProps <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>text <span class="op">=</span> <span class="st">"Try it"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>            secondaryButtonProps <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>text <span class="op">=</span> <span class="st">"Try it again"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>            <span class="st">"Welcome to the land of coachmarks!"</span></span></span>
+<span class="r-in"><span>          <span class="op">)</span></span></span>
+<span class="r-in"><span>        <span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="op">}</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -260,7 +221,7 @@ you need to work using the original docs to achieve the desired result.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

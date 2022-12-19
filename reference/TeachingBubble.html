@@ -92,54 +92,41 @@ you need to work using the original docs to achieve the desired result.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">TeachingBubble</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">TeachingBubbleContent</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">TeachingBubble</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">TeachingBubbleContent</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>ariaDescribedBy</dt>
-<dd><p><code>string</code> <br> Defines the element id referencing the element containing the description for the TeachingBubble.</p></dd>
-<dt>ariaLabelledBy</dt>
-<dd><p><code>string</code> <br> Defines the element id referencing the element containing label text for TeachingBubble.</p></dd>
-<dt>calloutProps</dt>
-<dd><p><code>ICalloutProps</code> <br> Properties to pass through for Callout, reference detail properties in ICalloutProps</p></dd>
-<dt>componentRef</dt>
-<dd><p><code>IRefObject&lt;ITeachingBubble&gt;</code> <br> Optional callback to access the ITeachingBubble interface. Use this instead of ref for accessing the public methods and properties of the component.</p></dd>
-<dt>focusTrapZoneProps</dt>
-<dd><p><code>IFocusTrapZoneProps</code> <br> Properties to pass through for FocusTrapZone, reference detail properties in IFocusTrapZoneProps</p></dd>
-<dt>footerContent</dt>
-<dd><p><code>string | JSX.Element</code> <br> Text that will be rendered in the footer of the TeachingBubble. May be rendered alongside primary and secondary buttons.</p></dd>
-<dt>hasCloseButton</dt>
-<dd><p><code>boolean</code> <br> Whether the TeachingBubble renders close button in the top right corner.</p></dd>
-<dt>hasCloseIcon</dt>
-<dd><p><code>boolean</code> <br></p></dd>
-<dt>hasCondensedHeadline</dt>
-<dd><p><code>boolean</code> <br> A variation with smaller bold headline and no margins.</p></dd>
-<dt>hasSmallHeadline</dt>
-<dd><p><code>boolean</code> <br> A variation with smaller bold headline and margins to the body. (<code>hasCondensedHeadline</code> takes precedence if it is also set to true.)</p></dd>
-<dt>headline</dt>
-<dd><p><code>string</code> <br> A headline for the Teaching Bubble.</p></dd>
-<dt>illustrationImage</dt>
-<dd><p><code>IImageProps</code> <br> An Image for the TeachingBubble.</p></dd>
-<dt>isWide</dt>
-<dd><p><code>boolean</code> <br> Whether or not the TeachingBubble is wide, with image on the left side.</p></dd>
-<dt>onDismiss</dt>
-<dd><p><code>(ev?: any) =&gt; void</code> <br> Callback when the TeachingBubble tries to close.</p></dd>
-<dt>primaryButtonProps</dt>
-<dd><p><code>IButtonProps</code> <br> The Primary interaction button</p></dd>
-<dt>secondaryButtonProps</dt>
-<dd><p><code>IButtonProps</code> <br> The Secondary interaction button</p></dd>
-<dt>styles</dt>
-<dd><p><code>IStyleFunctionOrObject&lt;ITeachingBubbleStyleProps, ITeachingBubbleStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></dd>
-<dt>target</dt>
-<dd><p><code>Target</code> <br> Element, MouseEvent, Point, or querySelector string that the TeachingBubble should anchor to.</p></dd>
-<dt>targetElement</dt>
-<dd><p><code>HTMLElement</code> <br></p></dd>
-<dt>theme</dt>
-<dd><p><code>ITheme</code> <br> Theme provided by High-Order Component.</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> ariaDescribedBy </b> <code>string</code> <br> Defines the element id referencing the element containing the description for the TeachingBubble.</p></li>
+<li><p><b> ariaLabelledBy </b> <code>string</code> <br> Defines the element id referencing the element containing label text for TeachingBubble.</p></li>
+<li><p><b> calloutProps </b> <code>ICalloutProps</code> <br> Properties to pass through for Callout, reference detail properties in ICalloutProps</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;ITeachingBubble&gt;</code> <br> Optional callback to access the ITeachingBubble interface. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> focusTrapZoneProps </b> <code>IFocusTrapZoneProps</code> <br> Properties to pass through for FocusTrapZone, reference detail properties in IFocusTrapZoneProps</p></li>
+<li><p><b> footerContent </b> <code>string | JSX.Element</code> <br> Text that will be rendered in the footer of the TeachingBubble. May be rendered alongside primary and secondary buttons.</p></li>
+<li><p><b> hasCloseButton </b> <code>boolean</code> <br> Whether the TeachingBubble renders close button in the top right corner.</p></li>
+<li><p><b> hasCloseIcon </b> <code>boolean</code> <br></p></li>
+<li><p><b> hasCondensedHeadline </b> <code>boolean</code> <br> A variation with smaller bold headline and no margins.</p></li>
+<li><p><b> hasSmallHeadline </b> <code>boolean</code> <br> A variation with smaller bold headline and margins to the body. (<code>hasCondensedHeadline</code> takes precedence if it is also set to true.)</p></li>
+<li><p><b> headline </b> <code>string</code> <br> A headline for the Teaching Bubble.</p></li>
+<li><p><b> illustrationImage </b> <code>IImageProps</code> <br> An Image for the TeachingBubble.</p></li>
+<li><p><b> isWide </b> <code>boolean</code> <br> Whether or not the TeachingBubble is wide, with image on the left side.</p></li>
+<li><p><b> onDismiss </b> <code>(ev?: any) =&gt; void</code> <br> Callback when the TeachingBubble tries to close.</p></li>
+<li><p><b> primaryButtonProps </b> <code>IButtonProps</code> <br> The Primary interaction button</p></li>
+<li><p><b> secondaryButtonProps </b> <code>IButtonProps</code> <br> The Secondary interaction button</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;ITeachingBubbleStyleProps, ITeachingBubbleStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></li>
+<li><p><b> target </b> <code>Target</code> <br> Element, MouseEvent, Point, or querySelector string that the TeachingBubble should anchor to.</p></li>
+<li><p><b> targetElement </b> <code>HTMLElement</code> <br></p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by High-Order Component.</p></li>
+</ul></div>
     <div id="best-practices">
     <h2>Best practices</h2>
     
@@ -192,28 +179,32 @@ you need to work using the original docs to achieve the desired result.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span>
-<span class="r-in">    ui <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
-<span class="r-in">      <span class="fu"><a href="Button.html">DefaultButton.shinyInput</a></span><span class="op">(</span><span class="st">"toggleTeachingBubble"</span>, id <span class="op">=</span> <span class="st">"target"</span>, text <span class="op">=</span> <span class="st">"Toggle TeachingBubble"</span><span class="op">)</span>,</span>
-<span class="r-in">      <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/reactOutput.html" class="external-link">reactOutput</a></span><span class="op">(</span><span class="st">"teachingBubble"</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span>,</span>
-<span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">      <span class="va">showBubble</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/reactiveVal.html" class="external-link">reactiveVal</a></span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span>
-<span class="r-in">      <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/observeEvent.html" class="external-link">observeEvent</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">toggleTeachingBubble</span>, <span class="fu">showBubble</span><span class="op">(</span><span class="op">!</span><span class="fu">showBubble</span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">      <span class="va">output</span><span class="op">$</span><span class="va">teachingBubble</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/renderReact.html" class="external-link">renderReact</a></span><span class="op">(</span><span class="op">{</span></span>
-<span class="r-in">        <span class="kw">if</span> <span class="op">(</span><span class="fu">showBubble</span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">          <span class="fu">TeachingBubble</span><span class="op">(</span></span>
-<span class="r-in">            target <span class="op">=</span> <span class="st">"#target"</span>,</span>
-<span class="r-in">            headline <span class="op">=</span> <span class="st">"Very useful!"</span></span>
-<span class="r-in">          <span class="op">)</span></span>
-<span class="r-in">        <span class="op">}</span></span>
-<span class="r-in">      <span class="op">}</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">}</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    ui <span class="op">=</span> <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>      <span class="fu"><a href="Button.html">DefaultButton.shinyInput</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>        <span class="st">"toggleTeachingBubble"</span>,</span></span>
+<span class="r-in"><span>        id <span class="op">=</span> <span class="st">"target"</span>,</span></span>
+<span class="r-in"><span>        text <span class="op">=</span> <span class="st">"Toggle TeachingBubble"</span></span></span>
+<span class="r-in"><span>      <span class="op">)</span>,</span></span>
+<span class="r-in"><span>      <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/reactOutput.html" class="external-link">reactOutput</a></span><span class="op">(</span><span class="st">"teachingBubble"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>      <span class="va">showBubble</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/reactiveVal.html" class="external-link">reactiveVal</a></span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/observeEvent.html" class="external-link">observeEvent</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">toggleTeachingBubble</span>, <span class="fu">showBubble</span><span class="op">(</span><span class="op">!</span><span class="fu">showBubble</span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="va">output</span><span class="op">$</span><span class="va">teachingBubble</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/renderReact.html" class="external-link">renderReact</a></span><span class="op">(</span><span class="op">{</span></span></span>
+<span class="r-in"><span>        <span class="kw">if</span> <span class="op">(</span><span class="fu">showBubble</span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>          <span class="fu">TeachingBubble</span><span class="op">(</span></span></span>
+<span class="r-in"><span>            target <span class="op">=</span> <span class="st">"#target"</span>,</span></span>
+<span class="r-in"><span>            headline <span class="op">=</span> <span class="st">"Very useful!"</span></span></span>
+<span class="r-in"><span>          <span class="op">)</span></span></span>
+<span class="r-in"><span>        <span class="op">}</span></span></span>
+<span class="r-in"><span>      <span class="op">}</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -228,7 +219,7 @@ you need to work using the original docs to achieve the desired result.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

@@ -96,163 +96,110 @@ you need to work using the original docs to achieve the desired result.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">BasePickerListBelow</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">TagPicker</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">BasePickerListBelow</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">TagPicker</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>defaultSelectedItems</dt>
-<dd><p><code>T[]</code> <br> Initial items that have already been selected and should appear in the people picker.</p></dd>
-<dt>disabled</dt>
-<dd><p><code>boolean</code> <br> Flag for disabling the picker.</p></dd>
-<dt>enableSelectedSuggestionAlert</dt>
-<dd><p><code>boolean</code> <br> Adds an additional alert for the currently selected suggestion. This prop should be set to true for IE11 and below, as it enables proper screen reader behavior for each suggestion (since aria-activedescendant does not work with IE11). It should not be set for modern browsers (Edge, Chrome).</p></dd>
-<dt>getTextFromItem</dt>
-<dd><p><code>(item: T, currentValue?: string) =&gt; string</code> <br> A callback to get text from an item. Used to autofill text in the pickers.</p></dd>
-<dt>inputProps</dt>
-<dd><p><code>IInputProps</code> <br> AutoFill input native props</p></dd>
-<dt>itemLimit</dt>
-<dd><p><code>number</code> <br> Restrict the amount of selectable items.</p></dd>
-<dt>onBlur</dt>
-<dd><p><code>React.FocusEventHandler&lt;HTMLInputElement | Autofill&gt;</code> <br> A callback for when the user moves the focus away from the picker</p></dd>
-<dt>onChange</dt>
-<dd><p><code>(items?: T[]) =&gt; void</code> <br> A callback for when the selected list of items changes.</p></dd>
-<dt>onDismiss</dt>
-<dd><p><code>(ev?: any, selectedItem?: T) =&gt; boolean | void</code> <br> A callback to override the default behavior of adding the selected suggestion on dismiss. If it returns true or nothing, the selected item will be added on dismiss. If false, the selected item will not be added on dismiss.</p></dd>
-<dt>onEmptyInputFocus</dt>
-<dd><p><code>(selectedItems?: T[]) =&gt; T[] | PromiseLike&lt;T[]&gt;</code> <br> A callback for what should happen when a user clicks within the input area.</p></dd>
-<dt>onEmptyResolveSuggestions</dt>
-<dd><p><code>(selectedItems?: T[]) =&gt; T[] | PromiseLike&lt;T[]&gt;</code> <br> A callback for what should happen when suggestions are shown without input provided. Returns the already selected items so the resolver can filter them out. If used in conjunction with resolveDelay this will only kick off after the delay throttle.</p></dd>
-<dt>onFocus</dt>
-<dd><p><code>React.FocusEventHandler&lt;HTMLInputElement | Autofill&gt;</code> <br> A callback for when the user put focus on the picker</p></dd>
-<dt>onInputChange</dt>
-<dd><p><code>(input: string) =&gt; string</code> <br> A callback used to modify the input string.</p></dd>
-<dt>onItemSelected</dt>
-<dd><p><code>(selectedItem?: T) =&gt; T | PromiseLike&lt;T&gt; | null</code> <br> A callback to process a selection after the user selects something from the picker. If the callback returns null, the item will not be added to the picker.</p></dd>
-<dt>onRemoveSuggestion</dt>
-<dd><p><code>(item: T) =&gt; void</code> <br> A callback for when an item is removed from the suggestion list</p></dd>
-<dt>onRenderItem</dt>
-<dd><p><code>(props: IPickerItemProps&lt;T&gt;) =&gt; JSX.Element</code> <br> Function that specifies how the selected item will appear.</p></dd>
-<dt>onRenderSuggestionsItem</dt>
-<dd><p><code>(props: T, itemProps: ISuggestionItemProps&lt;T&gt;) =&gt; JSX.Element</code> <br> Function that specifies how an individual suggestion item will appear.</p></dd>
-<dt>onResolveSuggestions</dt>
-<dd><p><code>(filter: string, selectedItems?: T[]) =&gt; T[] | PromiseLike&lt;T[]&gt;</code> <br> A callback for what should happen when a person types text into the input. Returns the already selected items so the resolver can filter them out. If used in conjunction with resolveDelay this will only kick off after the delay throttle.</p></dd>
-<dt>onValidateInput</dt>
-<dd><p><code>(input: string) =&gt; ValidationState</code> <br> A function used to validate if raw text entered into the well can be added into the selected items list</p></dd>
-<dt>pickerCalloutProps</dt>
-<dd><p><code>ICalloutProps</code> <br> The properties that will get passed to the Callout component.</p></dd>
-<dt>pickerSuggestionsProps</dt>
-<dd><p><code>IBasePickerSuggestionsProps</code> <br> The properties that will get passed to the Suggestions component.</p></dd>
-<dt>resolveDelay</dt>
-<dd><p><code>number</code> <br> The delay time in ms before resolving suggestions, which is kicked off when input has been changed. e.g. If a second input change happens within the resolveDelay time, the timer will start over. Only until after the timer completes will onResolveSuggestions be called.</p></dd>
-<dt>selectedItems</dt>
-<dd><p><code>T[]</code> <br> The items that the base picker should currently display as selected. If this is provided then the picker will act as a controlled component.</p></dd>
-<dt>"aria-label"</dt>
-<dd><p><code>string</code> <br> Screen reader label to apply to an input element.</p></dd>
-<dt>defaultVisibleValue</dt>
-<dd><p><code>string</code> <br> The default value to be visible when the autofill first created. This is different than placeholder text because the placeholder text will disappear and re-appear. This text persists until deleted or changed.</p></dd>
-<dt>index</dt>
-<dd><p><code>number</code> <br> Index number of the item in the array of picked items.</p></dd>
-<dt>item</dt>
-<dd><p><code>T</code> <br> The item of Type T (Persona, Tag, or any other custom item provided).</p></dd>
-<dt>key</dt>
-<dd><p><code>string | number</code> <br> Unique key for each picked item.</p></dd>
-<dt>onItemChange</dt>
-<dd><p><code>(item: T, index: number) =&gt; void</code> <br> Internal Use only, gives a callback to the renderer to call when an item has changed. This allows the base picker to keep track of changes in the items.</p></dd>
-<dt>selected</dt>
-<dd><p><code>boolean</code> <br> Whether the picked item is selected or not.</p></dd>
-<dt>id</dt>
-<dd><p><code>string</code> <br> Unique id of the suggested item.</p></dd>
-<dt>isSelectedOverride</dt>
-<dd><p><code>boolean</code> <br> An override for the 'selected' property of the SuggestionModel.</p></dd>
-<dt>onClick</dt>
-<dd><p><code>(ev: React.MouseEvent&lt;HTMLButtonElement&gt;) =&gt; void</code> <br> Callback for when the user clicks on the suggestion.</p></dd>
-<dt>onRemoveItem</dt>
-<dd><p><code>(ev: React.MouseEvent&lt;HTMLButtonElement&gt;) =&gt; void</code> <br> Callback for when the item is removed from the array of suggested items.</p></dd>
-<dt>removeButtonAriaLabel</dt>
-<dd><p><code>string</code> <br> The ARIA label for the button to remove the suggestion from the list.</p></dd>
-<dt>RenderSuggestion</dt>
-<dd><p><code>(item: T, suggestionItemProps: ISuggestionItemProps&lt;T&gt;) =&gt; JSX.Element</code> <br> Optional renderer to override the default one for each type of picker.</p></dd>
-<dt>showRemoveButton</dt>
-<dd><p><code>boolean</code> <br> Whether the remove button should be rendered or not.</p></dd>
-<dt>suggestionModel</dt>
-<dd><p><code>ISuggestionModel&lt;T&gt;</code> <br> Individual suggestion object containing its properties.</p></dd>
-<dt>className</dt>
-<dd><p><code>string</code> <br> The CSS className of the suggestions root.</p></dd>
-<dt>componentRef</dt>
-<dd><p><code>IRefObject&lt;ISuggestions&lt;T&gt;&gt;</code> <br> Optional callback to access the ISuggestions interface. Use this instead of ref for accessing the public methods and properties of the component.</p></dd>
-<dt>createGenericItem</dt>
-<dd><p><code>() =&gt; void</code> <br> The callback that should be called when the user attempts to use the input text as as item</p></dd>
-<dt>forceResolveText</dt>
-<dd><p><code>string</code> <br> The text that appears indicating to the use to force resolve the input</p></dd>
-<dt>isLoading</dt>
-<dd><p><code>boolean</code> <br> Used to indicate whether or not the suggestions are loading.</p></dd>
-<dt>isMostRecentlyUsedVisible</dt>
-<dd><p><code>boolean</code> <br> Indicates if a short list of recent suggestions should be shown.</p></dd>
-<dt>isResultsFooterVisible</dt>
-<dd><p><code>boolean</code> <br> Indicates if the text in resultsFooter or resultsFooterFull should be shown at the end of the suggestion list.</p></dd>
-<dt>isSearching</dt>
-<dd><p><code>boolean</code> <br> Used to indicate whether or not the component is searching for more results.</p></dd>
-<dt>loadingText</dt>
-<dd><p><code>string</code> <br> The text to display while the results are loading.</p></dd>
-<dt>moreSuggestionsAvailable</dt>
-<dd><p><code>boolean</code> <br> Used to indicate whether or not the user can request more suggestions. Dictates whether or not the searchForMore button is displayed.</p></dd>
-<dt>mostRecentlyUsedHeaderText</dt>
-<dd><p><code>string</code> <br> The text that should appear at the top of the most recently used box.</p></dd>
-<dt>noResultsFoundText</dt>
-<dd><p><code>string</code> <br> The text that should appear if no results are found when searching.</p></dd>
-<dt>onGetMoreResults</dt>
-<dd><p><code>() =&gt; void</code> <br> The callback that should be called when the user attempts to get more results</p></dd>
-<dt>onRenderNoResultFound</dt>
-<dd><p><code>IRenderFunction&lt;void&gt;</code> <br> How the "no result found" should look in the suggestion list.</p></dd>
-<dt>onRenderSuggestion</dt>
-<dd><p><code>(props: T, suggestionItemProps: ISuggestionItemProps&lt;T&gt;) =&gt; JSX.Element</code> <br> How the suggestion should look in the suggestion list.</p></dd>
-<dt>onSuggestionClick</dt>
-<dd><p><code>(ev?: React.MouseEvent&lt;HTMLElement&gt;, item?: any, index?: number) =&gt; void</code> <br> What should occur when a suggestion is clicked</p></dd>
-<dt>onSuggestionRemove</dt>
-<dd><p><code>(ev?: React.MouseEvent&lt;HTMLElement&gt;, item?: T | IPersonaProps, index?: number) =&gt; void</code> <br> Function to fire when one of the optional remove buttons on a suggestion is clicked.</p>
-<p>TODO (adjective-object) remove IPersonaprops before the next major version bump</p></dd>
-<dt>refocusSuggestions</dt>
-<dd><p><code>(keyCode: KeyCodes) =&gt; void</code> <br> A function that resets focus to the expected item in the suggestion list</p></dd>
-<dt>removeSuggestionAriaLabel</dt>
-<dd><p><code>string</code> <br> An ARIA label to use for the buttons to remove individual suggestions.</p></dd>
-<dt>resultsFooter</dt>
-<dd><p><code>(props: ISuggestionsProps&lt;T&gt;) =&gt; JSX.Element</code> <br> A renderer that adds an element at the end of the suggestions list it has fewer items than resultsMaximumNumber.</p></dd>
-<dt>resultsFooterFull</dt>
-<dd><p><code>(props: ISuggestionsProps&lt;T&gt;) =&gt; JSX.Element</code> <br> A renderer that adds an element at the end of the suggestions list it has more items than resultsMaximumNumber.</p></dd>
-<dt>resultsMaximumNumber</dt>
-<dd><p><code>number</code> <br> Maximum number of suggestions to show in the full suggestion list.</p></dd>
-<dt>searchErrorText</dt>
-<dd><p><code>string</code> <br> The text that should appear if there is a search error.</p></dd>
-<dt>searchForMoreText</dt>
-<dd><p><code>string</code> <br> The text that appears indicating to the user that they can search for more results.</p></dd>
-<dt>searchingText</dt>
-<dd><p><code>string</code> <br> The text to display while searching for more results in a limited suggestions list.</p></dd>
-<dt>showForceResolve</dt>
-<dd><p><code>() =&gt; boolean</code> <br> The callback that should be called to see if the force resolve command should be shown</p></dd>
-<dt>showRemoveButtons</dt>
-<dd><p><code>boolean</code> <br> Indicates whether to show a button with each suggestion to remove that suggestion.</p></dd>
-<dt>styles</dt>
-<dd><p><code>IStyleFunctionOrObject&lt;any, any&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></dd>
-<dt>suggestions</dt>
-<dd><p><code>ISuggestionModel&lt;T&gt;[]</code> <br> The list of Suggestions that will be displayed</p></dd>
-<dt>suggestionsAvailableAlertText</dt>
-<dd><p><code>string</code> <br> Screen reader message to read when there are suggestions available.</p></dd>
-<dt>suggestionsClassName</dt>
-<dd><p><code>string</code> <br> The CSS className of the suggestions list</p></dd>
-<dt>suggestionsContainerAriaLabel</dt>
-<dd><p><code>string</code> <br> An ARIA label for the container that is the parent of the suggestions.</p></dd>
-<dt>suggestionsHeaderText</dt>
-<dd><p><code>string</code> <br> The text that appears at the top of the suggestions list.</p></dd>
-<dt>suggestionsItemClassName</dt>
-<dd><p><code>string</code> <br> The className of the suggestion item.</p></dd>
-<dt>suggestionsListId</dt>
-<dd><p><code>string</code> <br> The string that will be used as the suggestionsListId. Will be used by the BasePicker to keep track of the list for aria.</p></dd>
-<dt>theme</dt>
-<dd><p><code>ITheme</code> <br> Theme provided by High-Order Component.</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> className </b> <code>string</code> <br> ClassName for the picker.</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IBasePicker&lt;T&gt;&gt;</code> <br> Optional callback to access the IBasePicker interface. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> createGenericItem </b> <code>(input: string, ValidationState: ValidationState) =&gt; ISuggestionModel&lt;T&gt; | T</code> <br> Function that specifies how arbitrary text entered into the well is handled.</p></li>
+<li><p><b> defaultSelectedItems </b> <code>T[]</code> <br> Initial items that have already been selected and should appear in the people picker.</p></li>
+<li><p><b> disabled </b> <code>boolean</code> <br> Flag for disabling the picker.</p></li>
+<li><p><b> enableSelectedSuggestionAlert </b> <code>boolean</code> <br> Adds an additional alert for the currently selected suggestion. This prop should be set to true for IE11 and below, as it enables proper screen reader behavior for each suggestion (since aria-activedescendant does not work with IE11). It should not be set for modern browsers (Edge, Chrome).</p></li>
+<li><p><b> getTextFromItem </b> <code>(item: T, currentValue?: string) =&gt; string</code> <br> A callback to get text from an item. Used to autofill text in the pickers.</p></li>
+<li><p><b> inputProps </b> <code>IInputProps</code> <br> AutoFill input native props</p></li>
+<li><p><b> itemLimit </b> <code>number</code> <br> Restrict the amount of selectable items.</p></li>
+<li><p><b> onBlur </b> <code>React.FocusEventHandler&lt;HTMLInputElement | Autofill&gt;</code> <br> A callback for when the user moves the focus away from the picker</p></li>
+<li><p><b> onChange </b> <code>(items?: T[]) =&gt; void</code> <br> A callback for when the selected list of items changes.</p></li>
+<li><p><b> onDismiss </b> <code>(ev?: any, selectedItem?: T) =&gt; boolean | void</code> <br> A callback to override the default behavior of adding the selected suggestion on dismiss. If it returns true or nothing, the selected item will be added on dismiss. If false, the selected item will not be added on dismiss.</p></li>
+<li><p><b> onEmptyInputFocus </b> <code>(selectedItems?: T[]) =&gt; T[] | PromiseLike&lt;T[]&gt;</code> <br> A callback for what should happen when a user clicks within the input area.</p></li>
+<li><p><b> onEmptyResolveSuggestions </b> <code>(selectedItems?: T[]) =&gt; T[] | PromiseLike&lt;T[]&gt;</code> <br> A callback for what should happen when suggestions are shown without input provided. Returns the already selected items so the resolver can filter them out. If used in conjunction with resolveDelay this will only kick off after the delay throttle.</p></li>
+<li><p><b> onFocus </b> <code>React.FocusEventHandler&lt;HTMLInputElement | Autofill&gt;</code> <br> A callback for when the user put focus on the picker</p></li>
+<li><p><b> onGetMoreResults </b> <code>(filter: string, selectedItems?: T[]) =&gt; T[] | PromiseLike&lt;T[]&gt;</code> <br> A callback that gets the rest of the results when a user clicks get more results.</p></li>
+<li><p><b> onInputChange </b> <code>(input: string) =&gt; string</code> <br> A callback used to modify the input string.</p></li>
+<li><p><b> onItemSelected </b> <code>(selectedItem?: T) =&gt; T | PromiseLike&lt;T&gt; | null</code> <br> A callback to process a selection after the user selects something from the picker. If the callback returns null, the item will not be added to the picker.</p></li>
+<li><p><b> onRemoveSuggestion </b> <code>(item: T) =&gt; void</code> <br> A callback for when an item is removed from the suggestion list</p></li>
+<li><p><b> onRenderItem </b> <code>(props: IPickerItemProps&lt;T&gt;) =&gt; JSX.Element</code> <br> Function that specifies how the selected item will appear.</p></li>
+<li><p><b> onRenderSuggestionsItem </b> <code>(props: T, itemProps: ISuggestionItemProps&lt;T&gt;) =&gt; JSX.Element</code> <br> Function that specifies how an individual suggestion item will appear.</p></li>
+<li><p><b> onResolveSuggestions </b> <code>(filter: string, selectedItems?: T[]) =&gt; T[] | PromiseLike&lt;T[]&gt;</code> <br> A callback for what should happen when a person types text into the input. Returns the already selected items so the resolver can filter them out. If used in conjunction with resolveDelay this will only kick off after the delay throttle.</p></li>
+<li><p><b> onValidateInput </b> <code>(input: string) =&gt; ValidationState</code> <br> A function used to validate if raw text entered into the well can be added into the selected items list</p></li>
+<li><p><b> pickerCalloutProps </b> <code>ICalloutProps</code> <br> The properties that will get passed to the Callout component.</p></li>
+<li><p><b> pickerSuggestionsProps </b> <code>IBasePickerSuggestionsProps</code> <br> The properties that will get passed to the Suggestions component.</p></li>
+<li><p><b> removeButtonAriaLabel </b> <code>string</code> <br> Aria label for the "X" button in the selected item component.</p></li>
+<li><p><b> resolveDelay </b> <code>number</code> <br> The delay time in ms before resolving suggestions, which is kicked off when input has been changed. e.g. If a second input change happens within the resolveDelay time, the timer will start over. Only until after the timer completes will onResolveSuggestions be called.</p></li>
+<li><p><b> searchingText </b> <code>((props: { input: string; }) =&gt; string) | string</code> <br> The text to display while searching for more results in a limited suggestions list</p></li>
+<li><p><b> selectedItems </b> <code>T[]</code> <br> The items that the base picker should currently display as selected. If this is provided then the picker will act as a controlled component.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IBasePickerStyleProps, IBasePickerStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by styled() function.</p></li>
+<li><p><b> "aria-label" </b> <code>string</code> <br> Screen reader label to apply to an input element.</p></li>
+<li><p><b> defaultVisibleValue </b> <code>string</code> <br> The default value to be visible when the autofill first created. This is different than placeholder text because the placeholder text will disappear and re-appear. This text persists until deleted or changed.</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IPickerItem&gt;</code> <br> Optional callback to access the IPickerItem interface. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> index </b> <code>number</code> <br> Index number of the item in the array of picked items.</p></li>
+<li><p><b> item </b> <code>T</code> <br> The item of Type T (Persona, Tag, or any other custom item provided).</p></li>
+<li><p><b> key </b> <code>string | number</code> <br> Unique key for each picked item.</p></li>
+<li><p><b> onItemChange </b> <code>(item: T, index: number) =&gt; void</code> <br> Internal Use only, gives a callback to the renderer to call when an item has changed. This allows the base picker to keep track of changes in the items.</p></li>
+<li><p><b> onRemoveItem </b> <code>() =&gt; void</code> <br> Callback issued when the item is removed from the array of picked items.</p></li>
+<li><p><b> removeButtonAriaLabel </b> <code>string</code> <br> Aria-label for the picked item remove button.</p></li>
+<li><p><b> selected </b> <code>boolean</code> <br> Whether the picked item is selected or not.</p></li>
+<li><p><b> className </b> <code>string</code> <br> Optional className for the root element of the suggestion item.</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;ISuggestionsItem&gt;</code> <br> Optional callback to access the ISuggestionItem interface. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> id </b> <code>string</code> <br> Unique id of the suggested item.</p></li>
+<li><p><b> isSelectedOverride </b> <code>boolean</code> <br> An override for the 'selected' property of the SuggestionModel.</p></li>
+<li><p><b> onClick </b> <code>(ev: React.MouseEvent&lt;HTMLButtonElement&gt;) =&gt; void</code> <br> Callback for when the user clicks on the suggestion.</p></li>
+<li><p><b> onRemoveItem </b> <code>(ev: React.MouseEvent&lt;HTMLButtonElement&gt;) =&gt; void</code> <br> Callback for when the item is removed from the array of suggested items.</p></li>
+<li><p><b> removeButtonAriaLabel </b> <code>string</code> <br> The ARIA label for the button to remove the suggestion from the list.</p></li>
+<li><p><b> RenderSuggestion </b> <code>(item: T, suggestionItemProps: ISuggestionItemProps&lt;T&gt;) =&gt; JSX.Element</code> <br> Optional renderer to override the default one for each type of picker.</p></li>
+<li><p><b> showRemoveButton </b> <code>boolean</code> <br> Whether the remove button should be rendered or not.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;ISuggestionsItemStyleProps, ISuggestionsItemStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></li>
+<li><p><b> suggestionModel </b> <code>ISuggestionModel&lt;T&gt;</code> <br> Individual suggestion object containing its properties.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by High-Order Component.</p></li>
+<li><p><b> className </b> <code>string</code> <br> The CSS className of the suggestions root.</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;ISuggestions&lt;T&gt;&gt;</code> <br> Optional callback to access the ISuggestions interface. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> createGenericItem </b> <code>() =&gt; void</code> <br> The callback that should be called when the user attempts to use the input text as as item</p></li>
+<li><p><b> forceResolveText </b> <code>string</code> <br> The text that appears indicating to the use to force resolve the input</p></li>
+<li><p><b> isLoading </b> <code>boolean</code> <br> Used to indicate whether or not the suggestions are loading.</p></li>
+<li><p><b> isMostRecentlyUsedVisible </b> <code>boolean</code> <br> Indicates if a short list of recent suggestions should be shown.</p></li>
+<li><p><b> isResultsFooterVisible </b> <code>boolean</code> <br> Indicates if the text in resultsFooter or resultsFooterFull should be shown at the end of the suggestion list.</p></li>
+<li><p><b> isSearching </b> <code>boolean</code> <br> Used to indicate whether or not the component is searching for more results.</p></li>
+<li><p><b> loadingText </b> <code>string</code> <br> The text to display while the results are loading.</p></li>
+<li><p><b> moreSuggestionsAvailable </b> <code>boolean</code> <br> Used to indicate whether or not the user can request more suggestions. Dictates whether or not the searchForMore button is displayed.</p></li>
+<li><p><b> mostRecentlyUsedHeaderText </b> <code>string</code> <br> The text that should appear at the top of the most recently used box.</p></li>
+<li><p><b> noResultsFoundText </b> <code>string</code> <br> The text that should appear if no results are found when searching.</p></li>
+<li><p><b> onGetMoreResults </b> <code>() =&gt; void</code> <br> The callback that should be called when the user attempts to get more results</p></li>
+<li><p><b> onRenderNoResultFound </b> <code>IRenderFunction&lt;void&gt;</code> <br> How the "no result found" should look in the suggestion list.</p></li>
+<li><p><b> onRenderSuggestion </b> <code>(props: T, suggestionItemProps: ISuggestionItemProps&lt;T&gt;) =&gt; JSX.Element</code> <br> How the suggestion should look in the suggestion list.</p></li>
+<li><p><b> onSuggestionClick </b> <code>(ev?: React.MouseEvent&lt;HTMLElement&gt;, item?: any, index?: number) =&gt; void</code> <br> What should occur when a suggestion is clicked</p></li>
+<li><p><b> onSuggestionRemove </b> <code>(ev?: React.MouseEvent&lt;HTMLElement&gt;, item?: T | IPersonaProps, index?: number) =&gt; void</code> <br> Function to fire when one of the optional remove buttons on a suggestion is clicked.TODO (adjective-object) remove IPersonaprops before the next major version bump</p></li>
+<li><p><b> refocusSuggestions </b> <code>(keyCode: KeyCodes) =&gt; void</code> <br> A function that resets focus to the expected item in the suggestion list</p></li>
+<li><p><b> removeSuggestionAriaLabel </b> <code>string</code> <br> An ARIA label to use for the buttons to remove individual suggestions.</p></li>
+<li><p><b> resultsFooter </b> <code>(props: ISuggestionsProps&lt;T&gt;) =&gt; JSX.Element</code> <br> A renderer that adds an element at the end of the suggestions list it has fewer items than resultsMaximumNumber.</p></li>
+<li><p><b> resultsFooterFull </b> <code>(props: ISuggestionsProps&lt;T&gt;) =&gt; JSX.Element</code> <br> A renderer that adds an element at the end of the suggestions list it has more items than resultsMaximumNumber.</p></li>
+<li><p><b> resultsMaximumNumber </b> <code>number</code> <br> Maximum number of suggestions to show in the full suggestion list.</p></li>
+<li><p><b> searchErrorText </b> <code>string</code> <br> The text that should appear if there is a search error.</p></li>
+<li><p><b> searchForMoreText </b> <code>string</code> <br> The text that appears indicating to the user that they can search for more results.</p></li>
+<li><p><b> searchingText </b> <code>string</code> <br> The text to display while searching for more results in a limited suggestions list.</p></li>
+<li><p><b> showForceResolve </b> <code>() =&gt; boolean</code> <br> The callback that should be called to see if the force resolve command should be shown</p></li>
+<li><p><b> showRemoveButtons </b> <code>boolean</code> <br> Indicates whether to show a button with each suggestion to remove that suggestion.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;any, any&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></li>
+<li><p><b> suggestions </b> <code>ISuggestionModel&lt;T&gt;[]</code> <br> The list of Suggestions that will be displayed</p></li>
+<li><p><b> suggestionsAvailableAlertText </b> <code>string</code> <br> Screen reader message to read when there are suggestions available.</p></li>
+<li><p><b> suggestionsClassName </b> <code>string</code> <br> The CSS className of the suggestions list</p></li>
+<li><p><b> suggestionsContainerAriaLabel </b> <code>string</code> <br> An ARIA label for the container that is the parent of the suggestions.</p></li>
+<li><p><b> suggestionsHeaderText </b> <code>string</code> <br> The text that appears at the top of the suggestions list.</p></li>
+<li><p><b> suggestionsItemClassName </b> <code>string</code> <br> The className of the suggestion item.</p></li>
+<li><p><b> suggestionsListId </b> <code>string</code> <br> The string that will be used as the suggestionsListId. Will be used by the BasePicker to keep track of the list for aria.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by High-Order Component.</p></li>
+</ul></div>
     <div id="best-practices">
     <h2>Best practices</h2>
     
@@ -267,66 +214,77 @@ you need to work using the original docs to achieve the desired result.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span>
-<span class="r-in">    ui <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/tagList.html" class="external-link">tagList</a></span><span class="op">(</span></span>
-<span class="r-in">      <span class="va">tags</span><span class="op">$</span><span class="fu">script</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/HTML.html" class="external-link">HTML</a></span><span class="op">(</span><span class="st">"</span>
-<span class="r-in">        testTags = [</span>
-<span class="r-in">          'black',</span>
-<span class="r-in">          'blue',</span>
-<span class="r-in">          'brown',</span>
-<span class="r-in">          'cyan',</span>
-<span class="r-in">          'green',</span>
-<span class="r-in">          'magenta',</span>
-<span class="r-in">          'mauve',</span>
-<span class="r-in">          'orange',</span>
-<span class="r-in">          'pink',</span>
-<span class="r-in">          'purple',</span>
-<span class="r-in">          'red',</span>
-<span class="r-in">          'rose',</span>
-<span class="r-in">          'violet',</span>
-<span class="r-in">          'white',</span>
-<span class="r-in">          'yellow',</span>
-<span class="r-in">        ].map(item =&gt; ({ key: item, name: item }));</span>
-<span class="r-in"></span>
-<span class="r-in">        function listContainsTagList(tag, tagList) {</span>
-<span class="r-in">          if (!tagList || !tagList.length || tagList.length === 0) {</span>
-<span class="r-in">            return false;</span>
-<span class="r-in">          }</span>
-<span class="r-in">          return tagList.some(compareTag =&gt; compareTag.key === tag.key);</span>
-<span class="r-in">        };</span>
-<span class="r-in"></span>
-<span class="r-in">        function filterSuggestedTags(filterText, tagList) {</span>
-<span class="r-in">          return filterText</span>
-<span class="r-in">            ? testTags.filter(</span>
-<span class="r-in">                tag =&gt; tag.name.toLowerCase().indexOf(filterText.toLowerCase()) === 0 &amp;&amp; !listContainsTagList(tag, tagList),</span>
-<span class="r-in">              )</span>
-<span class="r-in">            : [];</span>
-<span class="r-in">        };</span>
-<span class="r-in">      "</span><span class="op">)</span><span class="op">)</span>,</span>
-<span class="r-in">      <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/textOutput.html" class="external-link">textOutput</a></span><span class="op">(</span><span class="st">"selectedTags"</span><span class="op">)</span>,</span>
-<span class="r-in">      <span class="fu">TagPicker</span><span class="op">(</span></span>
-<span class="r-in">        onResolveSuggestions <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"filterSuggestedTags"</span><span class="op">)</span>,</span>
-<span class="r-in">        onEmptyInputFocus <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"function(tagList) { return testTags.filter(tag =&gt; !listContainsTagList(tag, tagList)); }"</span><span class="op">)</span>,</span>
-<span class="r-in">        getTextFromItem <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"function(item) { return item.text }"</span><span class="op">)</span>,</span>
-<span class="r-in">        pickerSuggestionsProps <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>suggestionsHeaderText <span class="op">=</span> <span class="st">'Suggested tags'</span>, noResultsFoundText <span class="op">=</span> <span class="st">'No color tags found'</span><span class="op">)</span>,</span>
-<span class="r-in">        itemLimit <span class="op">=</span> <span class="fl">2</span>,</span>
-<span class="r-in">        onChange <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"function(selection) { Shiny.setInputValue('selectedTags', JSON.stringify(selection)) }"</span><span class="op">)</span></span>
-<span class="r-in">      <span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span>,</span>
-<span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">      <span class="va">output</span><span class="op">$</span><span class="va">selectedTags</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/renderPrint.html" class="external-link">renderText</a></span><span class="op">(</span><span class="op">{</span></span>
-<span class="r-in">        <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NULL.html" class="external-link">is.null</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">selectedTags</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">          <span class="st">"Select up to 2 colors below:"</span></span>
-<span class="r-in">        <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
-<span class="r-in">          <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"You have selected:"</span>, <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="fu">jsonlite</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/jsonlite/man/fromJSON.html" class="external-link">fromJSON</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">selectedTags</span><span class="op">)</span><span class="op">$</span><span class="va">name</span>, collapse <span class="op">=</span> <span class="st">", "</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">        <span class="op">}</span></span>
-<span class="r-in">      <span class="op">}</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">}</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    ui <span class="op">=</span> <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/tagList.html" class="external-link">tagList</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>      <span class="va">tags</span><span class="op">$</span><span class="fu">script</span><span class="op">(</span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/HTML.html" class="external-link">HTML</a></span><span class="op">(</span><span class="st">"</span></span></span>
+<span class="r-in"><span><span class="st">        testTags = [</span></span></span>
+<span class="r-in"><span><span class="st">          'black',</span></span></span>
+<span class="r-in"><span><span class="st">          'blue',</span></span></span>
+<span class="r-in"><span><span class="st">          'brown',</span></span></span>
+<span class="r-in"><span><span class="st">          'cyan',</span></span></span>
+<span class="r-in"><span><span class="st">          'green',</span></span></span>
+<span class="r-in"><span><span class="st">          'magenta',</span></span></span>
+<span class="r-in"><span><span class="st">          'mauve',</span></span></span>
+<span class="r-in"><span><span class="st">          'orange',</span></span></span>
+<span class="r-in"><span><span class="st">          'pink',</span></span></span>
+<span class="r-in"><span><span class="st">          'purple',</span></span></span>
+<span class="r-in"><span><span class="st">          'red',</span></span></span>
+<span class="r-in"><span><span class="st">          'rose',</span></span></span>
+<span class="r-in"><span><span class="st">          'violet',</span></span></span>
+<span class="r-in"><span><span class="st">          'white',</span></span></span>
+<span class="r-in"><span><span class="st">          'yellow',</span></span></span>
+<span class="r-in"><span><span class="st">        ].map(item =&gt; ({ key: item, name: item }));</span></span></span>
+<span class="r-in"><span><span class="st"></span></span></span>
+<span class="r-in"><span><span class="st">        function listContainsTagList(tag, tagList) {</span></span></span>
+<span class="r-in"><span><span class="st">          if (!tagList || !tagList.length || tagList.length === 0) {</span></span></span>
+<span class="r-in"><span><span class="st">            return false;</span></span></span>
+<span class="r-in"><span><span class="st">          }</span></span></span>
+<span class="r-in"><span><span class="st">          return tagList.some(compareTag =&gt; compareTag.key === tag.key);</span></span></span>
+<span class="r-in"><span><span class="st">        };</span></span></span>
+<span class="r-in"><span><span class="st"></span></span></span>
+<span class="r-in"><span><span class="st">        function filterSuggestedTags(filterText, tagList) {</span></span></span>
+<span class="r-in"><span><span class="st">          return filterText</span></span></span>
+<span class="r-in"><span><span class="st">            ? testTags.filter(</span></span></span>
+<span class="r-in"><span><span class="st">                tag =&gt; tag.name.toLowerCase().indexOf(filterText.toLowerCase()) === 0 &amp;&amp;</span></span></span>
+<span class="r-in"><span><span class="st">                 !listContainsTagList(tag, tagList),</span></span></span>
+<span class="r-in"><span><span class="st">              )</span></span></span>
+<span class="r-in"><span><span class="st">            : [];</span></span></span>
+<span class="r-in"><span><span class="st">        };</span></span></span>
+<span class="r-in"><span><span class="st">      "</span><span class="op">)</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/textOutput.html" class="external-link">textOutput</a></span><span class="op">(</span><span class="st">"selectedTags"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      <span class="fu">TagPicker</span><span class="op">(</span></span></span>
+<span class="r-in"><span>        onResolveSuggestions <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"filterSuggestedTags"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>        onEmptyInputFocus <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>          <span class="st">"function(tagList) { return testTags.filter(tag =&gt; !listContainsTagList(tag, tagList)); }"</span></span></span>
+<span class="r-in"><span>        <span class="op">)</span>,</span></span>
+<span class="r-in"><span>        getTextFromItem <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"function(item) { return item.text }"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>        pickerSuggestionsProps <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>          suggestionsHeaderText <span class="op">=</span> <span class="st">'Suggested tags'</span>,</span></span>
+<span class="r-in"><span>          noResultsFoundText <span class="op">=</span> <span class="st">'No color tags found'</span></span></span>
+<span class="r-in"><span>        <span class="op">)</span>,</span></span>
+<span class="r-in"><span>        itemLimit <span class="op">=</span> <span class="fl">2</span>,</span></span>
+<span class="r-in"><span>        onChange <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>          <span class="st">"function(selection) { Shiny.setInputValue('selectedTags', JSON.stringify(selection)) }"</span></span></span>
+<span class="r-in"><span>        <span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>      <span class="va">output</span><span class="op">$</span><span class="va">selectedTags</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/renderPrint.html" class="external-link">renderText</a></span><span class="op">(</span><span class="op">{</span></span></span>
+<span class="r-in"><span>        <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NULL.html" class="external-link">is.null</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">selectedTags</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>          <span class="st">"Select up to 2 colors below:"</span></span></span>
+<span class="r-in"><span>        <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>          <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>            <span class="st">"You have selected:"</span>,</span></span>
+<span class="r-in"><span>            <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="fu">jsonlite</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/jsonlite/man/fromJSON.html" class="external-link">fromJSON</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">selectedTags</span><span class="op">)</span><span class="op">$</span><span class="va">name</span>, collapse <span class="op">=</span> <span class="st">", "</span><span class="op">)</span></span></span>
+<span class="r-in"><span>          <span class="op">)</span></span></span>
+<span class="r-in"><span>        <span class="op">}</span></span></span>
+<span class="r-in"><span>      <span class="op">}</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -341,7 +299,7 @@ you need to work using the original docs to achieve the desired result.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

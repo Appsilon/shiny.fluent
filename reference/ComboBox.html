@@ -90,94 +90,77 @@ you need to work using the original docs to achieve the desired result.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">ComboBox</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">VirtualizedComboBox</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">ComboBox.shinyInput</span><span class="op">(</span><span class="va">inputId</span>, <span class="va">...</span>, value <span class="op">=</span> <span class="va">defaultValue</span><span class="op">)</span>
-
-<span class="fu">updateComboBox.shinyInput</span><span class="op">(</span>
-  session <span class="op">=</span> <span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/domains.html" class="external-link">getDefaultReactiveDomain</a></span><span class="op">(</span><span class="op">)</span>,
-  <span class="va">inputId</span>,
-  <span class="va">...</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">ComboBox</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">VirtualizedComboBox</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">ComboBox.shinyInput</span><span class="op">(</span><span class="va">inputId</span>, <span class="va">...</span>, value <span class="op">=</span> <span class="va">defaultValue</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">updateComboBox.shinyInput</span><span class="op">(</span></span>
+<span>  session <span class="op">=</span> <span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/domains.html" class="external-link">getDefaultReactiveDomain</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="va">inputId</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>allowFreeform</dt>
-<dd><p><code>boolean</code> <br> Whether the ComboBox is free form, meaning that the user input is not bound to provided options. Defaults to false.</p></dd>
-<dt>ariaDescribedBy</dt>
-<dd><p><code>string</code> <br> Optional prop to add a string id that can be referenced inside the aria-describedby attribute</p></dd>
-<dt>autoComplete</dt>
-<dd><p><code>'on' | 'off'</code> <br> Whether the ComboBox auto completes. As the user is inputing text, it will be suggested potential matches from the list of options. If the combo box is expanded, this will also scroll to the suggested option, and give it a selected style.</p></dd>
-<dt>autofill</dt>
-<dd><p><code>IAutofillProps</code> <br> The AutofillProps to be passed into the Autofill component inside combobox</p></dd>
-<dt>buttonIconProps</dt>
-<dd><p><code>IIconProps</code> <br> The IconProps to use for the button aspect of the combobox</p></dd>
-<dt>caretDownButtonStyles</dt>
-<dd><p><code>Partial&lt;IButtonStyles&gt;</code> <br> Styles for the caret down button.</p></dd>
-<dt>comboBoxOptionStyles</dt>
-<dd><p><code>Partial&lt;IComboBoxOptionStyles&gt;</code> <br> Default styles that should be applied to ComboBox options, in case an option does not come with user-defined custom styles</p></dd>
-<dt>componentRef</dt>
-<dd><p><code>IRefObject&lt;IComboBox&gt;</code> <br> Optional callback to access the IComboBox interface. Use this instead of ref for accessing the public methods and properties of the component.</p></dd>
-<dt>dropdownMaxWidth</dt>
-<dd><p><code>number</code> <br> Custom max width for dropdown</p></dd>
-<dt>dropdownWidth</dt>
-<dd><p><code>number</code> <br> Custom width for dropdown (unless useComboBoxAsMenuWidth is undefined or false)</p></dd>
-<dt>getClassNames</dt>
-<dd><p><code>(theme: ITheme, isOpen: boolean, disabled: boolean, required: boolean, focused: boolean, allowFreeForm: boolean, hasErrorMessage: boolean, className?: string) =&gt; IComboBoxClassNames</code> <br> Custom function for providing the classNames for the ComboBox. Can be used to provide all styles for the component instead of applying them on top of the default styles.</p></dd>
-<dt>iconButtonProps</dt>
-<dd><p><code>IButtonProps</code> <br> Optional iconButton props on combo box</p></dd>
-<dt>isButtonAriaHidden</dt>
-<dd><p><code>boolean</code> <br> Sets the 'aria-hidden' attribute on the ComboBox's button element instructing screen readers how to handle the element. This element is hidden by default because all functionality is handled by the input element and the arrow button is only meant to be decorative.</p></dd>
-<dt>keytipProps</dt>
-<dd><p><code>IKeytipProps</code> <br> Optional keytip for this combo box</p></dd>
-<dt>multiSelectDelimiter</dt>
-<dd><p><code>string</code> <br> When multiple items are selected, this will be used to separate values in the combobox input.</p></dd>
-<dt>onChange</dt>
-<dd><p><code>(event: React.FormEvent&lt;IComboBox&gt;, option?: IComboBoxOption, index?: number, value?: string) =&gt; void</code> <br> Callback issued when either: 1) the selected option changes 2) a manually edited value is submitted. In this case there may not be a matched option if allowFreeform is also true (and hence only value would be true, the other parameter would be null in this case)</p></dd>
-<dt>onItemClick</dt>
-<dd><p><code>(event: React.FormEvent&lt;IComboBox&gt;, option?: IComboBoxOption, index?: number) =&gt; void</code> <br> Callback issued when a ComboBox item is clicked.</p></dd>
-<dt>onMenuDismiss</dt>
-<dd><p><code>() =&gt; void</code> <br> Function that gets invoked before the menu gets dismissed</p></dd>
-<dt>onMenuDismissed</dt>
-<dd><p><code>() =&gt; void</code> <br> Function that gets invoked when the ComboBox menu is dismissed</p></dd>
-<dt>onMenuOpen</dt>
-<dd><p><code>() =&gt; void</code> <br> Function that gets invoked when the ComboBox menu is launched</p></dd>
-<dt>onPendingValueChanged</dt>
-<dd><p><code>(option?: IComboBoxOption, index?: number, value?: string) =&gt; void</code> <br> Callback issued when the user changes the pending value in ComboBox. This will be called any time the component is updated and there is a current pending value. Option, index, and value will all be undefined if no change has taken place and the previously entered pending value is still valid.</p></dd>
-<dt>onRenderLabel</dt>
-<dd><p><code>IRenderFunction&lt;IOnRenderComboBoxLabelProps&gt;</code> <br> Custom render function for the label text.</p></dd>
-<dt>onRenderLowerContent</dt>
-<dd><p><code>IRenderFunction&lt;IComboBoxProps&gt;</code> <br> Add additional content below the callout list.</p></dd>
-<dt>onRenderUpperContent</dt>
-<dd><p><code>IRenderFunction&lt;IComboBoxProps&gt;</code> <br> Add additional content above the callout list.</p></dd>
-<dt>onResolveOptions</dt>
-<dd><p><code>(options: IComboBoxOption[]) =&gt; IComboBoxOption[] | PromiseLike&lt;IComboBoxOption[]&gt;</code> <br> Callback issued when the options should be resolved, if they have been updated or if they need to be passed in the first time</p></dd>
-<dt>onScrollToItem</dt>
-<dd><p><code>(itemIndex: number) =&gt; void</code> <br> Callback issued when the ComboBox requests the list to scroll to a specific element</p></dd>
-<dt>options</dt>
-<dd><p><code>IComboBoxOption[]</code> <br> Collection of options for this ComboBox</p></dd>
-<dt>persistMenu</dt>
-<dd><p><code>boolean</code> <br> Menu will not be created or destroyed when opened or closed, instead it will be hidden. This will improve perf of the menu opening but could potentially impact overall perf by having more elements in the dom. Should only be used when perf is important. Note: This may increase the amount of time it takes for the comboBox itself to mount.</p></dd>
-<dt>scrollSelectedToTop</dt>
-<dd><p><code>boolean</code> <br> When options are scrollable the selected option is positioned at the top of the callout when it is opened (unless it has reached the end of the scrollbar).</p></dd>
-<dt>shouldRestoreFocus</dt>
-<dd><p><code>boolean</code> <br> When specified, determines whether the callout (the menu which drops down) should restore the focus after being dismissed or not. If false, then the menu will not try to set focus to whichever element had focus before the menu was opened.</p></dd>
-<dt>styles</dt>
-<dd><p><code>Partial&lt;IComboBoxStyles&gt;</code> <br> Custom styles for this component</p></dd>
-<dt>text</dt>
-<dd><p><code>string</code> <br> Value to show in the input, does not have to map to a combobox option</p></dd>
-<dt>theme</dt>
-<dd><p><code>ITheme</code> <br> Theme provided by HOC.</p></dd>
-<dt>useComboBoxAsMenuWidth</dt>
-<dd><p><code>boolean</code> <br> Whether to use the ComboBoxes width as the menu's width</p></dd>
-<dt>multiselectAccessibleText</dt>
-<dd><p><code>string</code> <br> Accessible text for label when combobox is multiselected.</p></dd>
-<dt>props</dt>
-<dd><p><code>IComboBoxProps</code> <br> Props to render the combobox.</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
+
+<dt>inputId</dt>
+<dd><p>Id of the component</p></dd>
+
+
+<dt>value</dt>
+<dd><p>Value</p></dd>
+
+
+<dt>session</dt>
+<dd><p>Session</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> allowFreeform </b> <code>boolean</code> <br> Whether the ComboBox is free form, meaning that the user input is not bound to provided options. Defaults to false.</p></li>
+<li><p><b> ariaDescribedBy </b> <code>string</code> <br> Optional prop to add a string id that can be referenced inside the aria-describedby attribute</p></li>
+<li><p><b> autoComplete </b> <code>'on' | 'off'</code> <br> Whether the ComboBox auto completes. As the user is inputing text, it will be suggested potential matches from the list of options. If the combo box is expanded, this will also scroll to the suggested option, and give it a selected style.</p></li>
+<li><p><b> autofill </b> <code>IAutofillProps</code> <br> The AutofillProps to be passed into the Autofill component inside combobox</p></li>
+<li><p><b> buttonIconProps </b> <code>IIconProps</code> <br> The IconProps to use for the button aspect of the combobox</p></li>
+<li><p><b> caretDownButtonStyles </b> <code>Partial&lt;IButtonStyles&gt;</code> <br> Styles for the caret down button.</p></li>
+<li><p><b> comboBoxOptionStyles </b> <code>Partial&lt;IComboBoxOptionStyles&gt;</code> <br> Default styles that should be applied to ComboBox options, in case an option does not come with user-defined custom styles</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IComboBox&gt;</code> <br> Optional callback to access the IComboBox interface. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> dropdownMaxWidth </b> <code>number</code> <br> Custom max width for dropdown</p></li>
+<li><p><b> dropdownWidth </b> <code>number</code> <br> Custom width for dropdown (unless useComboBoxAsMenuWidth is undefined or false)</p></li>
+<li><p><b> getClassNames </b> <code>(theme: ITheme, isOpen: boolean, disabled: boolean, required: boolean, focused: boolean, allowFreeForm: boolean, hasErrorMessage: boolean, className?: string) =&gt; IComboBoxClassNames</code> <br> Custom function for providing the classNames for the ComboBox. Can be used to provide all styles for the component instead of applying them on top of the default styles.</p></li>
+<li><p><b> iconButtonProps </b> <code>IButtonProps</code> <br> Optional iconButton props on combo box</p></li>
+<li><p><b> isButtonAriaHidden </b> <code>boolean</code> <br> Sets the 'aria-hidden' attribute on the ComboBox's button element instructing screen readers how to handle the element. This element is hidden by default because all functionality is handled by the input element and the arrow button is only meant to be decorative.</p></li>
+<li><p><b> keytipProps </b> <code>IKeytipProps</code> <br> Optional keytip for this combo box</p></li>
+<li><p><b> multiSelectDelimiter </b> <code>string</code> <br> When multiple items are selected, this will be used to separate values in the combobox input.</p></li>
+<li><p><b> onChange </b> <code>(event: React.FormEvent&lt;IComboBox&gt;, option?: IComboBoxOption, index?: number, value?: string) =&gt; void</code> <br> Callback issued when either: 1) the selected option changes 2) a manually edited value is submitted. In this case there may not be a matched option if allowFreeform is also true (and hence only value would be true, the other parameter would be null in this case)</p></li>
+<li><p><b> onItemClick </b> <code>(event: React.FormEvent&lt;IComboBox&gt;, option?: IComboBoxOption, index?: number) =&gt; void</code> <br> Callback issued when a ComboBox item is clicked.</p></li>
+<li><p><b> onMenuDismiss </b> <code>() =&gt; void</code> <br> Function that gets invoked before the menu gets dismissed</p></li>
+<li><p><b> onMenuDismissed </b> <code>() =&gt; void</code> <br> Function that gets invoked when the ComboBox menu is dismissed</p></li>
+<li><p><b> onMenuOpen </b> <code>() =&gt; void</code> <br> Function that gets invoked when the ComboBox menu is launched</p></li>
+<li><p><b> onPendingValueChanged </b> <code>(option?: IComboBoxOption, index?: number, value?: string) =&gt; void</code> <br> Callback issued when the user changes the pending value in ComboBox. This will be called any time the component is updated and there is a current pending value. Option, index, and value will all be undefined if no change has taken place and the previously entered pending value is still valid.</p></li>
+<li><p><b> onRenderLabel </b> <code>IRenderFunction&lt;IOnRenderComboBoxLabelProps&gt;</code> <br> Custom render function for the label text.</p></li>
+<li><p><b> onRenderLowerContent </b> <code>IRenderFunction&lt;IComboBoxProps&gt;</code> <br> Add additional content below the callout list.</p></li>
+<li><p><b> onRenderUpperContent </b> <code>IRenderFunction&lt;IComboBoxProps&gt;</code> <br> Add additional content above the callout list.</p></li>
+<li><p><b> onResolveOptions </b> <code>(options: IComboBoxOption[]) =&gt; IComboBoxOption[] | PromiseLike&lt;IComboBoxOption[]&gt;</code> <br> Callback issued when the options should be resolved, if they have been updated or if they need to be passed in the first time</p></li>
+<li><p><b> onScrollToItem </b> <code>(itemIndex: number) =&gt; void</code> <br> Callback issued when the ComboBox requests the list to scroll to a specific element</p></li>
+<li><p><b> options </b> <code>IComboBoxOption[]</code> <br> Collection of options for this ComboBox</p></li>
+<li><p><b> persistMenu </b> <code>boolean</code> <br> Menu will not be created or destroyed when opened or closed, instead it will be hidden. This will improve perf of the menu opening but could potentially impact overall perf by having more elements in the dom. Should only be used when perf is important. Note: This may increase the amount of time it takes for the comboBox itself to mount.</p></li>
+<li><p><b> scrollSelectedToTop </b> <code>boolean</code> <br> When options are scrollable the selected option is positioned at the top of the callout when it is opened (unless it has reached the end of the scrollbar).</p></li>
+<li><p><b> shouldRestoreFocus </b> <code>boolean</code> <br> When specified, determines whether the callout (the menu which drops down) should restore the focus after being dismissed or not. If false, then the menu will not try to set focus to whichever element had focus before the menu was opened.</p></li>
+<li><p><b> styles </b> <code>Partial&lt;IComboBoxStyles&gt;</code> <br> Custom styles for this component</p></li>
+<li><p><b> text </b> <code>string</code> <br> Value to show in the input, does not have to map to a combobox option</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by HOC.</p></li>
+<li><p><b> useComboBoxAsMenuWidth </b> <code>boolean</code> <br> Whether to use the ComboBoxes width as the menu's width</p></li>
+<li><p><b> multiselectAccessibleText </b> <code>string</code> <br> Accessible text for label when combobox is multiselected.</p></li>
+<li><p><b> props </b> <code>IComboBoxProps</code> <br> Props to render the combobox.</p></li>
+</ul></div>
     <div id="best-practices">
     <h2>Best practices</h2>
     
@@ -198,29 +181,29 @@ you need to work using the original docs to achieve the desired result.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="va">options</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"A"</span>, text <span class="op">=</span> <span class="st">"Option A"</span><span class="op">)</span>,</span>
-<span class="r-in">    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"B"</span>, text <span class="op">=</span> <span class="st">"Option B"</span><span class="op">)</span>,</span>
-<span class="r-in">    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"C"</span>, text <span class="op">=</span> <span class="st">"Option C"</span><span class="op">)</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in">  <span class="fu">shinyApp</span><span class="op">(</span></span>
-<span class="r-in">    ui <span class="op">=</span> <span class="fu">div</span><span class="op">(</span></span>
-<span class="r-in">      <span class="fu">ComboBox.shinyInput</span><span class="op">(</span><span class="st">"combo"</span>, value <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>text <span class="op">=</span> <span class="st">"some text"</span><span class="op">)</span>,</span>
-<span class="r-in">        options <span class="op">=</span> <span class="va">options</span>, allowFreeform <span class="op">=</span> <span class="cn">TRUE</span></span>
-<span class="r-in">      <span class="op">)</span>,</span>
-<span class="r-in">      <span class="fu">textOutput</span><span class="op">(</span><span class="st">"comboValue"</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span>,</span>
-<span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">      <span class="va">output</span><span class="op">$</span><span class="va">comboValue</span> <span class="op">&lt;-</span> <span class="fu">renderText</span><span class="op">(</span><span class="op">{</span></span>
-<span class="r-in">        <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Value: %s"</span>, <span class="va">input</span><span class="op">$</span><span class="va">combo</span><span class="op">$</span><span class="va">text</span><span class="op">)</span></span>
-<span class="r-in">      <span class="op">}</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">}</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="va">options</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"A"</span>, text <span class="op">=</span> <span class="st">"Option A"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"B"</span>, text <span class="op">=</span> <span class="st">"Option B"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"C"</span>, text <span class="op">=</span> <span class="st">"Option C"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span>  <span class="fu">shinyApp</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    ui <span class="op">=</span> <span class="fu">div</span><span class="op">(</span></span></span>
+<span class="r-in"><span>      <span class="fu">ComboBox.shinyInput</span><span class="op">(</span><span class="st">"combo"</span>, value <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>text <span class="op">=</span> <span class="st">"some text"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>        options <span class="op">=</span> <span class="va">options</span>, allowFreeform <span class="op">=</span> <span class="cn">TRUE</span></span></span>
+<span class="r-in"><span>      <span class="op">)</span>,</span></span>
+<span class="r-in"><span>      <span class="fu">textOutput</span><span class="op">(</span><span class="st">"comboValue"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>      <span class="va">output</span><span class="op">$</span><span class="va">comboValue</span> <span class="op">&lt;-</span> <span class="fu">renderText</span><span class="op">(</span><span class="op">{</span></span></span>
+<span class="r-in"><span>        <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Value: %s"</span>, <span class="va">input</span><span class="op">$</span><span class="va">combo</span><span class="op">$</span><span class="va">text</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="op">}</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -235,7 +218,7 @@ you need to work using the original docs to achieve the desired result.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

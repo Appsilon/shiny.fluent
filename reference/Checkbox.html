@@ -90,64 +90,60 @@ you need to work using the original docs to achieve the desired result.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">Checkbox</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">Checkbox</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">Checkbox.shinyInput</span><span class="op">(</span><span class="va">inputId</span>, <span class="va">...</span>, value <span class="op">=</span> <span class="va">defaultValue</span><span class="op">)</span>
-
-<span class="fu">updateCheckbox.shinyInput</span><span class="op">(</span>
-  session <span class="op">=</span> <span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/domains.html" class="external-link">getDefaultReactiveDomain</a></span><span class="op">(</span><span class="op">)</span>,
-  <span class="va">inputId</span>,
-  <span class="va">...</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">Checkbox</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">Checkbox.shinyInput</span><span class="op">(</span><span class="va">inputId</span>, <span class="va">...</span>, value <span class="op">=</span> <span class="va">defaultValue</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">updateCheckbox.shinyInput</span><span class="op">(</span></span>
+<span>  session <span class="op">=</span> <span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/domains.html" class="external-link">getDefaultReactiveDomain</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="va">inputId</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>ariaDescribedBy</dt>
-<dd><p><code>string</code> <br> ID for element that provides extended information for the checkbox.</p></dd>
-<dt>ariaLabel</dt>
-<dd><p><code>string</code> <br> Accessible label for the checkbox.</p></dd>
-<dt>ariaLabelledBy</dt>
-<dd><p><code>string</code> <br> ID for element that contains label information for the checkbox.</p></dd>
-<dt>ariaPositionInSet</dt>
-<dd><p><code>number</code> <br> The position in the parent set (if in a set) for aria-posinset.</p></dd>
-<dt>ariaSetSize</dt>
-<dd><p><code>number</code> <br> The total size of the parent set (if in a set) for aria-setsize.</p></dd>
-<dt>boxSide</dt>
-<dd><p><code>'start' | 'end'</code> <br> Allows you to set the checkbox to be at the before (start) or after (end) the label.</p></dd>
-<dt>checked</dt>
-<dd><p><code>boolean</code> <br> Checked state. Mutually exclusive to "defaultChecked". Use this if you control the checked state at a higher level and plan to pass in the correct value based on handling onChange events and re-rendering.</p></dd>
-<dt>checkmarkIconProps</dt>
-<dd><p><code>IIconProps</code> <br> Custom icon props for the check mark rendered by the checkbox</p></dd>
-<dt>className</dt>
-<dd><p><code>string</code> <br> Additional class name to provide on the root element, in addition to the ms-Checkbox class.</p></dd>
-<dt>componentRef</dt>
-<dd><p><code>IRefObject&lt;ICheckbox&gt;</code> <br> Optional callback to access the ICheckbox interface. Use this instead of ref for accessing the public methods and properties of the component.</p></dd>
-<dt>defaultChecked</dt>
-<dd><p><code>boolean</code> <br> Default checked state. Mutually exclusive to "checked". Use this if you want an uncontrolled component, and want the Checkbox instance to maintain its own state.</p></dd>
-<dt>defaultIndeterminate</dt>
-<dd><p><code>boolean</code> <br> Optional uncontrolled indeterminate visual state for checkbox. Setting indeterminate state takes visual precedence over checked or defaultChecked props given but does not affect checked state. This is not a toggleable state. On load the checkbox will receive indeterminate visual state and after the user's first click it will be removed exposing the true state of the checkbox.</p></dd>
-<dt>disabled</dt>
-<dd><p><code>boolean</code> <br> Disabled state of the checkbox.</p></dd>
-<dt>indeterminate</dt>
-<dd><p><code>boolean</code> <br> Optional controlled indeterminate visual state for checkbox. Setting indeterminate state takes visual precedence over checked or defaultChecked props given but does not affect checked state. This should not be a toggleable state. On load the checkbox will receive indeterminate visual state and after the first user click it should be removed by your supplied onChange callback function exposing the true state of the checkbox.</p></dd>
-<dt>inputProps</dt>
-<dd><p><code>React.ButtonHTMLAttributes&lt;HTMLElement | HTMLButtonElement&gt;</code> <br> Optional input props that will be mixed into the input element, <em>before</em> other props are applied. This allows you to extend the input element with additional attributes, such as data-automation-id needed for automation. Note that if you provide, for example, "disabled" as well as "inputProps.disabled", the former will take precedence over the later.</p></dd>
-<dt>keytipProps</dt>
-<dd><p><code>IKeytipProps</code> <br> Optional keytip for this checkbox</p></dd>
-<dt>label</dt>
-<dd><p><code>string</code> <br> Label to display next to the checkbox.</p></dd>
-<dt>onChange</dt>
-<dd><p><code>(ev?: React.FormEvent&lt;HTMLElement | HTMLInputElement&gt;, checked?: boolean) =&gt; void</code> <br> Callback that is called when the checked value has changed.</p></dd>
-<dt>onRenderLabel</dt>
-<dd><p><code>IRenderFunction&lt;ICheckboxProps&gt;</code> <br> Custom render function for the label.</p></dd>
-<dt>styles</dt>
-<dd><p><code>IStyleFunctionOrObject&lt;ICheckboxStyleProps, ICheckboxStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></dd>
-<dt>theme</dt>
-<dd><p><code>ITheme</code> <br> Theme provided by HOC.</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
+
+<dt>inputId</dt>
+<dd><p>Id of the component</p></dd>
+
+
+<dt>value</dt>
+<dd><p>Value</p></dd>
+
+
+<dt>session</dt>
+<dd><p>Session</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> ariaDescribedBy </b> <code>string</code> <br> ID for element that provides extended information for the checkbox.</p></li>
+<li><p><b> ariaLabel </b> <code>string</code> <br> Accessible label for the checkbox.</p></li>
+<li><p><b> ariaLabelledBy </b> <code>string</code> <br> ID for element that contains label information for the checkbox.</p></li>
+<li><p><b> ariaPositionInSet </b> <code>number</code> <br> The position in the parent set (if in a set) for aria-posinset.</p></li>
+<li><p><b> ariaSetSize </b> <code>number</code> <br> The total size of the parent set (if in a set) for aria-setsize.</p></li>
+<li><p><b> boxSide </b> <code>'start' | 'end'</code> <br> Allows you to set the checkbox to be at the before (start) or after (end) the label.</p></li>
+<li><p><b> checked </b> <code>boolean</code> <br> Checked state. Mutually exclusive to "defaultChecked". Use this if you control the checked state at a higher level and plan to pass in the correct value based on handling onChange events and re-rendering.</p></li>
+<li><p><b> checkmarkIconProps </b> <code>IIconProps</code> <br> Custom icon props for the check mark rendered by the checkbox</p></li>
+<li><p><b> className </b> <code>string</code> <br> Additional class name to provide on the root element, in addition to the ms-Checkbox class.</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;ICheckbox&gt;</code> <br> Optional callback to access the ICheckbox interface. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> defaultChecked </b> <code>boolean</code> <br> Default checked state. Mutually exclusive to "checked". Use this if you want an uncontrolled component, and want the Checkbox instance to maintain its own state.</p></li>
+<li><p><b> defaultIndeterminate </b> <code>boolean</code> <br> Optional uncontrolled indeterminate visual state for checkbox. Setting indeterminate state takes visual precedence over checked or defaultChecked props given but does not affect checked state. This is not a toggleable state. On load the checkbox will receive indeterminate visual state and after the user's first click it will be removed exposing the true state of the checkbox.</p></li>
+<li><p><b> disabled </b> <code>boolean</code> <br> Disabled state of the checkbox.</p></li>
+<li><p><b> indeterminate </b> <code>boolean</code> <br> Optional controlled indeterminate visual state for checkbox. Setting indeterminate state takes visual precedence over checked or defaultChecked props given but does not affect checked state. This should not be a toggleable state. On load the checkbox will receive indeterminate visual state and after the first user click it should be removed by your supplied onChange callback function exposing the true state of the checkbox.</p></li>
+<li><p><b> inputProps </b> <code>React.ButtonHTMLAttributes&lt;HTMLElement | HTMLButtonElement&gt;</code> <br> Optional input props that will be mixed into the input element, <em>before</em> other props are applied. This allows you to extend the input element with additional attributes, such as data-automation-id needed for automation. Note that if you provide, for example, "disabled" as well as "inputProps.disabled", the former will take precedence over the later.</p></li>
+<li><p><b> keytipProps </b> <code>IKeytipProps</code> <br> Optional keytip for this checkbox</p></li>
+<li><p><b> label </b> <code>string</code> <br> Label to display next to the checkbox.</p></li>
+<li><p><b> onChange </b> <code>(ev?: React.FormEvent&lt;HTMLElement | HTMLInputElement&gt;, checked?: boolean) =&gt; void</code> <br> Callback that is called when the checked value has changed.</p></li>
+<li><p><b> onRenderLabel </b> <code>IRenderFunction&lt;ICheckboxProps&gt;</code> <br> Custom render function for the label.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;ICheckboxStyleProps, ICheckboxStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by HOC.</p></li>
+</ul></div>
     <div id="best-practices">
     <h2>Best practices</h2>
     
@@ -172,21 +168,21 @@ you need to work using the original docs to achieve the desired result.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="fu">shinyApp</span><span class="op">(</span></span>
-<span class="r-in">    ui <span class="op">=</span> <span class="fu">div</span><span class="op">(</span></span>
-<span class="r-in">      <span class="fu">Checkbox.shinyInput</span><span class="op">(</span><span class="st">"checkbox"</span>, value <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>,</span>
-<span class="r-in">      <span class="fu">textOutput</span><span class="op">(</span><span class="st">"checkboxValue"</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span>,</span>
-<span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">      <span class="va">output</span><span class="op">$</span><span class="va">checkboxValue</span> <span class="op">&lt;-</span> <span class="fu">renderText</span><span class="op">(</span><span class="op">{</span></span>
-<span class="r-in">        <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Value: %s"</span>, <span class="va">input</span><span class="op">$</span><span class="va">checkbox</span><span class="op">)</span></span>
-<span class="r-in">      <span class="op">}</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">}</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="fu">shinyApp</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    ui <span class="op">=</span> <span class="fu">div</span><span class="op">(</span></span></span>
+<span class="r-in"><span>      <span class="fu">Checkbox.shinyInput</span><span class="op">(</span><span class="st">"checkbox"</span>, value <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      <span class="fu">textOutput</span><span class="op">(</span><span class="st">"checkboxValue"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>      <span class="va">output</span><span class="op">$</span><span class="va">checkboxValue</span> <span class="op">&lt;-</span> <span class="fu">renderText</span><span class="op">(</span><span class="op">{</span></span></span>
+<span class="r-in"><span>        <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Value: %s"</span>, <span class="va">input</span><span class="op">$</span><span class="va">checkbox</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="op">}</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -201,7 +197,7 @@ you need to work using the original docs to achieve the desired result.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

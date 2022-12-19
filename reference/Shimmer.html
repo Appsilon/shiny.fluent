@@ -92,67 +92,79 @@ you need to work using the original docs to achieve the desired result.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">Shimmer</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">ShimmerElementsGroup</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">ShimmeredDetailsList</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">Shimmer</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">ShimmerElementsGroup</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">ShimmeredDetailsList</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>backgroundColor</dt>
-<dd><p><code>string</code> <br> Defines the background color of the space in between and around shimmer elements.</p></dd>
-<dt>flexWrap</dt>
-<dd><p><code>boolean</code> <br> Optional boolean for enabling flexWrap of the container containing the shimmerElements.</p></dd>
-<dt>rowHeight</dt>
-<dd><p><code>number</code> <br> Optional maximum row height of the shimmerElements container.</p></dd>
-<dt>borderStyle</dt>
-<dd><p><code>IRawStyle</code> <br> Use to set custom styling of the shimmerLine borders.</p></dd>
-<dt>height</dt>
-<dd><p><code>number</code> <br> Sets the height of the rectangle.</p></dd>
-<dt>ariaLabel</dt>
-<dd><p><code>string</code> <br> Localized string of the status label for screen reader</p></dd>
-<dt>className</dt>
-<dd><p><code>string</code> <br> Additional CSS class(es) to apply to the Shimmer container.</p></dd>
-<dt>componentRef</dt>
-<dd><p><code>IRefObject&lt;IShimmer&gt;</code> <br> Optional callback to access the IShimmer interface. Use this instead of ref for accessing the public methods and properties of the component.</p></dd>
-<dt>customElementsGroup</dt>
-<dd><p><code>React.ReactNode</code> <br> Custom elements when necessary to build complex placeholder skeletons.</p></dd>
-<dt>isDataLoaded</dt>
-<dd><p><code>boolean</code> <br> Controls when the shimmer is swapped with actual data through an animated transition.</p></dd>
-<dt>shimmerColors</dt>
-<dd><p><code>IShimmerColors</code> <br> Defines an object with possible colors to pass for Shimmer customization used on different backgrounds.</p></dd>
-<dt>shimmerElements</dt>
-<dd><p><code>IShimmerElement[]</code> <br> Elements to render in one line of the Shimmer.</p></dd>
-<dt>styles</dt>
-<dd><p><code>IStyleFunctionOrObject&lt;IShimmerStyleProps, IShimmerStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></dd>
-<dt>theme</dt>
-<dd><p><code>ITheme</code> <br> Theme provided by High-Order Component.</p></dd>
-<dt>width</dt>
-<dd><p><code>number | string</code> <br> Sets the width value of the shimmer wave wrapper.</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> borderStyle </b> <code>IRawStyle</code> <br> Use to set custom styling of the shimmerCircle borders.</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IShimmerCircle&gt;</code> <br> Optional callback to access the IShimmerCircle interface. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> height </b> <code>number</code> <br> Sets the height of the circle.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IShimmerCircleStyleProps, IShimmerCircleStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by High-Order Component.</p></li>
+<li><p><b> backgroundColor </b> <code>string</code> <br> Defines the background color of the space in between and around shimmer elements.</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IShimmerElementsGroup&gt;</code> <br> Optional callback to access the IShimmerElementsGroup interface. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> flexWrap </b> <code>boolean</code> <br> Optional boolean for enabling flexWrap of the container containing the shimmerElements.</p></li>
+<li><p><b> rowHeight </b> <code>number</code> <br> Optional maximum row height of the shimmerElements container.</p></li>
+<li><p><b> shimmerElements </b> <code>IShimmerElement[]</code> <br> Elements to render in one group of the Shimmer.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IShimmerElementsGroupStyleProps, IShimmerElementsGroupStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by High-Order Component.</p></li>
+<li><p><b> width </b> <code>string</code> <br> Optional width for ShimmerElements container.</p></li>
+<li><p><b> borderStyle </b> <code>IRawStyle</code> <br> Use to set custom styling of the shimmerGap borders.</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IShimmerGap&gt;</code> <br> Optional callback to access the IShimmerGap interface. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> height </b> <code>number</code> <br> Sets the height of the gap.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IShimmerGapStyleProps, IShimmerGapStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by High-Order Component.</p></li>
+<li><p><b> width </b> <code>number | string</code> <br> Sets width value of the gap.</p></li>
+<li><p><b> borderStyle </b> <code>IRawStyle</code> <br> Use to set custom styling of the shimmerLine borders.</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IShimmerLine&gt;</code> <br> Optional callback to access the IShimmerLine interface. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> height </b> <code>number</code> <br> Sets the height of the rectangle.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IShimmerLineStyleProps, IShimmerLineStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by High-Order Component.</p></li>
+<li><p><b> width </b> <code>number | string</code> <br> Sets width value of the line.</p></li>
+<li><p><b> ariaLabel </b> <code>string</code> <br> Localized string of the status label for screen reader</p></li>
+<li><p><b> className </b> <code>string</code> <br> Additional CSS class(es) to apply to the Shimmer container.</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IShimmer&gt;</code> <br> Optional callback to access the IShimmer interface. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> customElementsGroup </b> <code>React.ReactNode</code> <br> Custom elements when necessary to build complex placeholder skeletons.</p></li>
+<li><p><b> isDataLoaded </b> <code>boolean</code> <br> Controls when the shimmer is swapped with actual data through an animated transition.</p></li>
+<li><p><b> shimmerColors </b> <code>IShimmerColors</code> <br> Defines an object with possible colors to pass for Shimmer customization used on different backgrounds.</p></li>
+<li><p><b> shimmerElements </b> <code>IShimmerElement[]</code> <br> Elements to render in one line of the Shimmer.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IShimmerStyleProps, IShimmerStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by High-Order Component.</p></li>
+<li><p><b> width </b> <code>number | string</code> <br> Sets the width value of the shimmer wave wrapper.</p></li>
+</ul></div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span>
-<span class="r-in">    ui <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/tagList.html" class="external-link">tagList</a></span><span class="op">(</span></span>
-<span class="r-in">      <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
-<span class="r-in">        <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">p</a></span><span class="op">(</span><span class="st">"Basic Shimmer with no elements provided. It defaults to a line of 16px height."</span><span class="op">)</span>,</span>
-<span class="r-in">        <span class="fu">Shimmer</span><span class="op">(</span><span class="op">)</span>,</span>
-<span class="r-in">        <span class="fu">Shimmer</span><span class="op">(</span>width <span class="op">=</span> <span class="st">"75%"</span><span class="op">)</span>,</span>
-<span class="r-in">        <span class="fu">Shimmer</span><span class="op">(</span>width <span class="op">=</span> <span class="st">"50%"</span><span class="op">)</span></span>
-<span class="r-in">      <span class="op">)</span>,</span>
-<span class="r-in">      <span class="va">tags</span><span class="op">$</span><span class="fu">head</span><span class="op">(</span><span class="va">tags</span><span class="op">$</span><span class="fu">style</span><span class="op">(</span></span>
-<span class="r-in">        <span class="st">".ms-Shimmer-container { margin: 10px 0 }"</span></span>
-<span class="r-in">      <span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span>,</span>
-<span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    ui <span class="op">=</span> <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/tagList.html" class="external-link">tagList</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>      <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>        <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">p</a></span><span class="op">(</span><span class="st">"Basic Shimmer with no elements provided. It defaults to a line of 16px height."</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>        <span class="fu">Shimmer</span><span class="op">(</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>        <span class="fu">Shimmer</span><span class="op">(</span>width <span class="op">=</span> <span class="st">"75%"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>        <span class="fu">Shimmer</span><span class="op">(</span>width <span class="op">=</span> <span class="st">"50%"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="op">)</span>,</span></span>
+<span class="r-in"><span>      <span class="va">tags</span><span class="op">$</span><span class="fu">head</span><span class="op">(</span><span class="va">tags</span><span class="op">$</span><span class="fu">style</span><span class="op">(</span></span></span>
+<span class="r-in"><span>        <span class="st">".ms-Shimmer-container { margin: 10px 0 }"</span></span></span>
+<span class="r-in"><span>      <span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -167,7 +179,7 @@ you need to work using the original docs to achieve the desired result.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

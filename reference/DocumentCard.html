@@ -90,95 +90,106 @@ you need to work using the original docs to achieve the desired result.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">DocumentCard</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">DocumentCardActions</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">DocumentCardActivity</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">DocumentCardDetails</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">DocumentCardImage</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">DocumentCardLocation</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">DocumentCardLogo</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">DocumentCardPreview</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">DocumentCardStatus</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">DocumentCardTitle</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">DocumentCard</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">DocumentCardActions</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">DocumentCardActivity</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">DocumentCardDetails</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">DocumentCardImage</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">DocumentCardLocation</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">DocumentCardLogo</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">DocumentCardPreview</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">DocumentCardStatus</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">DocumentCardTitle</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>actions</dt>
-<dd><p><code>IButtonProps[]</code> <br> The actions available for this document.</p></dd>
-<dt>views</dt>
-<dd><p><code>Number</code> <br> The number of views this document has received.</p></dd>
-<dt>activity</dt>
-<dd><p><code>string</code> <br> Describes the activity that has taken place, such as "Created Feb 23, 2016".</p></dd>
-<dt>people</dt>
-<dd><p><code>IDocumentCardActivityPerson[]</code> <br> One or more people who are involved in this activity.</p></dd>
-<dt>height</dt>
-<dd><p><code>number</code> <br> If provided, forces the preview image to be this height.</p></dd>
-<dt>iconProps</dt>
-<dd><p><code>IIconProps</code> <br> The props for the icon associated with this document type.</p></dd>
-<dt>imageFit</dt>
-<dd><p><code>ImageFit</code> <br> Used to determine how to size the image to fit the dimensions of the component. If both dimensions are provided, then the image is fit using ImageFit.scale, otherwise ImageFit.none is used.</p></dd>
-<dt>imageSrc</dt>
-<dd><p><code>string</code> <br> Path to the preview image.</p></dd>
-<dt>width</dt>
-<dd><p><code>number</code> <br> If provided, forces the preview image to be this width.</p></dd>
-<dt>ariaLabel</dt>
-<dd><p><code>string</code> <br> Aria label for the link to the document location.</p></dd>
-<dt>location</dt>
-<dd><p><code>string</code> <br> Text for the location of the document.</p></dd>
-<dt>locationHref</dt>
-<dd><p><code>string</code> <br> URL to navigate to for this location.</p></dd>
-<dt>logoIcon</dt>
-<dd><p><code>string</code> <br> Describes DocumentCard Logo badge.</p></dd>
-<dt>logoName</dt>
-<dd><p><code>string</code> <br> Describe Logo name, optional.</p></dd>
-<dt>getOverflowDocumentCountText</dt>
-<dd><p><code>(overflowCount: number) =&gt; string</code> <br> The function return string that will describe the number of overflow documents. such as (overflowCount: number) =\&gt; <code>+${ overflowCount } more</code>,</p></dd>
-<dt>previewImages</dt>
-<dd><p><code>IDocumentCardPreviewImage[]</code> <br> One or more preview images to display.</p></dd>
-<dt>accentColor</dt>
-<dd><p><code>string</code> <br> Hex color value of the line below the card, which should correspond to the document type. This should only be supplied when using the 'compact' card layout.</p>
-<p>Deprecated at v4.17.1, to be removed at \&gt;= v5.0.0.</p></dd>
-<dt>children</dt>
-<dd><p><code>React.ReactNode</code> <br> Child components to render within the card.</p></dd>
-<dt>onClick</dt>
-<dd><p><code>(ev?: React.SyntheticEvent&lt;HTMLElement&gt;) =&gt; void</code> <br> Function to call when the card is clicked or keyboard Enter/Space is pushed.</p></dd>
-<dt>onClickHref</dt>
-<dd><p><code>string</code> <br> A URL to navigate to when the card is clicked. If a function has also been provided, it will be used instead of the URL.</p></dd>
-<dt>onClickTarget</dt>
-<dd><p><code>string</code> <br> A target browser context for opening the link. If not specified, will open in the same tab/window.</p></dd>
-<dt>role</dt>
-<dd><p><code>string</code> <br> Aria role assigned to the documentCard (Eg. button, link). Use this to override the default assignment.</p></dd>
-<dt>type</dt>
-<dd><p><code>DocumentCardType</code> <br> The type of DocumentCard to display.</p></dd>
-<dt>status</dt>
-<dd><p><code>string</code> <br> Describe status information. Required field.</p></dd>
-<dt>statusIcon</dt>
-<dd><p><code>string</code> <br> Describes DocumentCard status icon.</p></dd>
-<dt>className</dt>
-<dd><p><code>string</code> <br> Optional override class name</p></dd>
-<dt>componentRef</dt>
-<dd><p><code>IRefObject&lt;IDocumentCardTitle&gt;</code> <br> Gets the component ref.</p></dd>
-<dt>shouldTruncate</dt>
-<dd><p><code>boolean</code> <br> Whether we truncate the title to fit within the box. May have a performance impact.</p></dd>
-<dt>showAsSecondaryTitle</dt>
-<dd><p><code>boolean</code> <br> Whether show as title as secondary title style such as smaller font and lighter color.</p></dd>
-<dt>styles</dt>
-<dd><p><code>IStyleFunctionOrObject&lt;IDocumentCardTitleStyleProps, IDocumentCardTitleStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules</p></dd>
-<dt>theme</dt>
-<dd><p><code>ITheme</code> <br> Theme provided by HOC.</p></dd>
-<dt>title</dt>
-<dd><p><code>string</code> <br> Title text. If the card represents more than one document, this should be the title of one document and a "+X" string. For example, a collection of four documents would have a string of "Document.docx +3".</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> actions </b> <code>IButtonProps[]</code> <br> The actions available for this document.</p></li>
+<li><p><b> className </b> <code>string</code> <br> Optional override class name</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IDocumentCardActions&gt;</code> <br> Gets the component ref.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IDocumentCardActionsStyleProps, IDocumentCardActionsStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by HOC.</p></li>
+<li><p><b> views </b> <code>Number</code> <br> The number of views this document has received.</p></li>
+<li><p><b> activity </b> <code>string</code> <br> Describes the activity that has taken place, such as "Created Feb 23, 2016".</p></li>
+<li><p><b> className </b> <code>string</code> <br> Optional override class name</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IDocumentCardActivity&gt;</code> <br> Gets the component ref.</p></li>
+<li><p><b> people </b> <code>IDocumentCardActivityPerson[]</code> <br> One or more people who are involved in this activity.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IDocumentCardActivityStyleProps, IDocumentCardActivityStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by HOC.</p></li>
+<li><p><b> className </b> <code>string</code> <br> Optional override class name</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IDocumentCardDetails&gt;</code> <br> Gets the component ref.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IDocumentCardDetailsStyleProps, IDocumentCardDetailsStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by HOC.</p></li>
+<li><p><b> className </b> <code>string</code> <br> Optional override class name</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IDocumentCardImage&gt;</code> <br> Gets the component ref.</p></li>
+<li><p><b> height </b> <code>number</code> <br> If provided, forces the preview image to be this height.</p></li>
+<li><p><b> iconProps </b> <code>IIconProps</code> <br> The props for the icon associated with this document type.</p></li>
+<li><p><b> imageFit </b> <code>ImageFit</code> <br> Used to determine how to size the image to fit the dimensions of the component. If both dimensions are provided, then the image is fit using ImageFit.scale, otherwise ImageFit.none is used.</p></li>
+<li><p><b> imageSrc </b> <code>string</code> <br> Path to the preview image.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IDocumentCardImageStyleProps, IDocumentCardImageStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by HOC.</p></li>
+<li><p><b> width </b> <code>number</code> <br> If provided, forces the preview image to be this width.</p></li>
+<li><p><b> ariaLabel </b> <code>string</code> <br> Aria label for the link to the document location.</p></li>
+<li><p><b> className </b> <code>string</code> <br> Optional override class name</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IDocumentCardLocation&gt;</code> <br> Gets the component ref.</p></li>
+<li><p><b> location </b> <code>string</code> <br> Text for the location of the document.</p></li>
+<li><p><b> locationHref </b> <code>string</code> <br> URL to navigate to for this location.</p></li>
+<li><p><b> onClick </b> <code>(ev?: React.MouseEvent&lt;HTMLElement&gt;) =&gt; void</code> <br> Function to call when the location is clicked.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IDocumentCardLocationStyleProps, IDocumentCardLocationStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by HOC.</p></li>
+<li><p><b> className </b> <code>string</code> <br> Optional override class name</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IDocumentCardLogo&gt;</code> <br> Gets the component ref.</p></li>
+<li><p><b> logoIcon </b> <code>string</code> <br> Describes DocumentCard Logo badge.</p></li>
+<li><p><b> logoName </b> <code>string</code> <br> Describe Logo name, optional.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IDocumentCardLogoStyleProps, IDocumentCardLogoStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by HOC.</p></li>
+<li><p><b> className </b> <code>string</code> <br> Optional override class name</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IDocumentCardPreview&gt;</code> <br> Gets the component ref.</p></li>
+<li><p><b> getOverflowDocumentCountText </b> <code>(overflowCount: number) =&gt; string</code> <br> The function return string that will describe the number of overflow documents. such as (overflowCount: number) =\&gt; <code>+${ overflowCount } more</code>,</p></li>
+<li><p><b> previewImages </b> <code>IDocumentCardPreviewImage[]</code> <br> One or more preview images to display.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IDocumentCardPreviewStyleProps, IDocumentCardPreviewStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by HOC.</p></li>
+<li><p><b> accentColor </b> <code>string</code> <br> Hex color value of the line below the card, which should correspond to the document type. This should only be supplied when using the 'compact' card layout.Deprecated at v4.17.1, to be removed at \&gt;= v5.0.0.</p></li>
+<li><p><b> children </b> <code>React.ReactNode</code> <br> Child components to render within the card.</p></li>
+<li><p><b> className </b> <code>string</code> <br> Optional override class name</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IDocumentCard&gt;</code> <br> Optional callback to access the IDocumentCard interface. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> onClick </b> <code>(ev?: React.SyntheticEvent&lt;HTMLElement&gt;) =&gt; void</code> <br> Function to call when the card is clicked or keyboard Enter/Space is pushed.</p></li>
+<li><p><b> onClickHref </b> <code>string</code> <br> A URL to navigate to when the card is clicked. If a function has also been provided, it will be used instead of the URL.</p></li>
+<li><p><b> onClickTarget </b> <code>string</code> <br> A target browser context for opening the link. If not specified, will open in the same tab/window.</p></li>
+<li><p><b> role </b> <code>string</code> <br> Aria role assigned to the documentCard (Eg. button, link). Use this to override the default assignment.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IDocumentCardStyleProps, IDocumentCardStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by HOC.</p></li>
+<li><p><b> type </b> <code>DocumentCardType</code> <br> The type of DocumentCard to display.</p></li>
+<li><p><b> className </b> <code>string</code> <br> Optional override class name</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IDocumentCardStatus&gt;</code> <br> Gets the component ref.</p></li>
+<li><p><b> status </b> <code>string</code> <br> Describe status information. Required field.</p></li>
+<li><p><b> statusIcon </b> <code>string</code> <br> Describes DocumentCard status icon.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IDocumentCardStatusStyleProps, IDocumentCardStatusStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by HOC.</p></li>
+<li><p><b> className </b> <code>string</code> <br> Optional override class name</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IDocumentCardTitle&gt;</code> <br> Gets the component ref.</p></li>
+<li><p><b> shouldTruncate </b> <code>boolean</code> <br> Whether we truncate the title to fit within the box. May have a performance impact.</p></li>
+<li><p><b> showAsSecondaryTitle </b> <code>boolean</code> <br> Whether show as title as secondary title style such as smaller font and lighter color.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IDocumentCardTitleStyleProps, IDocumentCardTitleStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by HOC.</p></li>
+<li><p><b> title </b> <code>string</code> <br> Title text. If the card represents more than one document, this should be the title of one document and a "+X" string. For example, a collection of four documents would have a string of "Document.docx +3".</p></li>
+</ul></div>
     <div id="best-practices">
     <h2>Best practices</h2>
     
@@ -196,33 +207,33 @@ you need to work using the original docs to achieve the desired result.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="va">title</span> <span class="op">&lt;-</span> <span class="st">"Long_file_name_with_underscores_used_to_separate_all_of_the_words"</span></span>
-<span class="r-in">  <span class="va">previewImages</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">      previewImageSrc <span class="op">=</span> <span class="st">"https://picsum.photos/318/196"</span>,</span>
-<span class="r-in">      width <span class="op">=</span> <span class="fl">318</span>,</span>
-<span class="r-in">      height <span class="op">=</span> <span class="fl">196</span></span>
-<span class="r-in">    <span class="op">)</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in">  <span class="fu">shinyApp</span><span class="op">(</span></span>
-<span class="r-in">    ui <span class="op">=</span> <span class="fu">DocumentCard</span><span class="op">(</span></span>
-<span class="r-in">      <span class="fu">DocumentCardPreview</span><span class="op">(</span>previewImages <span class="op">=</span> <span class="va">previewImages</span><span class="op">)</span>,</span>
-<span class="r-in">      <span class="fu">DocumentCardTitle</span><span class="op">(</span></span>
-<span class="r-in">        title <span class="op">=</span> <span class="va">title</span>,</span>
-<span class="r-in">        shouldTruncate <span class="op">=</span> <span class="cn">TRUE</span></span>
-<span class="r-in">      <span class="op">)</span>,</span>
-<span class="r-in">      <span class="fu">DocumentCardActivity</span><span class="op">(</span></span>
-<span class="r-in">        activity <span class="op">=</span> <span class="st">"Created a few minutes ago"</span>,</span>
-<span class="r-in">        people <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Annie Lindqvist"</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">      <span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span>,</span>
-<span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="va">title</span> <span class="op">&lt;-</span> <span class="st">"Long_file_name_with_underscores_used_to_separate_all_of_the_words"</span></span></span>
+<span class="r-in"><span>  <span class="va">previewImages</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>      previewImageSrc <span class="op">=</span> <span class="st">"https://picsum.photos/318/196"</span>,</span></span>
+<span class="r-in"><span>      width <span class="op">=</span> <span class="fl">318</span>,</span></span>
+<span class="r-in"><span>      height <span class="op">=</span> <span class="fl">196</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span>  <span class="fu">shinyApp</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    ui <span class="op">=</span> <span class="fu">DocumentCard</span><span class="op">(</span></span></span>
+<span class="r-in"><span>      <span class="fu">DocumentCardPreview</span><span class="op">(</span>previewImages <span class="op">=</span> <span class="va">previewImages</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      <span class="fu">DocumentCardTitle</span><span class="op">(</span></span></span>
+<span class="r-in"><span>        title <span class="op">=</span> <span class="va">title</span>,</span></span>
+<span class="r-in"><span>        shouldTruncate <span class="op">=</span> <span class="cn">TRUE</span></span></span>
+<span class="r-in"><span>      <span class="op">)</span>,</span></span>
+<span class="r-in"><span>      <span class="fu">DocumentCardActivity</span><span class="op">(</span></span></span>
+<span class="r-in"><span>        activity <span class="op">=</span> <span class="st">"Created a few minutes ago"</span>,</span></span>
+<span class="r-in"><span>        people <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Annie Lindqvist"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -237,7 +248,7 @@ you need to work using the original docs to achieve the desired result.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

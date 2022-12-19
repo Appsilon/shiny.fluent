@@ -90,93 +90,96 @@ you need to work using the original docs to achieve the desired result.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">ColorPicker</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">ColorPicker.shinyInput</span><span class="op">(</span><span class="va">inputId</span>, <span class="va">...</span>, value <span class="op">=</span> <span class="va">defaultValue</span><span class="op">)</span>
-
-<span class="fu">updateColorPicker.shinyInput</span><span class="op">(</span>
-  session <span class="op">=</span> <span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/domains.html" class="external-link">getDefaultReactiveDomain</a></span><span class="op">(</span><span class="op">)</span>,
-  <span class="va">inputId</span>,
-  <span class="va">...</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">ColorPicker</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">ColorPicker.shinyInput</span><span class="op">(</span><span class="va">inputId</span>, <span class="va">...</span>, value <span class="op">=</span> <span class="va">defaultValue</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">updateColorPicker.shinyInput</span><span class="op">(</span></span>
+<span>  session <span class="op">=</span> <span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/domains.html" class="external-link">getDefaultReactiveDomain</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="va">inputId</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>value</dt>
-<dd><p><code>number</code> <br> Current value of the slider.</p></dd>
-<dt>alphaLabel</dt>
-<dd><p><code>string</code> <br> Label for the alpha textfield.</p></dd>
-<dt>alphaSliderHidden</dt>
-<dd><p><code>boolean</code> <br> Whether to hide the alpha (or transparency) slider and text field.</p></dd>
-<dt>alphaType</dt>
-<dd><p><code>'alpha' | 'transparency' | 'none'</code> <br><code>alpha</code> (the default) means display a slider and text field for editing alpha values. <code>transparency</code> also displays a slider and text field but for editing transparency values. <code>none</code> hides these controls.</p>
-<p>Alpha represents the opacity of the color, whereas transparency represents the transparentness of the color: i.e. a 30% transparent color has 70% opaqueness.</p></dd>
-<dt>blueLabel</dt>
-<dd><p><code>string</code> <br> Label for the blue text field.</p></dd>
-<dt>greenLabel</dt>
-<dd><p><code>string</code> <br> Label for the green text field.</p></dd>
-<dt>hexLabel</dt>
-<dd><p><code>string</code> <br> Label for the hex text field.</p></dd>
-<dt>redLabel</dt>
-<dd><p><code>string</code> <br> Label for the red text field.</p></dd>
-<dt>showPreview</dt>
-<dd><p><code>boolean</code> <br> Whether to show color preview box.</p></dd>
-<dt>strings</dt>
-<dd><p><code>IColorPickerStrings</code> <br> Labels for elements within the ColorPicker. Defaults are provided in English only.</p></dd>
-<dt>ariaDescription</dt>
-<dd><p><code>string</code> <br> Detailed description for how to use the color rectangle. Moving the thumb horizontally adjusts saturation and moving it vertically adjusts value (essentially, brightness).</p></dd>
-<dt>ariaValueFormat</dt>
-<dd><p><code>string</code> <br> Format string for the color rectangle's current value as read by screen readers. The string must include descriptions and two placeholders for the current values: <code>{0}</code> for saturation and <code>{1}</code> for value/brightness.</p></dd>
-<dt>color</dt>
-<dd><p><code>IColor</code> <br> Current color of the rectangle.</p></dd>
-<dt>minSize</dt>
-<dd><p><code>number</code> <br> Minimum width and height.</p></dd>
-<dt>ariaLabel</dt>
-<dd><p><code>string</code> <br> Label of the ColorSlider for the benefit of screen reader users.</p></dd>
-<dt>className</dt>
-<dd><p><code>string</code> <br> Additional CSS class(es) to apply to the ColorSlider.</p></dd>
-<dt>componentRef</dt>
-<dd><p><code>IRefObject&lt;IColorSlider&gt;</code> <br> Gets the component ref.</p></dd>
-<dt>isAlpha</dt>
-<dd><p><code>boolean</code> <br> If true, the slider represents an alpha slider and will display a gray checkered pattern in the background. Otherwise, the slider represents a hue slider.</p></dd>
-<dt>maxValue</dt>
-<dd><p><code>number</code> <br> Maximum value of the slider.</p></dd>
-<dt>minValue</dt>
-<dd><p><code>number</code> <br> Minimum value of the slider.</p></dd>
-<dt>onChange</dt>
-<dd><p><code>(event: React.MouseEvent | React.KeyboardEvent, newValue?: number) =&gt; void</code> <br> Callback issued when the value changes.</p></dd>
-<dt>overlayColor</dt>
-<dd><p><code>string</code> <br> Hex color to use when rendering an alpha or transparency slider's overlay, <em>without</em> the <code>#</code>.</p></dd>
-<dt>overlayStyle</dt>
-<dd><p><code>React.CSSProperties</code> <br> Custom style for the overlay element.</p></dd>
-<dt>styles</dt>
-<dd><p><code>IStyleFunctionOrObject&lt;IColorSliderStyleProps, IColorSliderStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></dd>
-<dt>theme</dt>
-<dd><p><code>ITheme</code> <br> Theme (provided through customization).</p></dd>
-<dt>thumbColor</dt>
-<dd><p><code>string</code> <br> CSS-compatible string for the color of the thumb element.</p></dd>
-<dt>type</dt>
-<dd><p><code>'hue' | 'alpha' | 'transparency'</code> <br> Type of slider to display.</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
+
+<dt>inputId</dt>
+<dd><p>Id of the component</p></dd>
+
+
+<dt>value</dt>
+<dd><p>Value</p></dd>
+
+
+<dt>session</dt>
+<dd><p>Session</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> alphaLabel </b> <code>string</code> <br> Label for the alpha textfield.</p></li>
+<li><p><b> alphaSliderHidden </b> <code>boolean</code> <br> Whether to hide the alpha (or transparency) slider and text field.</p></li>
+<li><p><b> alphaType </b> <code>'alpha' | 'transparency' | 'none'</code> <br><code>alpha</code> (the default) means display a slider and text field for editing alpha values. <code>transparency</code> also displays a slider and text field but for editing transparency values. <code>none</code> hides these controls.Alpha represents the opacity of the color, whereas transparency represents the transparentness of the color: i.e. a 30% transparent color has 70% opaqueness.</p></li>
+<li><p><b> blueLabel </b> <code>string</code> <br> Label for the blue text field.</p></li>
+<li><p><b> className </b> <code>string</code> <br> Additional CSS class(es) to apply to the ColorPicker.</p></li>
+<li><p><b> color </b> <code>IColor | string</code> <br> Object or CSS-compatible string to describe the color.</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IColorPicker&gt;</code> <br> Gets the component ref.</p></li>
+<li><p><b> greenLabel </b> <code>string</code> <br> Label for the green text field.</p></li>
+<li><p><b> hexLabel </b> <code>string</code> <br> Label for the hex text field.</p></li>
+<li><p><b> onChange </b> <code>(ev: React.SyntheticEvent&lt;HTMLElement&gt;, color: IColor) =&gt; void</code> <br> Callback for when the user changes the color. (Not called when the color is changed via props.)</p></li>
+<li><p><b> redLabel </b> <code>string</code> <br> Label for the red text field.</p></li>
+<li><p><b> showPreview </b> <code>boolean</code> <br> Whether to show color preview box.</p></li>
+<li><p><b> strings </b> <code>IColorPickerStrings</code> <br> Labels for elements within the ColorPicker. Defaults are provided in English only.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IColorPickerStyleProps, IColorPickerStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme (provided through customization).</p></li>
+<li><p><b> ariaDescription </b> <code>string</code> <br> Detailed description for how to use the color rectangle. Moving the thumb horizontally adjusts saturation and moving it vertically adjusts value (essentially, brightness).</p></li>
+<li><p><b> ariaLabel </b> <code>string</code> <br> Label of the ColorRectangle for the benefit of screen reader users.</p></li>
+<li><p><b> ariaValueFormat </b> <code>string</code> <br> Format string for the color rectangle's current value as read by screen readers. The string must include descriptions and two placeholders for the current values: <code>{0}</code> for saturation and <code>{1}</code> for value/brightness.</p></li>
+<li><p><b> className </b> <code>string</code> <br> Additional CSS class(es) to apply to the ColorRectangle.</p></li>
+<li><p><b> color </b> <code>IColor</code> <br> Current color of the rectangle.</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IColorRectangle&gt;</code> <br> Gets the component ref.</p></li>
+<li><p><b> minSize </b> <code>number</code> <br> Minimum width and height.</p></li>
+<li><p><b> onChange </b> <code>(ev: React.MouseEvent | React.KeyboardEvent, color: IColor) =&gt; void</code> <br> Callback for when the color changes.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IColorRectangleStyleProps, IColorRectangleStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme (provided through customization).</p></li>
+<li><p><b> ariaLabel </b> <code>string</code> <br> Label of the ColorSlider for the benefit of screen reader users.</p></li>
+<li><p><b> className </b> <code>string</code> <br> Additional CSS class(es) to apply to the ColorSlider.</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IColorSlider&gt;</code> <br> Gets the component ref.</p></li>
+<li><p><b> isAlpha </b> <code>boolean</code> <br> If true, the slider represents an alpha slider and will display a gray checkered pattern in the background. Otherwise, the slider represents a hue slider.</p></li>
+<li><p><b> maxValue </b> <code>number</code> <br> Maximum value of the slider.</p></li>
+<li><p><b> minValue </b> <code>number</code> <br> Minimum value of the slider.</p></li>
+<li><p><b> onChange </b> <code>(event: React.MouseEvent | React.KeyboardEvent, newValue?: number) =&gt; void</code> <br> Callback issued when the value changes.</p></li>
+<li><p><b> overlayColor </b> <code>string</code> <br> Hex color to use when rendering an alpha or transparency slider's overlay, <em>without</em> the <code>#</code>.</p></li>
+<li><p><b> overlayStyle </b> <code>React.CSSProperties</code> <br> Custom style for the overlay element.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IColorSliderStyleProps, IColorSliderStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme (provided through customization).</p></li>
+<li><p><b> thumbColor </b> <code>string</code> <br> CSS-compatible string for the color of the thumb element.</p></li>
+<li><p><b> type </b> <code>'hue' | 'alpha' | 'transparency'</code> <br> Type of slider to display.</p></li>
+<li><p><b> value </b> <code>number</code> <br> Current value of the slider.</p></li>
+</ul></div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="fu">shinyApp</span><span class="op">(</span></span>
-<span class="r-in">    ui <span class="op">=</span> <span class="fu">div</span><span class="op">(</span></span>
-<span class="r-in">      <span class="fu">ColorPicker.shinyInput</span><span class="op">(</span><span class="st">"color"</span>, value <span class="op">=</span> <span class="st">"#00FF01"</span><span class="op">)</span>,</span>
-<span class="r-in">      <span class="fu">textOutput</span><span class="op">(</span><span class="st">"colorValue"</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span>,</span>
-<span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">      <span class="va">output</span><span class="op">$</span><span class="va">colorValue</span> <span class="op">&lt;-</span> <span class="fu">renderText</span><span class="op">(</span><span class="op">{</span></span>
-<span class="r-in">        <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Value: %s"</span>, <span class="va">input</span><span class="op">$</span><span class="va">color</span><span class="op">)</span></span>
-<span class="r-in">      <span class="op">}</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">}</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="fu">shinyApp</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    ui <span class="op">=</span> <span class="fu">div</span><span class="op">(</span></span></span>
+<span class="r-in"><span>      <span class="fu">ColorPicker.shinyInput</span><span class="op">(</span><span class="st">"color"</span>, value <span class="op">=</span> <span class="st">"#00FF01"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      <span class="fu">textOutput</span><span class="op">(</span><span class="st">"colorValue"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>      <span class="va">output</span><span class="op">$</span><span class="va">colorValue</span> <span class="op">&lt;-</span> <span class="fu">renderText</span><span class="op">(</span><span class="op">{</span></span></span>
+<span class="r-in"><span>        <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Value: %s"</span>, <span class="va">input</span><span class="op">$</span><span class="va">color</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="op">}</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -191,7 +194,7 @@ you need to work using the original docs to achieve the desired result.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

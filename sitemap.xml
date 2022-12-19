@@ -262,6 +262,12 @@
     <loc>/reference/index.html</loc>
   </url>
   <url>
+    <loc>/reference/inputDoc.html</loc>
+  </url>
+  <url>
+    <loc>/reference/parseTheme.html</loc>
+  </url>
+  <url>
     <loc>/reference/reexports.html</loc>
   </url>
   <url>

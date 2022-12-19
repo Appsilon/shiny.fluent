@@ -90,36 +90,49 @@ you need to work using the original docs to achieve the desired result.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">CompactPeoplePicker</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">NormalPeoplePicker</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">NormalPeoplePicker.shinyInput</span><span class="op">(</span><span class="va">inputId</span>, <span class="va">...</span>, value <span class="op">=</span> <span class="va">defaultValue</span><span class="op">)</span>
-
-<span class="fu">updateNormalPeoplePicker.shinyInput</span><span class="op">(</span>
-  session <span class="op">=</span> <span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/domains.html" class="external-link">getDefaultReactiveDomain</a></span><span class="op">(</span><span class="op">)</span>,
-  <span class="va">inputId</span>,
-  <span class="va">...</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">CompactPeoplePicker</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">NormalPeoplePicker</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">NormalPeoplePicker.shinyInput</span><span class="op">(</span><span class="va">inputId</span>, <span class="va">...</span>, value <span class="op">=</span> <span class="va">defaultValue</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">updateNormalPeoplePicker.shinyInput</span><span class="op">(</span></span>
+<span>  session <span class="op">=</span> <span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/domains.html" class="external-link">getDefaultReactiveDomain</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="va">inputId</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>ValidationState</dt>
-<dd><p><code>ValidationState</code> <br></p></dd>
-<dt>className</dt>
-<dd><p><code>string</code> <br> Additional CSS class(es) to apply to the PeoplePickerItem root element.</p></dd>
-<dt>theme</dt>
-<dd><p><code>ITheme</code> <br> Theme provided by High-Order Component.</p></dd>
-<dt>compact</dt>
-<dd><p><code>boolean</code> <br> Flag that controls whether each suggested PeoplePicker item (Persona) is rendered with or without secondary text for compact look.</p></dd>
-<dt>personaProps</dt>
-<dd><p><code>IPersonaProps</code> <br> Persona props for each suggested for picking PeoplePicker item.</p></dd>
-<dt>styles</dt>
-<dd><p><code>IStyleFunctionOrObject&lt;IPeoplePickerItemSuggestionStyleProps, IPeoplePickerItemSuggestionStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></dd>
-<dt>suggestionsProps</dt>
-<dd><p><code>IBasePickerSuggestionsProps</code> <br> General common props for all PeoplePicker items suggestions.</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
+
+<dt>inputId</dt>
+<dd><p>Id of the component</p></dd>
+
+
+<dt>value</dt>
+<dd><p>Value</p></dd>
+
+
+<dt>session</dt>
+<dd><p>Session</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IPeoplePickerItemSelectedStyleProps, IPeoplePickerItemSelectedStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></li>
+<li><p><b> ValidationState </b> <code>ValidationState</code> <br></p></li>
+<li><p><b> className </b> <code>string</code> <br> Additional CSS class(es) to apply to the PeoplePickerItem root element.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by High-Order Component.</p></li>
+<li><p><b> compact </b> <code>boolean</code> <br> Flag that controls whether each suggested PeoplePicker item (Persona) is rendered with or without secondary text for compact look.</p></li>
+<li><p><b> personaProps </b> <code>IPersonaProps</code> <br> Persona props for each suggested for picking PeoplePicker item.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IPeoplePickerItemSuggestionStyleProps, IPeoplePickerItemSuggestionStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></li>
+<li><p><b> suggestionsProps </b> <code>IBasePickerSuggestionsProps</code> <br> General common props for all PeoplePicker items suggestions.</p></li>
+</ul></div>
     <div id="best-practices">
     <h2>Best practices</h2>
     
@@ -134,46 +147,92 @@ you need to work using the original docs to achieve the desired result.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="va">people</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tribble.html" class="external-link">tribble</a></span><span class="op">(</span></span>
-<span class="r-in">  <span class="op">~</span><span class="va">key</span>, <span class="op">~</span><span class="va">imageUrl</span>, <span class="op">~</span><span class="va">imageInitials</span>, <span class="op">~</span><span class="va">text</span>, <span class="op">~</span><span class="va">secondaryText</span>, <span class="op">~</span><span class="va">tertiaryText</span>, <span class="op">~</span><span class="va">optionalText</span>, <span class="op">~</span><span class="va">isValid</span>, <span class="op">~</span><span class="va">presence</span>, <span class="op">~</span><span class="va">canExpand</span>,</span>
-<span class="r-in">  <span class="fl">1</span>, <span class="st">"https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-female.png"</span>, <span class="st">"PV"</span>, <span class="st">"Annie Lindqvist"</span>, <span class="st">"Designer"</span>, <span class="st">"In a meeting"</span>, <span class="st">"Available at 4:00pm"</span>, <span class="cn">TRUE</span>, <span class="fl">2</span>, <span class="cn">NA</span>,</span>
-<span class="r-in">  <span class="fl">2</span>, <span class="st">"https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-male.png"</span>, <span class="st">"AR"</span>, <span class="st">"Aaron Reid"</span>, <span class="st">"Designer"</span>, <span class="st">"In a meeting"</span>, <span class="st">"Available at 4:00pm"</span>, <span class="cn">TRUE</span>, <span class="fl">6</span>, <span class="cn">NA</span>,</span>
-<span class="r-in">  <span class="fl">3</span>, <span class="st">"https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-male.png"</span>, <span class="st">"AL"</span>, <span class="st">"Alex Lundberg"</span>, <span class="st">"Software Developer"</span>, <span class="st">"In a meeting"</span>, <span class="st">"Available at 4:00pm"</span>, <span class="cn">TRUE</span>, <span class="fl">4</span>, <span class="cn">NA</span>,</span>
-<span class="r-in">  <span class="fl">4</span>, <span class="st">"https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-male.png"</span>, <span class="st">"RK"</span>, <span class="st">"Roko Kolar"</span>, <span class="st">"Financial Analyst"</span>, <span class="st">"In a meeting"</span>, <span class="st">"Available at 4:00pm"</span>, <span class="cn">TRUE</span>, <span class="fl">1</span>, <span class="cn">NA</span>,</span>
-<span class="r-in">  <span class="fl">5</span>, <span class="st">"https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-male.png"</span>, <span class="st">"CB"</span>, <span class="st">"Christian Bergqvist"</span>, <span class="st">"Sr. Designer"</span>, <span class="st">"In a meeting"</span>, <span class="st">"Available at 4:00pm"</span>, <span class="cn">TRUE</span>, <span class="fl">2</span>, <span class="cn">NA</span>,</span>
-<span class="r-in">  <span class="fl">6</span>, <span class="st">"https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-female.png"</span>, <span class="st">"VL"</span>, <span class="st">"Valentina Lovric"</span>, <span class="st">"Design Developer"</span>, <span class="st">"In a meeting"</span>, <span class="st">"Available at 4:00pm"</span>, <span class="cn">TRUE</span>, <span class="fl">2</span>, <span class="cn">NA</span>,</span>
-<span class="r-in">  <span class="fl">7</span>, <span class="st">"https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-male.png"</span>, <span class="st">"MS"</span>, <span class="st">"Maor Sharett"</span>, <span class="st">"UX Designer"</span>, <span class="st">"In a meeting"</span>, <span class="st">"Available at 4:00pm"</span>, <span class="cn">TRUE</span>, <span class="fl">3</span>, <span class="cn">NA</span></span>
-<span class="r-in"><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span>
-<span class="r-in">    ui <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/tagList.html" class="external-link">tagList</a></span><span class="op">(</span></span>
-<span class="r-in">      <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/textOutput.html" class="external-link">textOutput</a></span><span class="op">(</span><span class="st">"selectedPeople"</span><span class="op">)</span>,</span>
-<span class="r-in">      <span class="fu">NormalPeoplePicker.shinyInput</span><span class="op">(</span></span>
-<span class="r-in">        <span class="st">"selectedPeople"</span>,</span>
-<span class="r-in">        options <span class="op">=</span> <span class="va">people</span>,</span>
-<span class="r-in">        pickerSuggestionsProps <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">          suggestionsHeaderText <span class="op">=</span> <span class="st">'Matching people'</span>,</span>
-<span class="r-in">          mostRecentlyUsedHeaderText <span class="op">=</span> <span class="st">'Sales reps'</span>,</span>
-<span class="r-in">          noResultsFoundText <span class="op">=</span> <span class="st">'No results found'</span>,</span>
-<span class="r-in">          showRemoveButtons <span class="op">=</span> <span class="cn">TRUE</span></span>
-<span class="r-in">        <span class="op">)</span></span>
-<span class="r-in">      <span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span>,</span>
-<span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">      <span class="va">output</span><span class="op">$</span><span class="va">selectedPeople</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/renderPrint.html" class="external-link">renderText</a></span><span class="op">(</span><span class="op">{</span></span>
-<span class="r-in">        <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">selectedPeople</span><span class="op">)</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">          <span class="st">"Select recipients below:"</span></span>
-<span class="r-in">        <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
-<span class="r-in">          <span class="va">selectedPeople</span> <span class="op">&lt;-</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">people</span>, <span class="va">key</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="va">input</span><span class="op">$</span><span class="va">selectedPeople</span><span class="op">)</span></span>
-<span class="r-in">          <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"You have selected:"</span>, <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="va">selectedPeople</span><span class="op">$</span><span class="va">text</span>, collapse<span class="op">=</span><span class="st">", "</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">        <span class="op">}</span></span>
-<span class="r-in">      <span class="op">}</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">}</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">assetsUrl</span> <span class="op">&lt;-</span> <span class="st">"https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/"</span></span></span>
+<span class="r-in"><span><span class="va">malePersonaUrl</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="va">assetsUrl</span>, <span class="st">"persona-male.png"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">femalePersonaUrl</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="va">assetsUrl</span>, <span class="st">"persona-female.png"</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">people</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>  key <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">4</span>, <span class="fl">5</span>, <span class="fl">6</span>, <span class="fl">7</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  imageUrl <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="va">femalePersonaUrl</span>,</span></span>
+<span class="r-in"><span>    <span class="va">malePersonaUrl</span>,</span></span>
+<span class="r-in"><span>    <span class="va">malePersonaUrl</span>,</span></span>
+<span class="r-in"><span>    <span class="va">malePersonaUrl</span>,</span></span>
+<span class="r-in"><span>    <span class="va">malePersonaUrl</span>,</span></span>
+<span class="r-in"><span>    <span class="va">femalePersonaUrl</span>,</span></span>
+<span class="r-in"><span>    <span class="va">malePersonaUrl</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span>, </span></span>
+<span class="r-in"><span>  imageInitials <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"PV"</span>, <span class="st">"AR"</span>, <span class="st">"AL"</span>, <span class="st">"RK"</span>, <span class="st">"CB"</span>, <span class="st">"VL"</span>, <span class="st">"MS"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  text <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="st">"Annie Lindqvist"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"Aaron Reid"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"Alex Lundberg"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"Roko Kolar"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"Christian Bergqvist"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"Valentina Lovric"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"Maor Sharett"</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span>,</span></span>
+<span class="r-in"><span>  secondaryText <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="st">"Designer"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"Designer"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"Software Developer"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"Financial Analyst"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"Sr. Designer"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"Design Developer"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"UX Designer"</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span>,</span></span>
+<span class="r-in"><span>  tertiaryText <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="st">"In a meeting"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"In a meeting"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"In a meeting"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"In a meeting"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"In a meeting"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"In a meeting"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"In a meeting"</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span>,</span></span>
+<span class="r-in"><span>  optionalText <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="st">"Available at 4:00pm"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"Available at 4:00pm"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"Available at 4:00pm"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"Available at 4:00pm"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"Available at 4:00pm"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"Available at 4:00pm"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"Available at 4:00pm"</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span>,</span></span>
+<span class="r-in"><span>  isValid <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  presence <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">6</span>, <span class="fl">4</span>, <span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">2</span>, <span class="fl">3</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  canExpand <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    ui <span class="op">=</span> <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/tagList.html" class="external-link">tagList</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>      <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/textOutput.html" class="external-link">textOutput</a></span><span class="op">(</span><span class="st">"selectedPeople"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      <span class="fu">NormalPeoplePicker.shinyInput</span><span class="op">(</span></span></span>
+<span class="r-in"><span>        <span class="st">"selectedPeople"</span>,</span></span>
+<span class="r-in"><span>        options <span class="op">=</span> <span class="va">people</span>,</span></span>
+<span class="r-in"><span>        pickerSuggestionsProps <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>          suggestionsHeaderText <span class="op">=</span> <span class="st">'Matching people'</span>,</span></span>
+<span class="r-in"><span>          mostRecentlyUsedHeaderText <span class="op">=</span> <span class="st">'Sales reps'</span>,</span></span>
+<span class="r-in"><span>          noResultsFoundText <span class="op">=</span> <span class="st">'No results found'</span>,</span></span>
+<span class="r-in"><span>          showRemoveButtons <span class="op">=</span> <span class="cn">TRUE</span></span></span>
+<span class="r-in"><span>        <span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>      <span class="va">output</span><span class="op">$</span><span class="va">selectedPeople</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/renderPrint.html" class="external-link">renderText</a></span><span class="op">(</span><span class="op">{</span></span></span>
+<span class="r-in"><span>        <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">selectedPeople</span><span class="op">)</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>          <span class="st">"Select recipients below:"</span></span></span>
+<span class="r-in"><span>        <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>          <span class="va">selectedPeople</span> <span class="op">&lt;-</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">people</span>, <span class="va">key</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="va">input</span><span class="op">$</span><span class="va">selectedPeople</span><span class="op">)</span></span></span>
+<span class="r-in"><span>          <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"You have selected:"</span>, <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="va">selectedPeople</span><span class="op">$</span><span class="va">text</span>, collapse<span class="op">=</span><span class="st">", "</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>        <span class="op">}</span></span></span>
+<span class="r-in"><span>      <span class="op">}</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -188,7 +247,7 @@ you need to work using the original docs to achieve the desired result.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

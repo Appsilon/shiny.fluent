@@ -106,12 +106,9 @@
 <div class="page-header"><h1 id="shinyfluent">shiny.fluent<a class="anchor" aria-label="anchor" href="#shinyfluent"></a>
 </h1></div>
 <!-- badges: start -->
-
 <p>We believe that a great UI plays a huge role in the success of application projects. shiny.fluent gives your apps: - beautiful, professional look - rich set of components easily usable in Shiny - fast speed of development that Shiny is famous for.</p>
 <p>As Fluent UI is built in React, shiny.fluent is based on another package called <a href="https://github.com/Appsilon/shiny.react" class="external-link">shiny.react</a>, which allows for using React libraries in Shiny.</p>
-<blockquote>
-<p>A big game-changer for companies already using Microsoft tools on a daily basis, because everyone is already familiar and pleased by the Microsoft UI.</p>
-</blockquote>
+<blockquote><p>A big game-changer for companies already using Microsoft tools on a daily basis, because everyone is already familiar and pleased by the Microsoft UI.</p></blockquote>
 <p><strong>Note:</strong> This package strives to be as easy to use as possible, while providing most of Fluent UI possibilities. That said, Fluent UI is more flexible and low level than Bootstrap, and there is additional complexity coming from using React in Shiny. You should expect using shiny.fluent to be somewhat more complex than vanilla Shiny or shiny.semantic (at some point you will likely want to browse the original Fluent UI documentation), but you get more power, flexibility and better UI in return.</p>
 <div class="figure">
 <img src="https://user-images.githubusercontent.com/1421503/97004706-bc396b00-153d-11eb-8fb1-3856e8536f92.gif" alt=""><p class="caption">shinyfluentapp</p>
@@ -124,25 +121,25 @@
 </h3>
 <p>To install the packages, run:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"Appsilon/shiny.react"</span><span class="op">)</span>
-<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"Appsilon/shiny.fluent"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"Appsilon/shiny.react"</span><span class="op">)</span></span>
+<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"Appsilon/shiny.fluent"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="quick-start">Quick start<a class="anchor" aria-label="anchor" href="#quick-start"></a>
 </h3>
 <p>Here’s how to make an app containing a Fluent UI checkbox:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">shinyApp</span><span class="op">(</span>
-    ui <span class="op">=</span> <span class="fu">div</span><span class="op">(</span>
-      <span class="fu"><a href="reference/Checkbox.html">Checkbox.shinyInput</a></span><span class="op">(</span><span class="st">"checkbox"</span>, value <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,
-      <span class="fu">textOutput</span><span class="op">(</span><span class="st">"checkboxValue"</span><span class="op">)</span>
-    <span class="op">)</span>,
-    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span>
-      <span class="va">output</span><span class="op">$</span><span class="va">checkboxValue</span> <span class="op">&lt;-</span> <span class="fu">renderText</span><span class="op">(</span><span class="op">{</span>
-        <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Value: %s"</span>, <span class="va">input</span><span class="op">$</span><span class="va">checkbox</span><span class="op">)</span>
-      <span class="op">}</span><span class="op">)</span>
-    <span class="op">}</span>
-  <span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">shinyApp</span><span class="op">(</span></span>
+<span>    ui <span class="op">=</span> <span class="fu">div</span><span class="op">(</span></span>
+<span>      <span class="fu"><a href="reference/Checkbox.html">Checkbox.shinyInput</a></span><span class="op">(</span><span class="st">"checkbox"</span>, value <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>      <span class="fu">textOutput</span><span class="op">(</span><span class="st">"checkboxValue"</span><span class="op">)</span></span>
+<span>    <span class="op">)</span>,</span>
+<span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span>
+<span>      <span class="va">output</span><span class="op">$</span><span class="va">checkboxValue</span> <span class="op">&lt;-</span> <span class="fu">renderText</span><span class="op">(</span><span class="op">{</span></span>
+<span>        <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Value: %s"</span>, <span class="va">input</span><span class="op">$</span><span class="va">checkbox</span><span class="op">)</span></span>
+<span>      <span class="op">}</span><span class="op">)</span></span>
+<span>    <span class="op">}</span></span>
+<span>  <span class="op">)</span></span></code></pre></div>
 <p><code>shiny.fluent</code> provides all components from Microsoft’s Fluent UI library. Browse the <a href="https://developer.microsoft.com/en-us/fluentui#/controls/web" class="external-link">official docs</a> or start typing <code>shiny.fluent::</code> in RStudio to see all available controls.</p>
 <p>All components are documented, so if you run <code>?shiny.fluent::MyComponentName</code>, you’ll see documentation for this component in RStudio, along with examples. When in doubt, open Fluent UI docs for details.</p>
 </div>
@@ -223,7 +220,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer>

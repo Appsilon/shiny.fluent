@@ -90,91 +90,58 @@ you need to work using the original docs to achieve the desired result.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">Callout</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">Callout</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>alignTargetEdge</dt>
-<dd><p><code>boolean</code> <br> If true the positioning logic will prefer to flip edges rather than to nudge the rectangle to fit within bounds, thus making sure the element aligns perfectly with target's alignment edge</p></dd>
-<dt>ariaDescribedBy</dt>
-<dd><p><code>string</code> <br> Defines the element id referencing the element containing the description for the callout.</p></dd>
-<dt>ariaLabel</dt>
-<dd><p><code>string</code> <br> Accessible label text for callout.</p></dd>
-<dt>ariaLabelledBy</dt>
-<dd><p><code>string</code> <br> Defines the element id referencing the element containing label text for callout.</p></dd>
-<dt>backgroundColor</dt>
-<dd><p><code>string</code> <br> The background color of the Callout in hex format ie. #ffffff.</p></dd>
-<dt>beakWidth</dt>
-<dd><p><code>number</code> <br> The width of the beak.</p></dd>
-<dt>bounds</dt>
-<dd><p><code>IRectangle | ((target?: Target, targetWindow?: Window) =&gt; IRectangle | undefined)</code> <br> The bounding rectangle (or callback that returns a rectangle) for which the contextual menu can appear in.</p></dd>
-<dt>calloutMaxHeight</dt>
-<dd><p><code>number</code> <br> Set max height of callout When not set the callout will expand with contents up to the bottom of the screen</p></dd>
-<dt>calloutMaxWidth</dt>
-<dd><p><code>number</code> <br> Custom width for callout including borders. If value is 0, no width is applied.</p></dd>
-<dt>calloutWidth</dt>
-<dd><p><code>number</code> <br> Custom width for callout including borders. If value is 0, no width is applied.</p></dd>
-<dt>className</dt>
-<dd><p><code>string</code> <br> CSS class to apply to the callout.</p></dd>
-<dt>coverTarget</dt>
-<dd><p><code>boolean</code> <br> If true the position returned will have the menu element cover the target. If false then it will position next to the target;</p></dd>
-<dt>directionalHint</dt>
-<dd><p><code>DirectionalHint</code> <br> How the element should be positioned</p></dd>
-<dt>directionalHintFixed</dt>
-<dd><p><code>boolean</code> <br> If true the position will not change sides in an attempt to fit the callout within bounds. It will still attempt to align it to whatever bounds are given.</p></dd>
-<dt>directionalHintForRTL</dt>
-<dd><p><code>DirectionalHint</code> <br> How the element should be positioned in RTL layouts. If not specified, a mirror of the <code>directionalHint</code> alignment edge will be used instead. This means that <code>DirectionalHint.BottomLeft</code> will change to <code>DirectionalHint.BottomRight</code> but <code>DirectionalHint.LeftAuto</code> will not change.</p></dd>
-<dt>doNotLayer</dt>
-<dd><p><code>boolean</code> <br> If true do not render on a new layer. If false render on a new layer.</p></dd>
-<dt>finalHeight</dt>
-<dd><p><code>number</code> <br> Specify the final height of the content. To be used when expanding the content dynamically so that callout can adjust its position.</p></dd>
-<dt>gapSpace</dt>
-<dd><p><code>number</code> <br> The gap between the Callout and the target</p></dd>
-<dt>hidden</dt>
-<dd><p><code>boolean</code> <br> If specified, renders the Callout in a hidden state. Use this flag, rather than rendering a callout conditionally based on visibility, to improve rendering performance when it becomes visible. Note: When callout is hidden its content will not be rendered. It will only render once the callout is visible.</p></dd>
-<dt>hideOverflow</dt>
-<dd><p><code>boolean</code> <br> Manually set OverflowYHidden style prop to true on calloutMain element A variety of callout load animations will need this to hide the scollbar that can appear</p></dd>
-<dt>isBeakVisible</dt>
-<dd><p><code>boolean</code> <br> If true then the beak is visible. If false it will not be shown.</p></dd>
-<dt>layerProps</dt>
-<dd><p><code>ILayerProps</code> <br> Optional props to pass to the Layer component hosting the panel.</p></dd>
-<dt>minPagePadding</dt>
-<dd><p><code>number</code> <br> The minimum distance the callout will be away from the edge of the screen.</p></dd>
-<dt>onDismiss</dt>
-<dd><p><code>(ev?: any) =&gt; void</code> <br> Callback when the Callout tries to close.</p></dd>
-<dt>onLayerMounted</dt>
-<dd><p><code>() =&gt; void</code> <br> Optional callback when the layer content has mounted.</p></dd>
-<dt>onPositioned</dt>
-<dd><p><code>(positions?: ICalloutPositionedInfo) =&gt; void</code> <br> Optional callback that is called once the callout has been correctly positioned.</p></dd>
-<dt>onRestoreFocus</dt>
-<dd><p><code>(options: { originalElement?: HTMLElement | Window; containsFocus: boolean; }) =&gt; void</code> <br> Called when the component is unmounting, and focus needs to be restored. Argument passed down contains two variables, the element that the underlying popup believes focus should go to * and whether or not the popup currently contains focus. If this is provided, focus will not be restored automatically, you'll need to call originalElement.focus()</p></dd>
-<dt>onScroll</dt>
-<dd><p><code>() =&gt; void</code> <br> Callback when the Callout body is scrolled.</p></dd>
-<dt>preventDismissOnLostFocus</dt>
-<dd><p><code>boolean</code> <br> If true then the callout will not dismiss when it loses focus</p></dd>
-<dt>preventDismissOnResize</dt>
-<dd><p><code>boolean</code> <br> If true then the callout will not dismiss on resize</p></dd>
-<dt>preventDismissOnScroll</dt>
-<dd><p><code>boolean</code> <br> If true then the callout will not dismiss on scroll</p></dd>
-<dt>role</dt>
-<dd><p><code>string</code> <br> Aria role assigned to the callout (Eg. dialog, alertdialog).</p></dd>
-<dt>setInitialFocus</dt>
-<dd><p><code>boolean</code> <br> If true then the callout will attempt to focus the first focusable element that it contains. If it doesn't find an element, no focus will be set and the method will return false. This means that it's the contents responsibility to either set focus or have focusable items.</p></dd>
-<dt>shouldRestoreFocus</dt>
-<dd><p><code>boolean</code> <br> If true, when this component is unmounted, focus will be restored to the element that had focus when the component first mounted.</p></dd>
-<dt>shouldUpdateWhenHidden</dt>
-<dd><p><code>boolean</code> <br> If true, the component will be updated even when hidden=true. Note that this would consume resources to update even though nothing is being shown to the user. This might be helpful though if your updates are small and you want the callout to be revealed fast to the user when hidden is set to false.</p></dd>
-<dt>style</dt>
-<dd><p><code>React.CSSProperties</code> <br> CSS style to apply to the callout.</p>
-<p>If you set <code>overflowY</code> in this object, it provides a performance optimization by preventing Popup (underlying component of Callout) from calculating whether it needs a scroll bar.</p></dd>
-<dt>styles</dt>
-<dd><p><code>IStyleFunctionOrObject&lt;ICalloutContentStyleProps, ICalloutContentStyles&gt;</code> <br> Optional styles for the component.</p></dd>
-<dt>target</dt>
-<dd><p><code>Target</code> <br> The target that the Callout should try to position itself based on. It can be either an Element a querySelector string of a valid Element or a MouseEvent. If MouseEvent is given then the origin point of the event will be used.</p></dd>
-<dt>theme</dt>
-<dd><p><code>ITheme</code> <br> Optional theme for component</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> alignTargetEdge </b> <code>boolean</code> <br> If true the positioning logic will prefer to flip edges rather than to nudge the rectangle to fit within bounds, thus making sure the element aligns perfectly with target's alignment edge</p></li>
+<li><p><b> ariaDescribedBy </b> <code>string</code> <br> Defines the element id referencing the element containing the description for the callout.</p></li>
+<li><p><b> ariaLabel </b> <code>string</code> <br> Accessible label text for callout.</p></li>
+<li><p><b> ariaLabelledBy </b> <code>string</code> <br> Defines the element id referencing the element containing label text for callout.</p></li>
+<li><p><b> backgroundColor </b> <code>string</code> <br> The background color of the Callout in hex format ie. #ffffff.</p></li>
+<li><p><b> beakWidth </b> <code>number</code> <br> The width of the beak.</p></li>
+<li><p><b> bounds </b> <code>IRectangle | ((target?: Target, targetWindow?: Window) =&gt; IRectangle | undefined)</code> <br> The bounding rectangle (or callback that returns a rectangle) for which the contextual menu can appear in.</p></li>
+<li><p><b> calloutMaxHeight </b> <code>number</code> <br> Set max height of callout When not set the callout will expand with contents up to the bottom of the screen</p></li>
+<li><p><b> calloutMaxWidth </b> <code>number</code> <br> Custom width for callout including borders. If value is 0, no width is applied.</p></li>
+<li><p><b> calloutWidth </b> <code>number</code> <br> Custom width for callout including borders. If value is 0, no width is applied.</p></li>
+<li><p><b> className </b> <code>string</code> <br> CSS class to apply to the callout.</p></li>
+<li><p><b> coverTarget </b> <code>boolean</code> <br> If true the position returned will have the menu element cover the target. If false then it will position next to the target;</p></li>
+<li><p><b> directionalHint </b> <code>DirectionalHint</code> <br> How the element should be positioned</p></li>
+<li><p><b> directionalHintFixed </b> <code>boolean</code> <br> If true the position will not change sides in an attempt to fit the callout within bounds. It will still attempt to align it to whatever bounds are given.</p></li>
+<li><p><b> directionalHintForRTL </b> <code>DirectionalHint</code> <br> How the element should be positioned in RTL layouts. If not specified, a mirror of the <code>directionalHint</code> alignment edge will be used instead. This means that <code>DirectionalHint.BottomLeft</code> will change to <code>DirectionalHint.BottomRight</code> but <code>DirectionalHint.LeftAuto</code> will not change.</p></li>
+<li><p><b> doNotLayer </b> <code>boolean</code> <br> If true do not render on a new layer. If false render on a new layer.</p></li>
+<li><p><b> finalHeight </b> <code>number</code> <br> Specify the final height of the content. To be used when expanding the content dynamically so that callout can adjust its position.</p></li>
+<li><p><b> gapSpace </b> <code>number</code> <br> The gap between the Callout and the target</p></li>
+<li><p><b> hidden </b> <code>boolean</code> <br> If specified, renders the Callout in a hidden state. Use this flag, rather than rendering a callout conditionally based on visibility, to improve rendering performance when it becomes visible. Note: When callout is hidden its content will not be rendered. It will only render once the callout is visible.</p></li>
+<li><p><b> hideOverflow </b> <code>boolean</code> <br> Manually set OverflowYHidden style prop to true on calloutMain element A variety of callout load animations will need this to hide the scollbar that can appear</p></li>
+<li><p><b> isBeakVisible </b> <code>boolean</code> <br> If true then the beak is visible. If false it will not be shown.</p></li>
+<li><p><b> layerProps </b> <code>ILayerProps</code> <br> Optional props to pass to the Layer component hosting the panel.</p></li>
+<li><p><b> minPagePadding </b> <code>number</code> <br> The minimum distance the callout will be away from the edge of the screen.</p></li>
+<li><p><b> onDismiss </b> <code>(ev?: any) =&gt; void</code> <br> Callback when the Callout tries to close.</p></li>
+<li><p><b> onLayerMounted </b> <code>() =&gt; void</code> <br> Optional callback when the layer content has mounted.</p></li>
+<li><p><b> onPositioned </b> <code>(positions?: ICalloutPositionedInfo) =&gt; void</code> <br> Optional callback that is called once the callout has been correctly positioned.</p></li>
+<li><p><b> onRestoreFocus </b> <code>(options: { originalElement?: HTMLElement | Window; containsFocus: boolean; }) =&gt; void</code> <br> Called when the component is unmounting, and focus needs to be restored. Argument passed down contains two variables, the element that the underlying popup believes focus should go to * and whether or not the popup currently contains focus. If this is provided, focus will not be restored automatically, you'll need to call originalElement.focus()</p></li>
+<li><p><b> onScroll </b> <code>() =&gt; void</code> <br> Callback when the Callout body is scrolled.</p></li>
+<li><p><b> preventDismissOnLostFocus </b> <code>boolean</code> <br> If true then the callout will not dismiss when it loses focus</p></li>
+<li><p><b> preventDismissOnResize </b> <code>boolean</code> <br> If true then the callout will not dismiss on resize</p></li>
+<li><p><b> preventDismissOnScroll </b> <code>boolean</code> <br> If true then the callout will not dismiss on scroll</p></li>
+<li><p><b> role </b> <code>string</code> <br> Aria role assigned to the callout (Eg. dialog, alertdialog).</p></li>
+<li><p><b> setInitialFocus </b> <code>boolean</code> <br> If true then the callout will attempt to focus the first focusable element that it contains. If it doesn't find an element, no focus will be set and the method will return false. This means that it's the contents responsibility to either set focus or have focusable items.</p></li>
+<li><p><b> shouldRestoreFocus </b> <code>boolean</code> <br> If true, when this component is unmounted, focus will be restored to the element that had focus when the component first mounted.</p></li>
+<li><p><b> shouldUpdateWhenHidden </b> <code>boolean</code> <br> If true, the component will be updated even when hidden=true. Note that this would consume resources to update even though nothing is being shown to the user. This might be helpful though if your updates are small and you want the callout to be revealed fast to the user when hidden is set to false.</p></li>
+<li><p><b> style </b> <code>React.CSSProperties</code> <br> CSS style to apply to the callout.If you set <code>overflowY</code> in this object, it provides a performance optimization by preventing Popup (underlying component of Callout) from calculating whether it needs a scroll bar.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;ICalloutContentStyleProps, ICalloutContentStyles&gt;</code> <br> Optional styles for the component.</p></li>
+<li><p><b> target </b> <code>Target</code> <br> The target that the Callout should try to position itself based on. It can be either an Element a querySelector string of a valid Element or a MouseEvent. If MouseEvent is given then the origin point of the event will be used.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Optional theme for component</p></li>
+</ul></div>
     <div id="best-practices">
     <h2>Best practices</h2>
     
@@ -204,30 +171,30 @@ you need to work using the original docs to achieve the desired result.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="fu">shinyApp</span><span class="op">(</span></span>
-<span class="r-in">    ui <span class="op">=</span> <span class="fu">div</span><span class="op">(</span></span>
-<span class="r-in">      <span class="fu"><a href="Button.html">DefaultButton.shinyInput</a></span><span class="op">(</span><span class="st">"toggleCallout"</span>, text <span class="op">=</span> <span class="st">"Toggle Callout"</span><span class="op">)</span>,</span>
-<span class="r-in">      <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/reactOutput.html" class="external-link">reactOutput</a></span><span class="op">(</span><span class="st">"callout"</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span>,</span>
-<span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">      <span class="va">show</span> <span class="op">&lt;-</span> <span class="fu">reactiveVal</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span>
-<span class="r-in">      <span class="fu">observeEvent</span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">toggleCallout</span>, <span class="fu">show</span><span class="op">(</span><span class="op">!</span><span class="fu">show</span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">      <span class="va">output</span><span class="op">$</span><span class="va">callout</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/renderReact.html" class="external-link">renderReact</a></span><span class="op">(</span><span class="op">{</span></span>
-<span class="r-in">        <span class="kw">if</span> <span class="op">(</span><span class="fu">show</span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">          <span class="fu">Callout</span><span class="op">(</span></span>
-<span class="r-in">            <span class="va">tags</span><span class="op">$</span><span class="fu">div</span><span class="op">(</span></span>
-<span class="r-in">              style <span class="op">=</span> <span class="st">"margin: 10px"</span>,</span>
-<span class="r-in">              <span class="st">"Callout contents"</span></span>
-<span class="r-in">            <span class="op">)</span></span>
-<span class="r-in">          <span class="op">)</span></span>
-<span class="r-in">        <span class="op">}</span></span>
-<span class="r-in">      <span class="op">}</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">}</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="fu">shinyApp</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    ui <span class="op">=</span> <span class="fu">div</span><span class="op">(</span></span></span>
+<span class="r-in"><span>      <span class="fu"><a href="Button.html">DefaultButton.shinyInput</a></span><span class="op">(</span><span class="st">"toggleCallout"</span>, text <span class="op">=</span> <span class="st">"Toggle Callout"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/reactOutput.html" class="external-link">reactOutput</a></span><span class="op">(</span><span class="st">"callout"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>      <span class="va">show</span> <span class="op">&lt;-</span> <span class="fu">reactiveVal</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="fu">observeEvent</span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">toggleCallout</span>, <span class="fu">show</span><span class="op">(</span><span class="op">!</span><span class="fu">show</span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="va">output</span><span class="op">$</span><span class="va">callout</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/renderReact.html" class="external-link">renderReact</a></span><span class="op">(</span><span class="op">{</span></span></span>
+<span class="r-in"><span>        <span class="kw">if</span> <span class="op">(</span><span class="fu">show</span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>          <span class="fu">Callout</span><span class="op">(</span></span></span>
+<span class="r-in"><span>            <span class="va">tags</span><span class="op">$</span><span class="fu">div</span><span class="op">(</span></span></span>
+<span class="r-in"><span>              style <span class="op">=</span> <span class="st">"margin: 10px"</span>,</span></span>
+<span class="r-in"><span>              <span class="st">"Callout contents"</span></span></span>
+<span class="r-in"><span>            <span class="op">)</span></span></span>
+<span class="r-in"><span>          <span class="op">)</span></span></span>
+<span class="r-in"><span>        <span class="op">}</span></span></span>
+<span class="r-in"><span>      <span class="op">}</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -242,7 +209,7 @@ you need to work using the original docs to achieve the desired result.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

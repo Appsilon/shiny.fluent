@@ -90,32 +90,29 @@ you need to work using the original docs to achieve the desired result.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">Image</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">Image</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>className</dt>
-<dd><p><code>string</code> <br> Additional css class to apply to the Component</p></dd>
-<dt>coverStyle</dt>
-<dd><p><code>ImageCoverStyle</code> <br> Specifies the cover style to be used for this image. If not specified, this will be dynamically calculated based on the aspect ratio for the image.</p></dd>
-<dt>errorSrc</dt>
-<dd><p><code>string</code> <br> Deprecated at v1.3.6, to replace the src in case of errors, use <code>onLoadingStateChange</code> instead and rerender the Image with a difference src.</p></dd>
-<dt>imageFit</dt>
-<dd><p><code>ImageFit</code> <br> Used to determine how the image is scaled and cropped to fit the frame.</p></dd>
-<dt>maximizeFrame</dt>
-<dd><p><code>boolean</code> <br> If true, the image frame will expand to fill its parent container.</p></dd>
-<dt>onLoadingStateChange</dt>
-<dd><p><code>(loadState: ImageLoadState) =&gt; void</code> <br> Optional callback method for when the image load state has changed. The 'loadState' parameter indicates the current state of the Image.</p></dd>
-<dt>shouldFadeIn</dt>
-<dd><p><code>boolean</code> <br> If true, fades the image in when loaded.</p></dd>
-<dt>shouldStartVisible</dt>
-<dd><p><code>boolean</code> <br> If true, the image starts as visible and is hidden on error. Otherwise, the image is hidden until it is successfully loaded. This disables shouldFadeIn.</p></dd>
-<dt>styles</dt>
-<dd><p><code>IStyleFunctionOrObject&lt;IImageStyleProps, IImageStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules</p></dd>
-<dt>theme</dt>
-<dd><p><code>ITheme</code> <br> Theme provided by HOC.</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> className </b> <code>string</code> <br> Additional css class to apply to the Component</p></li>
+<li><p><b> coverStyle </b> <code>ImageCoverStyle</code> <br> Specifies the cover style to be used for this image. If not specified, this will be dynamically calculated based on the aspect ratio for the image.</p></li>
+<li><p><b> errorSrc </b> <code>string</code> <br> Deprecated at v1.3.6, to replace the src in case of errors, use <code>onLoadingStateChange</code> instead and rerender the Image with a difference src.</p></li>
+<li><p><b> imageFit </b> <code>ImageFit</code> <br> Used to determine how the image is scaled and cropped to fit the frame.</p></li>
+<li><p><b> maximizeFrame </b> <code>boolean</code> <br> If true, the image frame will expand to fill its parent container.</p></li>
+<li><p><b> onLoadingStateChange </b> <code>(loadState: ImageLoadState) =&gt; void</code> <br> Optional callback method for when the image load state has changed. The 'loadState' parameter indicates the current state of the Image.</p></li>
+<li><p><b> shouldFadeIn </b> <code>boolean</code> <br> If true, fades the image in when loaded.</p></li>
+<li><p><b> shouldStartVisible </b> <code>boolean</code> <br> If true, the image starts as visible and is hidden on error. Otherwise, the image is hidden until it is successfully loaded. This disables shouldFadeIn.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IImageStyleProps, IImageStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by HOC.</p></li>
+</ul></div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -129,7 +126,7 @@ you need to work using the original docs to achieve the desired result.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

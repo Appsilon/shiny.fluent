@@ -90,136 +90,126 @@ you need to work using the original docs to achieve the desired result.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">Nav</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">Nav</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>link</dt>
-<dd><p><code>INavLink</code> <br> (Optional) Link to be rendered.</p></dd>
-<dt>ariaLabel</dt>
-<dd><p><code>string</code> <br> (Optional) The nav container aria label.</p></dd>
-<dt>className</dt>
-<dd><p><code>string</code> <br> Additional css class to apply to the Nav</p></dd>
-<dt>componentRef</dt>
-<dd><p><code>IRefObject&lt;INav&gt;</code> <br> Optional callback to access the INav interface. Use this instead of ref for accessing the public methods and properties of the component.</p></dd>
-<dt>expandButtonAriaLabel</dt>
-<dd><p><code>string</code> <br> (Optional) The nav container aria label. The link name is prepended to this label. If not provided, the aria label will default to the link name.</p></dd>
-<dt>groups</dt>
-<dd><p><code>INavLinkGroup[] | null</code> <br> A collection of link groups to display in the navigation bar</p></dd>
-<dt>initialSelectedKey</dt>
-<dd><p><code>string</code> <br> (Optional) The key of the nav item initially selected.</p></dd>
-<dt>isOnTop</dt>
-<dd><p><code>boolean</code> <br> Indicates whether the navigation component renders on top of other content in the UI</p></dd>
-<dt>linkAs</dt>
-<dd><p><code>IComponentAs&lt;INavButtonProps&gt;</code> <br> Render a custom link in place of the normal one. This replaces the entire button rather than simply button content</p></dd>
-<dt>onLinkClick</dt>
-<dd><p><code>(ev?: React.MouseEvent&lt;HTMLElement&gt;, item?: INavLink) =&gt; void</code> <br> Function callback invoked when a link in the navigation is clicked</p></dd>
-<dt>onLinkExpandClick</dt>
-<dd><p><code>(ev?: React.MouseEvent&lt;HTMLElement&gt;, item?: INavLink) =&gt; void</code> <br> Function callback invoked when the chevron on a link is clicked</p></dd>
-<dt>onRenderGroupHeader</dt>
-<dd><p><code>IRenderFunction&lt;IRenderGroupHeaderProps&gt;</code> <br> Used to customize how content inside the group header is rendered</p></dd>
-<dt>onRenderLink</dt>
-<dd><p><code>IRenderFunction&lt;INavLink&gt;</code> <br> Used to customize how content inside the link tag is rendered</p></dd>
-<dt>selectedAriaLabel</dt>
-<dd><p><code>string</code> <br> (Deprecated) Use ariaCurrent on links instead</p></dd>
-<dt>selectedKey</dt>
-<dd><p><code>string</code> <br> (Optional) The key of the nav item selected by caller.</p></dd>
-<dt>styles</dt>
-<dd><p><code>IStyleFunctionOrObject&lt;INavStyleProps, INavStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules</p></dd>
-<dt>theme</dt>
-<dd><p><code>ITheme</code> <br> Theme provided by HOC.</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> link </b> <code>INavLink</code> <br> (Optional) Link to be rendered.</p></li>
+<li><p><b> ariaLabel </b> <code>string</code> <br> (Optional) The nav container aria label.</p></li>
+<li><p><b> className </b> <code>string</code> <br> Additional css class to apply to the Nav</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;INav&gt;</code> <br> Optional callback to access the INav interface. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> expandButtonAriaLabel </b> <code>string</code> <br> (Optional) The nav container aria label. The link name is prepended to this label. If not provided, the aria label will default to the link name.</p></li>
+<li><p><b> groups </b> <code>INavLinkGroup[] | null</code> <br> A collection of link groups to display in the navigation bar</p></li>
+<li><p><b> initialSelectedKey </b> <code>string</code> <br> (Optional) The key of the nav item initially selected.</p></li>
+<li><p><b> isOnTop </b> <code>boolean</code> <br> Indicates whether the navigation component renders on top of other content in the UI</p></li>
+<li><p><b> linkAs </b> <code>IComponentAs&lt;INavButtonProps&gt;</code> <br> Render a custom link in place of the normal one. This replaces the entire button rather than simply button content</p></li>
+<li><p><b> onLinkClick </b> <code>(ev?: React.MouseEvent&lt;HTMLElement&gt;, item?: INavLink) =&gt; void</code> <br> Function callback invoked when a link in the navigation is clicked</p></li>
+<li><p><b> onLinkExpandClick </b> <code>(ev?: React.MouseEvent&lt;HTMLElement&gt;, item?: INavLink) =&gt; void</code> <br> Function callback invoked when the chevron on a link is clicked</p></li>
+<li><p><b> onRenderGroupHeader </b> <code>IRenderFunction&lt;IRenderGroupHeaderProps&gt;</code> <br> Used to customize how content inside the group header is rendered</p></li>
+<li><p><b> onRenderLink </b> <code>IRenderFunction&lt;INavLink&gt;</code> <br> Used to customize how content inside the link tag is rendered</p></li>
+<li><p><b> selectedAriaLabel </b> <code>string</code> <br> (Deprecated) Use ariaCurrent on links instead</p></li>
+<li><p><b> selectedKey </b> <code>string</code> <br> (Optional) The key of the nav item selected by caller.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;INavStyleProps, INavStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by HOC.</p></li>
+</ul></div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="va">navigation_styles</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">    root <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">      height <span class="op">=</span> <span class="st">"100%"</span>,</span>
-<span class="r-in">      boxSizing <span class="op">=</span> <span class="st">"border-box"</span>,</span>
-<span class="r-in">      border <span class="op">=</span> <span class="st">"1px solid #eee"</span>,</span>
-<span class="r-in">      overflowY <span class="op">=</span> <span class="st">"auto"</span></span>
-<span class="r-in">    <span class="op">)</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in">  <span class="va">link_groups</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">      links <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">        <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">          name <span class="op">=</span> <span class="st">"Home"</span>,</span>
-<span class="r-in">          expandAriaLabel <span class="op">=</span> <span class="st">"Expand Home section"</span>,</span>
-<span class="r-in">          collapseAriaLabel <span class="op">=</span> <span class="st">"Collapse Home section"</span>,</span>
-<span class="r-in">          links <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">            <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">              name <span class="op">=</span> <span class="st">"Activity"</span>,</span>
-<span class="r-in">              url <span class="op">=</span> <span class="st">"http://msn.com"</span>,</span>
-<span class="r-in">              key <span class="op">=</span> <span class="st">"key1"</span>,</span>
-<span class="r-in">              target <span class="op">=</span> <span class="st">"_blank"</span></span>
-<span class="r-in">            <span class="op">)</span>,</span>
-<span class="r-in">            <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">              name <span class="op">=</span> <span class="st">"MSN"</span>,</span>
-<span class="r-in">              url <span class="op">=</span> <span class="st">"http://msn.com"</span>,</span>
-<span class="r-in">              disabled <span class="op">=</span> <span class="cn">TRUE</span>,</span>
-<span class="r-in">              key <span class="op">=</span> <span class="st">"key2"</span>,</span>
-<span class="r-in">              target <span class="op">=</span> <span class="st">"_blank"</span></span>
-<span class="r-in">            <span class="op">)</span></span>
-<span class="r-in">          <span class="op">)</span>,</span>
-<span class="r-in">          isExpanded <span class="op">=</span> <span class="cn">TRUE</span></span>
-<span class="r-in">        <span class="op">)</span>,</span>
-<span class="r-in">        <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">          name <span class="op">=</span> <span class="st">"Documents"</span>,</span>
-<span class="r-in">          url <span class="op">=</span> <span class="st">"http://example.com"</span>,</span>
-<span class="r-in">          key <span class="op">=</span> <span class="st">"key3"</span>,</span>
-<span class="r-in">          isExpanded <span class="op">=</span> <span class="cn">TRUE</span></span>
-<span class="r-in">        <span class="op">)</span>,</span>
-<span class="r-in">        <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">          name <span class="op">=</span> <span class="st">"Pages"</span>,</span>
-<span class="r-in">          url <span class="op">=</span> <span class="st">"http://msn.com"</span>,</span>
-<span class="r-in">          key <span class="op">=</span> <span class="st">"key4"</span></span>
-<span class="r-in">        <span class="op">)</span>,</span>
-<span class="r-in">        <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">          name <span class="op">=</span> <span class="st">"Notebook"</span>,</span>
-<span class="r-in">          url <span class="op">=</span> <span class="st">"http://msn.com"</span>,</span>
-<span class="r-in">          key <span class="op">=</span> <span class="st">"key5"</span>,</span>
-<span class="r-in">          disabled <span class="op">=</span> <span class="cn">TRUE</span></span>
-<span class="r-in">        <span class="op">)</span>,</span>
-<span class="r-in">        <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">          name <span class="op">=</span> <span class="st">"Communication and Media"</span>,</span>
-<span class="r-in">          url <span class="op">=</span> <span class="st">"http://msn.com"</span>,</span>
-<span class="r-in">          key <span class="op">=</span> <span class="st">"key6"</span></span>
-<span class="r-in">        <span class="op">)</span>,</span>
-<span class="r-in">        <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">          name <span class="op">=</span> <span class="st">"News"</span>,</span>
-<span class="r-in">          url <span class="op">=</span> <span class="st">"http://cnn.com"</span>,</span>
-<span class="r-in">          icon <span class="op">=</span> <span class="st">"News"</span>,</span>
-<span class="r-in">          key <span class="op">=</span> <span class="st">"key7"</span>,</span>
-<span class="r-in">          target <span class="op">=</span> <span class="st">"_blank"</span>,</span>
-<span class="r-in">          iconProps <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">            iconName <span class="op">=</span> <span class="st">"News"</span>,</span>
-<span class="r-in">            styles <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">              root <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">                fontSize <span class="op">=</span> <span class="fl">20</span>,</span>
-<span class="r-in">                color <span class="op">=</span> <span class="st">"#106ebe"</span></span>
-<span class="r-in">              <span class="op">)</span></span>
-<span class="r-in">            <span class="op">)</span></span>
-<span class="r-in">          <span class="op">)</span></span>
-<span class="r-in">        <span class="op">)</span></span>
-<span class="r-in">      <span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span>
-<span class="r-in">    ui <span class="op">=</span> <span class="fu">Nav</span><span class="op">(</span></span>
-<span class="r-in">      groups <span class="op">=</span> <span class="va">link_groups</span>,</span>
-<span class="r-in">      selectedKey <span class="op">=</span> <span class="st">"key1"</span>,</span>
-<span class="r-in">      styles <span class="op">=</span> <span class="va">navigation_styles</span></span>
-<span class="r-in">    <span class="op">)</span>,</span>
-<span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="va">navigation_styles</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    root <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>      height <span class="op">=</span> <span class="st">"100%"</span>,</span></span>
+<span class="r-in"><span>      boxSizing <span class="op">=</span> <span class="st">"border-box"</span>,</span></span>
+<span class="r-in"><span>      border <span class="op">=</span> <span class="st">"1px solid #eee"</span>,</span></span>
+<span class="r-in"><span>      overflowY <span class="op">=</span> <span class="st">"auto"</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span>  <span class="va">link_groups</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>      links <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>        <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>          name <span class="op">=</span> <span class="st">"Home"</span>,</span></span>
+<span class="r-in"><span>          expandAriaLabel <span class="op">=</span> <span class="st">"Expand Home section"</span>,</span></span>
+<span class="r-in"><span>          collapseAriaLabel <span class="op">=</span> <span class="st">"Collapse Home section"</span>,</span></span>
+<span class="r-in"><span>          links <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>            <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>              name <span class="op">=</span> <span class="st">"Activity"</span>,</span></span>
+<span class="r-in"><span>              url <span class="op">=</span> <span class="st">"http://msn.com"</span>,</span></span>
+<span class="r-in"><span>              key <span class="op">=</span> <span class="st">"key1"</span>,</span></span>
+<span class="r-in"><span>              target <span class="op">=</span> <span class="st">"_blank"</span></span></span>
+<span class="r-in"><span>            <span class="op">)</span>,</span></span>
+<span class="r-in"><span>            <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>              name <span class="op">=</span> <span class="st">"MSN"</span>,</span></span>
+<span class="r-in"><span>              url <span class="op">=</span> <span class="st">"http://msn.com"</span>,</span></span>
+<span class="r-in"><span>              disabled <span class="op">=</span> <span class="cn">TRUE</span>,</span></span>
+<span class="r-in"><span>              key <span class="op">=</span> <span class="st">"key2"</span>,</span></span>
+<span class="r-in"><span>              target <span class="op">=</span> <span class="st">"_blank"</span></span></span>
+<span class="r-in"><span>            <span class="op">)</span></span></span>
+<span class="r-in"><span>          <span class="op">)</span>,</span></span>
+<span class="r-in"><span>          isExpanded <span class="op">=</span> <span class="cn">TRUE</span></span></span>
+<span class="r-in"><span>        <span class="op">)</span>,</span></span>
+<span class="r-in"><span>        <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>          name <span class="op">=</span> <span class="st">"Documents"</span>,</span></span>
+<span class="r-in"><span>          url <span class="op">=</span> <span class="st">"http://example.com"</span>,</span></span>
+<span class="r-in"><span>          key <span class="op">=</span> <span class="st">"key3"</span>,</span></span>
+<span class="r-in"><span>          isExpanded <span class="op">=</span> <span class="cn">TRUE</span></span></span>
+<span class="r-in"><span>        <span class="op">)</span>,</span></span>
+<span class="r-in"><span>        <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>          name <span class="op">=</span> <span class="st">"Pages"</span>,</span></span>
+<span class="r-in"><span>          url <span class="op">=</span> <span class="st">"http://msn.com"</span>,</span></span>
+<span class="r-in"><span>          key <span class="op">=</span> <span class="st">"key4"</span></span></span>
+<span class="r-in"><span>        <span class="op">)</span>,</span></span>
+<span class="r-in"><span>        <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>          name <span class="op">=</span> <span class="st">"Notebook"</span>,</span></span>
+<span class="r-in"><span>          url <span class="op">=</span> <span class="st">"http://msn.com"</span>,</span></span>
+<span class="r-in"><span>          key <span class="op">=</span> <span class="st">"key5"</span>,</span></span>
+<span class="r-in"><span>          disabled <span class="op">=</span> <span class="cn">TRUE</span></span></span>
+<span class="r-in"><span>        <span class="op">)</span>,</span></span>
+<span class="r-in"><span>        <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>          name <span class="op">=</span> <span class="st">"Communication and Media"</span>,</span></span>
+<span class="r-in"><span>          url <span class="op">=</span> <span class="st">"http://msn.com"</span>,</span></span>
+<span class="r-in"><span>          key <span class="op">=</span> <span class="st">"key6"</span></span></span>
+<span class="r-in"><span>        <span class="op">)</span>,</span></span>
+<span class="r-in"><span>        <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>          name <span class="op">=</span> <span class="st">"News"</span>,</span></span>
+<span class="r-in"><span>          url <span class="op">=</span> <span class="st">"http://cnn.com"</span>,</span></span>
+<span class="r-in"><span>          icon <span class="op">=</span> <span class="st">"News"</span>,</span></span>
+<span class="r-in"><span>          key <span class="op">=</span> <span class="st">"key7"</span>,</span></span>
+<span class="r-in"><span>          target <span class="op">=</span> <span class="st">"_blank"</span>,</span></span>
+<span class="r-in"><span>          iconProps <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>            iconName <span class="op">=</span> <span class="st">"News"</span>,</span></span>
+<span class="r-in"><span>            styles <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>              root <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>                fontSize <span class="op">=</span> <span class="fl">20</span>,</span></span>
+<span class="r-in"><span>                color <span class="op">=</span> <span class="st">"#106ebe"</span></span></span>
+<span class="r-in"><span>              <span class="op">)</span></span></span>
+<span class="r-in"><span>            <span class="op">)</span></span></span>
+<span class="r-in"><span>          <span class="op">)</span></span></span>
+<span class="r-in"><span>        <span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    ui <span class="op">=</span> <span class="fu">Nav</span><span class="op">(</span></span></span>
+<span class="r-in"><span>      groups <span class="op">=</span> <span class="va">link_groups</span>,</span></span>
+<span class="r-in"><span>      selectedKey <span class="op">=</span> <span class="st">"key1"</span>,</span></span>
+<span class="r-in"><span>      styles <span class="op">=</span> <span class="va">navigation_styles</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -234,7 +224,7 @@ you need to work using the original docs to achieve the desired result.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

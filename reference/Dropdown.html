@@ -90,58 +90,58 @@ you need to work using the original docs to achieve the desired result.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">Dropdown</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">Dropdown.shinyInput</span><span class="op">(</span><span class="va">inputId</span>, <span class="va">...</span>, value <span class="op">=</span> <span class="va">defaultValue</span><span class="op">)</span>
-
-<span class="fu">updateDropdown.shinyInput</span><span class="op">(</span>
-  session <span class="op">=</span> <span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/domains.html" class="external-link">getDefaultReactiveDomain</a></span><span class="op">(</span><span class="op">)</span>,
-  <span class="va">inputId</span>,
-  <span class="va">...</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">Dropdown</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">Dropdown.shinyInput</span><span class="op">(</span><span class="va">inputId</span>, <span class="va">...</span>, value <span class="op">=</span> <span class="va">defaultValue</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">updateDropdown.shinyInput</span><span class="op">(</span></span>
+<span>  session <span class="op">=</span> <span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/domains.html" class="external-link">getDefaultReactiveDomain</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="va">inputId</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>defaultSelectedKeys</dt>
-<dd><p><code>string[] | number[]</code> <br> Keys that will be initially used to set selected items. This prop is only used when <code>multiSelect</code> is true (use <code>defaultSelectedKey</code> for single select). Mutually exclusive with <code>selectedKeys</code>.</p></dd>
-<dt>dropdownWidth</dt>
-<dd><p><code>number</code> <br> Custom width for dropdown. If value is 0, width of the input field is used.</p></dd>
-<dt>isDisabled</dt>
-<dd><p><code>boolean</code> <br> Deprecated at v0.52.0, use <code>disabled</code> instead.</p></dd>
-<dt>keytipProps</dt>
-<dd><p><code>IKeytipProps</code> <br> Optional keytip for this dropdown</p></dd>
-<dt>multiSelectDelimiter</dt>
-<dd><p><code>string</code> <br> When multiple items are selected, this will be used to separate values in the dropdown input.</p></dd>
-<dt>notifyOnReselect</dt>
-<dd><p><code>boolean</code> <br> If true, <code>onChange</code> will still be called when an already-selected item is clicked again in single select mode. (Normally it would not be called in this case.)</p></dd>
-<dt>onChange</dt>
-<dd><p><code>(event: React.FormEvent&lt;HTMLDivElement&gt;, option?: IDropdownOption, index?: number) =&gt; void</code> <br> Callback for when the selected option changes.</p></dd>
-<dt>onChanged</dt>
-<dd><p><code>(option: IDropdownOption, index?: number) =&gt; void</code> <br></p></dd>
-<dt>onRenderCaretDown</dt>
-<dd><p><code>IRenderFunction&lt;IDropdownProps&gt;</code> <br> Custom renderer for chevron icon</p></dd>
-<dt>onRenderLabel</dt>
-<dd><p><code>IRenderFunction&lt;IDropdownProps&gt;</code> <br> Custom renderer for the label.</p></dd>
-<dt>onRenderPlaceholder</dt>
-<dd><p><code>IRenderFunction&lt;IDropdownProps&gt;</code> <br> Custom renderer for placeholder text</p></dd>
-<dt>onRenderPlaceHolder</dt>
-<dd><p><code>IRenderFunction&lt;IDropdownProps&gt;</code> <br> Custom renderer for placeholder text</p></dd>
-<dt>onRenderTitle</dt>
-<dd><p><code>IRenderFunction&lt;IDropdownOption[]&gt;</code> <br> Custom renderer for selected option displayed in input</p></dd>
-<dt>options</dt>
-<dd><p><code>IDropdownOption[]</code> <br> Options for the dropdown. If using <code>defaultSelectedKey</code> or <code>defaultSelectedKeys</code>, options must be pure for correct behavior.</p></dd>
-<dt>placeHolder</dt>
-<dd><p><code>string</code> <br> Input placeholder text. Displayed until an option is selected.</p></dd>
-<dt>responsiveMode</dt>
-<dd><p><code>ResponsiveMode</code> <br> By default, the dropdown will render the standard way for screen sizes <code>large</code> and above, or in a panel on <code>small</code> and <code>medium</code> screens. Manually set this prop to override this behavior.</p></dd>
-<dt>selectedKeys</dt>
-<dd><p><code>string[] | number[] | null</code> <br> Keys of the selected items, only used when <code>multiSelect</code> is true (use <code>selectedKey</code> for single select). If you provide this, you must maintain selection state by observing onChange events and passing a new prop value in when changed. Passing null will clear the selection. Mutually exclusive with <code>defaultSelectedKeys</code>.</p></dd>
-<dt>styles</dt>
-<dd><p><code>IStyleFunctionOrObject&lt;IDropdownStyleProps, IDropdownStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></dd>
-<dt>theme</dt>
-<dd><p><code>ITheme</code> <br> Theme provided by higher order component.</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
+
+<dt>inputId</dt>
+<dd><p>Id of the component</p></dd>
+
+
+<dt>value</dt>
+<dd><p>Value</p></dd>
+
+
+<dt>session</dt>
+<dd><p>Session</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> defaultSelectedKeys </b> <code>string[] | number[]</code> <br> Keys that will be initially used to set selected items. This prop is only used when <code>multiSelect</code> is true (use <code>defaultSelectedKey</code> for single select). Mutually exclusive with <code>selectedKeys</code>.</p></li>
+<li><p><b> dropdownWidth </b> <code>number</code> <br> Custom width for dropdown. If value is 0, width of the input field is used.</p></li>
+<li><p><b> isDisabled </b> <code>boolean</code> <br> Deprecated at v0.52.0, use <code>disabled</code> instead.</p></li>
+<li><p><b> keytipProps </b> <code>IKeytipProps</code> <br> Optional keytip for this dropdown</p></li>
+<li><p><b> multiSelectDelimiter </b> <code>string</code> <br> When multiple items are selected, this will be used to separate values in the dropdown input.</p></li>
+<li><p><b> notifyOnReselect </b> <code>boolean</code> <br> If true, <code>onChange</code> will still be called when an already-selected item is clicked again in single select mode. (Normally it would not be called in this case.)</p></li>
+<li><p><b> onChange </b> <code>(event: React.FormEvent&lt;HTMLDivElement&gt;, option?: IDropdownOption, index?: number) =&gt; void</code> <br> Callback for when the selected option changes.</p></li>
+<li><p><b> onChanged </b> <code>(option: IDropdownOption, index?: number) =&gt; void</code> <br></p></li>
+<li><p><b> onRenderCaretDown </b> <code>IRenderFunction&lt;IDropdownProps&gt;</code> <br> Custom renderer for chevron icon</p></li>
+<li><p><b> onRenderLabel </b> <code>IRenderFunction&lt;IDropdownProps&gt;</code> <br> Custom renderer for the label.</p></li>
+<li><p><b> onRenderPlaceholder </b> <code>IRenderFunction&lt;IDropdownProps&gt;</code> <br> Custom renderer for placeholder text</p></li>
+<li><p><b> onRenderPlaceHolder </b> <code>IRenderFunction&lt;IDropdownProps&gt;</code> <br> Custom renderer for placeholder text</p></li>
+<li><p><b> onRenderTitle </b> <code>IRenderFunction&lt;IDropdownOption[]&gt;</code> <br> Custom renderer for selected option displayed in input</p></li>
+<li><p><b> options </b> <code>IDropdownOption[]</code> <br> Options for the dropdown. If using <code>defaultSelectedKey</code> or <code>defaultSelectedKeys</code>, options must be pure for correct behavior.</p></li>
+<li><p><b> placeHolder </b> <code>string</code> <br> Input placeholder text. Displayed until an option is selected.</p></li>
+<li><p><b> responsiveMode </b> <code>ResponsiveMode</code> <br> By default, the dropdown will render the standard way for screen sizes <code>large</code> and above, or in a panel on <code>small</code> and <code>medium</code> screens. Manually set this prop to override this behavior.</p></li>
+<li><p><b> selectedKeys </b> <code>string[] | number[] | null</code> <br> Keys of the selected items, only used when <code>multiSelect</code> is true (use <code>selectedKey</code> for single select). If you provide this, you must maintain selection state by observing onChange events and passing a new prop value in when changed. Passing null will clear the selection. Mutually exclusive with <code>defaultSelectedKeys</code>.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IDropdownStyleProps, IDropdownStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by higher order component.</p></li>
+</ul></div>
     <div id="best-practices">
     <h2>Best practices</h2>
     
@@ -167,27 +167,27 @@ you need to work using the original docs to achieve the desired result.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="va">options</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"A"</span>, text <span class="op">=</span> <span class="st">"Option A"</span><span class="op">)</span>,</span>
-<span class="r-in">    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"B"</span>, text <span class="op">=</span> <span class="st">"Option B"</span><span class="op">)</span>,</span>
-<span class="r-in">    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"C"</span>, text <span class="op">=</span> <span class="st">"Option C"</span><span class="op">)</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in">  <span class="fu">shinyApp</span><span class="op">(</span></span>
-<span class="r-in">    ui <span class="op">=</span> <span class="fu">div</span><span class="op">(</span></span>
-<span class="r-in">      <span class="fu">Dropdown.shinyInput</span><span class="op">(</span><span class="st">"dropdown"</span>, value <span class="op">=</span> <span class="st">"A"</span>, options <span class="op">=</span> <span class="va">options</span><span class="op">)</span>,</span>
-<span class="r-in">      <span class="fu">textOutput</span><span class="op">(</span><span class="st">"dropdownValue"</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span>,</span>
-<span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">      <span class="va">output</span><span class="op">$</span><span class="va">dropdownValue</span> <span class="op">&lt;-</span> <span class="fu">renderText</span><span class="op">(</span><span class="op">{</span></span>
-<span class="r-in">        <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Value: %s"</span>, <span class="va">input</span><span class="op">$</span><span class="va">dropdown</span><span class="op">)</span></span>
-<span class="r-in">      <span class="op">}</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">}</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="va">options</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"A"</span>, text <span class="op">=</span> <span class="st">"Option A"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"B"</span>, text <span class="op">=</span> <span class="st">"Option B"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"C"</span>, text <span class="op">=</span> <span class="st">"Option C"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span>  <span class="fu">shinyApp</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    ui <span class="op">=</span> <span class="fu">div</span><span class="op">(</span></span></span>
+<span class="r-in"><span>      <span class="fu">Dropdown.shinyInput</span><span class="op">(</span><span class="st">"dropdown"</span>, value <span class="op">=</span> <span class="st">"A"</span>, options <span class="op">=</span> <span class="va">options</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      <span class="fu">textOutput</span><span class="op">(</span><span class="st">"dropdownValue"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>      <span class="va">output</span><span class="op">$</span><span class="va">dropdownValue</span> <span class="op">&lt;-</span> <span class="fu">renderText</span><span class="op">(</span><span class="op">{</span></span></span>
+<span class="r-in"><span>        <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Value: %s"</span>, <span class="va">input</span><span class="op">$</span><span class="va">dropdown</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="op">}</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -202,7 +202,7 @@ you need to work using the original docs to achieve the desired result.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

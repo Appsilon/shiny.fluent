@@ -90,78 +90,66 @@ you need to work using the original docs to achieve the desired result.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">Dialog</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">DialogFooter</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">Dialog</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">DialogFooter</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>closeButtonAriaLabel</dt>
-<dd><p><code>string</code> <br> Label to be passed to to aria-label of close button</p></dd>
-<dt>draggableHeaderClassName</dt>
-<dd><p><code>string</code> <br> The classname for when the header is draggable</p></dd>
-<dt>isMultiline</dt>
-<dd><p><code>boolean</code> <br> Is inside a multiline wrapper</p></dd>
-<dt>responsiveMode</dt>
-<dd><p><code>ResponsiveMode</code> <br> Responsive mode passed in from decorator.</p></dd>
-<dt>showCloseButton</dt>
-<dd><p><code>boolean</code> <br> Show an 'x' close button in the upper-right corner</p></dd>
-<dt>subTextId</dt>
-<dd><p><code>string</code> <br> The Id for subText container</p></dd>
-<dt>titleId</dt>
-<dd><p><code>string</code> <br> The Id for title container</p></dd>
-<dt>titleProps</dt>
-<dd><p><code>React.HTMLAttributes&lt;HTMLDivElement&gt;</code> <br> The props for title container.</p></dd>
-<dt>ariaDescribedById</dt>
-<dd><p><code>string</code> <br> Optional id for aria-DescribedBy</p></dd>
-<dt>ariaLabelledById</dt>
-<dd><p><code>string</code> <br> Optional id for aria-LabelledBy</p></dd>
-<dt>className</dt>
-<dd><p><code>string</code> <br> Optional class name to be added to the root class</p></dd>
-<dt>componentRef</dt>
-<dd><p><code>IRefObject&lt;IDialog&gt;</code> <br> Optional callback to access the IDialog interface. Use this instead of ref for accessing the public methods and properties of the component.</p></dd>
-<dt>containerClassName</dt>
-<dd><p><code>string</code> <br> Optional override for container class</p></dd>
-<dt>contentClassName</dt>
-<dd><p><code>string</code> <br> Optional override content class</p></dd>
-<dt>dialogContentProps</dt>
-<dd><p><code>IDialogContentProps</code> <br> Props to be passed through to Dialog Content</p></dd>
-<dt>hidden</dt>
-<dd><p><code>boolean</code> <br> Whether the dialog is hidden.</p></dd>
-<dt>isBlocking</dt>
-<dd><p><code>boolean</code> <br> Whether the dialog can be light dismissed by clicking outside the dialog (on the overlay).</p></dd>
-<dt>isDarkOverlay</dt>
-<dd><p><code>boolean</code> <br> Whether the overlay is dark themed.</p></dd>
-<dt>isOpen</dt>
-<dd><p><code>boolean</code> <br> Whether the dialog is displayed. Deprecated, use <code>hidden</code> instead.</p></dd>
-<dt>maxWidth</dt>
-<dd><p><code>ICSSRule | ICSSPixelUnitRule</code> <br> Sets the maximum width for the dialog. It limits the width property to be larger than the value specified in max-width.</p></dd>
-<dt>minWidth</dt>
-<dd><p><code>ICSSRule | ICSSPixelUnitRule</code> <br> Sets the minimum width of the dialog. It limits the width property to be not smaller than the value specified in min-width.</p></dd>
-<dt>modalProps</dt>
-<dd><p><code>IModalProps</code> <br> Props to be passed through to Modal</p></dd>
-<dt>onDismiss</dt>
-<dd><p><code>(ev?: React.MouseEvent&lt;HTMLButtonElement&gt;) =&gt; any</code> <br> A callback function for when the Dialog is dismissed from the close button or light dismiss. Can also be specified separately in content and modal.</p></dd>
-<dt>onDismissed</dt>
-<dd><p><code>() =&gt; any</code> <br> A callback function which is called after the Dialog is dismissed and the animation is complete.</p></dd>
-<dt>onLayerDidMount</dt>
-<dd><p><code>() =&gt; void</code> <br> A callback function for when the Dialog content is mounted on the overlay layer</p></dd>
-<dt>onLayerMounted</dt>
-<dd><p><code>() =&gt; void</code> <br> Deprecated at 0.81.2, use <code>onLayerDidMount</code> instead.</p></dd>
-<dt>styles</dt>
-<dd><p><code>IStyleFunctionOrObject&lt;IDialogStyleProps, IDialogStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules</p></dd>
-<dt>subText</dt>
-<dd><p><code>string</code> <br> The subtext to display in the dialog.</p></dd>
-<dt>theme</dt>
-<dd><p><code>ITheme</code> <br> Theme provided by HOC.</p></dd>
-<dt>title</dt>
-<dd><p><code>string | JSX.Element</code> <br> The title text to display at the top of the dialog.</p></dd>
-<dt>topButtonsProps</dt>
-<dd><p><code>IButtonProps[]</code> <br> Other top buttons that will show up next to the close button</p></dd>
-<dt>type</dt>
-<dd><p><code>DialogType</code> <br> The type of Dialog to display.</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> className </b> <code>string</code> <br> Optional override class name</p></li>
+<li><p><b> closeButtonAriaLabel </b> <code>string</code> <br> Label to be passed to to aria-label of close button</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IDialogContent&gt;</code> <br> Optional callback to access the IDialogContent interface. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> draggableHeaderClassName </b> <code>string</code> <br> The classname for when the header is draggable</p></li>
+<li><p><b> isMultiline </b> <code>boolean</code> <br> Is inside a multiline wrapper</p></li>
+<li><p><b> onDismiss </b> <code>(ev?: React.MouseEvent&lt;HTMLButtonElement&gt;) =&gt; any</code> <br> Callback for when the Dialog is dismissed from the close button or light dismiss, before the animation completes.</p></li>
+<li><p><b> responsiveMode </b> <code>ResponsiveMode</code> <br> Responsive mode passed in from decorator.</p></li>
+<li><p><b> showCloseButton </b> <code>boolean</code> <br> Show an 'x' close button in the upper-right corner</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IDialogContentStyleProps, IDialogContentStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules</p></li>
+<li><p><b> subText </b> <code>string</code> <br> The subtext to display in the dialog</p></li>
+<li><p><b> subTextId </b> <code>string</code> <br> The Id for subText container</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by HOC.</p></li>
+<li><p><b> title </b> <code>string | JSX.Element</code> <br> The title text to display at the top of the dialog.</p></li>
+<li><p><b> titleId </b> <code>string</code> <br> The Id for title container</p></li>
+<li><p><b> titleProps </b> <code>React.HTMLAttributes&lt;HTMLDivElement&gt;</code> <br> The props for title container.</p></li>
+<li><p><b> topButtonsProps </b> <code>IButtonProps[]</code> <br> Other top buttons that will show up next to the close button</p></li>
+<li><p><b> type </b> <code>DialogType</code> <br> The type of Dialog to display.</p></li>
+<li><p><b> className </b> <code>string</code> <br> Optional override class name</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IDialogFooter&gt;</code> <br> Gets the component ref.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IDialogFooterStyleProps, IDialogFooterStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by HOC.</p></li>
+<li><p><b> ariaDescribedById </b> <code>string</code> <br> Optional id for aria-DescribedBy</p></li>
+<li><p><b> ariaLabelledById </b> <code>string</code> <br> Optional id for aria-LabelledBy</p></li>
+<li><p><b> className </b> <code>string</code> <br> Optional class name to be added to the root class</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IDialog&gt;</code> <br> Optional callback to access the IDialog interface. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> containerClassName </b> <code>string</code> <br> Optional override for container class</p></li>
+<li><p><b> contentClassName </b> <code>string</code> <br> Optional override content class</p></li>
+<li><p><b> dialogContentProps </b> <code>IDialogContentProps</code> <br> Props to be passed through to Dialog Content</p></li>
+<li><p><b> hidden </b> <code>boolean</code> <br> Whether the dialog is hidden.</p></li>
+<li><p><b> isBlocking </b> <code>boolean</code> <br> Whether the dialog can be light dismissed by clicking outside the dialog (on the overlay).</p></li>
+<li><p><b> isDarkOverlay </b> <code>boolean</code> <br> Whether the overlay is dark themed.</p></li>
+<li><p><b> isOpen </b> <code>boolean</code> <br> Whether the dialog is displayed. Deprecated, use <code>hidden</code> instead.</p></li>
+<li><p><b> maxWidth </b> <code>ICSSRule | ICSSPixelUnitRule</code> <br> Sets the maximum width for the dialog. It limits the width property to be larger than the value specified in max-width.</p></li>
+<li><p><b> minWidth </b> <code>ICSSRule | ICSSPixelUnitRule</code> <br> Sets the minimum width of the dialog. It limits the width property to be not smaller than the value specified in min-width.</p></li>
+<li><p><b> modalProps </b> <code>IModalProps</code> <br> Props to be passed through to Modal</p></li>
+<li><p><b> onDismiss </b> <code>(ev?: React.MouseEvent&lt;HTMLButtonElement&gt;) =&gt; any</code> <br> A callback function for when the Dialog is dismissed from the close button or light dismiss. Can also be specified separately in content and modal.</p></li>
+<li><p><b> onDismissed </b> <code>() =&gt; any</code> <br> A callback function which is called after the Dialog is dismissed and the animation is complete.</p></li>
+<li><p><b> onLayerDidMount </b> <code>() =&gt; void</code> <br> A callback function for when the Dialog content is mounted on the overlay layer</p></li>
+<li><p><b> onLayerMounted </b> <code>() =&gt; void</code> <br> Deprecated at 0.81.2, use <code>onLayerDidMount</code> instead.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IDialogStyleProps, IDialogStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules</p></li>
+<li><p><b> subText </b> <code>string</code> <br> The subtext to display in the dialog.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by HOC.</p></li>
+<li><p><b> title </b> <code>string | JSX.Element</code> <br> The title text to display at the top of the dialog.</p></li>
+<li><p><b> topButtonsProps </b> <code>IButtonProps[]</code> <br> Other top buttons that will show up next to the close button</p></li>
+<li><p><b> type </b> <code>DialogType</code> <br> The type of Dialog to display.</p></li>
+</ul></div>
     <div id="best-practices">
     <h2>Best practices</h2>
     
@@ -240,42 +228,42 @@ you need to work using the original docs to achieve the desired result.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="fu">shinyApp</span><span class="op">(</span></span>
-<span class="r-in">    ui <span class="op">=</span> <span class="fu">div</span><span class="op">(</span></span>
-<span class="r-in">      <span class="fu"><a href="Button.html">DefaultButton.shinyInput</a></span><span class="op">(</span><span class="st">"showDialog"</span>, text <span class="op">=</span> <span class="st">"Open dialog"</span><span class="op">)</span>,</span>
-<span class="r-in">      <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/reactOutput.html" class="external-link">reactOutput</a></span><span class="op">(</span><span class="st">"reactDialog"</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span>,</span>
-<span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">      <span class="va">isDialogOpen</span> <span class="op">&lt;-</span> <span class="fu">reactiveVal</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span>
-<span class="r-in">      <span class="va">output</span><span class="op">$</span><span class="va">reactDialog</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/renderReact.html" class="external-link">renderReact</a></span><span class="op">(</span><span class="op">{</span></span>
-<span class="r-in">        <span class="va">dialogContentProps</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">          type<span class="op">=</span><span class="fl">0</span>,</span>
-<span class="r-in">          title<span class="op">=</span><span class="st">'Missing Subject'</span>,</span>
-<span class="r-in">          closeButtonAriaLabel<span class="op">=</span><span class="st">'Close'</span>,</span>
-<span class="r-in">          subText<span class="op">=</span><span class="st">'Do you want to send this message without a subject?'</span></span>
-<span class="r-in">        <span class="op">)</span></span>
-<span class="r-in">        <span class="fu">Dialog</span><span class="op">(</span></span>
-<span class="r-in">          hidden <span class="op">=</span> <span class="op">!</span><span class="fu">isDialogOpen</span><span class="op">(</span><span class="op">)</span>,</span>
-<span class="r-in">          onDismiss <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"function() { Shiny.setInputValue('hideDialog', Math.random()); }"</span><span class="op">)</span>,</span>
-<span class="r-in">          dialogContentProps <span class="op">=</span> <span class="va">dialogContentProps</span>,</span>
-<span class="r-in">          modalProps <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span>,</span>
-<span class="r-in">          <span class="fu">DialogFooter</span><span class="op">(</span></span>
-<span class="r-in">            <span class="fu"><a href="Button.html">PrimaryButton.shinyInput</a></span><span class="op">(</span><span class="st">"dialogSend"</span>, text <span class="op">=</span> <span class="st">"Send"</span><span class="op">)</span>,</span>
-<span class="r-in">            <span class="fu"><a href="Button.html">DefaultButton.shinyInput</a></span><span class="op">(</span><span class="st">"dialogDontSend"</span>, text <span class="op">=</span> <span class="st">"Don't send"</span><span class="op">)</span></span>
-<span class="r-in">          <span class="op">)</span></span>
-<span class="r-in">        <span class="op">)</span></span>
-<span class="r-in">      <span class="op">}</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in">      <span class="fu">observeEvent</span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">showDialog</span>, <span class="fu">isDialogOpen</span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">      <span class="fu">observeEvent</span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">hideDialog</span>, <span class="fu">isDialogOpen</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">      <span class="fu">observeEvent</span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">dialogSend</span>, <span class="fu">isDialogOpen</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">      <span class="fu">observeEvent</span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">dialogDontSend</span>, <span class="fu">isDialogOpen</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">}</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="fu">shinyApp</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    ui <span class="op">=</span> <span class="fu">div</span><span class="op">(</span></span></span>
+<span class="r-in"><span>      <span class="fu"><a href="Button.html">DefaultButton.shinyInput</a></span><span class="op">(</span><span class="st">"showDialog"</span>, text <span class="op">=</span> <span class="st">"Open dialog"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/reactOutput.html" class="external-link">reactOutput</a></span><span class="op">(</span><span class="st">"reactDialog"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>      <span class="va">isDialogOpen</span> <span class="op">&lt;-</span> <span class="fu">reactiveVal</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="va">output</span><span class="op">$</span><span class="va">reactDialog</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/renderReact.html" class="external-link">renderReact</a></span><span class="op">(</span><span class="op">{</span></span></span>
+<span class="r-in"><span>        <span class="va">dialogContentProps</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>          type<span class="op">=</span><span class="fl">0</span>,</span></span>
+<span class="r-in"><span>          title<span class="op">=</span><span class="st">'Missing Subject'</span>,</span></span>
+<span class="r-in"><span>          closeButtonAriaLabel<span class="op">=</span><span class="st">'Close'</span>,</span></span>
+<span class="r-in"><span>          subText<span class="op">=</span><span class="st">'Do you want to send this message without a subject?'</span></span></span>
+<span class="r-in"><span>        <span class="op">)</span></span></span>
+<span class="r-in"><span>        <span class="fu">Dialog</span><span class="op">(</span></span></span>
+<span class="r-in"><span>          hidden <span class="op">=</span> <span class="op">!</span><span class="fu">isDialogOpen</span><span class="op">(</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>          onDismiss <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"function() { Shiny.setInputValue('hideDialog', Math.random()); }"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>          dialogContentProps <span class="op">=</span> <span class="va">dialogContentProps</span>,</span></span>
+<span class="r-in"><span>          modalProps <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>          <span class="fu">DialogFooter</span><span class="op">(</span></span></span>
+<span class="r-in"><span>            <span class="fu"><a href="Button.html">PrimaryButton.shinyInput</a></span><span class="op">(</span><span class="st">"dialogSend"</span>, text <span class="op">=</span> <span class="st">"Send"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>            <span class="fu"><a href="Button.html">DefaultButton.shinyInput</a></span><span class="op">(</span><span class="st">"dialogDontSend"</span>, text <span class="op">=</span> <span class="st">"Don't send"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>          <span class="op">)</span></span></span>
+<span class="r-in"><span>        <span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="op">}</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span>      <span class="fu">observeEvent</span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">showDialog</span>, <span class="fu">isDialogOpen</span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="fu">observeEvent</span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">hideDialog</span>, <span class="fu">isDialogOpen</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="fu">observeEvent</span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">dialogSend</span>, <span class="fu">isDialogOpen</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="fu">observeEvent</span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">dialogDontSend</span>, <span class="fu">isDialogOpen</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -290,7 +278,7 @@ you need to work using the original docs to achieve the desired result.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

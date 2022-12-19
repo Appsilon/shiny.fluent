@@ -90,241 +90,196 @@ you need to work using the original docs to achieve the desired result.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">DetailsList</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">DetailsList</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>onColumnDragEnd</dt>
-<dd><p><code>(props: { dropLocation?: ColumnDragEndLocation; }, event: MouseEvent) =&gt; void</code> <br> Callback to notify the column dragEnd event to List Need this to check whether the dragEnd has happened on corresponding list or outside of the list</p></dd>
-<dt>column</dt>
-<dd><p><code>IColumn</code> <br> The column definition for the component instance.</p></dd>
-<dt>columnIndex</dt>
-<dd><p><code>number</code> <br> The column index for the component instance.</p></dd>
-<dt>isDraggable</dt>
-<dd><p><code>boolean</code> <br> Whether or not the column can be re-ordered via drag and drop.</p></dd>
-<dt>isDropped</dt>
-<dd><p><code>boolean</code> <br> Whether or not the column has been dropped via drag and drop.</p></dd>
-<dt>parentId</dt>
-<dd><p><code>string</code> <br> Parent ID used for accessibility label(s).</p></dd>
-<dt>setDraggedItemIndex</dt>
-<dd><p><code>(itemIndex: number) =&gt; void</code> <br></p></dd>
-<dt>updateDragInfo</dt>
-<dd><p><code>(props: { itemIndex: number; }, event?: MouseEvent) =&gt; void</code> <br> Callback on drag and drop event.</p></dd>
-<dt>onRenderFooter</dt>
-<dd><p><code>IRenderFunction&lt;IDetailsGroupDividerProps&gt;</code> <br></p></dd>
-<dt>onRenderHeader</dt>
-<dd><p><code>IRenderFunction&lt;IDetailsGroupDividerProps&gt;</code> <br></p></dd>
-<dt>ariaLabelForToggleAllGroupsButton</dt>
-<dd><p><code>string</code> <br> ariaLabel for expand/collapse group button</p></dd>
-<dt>columnReorderProps</dt>
-<dd><p><code>IColumnReorderHeaderProps</code> <br> Column reordering options</p></dd>
-<dt>isAllCollapsed</dt>
-<dd><p><code>boolean</code> <br> Whether or not all is collapsed</p></dd>
-<dt>onColumnAutoResized</dt>
-<dd><p><code>(column: IColumn, columnIndex: number) =&gt; void</code> <br> Callback for when column is automatically resized</p></dd>
-<dt>onColumnClick</dt>
-<dd><p><code>(ev: React.MouseEvent&lt;HTMLElement&gt;, column: IColumn) =&gt; void</code> <br> Callback for when the column is clicked</p></dd>
-<dt>onColumnContextMenu</dt>
-<dd><p><code>(column: IColumn, ev: React.MouseEvent&lt;HTMLElement&gt;) =&gt; void</code> <br> Callback for when the column needs to show a context menu</p></dd>
-<dt>onColumnIsSizingChanged</dt>
-<dd><p><code>(column: IColumn, isSizing: boolean) =&gt; void</code> <br> Callback for when column sizing has changed</p></dd>
-<dt>onColumnResized</dt>
-<dd><p><code>(column: IColumn, newWidth: number, columnIndex: number) =&gt; void</code> <br> Callback for when column is resized</p></dd>
-<dt>onRenderColumnHeaderTooltip</dt>
-<dd><p><code>IRenderFunction&lt;IDetailsColumnRenderTooltipProps&gt;</code> <br> Callback to render a tooltip for the column header</p></dd>
-<dt>onToggleCollapseAll</dt>
-<dd><p><code>(isAllCollapsed: boolean) =&gt; void</code> <br> Callback for when collapse all is toggled</p></dd>
-<dt>selectAllVisibility</dt>
-<dd><p><code>SelectAllVisibility</code> <br> Select all button visibility</p></dd>
-<dt>groupNestingDepth</dt>
-<dd><p><code>number</code> <br> Nesting depth of a grouping</p></dd>
-<dt>rowWidth</dt>
-<dd><p><code>number</code> <br> Minimum width of the row.</p></dd>
-<dt>ariaLabel</dt>
-<dd><p><code>string</code> <br> Accessible label describing or summarizing the list.</p></dd>
-<dt>ariaLabelForGrid</dt>
-<dd><p><code>string</code> <br> Accessible label for the grid within the list.</p></dd>
-<dt>ariaLabelForListHeader</dt>
-<dd><p><code>string</code> <br> Accessible label for the list header.</p></dd>
-<dt>ariaLabelForSelectAllCheckbox</dt>
-<dd><p><code>string</code> <br> Accessible label for the select all checkbox.</p></dd>
-<dt>ariaLabelForSelectionColumn</dt>
-<dd><p><code>string</code> <br> Accessible label for the name of the selection column.</p></dd>
-<dt>checkboxVisibility</dt>
-<dd><p><code>CheckboxVisibility</code> <br> Controls the visibility of selection check box.</p></dd>
-<dt>columnReorderOptions</dt>
-<dd><p><code>IColumnReorderOptions</code> <br> Options for column reordering using drag and drop.</p></dd>
-<dt>constrainMode</dt>
-<dd><p><code>ConstrainMode</code> <br> Controls how the list contrains overflow.</p></dd>
-<dt>disableSelectionZone</dt>
-<dd><p><code>boolean</code> <br> Whether to disable the built-in SelectionZone, so the host component can provide its own.</p></dd>
-<dt>enterModalSelectionOnTouch</dt>
-<dd><p><code>boolean</code> <br> Whether the selection zone should enter modal state on touch.</p></dd>
-<dt>getCellValueKey</dt>
-<dd><p><code>(item?: any, index?: number, column?: IColumn) =&gt; string</code> <br> If provided, will be the "default" item column cell value return. A column's <code>getValueKey</code> can override <code>getCellValueKey</code>.</p></dd>
-<dt>getGroupHeight</dt>
-<dd><p><code>IGroupedListProps['getGroupHeight']</code> <br> Callback to override default group height calculation used by list virtualization.</p></dd>
-<dt>getKey</dt>
-<dd><p><code>(item: any, index?: number) =&gt; string</code> <br> Callback to get the item key, to be used in the selection and on render. Must be provided if sorting or filtering is enabled.</p></dd>
-<dt>groupProps</dt>
-<dd><p><code>IDetailsGroupRenderProps</code> <br> Override properties to render groups.</p></dd>
-<dt>groups</dt>
-<dd><p><code>IGroup[]</code> <br> Grouping instructions.</p></dd>
-<dt>indentWidth</dt>
-<dd><p><code>number</code> <br> Override for the indent width used for group nesting.</p></dd>
-<dt>initialFocusedIndex</dt>
-<dd><p><code>number</code> <br> Default index to set focus to once the items have rendered and the index exists.</p></dd>
-<dt>isHeaderVisible</dt>
-<dd><p><code>boolean</code> <br> Controls the visibility of the header.</p></dd>
-<dt>isPlaceholderData</dt>
-<dd><p><code>boolean</code> <br> Set this to true to indicate that the items being displayed are placeholder data.</p></dd>
-<dt>items</dt>
-<dd><p><code>any[]</code> <br> The items to render.</p></dd>
-<dt>layoutMode</dt>
-<dd><p><code>DetailsListLayoutMode</code> <br> Controls how the columns are adjusted.</p></dd>
-<dt>listProps</dt>
-<dd><p><code>IListProps</code> <br> Properties to pass through to the List components being rendered.</p></dd>
-<dt>minimumPixelsForDrag</dt>
-<dd><p><code>number</code> <br> The minimum mouse move distance to interpret the action as drag event.</p></dd>
-<dt>onActiveItemChanged</dt>
-<dd><p><code>(item?: any, index?: number, ev?: React.FocusEvent&lt;HTMLElement&gt;) =&gt; void</code> <br> Callback for when an item in the list becomes active by clicking anywhere inside the row or navigating to it with the keyboard.</p></dd>
-<dt>onColumnHeaderClick</dt>
-<dd><p><code>(ev?: React.MouseEvent&lt;HTMLElement&gt;, column?: IColumn) =&gt; void</code> <br> Callback for when the user clicks on the column header.</p></dd>
-<dt>onColumnHeaderContextMenu</dt>
-<dd><p><code>(column?: IColumn, ev?: React.MouseEvent&lt;HTMLElement&gt;) =&gt; void</code> <br> Callback for when the user asks for a contextual menu (usually via right click) from a column header.</p></dd>
-<dt>onColumnResize</dt>
-<dd><p><code>(column?: IColumn, newWidth?: number, columnIndex?: number) =&gt; void</code> <br> Callback fired on column resize</p></dd>
-<dt>onDidUpdate</dt>
-<dd><p><code>(detailsList?: DetailsListBase) =&gt; void</code> <br> Callback for when the list has been updated. Useful for telemetry tracking externally.</p></dd>
-<dt>onItemContextMenu</dt>
-<dd><p><code>(item?: any, index?: number, ev?: Event) =&gt; void | boolean</code> <br> Callback for when the context menu of an item has been accessed. If undefined or false is returned, <code>ev.preventDefault()</code> will be called.</p></dd>
-<dt>onItemInvoked</dt>
-<dd><p><code>(item?: any, index?: number, ev?: Event) =&gt; void</code> <br> Callback for when a given row has been invoked (by pressing enter while it is selected.)</p></dd>
-<dt>onRenderCheckbox</dt>
-<dd><p><code>IRenderFunction&lt;IDetailsListCheckboxProps&gt;</code> <br> If provided, can be used to render a custom checkbox.</p></dd>
-<dt>onRenderDetailsFooter</dt>
-<dd><p><code>IRenderFunction&lt;IDetailsFooterProps&gt;</code> <br> An override to render the details footer.</p></dd>
-<dt>onRenderDetailsHeader</dt>
-<dd><p><code>IRenderFunction&lt;IDetailsHeaderProps&gt;</code> <br> An override to render the details header.</p></dd>
-<dt>onRenderItemColumn</dt>
-<dd><p><code>(item?: any, index?: number, column?: IColumn) =&gt; React.ReactNode</code> <br> If provided, will be the "default" item column renderer method. This affects cells within the rows, not the rows themselves. If a column definition provides its own <code>onRender</code> method, that will be used instead of this.</p></dd>
-<dt>onRenderMissingItem</dt>
-<dd><p><code>(index?: number, rowProps?: IDetailsRowProps) =&gt; React.ReactNode</code> <br> Callback for what to render when the item is missing.</p></dd>
-<dt>onRenderRow</dt>
-<dd><p><code>IRenderFunction&lt;IDetailsRowProps&gt;</code> <br> Callback to override the default row rendering.</p></dd>
-<dt>onRowDidMount</dt>
-<dd><p><code>(item?: any, index?: number) =&gt; void</code> <br> Callback for when a given row has been mounted. Useful for identifying when a row has been rendered on the page.</p></dd>
-<dt>onRowWillUnmount</dt>
-<dd><p><code>(item?: any, index?: number) =&gt; void</code> <br> Callback for when a given row has been unmounted. Useful for identifying when a row has been removed from the page.</p></dd>
-<dt>onShouldVirtualize</dt>
-<dd><p><code>(props: IListProps) =&gt; boolean</code> <br> Callback to determine whether the list should be rendered in full, or virtualized.</p>
-<p>Virtualization will add and remove pages of items as the user scrolls them into the visible range. This benefits larger list scenarios by reducing the DOM on the screen, but can negatively affect performance for smaller lists.</p>
-<p>The default implementation will virtualize when this callback is not provided.</p></dd>
-<dt>rowElementEventMap</dt>
-<dd><p><code>{ eventName: string; callback: (context: IDragDropContext, event?: any) =&gt; void; }[]</code> <br> Event names and corresponding callbacks that will be registered to rendered row elements.</p></dd>
-<dt>selectionPreservedOnEmptyClick</dt>
-<dd><p><code>boolean</code> <br> By default, selection is cleared when clicking on an empty (non-focusable) section of the screen. Setting this value to true overrides that behavior and maintains selection.</p></dd>
-<dt>selectionZoneProps</dt>
-<dd><p><code>ISelectionZoneProps</code> <br> Additional props to pass through to the SelectionZone created by default.</p></dd>
-<dt>setKey</dt>
-<dd><p><code>string</code> <br> A key that uniquely identifies the given items. If provided, the selection will be reset when the key changes.</p></dd>
-<dt>shouldApplyApplicationRole</dt>
-<dd><p><code>boolean</code> <br> Whether the role <code>application</code> should be applied to the list.</p></dd>
-<dt>usePageCache</dt>
-<dd><p><code>boolean</code> <br> Whether to enable render page caching. This is an experimental performance optimization that is off by default.</p></dd>
-<dt>viewport</dt>
-<dd><p><code>IViewport</code> <br> Viewport info, provided by the <code>withViewport</code> decorator.</p></dd>
-<dt>cellsByColumn</dt>
-<dd><p><code>{ [columnKey: string]: React.ReactNode; }</code> <br> Optional pre-rendered content per column. Preferred over onRender or onRenderItemColumn if provided.</p></dd>
-<dt>checkboxCellClassName</dt>
-<dd><p><code>string</code> <br> Class name for the checkbox cell</p></dd>
-<dt>checkButtonAriaLabel</dt>
-<dd><p><code>string</code> <br> Check button's aria label</p></dd>
-<dt>collapseAllVisibility</dt>
-<dd><p><code>CollapseAllVisibility</code> <br> Collapse all visibility</p></dd>
-<dt>componentRef</dt>
-<dd><p><code>IRefObject&lt;IDetailsRow&gt;</code> <br> Ref of the component</p></dd>
-<dt>dragDropEvents</dt>
-<dd><p><code>IDragDropEvents</code> <br> Handling drag and drop events</p></dd>
-<dt>dragDropHelper</dt>
-<dd><p><code>IDragDropHelper</code> <br> Helper for the drag and drop</p></dd>
-<dt>eventsToRegister</dt>
-<dd><p><code>{ eventName: string; callback: (item?: any, index?: number, event?: any) =&gt; void; }[]</code> <br> A list of events to register</p></dd>
-<dt>getRowAriaDescribedBy</dt>
-<dd><p><code>(item: any) =&gt; string</code> <br> Callback for getting the row aria-describedby</p></dd>
-<dt>getRowAriaLabel</dt>
-<dd><p><code>(item: any) =&gt; string</code> <br> Callback for getting the row aria label</p></dd>
-<dt>onDidMount</dt>
-<dd><p><code>(row?: DetailsRowBase) =&gt; void</code> <br> Callback for did mount for parent</p></dd>
-<dt>onRenderCheck</dt>
-<dd><p><code>(props: IDetailsRowCheckProps) =&gt; JSX.Element</code> <br> Callback for rendering a checkbox</p></dd>
-<dt>onWillUnmount</dt>
-<dd><p><code>(row?: DetailsRowBase) =&gt; void</code> <br> Callback for will mount for parent</p></dd>
-<dt>rowFieldsAs</dt>
-<dd><p><code>React.ComponentType&lt;IDetailsRowFieldsProps&gt;</code> <br> DOM element into which to render row field</p></dd>
-<dt>useReducedRowRenderer</dt>
-<dd><p><code>boolean</code> <br> Rerender DetailsRow only when props changed. Might cause regression when depending on external updates.</p></dd>
-<dt>anySelected</dt>
-<dd><p><code>boolean</code> <br> Is any selected - also true for isSelectionModal</p></dd>
-<dt>canSelect</dt>
-<dd><p><code>boolean</code> <br> Can this checkbox be selectable</p></dd>
-<dt>checkClassName</dt>
-<dd><p><code>string</code> <br> The classname to be passed down to Check component</p></dd>
-<dt>className</dt>
-<dd><p><code>string</code> <br> Optional className to attach to the slider root element.</p></dd>
-<dt>isHeader</dt>
-<dd><p><code>boolean</code> <br> Is the check part of the header in a DetailsList</p></dd>
-<dt>isVisible</dt>
-<dd><p><code>boolean</code> <br> Whether or not this checkbox is visible</p></dd>
-<dt>onRenderDetailsCheckbox</dt>
-<dd><p><code>IRenderFunction&lt;IDetailsCheckboxProps&gt;</code> <br> If provided, can be used to render a custom checkbox</p></dd>
-<dt>selected</dt>
-<dd><p><code>boolean</code> <br> Whether or not this check is selected</p></dd>
-<dt>theme</dt>
-<dd><p><code>ITheme</code> <br> Theme provided by High-Order Component.</p></dd>
-<dt>useFastIcons</dt>
-<dd><p><code>boolean</code> <br> Whether to use fast icon and check components. The icons can't be targeted by customization but are still customizable via class names.</p></dd>
-<dt>cellStyleProps</dt>
-<dd><p><code>ICellStyleProps</code> <br> Style properties to customize cell render output.</p></dd>
-<dt>columnStartIndex</dt>
-<dd><p><code>number</code> <br> Index to start for the column</p></dd>
-<dt>compact</dt>
-<dd><p><code>boolean</code> <br> whether to render as a compact field</p></dd>
-<dt>enableUpdateAnimations</dt>
-<dd><p><code>boolean</code> <br></p></dd>
-<dt>item</dt>
-<dd><p><code>any</code> <br> Data source for this component</p></dd>
-<dt>itemIndex</dt>
-<dd><p><code>number</code> <br> The item index of the collection for the DetailsList</p></dd>
-<dt>rowClassNames</dt>
-<dd><p><code>{ [k in keyof Pick&lt;IDetailsRowStyles, 'isMultiline' | 'isRowHeader' | 'cell' | 'cellAnimation' | 'cellPadded' | 'cellUnpadded' | 'fields'&gt;]: string; }</code> <br> Subset of classnames currently generated in DetailsRow that are used within DetailsRowFields.</p></dd>
-<dt>columns</dt>
-<dd><p><code>IColumn[]</code> <br> Column metadata</p></dd>
-<dt>selection</dt>
-<dd><p><code>ISelection</code> <br> Selection from utilities</p></dd>
-<dt>selectionMode</dt>
-<dd><p><code>SelectionMode</code> <br> Selection mode</p></dd>
-<dt>ariaLabelForShimmer</dt>
-<dd><p><code>string</code> <br> Aria label for shimmer. Set on grid while shimmer is enabled.</p></dd>
-<dt>detailsListStyles</dt>
-<dd><p><code>IDetailsListProps['styles']</code> <br> DetailsList styles to pass through.</p></dd>
-<dt>enableShimmer</dt>
-<dd><p><code>boolean</code> <br> Boolean flag to control when to render placeholders vs real items. It's up to the consumer app to know when fetching of the data is done to toggle this prop.</p></dd>
-<dt>onRenderCustomPlaceholder</dt>
-<dd><p><code>(rowProps: IDetailsRowProps, index?: number, defaultRender?: (props: IDetailsRowProps) =&gt; React.ReactNode) =&gt; React.ReactNode</code> <br> Custom placeholder renderer to be used when in need to override the default placeholder of a DetailsRow. <code>rowProps</code> argument is passed to leverage the calculated column measurements done by DetailsList or you can use the optional arguments of item <code>index</code> and <code>defaultRender</code> to execute additional logic before rendering the default placeholder.</p></dd>
-<dt>removeFadingOverlay</dt>
-<dd><p><code>boolean</code> <br> Determines whether to remove a fading out to bottom overlay over the shimmering items used to further emphasize the unknown number of items that will be fetched.</p></dd>
-<dt>shimmerLines</dt>
-<dd><p><code>number</code> <br> Number of shimmer placeholder lines to render.</p></dd>
-<dt>shimmerOverlayStyles</dt>
-<dd><p><code>IStyleFunctionOrObject&lt;IShimmeredDetailsListStyleProps, IShimmeredDetailsListStyles&gt;</code> <br> Custom styles to override the styles specific to the ShimmeredDetailsList root area.</p></dd>
-<dt>styles</dt>
-<dd><p><code>IStyleFunctionOrObject&lt;IShimmeredDetailsListStyleProps, IShimmeredDetailsListStyles&gt;</code> <br> Custom styles to override the styles specific to the ShimmeredDetailsList root area.</p></dd>
-<dt>skipViewportMeasures</dt>
-<dd><p><code>boolean</code> <br> Whether or not to use ResizeObserver (if available) to detect and measure viewport on 'resize' events.</p>
-<p>Falls back to window 'resize' event.</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> onColumnDragEnd </b> <code>(props: { dropLocation?: ColumnDragEndLocation; }, event: MouseEvent) =&gt; void</code> <br> Callback to notify the column dragEnd event to List Need this to check whether the dragEnd has happened on corresponding list or outside of the list</p></li>
+<li><p><b> cellStyleProps </b> <code>ICellStyleProps</code> <br> Custom styles for cell rendering.</p></li>
+<li><p><b> column </b> <code>IColumn</code> <br> The column definition for the component instance.</p></li>
+<li><p><b> columnIndex </b> <code>number</code> <br> The column index for the component instance.</p></li>
+<li><p><b> componentRef </b> <code>() =&gt; void</code> <br> A reference to the component instance.</p></li>
+<li><p><b> dragDropHelper </b> <code>IDragDropHelper | null</code> <br> The drag and drop helper for the component instance.</p></li>
+<li><p><b> isDraggable </b> <code>boolean</code> <br> Whether or not the column can be re-ordered via drag and drop.</p></li>
+<li><p><b> isDropped </b> <code>boolean</code> <br> Whether or not the column has been dropped via drag and drop.</p></li>
+<li><p><b> onColumnClick </b> <code>(ev: React.MouseEvent&lt;HTMLElement&gt;, column: IColumn) =&gt; void</code> <br> Callback fired when click event occurs.</p></li>
+<li><p><b> onColumnContextMenu </b> <code>(column: IColumn, ev: React.MouseEvent&lt;HTMLElement&gt;) =&gt; void</code> <br> Callback fired on contextual menu event to provide contextual menu UI.</p></li>
+<li><p><b> onRenderColumnHeaderTooltip </b> <code>IRenderFunction&lt;IDetailsColumnRenderTooltipProps&gt;</code> <br> Render function for providing a column header tooltip.</p></li>
+<li><p><b> parentId </b> <code>string</code> <br> Parent ID used for accessibility label(s).</p></li>
+<li><p><b> setDraggedItemIndex </b> <code>(itemIndex: number) =&gt; void</code> <br></p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IDetailsColumnStyleProps, IDetailsColumnStyles&gt;</code> <br> The component styles to respect during render.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> The theme object to respect during render.</p></li>
+<li><p><b> updateDragInfo </b> <code>(props: { itemIndex: number; }, event?: MouseEvent) =&gt; void</code> <br> Callback on drag and drop event.</p></li>
+<li><p><b> useFastIcons </b> <code>boolean</code> <br> Whether to use fast icon and check components. The icons can't be targeted by customization but are still customizable via class names.</p></li>
+<li><p><b> columns </b> <code>IColumn[]</code> <br> Column metadata</p></li>
+<li><p><b> selection </b> <code>ISelection</code> <br> Selection from utilities</p></li>
+<li><p><b> selectionMode </b> <code>SelectionMode</code> <br> Selection mode</p></li>
+<li><p><b> onRenderFooter </b> <code>IRenderFunction&lt;IDetailsGroupDividerProps&gt;</code> <br></p></li>
+<li><p><b> onRenderHeader </b> <code>IRenderFunction&lt;IDetailsGroupDividerProps&gt;</code> <br></p></li>
+<li><p><b> ariaLabel </b> <code>string</code> <br> ariaLabel for the entire header</p></li>
+<li><p><b> ariaLabelForSelectAllCheckbox </b> <code>string</code> <br> ariaLabel for the header checkbox that selects or deselects everything</p></li>
+<li><p><b> ariaLabelForSelectionColumn </b> <code>string</code> <br> ariaLabel for the selection column</p></li>
+<li><p><b> ariaLabelForToggleAllGroupsButton </b> <code>string</code> <br> ariaLabel for expand/collapse group button</p></li>
+<li><p><b> className </b> <code>string</code> <br> Overriding class name</p></li>
+<li><p><b> collapseAllVisibility </b> <code>CollapseAllVisibility</code> <br> Whether to collapse for all visibility</p></li>
+<li><p><b> columnReorderOptions </b> <code>IColumnReorderOptions</code> <br> Column reordering options</p></li>
+<li><p><b> columnReorderProps </b> <code>IColumnReorderHeaderProps</code> <br> Column reordering options</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IDetailsHeader&gt;</code> <br> Ref to the component itself</p></li>
+<li><p><b> isAllCollapsed </b> <code>boolean</code> <br> Whether or not all is collapsed</p></li>
+<li><p><b> layoutMode </b> <code>DetailsListLayoutMode</code> <br> Layout mode - fixedColumns or justified</p></li>
+<li><p><b> minimumPixelsForDrag </b> <code>number</code> <br> Minimum pixels to be moved before dragging is registered</p></li>
+<li><p><b> onColumnAutoResized </b> <code>(column: IColumn, columnIndex: number) =&gt; void</code> <br> Callback for when column is automatically resized</p></li>
+<li><p><b> onColumnClick </b> <code>(ev: React.MouseEvent&lt;HTMLElement&gt;, column: IColumn) =&gt; void</code> <br> Callback for when the column is clicked</p></li>
+<li><p><b> onColumnContextMenu </b> <code>(column: IColumn, ev: React.MouseEvent&lt;HTMLElement&gt;) =&gt; void</code> <br> Callback for when the column needs to show a context menu</p></li>
+<li><p><b> onColumnIsSizingChanged </b> <code>(column: IColumn, isSizing: boolean) =&gt; void</code> <br> Callback for when column sizing has changed</p></li>
+<li><p><b> onColumnResized </b> <code>(column: IColumn, newWidth: number, columnIndex: number) =&gt; void</code> <br> Callback for when column is resized</p></li>
+<li><p><b> onRenderColumnHeaderTooltip </b> <code>IRenderFunction&lt;IDetailsColumnRenderTooltipProps&gt;</code> <br> Callback to render a tooltip for the column header</p></li>
+<li><p><b> onRenderDetailsCheckbox </b> <code>IRenderFunction&lt;IDetailsCheckboxProps&gt;</code> <br> If provided, can be used to render a custom checkbox</p></li>
+<li><p><b> onToggleCollapseAll </b> <code>(isAllCollapsed: boolean) =&gt; void</code> <br> Callback for when collapse all is toggled</p></li>
+<li><p><b> selectAllVisibility </b> <code>SelectAllVisibility</code> <br> Select all button visibility</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IDetailsHeaderStyleProps, IDetailsHeaderStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme from the Higher Order Component</p></li>
+<li><p><b> useFastIcons </b> <code>boolean</code> <br> Whether to use fast icon and check components. The icons can't be targeted by customization but are still customizable via class names.</p></li>
+<li><p><b> columns </b> <code>IColumn[]</code> <br> Column metadata</p></li>
+<li><p><b> selection </b> <code>ISelection</code> <br> Selection from utilities</p></li>
+<li><p><b> selectionMode </b> <code>SelectionMode</code> <br> Selection mode</p></li>
+<li><p><b> cellStyleProps </b> <code>ICellStyleProps</code> <br> Rules for rendering column cells.</p></li>
+<li><p><b> checkboxVisibility </b> <code>CheckboxVisibility | undefined</code> <br> Checkbox visibility</p></li>
+<li><p><b> columns </b> <code>IColumn[]</code> <br> Column metadata</p></li>
+<li><p><b> groupNestingDepth </b> <code>number</code> <br> Nesting depth of a grouping</p></li>
+<li><p><b> indentWidth </b> <code>number | undefined</code> <br> How much to indent</p></li>
+<li><p><b> rowWidth </b> <code>number</code> <br> Minimum width of the row.</p></li>
+<li><p><b> selection </b> <code>ISelection | undefined</code> <br> Selection from utilities</p></li>
+<li><p><b> selectionMode </b> <code>SelectionMode | undefined</code> <br> Selection mode</p></li>
+<li><p><b> viewport </b> <code>IViewport | undefined</code> <br> View port of the virtualized list</p></li>
+<li><p><b> ariaLabel </b> <code>string</code> <br> Accessible label describing or summarizing the list.</p></li>
+<li><p><b> ariaLabelForGrid </b> <code>string</code> <br> Accessible label for the grid within the list.</p></li>
+<li><p><b> ariaLabelForListHeader </b> <code>string</code> <br> Accessible label for the list header.</p></li>
+<li><p><b> ariaLabelForSelectAllCheckbox </b> <code>string</code> <br> Accessible label for the select all checkbox.</p></li>
+<li><p><b> ariaLabelForSelectionColumn </b> <code>string</code> <br> Accessible label for the name of the selection column.</p></li>
+<li><p><b> cellStyleProps </b> <code>ICellStyleProps</code> <br> Props impacting the render style of cells. Since these have an impact on calculated column widths, they are handled separately from normal theme styling, but they are passed to the styling system.</p></li>
+<li><p><b> checkboxCellClassName </b> <code>string</code> <br> Class name to add to the cell of a checkbox.</p></li>
+<li><p><b> checkboxVisibility </b> <code>CheckboxVisibility</code> <br> Controls the visibility of selection check box.</p></li>
+<li><p><b> checkButtonAriaLabel </b> <code>string</code> <br> Accessible label for the check button.</p></li>
+<li><p><b> className </b> <code>string</code> <br> Class name to add to the root element.</p></li>
+<li><p><b> columnReorderOptions </b> <code>IColumnReorderOptions</code> <br> Options for column reordering using drag and drop.</p></li>
+<li><p><b> columns </b> <code>IColumn[]</code> <br> column defitions. If none are provided, default columns will be created based on the items' properties.</p></li>
+<li><p><b> compact </b> <code>boolean</code> <br> Whether to render in compact mode.</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IDetailsList&gt;</code> <br> Callback to access the IDetailsList interface. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> constrainMode </b> <code>ConstrainMode</code> <br> Controls how the list contrains overflow.</p></li>
+<li><p><b> disableSelectionZone </b> <code>boolean</code> <br> Whether to disable the built-in SelectionZone, so the host component can provide its own.</p></li>
+<li><p><b> dragDropEvents </b> <code>IDragDropEvents</code> <br> Map of callback functions related to row drag and drop functionality.</p></li>
+<li><p><b> enableUpdateAnimations </b> <code>boolean</code> <br> Whether to animate updates</p></li>
+<li><p><b> enterModalSelectionOnTouch </b> <code>boolean</code> <br> Whether the selection zone should enter modal state on touch.</p></li>
+<li><p><b> getCellValueKey </b> <code>(item?: any, index?: number, column?: IColumn) =&gt; string</code> <br> If provided, will be the "default" item column cell value return. A column's <code>getValueKey</code> can override <code>getCellValueKey</code>.</p></li>
+<li><p><b> getGroupHeight </b> <code>IGroupedListProps['getGroupHeight']</code> <br> Callback to override default group height calculation used by list virtualization.</p></li>
+<li><p><b> getKey </b> <code>(item: any, index?: number) =&gt; string</code> <br> Callback to get the item key, to be used in the selection and on render. Must be provided if sorting or filtering is enabled.</p></li>
+<li><p><b> getRowAriaDescribedBy </b> <code>(item: any) =&gt; string</code> <br> Callback to get the aria-describedby IDs (space-separated strings) of elements that describe the item.</p></li>
+<li><p><b> getRowAriaLabel </b> <code>(item: any) =&gt; string</code> <br> Callback to get the aria-label string for a given item.</p></li>
+<li><p><b> groupProps </b> <code>IDetailsGroupRenderProps</code> <br> Override properties to render groups.</p></li>
+<li><p><b> groups </b> <code>IGroup[]</code> <br> Grouping instructions.</p></li>
+<li><p><b> indentWidth </b> <code>number</code> <br> Override for the indent width used for group nesting.</p></li>
+<li><p><b> initialFocusedIndex </b> <code>number</code> <br> Default index to set focus to once the items have rendered and the index exists.</p></li>
+<li><p><b> isHeaderVisible </b> <code>boolean</code> <br> Controls the visibility of the header.</p></li>
+<li><p><b> isPlaceholderData </b> <code>boolean</code> <br> Set this to true to indicate that the items being displayed are placeholder data.</p></li>
+<li><p><b> items </b> <code>any[]</code> <br> The items to render.</p></li>
+<li><p><b> layoutMode </b> <code>DetailsListLayoutMode</code> <br> Controls how the columns are adjusted.</p></li>
+<li><p><b> listProps </b> <code>IListProps</code> <br> Properties to pass through to the List components being rendered.</p></li>
+<li><p><b> minimumPixelsForDrag </b> <code>number</code> <br> The minimum mouse move distance to interpret the action as drag event.</p></li>
+<li><p><b> onActiveItemChanged </b> <code>(item?: any, index?: number, ev?: React.FocusEvent&lt;HTMLElement&gt;) =&gt; void</code> <br> Callback for when an item in the list becomes active by clicking anywhere inside the row or navigating to it with the keyboard.</p></li>
+<li><p><b> onColumnHeaderClick </b> <code>(ev?: React.MouseEvent&lt;HTMLElement&gt;, column?: IColumn) =&gt; void</code> <br> Callback for when the user clicks on the column header.</p></li>
+<li><p><b> onColumnHeaderContextMenu </b> <code>(column?: IColumn, ev?: React.MouseEvent&lt;HTMLElement&gt;) =&gt; void</code> <br> Callback for when the user asks for a contextual menu (usually via right click) from a column header.</p></li>
+<li><p><b> onColumnResize </b> <code>(column?: IColumn, newWidth?: number, columnIndex?: number) =&gt; void</code> <br> Callback fired on column resize</p></li>
+<li><p><b> onDidUpdate </b> <code>(detailsList?: DetailsListBase) =&gt; void</code> <br> Callback for when the list has been updated. Useful for telemetry tracking externally.</p></li>
+<li><p><b> onItemContextMenu </b> <code>(item?: any, index?: number, ev?: Event) =&gt; void | boolean</code> <br> Callback for when the context menu of an item has been accessed. If undefined or false is returned, <code>ev.preventDefault()</code> will be called.</p></li>
+<li><p><b> onItemInvoked </b> <code>(item?: any, index?: number, ev?: Event) =&gt; void</code> <br> Callback for when a given row has been invoked (by pressing enter while it is selected.)</p></li>
+<li><p><b> onRenderCheckbox </b> <code>IRenderFunction&lt;IDetailsListCheckboxProps&gt;</code> <br> If provided, can be used to render a custom checkbox.</p></li>
+<li><p><b> onRenderDetailsFooter </b> <code>IRenderFunction&lt;IDetailsFooterProps&gt;</code> <br> An override to render the details footer.</p></li>
+<li><p><b> onRenderDetailsHeader </b> <code>IRenderFunction&lt;IDetailsHeaderProps&gt;</code> <br> An override to render the details header.</p></li>
+<li><p><b> onRenderItemColumn </b> <code>(item?: any, index?: number, column?: IColumn) =&gt; React.ReactNode</code> <br> If provided, will be the "default" item column renderer method. This affects cells within the rows, not the rows themselves. If a column definition provides its own <code>onRender</code> method, that will be used instead of this.</p></li>
+<li><p><b> onRenderMissingItem </b> <code>(index?: number, rowProps?: IDetailsRowProps) =&gt; React.ReactNode</code> <br> Callback for what to render when the item is missing.</p></li>
+<li><p><b> onRenderRow </b> <code>IRenderFunction&lt;IDetailsRowProps&gt;</code> <br> Callback to override the default row rendering.</p></li>
+<li><p><b> onRowDidMount </b> <code>(item?: any, index?: number) =&gt; void</code> <br> Callback for when a given row has been mounted. Useful for identifying when a row has been rendered on the page.</p></li>
+<li><p><b> onRowWillUnmount </b> <code>(item?: any, index?: number) =&gt; void</code> <br> Callback for when a given row has been unmounted. Useful for identifying when a row has been removed from the page.</p></li>
+<li><p><b> onShouldVirtualize </b> <code>(props: IListProps) =&gt; boolean</code> <br> Callback to determine whether the list should be rendered in full, or virtualized.Virtualization will add and remove pages of items as the user scrolls them into the visible range. This benefits larger list scenarios by reducing the DOM on the screen, but can negatively affect performance for smaller lists.The default implementation will virtualize when this callback is not provided.</p></li>
+<li><p><b> rowElementEventMap </b> <code>{ eventName: string; callback: (context: IDragDropContext, event?: any) =&gt; void; }[]</code> <br> Event names and corresponding callbacks that will be registered to rendered row elements.</p></li>
+<li><p><b> selection </b> <code>ISelection</code> <br> Selection model to track selection state.</p></li>
+<li><p><b> selectionMode </b> <code>SelectionMode</code> <br> Controls how/if the details list manages selection. Options include none, single, multiple</p></li>
+<li><p><b> selectionPreservedOnEmptyClick </b> <code>boolean</code> <br> By default, selection is cleared when clicking on an empty (non-focusable) section of the screen. Setting this value to true overrides that behavior and maintains selection.</p></li>
+<li><p><b> selectionZoneProps </b> <code>ISelectionZoneProps</code> <br> Additional props to pass through to the SelectionZone created by default.</p></li>
+<li><p><b> setKey </b> <code>string</code> <br> A key that uniquely identifies the given items. If provided, the selection will be reset when the key changes.</p></li>
+<li><p><b> shouldApplyApplicationRole </b> <code>boolean</code> <br> Whether the role <code>application</code> should be applied to the list.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IDetailsListStyleProps, IDetailsListStyles&gt;</code> <br> Custom overrides to the themed or default styles.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by a higher-order component.</p></li>
+<li><p><b> useFastIcons </b> <code>boolean</code> <br> Whether to use fast icon and check components. The icons can't be targeted by customization but are still customizable via class names.</p></li>
+<li><p><b> usePageCache </b> <code>boolean</code> <br> Whether to enable render page caching. This is an experimental performance optimization that is off by default.</p></li>
+<li><p><b> useReducedRowRenderer </b> <code>boolean</code> <br> Whether to re-render a row only when props changed. Might cause regression when depending on external updates.</p></li>
+<li><p><b> viewport </b> <code>IViewport</code> <br> Viewport info, provided by the <code>withViewport</code> decorator.</p></li>
+<li><p><b> cellsByColumn </b> <code>{ [columnKey: string]: React.ReactNode; }</code> <br> Optional pre-rendered content per column. Preferred over onRender or onRenderItemColumn if provided.</p></li>
+<li><p><b> checkboxCellClassName </b> <code>string</code> <br> Class name for the checkbox cell</p></li>
+<li><p><b> checkButtonAriaLabel </b> <code>string</code> <br> Check button's aria label</p></li>
+<li><p><b> className </b> <code>string</code> <br> Overriding class name</p></li>
+<li><p><b> collapseAllVisibility </b> <code>CollapseAllVisibility</code> <br> Collapse all visibility</p></li>
+<li><p><b> compact </b> <code>boolean</code> <br> Whether to render in compact mode</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IDetailsRow&gt;</code> <br> Ref of the component</p></li>
+<li><p><b> dragDropEvents </b> <code>IDragDropEvents</code> <br> Handling drag and drop events</p></li>
+<li><p><b> dragDropHelper </b> <code>IDragDropHelper</code> <br> Helper for the drag and drop</p></li>
+<li><p><b> enableUpdateAnimations </b> <code>boolean</code> <br> Whether to animate updates</p></li>
+<li><p><b> eventsToRegister </b> <code>{ eventName: string; callback: (item?: any, index?: number, event?: any) =&gt; void; }[]</code> <br> A list of events to register</p></li>
+<li><p><b> getRowAriaDescribedBy </b> <code>(item: any) =&gt; string</code> <br> Callback for getting the row aria-describedby</p></li>
+<li><p><b> getRowAriaLabel </b> <code>(item: any) =&gt; string</code> <br> Callback for getting the row aria label</p></li>
+<li><p><b> item </b> <code>any</code> <br> Data source for this component</p></li>
+<li><p><b> itemIndex </b> <code>number</code> <br> Index of the collection of items of the DetailsList</p></li>
+<li><p><b> onDidMount </b> <code>(row?: DetailsRowBase) =&gt; void</code> <br> Callback for did mount for parent</p></li>
+<li><p><b> onRenderCheck </b> <code>(props: IDetailsRowCheckProps) =&gt; JSX.Element</code> <br> Callback for rendering a checkbox</p></li>
+<li><p><b> onRenderDetailsCheckbox </b> <code>IRenderFunction&lt;IDetailsCheckboxProps&gt;</code> <br> If provided, can be used to render a custom checkbox</p></li>
+<li><p><b> onWillUnmount </b> <code>(row?: DetailsRowBase) =&gt; void</code> <br> Callback for will mount for parent</p></li>
+<li><p><b> rowFieldsAs </b> <code>React.ComponentType&lt;IDetailsRowFieldsProps&gt;</code> <br> DOM element into which to render row field</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IDetailsRowStyleProps, IDetailsRowStyles&gt;</code> <br> Overriding styles to this row</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by styled() function</p></li>
+<li><p><b> useFastIcons </b> <code>boolean</code> <br> Whether to use fast icon and check components. The icons can't be targeted by customization but are still customizable via class names.</p></li>
+<li><p><b> useReducedRowRenderer </b> <code>boolean</code> <br> Rerender DetailsRow only when props changed. Might cause regression when depending on external updates.</p></li>
+<li><p><b> anySelected </b> <code>boolean</code> <br> Is any selected - also true for isSelectionModal</p></li>
+<li><p><b> canSelect </b> <code>boolean</code> <br> Can this checkbox be selectable</p></li>
+<li><p><b> checkClassName </b> <code>string</code> <br> The classname to be passed down to Check component</p></li>
+<li><p><b> className </b> <code>string</code> <br> Optional className to attach to the slider root element.</p></li>
+<li><p><b> compact </b> <code>boolean</code> <br> Is this in compact mode?</p></li>
+<li><p><b> isHeader </b> <code>boolean</code> <br> Is the check part of the header in a DetailsList</p></li>
+<li><p><b> isVisible </b> <code>boolean</code> <br> Whether or not this checkbox is visible</p></li>
+<li><p><b> onRenderDetailsCheckbox </b> <code>IRenderFunction&lt;IDetailsCheckboxProps&gt;</code> <br> If provided, can be used to render a custom checkbox</p></li>
+<li><p><b> selected </b> <code>boolean</code> <br> Whether or not this check is selected</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IDetailsRowCheckStyleProps, IDetailsRowCheckStyles&gt;</code> <br> Style override</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by High-Order Component.</p></li>
+<li><p><b> useFastIcons </b> <code>boolean</code> <br> Whether to use fast icon and check components. The icons can't be targeted by customization but are still customizable via class names.</p></li>
+<li><p><b> cellStyleProps </b> <code>ICellStyleProps</code> <br> Style properties to customize cell render output.</p></li>
+<li><p><b> columns </b> <code>IColumn[]</code> <br> Columns metadata</p></li>
+<li><p><b> columnStartIndex </b> <code>number</code> <br> Index to start for the column</p></li>
+<li><p><b> compact </b> <code>boolean</code> <br> whether to render as a compact field</p></li>
+<li><p><b> enableUpdateAnimations </b> <code>boolean</code> <br></p></li>
+<li><p><b> item </b> <code>any</code> <br> Data source for this component</p></li>
+<li><p><b> itemIndex </b> <code>number</code> <br> The item index of the collection for the DetailsList</p></li>
+<li><p><b> rowClassNames </b> <code>{ [k in keyof Pick&lt;IDetailsRowStyles, 'isMultiline' | 'isRowHeader' | 'cell' | 'cellAnimation' | 'cellPadded' | 'cellUnpadded' | 'fields'&gt;]: string; }</code> <br> Subset of classnames currently generated in DetailsRow that are used within DetailsRowFields.</p></li>
+<li><p><b> columns </b> <code>IColumn[]</code> <br> Column metadata</p></li>
+<li><p><b> selection </b> <code>ISelection</code> <br> Selection from utilities</p></li>
+<li><p><b> selectionMode </b> <code>SelectionMode</code> <br> Selection mode</p></li>
+<li><p><b> ariaLabelForShimmer </b> <code>string</code> <br> Aria label for shimmer. Set on grid while shimmer is enabled.</p></li>
+<li><p><b> detailsListStyles </b> <code>IDetailsListProps['styles']</code> <br> DetailsList styles to pass through.</p></li>
+<li><p><b> enableShimmer </b> <code>boolean</code> <br> Boolean flag to control when to render placeholders vs real items. It's up to the consumer app to know when fetching of the data is done to toggle this prop.</p></li>
+<li><p><b> onRenderCustomPlaceholder </b> <code>(rowProps: IDetailsRowProps, index?: number, defaultRender?: (props: IDetailsRowProps) =&gt; React.ReactNode) =&gt; React.ReactNode</code> <br> Custom placeholder renderer to be used when in need to override the default placeholder of a DetailsRow. <code>rowProps</code> argument is passed to leverage the calculated column measurements done by DetailsList or you can use the optional arguments of item <code>index</code> and <code>defaultRender</code> to execute additional logic before rendering the default placeholder.</p></li>
+<li><p><b> removeFadingOverlay </b> <code>boolean</code> <br> Determines whether to remove a fading out to bottom overlay over the shimmering items used to further emphasize the unknown number of items that will be fetched.</p></li>
+<li><p><b> shimmerLines </b> <code>number</code> <br> Number of shimmer placeholder lines to render.</p></li>
+<li><p><b> shimmerOverlayStyles </b> <code>IStyleFunctionOrObject&lt;IShimmeredDetailsListStyleProps, IShimmeredDetailsListStyles&gt;</code> <br> Custom styles to override the styles specific to the ShimmeredDetailsList root area.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IShimmeredDetailsListStyleProps, IShimmeredDetailsListStyles&gt;</code> <br> Custom styles to override the styles specific to the ShimmeredDetailsList root area.</p></li>
+<li><p><b> skipViewportMeasures </b> <code>boolean</code> <br> Whether or not to use ResizeObserver (if available) to detect and measure viewport on 'resize' events.Falls back to window 'resize' event.</p></li>
+</ul></div>
     <div id="best-practices">
     <h2>Best practices</h2>
     
@@ -340,8 +295,9 @@ you need to work using the original docs to achieve the desired result.</p>
 <div class="section">
 <h3 id="content">Content<a class="anchor" aria-label="anchor" href="#content"></a></h3>
 
-<ul><li><p>Use sentence-style capitalization for column headers—only capitalize the first word. For more info, see <a href="https://docs.microsoft.com/style-guide/capitalization" class="external-link">Capitalization</a> in the Microsoft Writing Style Guide.</p></li>
-</ul></div>
+<ul><li><p>Use sentence-style capitalization for column headers—only capitalize the first word. For more info, see <code>[Capitalization]</code> in the Microsoft Writing Style Guide.</p></li>
+</ul><p><code>[capitalization]</code>: https://docs.microsoft.com/style-guide/capitalization</p>
+</div>
 
 <div class="section">
 <h3 id="faq">FAQ<a class="anchor" aria-label="anchor" href="#faq"></a></h3>
@@ -371,24 +327,24 @@ To avoid this problem, we recommend re-creating the items array backing the Deta
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="va">items</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"1"</span>, name <span class="op">=</span> <span class="st">"Mark"</span>, surname <span class="op">=</span> <span class="st">"Swanson"</span><span class="op">)</span>,</span>
-<span class="r-in">    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"2"</span>, name <span class="op">=</span> <span class="st">"Josh"</span>, surname <span class="op">=</span> <span class="st">"Johnson"</span><span class="op">)</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in">  <span class="va">columns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"name"</span>, fieldName <span class="op">=</span> <span class="st">"name"</span>, name <span class="op">=</span> <span class="st">"Name"</span><span class="op">)</span>,</span>
-<span class="r-in">    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"surname"</span>, fieldName <span class="op">=</span> <span class="st">"surname"</span>, name <span class="op">=</span> <span class="st">"Surname"</span><span class="op">)</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in">  <span class="fu">shinyApp</span><span class="op">(</span></span>
-<span class="r-in">    ui <span class="op">=</span> <span class="fu">DetailsList</span><span class="op">(</span>items <span class="op">=</span> <span class="va">items</span>, columns <span class="op">=</span> <span class="va">columns</span><span class="op">)</span>,</span>
-<span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="va">items</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"1"</span>, name <span class="op">=</span> <span class="st">"Mark"</span>, surname <span class="op">=</span> <span class="st">"Swanson"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"2"</span>, name <span class="op">=</span> <span class="st">"Josh"</span>, surname <span class="op">=</span> <span class="st">"Johnson"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span>  <span class="va">columns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"name"</span>, fieldName <span class="op">=</span> <span class="st">"name"</span>, name <span class="op">=</span> <span class="st">"Name"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"surname"</span>, fieldName <span class="op">=</span> <span class="st">"surname"</span>, name <span class="op">=</span> <span class="st">"Surname"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span>  <span class="fu">shinyApp</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    ui <span class="op">=</span> <span class="fu">DetailsList</span><span class="op">(</span>items <span class="op">=</span> <span class="va">items</span>, columns <span class="op">=</span> <span class="va">columns</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -403,7 +359,7 @@ To avoid this problem, we recommend re-creating the items array backing the Deta
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

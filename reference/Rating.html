@@ -90,52 +90,55 @@ you need to work using the original docs to achieve the desired result.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">Rating</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">Rating.shinyInput</span><span class="op">(</span><span class="va">inputId</span>, <span class="va">...</span>, value <span class="op">=</span> <span class="va">defaultValue</span><span class="op">)</span>
-
-<span class="fu">updateRating.shinyInput</span><span class="op">(</span>
-  session <span class="op">=</span> <span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/domains.html" class="external-link">getDefaultReactiveDomain</a></span><span class="op">(</span><span class="op">)</span>,
-  <span class="va">inputId</span>,
-  <span class="va">...</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">Rating</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">Rating.shinyInput</span><span class="op">(</span><span class="va">inputId</span>, <span class="va">...</span>, value <span class="op">=</span> <span class="va">defaultValue</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">updateRating.shinyInput</span><span class="op">(</span></span>
+<span>  session <span class="op">=</span> <span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/domains.html" class="external-link">getDefaultReactiveDomain</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="va">inputId</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>allowZeroStars</dt>
-<dd><p><code>boolean</code> <br> Allow the rating value to be set to 0 instead of a minimum of 1.</p></dd>
-<dt>ariaLabelFormat</dt>
-<dd><p><code>string</code> <br> Optional label format for a rating star that will be read by screen readers. Can be used like "{0} of {1} stars selected", where {0} will be substituted by the current rating and {1} will be substituted by the max rating.</p></dd>
-<dt>ariaLabelId</dt>
-<dd><p><code>string</code> <br> Deprecated: Optional id of label describing this instance of Rating.</p></dd>
-<dt>componentRef</dt>
-<dd><p><code>IRefObject&lt;IRating&gt;</code> <br> Optional callback to access the IRating interface. Use this instead of ref for accessing the public methods and properties of the component.</p></dd>
-<dt>getAriaLabel</dt>
-<dd><p><code>(rating: number, max: number) =&gt; string</code> <br></p></dd>
-<dt>icon</dt>
-<dd><p><code>string</code> <br> Custom icon</p></dd>
-<dt>max</dt>
-<dd><p><code>number</code> <br> Maximum rating, defaults to 5, has to be \&gt;= min</p></dd>
-<dt>min</dt>
-<dd><p><code>number</code> <br> Minimum rating, defaults to 1, has to be \&gt;= 0</p></dd>
-<dt>onChange</dt>
-<dd><p><code>(event: React.FocusEvent&lt;HTMLElement&gt;, rating?: number) =&gt; void</code> <br> Callback issued when the rating changes.</p></dd>
-<dt>onChanged</dt>
-<dd><p><code>(rating: number) =&gt; void</code> <br></p></dd>
-<dt>rating</dt>
-<dd><p><code>number</code> <br> Selected rating, has to be an integer between min and max</p></dd>
-<dt>readOnly</dt>
-<dd><p><code>boolean</code> <br> Optional flag to mark rating control as readOnly</p></dd>
-<dt>size</dt>
-<dd><p><code>RatingSize</code> <br> Size of rating, defaults to small</p></dd>
-<dt>styles</dt>
-<dd><p><code>IStyleFunctionOrObject&lt;IRatingStyleProps, IRatingStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></dd>
-<dt>theme</dt>
-<dd><p><code>ITheme</code> <br> Theme (provided through customization.)</p></dd>
-<dt>unselectedIcon</dt>
-<dd><p><code>string</code> <br> Custom icon for unselected rating elements.</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
+
+<dt>inputId</dt>
+<dd><p>Id of the component</p></dd>
+
+
+<dt>value</dt>
+<dd><p>Value</p></dd>
+
+
+<dt>session</dt>
+<dd><p>Session</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> allowZeroStars </b> <code>boolean</code> <br> Allow the rating value to be set to 0 instead of a minimum of 1.</p></li>
+<li><p><b> ariaLabelFormat </b> <code>string</code> <br> Optional label format for a rating star that will be read by screen readers. Can be used like "{0} of {1} stars selected", where {0} will be substituted by the current rating and {1} will be substituted by the max rating.</p></li>
+<li><p><b> ariaLabelId </b> <code>string</code> <br> Deprecated: Optional id of label describing this instance of Rating.</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IRating&gt;</code> <br> Optional callback to access the IRating interface. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> getAriaLabel </b> <code>(rating: number, max: number) =&gt; string</code> <br></p></li>
+<li><p><b> icon </b> <code>string</code> <br> Custom icon</p></li>
+<li><p><b> max </b> <code>number</code> <br> Maximum rating, defaults to 5, has to be \&gt;= min</p></li>
+<li><p><b> min </b> <code>number</code> <br> Minimum rating, defaults to 1, has to be \&gt;= 0</p></li>
+<li><p><b> onChange </b> <code>(event: React.FocusEvent&lt;HTMLElement&gt;, rating?: number) =&gt; void</code> <br> Callback issued when the rating changes.</p></li>
+<li><p><b> onChanged </b> <code>(rating: number) =&gt; void</code> <br></p></li>
+<li><p><b> rating </b> <code>number</code> <br> Selected rating, has to be an integer between min and max</p></li>
+<li><p><b> readOnly </b> <code>boolean</code> <br> Optional flag to mark rating control as readOnly</p></li>
+<li><p><b> size </b> <code>RatingSize</code> <br> Size of rating, defaults to small</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IRatingStyleProps, IRatingStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme (provided through customization.)</p></li>
+<li><p><b> unselectedIcon </b> <code>string</code> <br> Custom icon for unselected rating elements.</p></li>
+</ul></div>
     <div id="best-practices">
     <h2>Best practices</h2>
     
@@ -157,21 +160,21 @@ you need to work using the original docs to achieve the desired result.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span>
-<span class="r-in">    ui <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
-<span class="r-in">      <span class="fu">Rating.shinyInput</span><span class="op">(</span><span class="st">"rating"</span>, value <span class="op">=</span> <span class="fl">2</span><span class="op">)</span>,</span>
-<span class="r-in">      <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/textOutput.html" class="external-link">textOutput</a></span><span class="op">(</span><span class="st">"ratingValue"</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span>,</span>
-<span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">      <span class="va">output</span><span class="op">$</span><span class="va">ratingValue</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/renderPrint.html" class="external-link">renderText</a></span><span class="op">(</span><span class="op">{</span></span>
-<span class="r-in">        <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Value: %s"</span>, <span class="va">input</span><span class="op">$</span><span class="va">rating</span><span class="op">)</span></span>
-<span class="r-in">      <span class="op">}</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">}</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    ui <span class="op">=</span> <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>      <span class="fu">Rating.shinyInput</span><span class="op">(</span><span class="st">"rating"</span>, value <span class="op">=</span> <span class="fl">2</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/textOutput.html" class="external-link">textOutput</a></span><span class="op">(</span><span class="st">"ratingValue"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>      <span class="va">output</span><span class="op">$</span><span class="va">ratingValue</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/renderPrint.html" class="external-link">renderText</a></span><span class="op">(</span><span class="op">{</span></span></span>
+<span class="r-in"><span>        <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Value: %s"</span>, <span class="va">input</span><span class="op">$</span><span class="va">rating</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="op">}</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -186,7 +189,7 @@ you need to work using the original docs to achieve the desired result.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

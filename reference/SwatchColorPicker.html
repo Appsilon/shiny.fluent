@@ -90,110 +90,91 @@ you need to work using the original docs to achieve the desired result.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">SwatchColorPicker</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">SwatchColorPicker.shinyInput</span><span class="op">(</span><span class="va">inputId</span>, <span class="va">...</span>, value <span class="op">=</span> <span class="va">defaultValue</span><span class="op">)</span>
-
-<span class="fu">updateSwatchColorPicker.shinyInput</span><span class="op">(</span>
-  session <span class="op">=</span> <span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/domains.html" class="external-link">getDefaultReactiveDomain</a></span><span class="op">(</span><span class="op">)</span>,
-  <span class="va">inputId</span>,
-  <span class="va">...</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">SwatchColorPicker</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">SwatchColorPicker.shinyInput</span><span class="op">(</span><span class="va">inputId</span>, <span class="va">...</span>, value <span class="op">=</span> <span class="va">defaultValue</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">updateSwatchColorPicker.shinyInput</span><span class="op">(</span></span>
+<span>  session <span class="op">=</span> <span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/domains.html" class="external-link">getDefaultReactiveDomain</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="va">inputId</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>borderWidth</dt>
-<dd><p><code>number</code> <br> Width of the border that indicates a selected/hovered cell, in pixels.</p></dd>
-<dt>circle</dt>
-<dd><p><code>boolean</code> <br> True if this cell should be rendered as a circle, false if it should be a square.  @default <code>true</code> (render as circle)</p></dd>
-<dt>color</dt>
-<dd><p><code>string</code> <br> The CSS-compatible string to describe the color</p></dd>
-<dt>height</dt>
-<dd><p><code>number</code> <br> Height of the cell, in pixels</p></dd>
-<dt>idPrefix</dt>
-<dd><p><code>string</code> <br> Prefix for this cell's ID. Will be required in a future version once <code>id</code> is removed.</p></dd>
-<dt>index</dt>
-<dd><p><code>number</code> <br> Index for this option</p></dd>
-<dt>item</dt>
-<dd><p><code>IColorCellProps</code> <br> Item to render</p></dd>
-<dt>label</dt>
-<dd><p><code>string</code> <br> Tooltip and aria label for this item</p></dd>
-<dt>onClick</dt>
-<dd><p><code>(item: IColorCellProps) =&gt; void</code> <br> Handler for when a color cell is clicked.</p></dd>
-<dt>onFocus</dt>
-<dd><p><code>(item: IColorCellProps) =&gt; void</code> <br></p></dd>
-<dt>onHover</dt>
-<dd><p><code>(item?: IColorCellProps) =&gt; void</code> <br></p></dd>
-<dt>onKeyDown</dt>
-<dd><p><code>(ev: React.KeyboardEvent&lt;HTMLButtonElement&gt;) =&gt; void</code> <br></p></dd>
-<dt>onMouseEnter</dt>
-<dd><p><code>(ev: React.MouseEvent&lt;HTMLButtonElement&gt;) =&gt; boolean</code> <br> Mouse enter handler. Returns true if the event should be processed, false otherwise.</p></dd>
-<dt>onMouseLeave</dt>
-<dd><p><code>(ev: React.MouseEvent&lt;HTMLButtonElement&gt;) =&gt; void</code> <br></p></dd>
-<dt>onMouseMove</dt>
-<dd><p><code>(ev: React.MouseEvent&lt;HTMLButtonElement&gt;) =&gt; boolean</code> <br> Mouse move handler. Returns true if the event should be processed, false otherwise.</p></dd>
-<dt>onWheel</dt>
-<dd><p><code>(ev: React.MouseEvent&lt;HTMLButtonElement&gt;) =&gt; void</code> <br></p></dd>
-<dt>selected</dt>
-<dd><p><code>boolean</code> <br> Whether this cell is currently selected</p></dd>
-<dt>width</dt>
-<dd><p><code>number</code> <br> Width of the cell, in pixels</p></dd>
-<dt>ariaPosInSet</dt>
-<dd><p><code>number</code> <br> Position this grid is in the parent set (index in a parent menu, for example)</p></dd>
-<dt>ariaSetSize</dt>
-<dd><p><code>number</code> <br> Size of the parent set (size of parent menu, for example)</p></dd>
-<dt>cellBorderWidth</dt>
-<dd><p><code>number</code> <br> Width of the border indicating a hovered/selected cell, in pixels</p></dd>
-<dt>cellHeight</dt>
-<dd><p><code>number</code> <br> Height of an individual cell, in pixels</p></dd>
-<dt>cellMargin</dt>
-<dd><p><code>number</code> <br> The distance between cells, in pixels</p></dd>
-<dt>cellShape</dt>
-<dd><p><code>'circle' | 'square'</code> <br> The shape of the color cells.  @default 'circle'</p></dd>
-<dt>cellWidth</dt>
-<dd><p><code>number</code> <br> Width of an individual cell, in pixels</p></dd>
-<dt>className</dt>
-<dd><p><code>string</code> <br> Additional class name to provide on the root element</p></dd>
-<dt>colorCells</dt>
-<dd><p><code>IColorCellProps[]</code> <br> The color cells that will be made available to the user.</p>
-<p>Note: When the reference to this prop changes, regardless of how many color cells change, all of the color cells will be re-rendered (potentially bad perf) because we memoize based on this prop's reference.</p></dd>
-<dt>columnCount</dt>
-<dd><p><code>number</code> <br> Number of columns for the swatch color picker</p></dd>
-<dt>disabled</dt>
-<dd><p><code>boolean</code> <br> Whether the control is disabled.</p></dd>
-<dt>doNotContainWithinFocusZone</dt>
-<dd><p><code>boolean</code> <br> If false (the default), the grid is contained inside a FocusZone. If true, a FocusZone is not used.  @default false</p></dd>
-<dt>focusOnHover</dt>
-<dd><p><code>boolean</code> <br> Whether to update focus when a cell is hovered.</p></dd>
-<dt>getColorGridCellStyles</dt>
-<dd><p><code>IStyleFunctionOrObject&lt;IColorPickerGridCellStyleProps, IColorPickerGridCellStyles&gt;</code> <br> Styles for the grid cells.</p></dd>
-<dt>id</dt>
-<dd><p><code>string</code> <br> ID for the swatch color picker's root element. Also used as a prefix for the IDs of color cells.</p></dd>
-<dt>isControlled</dt>
-<dd><p><code>boolean</code> <br> Indicates whether the SwatchColorPicker is fully controlled. When true, the component will not set its internal state to track the selected color. Instead, the parent component will be responsible for handling state in the callbacks like <code>onColorChanged</code>.</p>
-<p>NOTE: This property is a temporary workaround to force the component to be fully controllable without breaking existing behavior</p></dd>
-<dt>mouseLeaveParentSelector</dt>
-<dd><p><code>string | undefined</code> <br> Selector to focus on mouse leave. Should only be used in conjunction with <code>focusOnHover</code>.</p></dd>
-<dt>onCellFocused</dt>
-<dd><p><code>(id?: string, color?: string) =&gt; void</code> <br> Callback for when the user focuses a color cell. If <code>id</code> and <code>color</code> are unspecified, cells are no longer being focused.</p></dd>
-<dt>onCellHovered</dt>
-<dd><p><code>(id?: string, color?: string) =&gt; void</code> <br> Callback for when the user hovers over a color cell. If <code>id</code> and <code>color</code> are unspecified, cells are no longer being hovered.</p></dd>
-<dt>onColorChanged</dt>
-<dd><p><code>(id?: string, color?: string) =&gt; void</code> <br> Callback for when the user changes the color. If <code>id</code> and <code>color</code> are unspecified, there is no selected cell. (e.g. the user executed the currently selected cell to unselect it)</p></dd>
-<dt>positionInSet</dt>
-<dd><p><code>number</code> <br></p></dd>
-<dt>selectedId</dt>
-<dd><p><code>string</code> <br> The ID of color cell that is currently selected</p></dd>
-<dt>setSize</dt>
-<dd><p><code>number</code> <br></p></dd>
-<dt>shouldFocusCircularNavigate</dt>
-<dd><p><code>boolean</code> <br> Whether focus should cycle back to the beginning once the user navigates past the end (and vice versa). Only relevant if <code>doNotContainWithinFocusZone</code> is not true.</p></dd>
-<dt>styles</dt>
-<dd><p><code>IStyleFunctionOrObject&lt;ISwatchColorPickerStyleProps, ISwatchColorPickerStyles&gt;</code> <br> Styles for the component.</p></dd>
-<dt>theme</dt>
-<dd><p><code>ITheme</code> <br> Theme to apply to the component.</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
+
+<dt>inputId</dt>
+<dd><p>Id of the component</p></dd>
+
+
+<dt>value</dt>
+<dd><p>Value</p></dd>
+
+
+<dt>session</dt>
+<dd><p>Session</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> color </b> <code>string</code> <br> The CSS-compatible string to describe the color</p></li>
+<li><p><b> id </b> <code>string</code> <br> Arbitrary unique string associated with this option</p></li>
+<li><p><b> index </b> <code>number</code> <br> Index for this option</p></li>
+<li><p><b> label </b> <code>string</code> <br> Tooltip and aria label for this item</p></li>
+<li><p><b> borderWidth </b> <code>number</code> <br> Width of the border that indicates a selected/hovered cell, in pixels.</p></li>
+<li><p><b> circle </b> <code>boolean</code> <br> True if this cell should be rendered as a circle, false if it should be a square.  @default <code>true</code> (render as circle)</p></li>
+<li><p><b> color </b> <code>string</code> <br> The CSS-compatible string to describe the color</p></li>
+<li><p><b> disabled </b> <code>boolean</code> <br> Whether this cell should be disabled  @default false</p></li>
+<li><p><b> height </b> <code>number</code> <br> Height of the cell, in pixels</p></li>
+<li><p><b> id </b> <code>string</code> <br> Used as a PREFIX for the cell's ID (the cell will not have this literal string as its ID).</p></li>
+<li><p><b> idPrefix </b> <code>string</code> <br> Prefix for this cell's ID. Will be required in a future version once <code>id</code> is removed.</p></li>
+<li><p><b> index </b> <code>number</code> <br> Index for this option</p></li>
+<li><p><b> item </b> <code>IColorCellProps</code> <br> Item to render</p></li>
+<li><p><b> label </b> <code>string</code> <br> Tooltip and aria label for this item</p></li>
+<li><p><b> onClick </b> <code>(item: IColorCellProps) =&gt; void</code> <br> Handler for when a color cell is clicked.</p></li>
+<li><p><b> onFocus </b> <code>(item: IColorCellProps) =&gt; void</code> <br></p></li>
+<li><p><b> onHover </b> <code>(item?: IColorCellProps) =&gt; void</code> <br></p></li>
+<li><p><b> onKeyDown </b> <code>(ev: React.KeyboardEvent&lt;HTMLButtonElement&gt;) =&gt; void</code> <br></p></li>
+<li><p><b> onMouseEnter </b> <code>(ev: React.MouseEvent&lt;HTMLButtonElement&gt;) =&gt; boolean</code> <br> Mouse enter handler. Returns true if the event should be processed, false otherwise.</p></li>
+<li><p><b> onMouseLeave </b> <code>(ev: React.MouseEvent&lt;HTMLButtonElement&gt;) =&gt; void</code> <br></p></li>
+<li><p><b> onMouseMove </b> <code>(ev: React.MouseEvent&lt;HTMLButtonElement&gt;) =&gt; boolean</code> <br> Mouse move handler. Returns true if the event should be processed, false otherwise.</p></li>
+<li><p><b> onWheel </b> <code>(ev: React.MouseEvent&lt;HTMLButtonElement&gt;) =&gt; void</code> <br></p></li>
+<li><p><b> selected </b> <code>boolean</code> <br> Whether this cell is currently selected</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IColorPickerGridCellStyleProps, IColorPickerGridCellStyles&gt;</code> <br> Custom styles for the component.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> The theme object to use for styling.</p></li>
+<li><p><b> width </b> <code>number</code> <br> Width of the cell, in pixels</p></li>
+<li><p><b> ariaPosInSet </b> <code>number</code> <br> Position this grid is in the parent set (index in a parent menu, for example)</p></li>
+<li><p><b> ariaSetSize </b> <code>number</code> <br> Size of the parent set (size of parent menu, for example)</p></li>
+<li><p><b> cellBorderWidth </b> <code>number</code> <br> Width of the border indicating a hovered/selected cell, in pixels</p></li>
+<li><p><b> cellHeight </b> <code>number</code> <br> Height of an individual cell, in pixels</p></li>
+<li><p><b> cellMargin </b> <code>number</code> <br> The distance between cells, in pixels</p></li>
+<li><p><b> cellShape </b> <code>'circle' | 'square'</code> <br> The shape of the color cells.  @default 'circle'</p></li>
+<li><p><b> cellWidth </b> <code>number</code> <br> Width of an individual cell, in pixels</p></li>
+<li><p><b> className </b> <code>string</code> <br> Additional class name to provide on the root element</p></li>
+<li><p><b> colorCells </b> <code>IColorCellProps[]</code> <br> The color cells that will be made available to the user.Note: When the reference to this prop changes, regardless of how many color cells change, all of the color cells will be re-rendered (potentially bad perf) because we memoize based on this prop's reference.</p></li>
+<li><p><b> columnCount </b> <code>number</code> <br> Number of columns for the swatch color picker</p></li>
+<li><p><b> disabled </b> <code>boolean</code> <br> Whether the control is disabled.</p></li>
+<li><p><b> doNotContainWithinFocusZone </b> <code>boolean</code> <br> If false (the default), the grid is contained inside a FocusZone. If true, a FocusZone is not used.  @default false</p></li>
+<li><p><b> focusOnHover </b> <code>boolean</code> <br> Whether to update focus when a cell is hovered.</p></li>
+<li><p><b> getColorGridCellStyles </b> <code>IStyleFunctionOrObject&lt;IColorPickerGridCellStyleProps, IColorPickerGridCellStyles&gt;</code> <br> Styles for the grid cells.</p></li>
+<li><p><b> id </b> <code>string</code> <br> ID for the swatch color picker's root element. Also used as a prefix for the IDs of color cells.</p></li>
+<li><p><b> isControlled </b> <code>boolean</code> <br> Indicates whether the SwatchColorPicker is fully controlled. When true, the component will not set its internal state to track the selected color. Instead, the parent component will be responsible for handling state in the callbacks like <code>onColorChanged</code>.NOTE: This property is a temporary workaround to force the component to be fully controllable without breaking existing behavior</p></li>
+<li><p><b> mouseLeaveParentSelector </b> <code>string | undefined</code> <br> Selector to focus on mouse leave. Should only be used in conjunction with <code>focusOnHover</code>.</p></li>
+<li><p><b> onCellFocused </b> <code>(id?: string, color?: string) =&gt; void</code> <br> Callback for when the user focuses a color cell. If <code>id</code> and <code>color</code> are unspecified, cells are no longer being focused.</p></li>
+<li><p><b> onCellHovered </b> <code>(id?: string, color?: string) =&gt; void</code> <br> Callback for when the user hovers over a color cell. If <code>id</code> and <code>color</code> are unspecified, cells are no longer being hovered.</p></li>
+<li><p><b> onColorChanged </b> <code>(id?: string, color?: string) =&gt; void</code> <br> Callback for when the user changes the color. If <code>id</code> and <code>color</code> are unspecified, there is no selected cell. (e.g. the user executed the currently selected cell to unselect it)</p></li>
+<li><p><b> positionInSet </b> <code>number</code> <br></p></li>
+<li><p><b> selectedId </b> <code>string</code> <br> The ID of color cell that is currently selected</p></li>
+<li><p><b> setSize </b> <code>number</code> <br></p></li>
+<li><p><b> shouldFocusCircularNavigate </b> <code>boolean</code> <br> Whether focus should cycle back to the beginning once the user navigates past the end (and vice versa). Only relevant if <code>doNotContainWithinFocusZone</code> is not true.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;ISwatchColorPickerStyleProps, ISwatchColorPickerStyles&gt;</code> <br> Styles for the component.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme to apply to the component.</p></li>
+</ul></div>
     <div id="best-practices">
     <h2>Best practices</h2>
     
@@ -208,31 +189,31 @@ you need to work using the original docs to achieve the desired result.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="va">colorCells</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"orange"</span>, color <span class="op">=</span> <span class="st">"#ca5010"</span><span class="op">)</span>,</span>
-<span class="r-in">    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"cyan"</span>, color <span class="op">=</span> <span class="st">"#038387"</span><span class="op">)</span>,</span>
-<span class="r-in">    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"blueMagenta"</span>, color <span class="op">=</span> <span class="st">"#8764b8"</span><span class="op">)</span>,</span>
-<span class="r-in">    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"magenta"</span>, color <span class="op">=</span> <span class="st">"#881798"</span><span class="op">)</span>,</span>
-<span class="r-in">    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"white"</span>, color <span class="op">=</span> <span class="st">"#ffffff"</span><span class="op">)</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span>
-<span class="r-in">    ui <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
-<span class="r-in">      <span class="fu">SwatchColorPicker.shinyInput</span><span class="op">(</span><span class="st">"color"</span>, value <span class="op">=</span> <span class="st">"orange"</span>,</span>
-<span class="r-in">        colorCells <span class="op">=</span> <span class="va">colorCells</span>, columnCount <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">colorCells</span><span class="op">)</span></span>
-<span class="r-in">      <span class="op">)</span>,</span>
-<span class="r-in">      <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/textOutput.html" class="external-link">textOutput</a></span><span class="op">(</span><span class="st">"swatchValue"</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span>,</span>
-<span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">      <span class="va">output</span><span class="op">$</span><span class="va">swatchValue</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/renderPrint.html" class="external-link">renderText</a></span><span class="op">(</span><span class="op">{</span></span>
-<span class="r-in">        <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Value: %s"</span>, <span class="va">input</span><span class="op">$</span><span class="va">color</span><span class="op">)</span></span>
-<span class="r-in">      <span class="op">}</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">}</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="va">colorCells</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"orange"</span>, color <span class="op">=</span> <span class="st">"#ca5010"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"cyan"</span>, color <span class="op">=</span> <span class="st">"#038387"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"blueMagenta"</span>, color <span class="op">=</span> <span class="st">"#8764b8"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"magenta"</span>, color <span class="op">=</span> <span class="st">"#881798"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"white"</span>, color <span class="op">=</span> <span class="st">"#ffffff"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    ui <span class="op">=</span> <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>      <span class="fu">SwatchColorPicker.shinyInput</span><span class="op">(</span><span class="st">"color"</span>, value <span class="op">=</span> <span class="st">"orange"</span>,</span></span>
+<span class="r-in"><span>        colorCells <span class="op">=</span> <span class="va">colorCells</span>, columnCount <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">colorCells</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="op">)</span>,</span></span>
+<span class="r-in"><span>      <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/textOutput.html" class="external-link">textOutput</a></span><span class="op">(</span><span class="st">"swatchValue"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>      <span class="va">output</span><span class="op">$</span><span class="va">swatchValue</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/renderPrint.html" class="external-link">renderText</a></span><span class="op">(</span><span class="op">{</span></span></span>
+<span class="r-in"><span>        <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Value: %s"</span>, <span class="va">input</span><span class="op">$</span><span class="va">color</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="op">}</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -247,7 +228,7 @@ you need to work using the original docs to achieve the desired result.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

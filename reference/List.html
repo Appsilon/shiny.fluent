@@ -90,74 +90,53 @@ you need to work using the original docs to achieve the desired result.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">List</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">List</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>rootRef</dt>
-<dd><p><code>React.Ref&lt;HTMLDivElement&gt;</code> <br> The ref to be applied to the list root. The <code>List</code> uses this element to track scroll position and sizing.</p></dd>
-<dt>surfaceElement</dt>
-<dd><p><code>JSX.Element | null</code> <br> The content to be rendered as the list surface element. This will have been rendered using <code>onRenderSurface</code>.</p></dd>
-<dt>divProps</dt>
-<dd><p><code>React.HTMLAttributes&lt;HTMLDivElement&gt;</code> <br> Props to apply to the list surface element.</p></dd>
-<dt>pageElements</dt>
-<dd><p><code>JSX.Element[]</code> <br> The content to be rendered representing all active pages.</p></dd>
-<dt>pages</dt>
-<dd><p><code>IPage&lt;T&gt;[]</code> <br> The active pages to be rendered into the list. These will have been rendered using <code>onRenderPage</code>.</p></dd>
-<dt>surfaceRef</dt>
-<dd><p><code>React.Ref&lt;HTMLDivElement&gt;</code> <br> A ref to be applied to the surface element. The <code>List</code> uses this element to track content size and focus.</p></dd>
-<dt>className</dt>
-<dd><p><code>string</code> <br> Optional classname to append to root list.</p></dd>
-<dt>componentRef</dt>
-<dd><p><code>IRefObject&lt;IList&gt;</code> <br> Optional callback to access the IList interface. Use this instead of ref for accessing the public methods and properties of the component.</p></dd>
-<dt>getItemCountForPage</dt>
-<dd><p><code>(itemIndex?: number, visibleRect?: IRectangle) =&gt; number</code> <br> Method called by the list to get how many items to render per page from specified index. In general, use <code>getPageSpecification</code> instead.</p></dd>
-<dt>getKey</dt>
-<dd><p><code>(item: T, index?: number) =&gt; string</code> <br> Optional callback to get the item key, to be used on render.</p></dd>
-<dt>getPageHeight</dt>
-<dd><p><code>(itemIndex?: number, visibleRect?: IRectangle, itemCount?: number) =&gt; number</code> <br> Method called by the list to get the pixel height for a given page. By default, we measure the first page's height and default all other pages to that height when calculating the surface space. It is ideal to be able to adequately predict page heights in order to keep the surface space from jumping in pixels, which has been seen to cause browser performance issues. In general, use <code>getPageSpecification</code> instead.</p></dd>
-<dt>getPageSpecification</dt>
-<dd><p><code>(itemIndex?: number, visibleRect?: IRectangle) =&gt; IPageSpecification</code> <br> Called by the list to get the specification for a page. Use this method to provide an allocation of items per page, as well as an estimated rendered height for the page. The list will use this to optimize virtualization.</p></dd>
-<dt>getPageStyle</dt>
-<dd><p><code>(page: IPage&lt;T&gt;) =&gt; any</code> <br> Method called by the list to derive the page style object. For spacer pages, the list will derive the height and passed in heights will be ignored.</p></dd>
-<dt>ignoreScrollingState</dt>
-<dd><p><code>boolean</code> <br> Whether to disable scroll state updates. This causes the isScrolling arg in onRenderCell to always be undefined. This is a performance optimization to let List skip a render cycle by not updating its scrolling state.</p></dd>
-<dt>items</dt>
-<dd><p><code>T[]</code> <br> Items to render.</p></dd>
-<dt>onPageAdded</dt>
-<dd><p><code>(page: IPage&lt;T&gt;) =&gt; void</code> <br> Optional callback for monitoring when a page is added.</p></dd>
-<dt>onPageRemoved</dt>
-<dd><p><code>(page: IPage&lt;T&gt;) =&gt; void</code> <br> Optional callback for monitoring when a page is removed.</p></dd>
-<dt>onPagesUpdated</dt>
-<dd><p><code>(pages: IPage&lt;T&gt;[]) =&gt; void</code> <br> Optional callback invoked when List rendering completed. This can be on initial mount or on re-render due to scrolling. This method will be called as a result of changes in List pages (added or removed), and after ALL the changes complete. To track individual page Add / Remove use onPageAdded / onPageRemoved instead.</p></dd>
-<dt>onRenderCell</dt>
-<dd><p><code>(item?: T, index?: number, isScrolling?: boolean) =&gt; React.ReactNode</code> <br> Method to call when trying to render an item.</p></dd>
-<dt>onRenderPage</dt>
-<dd><p><code>IRenderFunction&lt;IPageProps&lt;T&gt;&gt;</code> <br> Called when the List will render a page. Override this to control how cells are rendered within a page.</p></dd>
-<dt>onRenderRoot</dt>
-<dd><p><code>IRenderFunction&lt;IListOnRenderRootProps&lt;T&gt;&gt;</code> <br> Render override for the element at the root of the <code>List</code>. Use this to apply some final attributes or structure to the content each time the list is updated with new active pages or items.</p></dd>
-<dt>onRenderSurface</dt>
-<dd><p><code>IRenderFunction&lt;IListOnRenderSurfaceProps&lt;T&gt;&gt;</code> <br> Render override for the element representing the surface of the <code>List</code>. Use this to alter the structure of the rendered content if necessary on each update.</p></dd>
-<dt>onShouldVirtualize</dt>
-<dd><p><code>(props: IListProps&lt;T&gt;) =&gt; boolean</code> <br> Optional callback to determine whether the list should be rendered in full, or virtualized. Virtualization will add and remove pages of items as the user scrolls them into the visible range. This benefits larger list scenarios by reducing the DOM on the screen, but can negatively affect performance for smaller lists. The default implementation will virtualize when this callback is not provided.</p></dd>
-<dt>renderCount</dt>
-<dd><p><code>number</code> <br> Number of items to render. Defaults to items.length.</p></dd>
-<dt>renderedWindowsAhead</dt>
-<dd><p><code>number</code> <br> In addition to the visible window, how many windowHeights should we render ahead.</p></dd>
-<dt>renderedWindowsBehind</dt>
-<dd><p><code>number</code> <br> In addition to the visible window, how many windowHeights should we render behind.</p></dd>
-<dt>startIndex</dt>
-<dd><p><code>number</code> <br> Index in items array to start rendering from. Defaults to 0.</p></dd>
-<dt>usePageCache</dt>
-<dd><p><code>boolean</code> <br> Boolean value to enable render page caching. This is an experimental performance optimization that is off by default.</p></dd>
-<dt>version</dt>
-<dd><p><code><a href="https://rdrr.io/r/base/Paren.html" class="external-link">{}</a></code> <br> An object which can be passed in as a fresh instance to 'force update' the list.</p></dd>
-<dt>page</dt>
-<dd><p><code>IPage&lt;T&gt;</code> <br> The allocation data for the page.</p></dd>
-<dt>role</dt>
-<dd><p><code>string</code> <br> The role being assigned to the rendered page element by the list.</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> divProps </b> <code>React.HTMLAttributes&lt;HTMLDivElement&gt;</code> <br> Props to apply to the list root element.</p></li>
+<li><p><b> pages </b> <code>IPage&lt;T&gt;[]</code> <br> The active pages to be rendered into the list. These will have been rendered using <code>onRenderPage</code>.</p></li>
+<li><p><b> rootRef </b> <code>React.Ref&lt;HTMLDivElement&gt;</code> <br> The ref to be applied to the list root. The <code>List</code> uses this element to track scroll position and sizing.</p></li>
+<li><p><b> surfaceElement </b> <code>JSX.Element | null</code> <br> The content to be rendered as the list surface element. This will have been rendered using <code>onRenderSurface</code>.</p></li>
+<li><p><b> divProps </b> <code>React.HTMLAttributes&lt;HTMLDivElement&gt;</code> <br> Props to apply to the list surface element.</p></li>
+<li><p><b> pageElements </b> <code>JSX.Element[]</code> <br> The content to be rendered representing all active pages.</p></li>
+<li><p><b> pages </b> <code>IPage&lt;T&gt;[]</code> <br> The active pages to be rendered into the list. These will have been rendered using <code>onRenderPage</code>.</p></li>
+<li><p><b> surfaceRef </b> <code>React.Ref&lt;HTMLDivElement&gt;</code> <br> A ref to be applied to the surface element. The <code>List</code> uses this element to track content size and focus.</p></li>
+<li><p><b> className </b> <code>string</code> <br> Optional classname to append to root list.</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IList&gt;</code> <br> Optional callback to access the IList interface. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> getItemCountForPage </b> <code>(itemIndex?: number, visibleRect?: IRectangle) =&gt; number</code> <br> Method called by the list to get how many items to render per page from specified index. In general, use <code>getPageSpecification</code> instead.</p></li>
+<li><p><b> getKey </b> <code>(item: T, index?: number) =&gt; string</code> <br> Optional callback to get the item key, to be used on render.</p></li>
+<li><p><b> getPageHeight </b> <code>(itemIndex?: number, visibleRect?: IRectangle, itemCount?: number) =&gt; number</code> <br> Method called by the list to get the pixel height for a given page. By default, we measure the first page's height and default all other pages to that height when calculating the surface space. It is ideal to be able to adequately predict page heights in order to keep the surface space from jumping in pixels, which has been seen to cause browser performance issues. In general, use <code>getPageSpecification</code> instead.</p></li>
+<li><p><b> getPageSpecification </b> <code>(itemIndex?: number, visibleRect?: IRectangle) =&gt; IPageSpecification</code> <br> Called by the list to get the specification for a page. Use this method to provide an allocation of items per page, as well as an estimated rendered height for the page. The list will use this to optimize virtualization.</p></li>
+<li><p><b> getPageStyle </b> <code>(page: IPage&lt;T&gt;) =&gt; any</code> <br> Method called by the list to derive the page style object. For spacer pages, the list will derive the height and passed in heights will be ignored.</p></li>
+<li><p><b> ignoreScrollingState </b> <code>boolean</code> <br> Whether to disable scroll state updates. This causes the isScrolling arg in onRenderCell to always be undefined. This is a performance optimization to let List skip a render cycle by not updating its scrolling state.</p></li>
+<li><p><b> items </b> <code>T[]</code> <br> Items to render.</p></li>
+<li><p><b> onPageAdded </b> <code>(page: IPage&lt;T&gt;) =&gt; void</code> <br> Optional callback for monitoring when a page is added.</p></li>
+<li><p><b> onPageRemoved </b> <code>(page: IPage&lt;T&gt;) =&gt; void</code> <br> Optional callback for monitoring when a page is removed.</p></li>
+<li><p><b> onPagesUpdated </b> <code>(pages: IPage&lt;T&gt;[]) =&gt; void</code> <br> Optional callback invoked when List rendering completed. This can be on initial mount or on re-render due to scrolling. This method will be called as a result of changes in List pages (added or removed), and after ALL the changes complete. To track individual page Add / Remove use onPageAdded / onPageRemoved instead.</p></li>
+<li><p><b> onRenderCell </b> <code>(item?: T, index?: number, isScrolling?: boolean) =&gt; React.ReactNode</code> <br> Method to call when trying to render an item.</p></li>
+<li><p><b> onRenderPage </b> <code>IRenderFunction&lt;IPageProps&lt;T&gt;&gt;</code> <br> Called when the List will render a page. Override this to control how cells are rendered within a page.</p></li>
+<li><p><b> onRenderRoot </b> <code>IRenderFunction&lt;IListOnRenderRootProps&lt;T&gt;&gt;</code> <br> Render override for the element at the root of the <code>List</code>. Use this to apply some final attributes or structure to the content each time the list is updated with new active pages or items.</p></li>
+<li><p><b> onRenderSurface </b> <code>IRenderFunction&lt;IListOnRenderSurfaceProps&lt;T&gt;&gt;</code> <br> Render override for the element representing the surface of the <code>List</code>. Use this to alter the structure of the rendered content if necessary on each update.</p></li>
+<li><p><b> onShouldVirtualize </b> <code>(props: IListProps&lt;T&gt;) =&gt; boolean</code> <br> Optional callback to determine whether the list should be rendered in full, or virtualized. Virtualization will add and remove pages of items as the user scrolls them into the visible range. This benefits larger list scenarios by reducing the DOM on the screen, but can negatively affect performance for smaller lists. The default implementation will virtualize when this callback is not provided.</p></li>
+<li><p><b> renderCount </b> <code>number</code> <br> Number of items to render. Defaults to items.length.</p></li>
+<li><p><b> renderedWindowsAhead </b> <code>number</code> <br> In addition to the visible window, how many windowHeights should we render ahead.</p></li>
+<li><p><b> renderedWindowsBehind </b> <code>number</code> <br> In addition to the visible window, how many windowHeights should we render behind.</p></li>
+<li><p><b> role </b> <code>string</code> <br> The role to assign to the list root element. Use this to override the default assignment of 'list' to the root and 'listitem' to the cells.</p></li>
+<li><p><b> startIndex </b> <code>number</code> <br> Index in items array to start rendering from. Defaults to 0.</p></li>
+<li><p><b> usePageCache </b> <code>boolean</code> <br> Boolean value to enable render page caching. This is an experimental performance optimization that is off by default.</p></li>
+<li><p><b> version </b> <code><a href="https://rdrr.io/r/base/Paren.html" class="external-link">{}</a></code> <br> An object which can be passed in as a fresh instance to 'force update' the list.</p></li>
+<li><p><b> page </b> <code>IPage&lt;T&gt;</code> <br> The allocation data for the page.</p></li>
+<li><p><b> role </b> <code>string</code> <br> The role being assigned to the rendered page element by the list.</p></li>
+</ul></div>
     <div id="best-practices">
     <h2>Best practices</h2>
     
@@ -226,21 +205,21 @@ public render(): JSX.Element {
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="va">items</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/do.call.html" class="external-link">do.call</a></span><span class="op">(</span><span class="va">paste0</span>, <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">replicate</a></span><span class="op">(</span><span class="fl">20</span>, <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="va">LETTERS</span>, <span class="fl">200</span>, <span class="cn">TRUE</span><span class="op">)</span>, <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">  <span class="fu">shinyApp</span><span class="op">(</span></span>
-<span class="r-in">    ui <span class="op">=</span> <span class="fu">div</span><span class="op">(</span></span>
-<span class="r-in">      style <span class="op">=</span> <span class="st">"overflow: auto; max-height: 400px"</span>,</span>
-<span class="r-in">      <span class="fu">List</span><span class="op">(</span></span>
-<span class="r-in">        items <span class="op">=</span> <span class="va">items</span>,</span>
-<span class="r-in">        onRenderCell <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"(item, index) =&gt; `${index} ${item}`"</span><span class="op">)</span></span>
-<span class="r-in">      <span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span>,</span>
-<span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="va">items</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/do.call.html" class="external-link">do.call</a></span><span class="op">(</span><span class="va">paste0</span>, <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">replicate</a></span><span class="op">(</span><span class="fl">20</span>, <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="va">LETTERS</span>, <span class="fl">200</span>, <span class="cn">TRUE</span><span class="op">)</span>, <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="fu">shinyApp</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    ui <span class="op">=</span> <span class="fu">div</span><span class="op">(</span></span></span>
+<span class="r-in"><span>      style <span class="op">=</span> <span class="st">"overflow: auto; max-height: 400px"</span>,</span></span>
+<span class="r-in"><span>      <span class="fu">List</span><span class="op">(</span></span></span>
+<span class="r-in"><span>        items <span class="op">=</span> <span class="va">items</span>,</span></span>
+<span class="r-in"><span>        onRenderCell <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"(item, index) =&gt; `${index} ${item}`"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -255,7 +234,7 @@ public render(): JSX.Element {
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

@@ -90,42 +90,35 @@ you need to work using the original docs to achieve the desired result.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">MessageBar</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">MessageBarButton</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">MessageBar</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">MessageBarButton</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>actions</dt>
-<dd><p><code>JSX.Element</code> <br> The actions you want to show on the other side.</p></dd>
-<dt>ariaLabel</dt>
-<dd><p><code>string</code> <br> A description of the message bar for the benefit of screen readers.</p></dd>
-<dt>className</dt>
-<dd><p><code>string</code> <br> Additional CSS class(es) to apply to the MessageBar.</p></dd>
-<dt>componentRef</dt>
-<dd><p><code>IRefObject&lt;IMessageBar&gt;</code> <br> Optional callback to access the IMessageBar interface. Use this instead of ref for accessing the public methods and properties of the component.</p></dd>
-<dt>dismissButtonAriaLabel</dt>
-<dd><p><code>string</code> <br> Aria label on dismiss button if onDismiss is defined.</p></dd>
-<dt>dismissIconProps</dt>
-<dd><p><code>IIconProps</code> <br> Custom icon prop to replace the dismiss icon. If unset, default will be the Fabric Clear icon.</p></dd>
-<dt>isMultiline</dt>
-<dd><p><code>boolean</code> <br> Determines if the message bar is multi lined. If false, and the text overflows over buttons or to another line, it is clipped.</p></dd>
-<dt>messageBarIconProps</dt>
-<dd><p><code>IIconProps</code> <br> Custom icon prop to replace the message bar icon. If unset, default will be the icon set by messageBarType.</p></dd>
-<dt>messageBarType</dt>
-<dd><p><code>MessageBarType</code> <br> The type of MessageBar to render.</p></dd>
-<dt>onDismiss</dt>
-<dd><p><code>(ev?: React.MouseEvent&lt;HTMLElement | BaseButton | Button&gt;) =&gt; any</code> <br> Whether the message bar has a dismiss button and its callback. If null, we don't show a dismiss button.</p></dd>
-<dt>overflowButtonAriaLabel</dt>
-<dd><p><code>string</code> <br> Aria label on overflow button if truncated is defined.</p></dd>
-<dt>styles</dt>
-<dd><p><code>IStyleFunctionOrObject&lt;IMessageBarStyleProps, IMessageBarStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></dd>
-<dt>theme</dt>
-<dd><p><code>ITheme</code> <br> Theme (provided through customization.)</p></dd>
-<dt>truncated</dt>
-<dd><p><code>boolean</code> <br> Determines if the message bar text is truncated. If true, a button will render to toggle between a single line view and multiline view. This prop is for single line message bars with no buttons only in a limited space scenario.</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> actions </b> <code>JSX.Element</code> <br> The actions you want to show on the other side.</p></li>
+<li><p><b> ariaLabel </b> <code>string</code> <br> A description of the message bar for the benefit of screen readers.</p></li>
+<li><p><b> className </b> <code>string</code> <br> Additional CSS class(es) to apply to the MessageBar.</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IMessageBar&gt;</code> <br> Optional callback to access the IMessageBar interface. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> dismissButtonAriaLabel </b> <code>string</code> <br> Aria label on dismiss button if onDismiss is defined.</p></li>
+<li><p><b> dismissIconProps </b> <code>IIconProps</code> <br> Custom icon prop to replace the dismiss icon. If unset, default will be the Fabric Clear icon.</p></li>
+<li><p><b> isMultiline </b> <code>boolean</code> <br> Determines if the message bar is multi lined. If false, and the text overflows over buttons or to another line, it is clipped.</p></li>
+<li><p><b> messageBarIconProps </b> <code>IIconProps</code> <br> Custom icon prop to replace the message bar icon. If unset, default will be the icon set by messageBarType.</p></li>
+<li><p><b> messageBarType </b> <code>MessageBarType</code> <br> The type of MessageBar to render.</p></li>
+<li><p><b> onDismiss </b> <code>(ev?: React.MouseEvent&lt;HTMLElement | BaseButton | Button&gt;) =&gt; any</code> <br> Whether the message bar has a dismiss button and its callback. If null, we don't show a dismiss button.</p></li>
+<li><p><b> overflowButtonAriaLabel </b> <code>string</code> <br> Aria label on overflow button if truncated is defined.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IMessageBarStyleProps, IMessageBarStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme (provided through customization.)</p></li>
+<li><p><b> truncated </b> <code>boolean</code> <br> Determines if the message bar text is truncated. If true, a button will render to toggle between a single line view and multiline view. This prop is for single line message bars with no buttons only in a limited space scenario.</p></li>
+</ul></div>
     <div id="best-practices">
     <h2>Best practices</h2>
     
@@ -183,14 +176,14 @@ you need to work using the original docs to achieve the desired result.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span>
-<span class="r-in">    ui <span class="op">=</span> <span class="fu">MessageBar</span><span class="op">(</span><span class="st">"Message"</span><span class="op">)</span>,</span>
-<span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    ui <span class="op">=</span> <span class="fu">MessageBar</span><span class="op">(</span><span class="st">"Message"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -205,7 +198,7 @@ you need to work using the original docs to achieve the desired result.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

@@ -90,97 +90,75 @@ you need to work using the original docs to achieve the desired result.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">SpinButton</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">SpinButton.shinyInput</span><span class="op">(</span><span class="va">inputId</span>, <span class="va">...</span>, value <span class="op">=</span> <span class="va">defaultValue</span><span class="op">)</span>
-
-<span class="fu">updateSpinButton.shinyInput</span><span class="op">(</span>
-  session <span class="op">=</span> <span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/domains.html" class="external-link">getDefaultReactiveDomain</a></span><span class="op">(</span><span class="op">)</span>,
-  <span class="va">inputId</span>,
-  <span class="va">...</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">SpinButton</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">SpinButton.shinyInput</span><span class="op">(</span><span class="va">inputId</span>, <span class="va">...</span>, value <span class="op">=</span> <span class="va">defaultValue</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">updateSpinButton.shinyInput</span><span class="op">(</span></span>
+<span>  session <span class="op">=</span> <span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/domains.html" class="external-link">getDefaultReactiveDomain</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="va">inputId</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>value</dt>
-<dd><p><code>string</code> <br> Current value of the control.</p>
-<p>Use this if you intend to pass in a new value as a result of change events. Mutually exclusive with <code>defaultValue</code>.</p></dd>
-<dt>ariaDescribedBy</dt>
-<dd><p><code>string</code> <br> ID of a label which describes the control, if not using the default label.</p></dd>
-<dt>ariaLabel</dt>
-<dd><p><code>string</code> <br> A description of the control for the benefit of screen reader users.</p></dd>
-<dt>ariaPositionInSet</dt>
-<dd><p><code>number</code> <br> The position in the parent set (if in a set).</p></dd>
-<dt>ariaSetSize</dt>
-<dd><p><code>number</code> <br> The total size of the parent set (if in a set).</p></dd>
-<dt>ariaValueNow</dt>
-<dd><p><code>number</code> <br> Sets the control's aria-valuenow. This is the numeric form of <code>value</code>. Providing this only makes sense when using as a controlled component.</p></dd>
-<dt>ariaValueText</dt>
-<dd><p><code>string</code> <br></p></dd>
-<dt>className</dt>
-<dd><p><code>string</code> <br> Custom className for the control.</p></dd>
-<dt>componentRef</dt>
-<dd><p><code>IRefObject&lt;ISpinButton&gt;</code> <br> Gets the component ref.</p></dd>
-<dt>decrementButtonAriaLabel</dt>
-<dd><p><code>string</code> <br> Accessible label text for the decrement button (for screen reader users).</p></dd>
-<dt>decrementButtonIcon</dt>
-<dd><p><code>IIconProps</code> <br> Custom props for the decrement button.</p></dd>
-<dt>defaultValue</dt>
-<dd><p><code>string</code> <br> Initial value of the control. Updates to this prop will not be respected.</p>
-<p>Use this if you intend for the SpinButton to be an uncontrolled component which maintains its own value. Mutually exclusive with <code>value</code>.</p></dd>
-<dt>disabled</dt>
-<dd><p><code>boolean</code> <br> Whether or not the control is disabled.</p></dd>
-<dt>downArrowButtonStyles</dt>
-<dd><p><code>Partial&lt;IButtonStyles&gt;</code> <br> Custom styles for the down arrow button.</p>
-<p>Note: The buttons are in a checked state when arrow keys are used to incremenent/decrement the SpinButton. Use <code>rootChecked</code> instead of <code>rootPressed</code> for styling when that is the case.</p></dd>
-<dt>getClassNames</dt>
-<dd><p><code>(theme: ITheme, disabled: boolean, isFocused: boolean, keyboardSpinDirection: KeyboardSpinDirection, labelPosition?: Position, className?: string) =&gt; ISpinButtonClassNames</code> <br> Custom function for providing the classNames for the control. Can be used to provide all styles for the component instead of applying them on top of the default styles.</p></dd>
-<dt>iconButtonProps</dt>
-<dd><p><code>IButtonProps</code> <br> Additional props for the up and down arrow buttons.</p></dd>
-<dt>iconProps</dt>
-<dd><p><code>IIconProps</code> <br> Props for an icon to display alongside the control's label.</p></dd>
-<dt>incrementButtonAriaLabel</dt>
-<dd><p><code>string</code> <br> Accessible label text for the increment button (for screen reader users).</p></dd>
-<dt>incrementButtonIcon</dt>
-<dd><p><code>IIconProps</code> <br> Custom props for the increment button.</p></dd>
-<dt>inputProps</dt>
-<dd><p><code>React.InputHTMLAttributes&lt;HTMLElement | HTMLInputElement&gt;</code> <br> Additional props for the input field.</p></dd>
-<dt>keytipProps</dt>
-<dd><p><code>IKeytipProps</code> <br> Keytip for the control.</p></dd>
-<dt>label</dt>
-<dd><p><code>string</code> <br> Descriptive label for the control.</p></dd>
-<dt>labelPosition</dt>
-<dd><p><code>Position</code> <br> Where to position the control's label.</p></dd>
-<dt>max</dt>
-<dd><p><code>number</code> <br> Max value of the control.</p></dd>
-<dt>min</dt>
-<dd><p><code>number</code> <br> Min value of the control.</p></dd>
-<dt>onBlur</dt>
-<dd><p><code>React.FocusEventHandler&lt;HTMLInputElement&gt;</code> <br> Callback for when the control loses focus.</p></dd>
-<dt>onDecrement</dt>
-<dd><p><code>(value: string, event?: React.MouseEvent&lt;HTMLElement&gt; | React.KeyboardEvent&lt;HTMLElement&gt;) =&gt; string | void</code> <br> Callback for when the decrement button or down arrow key is pressed.</p></dd>
-<dt>onFocus</dt>
-<dd><p><code>React.FocusEventHandler&lt;HTMLInputElement&gt;</code> <br> Callback for when the user focuses the control.</p></dd>
-<dt>onIncrement</dt>
-<dd><p><code>(value: string, event?: React.MouseEvent&lt;HTMLElement&gt; | React.KeyboardEvent&lt;HTMLElement&gt;) =&gt; string | void</code> <br> Callback for when the increment button or up arrow key is pressed.</p></dd>
-<dt>onValidate</dt>
-<dd><p><code>(value: string, event?: React.SyntheticEvent&lt;HTMLElement&gt;) =&gt; string | void</code> <br> Callback for when the entered value should be validated.</p></dd>
-<dt>precision</dt>
-<dd><p><code>number</code> <br> How many decimal places the value should be rounded to.</p>
-<p>The default is calculated based on the precision of <code>step</code>: i.e. if step = 1, precision = 0. step = 0.0089, precision = 4. step = 300, precision = 2. step = 23.00, precision = 2.</p></dd>
-<dt>step</dt>
-<dd><p><code>number</code> <br> Difference between two adjacent values of the control. This value is used to calculate the precision of the input if no <code>precision</code> is given. The precision calculated this way will always be \&gt;= 0.</p></dd>
-<dt>styles</dt>
-<dd><p><code>Partial&lt;ISpinButtonStyles&gt;</code> <br> Custom styling for individual elements within the control.</p></dd>
-<dt>theme</dt>
-<dd><p><code>ITheme</code> <br> Theme provided by HOC.</p></dd>
-<dt>title</dt>
-<dd><p><code>string</code> <br> A more descriptive title for the control, visible on its tooltip.</p></dd>
-<dt>upArrowButtonStyles</dt>
-<dd><p><code>Partial&lt;IButtonStyles&gt;</code> <br> Custom styles for the up arrow button.</p>
-<p>Note: The buttons are in a checked state when arrow keys are used to incremenent/decrement the SpinButton. Use <code>rootChecked</code> instead of <code>rootPressed</code> for styling when that is the case.</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
+
+<dt>inputId</dt>
+<dd><p>Id of the component</p></dd>
+
+
+<dt>value</dt>
+<dd><p>Value</p></dd>
+
+
+<dt>session</dt>
+<dd><p>Session</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> ariaDescribedBy </b> <code>string</code> <br> ID of a label which describes the control, if not using the default label.</p></li>
+<li><p><b> ariaLabel </b> <code>string</code> <br> A description of the control for the benefit of screen reader users.</p></li>
+<li><p><b> ariaPositionInSet </b> <code>number</code> <br> The position in the parent set (if in a set).</p></li>
+<li><p><b> ariaSetSize </b> <code>number</code> <br> The total size of the parent set (if in a set).</p></li>
+<li><p><b> ariaValueNow </b> <code>number</code> <br> Sets the control's aria-valuenow. This is the numeric form of <code>value</code>. Providing this only makes sense when using as a controlled component.</p></li>
+<li><p><b> ariaValueText </b> <code>string</code> <br></p></li>
+<li><p><b> className </b> <code>string</code> <br> Custom className for the control.</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;ISpinButton&gt;</code> <br> Gets the component ref.</p></li>
+<li><p><b> decrementButtonAriaLabel </b> <code>string</code> <br> Accessible label text for the decrement button (for screen reader users).</p></li>
+<li><p><b> decrementButtonIcon </b> <code>IIconProps</code> <br> Custom props for the decrement button.</p></li>
+<li><p><b> defaultValue </b> <code>string</code> <br> Initial value of the control. Updates to this prop will not be respected.Use this if you intend for the SpinButton to be an uncontrolled component which maintains its own value. Mutually exclusive with <code>value</code>.</p></li>
+<li><p><b> disabled </b> <code>boolean</code> <br> Whether or not the control is disabled.</p></li>
+<li><p><b> downArrowButtonStyles </b> <code>Partial&lt;IButtonStyles&gt;</code> <br> Custom styles for the down arrow button.Note: The buttons are in a checked state when arrow keys are used to incremenent/decrement the SpinButton. Use <code>rootChecked</code> instead of <code>rootPressed</code> for styling when that is the case.</p></li>
+<li><p><b> getClassNames </b> <code>(theme: ITheme, disabled: boolean, isFocused: boolean, keyboardSpinDirection: KeyboardSpinDirection, labelPosition?: Position, className?: string) =&gt; ISpinButtonClassNames</code> <br> Custom function for providing the classNames for the control. Can be used to provide all styles for the component instead of applying them on top of the default styles.</p></li>
+<li><p><b> iconButtonProps </b> <code>IButtonProps</code> <br> Additional props for the up and down arrow buttons.</p></li>
+<li><p><b> iconProps </b> <code>IIconProps</code> <br> Props for an icon to display alongside the control's label.</p></li>
+<li><p><b> incrementButtonAriaLabel </b> <code>string</code> <br> Accessible label text for the increment button (for screen reader users).</p></li>
+<li><p><b> incrementButtonIcon </b> <code>IIconProps</code> <br> Custom props for the increment button.</p></li>
+<li><p><b> inputProps </b> <code>React.InputHTMLAttributes&lt;HTMLElement | HTMLInputElement&gt;</code> <br> Additional props for the input field.</p></li>
+<li><p><b> keytipProps </b> <code>IKeytipProps</code> <br> Keytip for the control.</p></li>
+<li><p><b> label </b> <code>string</code> <br> Descriptive label for the control.</p></li>
+<li><p><b> labelPosition </b> <code>Position</code> <br> Where to position the control's label.</p></li>
+<li><p><b> max </b> <code>number</code> <br> Max value of the control.</p></li>
+<li><p><b> min </b> <code>number</code> <br> Min value of the control.</p></li>
+<li><p><b> onBlur </b> <code>React.FocusEventHandler&lt;HTMLInputElement&gt;</code> <br> Callback for when the control loses focus.</p></li>
+<li><p><b> onDecrement </b> <code>(value: string, event?: React.MouseEvent&lt;HTMLElement&gt; | React.KeyboardEvent&lt;HTMLElement&gt;) =&gt; string | void</code> <br> Callback for when the decrement button or down arrow key is pressed.</p></li>
+<li><p><b> onFocus </b> <code>React.FocusEventHandler&lt;HTMLInputElement&gt;</code> <br> Callback for when the user focuses the control.</p></li>
+<li><p><b> onIncrement </b> <code>(value: string, event?: React.MouseEvent&lt;HTMLElement&gt; | React.KeyboardEvent&lt;HTMLElement&gt;) =&gt; string | void</code> <br> Callback for when the increment button or up arrow key is pressed.</p></li>
+<li><p><b> onValidate </b> <code>(value: string, event?: React.SyntheticEvent&lt;HTMLElement&gt;) =&gt; string | void</code> <br> Callback for when the entered value should be validated.</p></li>
+<li><p><b> precision </b> <code>number</code> <br> How many decimal places the value should be rounded to.The default is calculated based on the precision of <code>step</code>: i.e. if step = 1, precision = 0. step = 0.0089, precision = 4. step = 300, precision = 2. step = 23.00, precision = 2.</p></li>
+<li><p><b> step </b> <code>number</code> <br> Difference between two adjacent values of the control. This value is used to calculate the precision of the input if no <code>precision</code> is given. The precision calculated this way will always be \&gt;= 0.</p></li>
+<li><p><b> styles </b> <code>Partial&lt;ISpinButtonStyles&gt;</code> <br> Custom styling for individual elements within the control.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by HOC.</p></li>
+<li><p><b> title </b> <code>string</code> <br> A more descriptive title for the control, visible on its tooltip.</p></li>
+<li><p><b> upArrowButtonStyles </b> <code>Partial&lt;IButtonStyles&gt;</code> <br> Custom styles for the up arrow button.Note: The buttons are in a checked state when arrow keys are used to incremenent/decrement the SpinButton. Use <code>rootChecked</code> instead of <code>rootPressed</code> for styling when that is the case.</p></li>
+<li><p><b> value </b> <code>string</code> <br> Current value of the control.Use this if you intend to pass in a new value as a result of change events. Mutually exclusive with <code>defaultValue</code>.</p></li>
+</ul></div>
     <div id="best-practices">
     <h2>Best practices</h2>
     
@@ -205,21 +183,21 @@ you need to work using the original docs to achieve the desired result.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span>
-<span class="r-in">    ui <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
-<span class="r-in">      <span class="fu">SpinButton.shinyInput</span><span class="op">(</span><span class="st">"spin"</span>, value <span class="op">=</span> <span class="fl">15</span>, min <span class="op">=</span> <span class="fl">0</span>, max <span class="op">=</span> <span class="fl">50</span>, step <span class="op">=</span> <span class="fl">5</span><span class="op">)</span>,</span>
-<span class="r-in">      <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/textOutput.html" class="external-link">textOutput</a></span><span class="op">(</span><span class="st">"spinValue"</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span>,</span>
-<span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">      <span class="va">output</span><span class="op">$</span><span class="va">spinValue</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/renderPrint.html" class="external-link">renderText</a></span><span class="op">(</span><span class="op">{</span></span>
-<span class="r-in">        <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Value: %s"</span>, <span class="va">input</span><span class="op">$</span><span class="va">spin</span><span class="op">)</span></span>
-<span class="r-in">      <span class="op">}</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">}</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    ui <span class="op">=</span> <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>      <span class="fu">SpinButton.shinyInput</span><span class="op">(</span><span class="st">"spin"</span>, value <span class="op">=</span> <span class="fl">15</span>, min <span class="op">=</span> <span class="fl">0</span>, max <span class="op">=</span> <span class="fl">50</span>, step <span class="op">=</span> <span class="fl">5</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/textOutput.html" class="external-link">textOutput</a></span><span class="op">(</span><span class="st">"spinValue"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>      <span class="va">output</span><span class="op">$</span><span class="va">spinValue</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/renderPrint.html" class="external-link">renderText</a></span><span class="op">(</span><span class="op">{</span></span></span>
+<span class="r-in"><span>        <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Value: %s"</span>, <span class="va">input</span><span class="op">$</span><span class="va">spin</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="op">}</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -234,7 +212,7 @@ you need to work using the original docs to achieve the desired result.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

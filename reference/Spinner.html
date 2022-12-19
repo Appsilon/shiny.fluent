@@ -90,43 +90,40 @@ you need to work using the original docs to achieve the desired result.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">Spinner</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">Spinner</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>ariaLabel</dt>
-<dd><p><code>string</code> <br> Alternative status label for screen reader</p></dd>
-<dt>ariaLive</dt>
-<dd><p><code>'assertive' | 'polite' | 'off'</code> <br> Politeness setting for label update announcement.</p></dd>
-<dt>className</dt>
-<dd><p><code>string</code> <br> Additional CSS class(es) to apply to the Spinner.</p></dd>
-<dt>componentRef</dt>
-<dd><p><code>IRefObject&lt;ISpinner&gt;</code> <br> Optional callback to access the ISpinner interface. Use this instead of ref for accessing the public methods and properties of the component.</p></dd>
-<dt>label</dt>
-<dd><p><code>string</code> <br> The label to show next to the Spinner. Label updates will be announced to the screen readers. Use ariaLive to control politeness level.</p></dd>
-<dt>labelPosition</dt>
-<dd><p><code>SpinnerLabelPosition</code> <br> The position of the label in regards of the spinner animation.</p></dd>
-<dt>size</dt>
-<dd><p><code>SpinnerSize</code> <br> The size of Spinner to render. { extraSmall, small, medium, large }</p></dd>
-<dt>styles</dt>
-<dd><p><code>IStyleFunctionOrObject&lt;ISpinnerStyleProps, ISpinnerStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></dd>
-<dt>theme</dt>
-<dd><p><code>ITheme</code> <br> Theme (provided through customization.)</p></dd>
-<dt>type</dt>
-<dd><p><code>SpinnerType</code> <br> Deprecated and will be removed at \&gt;= 2.0.0. Use <code>SpinnerSize</code> instead.</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> ariaLabel </b> <code>string</code> <br> Alternative status label for screen reader</p></li>
+<li><p><b> ariaLive </b> <code>'assertive' | 'polite' | 'off'</code> <br> Politeness setting for label update announcement.</p></li>
+<li><p><b> className </b> <code>string</code> <br> Additional CSS class(es) to apply to the Spinner.</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;ISpinner&gt;</code> <br> Optional callback to access the ISpinner interface. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> label </b> <code>string</code> <br> The label to show next to the Spinner. Label updates will be announced to the screen readers. Use ariaLive to control politeness level.</p></li>
+<li><p><b> labelPosition </b> <code>SpinnerLabelPosition</code> <br> The position of the label in regards of the spinner animation.</p></li>
+<li><p><b> size </b> <code>SpinnerSize</code> <br> The size of Spinner to render. { extraSmall, small, medium, large }</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;ISpinnerStyleProps, ISpinnerStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme (provided through customization.)</p></li>
+<li><p><b> type </b> <code>SpinnerType</code> <br> Deprecated and will be removed at \&gt;= 2.0.0. Use <code>SpinnerSize</code> instead.</p></li>
+</ul></div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span>
-<span class="r-in">    ui <span class="op">=</span> <span class="fu">Spinner</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">3</span>, label <span class="op">=</span> <span class="st">"Loading, please wait..."</span><span class="op">)</span>,</span>
-<span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    ui <span class="op">=</span> <span class="fu">Spinner</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">3</span>, label <span class="op">=</span> <span class="st">"Loading, please wait..."</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -141,7 +138,7 @@ you need to work using the original docs to achieve the desired result.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

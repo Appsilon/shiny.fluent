@@ -96,73 +96,70 @@ you need to work using the original docs to achieve the desired result.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">ResizeGroup</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">ResizeGroup</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>className</dt>
-<dd><p><code>string</code> <br> Additional css class to apply to the Component</p></dd>
-<dt>componentRef</dt>
-<dd><p><code>IRefObject&lt;IResizeGroup&gt;</code> <br> Optional callback to access the IResizeGroup interface. Use this instead of ref for accessing the public methods and properties of the component.</p></dd>
-<dt>data</dt>
-<dd><p><code>any</code> <br> Initial data to be passed to the <code>onRenderData</code> function. When there is no <code>onGrowData</code> provided, this data should represent what should be passed to the render function when the parent container of the ResizeGroup is at its maximum supported width. A <code>cacheKey</code> property may optionally be included as part of the data. Two data objects with the same <code>cacheKey</code> will be assumed to take up the same width and will prevent measurements. The type of <code>cacheKey</code> is a string.</p></dd>
-<dt>dataDidRender</dt>
-<dd><p><code>(renderedData: any) =&gt; void</code> <br> Function to be called every time data is rendered. It provides the data that was actually rendered. A use case would be adding telemetry when a particular control is shown in an overflow well or dropped as a result of onReduceData or to count the number of renders that an implementation of onReduceData triggers.</p></dd>
-<dt>direction</dt>
-<dd><p><code>ResizeGroupDirection</code> <br> Direction of this resize group, vertical or horizontal</p></dd>
-<dt>onGrowData</dt>
-<dd><p><code>(prevData: any) =&gt; any</code> <br> Function to be performed on the data in order to increase its width. It is called in scenarios where the container has more room than the previous render and we may be able to fit more content. If there are no more scaling operations to perform on teh data, it should return undefined to prevent an infinite render loop.</p></dd>
-<dt>onReduceData</dt>
-<dd><p><code>(prevData: any) =&gt; any</code> <br> Function to be performed on the data in order to reduce its width and make it fit into the given space. If there are no more scaling steps to apply, it should return undefined to prevent an infinite render loop.</p></dd>
-<dt>onRenderData</dt>
-<dd><p><code>(data: any) =&gt; JSX.Element</code> <br> Function to render the data. Called when rendering the contents to the screen and when rendering in a hidden div to measure the size of the contents.</p></dd>
-<dt>styles</dt>
-<dd><p><code>IStyleFunctionOrObject&lt;IResizeGroupStyleProps, IResizeGroupStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules</p></dd>
-<dt>theme</dt>
-<dd><p><code>ITheme</code> <br> Theme provided by HOC.</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> className </b> <code>string</code> <br> Additional css class to apply to the Component</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IResizeGroup&gt;</code> <br> Optional callback to access the IResizeGroup interface. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> data </b> <code>any</code> <br> Initial data to be passed to the <code>onRenderData</code> function. When there is no <code>onGrowData</code> provided, this data should represent what should be passed to the render function when the parent container of the ResizeGroup is at its maximum supported width. A <code>cacheKey</code> property may optionally be included as part of the data. Two data objects with the same <code>cacheKey</code> will be assumed to take up the same width and will prevent measurements. The type of <code>cacheKey</code> is a string.</p></li>
+<li><p><b> dataDidRender </b> <code>(renderedData: any) =&gt; void</code> <br> Function to be called every time data is rendered. It provides the data that was actually rendered. A use case would be adding telemetry when a particular control is shown in an overflow well or dropped as a result of onReduceData or to count the number of renders that an implementation of onReduceData triggers.</p></li>
+<li><p><b> direction </b> <code>ResizeGroupDirection</code> <br> Direction of this resize group, vertical or horizontal</p></li>
+<li><p><b> onGrowData </b> <code>(prevData: any) =&gt; any</code> <br> Function to be performed on the data in order to increase its width. It is called in scenarios where the container has more room than the previous render and we may be able to fit more content. If there are no more scaling operations to perform on teh data, it should return undefined to prevent an infinite render loop.</p></li>
+<li><p><b> onReduceData </b> <code>(prevData: any) =&gt; any</code> <br> Function to be performed on the data in order to reduce its width and make it fit into the given space. If there are no more scaling steps to apply, it should return undefined to prevent an infinite render loop.</p></li>
+<li><p><b> onRenderData </b> <code>(data: any) =&gt; JSX.Element</code> <br> Function to render the data. Called when rendering the contents to the screen and when rendering in a hidden div to measure the size of the contents.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IResizeGroupStyleProps, IResizeGroupStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by HOC.</p></li>
+</ul></div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">    items <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">      <span class="st">"many"</span>, <span class="st">"strings"</span>, <span class="st">"with"</span>, <span class="st">"varying"</span>, <span class="st">"length"</span>, <span class="st">"sometimes"</span>, <span class="st">"very"</span>, <span class="st">"short"</span>,</span>
-<span class="r-in">      <span class="st">"other"</span>, <span class="st">"times"</span>, <span class="st">"extraordinarily"</span>, <span class="st">"long"</span></span>
-<span class="r-in">    <span class="op">)</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in">  <span class="va">onRenderData</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"data =&gt;</span>
-<span class="r-in">    data.items.map(item =&gt;</span>
-<span class="r-in">      jsmodule['react'].createElement('div',</span>
-<span class="r-in">        {</span>
-<span class="r-in">          style: {</span>
-<span class="r-in">            display: 'inline-block',</span>
-<span class="r-in">            backgroundColor: 'orange',</span>
-<span class="r-in">            padding: '10px',</span>
-<span class="r-in">            margin: '10px',</span>
-<span class="r-in">            fontSize: '20px',</span>
-<span class="r-in">          }</span>
-<span class="r-in">        },</span>
-<span class="r-in">        item</span>
-<span class="r-in">      )</span>
-<span class="r-in">    )</span>
-<span class="r-in">  "</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">onReduceData</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"data =&gt; ({ items: data.items.slice(0, -1) })"</span><span class="op">)</span></span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span>
-<span class="r-in">    ui <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
-<span class="r-in">      <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">p</a></span><span class="op">(</span><span class="st">"Resize the browser to see how the elements are hidden when they do not fit:"</span><span class="op">)</span>,</span>
-<span class="r-in">      <span class="fu">ResizeGroup</span><span class="op">(</span></span>
-<span class="r-in">        data <span class="op">=</span> <span class="va">data</span>,</span>
-<span class="r-in">        onRenderData <span class="op">=</span> <span class="va">onRenderData</span>,</span>
-<span class="r-in">        onReduceData <span class="op">=</span> <span class="va">onReduceData</span></span>
-<span class="r-in">      <span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span>,</span>
-<span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    items <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>      <span class="st">"many"</span>, <span class="st">"strings"</span>, <span class="st">"with"</span>, <span class="st">"varying"</span>, <span class="st">"length"</span>, <span class="st">"sometimes"</span>, <span class="st">"very"</span>, <span class="st">"short"</span>,</span></span>
+<span class="r-in"><span>      <span class="st">"other"</span>, <span class="st">"times"</span>, <span class="st">"extraordinarily"</span>, <span class="st">"long"</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">onRenderData</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"data =&gt;</span></span></span>
+<span class="r-in"><span><span class="st">    data.items.map(item =&gt;</span></span></span>
+<span class="r-in"><span><span class="st">      jsmodule['react'].createElement('div',</span></span></span>
+<span class="r-in"><span><span class="st">        {</span></span></span>
+<span class="r-in"><span><span class="st">          style: {</span></span></span>
+<span class="r-in"><span><span class="st">            display: 'inline-block',</span></span></span>
+<span class="r-in"><span><span class="st">            backgroundColor: 'orange',</span></span></span>
+<span class="r-in"><span><span class="st">            padding: '10px',</span></span></span>
+<span class="r-in"><span><span class="st">            margin: '10px',</span></span></span>
+<span class="r-in"><span><span class="st">            fontSize: '20px',</span></span></span>
+<span class="r-in"><span><span class="st">          }</span></span></span>
+<span class="r-in"><span><span class="st">        },</span></span></span>
+<span class="r-in"><span><span class="st">        item</span></span></span>
+<span class="r-in"><span><span class="st">      )</span></span></span>
+<span class="r-in"><span><span class="st">    )</span></span></span>
+<span class="r-in"><span><span class="st">  "</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">onReduceData</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"data =&gt; ({ items: data.items.slice(0, -1) })"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    ui <span class="op">=</span> <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>      <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">p</a></span><span class="op">(</span><span class="st">"Resize the browser to see how the elements are hidden when they do not fit:"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      <span class="fu">ResizeGroup</span><span class="op">(</span></span></span>
+<span class="r-in"><span>        data <span class="op">=</span> <span class="va">data</span>,</span></span>
+<span class="r-in"><span>        onRenderData <span class="op">=</span> <span class="va">onRenderData</span>,</span></span>
+<span class="r-in"><span>        onReduceData <span class="op">=</span> <span class="va">onReduceData</span></span></span>
+<span class="r-in"><span>      <span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -177,7 +174,7 @@ you need to work using the original docs to achieve the desired result.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

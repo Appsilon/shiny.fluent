@@ -111,7 +111,7 @@
     
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></code></pre></div>
 <p>This is Part 2 of shiny.fluent tutorial.</p>
 <p>In <a href="../articles/shiny-fluent.html">Part 1</a> we built a pretty functional app, but honestly, it doesn’t look particularly great. Let’s now build a good looking dashboard UI for that app. It will have a top command bar with a title, a sidebar with navigation, and multiple pages handled by router.</p>
 <div class="section level2">
@@ -120,51 +120,51 @@
 <p>We are starting with the <a href="https://appsilon.github.io/shiny.fluent/articles/shiny-fluent.html" class="external-link">code Part 1 ends with</a>.</p>
 <p>Let’s start by changing the beginning of our file to load all libraries that we will use in this example. Make sure to install the ones you don’t have yet installed (if any).</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/tidyverse/glue" class="external-link">glue</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rstudio.github.io/leaflet/" class="external-link">leaflet</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://plotly-r.com" class="external-link">plotly</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rstudio.github.io/sass/" class="external-link">sass</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://shiny.rstudio.com/" class="external-link">shiny</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">shiny.router</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/tidyverse/glue" class="external-link">glue</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rstudio.github.io/leaflet/" class="external-link">leaflet</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://plotly-r.com" class="external-link">plotly</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rstudio.github.io/sass/" class="external-link">sass</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://shiny.rstudio.com/" class="external-link">shiny</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">shiny.router</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="single-page-layout">Single page layout<a class="anchor" aria-label="anchor" href="#single-page-layout"></a>
 </h2>
 <p>As a next step, let’s add a title and subtitle to our current app. We’ll create a helper function and call it <code>makePage</code>, so that it is easy to add more pages in the same fashion.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">makePage</span> <span class="op">&lt;-</span> <span class="kw">function</span> <span class="op">(</span><span class="va">title</span>, <span class="va">subtitle</span>, <span class="va">contents</span><span class="op">)</span> <span class="op">{</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/tagList.html" class="external-link">tagList</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span>
-    class <span class="op">=</span> <span class="st">"page-title"</span>,
-    <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">span</a></span><span class="op">(</span><span class="va">title</span>, class <span class="op">=</span> <span class="st">"ms-fontSize-32 ms-fontWeight-semibold"</span>, style <span class="op">=</span>
-           <span class="st">"color: #323130"</span><span class="op">)</span>,
-    <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">span</a></span><span class="op">(</span><span class="va">subtitle</span>, class <span class="op">=</span> <span class="st">"ms-fontSize-14 ms-fontWeight-regular"</span>, style <span class="op">=</span>
-           <span class="st">"color: #605E5C; margin: 14px;"</span><span class="op">)</span>
-  <span class="op">)</span>,
-  <span class="va">contents</span><span class="op">)</span>
-<span class="op">}</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">makePage</span> <span class="op">&lt;-</span> <span class="kw">function</span> <span class="op">(</span><span class="va">title</span>, <span class="va">subtitle</span>, <span class="va">contents</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/tagList.html" class="external-link">tagList</a></span><span class="op">(</span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
+<span>    class <span class="op">=</span> <span class="st">"page-title"</span>,</span>
+<span>    <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">span</a></span><span class="op">(</span><span class="va">title</span>, class <span class="op">=</span> <span class="st">"ms-fontSize-32 ms-fontWeight-semibold"</span>, style <span class="op">=</span></span>
+<span>           <span class="st">"color: #323130"</span><span class="op">)</span>,</span>
+<span>    <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">span</a></span><span class="op">(</span><span class="va">subtitle</span>, class <span class="op">=</span> <span class="st">"ms-fontSize-14 ms-fontWeight-regular"</span>, style <span class="op">=</span></span>
+<span>           <span class="st">"color: #605E5C; margin: 14px;"</span><span class="op">)</span></span>
+<span>  <span class="op">)</span>,</span>
+<span>  <span class="va">contents</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre></div>
 <p>We can now take our entire UI built so far and put it in a “page” layout, giving it a helpful title and subtitle.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">analysis_page</span> <span class="op">&lt;-</span> <span class="fu">makePage</span><span class="op">(</span>
-  <span class="st">"Sales representatives"</span>,
-  <span class="st">"Best performing reps"</span>,
-  <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span>
-    <span class="fu"><a href="../reference/Stack.html">Stack</a></span><span class="op">(</span>
-      horizontal <span class="op">=</span> <span class="cn">TRUE</span>,
-      tokens <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>childrenGap <span class="op">=</span> <span class="fl">10</span><span class="op">)</span>,
-      <span class="fu">makeCard</span><span class="op">(</span><span class="st">"Filters"</span>, <span class="va">filters</span>, size <span class="op">=</span> <span class="fl">4</span>, style <span class="op">=</span> <span class="st">"max-height: 320px"</span><span class="op">)</span>,
-      <span class="fu">makeCard</span><span class="op">(</span><span class="st">"Deals count"</span>, <span class="fu"><a href="https://rdrr.io/pkg/plotly/man/plotly-shiny.html" class="external-link">plotlyOutput</a></span><span class="op">(</span><span class="st">"plot"</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">8</span>, style <span class="op">=</span> <span class="st">"max-height: 320px"</span><span class="op">)</span>
-    <span class="op">)</span>,
-    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/htmlOutput.html" class="external-link">uiOutput</a></span><span class="op">(</span><span class="st">"analysis"</span><span class="op">)</span>
-  <span class="op">)</span>
-<span class="op">)</span>
-
-<span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/fluentPage.html">fluentPage</a></span><span class="op">(</span>
-  <span class="va">tags</span><span class="op">$</span><span class="fu">style</span><span class="op">(</span><span class="st">".card { padding: 28px; margin-bottom: 28px; }"</span><span class="op">)</span>,
-  <span class="va">analysis_page</span>
-<span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">analysis_page</span> <span class="op">&lt;-</span> <span class="fu">makePage</span><span class="op">(</span></span>
+<span>  <span class="st">"Sales representatives"</span>,</span>
+<span>  <span class="st">"Best performing reps"</span>,</span>
+<span>  <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
+<span>    <span class="fu"><a href="../reference/Stack.html">Stack</a></span><span class="op">(</span></span>
+<span>      horizontal <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>      tokens <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>childrenGap <span class="op">=</span> <span class="fl">10</span><span class="op">)</span>,</span>
+<span>      <span class="fu">makeCard</span><span class="op">(</span><span class="st">"Filters"</span>, <span class="va">filters</span>, size <span class="op">=</span> <span class="fl">4</span>, style <span class="op">=</span> <span class="st">"max-height: 320px"</span><span class="op">)</span>,</span>
+<span>      <span class="fu">makeCard</span><span class="op">(</span><span class="st">"Deals count"</span>, <span class="fu"><a href="https://rdrr.io/pkg/plotly/man/plotly-shiny.html" class="external-link">plotlyOutput</a></span><span class="op">(</span><span class="st">"plot"</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">8</span>, style <span class="op">=</span> <span class="st">"max-height: 320px"</span><span class="op">)</span></span>
+<span>    <span class="op">)</span>,</span>
+<span>    <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/htmlOutput.html" class="external-link">uiOutput</a></span><span class="op">(</span><span class="st">"analysis"</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/fluentPage.html">fluentPage</a></span><span class="op">(</span></span>
+<span>  <span class="va">tags</span><span class="op">$</span><span class="fu">style</span><span class="op">(</span><span class="st">".card { padding: 28px; margin-bottom: 28px; }"</span><span class="op">)</span>,</span>
+<span>  <span class="va">analysis_page</span></span>
+<span><span class="op">)</span></span></code></pre></div>
 <p><img src="images/tutorial-part2-step1.png" width="682"></p>
 </div>
 <div class="section level2">
@@ -173,18 +173,18 @@
 <p>It’s time to create a place for our header, navigation sidebar and footer. We’ll use CSS grid for that. It’s a modern, flexible and staightforward way to achieve such a layout.</p>
 <p>We start by creating divs for each of the areas, with placeholder texts that we will later replace.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">header</span> <span class="op">&lt;-</span> <span class="st">"header"</span>
-<span class="va">navigation</span> <span class="op">&lt;-</span> <span class="st">"navigation"</span>
-<span class="va">footer</span> <span class="op">&lt;-</span> <span class="st">"footer"</span>
-
-<span class="va">layout</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">mainUI</span><span class="op">)</span><span class="op">{</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span>class <span class="op">=</span> <span class="st">"grid-container"</span>,
-      <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span>class <span class="op">=</span> <span class="st">"header"</span>, <span class="va">header</span><span class="op">)</span>,
-      <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span>class <span class="op">=</span> <span class="st">"sidenav"</span>, <span class="va">navigation</span><span class="op">)</span>,
-      <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span>class <span class="op">=</span> <span class="st">"main"</span>, <span class="va">mainUI</span><span class="op">)</span>,
-      <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span>class <span class="op">=</span> <span class="st">"footer"</span>, <span class="va">footer</span><span class="op">)</span>
-  <span class="op">)</span>
-<span class="op">}</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">header</span> <span class="op">&lt;-</span> <span class="st">"header"</span></span>
+<span><span class="va">navigation</span> <span class="op">&lt;-</span> <span class="st">"navigation"</span></span>
+<span><span class="va">footer</span> <span class="op">&lt;-</span> <span class="st">"footer"</span></span>
+<span></span>
+<span><span class="va">layout</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">mainUI</span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span>class <span class="op">=</span> <span class="st">"grid-container"</span>,</span>
+<span>      <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span>class <span class="op">=</span> <span class="st">"header"</span>, <span class="va">header</span><span class="op">)</span>,</span>
+<span>      <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span>class <span class="op">=</span> <span class="st">"sidenav"</span>, <span class="va">navigation</span><span class="op">)</span>,</span>
+<span>      <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span>class <span class="op">=</span> <span class="st">"main"</span>, <span class="va">mainUI</span><span class="op">)</span>,</span>
+<span>      <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span>class <span class="op">=</span> <span class="st">"footer"</span>, <span class="va">footer</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre></div>
 <p>Now it’s time to tell the browser using CSS how to arrange these areas. To define how our areas should be laid out on the page, let’s put the following rules in <code>www/style.css</code>:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">.grid-container</span> {</span>
 <span id="cb6-2"><a href="#cb6-2"></a>  <span class="kw">display</span>: grid<span class="op">;</span></span>
@@ -242,11 +242,11 @@
 <span id="cb7-17"><a href="#cb7-17"></a>}</span></code></pre></div>
 <p>Now we only need to update our UI definition to load styles from <code>www/style.css</code> and use the new layout.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/fluentPage.html">fluentPage</a></span><span class="op">(</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/plotly/man/layout.html" class="external-link">layout</a></span><span class="op">(</span><span class="va">analysis_page</span><span class="op">)</span>,
-  <span class="va">tags</span><span class="op">$</span><span class="fu">head</span><span class="op">(</span>
-    <span class="va">tags</span><span class="op">$</span><span class="fu">link</span><span class="op">(</span>href <span class="op">=</span> <span class="st">"style.css"</span>, rel <span class="op">=</span> <span class="st">"stylesheet"</span>, type <span class="op">=</span> <span class="st">"text/css"</span><span class="op">)</span>
-  <span class="op">)</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/fluentPage.html">fluentPage</a></span><span class="op">(</span></span>
+<span>  <span class="fu">layout</span><span class="op">(</span><span class="va">analysis_page</span><span class="op">)</span>,</span>
+<span>  <span class="va">tags</span><span class="op">$</span><span class="fu">head</span><span class="op">(</span></span>
+<span>    <span class="va">tags</span><span class="op">$</span><span class="fu">link</span><span class="op">(</span>href <span class="op">=</span> <span class="st">"style.css"</span>, rel <span class="op">=</span> <span class="st">"stylesheet"</span>, type <span class="op">=</span> <span class="st">"text/css"</span><span class="op">)</span></span>
+<span>  <span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><img src="images/tutorial-part2-step2.png" width="913"></p>
 </div>
 <div class="section level2">
@@ -258,24 +258,24 @@
 </h3>
 <p>Let’s replace the previous header definition with:</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">header</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/tagList.html" class="external-link">tagList</a></span><span class="op">(</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">img</a></span><span class="op">(</span>src <span class="op">=</span> <span class="st">"appsilon-logo.png"</span>, class <span class="op">=</span> <span class="st">"logo"</span><span class="op">)</span>,
-  <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span><span class="fu"><a href="../reference/Text.html">Text</a></span><span class="op">(</span>variant <span class="op">=</span> <span class="st">"xLarge"</span>, <span class="st">"Sales Reps Analysis"</span><span class="op">)</span>, class <span class="op">=</span> <span class="st">"title"</span><span class="op">)</span>,
-  <span class="fu"><a href="../reference/CommandBar.html">CommandBar</a></span><span class="op">(</span>
-    items <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>
-      <span class="fu"><a href="../reference/CommandBarItem.html">CommandBarItem</a></span><span class="op">(</span><span class="st">"New"</span>, <span class="st">"Add"</span>, subitems <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>
-        <span class="fu"><a href="../reference/CommandBarItem.html">CommandBarItem</a></span><span class="op">(</span><span class="st">"Email message"</span>, <span class="st">"Mail"</span>, key <span class="op">=</span> <span class="st">"emailMessage"</span>, href <span class="op">=</span> <span class="st">"mailto:me@example.com"</span><span class="op">)</span>,
-        <span class="fu"><a href="../reference/CommandBarItem.html">CommandBarItem</a></span><span class="op">(</span><span class="st">"Calendar event"</span>, <span class="st">"Calendar"</span>, key <span class="op">=</span> <span class="st">"calendarEvent"</span><span class="op">)</span>
-      <span class="op">)</span><span class="op">)</span>,
-      <span class="fu"><a href="../reference/CommandBarItem.html">CommandBarItem</a></span><span class="op">(</span><span class="st">"Upload sales plan"</span>, <span class="st">"Upload"</span><span class="op">)</span>,
-      <span class="fu"><a href="../reference/CommandBarItem.html">CommandBarItem</a></span><span class="op">(</span><span class="st">"Share analysis"</span>, <span class="st">"Share"</span><span class="op">)</span>,
-      <span class="fu"><a href="../reference/CommandBarItem.html">CommandBarItem</a></span><span class="op">(</span><span class="st">"Download report"</span>, <span class="st">"Download"</span><span class="op">)</span>
-    <span class="op">)</span>,
-    farItems <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>
-      <span class="fu"><a href="../reference/CommandBarItem.html">CommandBarItem</a></span><span class="op">(</span><span class="st">"Grid view"</span>, <span class="st">"Tiles"</span>, iconOnly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,
-      <span class="fu"><a href="../reference/CommandBarItem.html">CommandBarItem</a></span><span class="op">(</span><span class="st">"Info"</span>, <span class="st">"Info"</span>, iconOnly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-    <span class="op">)</span>,
-    style <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>width <span class="op">=</span> <span class="st">"100%"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">header</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/tagList.html" class="external-link">tagList</a></span><span class="op">(</span></span>
+<span>  <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">img</a></span><span class="op">(</span>src <span class="op">=</span> <span class="st">"appsilon-logo.png"</span>, class <span class="op">=</span> <span class="st">"logo"</span><span class="op">)</span>,</span>
+<span>  <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span><span class="fu"><a href="../reference/Text.html">Text</a></span><span class="op">(</span>variant <span class="op">=</span> <span class="st">"xLarge"</span>, <span class="st">"Sales Reps Analysis"</span><span class="op">)</span>, class <span class="op">=</span> <span class="st">"title"</span><span class="op">)</span>,</span>
+<span>  <span class="fu"><a href="../reference/CommandBar.html">CommandBar</a></span><span class="op">(</span></span>
+<span>    items <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
+<span>      <span class="fu"><a href="../reference/CommandBarItem.html">CommandBarItem</a></span><span class="op">(</span><span class="st">"New"</span>, <span class="st">"Add"</span>, subitems <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
+<span>        <span class="fu"><a href="../reference/CommandBarItem.html">CommandBarItem</a></span><span class="op">(</span><span class="st">"Email message"</span>, <span class="st">"Mail"</span>, key <span class="op">=</span> <span class="st">"emailMessage"</span>, href <span class="op">=</span> <span class="st">"mailto:me@example.com"</span><span class="op">)</span>,</span>
+<span>        <span class="fu"><a href="../reference/CommandBarItem.html">CommandBarItem</a></span><span class="op">(</span><span class="st">"Calendar event"</span>, <span class="st">"Calendar"</span>, key <span class="op">=</span> <span class="st">"calendarEvent"</span><span class="op">)</span></span>
+<span>      <span class="op">)</span><span class="op">)</span>,</span>
+<span>      <span class="fu"><a href="../reference/CommandBarItem.html">CommandBarItem</a></span><span class="op">(</span><span class="st">"Upload sales plan"</span>, <span class="st">"Upload"</span><span class="op">)</span>,</span>
+<span>      <span class="fu"><a href="../reference/CommandBarItem.html">CommandBarItem</a></span><span class="op">(</span><span class="st">"Share analysis"</span>, <span class="st">"Share"</span><span class="op">)</span>,</span>
+<span>      <span class="fu"><a href="../reference/CommandBarItem.html">CommandBarItem</a></span><span class="op">(</span><span class="st">"Download report"</span>, <span class="st">"Download"</span><span class="op">)</span></span>
+<span>    <span class="op">)</span>,</span>
+<span>    farItems <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
+<span>      <span class="fu"><a href="../reference/CommandBarItem.html">CommandBarItem</a></span><span class="op">(</span><span class="st">"Grid view"</span>, <span class="st">"Tiles"</span>, iconOnly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>      <span class="fu"><a href="../reference/CommandBarItem.html">CommandBarItem</a></span><span class="op">(</span><span class="st">"Info"</span>, <span class="st">"Info"</span>, iconOnly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span>    <span class="op">)</span>,</span>
+<span>    style <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>width <span class="op">=</span> <span class="st">"100%"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>As you can see, we’re using <code>CommandBar</code> and <code>CommandBarItem</code> from shiny.fluent. We also need to add a bit of styling to our CSS file:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb10-1"><a href="#cb10-1"></a></span>
 <span id="cb10-2"><a href="#cb10-2"></a><span class="fu">.title</span> {</span>
@@ -295,56 +295,56 @@
 </h3>
 <p><code>Nav</code> is a very powerful component from Fluent UI. It has very rich configuration options, but we will use it to show just a couple of links:</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">navigation</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/Nav.html">Nav</a></span><span class="op">(</span>
-  groups <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>
-    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>links <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>
-      <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">'Home'</span>, url <span class="op">=</span> <span class="st">'#!/'</span>, key <span class="op">=</span> <span class="st">'home'</span>, icon <span class="op">=</span> <span class="st">'Home'</span><span class="op">)</span>,
-      <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">'Analysis'</span>, url <span class="op">=</span> <span class="st">'#!/other'</span>, key <span class="op">=</span> <span class="st">'analysis'</span>, icon <span class="op">=</span> <span class="st">'AnalyticsReport'</span><span class="op">)</span>,
-      <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">'shiny.fluent'</span>, url <span class="op">=</span> <span class="st">'http://github.com/Appsilon/shiny.fluent'</span>, key <span class="op">=</span> <span class="st">'repo'</span>, icon <span class="op">=</span> <span class="st">'GitGraph'</span><span class="op">)</span>,
-      <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">'shiny.react'</span>, url <span class="op">=</span> <span class="st">'http://github.com/Appsilon/shiny.react'</span>, key <span class="op">=</span> <span class="st">'shinyreact'</span>, icon <span class="op">=</span> <span class="st">'GitGraph'</span><span class="op">)</span>,
-      <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">'Appsilon'</span>, url <span class="op">=</span> <span class="st">'http://appsilon.com'</span>, key <span class="op">=</span> <span class="st">'appsilon'</span>, icon <span class="op">=</span> <span class="st">'WebAppBuilderFragment'</span><span class="op">)</span>
-    <span class="op">)</span><span class="op">)</span>
-  <span class="op">)</span>,
-  initialSelectedKey <span class="op">=</span> <span class="st">'home'</span>,
-  styles <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>
-    root <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>
-      height <span class="op">=</span> <span class="st">'100%'</span>,
-      boxSizing <span class="op">=</span> <span class="st">'border-box'</span>,
-      overflowY <span class="op">=</span> <span class="st">'auto'</span>
-    <span class="op">)</span>
-  <span class="op">)</span>
-<span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">navigation</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/Nav.html">Nav</a></span><span class="op">(</span></span>
+<span>  groups <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>links <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
+<span>      <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">'Home'</span>, url <span class="op">=</span> <span class="st">'#!/'</span>, key <span class="op">=</span> <span class="st">'home'</span>, icon <span class="op">=</span> <span class="st">'Home'</span><span class="op">)</span>,</span>
+<span>      <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">'Analysis'</span>, url <span class="op">=</span> <span class="st">'#!/other'</span>, key <span class="op">=</span> <span class="st">'analysis'</span>, icon <span class="op">=</span> <span class="st">'AnalyticsReport'</span><span class="op">)</span>,</span>
+<span>      <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">'shiny.fluent'</span>, url <span class="op">=</span> <span class="st">'http://github.com/Appsilon/shiny.fluent'</span>, key <span class="op">=</span> <span class="st">'repo'</span>, icon <span class="op">=</span> <span class="st">'GitGraph'</span><span class="op">)</span>,</span>
+<span>      <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">'shiny.react'</span>, url <span class="op">=</span> <span class="st">'http://github.com/Appsilon/shiny.react'</span>, key <span class="op">=</span> <span class="st">'shinyreact'</span>, icon <span class="op">=</span> <span class="st">'GitGraph'</span><span class="op">)</span>,</span>
+<span>      <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">'Appsilon'</span>, url <span class="op">=</span> <span class="st">'http://appsilon.com'</span>, key <span class="op">=</span> <span class="st">'appsilon'</span>, icon <span class="op">=</span> <span class="st">'WebAppBuilderFragment'</span><span class="op">)</span></span>
+<span>    <span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="op">)</span>,</span>
+<span>  initialSelectedKey <span class="op">=</span> <span class="st">'home'</span>,</span>
+<span>  styles <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
+<span>    root <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
+<span>      height <span class="op">=</span> <span class="st">'100%'</span>,</span>
+<span>      boxSizing <span class="op">=</span> <span class="st">'border-box'</span>,</span>
+<span>      overflowY <span class="op">=</span> <span class="st">'auto'</span></span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="footer">Footer<a class="anchor" aria-label="anchor" href="#footer"></a>
 </h3>
 <p>Footer is relatively straightforward - we can put anything we want there. Here we use <code>Text</code> for typography (setting uniform font styling). We also use <code>Stack</code> to arrange elements horizontally and with bigger gaps.</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">footer</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/Stack.html">Stack</a></span><span class="op">(</span>
-  horizontal <span class="op">=</span> <span class="cn">TRUE</span>,
-  horizontalAlign <span class="op">=</span> <span class="st">'space-between'</span>,
-  tokens <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>childrenGap <span class="op">=</span> <span class="fl">20</span><span class="op">)</span>,
-  <span class="fu"><a href="../reference/Text.html">Text</a></span><span class="op">(</span>variant <span class="op">=</span> <span class="st">"medium"</span>, <span class="st">"Built with ❤ by Appsilon"</span>, block<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>,
-  <span class="fu"><a href="../reference/Text.html">Text</a></span><span class="op">(</span>variant <span class="op">=</span> <span class="st">"medium"</span>, nowrap <span class="op">=</span> <span class="cn">FALSE</span>, <span class="st">"If you'd like to learn more, reach out to us at hello@appsilon.com"</span><span class="op">)</span>,
-  <span class="fu"><a href="../reference/Text.html">Text</a></span><span class="op">(</span>variant <span class="op">=</span> <span class="st">"medium"</span>, nowrap <span class="op">=</span> <span class="cn">FALSE</span>, <span class="st">"All rights reserved."</span><span class="op">)</span>
-<span class="op">)</span>
-
-
-<span class="va">layout</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">mainUI</span><span class="op">)</span><span class="op">{</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span>class <span class="op">=</span> <span class="st">"grid-container"</span>,
-      <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span>class <span class="op">=</span> <span class="st">"header"</span>, <span class="va">header</span><span class="op">)</span>,
-      <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span>class <span class="op">=</span> <span class="st">"sidenav"</span>, <span class="va">navigation</span><span class="op">)</span>,
-      <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span>class <span class="op">=</span> <span class="st">"main"</span>, <span class="va">mainUI</span><span class="op">)</span>,
-      <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span>class <span class="op">=</span> <span class="st">"footer"</span>, <span class="va">footer</span><span class="op">)</span>
-  <span class="op">)</span>
-<span class="op">}</span>
-
-<span class="co"># ---</span>
-<span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/fluentPage.html">fluentPage</a></span><span class="op">(</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/plotly/man/layout.html" class="external-link">layout</a></span><span class="op">(</span><span class="va">analysis_page</span><span class="op">)</span>,
-  <span class="va">tags</span><span class="op">$</span><span class="fu">head</span><span class="op">(</span>
-    <span class="va">tags</span><span class="op">$</span><span class="fu">link</span><span class="op">(</span>href <span class="op">=</span> <span class="st">"style.css"</span>, rel <span class="op">=</span> <span class="st">"stylesheet"</span>, type <span class="op">=</span> <span class="st">"text/css"</span><span class="op">)</span>
-  <span class="op">)</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">footer</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/Stack.html">Stack</a></span><span class="op">(</span></span>
+<span>  horizontal <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  horizontalAlign <span class="op">=</span> <span class="st">'space-between'</span>,</span>
+<span>  tokens <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>childrenGap <span class="op">=</span> <span class="fl">20</span><span class="op">)</span>,</span>
+<span>  <span class="fu"><a href="../reference/Text.html">Text</a></span><span class="op">(</span>variant <span class="op">=</span> <span class="st">"medium"</span>, <span class="st">"Built with ❤ by Appsilon"</span>, block<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>  <span class="fu"><a href="../reference/Text.html">Text</a></span><span class="op">(</span>variant <span class="op">=</span> <span class="st">"medium"</span>, nowrap <span class="op">=</span> <span class="cn">FALSE</span>, <span class="st">"If you'd like to learn more, reach out to us at hello@appsilon.com"</span><span class="op">)</span>,</span>
+<span>  <span class="fu"><a href="../reference/Text.html">Text</a></span><span class="op">(</span>variant <span class="op">=</span> <span class="st">"medium"</span>, nowrap <span class="op">=</span> <span class="cn">FALSE</span>, <span class="st">"All rights reserved."</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span><span class="va">layout</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">mainUI</span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span>class <span class="op">=</span> <span class="st">"grid-container"</span>,</span>
+<span>      <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span>class <span class="op">=</span> <span class="st">"header"</span>, <span class="va">header</span><span class="op">)</span>,</span>
+<span>      <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span>class <span class="op">=</span> <span class="st">"sidenav"</span>, <span class="va">navigation</span><span class="op">)</span>,</span>
+<span>      <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span>class <span class="op">=</span> <span class="st">"main"</span>, <span class="va">mainUI</span><span class="op">)</span>,</span>
+<span>      <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span>class <span class="op">=</span> <span class="st">"footer"</span>, <span class="va">footer</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="co"># ---</span></span>
+<span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/fluentPage.html">fluentPage</a></span><span class="op">(</span></span>
+<span>  <span class="fu">layout</span><span class="op">(</span><span class="va">analysis_page</span><span class="op">)</span>,</span>
+<span>  <span class="va">tags</span><span class="op">$</span><span class="fu">head</span><span class="op">(</span></span>
+<span>    <span class="va">tags</span><span class="op">$</span><span class="fu">link</span><span class="op">(</span>href <span class="op">=</span> <span class="st">"style.css"</span>, rel <span class="op">=</span> <span class="st">"stylesheet"</span>, type <span class="op">=</span> <span class="st">"text/css"</span><span class="op">)</span></span>
+<span>  <span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>Let’s see how this looks together.</p>
 <p><img src="images/tutorial-part2-step3.png" width="928"></p>
 </div>
@@ -357,26 +357,26 @@
 </h3>
 <p>The one final step is to add additional pages. Let’s make a home page, consisting of two cards with some welcome text.</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">card1</span> <span class="op">&lt;-</span> <span class="fu">makeCard</span><span class="op">(</span>
-  <span class="st">"Welcome to shiny.fluent demo!"</span>,
-  <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span>
-    <span class="fu"><a href="../reference/Text.html">Text</a></span><span class="op">(</span><span class="st">"shiny.fluent is a package that allows you to build Shiny apps using Microsoft's Fluent UI."</span><span class="op">)</span>,
-    <span class="fu"><a href="../reference/Text.html">Text</a></span><span class="op">(</span><span class="st">"Use the menu on the left to explore live demos of all available components."</span><span class="op">)</span>
-  <span class="op">)</span><span class="op">)</span>
-
-<span class="va">card2</span> <span class="op">&lt;-</span> <span class="fu">makeCard</span><span class="op">(</span>
-  <span class="st">"shiny.react makes it easy to use React libraries in Shiny apps."</span>,
-  <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span>
-    <span class="fu"><a href="../reference/Text.html">Text</a></span><span class="op">(</span><span class="st">"To make a React library convenient to use from Shiny, we need to write an R package that wraps it - for example, a shiny.fluent package for Microsoft's Fluent UI, or shiny.blueprint for Palantir's Blueprint.js."</span><span class="op">)</span>,
-    <span class="fu"><a href="../reference/Text.html">Text</a></span><span class="op">(</span><span class="st">"Communication and other issues in integrating Shiny and React are solved and standardized in shiny.react package."</span><span class="op">)</span>,
-    <span class="fu"><a href="../reference/Text.html">Text</a></span><span class="op">(</span><span class="st">"shiny.react strives to do as much as possible automatically, but there's no free lunch here, so in all cases except trivial ones you'll need to do some amount of manual work. The more work you put into a wrapper package, the less work your users will have to do while using it."</span><span class="op">)</span>
-  <span class="op">)</span><span class="op">)</span>
-
-<span class="va">home_page</span> <span class="op">&lt;-</span> <span class="fu">makePage</span><span class="op">(</span>
-  <span class="st">"This is a Fluent UI app built in Shiny"</span>,
-  <span class="st">"shiny.react + Fluent UI = shiny.fluent"</span>,
-  <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span><span class="va">card1</span>, <span class="va">card2</span><span class="op">)</span>
-<span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">card1</span> <span class="op">&lt;-</span> <span class="fu">makeCard</span><span class="op">(</span></span>
+<span>  <span class="st">"Welcome to shiny.fluent demo!"</span>,</span>
+<span>  <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
+<span>    <span class="fu"><a href="../reference/Text.html">Text</a></span><span class="op">(</span><span class="st">"shiny.fluent is a package that allows you to build Shiny apps using Microsoft's Fluent UI."</span><span class="op">)</span>,</span>
+<span>    <span class="fu"><a href="../reference/Text.html">Text</a></span><span class="op">(</span><span class="st">"Use the menu on the left to explore live demos of all available components."</span><span class="op">)</span></span>
+<span>  <span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">card2</span> <span class="op">&lt;-</span> <span class="fu">makeCard</span><span class="op">(</span></span>
+<span>  <span class="st">"shiny.react makes it easy to use React libraries in Shiny apps."</span>,</span>
+<span>  <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
+<span>    <span class="fu"><a href="../reference/Text.html">Text</a></span><span class="op">(</span><span class="st">"To make a React library convenient to use from Shiny, we need to write an R package that wraps it - for example, a shiny.fluent package for Microsoft's Fluent UI, or shiny.blueprint for Palantir's Blueprint.js."</span><span class="op">)</span>,</span>
+<span>    <span class="fu"><a href="../reference/Text.html">Text</a></span><span class="op">(</span><span class="st">"Communication and other issues in integrating Shiny and React are solved and standardized in shiny.react package."</span><span class="op">)</span>,</span>
+<span>    <span class="fu"><a href="../reference/Text.html">Text</a></span><span class="op">(</span><span class="st">"shiny.react strives to do as much as possible automatically, but there's no free lunch here, so in all cases except trivial ones you'll need to do some amount of manual work. The more work you put into a wrapper package, the less work your users will have to do while using it."</span><span class="op">)</span></span>
+<span>  <span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">home_page</span> <span class="op">&lt;-</span> <span class="fu">makePage</span><span class="op">(</span></span>
+<span>  <span class="st">"This is a Fluent UI app built in Shiny"</span>,</span>
+<span>  <span class="st">"shiny.react + Fluent UI = shiny.fluent"</span>,</span>
+<span>  <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span><span class="va">card1</span>, <span class="va">card2</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
 <p>If we replace <code>analysis_page</code> with <code>home_page</code> in our <code>ui</code>, we can even see this page. However, there’s one problem: we don’t have a way to switch between pages! This is where so-called page routing comes into play.</p>
 </div>
 <div class="section level3">
@@ -385,34 +385,32 @@
 <p>To enable switching between pages we will use the <a href="https://appsilon.github.io/shiny.router/" class="external-link">shiny.router</a> package. This way we will also have shareable URLs to individual pages.</p>
 <p>The first step is to define the available routes:</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">router</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny.router/man/make_router.html" class="external-link">make_router</a></span><span class="op">(</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/shiny.router/man/route.html" class="external-link">route</a></span><span class="op">(</span><span class="st">"/"</span>, <span class="va">home_page</span><span class="op">)</span>,
-  <span class="fu"><a href="https://rdrr.io/pkg/shiny.router/man/route.html" class="external-link">route</a></span><span class="op">(</span><span class="st">"other"</span>, <span class="va">analysis_page</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">router</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny.router/man/make_router.html" class="external-link">make_router</a></span><span class="op">(</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny.router/man/route.html" class="external-link">route</a></span><span class="op">(</span><span class="st">"/"</span>, <span class="va">home_page</span><span class="op">)</span>,</span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny.router/man/route.html" class="external-link">route</a></span><span class="op">(</span><span class="st">"other"</span>, <span class="va">analysis_page</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>Now, we need to put <code>router$ui</code> in the place where we want the selected page to appear. (Currently, we also need to manually include router’s JavaScript dependencies, because <code>shiny.fluent</code> is not compatible with the way <code>shiny.router</code> loads this dependency. We expect this to be resolved in future versions of <code>shiny.router</code>).</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># Add shiny.router dependencies manually: they are not picked up because they're added in a non-standard way.</span>
-<span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/resourcePaths.html" class="external-link">addResourcePath</a></span><span class="op">(</span><span class="st">"shiny.router"</span>, <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"www"</span>, package <span class="op">=</span> <span class="st">"shiny.router"</span><span class="op">)</span><span class="op">)</span>
-<span class="va">shiny_router_js_src</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="st">"shiny.router"</span>, <span class="st">"shiny.router.js"</span><span class="op">)</span>
-<span class="va">shiny_router_script_tag</span> <span class="op">&lt;-</span> <span class="fu">shiny</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">tags</a></span><span class="op">$</span><span class="fu">script</span><span class="op">(</span>type <span class="op">=</span> <span class="st">"text/javascript"</span>, src <span class="op">=</span> <span class="va">shiny_router_js_src</span><span class="op">)</span>
-
-
-<span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/fluentPage.html">fluentPage</a></span><span class="op">(</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/plotly/man/layout.html" class="external-link">layout</a></span><span class="op">(</span><span class="va">router</span><span class="op">$</span><span class="va">ui</span><span class="op">)</span>,
-  <span class="va">tags</span><span class="op">$</span><span class="fu">head</span><span class="op">(</span>
-    <span class="va">tags</span><span class="op">$</span><span class="fu">link</span><span class="op">(</span>href <span class="op">=</span> <span class="st">"style.css"</span>, rel <span class="op">=</span> <span class="st">"stylesheet"</span>, type <span class="op">=</span> <span class="st">"text/css"</span><span class="op">)</span>,
-    <span class="va">shiny_router_script_tag</span>
-  <span class="op">)</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># Add shiny.router dependencies manually: they are not picked up because they're added in a non-standard way.</span></span>
+<span><span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/resourcePaths.html" class="external-link">addResourcePath</a></span><span class="op">(</span><span class="st">"shiny.router"</span>, <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"www"</span>, package <span class="op">=</span> <span class="st">"shiny.router"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">shiny_router_js_src</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="st">"shiny.router"</span>, <span class="st">"shiny.router.js"</span><span class="op">)</span></span>
+<span><span class="va">shiny_router_script_tag</span> <span class="op">&lt;-</span> <span class="fu">shiny</span><span class="fu">::</span><span class="va"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">tags</a></span><span class="op">$</span><span class="fu">script</span><span class="op">(</span>type <span class="op">=</span> <span class="st">"text/javascript"</span>, src <span class="op">=</span> <span class="va">shiny_router_js_src</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/fluentPage.html">fluentPage</a></span><span class="op">(</span></span>
+<span>  <span class="fu">layout</span><span class="op">(</span><span class="va">router</span><span class="op">$</span><span class="va">ui</span><span class="op">)</span>,</span>
+<span>  <span class="va">tags</span><span class="op">$</span><span class="fu">head</span><span class="op">(</span></span>
+<span>    <span class="va">tags</span><span class="op">$</span><span class="fu">link</span><span class="op">(</span>href <span class="op">=</span> <span class="st">"style.css"</span>, rel <span class="op">=</span> <span class="st">"stylesheet"</span>, type <span class="op">=</span> <span class="st">"text/css"</span><span class="op">)</span>,</span>
+<span>    <span class="va">shiny_router_script_tag</span></span>
+<span>  <span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>One final step is to add this single line to our <code>server</code> function, which otherwise remains untouched from the Part 1 of the tutorial.</p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
-<code class="sourceCode R">  <span class="va">router</span><span class="op">$</span><span class="fu">server</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span>  <span class="va">router</span><span class="op">$</span><span class="fu">server</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
 <h2 id="thats-it">That’s it!<a class="anchor" aria-label="anchor" href="#thats-it"></a>
 </h2>
 <p>That’s it - we have styled a shiny.fluent app into a solid dashboard layout!</p>
-<p>Here’s the final result:</p>
-<p><img src="images/tutorial-part2-final.gif"><!-- --></p>
 </div>
   </div>
 
@@ -433,7 +431,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer>

@@ -88,91 +88,162 @@ you need to work using the original docs to achieve the desired result.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">KeytipLayer</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">KeytipLayer</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>componentRef</dt>
-<dd><p><code>IRefObject&lt;IKeytipLayer&gt;</code> <br> Optional callback to access the KeytipLayer component. Use this instead of ref for accessing the public methods and properties of the component.</p></dd>
-<dt>keytipExitSequences</dt>
-<dd><p><code>IKeytipTransitionKey[]</code> <br> List of key sequences that will exit keytips mode</p></dd>
-<dt>keytipReturnSequences</dt>
-<dd><p><code>IKeytipTransitionKey[]</code> <br> List of key sequences that execute the return functionality in keytips (going back to the previous level of keytips)</p></dd>
-<dt>keytipStartSequences</dt>
-<dd><p><code>IKeytipTransitionKey[]</code> <br> List of key sequences that will start keytips mode</p></dd>
-<dt>onEnterKeytipMode</dt>
-<dd><p><code>() =&gt; void</code> <br> Callback function triggered when keytip mode is entered</p></dd>
-<dt>onExitKeytipMode</dt>
-<dd><p><code>(ev?: React.KeyboardEvent&lt;HTMLElement&gt; | React.MouseEvent&lt;HTMLElement&gt;) =&gt; void</code> <br> Callback function triggered when keytip mode is exited. ev is the Mouse or Keyboard Event that triggered the exit, if any.</p></dd>
-<dt>calloutProps</dt>
-<dd><p><code>ICalloutProps</code> <br> ICalloutProps to pass to the callout element</p></dd>
-<dt>content</dt>
-<dd><p><code>string</code> <br> Content to put inside the keytip</p></dd>
-<dt>disabled</dt>
-<dd><p><code>boolean</code> <br> T/F if the corresponding control for this keytip is disabled</p></dd>
-<dt>hasDynamicChildren</dt>
-<dd><p><code>boolean</code> <br> Whether or not this keytip will have children keytips that are dynamically created (DOM is generated on keytip activation). Common cases are a Pivot or Modal.</p></dd>
-<dt>hasMenu</dt>
-<dd><p><code>boolean</code> <br> Whether or not this keytip belongs to a component that has a menu Keytip mode will stay on when a menu is opened, even if the items in that menu have no keytips</p></dd>
-<dt>keySequences</dt>
-<dd><p><code>string[]</code> <br> Array of KeySequences which is the full key sequence to trigger this keytip Should not include initial 'start' key sequence</p></dd>
-<dt>offset</dt>
-<dd><p><code>Point</code> <br> Offset x and y for the keytip, added from the top-left corner By default the keytip will be anchored to the bottom-center of the element</p></dd>
-<dt>onExecute</dt>
-<dd><p><code>(executeTarget: HTMLElement | null, target: HTMLElement | null) =&gt; void</code> <br> Function to call when this keytip is activated. 'executeTarget' is the DOM element marked with 'data-ktp-execute-target'. 'target' is the DOM element marked with 'data-ktp-target'.</p></dd>
-<dt>onReturn</dt>
-<dd><p><code>(executeTarget: HTMLElement | null, target: HTMLElement | null) =&gt; void</code> <br> Function to call when the keytip is the currentKeytip and a return sequence is pressed. 'executeTarget' is the DOM element marked with 'data-ktp-execute-target'. 'target' is the DOM element marked with 'data-ktp-target'.</p></dd>
-<dt>overflowSetSequence</dt>
-<dd><p><code>string[]</code> <br> Full KeySequence of the overflow set button, will be set automatically if this keytip is inside an overflow</p></dd>
-<dt>styles</dt>
-<dd><p><code>IStyleFunctionOrObject&lt;IKeytipStyleProps, IKeytipStyles&gt;</code> <br> Optional styles for the component.</p></dd>
-<dt>theme</dt>
-<dd><p><code>ITheme</code> <br> Theme for the component</p></dd>
-<dt>visible</dt>
-<dd><p><code>boolean</code> <br> T/F if the keytip is visible</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> componentRef </b> <code>IRefObject&lt;IKeytipLayer&gt;</code> <br> Optional callback to access the KeytipLayer component. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> content </b> <code>string</code> <br> String to put inside the layer to be used for the aria-describedby for the component with the keytip Should be one of the starting sequences</p></li>
+<li><p><b> keytipExitSequences </b> <code>IKeytipTransitionKey[]</code> <br> List of key sequences that will exit keytips mode</p></li>
+<li><p><b> keytipReturnSequences </b> <code>IKeytipTransitionKey[]</code> <br> List of key sequences that execute the return functionality in keytips (going back to the previous level of keytips)</p></li>
+<li><p><b> keytipStartSequences </b> <code>IKeytipTransitionKey[]</code> <br> List of key sequences that will start keytips mode</p></li>
+<li><p><b> onEnterKeytipMode </b> <code>() =&gt; void</code> <br> Callback function triggered when keytip mode is entered</p></li>
+<li><p><b> onExitKeytipMode </b> <code>(ev?: React.KeyboardEvent&lt;HTMLElement&gt; | React.MouseEvent&lt;HTMLElement&gt;) =&gt; void</code> <br> Callback function triggered when keytip mode is exited. ev is the Mouse or Keyboard Event that triggered the exit, if any.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IKeytipLayerStyleProps, IKeytipLayerStyles&gt;</code> <br> (Optional) Call to provide customized styling.</p></li>
+<li><p><b> calloutProps </b> <code>ICalloutProps</code> <br> ICalloutProps to pass to the callout element</p></li>
+<li><p><b> content </b> <code>string</code> <br> Content to put inside the keytip</p></li>
+<li><p><b> disabled </b> <code>boolean</code> <br> T/F if the corresponding control for this keytip is disabled</p></li>
+<li><p><b> hasDynamicChildren </b> <code>boolean</code> <br> Whether or not this keytip will have children keytips that are dynamically created (DOM is generated on keytip activation). Common cases are a Pivot or Modal.</p></li>
+<li><p><b> hasMenu </b> <code>boolean</code> <br> Whether or not this keytip belongs to a component that has a menu Keytip mode will stay on when a menu is opened, even if the items in that menu have no keytips</p></li>
+<li><p><b> keySequences </b> <code>string[]</code> <br> Array of KeySequences which is the full key sequence to trigger this keytip Should not include initial 'start' key sequence</p></li>
+<li><p><b> offset </b> <code>Point</code> <br> Offset x and y for the keytip, added from the top-left corner By default the keytip will be anchored to the bottom-center of the element</p></li>
+<li><p><b> onExecute </b> <code>(executeTarget: HTMLElement | null, target: HTMLElement | null) =&gt; void</code> <br> Function to call when this keytip is activated. 'executeTarget' is the DOM element marked with 'data-ktp-execute-target'. 'target' is the DOM element marked with 'data-ktp-target'.</p></li>
+<li><p><b> onReturn </b> <code>(executeTarget: HTMLElement | null, target: HTMLElement | null) =&gt; void</code> <br> Function to call when the keytip is the currentKeytip and a return sequence is pressed. 'executeTarget' is the DOM element marked with 'data-ktp-execute-target'. 'target' is the DOM element marked with 'data-ktp-target'.</p></li>
+<li><p><b> overflowSetSequence </b> <code>string[]</code> <br> Full KeySequence of the overflow set button, will be set automatically if this keytip is inside an overflow</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IKeytipStyleProps, IKeytipStyles&gt;</code> <br> Optional styles for the component.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme for the component</p></li>
+<li><p><b> visible </b> <code>boolean</code> <br> T/F if the keytip is visible</p></li>
+</ul></div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="fu">shinyApp</span><span class="op">(</span></span>
-<span class="r-in">    ui <span class="op">=</span> <span class="fu">tagList</span><span class="op">(</span></span>
-<span class="r-in">      <span class="va">tags</span><span class="op">$</span><span class="fu">script</span><span class="op">(</span><span class="fu">HTML</span><span class="op">(</span><span class="st">[1827 chars quoted with '"']</span><span class="op">)</span><span class="op">)</span>,</span>
-<span class="r-in">      <span class="fu">textOutput</span><span class="op">(</span><span class="st">"keytipsResult"</span><span class="op">)</span>,</span>
-<span class="r-in">      <span class="fu">div</span><span class="op">(</span></span>
-<span class="r-in">        <span class="fu"><a href="Label.html">Label</a></span><span class="op">(</span><span class="st">"To open keytips, hit 'Alt-Windows' on Windows/Linux and 'Option-Control' on macOS. Keytips will appear. Type what you see, e.g. 1 and then A to 'click' the first button."</span><span class="op">)</span>,</span>
-<span class="r-in">        <span class="fu"><a href="Label.html">Label</a></span><span class="op">(</span><span class="st">"When multiple Keytips start with the same character, typing that character will filter the visible keytips."</span><span class="op">)</span>,</span>
-<span class="r-in">        <span class="fu">KeytipLayer</span><span class="op">(</span><span class="op">)</span>,</span>
-<span class="r-in">        <span class="fu"><a href="Stack.html">Stack</a></span><span class="op">(</span>horizontal <span class="op">=</span> <span class="cn">TRUE</span>, tokens <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>childrenGap <span class="op">=</span> <span class="fl">20</span><span class="op">)</span>,</span>
-<span class="r-in">          <span class="fu"><a href="Button.html">DefaultButton.shinyInput</a></span><span class="op">(</span><span class="st">"button1"</span>, keytipProps <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"keytipMap.Button"</span><span class="op">)</span>, text <span class="op">=</span> <span class="st">"Button"</span><span class="op">)</span>,</span>
-<span class="r-in">          <span class="fu"><a href="Button.html">CompoundButton.shinyInput</a></span><span class="op">(</span><span class="st">"button2"</span>,</span>
-<span class="r-in">            style <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>marginBottom <span class="op">=</span> <span class="fl">28</span><span class="op">)</span>,</span>
-<span class="r-in">            keytipProps <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"keytipMap.CompoundButton"</span><span class="op">)</span>,</span>
-<span class="r-in">            text <span class="op">=</span> <span class="st">"Compound Button"</span>,</span>
-<span class="r-in">            secondaryText <span class="op">=</span> <span class="st">'With a Keytip'</span></span>
-<span class="r-in">          <span class="op">)</span>,</span>
-<span class="r-in">          <span class="fu"><a href="Button.html">DefaultButton.shinyInput</a></span><span class="op">(</span><span class="st">"button3"</span>,</span>
-<span class="r-in">            keytipProps <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"keytipMap.ButtonWithMenu"</span><span class="op">)</span>,</span>
-<span class="r-in">            text <span class="op">=</span> <span class="st">"Button with Menu"</span>,</span>
-<span class="r-in">            menuProps <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"buttonProps"</span><span class="op">)</span></span>
-<span class="r-in">          <span class="op">)</span></span>
-<span class="r-in">        <span class="op">)</span></span>
-<span class="r-in">      <span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span>,</span>
-<span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">      <span class="va">clicks</span> <span class="op">&lt;-</span> <span class="fu">reactiveVal</span><span class="op">(</span><span class="fl">0</span><span class="op">)</span></span>
-<span class="r-in">      <span class="va">addClick</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="fu">clicks</span><span class="op">(</span><span class="fu">clicks</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fl">1</span><span class="op">)</span></span>
-<span class="r-in">      <span class="va">output</span><span class="op">$</span><span class="va">keytipsResult</span> <span class="op">&lt;-</span> <span class="fu">renderText</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"Buttons clicked: "</span>, <span class="fu">clicks</span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">      <span class="fu">observeEvent</span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">button1</span>, <span class="fu">addClick</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">      <span class="fu">observeEvent</span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">button2</span>, <span class="fu">addClick</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">      <span class="fu">observeEvent</span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">button3</span>, <span class="fu">addClick</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">}</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="fu">shinyApp</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    ui <span class="op">=</span> <span class="fu">tagList</span><span class="op">(</span></span></span>
+<span class="r-in"><span>      <span class="va">tags</span><span class="op">$</span><span class="fu">script</span><span class="op">(</span><span class="fu">HTML</span><span class="op">(</span><span class="st">"</span></span></span>
+<span class="r-in"><span><span class="st">        const btnExecute = (el) =&gt; {</span></span></span>
+<span class="r-in"><span><span class="st">          console.log(el);</span></span></span>
+<span class="r-in"><span><span class="st">          el.click();</span></span></span>
+<span class="r-in"><span><span class="st">        };</span></span></span>
+<span class="r-in"><span><span class="st"></span></span></span>
+<span class="r-in"><span><span class="st">        const keytipConfig = {</span></span></span>
+<span class="r-in"><span><span class="st">          keytips: [</span></span></span>
+<span class="r-in"><span><span class="st">            // Button example</span></span></span>
+<span class="r-in"><span><span class="st">            {</span></span></span>
+<span class="r-in"><span><span class="st">              id: 'Button',</span></span></span>
+<span class="r-in"><span><span class="st">              content: '1A',</span></span></span>
+<span class="r-in"><span><span class="st">              optionalProps: {</span></span></span>
+<span class="r-in"><span><span class="st">                onExecute: btnExecute,</span></span></span>
+<span class="r-in"><span><span class="st">              },</span></span></span>
+<span class="r-in"><span><span class="st">            },</span></span></span>
+<span class="r-in"><span><span class="st">            {</span></span></span>
+<span class="r-in"><span><span class="st">              id: 'CompoundButton',</span></span></span>
+<span class="r-in"><span><span class="st">              content: '1B',</span></span></span>
+<span class="r-in"><span><span class="st">              optionalProps: {</span></span></span>
+<span class="r-in"><span><span class="st">                onExecute: btnExecute,</span></span></span>
+<span class="r-in"><span><span class="st">              },</span></span></span>
+<span class="r-in"><span><span class="st">            },</span></span></span>
+<span class="r-in"><span><span class="st">            {</span></span></span>
+<span class="r-in"><span><span class="st">              id: 'ButtonWithMenu',</span></span></span>
+<span class="r-in"><span><span class="st">              content: '2A',</span></span></span>
+<span class="r-in"><span><span class="st">              optionalProps: {</span></span></span>
+<span class="r-in"><span><span class="st">                onExecute: btnExecute,</span></span></span>
+<span class="r-in"><span><span class="st">              },</span></span></span>
+<span class="r-in"><span><span class="st">              children: [</span></span></span>
+<span class="r-in"><span><span class="st">                {</span></span></span>
+<span class="r-in"><span><span class="st">                  id: 'ButtonMenuItem1',</span></span></span>
+<span class="r-in"><span><span class="st">                  content: 'E',</span></span></span>
+<span class="r-in"><span><span class="st">                  optionalProps: {</span></span></span>
+<span class="r-in"><span><span class="st">                    onExecute: btnExecute,</span></span></span>
+<span class="r-in"><span><span class="st">                  },</span></span></span>
+<span class="r-in"><span><span class="st">                },</span></span></span>
+<span class="r-in"><span><span class="st">                {</span></span></span>
+<span class="r-in"><span><span class="st">                  id: 'ButtonMenuItem2',</span></span></span>
+<span class="r-in"><span><span class="st">                  content: '8',</span></span></span>
+<span class="r-in"><span><span class="st">                  optionalProps: {</span></span></span>
+<span class="r-in"><span><span class="st">                    onExecute: btnExecute,</span></span></span>
+<span class="r-in"><span><span class="st">                  },</span></span></span>
+<span class="r-in"><span><span class="st">                },</span></span></span>
+<span class="r-in"><span><span class="st">              ],</span></span></span>
+<span class="r-in"><span><span class="st">            }</span></span></span>
+<span class="r-in"><span><span class="st">          ],</span></span></span>
+<span class="r-in"><span><span class="st">        };</span></span></span>
+<span class="r-in"><span><span class="st"></span></span></span>
+<span class="r-in"><span><span class="st">        keytipMap = jsmodule['@fluentui/react'].buildKeytipConfigMap(keytipConfig);</span></span></span>
+<span class="r-in"><span><span class="st"></span></span></span>
+<span class="r-in"><span><span class="st">        const buttonProps = {</span></span></span>
+<span class="r-in"><span><span class="st">          items: [</span></span></span>
+<span class="r-in"><span><span class="st">            {</span></span></span>
+<span class="r-in"><span><span class="st">              key: 'buttonMenuItem1',</span></span></span>
+<span class="r-in"><span><span class="st">              text: 'Menu Item 1',</span></span></span>
+<span class="r-in"><span><span class="st">              keytipProps: keytipMap.ButtonMenuItem1,</span></span></span>
+<span class="r-in"><span><span class="st">              onClick: () =&gt; Shiny.setInputValue('button3', Math.random())</span></span></span>
+<span class="r-in"><span><span class="st">            },</span></span></span>
+<span class="r-in"><span><span class="st">            {</span></span></span>
+<span class="r-in"><span><span class="st">              key: 'buttonMenuItem2',</span></span></span>
+<span class="r-in"><span><span class="st">              text: 'Menu Item 2',</span></span></span>
+<span class="r-in"><span><span class="st">              keytipProps: keytipMap.ButtonMenuItem2,</span></span></span>
+<span class="r-in"><span><span class="st">              onClick: () =&gt; Shiny.setInputValue('button3', Math.random())</span></span></span>
+<span class="r-in"><span><span class="st">            },</span></span></span>
+<span class="r-in"><span><span class="st">          ],</span></span></span>
+<span class="r-in"><span><span class="st">        };</span></span></span>
+<span class="r-in"><span><span class="st">      "</span><span class="op">)</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      <span class="fu">textOutput</span><span class="op">(</span><span class="st">"keytipsResult"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      <span class="fu">div</span><span class="op">(</span></span></span>
+<span class="r-in"><span>        <span class="fu"><a href="Label.html">Label</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>          <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>            <span class="st">"To open keytips, hit 'Alt-Windows' on Windows/Linux and 'Option-Control' on macOS."</span>,</span></span>
+<span class="r-in"><span>            <span class="st">"Keytips will appear. Type what you see, e.g. 1 and then A to 'click' the first button."</span></span></span>
+<span class="r-in"><span>          <span class="op">)</span></span></span>
+<span class="r-in"><span>        <span class="op">)</span>,</span></span>
+<span class="r-in"><span>        <span class="fu"><a href="Label.html">Label</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>          <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>            <span class="st">"When multiple Keytips start with the same character,"</span>,</span></span>
+<span class="r-in"><span>            <span class="st">"typing that character will filter the visible keytips."</span></span></span>
+<span class="r-in"><span>          <span class="op">)</span></span></span>
+<span class="r-in"><span>        <span class="op">)</span>,</span></span>
+<span class="r-in"><span>        <span class="fu">KeytipLayer</span><span class="op">(</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>        <span class="fu"><a href="Stack.html">Stack</a></span><span class="op">(</span>horizontal <span class="op">=</span> <span class="cn">TRUE</span>, tokens <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>childrenGap <span class="op">=</span> <span class="fl">20</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>          <span class="fu"><a href="Button.html">DefaultButton.shinyInput</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>            <span class="st">"button1"</span>,</span></span>
+<span class="r-in"><span>            keytipProps <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"keytipMap.Button"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>            text <span class="op">=</span> <span class="st">"Button"</span></span></span>
+<span class="r-in"><span>          <span class="op">)</span>,</span></span>
+<span class="r-in"><span>          <span class="fu"><a href="Button.html">CompoundButton.shinyInput</a></span><span class="op">(</span><span class="st">"button2"</span>,</span></span>
+<span class="r-in"><span>            style <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>marginBottom <span class="op">=</span> <span class="fl">28</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>            keytipProps <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"keytipMap.CompoundButton"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>            text <span class="op">=</span> <span class="st">"Compound Button"</span>,</span></span>
+<span class="r-in"><span>            secondaryText <span class="op">=</span> <span class="st">'With a Keytip'</span></span></span>
+<span class="r-in"><span>          <span class="op">)</span>,</span></span>
+<span class="r-in"><span>          <span class="fu"><a href="Button.html">DefaultButton.shinyInput</a></span><span class="op">(</span><span class="st">"button3"</span>,</span></span>
+<span class="r-in"><span>            keytipProps <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"keytipMap.ButtonWithMenu"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>            text <span class="op">=</span> <span class="st">"Button with Menu"</span>,</span></span>
+<span class="r-in"><span>            menuProps <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"buttonProps"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>          <span class="op">)</span></span></span>
+<span class="r-in"><span>        <span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>      <span class="va">clicks</span> <span class="op">&lt;-</span> <span class="fu">reactiveVal</span><span class="op">(</span><span class="fl">0</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="va">addClick</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="fu">clicks</span><span class="op">(</span><span class="fu">clicks</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fl">1</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="va">output</span><span class="op">$</span><span class="va">keytipsResult</span> <span class="op">&lt;-</span> <span class="fu">renderText</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"Buttons clicked: "</span>, <span class="fu">clicks</span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="fu">observeEvent</span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">button1</span>, <span class="fu">addClick</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="fu">observeEvent</span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">button2</span>, <span class="fu">addClick</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="fu">observeEvent</span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">button3</span>, <span class="fu">addClick</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -187,7 +258,7 @@ you need to work using the original docs to achieve the desired result.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

@@ -128,124 +128,108 @@ you need to work using the original docs to achieve the desired result.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">CommandBar</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">CommandBar</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>buttonStyles</dt>
-<dd><p><code>IButtonStyles</code> <br> Custom styles for individual button</p></dd>
-<dt>cacheKey</dt>
-<dd><p><code>string</code> <br> A custom cache key to be used for this item. If <code>cacheKey</code> is changed, the cache will invalidate. Defaults to <code>key</code> value.</p></dd>
-<dt>commandBarButtonAs</dt>
-<dd><p><code>IComponentAs&lt;ICommandBarItemProps&gt;</code> <br> Method to override the render of the individual command bar button. Not used when item is rendered in overflow.</p></dd>
-<dt>iconOnly</dt>
-<dd><p><code>boolean</code> <br> Show only an icon for this item, not text. Does not apply if item is in the overflow.</p></dd>
-<dt>renderedInOverflow</dt>
-<dd><p><code>boolean</code> <br> Context under which the item is being rendered. This value is mutated by the CommandBar and is useful for adjusting the <code>onRender</code> function.</p></dd>
-<dt>tooltipHostProps</dt>
-<dd><p><code>ITooltipHostProps</code> <br> Props for the tooltip when in <code>iconOnly</code> mode.</p></dd>
-<dt>ariaLabel</dt>
-<dd><p><code>string</code> <br> Accessibility text to be read by the screen reader when the user's focus enters the command bar. The screen reader will read this text after reading information about the first focusable item in the command bar.</p></dd>
-<dt>buttonAs</dt>
-<dd><p><code>IComponentAs&lt;IButtonProps&gt;</code> <br> Custom component for the near and far item buttons. Not used for overflow menu items.</p></dd>
-<dt>className</dt>
-<dd><p><code>string</code> <br> Additional css class to apply to the command bar</p></dd>
-<dt>componentRef</dt>
-<dd><p><code>IRefObject&lt;ICommandBar&gt;</code> <br> Optional callback to access the ICommandBar interface. Use this instead of ref for accessing the public methods and properties of the component.</p></dd>
-<dt>dataDidRender</dt>
-<dd><p><code>(renderedData: any) =&gt; void</code> <br> Function to be called every time data is rendered. It provides the data that was actually rendered. A use case would be adding telemetry when a particular control is shown in an overflow or dropped as a result of <code>onReduceData</code>, or to count the number of renders that an implementation of <code>onReduceData</code> triggers.</p></dd>
-<dt>farItems</dt>
-<dd><p><code>ICommandBarItemProps[]</code> <br> Items to render on the right side (or left, in RTL). ICommandBarItemProps extends IContextualMenuItem.</p></dd>
-<dt>items</dt>
-<dd><p><code>ICommandBarItemProps[]</code> <br> Items to render. ICommandBarItemProps extends IContextualMenuItem.</p></dd>
-<dt>onDataGrown</dt>
-<dd><p><code>(movedItem: ICommandBarItemProps) =&gt; void</code> <br> Callback invoked when data has been grown.</p></dd>
-<dt>onDataReduced</dt>
-<dd><p><code>(movedItem: ICommandBarItemProps) =&gt; void</code> <br> Callback invoked when data has been reduced.</p></dd>
-<dt>onGrowData</dt>
-<dd><p><code>(data: ICommandBarData) =&gt; ICommandBarData | undefined</code> <br> Custom function to grow data if items are too small for the given space. Return <code>undefined</code> if no more steps can be taken to avoid infinate loop.</p></dd>
-<dt>onReduceData</dt>
-<dd><p><code>(data: ICommandBarData) =&gt; ICommandBarData | undefined</code> <br> Custom function to reduce data if items do not fit in given space. Return <code>undefined</code> if no more steps can be taken to avoid infinate loop.</p></dd>
-<dt>overflowButtonAs</dt>
-<dd><p><code>IComponentAs&lt;IButtonProps&gt;</code> <br> Custom component for the overflow button.</p></dd>
-<dt>overflowButtonProps</dt>
-<dd><p><code>IButtonProps</code> <br> Props to be passed to overflow button. If <code>menuProps</code> are passed through this prop, any items provided will be prepended to any computed overflow items.</p></dd>
-<dt>overflowItems</dt>
-<dd><p><code>ICommandBarItemProps[]</code> <br> Default items to have in the overflow menu. ICommandBarItemProps extends IContextualMenuItem.</p></dd>
-<dt>shiftOnReduce</dt>
-<dd><p><code>boolean</code> <br> When true, items will be 'shifted' off the front of the array when reduced, and unshifted during grow.</p></dd>
-<dt>styles</dt>
-<dd><p><code>IStyleFunctionOrObject&lt;ICommandBarStyleProps, ICommandBarStyles&gt;</code> <br> Customized styling that will layer on top of the variant rules.</p></dd>
-<dt>theme</dt>
-<dd><p><code>ITheme</code> <br> Theme provided by HOC.</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> buttonStyles </b> <code>IButtonStyles</code> <br> Custom styles for individual button</p></li>
+<li><p><b> cacheKey </b> <code>string</code> <br> A custom cache key to be used for this item. If <code>cacheKey</code> is changed, the cache will invalidate. Defaults to <code>key</code> value.</p></li>
+<li><p><b> commandBarButtonAs </b> <code>IComponentAs&lt;ICommandBarItemProps&gt;</code> <br> Method to override the render of the individual command bar button. Not used when item is rendered in overflow.</p></li>
+<li><p><b> iconOnly </b> <code>boolean</code> <br> Show only an icon for this item, not text. Does not apply if item is in the overflow.</p></li>
+<li><p><b> renderedInOverflow </b> <code>boolean</code> <br> Context under which the item is being rendered. This value is mutated by the CommandBar and is useful for adjusting the <code>onRender</code> function.</p></li>
+<li><p><b> tooltipHostProps </b> <code>ITooltipHostProps</code> <br> Props for the tooltip when in <code>iconOnly</code> mode.</p></li>
+<li><p><b> ariaLabel </b> <code>string</code> <br> Accessibility text to be read by the screen reader when the user's focus enters the command bar. The screen reader will read this text after reading information about the first focusable item in the command bar.</p></li>
+<li><p><b> buttonAs </b> <code>IComponentAs&lt;IButtonProps&gt;</code> <br> Custom component for the near and far item buttons. Not used for overflow menu items.</p></li>
+<li><p><b> className </b> <code>string</code> <br> Additional css class to apply to the command bar</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;ICommandBar&gt;</code> <br> Optional callback to access the ICommandBar interface. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> dataDidRender </b> <code>(renderedData: any) =&gt; void</code> <br> Function to be called every time data is rendered. It provides the data that was actually rendered. A use case would be adding telemetry when a particular control is shown in an overflow or dropped as a result of <code>onReduceData</code>, or to count the number of renders that an implementation of <code>onReduceData</code> triggers.</p></li>
+<li><p><b> farItems </b> <code>ICommandBarItemProps[]</code> <br> Items to render on the right side (or left, in RTL). ICommandBarItemProps extends IContextualMenuItem.</p></li>
+<li><p><b> items </b> <code>ICommandBarItemProps[]</code> <br> Items to render. ICommandBarItemProps extends IContextualMenuItem.</p></li>
+<li><p><b> onDataGrown </b> <code>(movedItem: ICommandBarItemProps) =&gt; void</code> <br> Callback invoked when data has been grown.</p></li>
+<li><p><b> onDataReduced </b> <code>(movedItem: ICommandBarItemProps) =&gt; void</code> <br> Callback invoked when data has been reduced.</p></li>
+<li><p><b> onGrowData </b> <code>(data: ICommandBarData) =&gt; ICommandBarData | undefined</code> <br> Custom function to grow data if items are too small for the given space. Return <code>undefined</code> if no more steps can be taken to avoid infinate loop.</p></li>
+<li><p><b> onReduceData </b> <code>(data: ICommandBarData) =&gt; ICommandBarData | undefined</code> <br> Custom function to reduce data if items do not fit in given space. Return <code>undefined</code> if no more steps can be taken to avoid infinate loop.</p></li>
+<li><p><b> overflowButtonAs </b> <code>IComponentAs&lt;IButtonProps&gt;</code> <br> Custom component for the overflow button.</p></li>
+<li><p><b> overflowButtonProps </b> <code>IButtonProps</code> <br> Props to be passed to overflow button. If <code>menuProps</code> are passed through this prop, any items provided will be prepended to any computed overflow items.</p></li>
+<li><p><b> overflowItems </b> <code>ICommandBarItemProps[]</code> <br> Default items to have in the overflow menu. ICommandBarItemProps extends IContextualMenuItem.</p></li>
+<li><p><b> shiftOnReduce </b> <code>boolean</code> <br> When true, items will be 'shifted' off the front of the array when reduced, and unshifted during grow.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;ICommandBarStyleProps, ICommandBarStyles&gt;</code> <br> Customized styling that will layer on top of the variant rules.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by HOC.</p></li>
+</ul></div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="va">items</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">      key <span class="op">=</span> <span class="st">"newItem"</span>,</span>
-<span class="r-in">      text <span class="op">=</span> <span class="st">"New"</span>,</span>
-<span class="r-in">      cacheKey <span class="op">=</span> <span class="st">"myCacheKey"</span>,</span>
-<span class="r-in">      iconProps <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>iconName <span class="op">=</span> <span class="st">"Add"</span><span class="op">)</span>,</span>
-<span class="r-in">      subMenuProps <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">        items <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">          <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">            key <span class="op">=</span> <span class="st">"emailMessage"</span>,</span>
-<span class="r-in">            text <span class="op">=</span> <span class="st">"Email message"</span>,</span>
-<span class="r-in">            iconProps <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>iconName <span class="op">=</span> <span class="st">"Mail"</span><span class="op">)</span></span>
-<span class="r-in">          <span class="op">)</span>,</span>
-<span class="r-in">          <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">            key <span class="op">=</span> <span class="st">"calendarEvent"</span>,</span>
-<span class="r-in">            text <span class="op">=</span> <span class="st">"Calendar event"</span>,</span>
-<span class="r-in">            iconProps <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>iconName <span class="op">=</span> <span class="st">"Calendar"</span><span class="op">)</span></span>
-<span class="r-in">          <span class="op">)</span></span>
-<span class="r-in">        <span class="op">)</span></span>
-<span class="r-in">      <span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span>,</span>
-<span class="r-in">    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">      key <span class="op">=</span> <span class="st">"upload"</span>,</span>
-<span class="r-in">      text <span class="op">=</span> <span class="st">"Upload"</span>,</span>
-<span class="r-in">      iconProps <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>iconName <span class="op">=</span> <span class="st">"Upload"</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span>,</span>
-<span class="r-in">    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">      key <span class="op">=</span> <span class="st">"share"</span>,</span>
-<span class="r-in">      text <span class="op">=</span> <span class="st">"Share"</span>,</span>
-<span class="r-in">      iconProps <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>iconName <span class="op">=</span> <span class="st">"Share"</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span>,</span>
-<span class="r-in">    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">      key <span class="op">=</span> <span class="st">"download"</span>,</span>
-<span class="r-in">      text <span class="op">=</span> <span class="st">"Download"</span>,</span>
-<span class="r-in">      iconProps <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>iconName <span class="op">=</span> <span class="st">"Download"</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in">  <span class="va">farItems</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">      key <span class="op">=</span> <span class="st">"tile"</span>,</span>
-<span class="r-in">      text <span class="op">=</span> <span class="st">"Grid view"</span>,</span>
-<span class="r-in">      ariaLabel <span class="op">=</span> <span class="st">"Grid view"</span>,</span>
-<span class="r-in">      iconOnly <span class="op">=</span> <span class="cn">TRUE</span>,</span>
-<span class="r-in">      iconProps <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>iconName <span class="op">=</span> <span class="st">"Tiles"</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span>,</span>
-<span class="r-in">    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">      key <span class="op">=</span> <span class="st">"info"</span>,</span>
-<span class="r-in">      text <span class="op">=</span> <span class="st">"Info"</span>,</span>
-<span class="r-in">      ariaLabel <span class="op">=</span> <span class="st">"Info"</span>,</span>
-<span class="r-in">      iconOnly <span class="op">=</span> <span class="cn">TRUE</span>,</span>
-<span class="r-in">      iconProps <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>iconName <span class="op">=</span> <span class="st">"Info"</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in">  <span class="fu">shinyApp</span><span class="op">(</span></span>
-<span class="r-in">    ui <span class="op">=</span> <span class="fu">CommandBar</span><span class="op">(</span>items <span class="op">=</span> <span class="va">items</span>, farItems <span class="op">=</span> <span class="va">farItems</span><span class="op">)</span>,</span>
-<span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="va">items</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>      key <span class="op">=</span> <span class="st">"newItem"</span>,</span></span>
+<span class="r-in"><span>      text <span class="op">=</span> <span class="st">"New"</span>,</span></span>
+<span class="r-in"><span>      cacheKey <span class="op">=</span> <span class="st">"myCacheKey"</span>,</span></span>
+<span class="r-in"><span>      iconProps <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>iconName <span class="op">=</span> <span class="st">"Add"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      subMenuProps <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>        items <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>          <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>            key <span class="op">=</span> <span class="st">"emailMessage"</span>,</span></span>
+<span class="r-in"><span>            text <span class="op">=</span> <span class="st">"Email message"</span>,</span></span>
+<span class="r-in"><span>            iconProps <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>iconName <span class="op">=</span> <span class="st">"Mail"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>          <span class="op">)</span>,</span></span>
+<span class="r-in"><span>          <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>            key <span class="op">=</span> <span class="st">"calendarEvent"</span>,</span></span>
+<span class="r-in"><span>            text <span class="op">=</span> <span class="st">"Calendar event"</span>,</span></span>
+<span class="r-in"><span>            iconProps <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>iconName <span class="op">=</span> <span class="st">"Calendar"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>          <span class="op">)</span></span></span>
+<span class="r-in"><span>        <span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>      key <span class="op">=</span> <span class="st">"upload"</span>,</span></span>
+<span class="r-in"><span>      text <span class="op">=</span> <span class="st">"Upload"</span>,</span></span>
+<span class="r-in"><span>      iconProps <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>iconName <span class="op">=</span> <span class="st">"Upload"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>      key <span class="op">=</span> <span class="st">"share"</span>,</span></span>
+<span class="r-in"><span>      text <span class="op">=</span> <span class="st">"Share"</span>,</span></span>
+<span class="r-in"><span>      iconProps <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>iconName <span class="op">=</span> <span class="st">"Share"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>      key <span class="op">=</span> <span class="st">"download"</span>,</span></span>
+<span class="r-in"><span>      text <span class="op">=</span> <span class="st">"Download"</span>,</span></span>
+<span class="r-in"><span>      iconProps <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>iconName <span class="op">=</span> <span class="st">"Download"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span>  <span class="va">farItems</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>      key <span class="op">=</span> <span class="st">"tile"</span>,</span></span>
+<span class="r-in"><span>      text <span class="op">=</span> <span class="st">"Grid view"</span>,</span></span>
+<span class="r-in"><span>      ariaLabel <span class="op">=</span> <span class="st">"Grid view"</span>,</span></span>
+<span class="r-in"><span>      iconOnly <span class="op">=</span> <span class="cn">TRUE</span>,</span></span>
+<span class="r-in"><span>      iconProps <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>iconName <span class="op">=</span> <span class="st">"Tiles"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>      key <span class="op">=</span> <span class="st">"info"</span>,</span></span>
+<span class="r-in"><span>      text <span class="op">=</span> <span class="st">"Info"</span>,</span></span>
+<span class="r-in"><span>      ariaLabel <span class="op">=</span> <span class="st">"Info"</span>,</span></span>
+<span class="r-in"><span>      iconOnly <span class="op">=</span> <span class="cn">TRUE</span>,</span></span>
+<span class="r-in"><span>      iconProps <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>iconName <span class="op">=</span> <span class="st">"Info"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span>  <span class="fu">shinyApp</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    ui <span class="op">=</span> <span class="fu">CommandBar</span><span class="op">(</span>items <span class="op">=</span> <span class="va">items</span>, farItems <span class="op">=</span> <span class="va">farItems</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -260,7 +244,7 @@ you need to work using the original docs to achieve the desired result.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

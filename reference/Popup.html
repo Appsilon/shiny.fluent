@@ -90,23 +90,22 @@ you need to work using the original docs to achieve the desired result.</p>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>ariaDescribedBy</dt>
-<dd><p><code>string</code> <br> Defines the element id referencing the element containing the description for the popup.</p></dd>
-<dt>ariaLabel</dt>
-<dd><p><code>string</code> <br> Accessible label text for the popup.</p></dd>
-<dt>ariaLabelledBy</dt>
-<dd><p><code>string</code> <br> Defines the element id referencing the element containing label text for popup.</p></dd>
-<dt>className</dt>
-<dd><p><code>string</code> <br> Optional class name for the root popup div.</p></dd>
-<dt>onDismiss</dt>
-<dd><p><code>(ev?: React.MouseEvent&lt;HTMLElement&gt; | React.KeyboardEvent&lt;HTMLElement&gt;) =&gt; any</code> <br> A callback function for when the popup is dismissed from the close button or light dismiss. If provided, will handle escape keypresses and call this. The event will be stopped/canceled.</p></dd>
-<dt>onRestoreFocus</dt>
-<dd><p><code>(options: { originalElement?: HTMLElement | Window; containsFocus: boolean; }) =&gt; void</code> <br> Called when the component is unmounting, and focus needs to be restored. Argument passed down contains two variables, the element that the underlying popup believes focus should go to * and whether or not the popup currently contains focus. If this is provided, focus will not be restored automatically, you'll need to call originalElement.focus()</p></dd>
-<dt>role</dt>
-<dd><p><code>string</code> <br> Aria role for popup</p></dd>
-<dt>shouldRestoreFocus</dt>
-<dd><p><code>boolean</code> <br> If true, when this component is unmounted, focus will be restored to the element that had focus when the component first mounted.</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> ariaDescribedBy </b> <code>string</code> <br> Defines the element id referencing the element containing the description for the popup.</p></li>
+<li><p><b> ariaLabel </b> <code>string</code> <br> Accessible label text for the popup.</p></li>
+<li><p><b> ariaLabelledBy </b> <code>string</code> <br> Defines the element id referencing the element containing label text for popup.</p></li>
+<li><p><b> className </b> <code>string</code> <br> Optional class name for the root popup div.</p></li>
+<li><p><b> onDismiss </b> <code>(ev?: React.MouseEvent&lt;HTMLElement&gt; | React.KeyboardEvent&lt;HTMLElement&gt;) =&gt; any</code> <br> A callback function for when the popup is dismissed from the close button or light dismiss. If provided, will handle escape keypresses and call this. The event will be stopped/canceled.</p></li>
+<li><p><b> onRestoreFocus </b> <code>(options: { originalElement?: HTMLElement | Window; containsFocus: boolean; }) =&gt; void</code> <br> Called when the component is unmounting, and focus needs to be restored. Argument passed down contains two variables, the element that the underlying popup believes focus should go to * and whether or not the popup currently contains focus. If this is provided, focus will not be restored automatically, you'll need to call originalElement.focus()</p></li>
+<li><p><b> role </b> <code>string</code> <br> Aria role for popup</p></li>
+<li><p><b> shouldRestoreFocus </b> <code>boolean</code> <br> If true, when this component is unmounted, focus will be restored to the element that had focus when the component first mounted.</p></li>
+</ul></div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -120,7 +119,7 @@ you need to work using the original docs to achieve the desired result.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

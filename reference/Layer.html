@@ -94,69 +94,66 @@ you need to work using the original docs to achieve the desired result.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">Layer</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">LayerHost</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">Layer</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">LayerHost</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>className</dt>
-<dd><p><code>string</code> <br> Additional css class to apply to the Layer</p></dd>
-<dt>componentRef</dt>
-<dd><p><code>IRefObject&lt;ILayer&gt;</code> <br> Optional callback to access the ILayer interface. Use this instead of ref for accessing the public methods and properties of the component.</p></dd>
-<dt>eventBubblingEnabled</dt>
-<dd><p><code>boolean</code> <br> When enabled, Layer allows events to bubble up from Layer content. Traditionally Layer has not had this behavior. This prop preserves backwards compatibility by default while allowing users to opt in to the new event bubbling functionality.</p></dd>
-<dt>hostId</dt>
-<dd><p><code>string</code> <br> The optional id property provided on a LayerHost that this Layer should render within. The LayerHost does not need to be immediately available but once has been rendered, and if missing, we'll avoid trying to render the Layer content until the host is available. If an id is not provided, we will render the Layer content in a fixed position element rendered at the end of the document.</p></dd>
-<dt>insertFirst</dt>
-<dd><p><code>boolean</code> <br> Whether the layer should be added as the first child of the host. If true, the layer will be inserted as the first child of the host By default, the layer will be appended at the end to the host</p></dd>
-<dt>onLayerDidMount</dt>
-<dd><p><code>() =&gt; void</code> <br> Callback for when the layer is mounted.</p></dd>
-<dt>onLayerMounted</dt>
-<dd><p><code>() =&gt; void</code> <br> Callback for when the layer is mounted.</p></dd>
-<dt>onLayerWillUnmount</dt>
-<dd><p><code>() =&gt; void</code> <br> Callback for when the layer is unmounted.</p></dd>
-<dt>styles</dt>
-<dd><p><code>IStyleFunctionOrObject&lt;ILayerStyleProps, ILayerStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules</p></dd>
-<dt>theme</dt>
-<dd><p><code>ITheme</code> <br> Theme provided by HOC.</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> className </b> <code>string</code> <br> Additional css class to apply to the Layer</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;ILayer&gt;</code> <br> Optional callback to access the ILayer interface. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> eventBubblingEnabled </b> <code>boolean</code> <br> When enabled, Layer allows events to bubble up from Layer content. Traditionally Layer has not had this behavior. This prop preserves backwards compatibility by default while allowing users to opt in to the new event bubbling functionality.</p></li>
+<li><p><b> hostId </b> <code>string</code> <br> The optional id property provided on a LayerHost that this Layer should render within. The LayerHost does not need to be immediately available but once has been rendered, and if missing, we'll avoid trying to render the Layer content until the host is available. If an id is not provided, we will render the Layer content in a fixed position element rendered at the end of the document.</p></li>
+<li><p><b> insertFirst </b> <code>boolean</code> <br> Whether the layer should be added as the first child of the host. If true, the layer will be inserted as the first child of the host By default, the layer will be appended at the end to the host</p></li>
+<li><p><b> onLayerDidMount </b> <code>() =&gt; void</code> <br> Callback for when the layer is mounted.</p></li>
+<li><p><b> onLayerMounted </b> <code>() =&gt; void</code> <br> Callback for when the layer is mounted.</p></li>
+<li><p><b> onLayerWillUnmount </b> <code>() =&gt; void</code> <br> Callback for when the layer is unmounted.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;ILayerStyleProps, ILayerStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by HOC.</p></li>
+</ul></div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="fu">shinyApp</span><span class="op">(</span></span>
-<span class="r-in">    ui <span class="op">=</span> <span class="fu">div</span><span class="op">(</span></span>
-<span class="r-in">      style <span class="op">=</span> <span class="st">"margin-top: 60px; border: 1px solid navy; padding: 10px; background: #eee;"</span>,</span>
-<span class="r-in">      <span class="fu"><a href="Checkbox.html">Checkbox.shinyInput</a></span><span class="op">(</span><span class="st">"useLayer"</span>, value <span class="op">=</span> <span class="cn">FALSE</span>, label <span class="op">=</span> <span class="st">"Display a message in a layer"</span><span class="op">)</span>,</span>
-<span class="r-in">      <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/reactOutput.html" class="external-link">reactOutput</a></span><span class="op">(</span><span class="st">"layer"</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span>,</span>
-<span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">      <span class="va">output</span><span class="op">$</span><span class="va">layer</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/renderReact.html" class="external-link">renderReact</a></span><span class="op">(</span><span class="op">{</span></span>
-<span class="r-in">        <span class="va">box</span> <span class="op">&lt;-</span> <span class="fu">div</span><span class="op">(</span></span>
-<span class="r-in">          style <span class="op">=</span> <span class="st">"background-color: #60C7FF; margin: 10px; padding: 10px"</span>,</span>
-<span class="r-in">          <span class="st">"Hello!"</span></span>
-<span class="r-in">        <span class="op">)</span></span>
-<span class="r-in">        <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Logic.html" class="external-link">isTRUE</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">useLayer</span><span class="op">)</span><span class="op">)</span> <span class="fu">Layer</span><span class="op">(</span><span class="va">box</span><span class="op">)</span></span>
-<span class="r-in">      <span class="op">}</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">}</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
-<span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="fu">shinyApp</span><span class="op">(</span></span>
-<span class="r-in">    ui <span class="op">=</span> <span class="fu">div</span><span class="op">(</span></span>
-<span class="r-in">      <span class="fu">LayerHost</span><span class="op">(</span>id <span class="op">=</span> <span class="st">"host"</span>, style <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>border <span class="op">=</span> <span class="st">"1px dashed"</span>, padding <span class="op">=</span> <span class="fl">10</span><span class="op">)</span><span class="op">)</span>,</span>
-<span class="r-in">      <span class="st">"Layer children are rendered in the LayerHost"</span>,</span>
-<span class="r-in">      <span class="fu">Layer</span><span class="op">(</span>hostId <span class="op">=</span> <span class="st">"host"</span>, <span class="st">"Content"</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span>,</span>
-<span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="fu">shinyApp</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    ui <span class="op">=</span> <span class="fu">div</span><span class="op">(</span></span></span>
+<span class="r-in"><span>      style <span class="op">=</span> <span class="st">"margin-top: 60px; border: 1px solid navy; padding: 10px; background: #eee;"</span>,</span></span>
+<span class="r-in"><span>      <span class="fu"><a href="Checkbox.html">Checkbox.shinyInput</a></span><span class="op">(</span><span class="st">"useLayer"</span>, value <span class="op">=</span> <span class="cn">FALSE</span>, label <span class="op">=</span> <span class="st">"Display a message in a layer"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/reactOutput.html" class="external-link">reactOutput</a></span><span class="op">(</span><span class="st">"layer"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>      <span class="va">output</span><span class="op">$</span><span class="va">layer</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/renderReact.html" class="external-link">renderReact</a></span><span class="op">(</span><span class="op">{</span></span></span>
+<span class="r-in"><span>        <span class="va">box</span> <span class="op">&lt;-</span> <span class="fu">div</span><span class="op">(</span></span></span>
+<span class="r-in"><span>          style <span class="op">=</span> <span class="st">"background-color: #60C7FF; margin: 10px; padding: 10px"</span>,</span></span>
+<span class="r-in"><span>          <span class="st">"Hello!"</span></span></span>
+<span class="r-in"><span>        <span class="op">)</span></span></span>
+<span class="r-in"><span>        <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Logic.html" class="external-link">isTRUE</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">useLayer</span><span class="op">)</span><span class="op">)</span> <span class="fu">Layer</span><span class="op">(</span><span class="va">box</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="op">}</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="fu">shinyApp</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    ui <span class="op">=</span> <span class="fu">div</span><span class="op">(</span></span></span>
+<span class="r-in"><span>      <span class="fu">LayerHost</span><span class="op">(</span>id <span class="op">=</span> <span class="st">"host"</span>, style <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>border <span class="op">=</span> <span class="st">"1px dashed"</span>, padding <span class="op">=</span> <span class="fl">10</span><span class="op">)</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      <span class="st">"Layer children are rendered in the LayerHost"</span>,</span></span>
+<span class="r-in"><span>      <span class="fu">Layer</span><span class="op">(</span>hostId <span class="op">=</span> <span class="st">"host"</span>, <span class="st">"Content"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -171,7 +168,7 @@ you need to work using the original docs to achieve the desired result.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

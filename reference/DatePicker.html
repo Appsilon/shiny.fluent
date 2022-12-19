@@ -90,100 +90,79 @@ you need to work using the original docs to achieve the desired result.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">DatePicker</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">DatePicker.shinyInput</span><span class="op">(</span><span class="va">inputId</span>, <span class="va">...</span>, value <span class="op">=</span> <span class="va">defaultValue</span><span class="op">)</span>
-
-<span class="fu">updateDatePicker.shinyInput</span><span class="op">(</span>
-  session <span class="op">=</span> <span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/domains.html" class="external-link">getDefaultReactiveDomain</a></span><span class="op">(</span><span class="op">)</span>,
-  <span class="va">inputId</span>,
-  <span class="va">...</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">DatePicker</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">DatePicker.shinyInput</span><span class="op">(</span><span class="va">inputId</span>, <span class="va">...</span>, value <span class="op">=</span> <span class="va">defaultValue</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">updateDatePicker.shinyInput</span><span class="op">(</span></span>
+<span>  session <span class="op">=</span> <span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/domains.html" class="external-link">getDefaultReactiveDomain</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="va">inputId</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>value</dt>
-<dd><p><code>Date</code> <br> Default value of the DatePicker, if any</p></dd>
-<dt>allFocusable</dt>
-<dd><p><code>boolean</code> <br> Allows all elements to be focused, including disabled ones</p></dd>
-<dt>allowTextInput</dt>
-<dd><p><code>boolean</code> <br> Whether the DatePicker allows input a date string directly or not</p></dd>
-<dt>ariaLabel</dt>
-<dd><p><code>string</code> <br> Aria Label for TextField of the DatePicker for screen reader users.</p></dd>
-<dt>borderless</dt>
-<dd><p><code>boolean</code> <br> Determines if DatePicker has a border.</p></dd>
-<dt>calendarAs</dt>
-<dd><p><code>IComponentAs&lt;ICalendarProps&gt;</code> <br> Custom Calendar to be used for date picking</p></dd>
-<dt>calendarProps</dt>
-<dd><p><code>ICalendarProps</code> <br> Pass calendar props to calendar component</p></dd>
-<dt>calloutProps</dt>
-<dd><p><code>ICalloutProps</code> <br> Pass callout props to callout component</p></dd>
-<dt>className</dt>
-<dd><p><code>string</code> <br> Optional Classname for datepicker root element .</p></dd>
-<dt>componentRef</dt>
-<dd><p><code>IRefObject&lt;IDatePicker&gt;</code> <br> Optional callback to access the IDatePicker interface. Use this instead of ref for accessing the public methods and properties of the component.</p></dd>
-<dt>dateTimeFormatter</dt>
-<dd><p><code>ICalendarFormatDateCallbacks</code> <br> Apply additional formating to dates, for example localized date formatting.</p></dd>
-<dt>disableAutoFocus</dt>
-<dd><p><code>boolean</code> <br> Whether the DatePicker should open automatically when the control is focused</p></dd>
-<dt>disabled</dt>
-<dd><p><code>boolean</code> <br> Disabled state of the DatePicker.</p></dd>
-<dt>firstDayOfWeek</dt>
-<dd><p><code>DayOfWeek</code> <br> The first day of the week for your locale.</p></dd>
-<dt>firstWeekOfYear</dt>
-<dd><p><code>FirstWeekOfYear</code> <br> Defines when the first week of the year should start, FirstWeekOfYear.FirstDay, FirstWeekOfYear.FirstFullWeek or FirstWeekOfYear.FirstFourDayWeek are the possible values</p></dd>
-<dt>formatDate</dt>
-<dd><p><code>(date?: Date) =&gt; string</code> <br> Optional method to format the chosen date to a string to display in the DatePicker</p></dd>
-<dt>highlightCurrentMonth</dt>
-<dd><p><code>boolean</code> <br> Whether the month picker should highlight the current month</p></dd>
-<dt>highlightSelectedMonth</dt>
-<dd><p><code>boolean</code> <br> Whether the month picker should highlight the selected month</p></dd>
-<dt>initialPickerDate</dt>
-<dd><p><code>Date</code> <br> The initially highlighted date in the calendar picker</p></dd>
-<dt>isMonthPickerVisible</dt>
-<dd><p><code>boolean</code> <br> Whether the month picker is shown beside the day picker or hidden.</p></dd>
-<dt>isRequired</dt>
-<dd><p><code>boolean</code> <br> Whether the DatePicker is a required field or not</p></dd>
-<dt>label</dt>
-<dd><p><code>string</code> <br> Label for the DatePicker</p></dd>
-<dt>maxDate</dt>
-<dd><p><code>Date</code> <br> The maximum allowable date.</p></dd>
-<dt>minDate</dt>
-<dd><p><code>Date</code> <br> The minimum allowable date.</p></dd>
-<dt>onAfterMenuDismiss</dt>
-<dd><p><code>() =&gt; void</code> <br> Callback that runs after DatePicker's menu (Calendar) is closed</p></dd>
-<dt>onSelectDate</dt>
-<dd><p><code>(date: Date | null | undefined) =&gt; void</code> <br> Callback issued when a date is selected</p></dd>
-<dt>parseDateFromString</dt>
-<dd><p><code>(dateStr: string) =&gt; Date | null</code> <br> Optional method to parse the text input value to date, it is only useful when allowTextInput is set to true</p></dd>
-<dt>pickerAriaLabel</dt>
-<dd><p><code>string</code> <br> Aria label for date picker popup for screen reader users.</p></dd>
-<dt>placeholder</dt>
-<dd><p><code>string</code> <br> Placeholder text for the DatePicker</p></dd>
-<dt>showCloseButton</dt>
-<dd><p><code>boolean</code> <br> Whether the CalendarDay close button should be shown or not.</p></dd>
-<dt>showGoToToday</dt>
-<dd><p><code>boolean</code> <br> Whether the "Go to today" link should be shown or not</p></dd>
-<dt>showMonthPickerAsOverlay</dt>
-<dd><p><code>boolean</code> <br> Show month picker on top of date picker when visible.</p></dd>
-<dt>showWeekNumbers</dt>
-<dd><p><code>boolean</code> <br> Whether the calendar should show the week number (weeks 1 to 53) before each week row</p></dd>
-<dt>strings</dt>
-<dd><p><code>IDatePickerStrings</code> <br> Localized strings to use in the DatePicker</p></dd>
-<dt>styles</dt>
-<dd><p><code>IStyleFunctionOrObject&lt;IDatePickerStyleProps, IDatePickerStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></dd>
-<dt>tabIndex</dt>
-<dd><p><code>number</code> <br> The tabIndex of the TextField</p></dd>
-<dt>textField</dt>
-<dd><p><code>ITextFieldProps</code> <br> Pass textField props to textField component. Prop name is "textField" for compatiblity with upcoming slots work.</p></dd>
-<dt>theme</dt>
-<dd><p><code>ITheme</code> <br> Theme provided by High-Order Component.</p></dd>
-<dt>today</dt>
-<dd><p><code>Date</code> <br> Value of today. If null, current time in client machine will be used.</p></dd>
-<dt>underlined</dt>
-<dd><p><code>boolean</code> <br> Whether or not the Textfield of the DatePicker is underlined.</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
+
+<dt>inputId</dt>
+<dd><p>Id of the component</p></dd>
+
+
+<dt>value</dt>
+<dd><p>Value</p></dd>
+
+
+<dt>session</dt>
+<dd><p>Session</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> allFocusable </b> <code>boolean</code> <br> Allows all elements to be focused, including disabled ones</p></li>
+<li><p><b> allowTextInput </b> <code>boolean</code> <br> Whether the DatePicker allows input a date string directly or not</p></li>
+<li><p><b> ariaLabel </b> <code>string</code> <br> Aria Label for TextField of the DatePicker for screen reader users.</p></li>
+<li><p><b> borderless </b> <code>boolean</code> <br> Determines if DatePicker has a border.</p></li>
+<li><p><b> calendarAs </b> <code>IComponentAs&lt;ICalendarProps&gt;</code> <br> Custom Calendar to be used for date picking</p></li>
+<li><p><b> calendarProps </b> <code>ICalendarProps</code> <br> Pass calendar props to calendar component</p></li>
+<li><p><b> calloutProps </b> <code>ICalloutProps</code> <br> Pass callout props to callout component</p></li>
+<li><p><b> className </b> <code>string</code> <br> Optional Classname for datepicker root element .</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IDatePicker&gt;</code> <br> Optional callback to access the IDatePicker interface. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> dateTimeFormatter </b> <code>ICalendarFormatDateCallbacks</code> <br> Apply additional formating to dates, for example localized date formatting.</p></li>
+<li><p><b> disableAutoFocus </b> <code>boolean</code> <br> Whether the DatePicker should open automatically when the control is focused</p></li>
+<li><p><b> disabled </b> <code>boolean</code> <br> Disabled state of the DatePicker.</p></li>
+<li><p><b> firstDayOfWeek </b> <code>DayOfWeek</code> <br> The first day of the week for your locale.</p></li>
+<li><p><b> firstWeekOfYear </b> <code>FirstWeekOfYear</code> <br> Defines when the first week of the year should start, FirstWeekOfYear.FirstDay, FirstWeekOfYear.FirstFullWeek or FirstWeekOfYear.FirstFourDayWeek are the possible values</p></li>
+<li><p><b> formatDate </b> <code>(date?: Date) =&gt; string</code> <br> Optional method to format the chosen date to a string to display in the DatePicker</p></li>
+<li><p><b> highlightCurrentMonth </b> <code>boolean</code> <br> Whether the month picker should highlight the current month</p></li>
+<li><p><b> highlightSelectedMonth </b> <code>boolean</code> <br> Whether the month picker should highlight the selected month</p></li>
+<li><p><b> initialPickerDate </b> <code>Date</code> <br> The initially highlighted date in the calendar picker</p></li>
+<li><p><b> isMonthPickerVisible </b> <code>boolean</code> <br> Whether the month picker is shown beside the day picker or hidden.</p></li>
+<li><p><b> isRequired </b> <code>boolean</code> <br> Whether the DatePicker is a required field or not</p></li>
+<li><p><b> label </b> <code>string</code> <br> Label for the DatePicker</p></li>
+<li><p><b> maxDate </b> <code>Date</code> <br> The maximum allowable date.</p></li>
+<li><p><b> minDate </b> <code>Date</code> <br> The minimum allowable date.</p></li>
+<li><p><b> onAfterMenuDismiss </b> <code>() =&gt; void</code> <br> Callback that runs after DatePicker's menu (Calendar) is closed</p></li>
+<li><p><b> onSelectDate </b> <code>(date: Date | null | undefined) =&gt; void</code> <br> Callback issued when a date is selected</p></li>
+<li><p><b> parseDateFromString </b> <code>(dateStr: string) =&gt; Date | null</code> <br> Optional method to parse the text input value to date, it is only useful when allowTextInput is set to true</p></li>
+<li><p><b> pickerAriaLabel </b> <code>string</code> <br> Aria label for date picker popup for screen reader users.</p></li>
+<li><p><b> placeholder </b> <code>string</code> <br> Placeholder text for the DatePicker</p></li>
+<li><p><b> showCloseButton </b> <code>boolean</code> <br> Whether the CalendarDay close button should be shown or not.</p></li>
+<li><p><b> showGoToToday </b> <code>boolean</code> <br> Whether the "Go to today" link should be shown or not</p></li>
+<li><p><b> showMonthPickerAsOverlay </b> <code>boolean</code> <br> Show month picker on top of date picker when visible.</p></li>
+<li><p><b> showWeekNumbers </b> <code>boolean</code> <br> Whether the calendar should show the week number (weeks 1 to 53) before each week row</p></li>
+<li><p><b> strings </b> <code>IDatePickerStrings</code> <br> Localized strings to use in the DatePicker</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IDatePickerStyleProps, IDatePickerStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></li>
+<li><p><b> tabIndex </b> <code>number</code> <br> The tabIndex of the TextField</p></li>
+<li><p><b> textField </b> <code>ITextFieldProps</code> <br> Pass textField props to textField component. Prop name is "textField" for compatiblity with upcoming slots work.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by High-Order Component.</p></li>
+<li><p><b> today </b> <code>Date</code> <br> Value of today. If null, current time in client machine will be used.</p></li>
+<li><p><b> underlined </b> <code>boolean</code> <br> Whether or not the Textfield of the DatePicker is underlined.</p></li>
+<li><p><b> value </b> <code>Date</code> <br> Default value of the DatePicker, if any</p></li>
+</ul></div>
     <div id="best-practices">
     <h2>Best practices</h2>
     
@@ -203,33 +182,33 @@ you need to work using the original docs to achieve the desired result.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="fu">shinyApp</span><span class="op">(</span></span>
-<span class="r-in">    ui <span class="op">=</span> <span class="fu">div</span><span class="op">(</span></span>
-<span class="r-in">      <span class="fu">DatePicker.shinyInput</span><span class="op">(</span><span class="st">"date"</span>, value <span class="op">=</span> <span class="st">"2020-06-25T22:00:00.000Z"</span><span class="op">)</span>,</span>
-<span class="r-in">      <span class="fu">textOutput</span><span class="op">(</span><span class="st">"dateValue"</span><span class="op">)</span>,</span>
-<span class="r-in">      <span class="fu">h3</span><span class="op">(</span><span class="st">"If `value` is missing, default to system date"</span><span class="op">)</span>,</span>
-<span class="r-in">      <span class="fu">DatePicker.shinyInput</span><span class="op">(</span><span class="st">"date2"</span><span class="op">)</span>,</span>
-<span class="r-in">      <span class="fu">textOutput</span><span class="op">(</span><span class="st">"dateDefault"</span><span class="op">)</span>,</span>
-<span class="r-in">      <span class="fu">h3</span><span class="op">(</span><span class="st">"If `value` is NULL, return NULL"</span><span class="op">)</span>,</span>
-<span class="r-in">      <span class="fu">DatePicker.shinyInput</span><span class="op">(</span><span class="st">"date3"</span>, value <span class="op">=</span> <span class="cn">NULL</span>, placeholder <span class="op">=</span> <span class="st">"I am placeholder!"</span><span class="op">)</span>,</span>
-<span class="r-in">      <span class="fu">textOutput</span><span class="op">(</span><span class="st">"dateNull"</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span>,</span>
-<span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">      <span class="va">output</span><span class="op">$</span><span class="va">dateValue</span> <span class="op">&lt;-</span> <span class="fu">renderText</span><span class="op">(</span><span class="op">{</span></span>
-<span class="r-in">        <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Value: %s"</span>, <span class="va">input</span><span class="op">$</span><span class="va">date</span><span class="op">)</span></span>
-<span class="r-in">      <span class="op">}</span><span class="op">)</span></span>
-<span class="r-in">      <span class="va">output</span><span class="op">$</span><span class="va">dateDefault</span> <span class="op">&lt;-</span> <span class="fu">renderText</span><span class="op">(</span><span class="op">{</span></span>
-<span class="r-in">        <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Value: %s"</span>, <span class="va">input</span><span class="op">$</span><span class="va">date2</span><span class="op">)</span></span>
-<span class="r-in">      <span class="op">}</span><span class="op">)</span></span>
-<span class="r-in">      <span class="va">output</span><span class="op">$</span><span class="va">dateNull</span> <span class="op">&lt;-</span> <span class="fu">renderText</span><span class="op">(</span><span class="op">{</span></span>
-<span class="r-in">        <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Value: %s"</span>, <span class="fu"><a href="https://rdrr.io/r/base/deparse.html" class="external-link">deparse</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">date3</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">      <span class="op">}</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">}</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="fu">shinyApp</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    ui <span class="op">=</span> <span class="fu">div</span><span class="op">(</span></span></span>
+<span class="r-in"><span>      <span class="fu">DatePicker.shinyInput</span><span class="op">(</span><span class="st">"date"</span>, value <span class="op">=</span> <span class="st">"2020-06-25T22:00:00.000Z"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      <span class="fu">textOutput</span><span class="op">(</span><span class="st">"dateValue"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      <span class="fu">h3</span><span class="op">(</span><span class="st">"If `value` is missing, default to system date"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      <span class="fu">DatePicker.shinyInput</span><span class="op">(</span><span class="st">"date2"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      <span class="fu">textOutput</span><span class="op">(</span><span class="st">"dateDefault"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      <span class="fu">h3</span><span class="op">(</span><span class="st">"If `value` is NULL, return NULL"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      <span class="fu">DatePicker.shinyInput</span><span class="op">(</span><span class="st">"date3"</span>, value <span class="op">=</span> <span class="cn">NULL</span>, placeholder <span class="op">=</span> <span class="st">"I am placeholder!"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      <span class="fu">textOutput</span><span class="op">(</span><span class="st">"dateNull"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>      <span class="va">output</span><span class="op">$</span><span class="va">dateValue</span> <span class="op">&lt;-</span> <span class="fu">renderText</span><span class="op">(</span><span class="op">{</span></span></span>
+<span class="r-in"><span>        <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Value: %s"</span>, <span class="va">input</span><span class="op">$</span><span class="va">date</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="op">}</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="va">output</span><span class="op">$</span><span class="va">dateDefault</span> <span class="op">&lt;-</span> <span class="fu">renderText</span><span class="op">(</span><span class="op">{</span></span></span>
+<span class="r-in"><span>        <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Value: %s"</span>, <span class="va">input</span><span class="op">$</span><span class="va">date2</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="op">}</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="va">output</span><span class="op">$</span><span class="va">dateNull</span> <span class="op">&lt;-</span> <span class="fu">renderText</span><span class="op">(</span><span class="op">{</span></span></span>
+<span class="r-in"><span>        <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Value: %s"</span>, <span class="fu"><a href="https://rdrr.io/r/base/deparse.html" class="external-link">deparse</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">date3</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="op">}</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -244,7 +223,7 @@ you need to work using the original docs to achieve the desired result.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

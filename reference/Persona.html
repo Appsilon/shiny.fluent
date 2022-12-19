@@ -94,82 +94,59 @@ you need to work using the original docs to achieve the desired result.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">Persona</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">Persona</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>className</dt>
-<dd><p><code>string</code> <br> Additional CSS class(es) to apply to the Persona</p></dd>
-<dt>componentRef</dt>
-<dd><p><code>IRefObject&lt;IPersona&gt;</code> <br> Optional callback to access the IPersona interface. Use this instead of ref for accessing the public methods and properties of the component.</p></dd>
-<dt>onRenderOptionalText</dt>
-<dd><p><code>IRenderFunction&lt;IPersonaProps&gt;</code> <br> Optional custom renderer for the optional text.</p></dd>
-<dt>onRenderPrimaryText</dt>
-<dd><p><code>IRenderFunction&lt;IPersonaProps&gt;</code> <br> Optional custom renderer for the primary text.</p></dd>
-<dt>onRenderSecondaryText</dt>
-<dd><p><code>IRenderFunction&lt;IPersonaProps&gt;</code> <br> Optional custom renderer for the secondary text.</p></dd>
-<dt>onRenderTertiaryText</dt>
-<dd><p><code>IRenderFunction&lt;IPersonaProps&gt;</code> <br> Optional custom renderer for the tertiary text.</p></dd>
-<dt>styles</dt>
-<dd><p><code>IStyleFunctionOrObject&lt;IPersonaStyleProps, IPersonaStyles&gt;</code> <br> Call to provide customized styling that will layer on top of variant rules</p></dd>
-<dt>allowPhoneInitials</dt>
-<dd><p><code>boolean</code> <br> Whether initials are calculated for phone numbers and number sequences. Example: Set property to true to get initials for project names consisting of numbers only.</p></dd>
-<dt>coinProps</dt>
-<dd><p><code>IPersonaCoinProps</code> <br> Optional HTML element props for Persona coin.</p></dd>
-<dt>coinSize</dt>
-<dd><p><code>number</code> <br> Optional custom persona coin size in pixel.</p></dd>
-<dt>hidePersonaDetails</dt>
-<dd><p><code>boolean</code> <br> Whether to not render persona details, and just render the persona image/initials.</p></dd>
-<dt>imageAlt</dt>
-<dd><p><code>string</code> <br> Alt text for the image to use. Defaults to an empty string.</p></dd>
-<dt>imageInitials</dt>
-<dd><p><code>string</code> <br> The user's initials to display in the image area when there is no image.</p></dd>
-<dt>imageShouldFadeIn</dt>
-<dd><p><code>boolean</code> <br> If true, adds the css class 'is-fadeIn' to the image.</p></dd>
-<dt>imageShouldStartVisible</dt>
-<dd><p><code>boolean</code> <br> If true, the image starts as visible and is hidden on error. Otherwise, the image is hidden until it is successfully loaded. This disables imageShouldFadeIn.</p></dd>
-<dt>imageUrl</dt>
-<dd><p><code>string</code> <br> Url to the image to use, should be a square aspect ratio and big enough to fit in the image area.</p></dd>
-<dt>initialsColor</dt>
-<dd><p><code>PersonaInitialsColor | string</code> <br> The background color when the user's initials are displayed.</p></dd>
-<dt>isOutOfOffice</dt>
-<dd><p><code>boolean</code> <br> This flag can be used to signal the persona is out of office. This will change the way the presence icon looks for statuses that support dual-presence.</p></dd>
-<dt>onPhotoLoadingStateChange</dt>
-<dd><p><code>(newImageLoadState: ImageLoadState) =&gt; void</code> <br> Optional callback for when loading state of the photo changes</p></dd>
-<dt>onRenderCoin</dt>
-<dd><p><code>IRenderFunction&lt;IPersonaSharedProps&gt;</code> <br> Optional custom renderer for the coin</p></dd>
-<dt>onRenderInitials</dt>
-<dd><p><code>IRenderFunction&lt;IPersonaSharedProps&gt;</code> <br> Optional custom renderer for the initials</p></dd>
-<dt>onRenderPersonaCoin</dt>
-<dd><p><code>IRenderFunction&lt;IPersonaSharedProps&gt;</code> <br> Optional custom renderer for the coin</p></dd>
-<dt>optionalText</dt>
-<dd><p><code>string</code> <br> Optional text to display, usually a custom message set. The optional text will only be shown when using size100.</p></dd>
-<dt>presence</dt>
-<dd><p><code>PersonaPresence</code> <br> Presence of the person to display - will not display presence if undefined.</p></dd>
-<dt>presenceColors</dt>
-<dd><p><code>{ available: string; away: string; busy: string; dnd: string; offline: string; oof: string; background: string; }</code> <br> The colors to be used for the presence-icon and it's background</p></dd>
-<dt>presenceTitle</dt>
-<dd><p><code>string</code> <br> Presence title to be shown as a tooltip on hover over the presence icon.</p></dd>
-<dt>primaryText</dt>
-<dd><p><code>string</code> <br> Primary text to display, usually the name of the person.</p></dd>
-<dt>secondaryText</dt>
-<dd><p><code>string</code> <br> Secondary text to display, usually the role of the user.</p></dd>
-<dt>showInitialsUntilImageLoads</dt>
-<dd><p><code>boolean</code> <br> If true renders the initials while the image is loading. This only applies when an imageUrl is provided.</p></dd>
-<dt>showSecondaryText</dt>
-<dd><p><code>boolean</code> <br></p></dd>
-<dt>showUnknownPersonaCoin</dt>
-<dd><p><code>boolean</code> <br> If true, show the special coin for unknown persona. It has '?' in place of initials, with static font and background colors</p></dd>
-<dt>size</dt>
-<dd><p><code>PersonaSize</code> <br> Decides the size of the control.</p></dd>
-<dt>tertiaryText</dt>
-<dd><p><code>string</code> <br> Tertiary text to display, usually the status of the user. The tertiary text will only be shown when using size72 or size100.</p></dd>
-<dt>text</dt>
-<dd><p><code>string</code> <br> Primary text to display, usually the name of the person.</p></dd>
-<dt>theme</dt>
-<dd><p><code>ITheme</code> <br> Theme provided by High-Order Component.</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> className </b> <code>string</code> <br> Additional css class to apply to the PersonaCoin</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;{}&gt;</code> <br> Gets the component ref.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IPersonaCoinStyleProps, IPersonaCoinStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;{}&gt;</code> <br> Gets the component ref.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IPersonaPresenceStyleProps, IPersonaPresenceStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules</p></li>
+<li><p><b> className </b> <code>string</code> <br> Additional CSS class(es) to apply to the Persona</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IPersona&gt;</code> <br> Optional callback to access the IPersona interface. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> onRenderOptionalText </b> <code>IRenderFunction&lt;IPersonaProps&gt;</code> <br> Optional custom renderer for the optional text.</p></li>
+<li><p><b> onRenderPrimaryText </b> <code>IRenderFunction&lt;IPersonaProps&gt;</code> <br> Optional custom renderer for the primary text.</p></li>
+<li><p><b> onRenderSecondaryText </b> <code>IRenderFunction&lt;IPersonaProps&gt;</code> <br> Optional custom renderer for the secondary text.</p></li>
+<li><p><b> onRenderTertiaryText </b> <code>IRenderFunction&lt;IPersonaProps&gt;</code> <br> Optional custom renderer for the tertiary text.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IPersonaStyleProps, IPersonaStyles&gt;</code> <br> Call to provide customized styling that will layer on top of variant rules</p></li>
+<li><p><b> allowPhoneInitials </b> <code>boolean</code> <br> Whether initials are calculated for phone numbers and number sequences. Example: Set property to true to get initials for project names consisting of numbers only.</p></li>
+<li><p><b> coinProps </b> <code>IPersonaCoinProps</code> <br> Optional HTML element props for Persona coin.</p></li>
+<li><p><b> coinSize </b> <code>number</code> <br> Optional custom persona coin size in pixel.</p></li>
+<li><p><b> hidePersonaDetails </b> <code>boolean</code> <br> Whether to not render persona details, and just render the persona image/initials.</p></li>
+<li><p><b> imageAlt </b> <code>string</code> <br> Alt text for the image to use. Defaults to an empty string.</p></li>
+<li><p><b> imageInitials </b> <code>string</code> <br> The user's initials to display in the image area when there is no image.</p></li>
+<li><p><b> imageShouldFadeIn </b> <code>boolean</code> <br> If true, adds the css class 'is-fadeIn' to the image.</p></li>
+<li><p><b> imageShouldStartVisible </b> <code>boolean</code> <br> If true, the image starts as visible and is hidden on error. Otherwise, the image is hidden until it is successfully loaded. This disables imageShouldFadeIn.</p></li>
+<li><p><b> imageUrl </b> <code>string</code> <br> Url to the image to use, should be a square aspect ratio and big enough to fit in the image area.</p></li>
+<li><p><b> initialsColor </b> <code>PersonaInitialsColor | string</code> <br> The background color when the user's initials are displayed.</p></li>
+<li><p><b> isOutOfOffice </b> <code>boolean</code> <br> This flag can be used to signal the persona is out of office. This will change the way the presence icon looks for statuses that support dual-presence.</p></li>
+<li><p><b> onPhotoLoadingStateChange </b> <code>(newImageLoadState: ImageLoadState) =&gt; void</code> <br> Optional callback for when loading state of the photo changes</p></li>
+<li><p><b> onRenderCoin </b> <code>IRenderFunction&lt;IPersonaSharedProps&gt;</code> <br> Optional custom renderer for the coin</p></li>
+<li><p><b> onRenderInitials </b> <code>IRenderFunction&lt;IPersonaSharedProps&gt;</code> <br> Optional custom renderer for the initials</p></li>
+<li><p><b> onRenderPersonaCoin </b> <code>IRenderFunction&lt;IPersonaSharedProps&gt;</code> <br> Optional custom renderer for the coin</p></li>
+<li><p><b> optionalText </b> <code>string</code> <br> Optional text to display, usually a custom message set. The optional text will only be shown when using size100.</p></li>
+<li><p><b> presence </b> <code>PersonaPresence</code> <br> Presence of the person to display - will not display presence if undefined.</p></li>
+<li><p><b> presenceColors </b> <code>{ available: string; away: string; busy: string; dnd: string; offline: string; oof: string; background: string; }</code> <br> The colors to be used for the presence-icon and it's background</p></li>
+<li><p><b> presenceTitle </b> <code>string</code> <br> Presence title to be shown as a tooltip on hover over the presence icon.</p></li>
+<li><p><b> primaryText </b> <code>string</code> <br> Primary text to display, usually the name of the person.</p></li>
+<li><p><b> secondaryText </b> <code>string</code> <br> Secondary text to display, usually the role of the user.</p></li>
+<li><p><b> showInitialsUntilImageLoads </b> <code>boolean</code> <br> If true renders the initials while the image is loading. This only applies when an imageUrl is provided.</p></li>
+<li><p><b> showSecondaryText </b> <code>boolean</code> <br></p></li>
+<li><p><b> showUnknownPersonaCoin </b> <code>boolean</code> <br> If true, show the special coin for unknown persona. It has '?' in place of initials, with static font and background colors</p></li>
+<li><p><b> size </b> <code>PersonaSize</code> <br> Decides the size of the control.</p></li>
+<li><p><b> tertiaryText </b> <code>string</code> <br> Tertiary text to display, usually the status of the user. The tertiary text will only be shown when using size72 or size100.</p></li>
+<li><p><b> text </b> <code>string</code> <br> Primary text to display, usually the name of the person.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by High-Order Component.</p></li>
+</ul></div>
     <div id="best-practices">
     <h2>Best practices</h2>
     
@@ -192,19 +169,19 @@ you need to work using the original docs to achieve the desired result.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span>
-<span class="r-in">    ui <span class="op">=</span> <span class="fu">Persona</span><span class="op">(</span></span>
-<span class="r-in">      imageInitials <span class="op">=</span> <span class="st">"AL"</span>,</span>
-<span class="r-in">      text <span class="op">=</span> <span class="st">"Annie Lindqvist"</span>,</span>
-<span class="r-in">      secondaryText <span class="op">=</span> <span class="st">"Software Engineer"</span>,</span>
-<span class="r-in">      presence <span class="op">=</span> <span class="fl">4</span></span>
-<span class="r-in">    <span class="op">)</span>,</span>
-<span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    ui <span class="op">=</span> <span class="fu">Persona</span><span class="op">(</span></span></span>
+<span class="r-in"><span>      imageInitials <span class="op">=</span> <span class="st">"AL"</span>,</span></span>
+<span class="r-in"><span>      text <span class="op">=</span> <span class="st">"Annie Lindqvist"</span>,</span></span>
+<span class="r-in"><span>      secondaryText <span class="op">=</span> <span class="st">"Software Engineer"</span>,</span></span>
+<span class="r-in"><span>      presence <span class="op">=</span> <span class="fl">4</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -219,7 +196,7 @@ you need to work using the original docs to achieve the desired result.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

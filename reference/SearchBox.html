@@ -90,56 +90,57 @@ you need to work using the original docs to achieve the desired result.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">SearchBox</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">SearchBox.shinyInput</span><span class="op">(</span><span class="va">inputId</span>, <span class="va">...</span>, value <span class="op">=</span> <span class="va">defaultValue</span><span class="op">)</span>
-
-<span class="fu">updateSearchBox.shinyInput</span><span class="op">(</span>
-  session <span class="op">=</span> <span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/domains.html" class="external-link">getDefaultReactiveDomain</a></span><span class="op">(</span><span class="op">)</span>,
-  <span class="va">inputId</span>,
-  <span class="va">...</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">SearchBox</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">SearchBox.shinyInput</span><span class="op">(</span><span class="va">inputId</span>, <span class="va">...</span>, value <span class="op">=</span> <span class="va">defaultValue</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">updateSearchBox.shinyInput</span><span class="op">(</span></span>
+<span>  session <span class="op">=</span> <span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/domains.html" class="external-link">getDefaultReactiveDomain</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="va">inputId</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>value</dt>
-<dd><p><code>string</code> <br> The value of the text in the SearchBox.</p></dd>
-<dt>ariaLabel</dt>
-<dd><p><code>string</code> <br> The aria label of the SearchBox for the benefit of screen readers.</p></dd>
-<dt>className</dt>
-<dd><p><code>string</code> <br> CSS class to apply to the SearchBox.</p></dd>
-<dt>clearButtonProps</dt>
-<dd><p><code>IButtonProps</code> <br> The props for the clear button.</p></dd>
-<dt>componentRef</dt>
-<dd><p><code>IRefObject&lt;ISearchBox&gt;</code> <br> Optional callback to access the ISearchBox interface. Use this instead of ref for accessing the public methods and properties of the component.</p></dd>
-<dt>defaultValue</dt>
-<dd><p><code>string</code> <br> The default value of the text in the SearchBox, in the case of an uncontrolled component. This prop is being deprecated since so far, uncontrolled behavior has not been implemented.</p></dd>
-<dt>disableAnimation</dt>
-<dd><p><code>boolean</code> <br> Whether or not to animate the SearchBox icon on focus.</p></dd>
-<dt>iconProps</dt>
-<dd><p><code>Pick&lt;IIconProps, Exclude&lt;keyof IIconProps, 'className'&gt;&gt;</code> <br> The props for the icon.</p></dd>
-<dt>labelText</dt>
-<dd><p><code>string</code> <br> Deprecated. Use <code>placeholder</code> instead.</p></dd>
-<dt>onChange</dt>
-<dd><p><code>(event?: React.ChangeEvent&lt;HTMLInputElement&gt;, newValue?: string) =&gt; void</code> <br> Callback function for when the typed input for the SearchBox has changed.</p></dd>
-<dt>onChanged</dt>
-<dd><p><code>(newValue: any) =&gt; void</code> <br> Deprecated at v0.52.2, use <code>onChange</code> instead.</p></dd>
-<dt>onClear</dt>
-<dd><p><code>(ev?: any) =&gt; void</code> <br> Callback executed when the user clears the search box by either clicking 'X' or hitting escape.</p></dd>
-<dt>onEscape</dt>
-<dd><p><code>(ev?: any) =&gt; void</code> <br> Callback executed when the user presses escape in the search box.</p></dd>
-<dt>onSearch</dt>
-<dd><p><code>(newValue: any) =&gt; void</code> <br> Callback executed when the user presses enter in the search box.</p></dd>
-<dt>placeholder</dt>
-<dd><p><code>string</code> <br> Placeholder for the search box.</p></dd>
-<dt>styles</dt>
-<dd><p><code>IStyleFunctionOrObject&lt;ISearchBoxStyleProps, ISearchBoxStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></dd>
-<dt>theme</dt>
-<dd><p><code>ITheme</code> <br> Theme (provided through customization).</p></dd>
-<dt>underlined</dt>
-<dd><p><code>boolean</code> <br> Whether or not the SearchBox is underlined.</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
+
+<dt>inputId</dt>
+<dd><p>Id of the component</p></dd>
+
+
+<dt>value</dt>
+<dd><p>Value</p></dd>
+
+
+<dt>session</dt>
+<dd><p>Session</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> ariaLabel </b> <code>string</code> <br> The aria label of the SearchBox for the benefit of screen readers.</p></li>
+<li><p><b> className </b> <code>string</code> <br> CSS class to apply to the SearchBox.</p></li>
+<li><p><b> clearButtonProps </b> <code>IButtonProps</code> <br> The props for the clear button.</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;ISearchBox&gt;</code> <br> Optional callback to access the ISearchBox interface. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> defaultValue </b> <code>string</code> <br> The default value of the text in the SearchBox, in the case of an uncontrolled component. This prop is being deprecated since so far, uncontrolled behavior has not been implemented.</p></li>
+<li><p><b> disableAnimation </b> <code>boolean</code> <br> Whether or not to animate the SearchBox icon on focus.</p></li>
+<li><p><b> iconProps </b> <code>Pick&lt;IIconProps, Exclude&lt;keyof IIconProps, 'className'&gt;&gt;</code> <br> The props for the icon.</p></li>
+<li><p><b> labelText </b> <code>string</code> <br> Deprecated. Use <code>placeholder</code> instead.</p></li>
+<li><p><b> onChange </b> <code>(event?: React.ChangeEvent&lt;HTMLInputElement&gt;, newValue?: string) =&gt; void</code> <br> Callback function for when the typed input for the SearchBox has changed.</p></li>
+<li><p><b> onChanged </b> <code>(newValue: any) =&gt; void</code> <br> Deprecated at v0.52.2, use <code>onChange</code> instead.</p></li>
+<li><p><b> onClear </b> <code>(ev?: any) =&gt; void</code> <br> Callback executed when the user clears the search box by either clicking 'X' or hitting escape.</p></li>
+<li><p><b> onEscape </b> <code>(ev?: any) =&gt; void</code> <br> Callback executed when the user presses escape in the search box.</p></li>
+<li><p><b> onSearch </b> <code>(newValue: any) =&gt; void</code> <br> Callback executed when the user presses enter in the search box.</p></li>
+<li><p><b> placeholder </b> <code>string</code> <br> Placeholder for the search box.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;ISearchBoxStyleProps, ISearchBoxStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme (provided through customization).</p></li>
+<li><p><b> underlined </b> <code>boolean</code> <br> Whether or not the SearchBox is underlined.</p></li>
+<li><p><b> value </b> <code>string</code> <br> The value of the text in the SearchBox.</p></li>
+</ul></div>
     <div id="best-practices">
     <h2>Best practices</h2>
     
@@ -164,21 +165,21 @@ you need to work using the original docs to achieve the desired result.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span>
-<span class="r-in">    ui <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
-<span class="r-in">      <span class="fu">SearchBox.shinyInput</span><span class="op">(</span><span class="st">"search"</span>, placeholder <span class="op">=</span> <span class="st">"Search"</span><span class="op">)</span>,</span>
-<span class="r-in">      <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/textOutput.html" class="external-link">textOutput</a></span><span class="op">(</span><span class="st">"searchValue"</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span>,</span>
-<span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">      <span class="va">output</span><span class="op">$</span><span class="va">searchValue</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/renderPrint.html" class="external-link">renderText</a></span><span class="op">(</span><span class="op">{</span></span>
-<span class="r-in">        <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Value: %s"</span>, <span class="va">input</span><span class="op">$</span><span class="va">search</span><span class="op">)</span></span>
-<span class="r-in">      <span class="op">}</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">}</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    ui <span class="op">=</span> <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>      <span class="fu">SearchBox.shinyInput</span><span class="op">(</span><span class="st">"search"</span>, placeholder <span class="op">=</span> <span class="st">"Search"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/textOutput.html" class="external-link">textOutput</a></span><span class="op">(</span><span class="st">"searchValue"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>      <span class="va">output</span><span class="op">$</span><span class="va">searchValue</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/renderPrint.html" class="external-link">renderText</a></span><span class="op">(</span><span class="op">{</span></span></span>
+<span class="r-in"><span>        <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Value: %s"</span>, <span class="va">input</span><span class="op">$</span><span class="va">search</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="op">}</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -193,7 +194,7 @@ you need to work using the original docs to achieve the desired result.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

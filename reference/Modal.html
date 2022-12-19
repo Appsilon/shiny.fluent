@@ -90,54 +90,40 @@ you need to work using the original docs to achieve the desired result.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">Modal</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">Modal</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>allowTouchBodyScroll</dt>
-<dd><p><code>boolean</code> <br> Allow body scroll on content and overlay on touch devices. Changing after mounting has no effect.</p></dd>
-<dt>className</dt>
-<dd><p><code>string</code> <br> Optional class name to be added to the root class</p></dd>
-<dt>componentRef</dt>
-<dd><p><code>IRefObject&lt;IModal&gt;</code> <br> Optional callback to access the IDialog interface. Use this instead of ref for accessing the public methods and properties of the component.</p></dd>
-<dt>containerClassName</dt>
-<dd><p><code>string</code> <br> Optional override for container class</p></dd>
-<dt>dragOptions</dt>
-<dd><p><code>IDragOptions</code> <br> The options to make the modal draggable</p></dd>
-<dt>enableAriaHiddenSiblings</dt>
-<dd><p><code>boolean</code> <br> Puts aria-hidden=true on all non-ancestors of the current modal, for screen readers. This is an experimental feature that will be graduated to default behavior after testing. This flag will be removed with the next major release.</p></dd>
-<dt>isBlocking</dt>
-<dd><p><code>boolean</code> <br> Whether the dialog can be light dismissed by clicking outside the dialog (on the overlay).</p></dd>
-<dt>isDarkOverlay</dt>
-<dd><p><code>boolean</code> <br> Whether the overlay is dark themed.</p></dd>
-<dt>isModeless</dt>
-<dd><p><code>boolean</code> <br> Whether the dialog should be modeless (e.g. not dismiss when focusing/clicking outside of the dialog). if true: isBlocking is ignored, there will be no overlay (isDarkOverlay is ignored), isClickableOutsideFocusTrap is true, and forceFocusInsideTrap is false</p></dd>
-<dt>isOpen</dt>
-<dd><p><code>boolean</code> <br> Whether the dialog is displayed.</p></dd>
-<dt>layerProps</dt>
-<dd><p><code>ILayerProps</code> <br> Defines an optional set of props to be passed through to Layer</p></dd>
-<dt>onDismiss</dt>
-<dd><p><code>(ev?: React.MouseEvent&lt;HTMLButtonElement&gt;) =&gt; any</code> <br> A callback function for when the Modal is dismissed light dismiss, before the animation completes.</p></dd>
-<dt>onDismissed</dt>
-<dd><p><code>() =&gt; any</code> <br> A callback function which is called after the Modal is dismissed and the animation is complete.</p></dd>
-<dt>onLayerDidMount</dt>
-<dd><p><code>() =&gt; void</code> <br> A callback function for when the Modal content is mounted on the overlay layer</p></dd>
-<dt>overlay</dt>
-<dd><p><code>IOverlayProps</code> <br> Defines an optional set of props to be passed through to Overlay</p></dd>
-<dt>scrollableContentClassName</dt>
-<dd><p><code>string</code> <br> Optional override for scrollable content class</p></dd>
-<dt>styles</dt>
-<dd><p><code>IStyleFunctionOrObject&lt;IModalStyleProps, IModalStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></dd>
-<dt>subtitleAriaId</dt>
-<dd><p><code>string</code> <br> ARIA id for the subtitle of the Modal, if any</p></dd>
-<dt>theme</dt>
-<dd><p><code>ITheme</code> <br> Theme provided by High-Order Component.</p></dd>
-<dt>titleAriaId</dt>
-<dd><p><code>string</code> <br> ARIA id for the title of the Modal, if any</p></dd>
-<dt>topOffsetFixed</dt>
-<dd><p><code>boolean</code> <br> Whether the modal should have top offset fixed once opened and expand from the bottom only when the content changes dynamically.</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> allowTouchBodyScroll </b> <code>boolean</code> <br> Allow body scroll on content and overlay on touch devices. Changing after mounting has no effect.</p></li>
+<li><p><b> className </b> <code>string</code> <br> Optional class name to be added to the root class</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IModal&gt;</code> <br> Optional callback to access the IDialog interface. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> containerClassName </b> <code>string</code> <br> Optional override for container class</p></li>
+<li><p><b> dragOptions </b> <code>IDragOptions</code> <br> The options to make the modal draggable</p></li>
+<li><p><b> enableAriaHiddenSiblings </b> <code>boolean</code> <br> Puts aria-hidden=true on all non-ancestors of the current modal, for screen readers. This is an experimental feature that will be graduated to default behavior after testing. This flag will be removed with the next major release.</p></li>
+<li><p><b> isBlocking </b> <code>boolean</code> <br> Whether the dialog can be light dismissed by clicking outside the dialog (on the overlay).</p></li>
+<li><p><b> isDarkOverlay </b> <code>boolean</code> <br> Whether the overlay is dark themed.</p></li>
+<li><p><b> isModeless </b> <code>boolean</code> <br> Whether the dialog should be modeless (e.g. not dismiss when focusing/clicking outside of the dialog). if true: isBlocking is ignored, there will be no overlay (isDarkOverlay is ignored), isClickableOutsideFocusTrap is true, and forceFocusInsideTrap is false</p></li>
+<li><p><b> isOpen </b> <code>boolean</code> <br> Whether the dialog is displayed.</p></li>
+<li><p><b> layerProps </b> <code>ILayerProps</code> <br> Defines an optional set of props to be passed through to Layer</p></li>
+<li><p><b> onDismiss </b> <code>(ev?: React.MouseEvent&lt;HTMLButtonElement&gt;) =&gt; any</code> <br> A callback function for when the Modal is dismissed light dismiss, before the animation completes.</p></li>
+<li><p><b> onDismissed </b> <code>() =&gt; any</code> <br> A callback function which is called after the Modal is dismissed and the animation is complete.</p></li>
+<li><p><b> onLayerDidMount </b> <code>() =&gt; void</code> <br> A callback function for when the Modal content is mounted on the overlay layer</p></li>
+<li><p><b> overlay </b> <code>IOverlayProps</code> <br> Defines an optional set of props to be passed through to Overlay</p></li>
+<li><p><b> scrollableContentClassName </b> <code>string</code> <br> Optional override for scrollable content class</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IModalStyleProps, IModalStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></li>
+<li><p><b> subtitleAriaId </b> <code>string</code> <br> ARIA id for the subtitle of the Modal, if any</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by High-Order Component.</p></li>
+<li><p><b> titleAriaId </b> <code>string</code> <br> ARIA id for the title of the Modal, if any</p></li>
+<li><p><b> topOffsetFixed </b> <code>boolean</code> <br> Whether the modal should have top offset fixed once opened and expand from the bottom only when the content changes dynamically.</p></li>
+</ul></div>
     <div id="best-practices">
     <h2>Best practices</h2>
     
@@ -162,36 +148,36 @@ you need to work using the original docs to achieve the desired result.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span>
-<span class="r-in">    ui <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/tagList.html" class="external-link">tagList</a></span><span class="op">(</span></span>
-<span class="r-in">      <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/reactOutput.html" class="external-link">reactOutput</a></span><span class="op">(</span><span class="st">"modal"</span><span class="op">)</span>,</span>
-<span class="r-in">      <span class="fu"><a href="Button.html">PrimaryButton.shinyInput</a></span><span class="op">(</span><span class="st">"showModal"</span>, text <span class="op">=</span> <span class="st">"Show modal"</span><span class="op">)</span>,</span>
-<span class="r-in">    <span class="op">)</span>,</span>
-<span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">      <span class="va">modalVisible</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/reactiveVal.html" class="external-link">reactiveVal</a></span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span>
-<span class="r-in">      <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/observeEvent.html" class="external-link">observeEvent</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">showModal</span>, <span class="fu">modalVisible</span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">      <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/observeEvent.html" class="external-link">observeEvent</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">hideModal</span>, <span class="fu">modalVisible</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">      <span class="va">output</span><span class="op">$</span><span class="va">modal</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/renderReact.html" class="external-link">renderReact</a></span><span class="op">(</span><span class="op">{</span></span>
-<span class="r-in">        <span class="fu">Modal</span><span class="op">(</span>isOpen <span class="op">=</span> <span class="fu">modalVisible</span><span class="op">(</span><span class="op">)</span>,</span>
-<span class="r-in">          <span class="fu"><a href="Stack.html">Stack</a></span><span class="op">(</span>tokens <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>padding <span class="op">=</span> <span class="st">"15px"</span>, childrenGap <span class="op">=</span> <span class="st">"10px"</span><span class="op">)</span>,</span>
-<span class="r-in">            <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span>style <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>display <span class="op">=</span> <span class="st">"flex"</span><span class="op">)</span>,</span>
-<span class="r-in">              <span class="fu"><a href="Text.html">Text</a></span><span class="op">(</span><span class="st">"Title"</span>, variant <span class="op">=</span> <span class="st">"large"</span><span class="op">)</span>,</span>
-<span class="r-in">              <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span>style <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>flexGrow <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span>,</span>
-<span class="r-in">              <span class="fu"><a href="Button.html">IconButton.shinyInput</a></span><span class="op">(</span><span class="st">"hideModal"</span>, iconProps <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>iconName <span class="op">=</span> <span class="st">"Cancel"</span><span class="op">)</span><span class="op">)</span>,</span>
-<span class="r-in">            <span class="op">)</span>,</span>
-<span class="r-in">            <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
-<span class="r-in">              <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">p</a></span><span class="op">(</span><span class="st">"A paragraph of text."</span><span class="op">)</span>,</span>
-<span class="r-in">              <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">p</a></span><span class="op">(</span><span class="st">"Another paragraph."</span><span class="op">)</span></span>
-<span class="r-in">            <span class="op">)</span></span>
-<span class="r-in">          <span class="op">)</span></span>
-<span class="r-in">        <span class="op">)</span></span>
-<span class="r-in">      <span class="op">}</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">}</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    ui <span class="op">=</span> <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/tagList.html" class="external-link">tagList</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>      <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/reactOutput.html" class="external-link">reactOutput</a></span><span class="op">(</span><span class="st">"modal"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      <span class="fu"><a href="Button.html">PrimaryButton.shinyInput</a></span><span class="op">(</span><span class="st">"showModal"</span>, text <span class="op">=</span> <span class="st">"Show modal"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>      <span class="va">modalVisible</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/reactiveVal.html" class="external-link">reactiveVal</a></span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/observeEvent.html" class="external-link">observeEvent</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">showModal</span>, <span class="fu">modalVisible</span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/observeEvent.html" class="external-link">observeEvent</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">hideModal</span>, <span class="fu">modalVisible</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="va">output</span><span class="op">$</span><span class="va">modal</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/renderReact.html" class="external-link">renderReact</a></span><span class="op">(</span><span class="op">{</span></span></span>
+<span class="r-in"><span>        <span class="fu">Modal</span><span class="op">(</span>isOpen <span class="op">=</span> <span class="fu">modalVisible</span><span class="op">(</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>          <span class="fu"><a href="Stack.html">Stack</a></span><span class="op">(</span>tokens <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>padding <span class="op">=</span> <span class="st">"15px"</span>, childrenGap <span class="op">=</span> <span class="st">"10px"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>            <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span>style <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>display <span class="op">=</span> <span class="st">"flex"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>              <span class="fu"><a href="Text.html">Text</a></span><span class="op">(</span><span class="st">"Title"</span>, variant <span class="op">=</span> <span class="st">"large"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>              <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span>style <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>flexGrow <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>              <span class="fu"><a href="Button.html">IconButton.shinyInput</a></span><span class="op">(</span><span class="st">"hideModal"</span>, iconProps <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>iconName <span class="op">=</span> <span class="st">"Cancel"</span><span class="op">)</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>            <span class="op">)</span>,</span></span>
+<span class="r-in"><span>            <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>              <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">p</a></span><span class="op">(</span><span class="st">"A paragraph of text."</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>              <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">p</a></span><span class="op">(</span><span class="st">"Another paragraph."</span><span class="op">)</span></span></span>
+<span class="r-in"><span>            <span class="op">)</span></span></span>
+<span class="r-in"><span>          <span class="op">)</span></span></span>
+<span class="r-in"><span>        <span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="op">}</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -206,7 +192,7 @@ you need to work using the original docs to achieve the desired result.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

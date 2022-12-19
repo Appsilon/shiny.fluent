@@ -97,52 +97,46 @@ you need to work using the original docs to achieve the desired result.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">TooltipHost</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">TooltipHost</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>className</dt>
-<dd><p><code>string</code> <br> Class name to apply to the <em>tooltip itself</em>, not the host. To apply a class to the host, use <code>hostClassName</code> or <code>styles.root</code>.</p></dd>
-<dt>closeDelay</dt>
-<dd><p><code>number</code> <br> Number of milliseconds to delay closing the tooltip, so that the user has time to hover over the tooltip and interact with it. Hovering over the tooltip will count as hovering over the host, so that the tooltip will stay open if the user is actively interacting with it.</p></dd>
-<dt>hostClassName</dt>
-<dd><p><code>string</code> <br> Class name to apply to tooltip host.</p></dd>
-<dt>id</dt>
-<dd><p><code>string</code> <br> Optional ID to pass through to the tooltip (not used on the host itself). Auto-generated if not provided.</p></dd>
-<dt>onTooltipToggle</dt>
-<dd><p><code>onTooltipToggle?(isTooltipVisible: boolean): void;</code> <br> Notifies when tooltip becomes visible or hidden, whatever the trigger was.</p></dd>
-<dt>overflowMode</dt>
-<dd><p><code>TooltipOverflowMode</code> <br> If this is unset (the default), the tooltip is always shown even if there's no overflow.</p>
-<p>If set, only show the tooltip if the specified element (<code>Self</code> or <code>Parent</code>) has overflow. When set to <code>Parent</code>, the parent element is also used as the tooltip's target element.</p>
-<p>Note that even with <code>Self</code> mode, the TooltipHost <em>does not</em> check whether any children have overflow.</p></dd>
-<dt>setAriaDescribedBy</dt>
-<dd><p><code>boolean</code> <br> Whether or not to mark the TooltipHost root element as described by the tooltip. If not specified, the caller should pass an <code>id</code> to the TooltipHost (to be passed through to the Tooltip) and mark the appropriate element as <code>aria-describedby</code> the <code>id</code>.</p></dd>
-<dt>tooltipProps</dt>
-<dd><p><code>ITooltipProps</code> <br> Additional properties to pass through for Tooltip.</p></dd>
-<dt>calloutProps</dt>
-<dd><p><code>ICalloutProps</code> <br> Properties to pass through for Callout.</p></dd>
-<dt>componentRef</dt>
-<dd><p><code>IRefObject&lt;ITooltip&gt;</code> <br> Optional callback to access the ITooltip interface. Use this instead of ref for accessing the public methods and properties of the component.</p></dd>
-<dt>content</dt>
-<dd><p><code>string | JSX.Element | JSX.Element[]</code> <br> Content to be passed to the tooltip</p></dd>
-<dt>delay</dt>
-<dd><p><code>TooltipDelay</code> <br> Length of delay. Set to <code>TooltipDelay.zero</code> if you do not want a delay.</p></dd>
-<dt>directionalHint</dt>
-<dd><p><code>DirectionalHint</code> <br> How the tooltip should be anchored to its <code>targetElement</code>.</p></dd>
-<dt>directionalHintForRTL</dt>
-<dd><p><code>DirectionalHint</code> <br> How the element should be positioned in RTL layouts. If not specified, a mirror of <code>directionalHint</code> will be used instead</p></dd>
-<dt>maxWidth</dt>
-<dd><p><code>string | null</code> <br> Max width of tooltip</p></dd>
-<dt>onRenderContent</dt>
-<dd><p><code>IRenderFunction&lt;ITooltipProps&gt;</code> <br> Render function to populate tooltip content.</p></dd>
-<dt>styles</dt>
-<dd><p><code>IStyleFunctionOrObject&lt;ITooltipStyleProps, ITooltipStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></dd>
-<dt>targetElement</dt>
-<dd><p><code>HTMLElement</code> <br> Element to anchor the Tooltip to.</p></dd>
-<dt>theme</dt>
-<dd><p><code>ITheme</code> <br> Theme provided by higher-order component.</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> calloutProps </b> <code>ICalloutProps</code> <br> Additional properties to pass through for Callout.</p></li>
+<li><p><b> className </b> <code>string</code> <br> Class name to apply to the <em>tooltip itself</em>, not the host. To apply a class to the host, use <code>hostClassName</code> or <code>styles.root</code>.</p></li>
+<li><p><b> closeDelay </b> <code>number</code> <br> Number of milliseconds to delay closing the tooltip, so that the user has time to hover over the tooltip and interact with it. Hovering over the tooltip will count as hovering over the host, so that the tooltip will stay open if the user is actively interacting with it.</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;ITooltipHost&gt;</code> <br> Optional callback to access the ITooltipHost interface. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> content </b> <code>string | JSX.Element | JSX.Element[]</code> <br> Content to display in the Tooltip.</p></li>
+<li><p><b> delay </b> <code>TooltipDelay</code> <br> Length of delay before showing the tooltip on hover.</p></li>
+<li><p><b> directionalHint </b> <code>DirectionalHint</code> <br> How the tooltip should be anchored to its <code>targetElement</code>.</p></li>
+<li><p><b> directionalHintForRTL </b> <code>DirectionalHint</code> <br> How the element should be positioned in RTL layouts. If not specified, a mirror of <code>directionalHint</code> will be used.</p></li>
+<li><p><b> hostClassName </b> <code>string</code> <br> Class name to apply to tooltip host.</p></li>
+<li><p><b> id </b> <code>string</code> <br> Optional ID to pass through to the tooltip (not used on the host itself). Auto-generated if not provided.</p></li>
+<li><p><b> onTooltipToggle </b> <code>onTooltipToggle?(isTooltipVisible: boolean): void;</code> <br> Notifies when tooltip becomes visible or hidden, whatever the trigger was.</p></li>
+<li><p><b> overflowMode </b> <code>TooltipOverflowMode</code> <br> If this is unset (the default), the tooltip is always shown even if there's no overflow.If set, only show the tooltip if the specified element (<code>Self</code> or <code>Parent</code>) has overflow. When set to <code>Parent</code>, the parent element is also used as the tooltip's target element.Note that even with <code>Self</code> mode, the TooltipHost <em>does not</em> check whether any children have overflow.</p></li>
+<li><p><b> setAriaDescribedBy </b> <code>boolean</code> <br> Whether or not to mark the TooltipHost root element as described by the tooltip. If not specified, the caller should pass an <code>id</code> to the TooltipHost (to be passed through to the Tooltip) and mark the appropriate element as <code>aria-describedby</code> the <code>id</code>.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;ITooltipHostStyleProps, ITooltipHostStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by higher-order component.</p></li>
+<li><p><b> tooltipProps </b> <code>ITooltipProps</code> <br> Additional properties to pass through for Tooltip.</p></li>
+<li><p><b> calloutProps </b> <code>ICalloutProps</code> <br> Properties to pass through for Callout.</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;ITooltip&gt;</code> <br> Optional callback to access the ITooltip interface. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> content </b> <code>string | JSX.Element | JSX.Element[]</code> <br> Content to be passed to the tooltip</p></li>
+<li><p><b> delay </b> <code>TooltipDelay</code> <br> Length of delay. Set to <code>TooltipDelay.zero</code> if you do not want a delay.</p></li>
+<li><p><b> directionalHint </b> <code>DirectionalHint</code> <br> How the tooltip should be anchored to its <code>targetElement</code>.</p></li>
+<li><p><b> directionalHintForRTL </b> <code>DirectionalHint</code> <br> How the element should be positioned in RTL layouts. If not specified, a mirror of <code>directionalHint</code> will be used instead</p></li>
+<li><p><b> maxWidth </b> <code>string | null</code> <br> Max width of tooltip</p></li>
+<li><p><b> onRenderContent </b> <code>IRenderFunction&lt;ITooltipProps&gt;</code> <br> Render function to populate tooltip content.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;ITooltipStyleProps, ITooltipStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></li>
+<li><p><b> targetElement </b> <code>HTMLElement</code> <br> Element to anchor the Tooltip to.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by higher-order component.</p></li>
+</ul></div>
     <div id="best-practices">
     <h2>Best practices</h2>
     
@@ -165,18 +159,18 @@ you need to work using the original docs to achieve the desired result.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span>
-<span class="r-in">    ui <span class="op">=</span> <span class="fu">TooltipHost</span><span class="op">(</span></span>
-<span class="r-in">      content <span class="op">=</span> <span class="st">"This is the tooltip content"</span>,</span>
-<span class="r-in">      delay <span class="op">=</span> <span class="fl">0</span>,</span>
-<span class="r-in">      <span class="fu"><a href="Text.html">Text</a></span><span class="op">(</span><span class="st">"Hover over me"</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span>,</span>
-<span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    ui <span class="op">=</span> <span class="fu">TooltipHost</span><span class="op">(</span></span></span>
+<span class="r-in"><span>      content <span class="op">=</span> <span class="st">"This is the tooltip content"</span>,</span></span>
+<span class="r-in"><span>      delay <span class="op">=</span> <span class="fl">0</span>,</span></span>
+<span class="r-in"><span>      <span class="fu"><a href="Text.html">Text</a></span><span class="op">(</span><span class="st">"Hover over me"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -191,7 +185,7 @@ you need to work using the original docs to achieve the desired result.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

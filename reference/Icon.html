@@ -94,48 +94,50 @@ you need to work using the original docs to achieve the desired result.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">FontIcon</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">Icon</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">ImageIcon</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">FontIcon</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">Icon</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">ImageIcon</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>ariaLabel</dt>
-<dd><p><code>string</code> <br> The aria label of the icon for the benefit of screen readers.</p></dd>
-<dt>iconName</dt>
-<dd><p><code>string</code> <br> The name of the icon to use from the icon font. If string is empty, a placeholder icon will be rendered the same width as an icon.</p></dd>
-<dt>iconType</dt>
-<dd><p><code>IconType</code> <br> The type of icon to render (image or icon font).</p></dd>
-<dt>imageErrorAs</dt>
-<dd><p><code>React.ComponentType&lt;IImageProps&gt;</code> <br> If rendering an image icon, this component will be rendered in the event that loading the image fails.</p></dd>
-<dt>styles</dt>
-<dd><p><code>IStyleFunctionOrObject&lt;IIconStyleProps, IIconStyles&gt;</code> <br> Gets the styles for an Icon.</p></dd>
-<dt>theme</dt>
-<dd><p><code>ITheme</code> <br></p></dd>
-<dt>className</dt>
-<dd><p><code>string</code> <br> Custom class to style the icon.</p></dd>
-<dt>imageProps</dt>
-<dd><p><code>IImageProps</code> <br> Props passed to the Image component.</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> className </b> <code>string</code> <br> Custom class to style the icon.</p></li>
+<li><p><b> iconName </b> <code>string</code> <br> The name of the icon to use from the icon font. If string is empty, a placeholder icon will be rendered the same width as an icon.</p></li>
+<li><p><b> ariaLabel </b> <code>string</code> <br> The aria label of the icon for the benefit of screen readers.</p></li>
+<li><p><b> iconName </b> <code>string</code> <br> The name of the icon to use from the icon font. If string is empty, a placeholder icon will be rendered the same width as an icon.</p></li>
+<li><p><b> iconType </b> <code>IconType</code> <br> The type of icon to render (image or icon font).</p></li>
+<li><p><b> imageErrorAs </b> <code>React.ComponentType&lt;IImageProps&gt;</code> <br> If rendering an image icon, this component will be rendered in the event that loading the image fails.</p></li>
+<li><p><b> imageProps </b> <code>IImageProps</code> <br> If rendering an image icon, these props will be passed to the Image component.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IIconStyleProps, IIconStyles&gt;</code> <br> Gets the styles for an Icon.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br></p></li>
+<li><p><b> className </b> <code>string</code> <br> Custom class to style the icon.</p></li>
+<li><p><b> imageProps </b> <code>IImageProps</code> <br> Props passed to the Image component.</p></li>
+</ul></div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="va">style</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>fontSize <span class="op">=</span> <span class="fl">50</span>, margin <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
-<span class="r-in">  <span class="fu">shinyApp</span><span class="op">(</span></span>
-<span class="r-in">    ui <span class="op">=</span> <span class="va">tags</span><span class="op">$</span><span class="fu">div</span><span class="op">(</span></span>
-<span class="r-in">      <span class="fu">FontIcon</span><span class="op">(</span>iconName <span class="op">=</span> <span class="st">"CompassNW"</span>, style <span class="op">=</span> <span class="va">style</span><span class="op">)</span>,</span>
-<span class="r-in">      <span class="fu">FontIcon</span><span class="op">(</span>iconName <span class="op">=</span> <span class="st">"Dictionary"</span>, style <span class="op">=</span> <span class="va">style</span><span class="op">)</span>,</span>
-<span class="r-in">      <span class="fu">FontIcon</span><span class="op">(</span>iconName <span class="op">=</span> <span class="st">"TrainSolid"</span>, style <span class="op">=</span> <span class="va">style</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span>,</span>
-<span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="va">style</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>fontSize <span class="op">=</span> <span class="fl">50</span>, margin <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="fu">shinyApp</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    ui <span class="op">=</span> <span class="va">tags</span><span class="op">$</span><span class="fu">div</span><span class="op">(</span></span></span>
+<span class="r-in"><span>      <span class="fu">FontIcon</span><span class="op">(</span>iconName <span class="op">=</span> <span class="st">"CompassNW"</span>, style <span class="op">=</span> <span class="va">style</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      <span class="fu">FontIcon</span><span class="op">(</span>iconName <span class="op">=</span> <span class="st">"Dictionary"</span>, style <span class="op">=</span> <span class="va">style</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      <span class="fu">FontIcon</span><span class="op">(</span>iconName <span class="op">=</span> <span class="st">"TrainSolid"</span>, style <span class="op">=</span> <span class="va">style</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -150,7 +152,7 @@ you need to work using the original docs to achieve the desired result.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

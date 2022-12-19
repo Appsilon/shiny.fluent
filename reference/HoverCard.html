@@ -95,68 +95,47 @@ you need to work using the original docs to achieve the desired result.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">HoverCard</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">HoverCard</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>compactCardHeight</dt>
-<dd><p><code>number</code> <br> Height of compact card</p></dd>
-<dt>expandedCardHeight</dt>
-<dd><p><code>number</code> <br> Height of expanded card</p></dd>
-<dt>mode</dt>
-<dd><p><code>ExpandingCardMode</code> <br> Use to open the card in expanded format and not wait for the delay</p></dd>
-<dt>onRenderCompactCard</dt>
-<dd><p><code>IRenderFunction&lt;any&gt;</code> <br> Render function to populate compact content area</p></dd>
-<dt>onRenderExpandedCard</dt>
-<dd><p><code>IRenderFunction&lt;any&gt;</code> <br> Render function to populate expanded content area</p></dd>
-<dt>cardDismissDelay</dt>
-<dd><p><code>number</code> <br> Length of card dismiss delay. A min number is necessary for pointer to hop between target and card</p></dd>
-<dt>cardOpenDelay</dt>
-<dd><p><code>number</code> <br> Length of compact card delay</p></dd>
-<dt>className</dt>
-<dd><p><code>string</code> <br> Additional CSS class(es) to apply to the HoverCard root element.</p></dd>
-<dt>componentRef</dt>
-<dd><p><code>IRefObject&lt;IHoverCard&gt;</code> <br> Optional callback to access the IHoverCardHost interface. Use this instead of ref for accessing the public methods and properties of the component.</p></dd>
-<dt>eventListenerTarget</dt>
-<dd><p><code>HTMLElement | string | null</code> <br> This prop is to separate the target to anchor hover card from the target to attach event listener. If set, this prop separates the target to anchor the hover card from the target to attach the event listener. When no <code>eventListenerTarget</code> given, HoverCard will use <code>target</code> prop or its root to set event listener.</p></dd>
-<dt>expandedCardOpenDelay</dt>
-<dd><p><code>number</code> <br> Time in ms when expanded card should open after compact card</p></dd>
-<dt>expandingCardProps</dt>
-<dd><p><code>IExpandingCardProps</code> <br> Additional ExpandingCard props to pass through HoverCard like renderers, target. gapSpace etc. Used along with 'type' prop set to HoverCardType.expanding. Reference detail properties in ICardProps and IExpandingCardProps.</p></dd>
-<dt>instantOpenOnClick</dt>
-<dd><p><code>boolean</code> <br> Enables instant open of the full card upon click</p></dd>
-<dt>onCardExpand</dt>
-<dd><p><code>() =&gt; void</code> <br> Callback when visible card is expanded.</p></dd>
-<dt>onCardHide</dt>
-<dd><p><code>() =&gt; void</code> <br> Callback when card hides</p></dd>
-<dt>onCardVisible</dt>
-<dd><p><code>() =&gt; void</code> <br> Callback when card becomes visible</p></dd>
-<dt>openHotKey</dt>
-<dd><p><code>KeyCodes</code> <br> HotKey used for opening the HoverCard when tabbed to target.</p></dd>
-<dt>plainCardProps</dt>
-<dd><p><code>IPlainCardProps</code> <br> Additional PlainCard props to pass through HoverCard like renderers, target, gapSpace etc. Used along with 'type' prop set to HoverCardType.plain. See for more details ICardProps and IPlainCardProps interfaces.</p></dd>
-<dt>setAriaDescribedBy</dt>
-<dd><p><code>boolean</code> <br> Whether or not to mark the container as described by the hover card. If not specified, the caller should mark as element as described by the hover card id.</p></dd>
-<dt>setInitialFocus</dt>
-<dd><p><code>boolean</code> <br> Set to true to set focus on the first focusable element in the card. Works in pair with the 'trapFocus' prop.</p></dd>
-<dt>shouldBlockHoverCard</dt>
-<dd><p><code>() =&gt; void</code> <br> Should block hover card or not</p></dd>
-<dt>sticky</dt>
-<dd><p><code>boolean</code> <br> If true disables Card dismiss upon mouse leave, so that card sticks around.</p></dd>
-<dt>styles</dt>
-<dd><p><code>IStyleFunctionOrObject&lt;IHoverCardStyleProps, IHoverCardStyles&gt;</code> <br> Custom styles for this component</p></dd>
-<dt>target</dt>
-<dd><p><code>HTMLElement | string | null</code> <br> Optional target element to tag hover card on. If not provided and using HoverCard as a wrapper, don't set the 'data-is-focusable=true' attribute to the root of the wrapped child. If no target is given, HoverCard will use its root as a target and become the focusable element with a focus listener attached to it.</p></dd>
-<dt>theme</dt>
-<dd><p><code>ITheme</code> <br> Theme provided by higher order component.</p></dd>
-<dt>trapFocus</dt>
-<dd><p><code>boolean</code> <br> Set to true if you want to render the content of the HoverCard in a FocusTrapZone for accessibility reasons. Optionally 'setInitialFocus' prop can be set to true to move focus inside the FocusTrapZone.</p></dd>
-<dt>type</dt>
-<dd><p><code>HoverCardType</code> <br> Type of the hover card to render.</p></dd>
-<dt>onRenderPlainCard</dt>
-<dd><p><code>IRenderFunction&lt;any&gt;</code> <br> Render function to populate compact content area</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> compactCardHeight </b> <code>number</code> <br> Height of compact card</p></li>
+<li><p><b> expandedCardHeight </b> <code>number</code> <br> Height of expanded card</p></li>
+<li><p><b> mode </b> <code>ExpandingCardMode</code> <br> Use to open the card in expanded format and not wait for the delay</p></li>
+<li><p><b> onRenderCompactCard </b> <code>IRenderFunction&lt;any&gt;</code> <br> Render function to populate compact content area</p></li>
+<li><p><b> onRenderExpandedCard </b> <code>IRenderFunction&lt;any&gt;</code> <br> Render function to populate expanded content area</p></li>
+<li><p><b> cardDismissDelay </b> <code>number</code> <br> Length of card dismiss delay. A min number is necessary for pointer to hop between target and card</p></li>
+<li><p><b> cardOpenDelay </b> <code>number</code> <br> Length of compact card delay</p></li>
+<li><p><b> className </b> <code>string</code> <br> Additional CSS class(es) to apply to the HoverCard root element.</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IHoverCard&gt;</code> <br> Optional callback to access the IHoverCardHost interface. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> eventListenerTarget </b> <code>HTMLElement | string | null</code> <br> This prop is to separate the target to anchor hover card from the target to attach event listener. If set, this prop separates the target to anchor the hover card from the target to attach the event listener. When no <code>eventListenerTarget</code> given, HoverCard will use <code>target</code> prop or its root to set event listener.</p></li>
+<li><p><b> expandedCardOpenDelay </b> <code>number</code> <br> Time in ms when expanded card should open after compact card</p></li>
+<li><p><b> expandingCardProps </b> <code>IExpandingCardProps</code> <br> Additional ExpandingCard props to pass through HoverCard like renderers, target. gapSpace etc. Used along with 'type' prop set to HoverCardType.expanding. Reference detail properties in ICardProps and IExpandingCardProps.</p></li>
+<li><p><b> instantOpenOnClick </b> <code>boolean</code> <br> Enables instant open of the full card upon click</p></li>
+<li><p><b> onCardExpand </b> <code>() =&gt; void</code> <br> Callback when visible card is expanded.</p></li>
+<li><p><b> onCardHide </b> <code>() =&gt; void</code> <br> Callback when card hides</p></li>
+<li><p><b> onCardVisible </b> <code>() =&gt; void</code> <br> Callback when card becomes visible</p></li>
+<li><p><b> openHotKey </b> <code>KeyCodes</code> <br> HotKey used for opening the HoverCard when tabbed to target.</p></li>
+<li><p><b> plainCardProps </b> <code>IPlainCardProps</code> <br> Additional PlainCard props to pass through HoverCard like renderers, target, gapSpace etc. Used along with 'type' prop set to HoverCardType.plain. See for more details ICardProps and IPlainCardProps interfaces.</p></li>
+<li><p><b> setAriaDescribedBy </b> <code>boolean</code> <br> Whether or not to mark the container as described by the hover card. If not specified, the caller should mark as element as described by the hover card id.</p></li>
+<li><p><b> setInitialFocus </b> <code>boolean</code> <br> Set to true to set focus on the first focusable element in the card. Works in pair with the 'trapFocus' prop.</p></li>
+<li><p><b> shouldBlockHoverCard </b> <code>() =&gt; void</code> <br> Should block hover card or not</p></li>
+<li><p><b> sticky </b> <code>boolean</code> <br> If true disables Card dismiss upon mouse leave, so that card sticks around.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IHoverCardStyleProps, IHoverCardStyles&gt;</code> <br> Custom styles for this component</p></li>
+<li><p><b> target </b> <code>HTMLElement | string | null</code> <br> Optional target element to tag hover card on. If not provided and using HoverCard as a wrapper, don't set the 'data-is-focusable=true' attribute to the root of the wrapped child. If no target is given, HoverCard will use its root as a target and become the focusable element with a focus listener attached to it.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by higher order component.</p></li>
+<li><p><b> trapFocus </b> <code>boolean</code> <br> Set to true if you want to render the content of the HoverCard in a FocusTrapZone for accessibility reasons. Optionally 'setInitialFocus' prop can be set to true to move focus inside the FocusTrapZone.</p></li>
+<li><p><b> type </b> <code>HoverCardType</code> <br> Type of the hover card to render.</p></li>
+<li><p><b> onRenderPlainCard </b> <code>IRenderFunction&lt;any&gt;</code> <br> Render function to populate compact content area</p></li>
+</ul></div>
     <div id="best-practices">
     <h2>Best practices</h2>
     
@@ -171,21 +150,21 @@ you need to work using the original docs to achieve the desired result.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="fu">shinyApp</span><span class="op">(</span></span>
-<span class="r-in">    ui <span class="op">=</span> <span class="fu">HoverCard</span><span class="op">(</span></span>
-<span class="r-in">      type <span class="op">=</span> <span class="st">"PlainCard"</span>,</span>
-<span class="r-in">      plainCardProps <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"{</span>
-<span class="r-in">        onRenderPlainCard: (a, b, c) =&gt; 'HoverCard contents',</span>
-<span class="r-in">        style: { margin: 10 }</span>
-<span class="r-in">      }"</span><span class="op">)</span>,</span>
-<span class="r-in">      <span class="st">"Hover over me"</span></span>
-<span class="r-in">    <span class="op">)</span>,</span>
-<span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="fu">shinyApp</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    ui <span class="op">=</span> <span class="fu">HoverCard</span><span class="op">(</span></span></span>
+<span class="r-in"><span>      type <span class="op">=</span> <span class="st">"PlainCard"</span>,</span></span>
+<span class="r-in"><span>      plainCardProps <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"{</span></span></span>
+<span class="r-in"><span><span class="st">        onRenderPlainCard: (a, b, c) =&gt; 'HoverCard contents',</span></span></span>
+<span class="r-in"><span><span class="st">        style: { margin: 10 }</span></span></span>
+<span class="r-in"><span><span class="st">      }"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      <span class="st">"Hover over me"</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -200,7 +179,7 @@ you need to work using the original docs to achieve the desired result.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

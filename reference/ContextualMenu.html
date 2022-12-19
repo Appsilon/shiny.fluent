@@ -94,151 +94,170 @@ you need to work using the original docs to achieve the desired result.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">ContextualMenu</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">ContextualMenu</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>classNames</dt>
-<dd><p><code>IMenuItemClassNames</code> <br> Classnames for different aspects of a menu item</p></dd>
-<dt>dismissMenu</dt>
-<dd><p><code>(ev?: any, dismissAll?: boolean) =&gt; void</code> <br> This prop will get set by ContextualMenu and can be called to close the menu this item belongs to. If dismissAll is true, all menus will be closed.</p></dd>
-<dt>dismissSubMenu</dt>
-<dd><p><code>() =&gt; void</code> <br> This prop will get set by ContextualMenu and can be called to close this item's subMenu, if present.</p></dd>
-<dt>getSubmenuTarget</dt>
-<dd><p><code>() =&gt; HTMLElement | undefined</code> <br> This prop will get set by the wrapping component and will return the element that wraps this ContextualMenuItem. Used for openSubMenu.</p></dd>
-<dt>item</dt>
-<dd><p><code>IContextualMenuItem</code> <br> The item to display</p></dd>
-<dt>onCheckmarkClick</dt>
-<dd><p><code>(item: IContextualMenuItem, ev: React.MouseEvent&lt;HTMLElement&gt;) =&gt; void</code> <br> Click handler for the checkmark</p></dd>
-<dt>openSubMenu</dt>
-<dd><p><code>(item: any, target: HTMLElement) =&gt; void</code> <br> This prop will get set by ContextualMenu and can be called to open this item's subMenu, if present.</p></dd>
-<dt>focusableElementIndex</dt>
-<dd><p><code>number</code> <br></p></dd>
-<dt>index</dt>
-<dd><p><code>number</code> <br></p></dd>
-<dt>defaultMenuItemRenderer</dt>
-<dd><p><code>(item: IContextualMenuItemRenderProps) =&gt; React.ReactNode</code> <br></p></dd>
-<dt>hasCheckmarks</dt>
-<dd><p><code>boolean</code> <br></p></dd>
-<dt>hasIcons</dt>
-<dd><p><code>boolean</code> <br></p></dd>
-<dt>role</dt>
-<dd><p><code>string</code> <br></p></dd>
-<dt>totalItemCount</dt>
-<dd><p><code>number</code> <br></p></dd>
-<dt>alignTargetEdge</dt>
-<dd><p><code>boolean</code> <br> If true the positioning logic will prefer to flip edges rather than to nudge the rectangle to fit within bounds, thus making sure the element aligns perfectly with target's alignment edge</p></dd>
-<dt>ariaLabel</dt>
-<dd><p><code>string</code> <br> Accessible label for the ContextualMenu's root element (inside the callout).</p></dd>
-<dt>beakWidth</dt>
-<dd><p><code>number</code> <br> The width of the beak.</p></dd>
-<dt>bounds</dt>
-<dd><p><code>IRectangle | ((target?: Target, targetWindow?: Window) =&gt; IRectangle | undefined)</code> <br> The bounding rectangle (or callback that returns a rectangle) which the contextual menu can appear in.</p></dd>
-<dt>calloutProps</dt>
-<dd><p><code>ICalloutProps</code> <br> Additional custom props for the Callout.</p></dd>
-<dt>className</dt>
-<dd><p><code>string</code> <br> Additional CSS class to apply to the ContextualMenu.</p></dd>
-<dt>componentRef</dt>
-<dd><p><code>IRefObject&lt;IContextualMenu&gt;</code> <br> Optional callback to access the IContextualMenu interface. Use this instead of ref for accessing the public methods and properties of the component.</p></dd>
-<dt>contextualMenuItemAs</dt>
-<dd><p><code>React.ComponentClass&lt;IContextualMenuItemProps&gt; | React.FunctionComponent&lt;IContextualMenuItemProps&gt;</code> <br> Custom component to use for rendering individual menu items.</p></dd>
-<dt>coverTarget</dt>
-<dd><p><code>boolean</code> <br> If true, the menu will be positioned to cover the target. If false, it will be positioned next to the target.</p></dd>
-<dt>delayUpdateFocusOnHover</dt>
-<dd><p><code>boolean</code> <br> If true, the contextual menu will not be updated until focus enters the menu via other means. This will only result in different behavior when <code>shouldFocusOnMount = false</code>.</p></dd>
-<dt>directionalHint</dt>
-<dd><p><code>DirectionalHint</code> <br> How the menu should be positioned</p></dd>
-<dt>directionalHintFixed</dt>
-<dd><p><code>boolean</code> <br> If true the position will not change sides in an attempt to fit the ContextualMenu within bounds. It will still attempt to align it to whatever bounds are given.</p></dd>
-<dt>directionalHintForRTL</dt>
-<dd><p><code>DirectionalHint</code> <br> How the menu should be positioned in RTL layouts. If not specified, a mirror of <code>directionalHint</code> will be used.</p></dd>
-<dt>doNotLayer</dt>
-<dd><p><code>boolean</code> <br> If true do not render on a new layer. If false render on a new layer.</p></dd>
-<dt>focusZoneProps</dt>
-<dd><p><code>IFocusZoneProps</code> <br> Props to pass down to the FocusZone. NOTE: the default FocusZoneDirection will be used unless a direction is specified in the focusZoneProps (even if other focusZoneProps are defined)</p></dd>
-<dt>gapSpace</dt>
-<dd><p><code>number</code> <br> The gap between the ContextualMenu and the target</p></dd>
-<dt>getMenuClassNames</dt>
-<dd><p><code>(theme: ITheme, className?: string) =&gt; IContextualMenuClassNames</code> <br> Method to provide the classnames to style the contextual menu.</p></dd>
-<dt>hidden</dt>
-<dd><p><code>boolean</code> <br> If true, renders the ContextualMenu in a hidden state. Use this flag, rather than rendering a ContextualMenu conditionally based on visibility, to improve rendering performance when it becomes visible. Note: When ContextualMenu is hidden its content will not be rendered. It will only render once the ContextualMenu is visible.</p></dd>
-<dt>id</dt>
-<dd><p><code>string</code> <br> ID for the ContextualMenu's root element (inside the callout). Should be used for <code>aria-owns</code> and other such uses, rather than direct reference for programmatic purposes.</p></dd>
-<dt>isBeakVisible</dt>
-<dd><p><code>boolean</code> <br> If true then the beak is visible. If false it will not be shown.</p></dd>
-<dt>isSubMenu</dt>
-<dd><p><code>boolean</code> <br> Whether this menu is a submenu of another menu.</p></dd>
-<dt>items</dt>
-<dd><p><code>IContextualMenuItem[]</code> <br> Menu items to display.</p></dd>
-<dt>labelElementId</dt>
-<dd><p><code>string</code> <br> Used as <code>aria-labelledby</code> for the menu element inside the callout.</p></dd>
-<dt>onDismiss</dt>
-<dd><p><code>(ev?: React.MouseEvent | React.KeyboardEvent, dismissAll?: boolean) =&gt; void</code> <br> Callback when the ContextualMenu tries to close. If <code>dismissAll</code> is true then all submenus will be dismissed.</p></dd>
-<dt>onItemClick</dt>
-<dd><p><code>(ev?: React.MouseEvent&lt;HTMLElement&gt; | React.KeyboardEvent&lt;HTMLElement&gt;, item?: IContextualMenuItem) =&gt; boolean | void</code> <br> Click handler which is invoked if <code>onClick</code> is not passed for individual contextual menu item. Returning true will dismiss the menu even if <code>ev.preventDefault()</code> was called.</p></dd>
-<dt>onMenuDismissed</dt>
-<dd><p><code>(contextualMenu?: IContextualMenuProps) =&gt; void</code> <br> Callback for when the menu is being closed (removing from the DOM).</p></dd>
-<dt>onMenuOpened</dt>
-<dd><p><code>(contextualMenu?: IContextualMenuProps) =&gt; void</code> <br> Callback for when the menu has been opened.</p></dd>
-<dt>onRenderMenuList</dt>
-<dd><p><code>IRenderFunction&lt;IContextualMenuListProps&gt;</code> <br> Method to override the render of the list of menu items.</p></dd>
-<dt>onRenderSubMenu</dt>
-<dd><p><code>IRenderFunction&lt;IContextualMenuProps&gt;</code> <br> Custom render function for a submenu.</p></dd>
-<dt>onRestoreFocus</dt>
-<dd><p><code>(options: { originalElement?: HTMLElement | Window; containsFocus: boolean; }) =&gt; void</code> <br> Called when the component is unmounting, and focus needs to be restored. Argument passed down contains two variables, the element that the underlying popup believes focus should go to and whether or not the popup currently contains focus. If this prop is provided, focus will not be restored automatically, you'll need to call originalElement.focus()</p></dd>
-<dt>shouldFocusOnContainer</dt>
-<dd><p><code>boolean</code> <br> Whether to focus on the contextual menu container (as opposed to the first menu item).</p></dd>
-<dt>shouldFocusOnMount</dt>
-<dd><p><code>boolean</code> <br> Whether to focus on the menu when mounted.</p></dd>
-<dt>shouldUpdateWhenHidden</dt>
-<dd><p><code>boolean</code> <br> If true, the menu will be updated even when <code>hidden=true</code>. Note that this will consume resources to update even when nothing is being shown to the user. This might be helpful if your updates are small and you want the menu to display quickly when <code>hidden</code> is set to false.</p></dd>
-<dt>styles</dt>
-<dd><p><code>IStyleFunctionOrObject&lt;IContextualMenuStyleProps, IContextualMenuStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></dd>
-<dt>subMenuHoverDelay</dt>
-<dd><p><code>number</code> <br> Delay (in milliseconds) to wait before expanding / dismissing a submenu on mouseEnter or mouseLeave</p></dd>
-<dt>target</dt>
-<dd><p><code>Target</code> <br> The target that the ContextualMenu should try to position itself based on. It can be either an element, a query selector string resolving to a valid element, or a MouseEvent. If a MouseEvent is given, the origin point of the event will be used.</p></dd>
-<dt>theme</dt>
-<dd><p><code>ITheme</code> <br> Theme provided by higher-order component.</p></dd>
-<dt>title</dt>
-<dd><p><code>string</code> <br> Title to be displayed at the top of the menu, above the items.</p></dd>
-<dt>useTargetAsMinWidth</dt>
-<dd><p><code>boolean</code> <br> If true the context menu will have a minimum width equal to the width of the target element</p></dd>
-<dt>useTargetWidth</dt>
-<dd><p><code>boolean</code> <br> If true the context menu will render as the same width as the target element</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> className </b> <code>string</code> <br> Additional css class to apply to the ContextualMenuItem</p></li>
+<li><p><b> classNames </b> <code>IMenuItemClassNames</code> <br> Classnames for different aspects of a menu item</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IContextualMenuRenderItem&gt;</code> <br> Optional callback to access the IContextualMenuRenderItem interface. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> dismissMenu </b> <code>(ev?: any, dismissAll?: boolean) =&gt; void</code> <br> This prop will get set by ContextualMenu and can be called to close the menu this item belongs to. If dismissAll is true, all menus will be closed.</p></li>
+<li><p><b> dismissSubMenu </b> <code>() =&gt; void</code> <br> This prop will get set by ContextualMenu and can be called to close this item's subMenu, if present.</p></li>
+<li><p><b> getSubmenuTarget </b> <code>() =&gt; HTMLElement | undefined</code> <br> This prop will get set by the wrapping component and will return the element that wraps this ContextualMenuItem. Used for openSubMenu.</p></li>
+<li><p><b> hasIcons </b> <code>boolean | undefined</code> <br> If this item has icons</p></li>
+<li><p><b> index </b> <code>number</code> <br> Index of the item</p></li>
+<li><p><b> item </b> <code>IContextualMenuItem</code> <br> The item to display</p></li>
+<li><p><b> onCheckmarkClick </b> <code>(item: IContextualMenuItem, ev: React.MouseEvent&lt;HTMLElement&gt;) =&gt; void</code> <br> Click handler for the checkmark</p></li>
+<li><p><b> openSubMenu </b> <code>(item: any, target: HTMLElement) =&gt; void</code> <br> This prop will get set by ContextualMenu and can be called to open this item's subMenu, if present.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IContextualMenuItemStyleProps, IContextualMenuItemStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by High-Order Component.</p></li>
+<li><p><b> focusableElementIndex </b> <code>number</code> <br></p></li>
+<li><p><b> hasCheckmarks </b> <code>boolean</code> <br></p></li>
+<li><p><b> hasIcons </b> <code>boolean</code> <br></p></li>
+<li><p><b> index </b> <code>number</code> <br></p></li>
+<li><p><b> totalItemCount </b> <code>number</code> <br></p></li>
+<li><p><b> defaultMenuItemRenderer </b> <code>(item: IContextualMenuItemRenderProps) =&gt; React.ReactNode</code> <br></p></li>
+<li><p><b> hasCheckmarks </b> <code>boolean</code> <br></p></li>
+<li><p><b> hasIcons </b> <code>boolean</code> <br></p></li>
+<li><p><b> items </b> <code>IContextualMenuItem[]</code> <br></p></li>
+<li><p><b> role </b> <code>string</code> <br></p></li>
+<li><p><b> totalItemCount </b> <code>number</code> <br></p></li>
+<li><p><b> alignTargetEdge </b> <code>boolean</code> <br> If true the positioning logic will prefer to flip edges rather than to nudge the rectangle to fit within bounds, thus making sure the element aligns perfectly with target's alignment edge</p></li>
+<li><p><b> ariaLabel </b> <code>string</code> <br> Accessible label for the ContextualMenu's root element (inside the callout).</p></li>
+<li><p><b> beakWidth </b> <code>number</code> <br> The width of the beak.</p></li>
+<li><p><b> bounds </b> <code>IRectangle | ((target?: Target, targetWindow?: Window) =&gt; IRectangle | undefined)</code> <br> The bounding rectangle (or callback that returns a rectangle) which the contextual menu can appear in.</p></li>
+<li><p><b> calloutProps </b> <code>ICalloutProps</code> <br> Additional custom props for the Callout.</p></li>
+<li><p><b> className </b> <code>string</code> <br> Additional CSS class to apply to the ContextualMenu.</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IContextualMenu&gt;</code> <br> Optional callback to access the IContextualMenu interface. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> contextualMenuItemAs </b> <code>React.ComponentClass&lt;IContextualMenuItemProps&gt; | React.FunctionComponent&lt;IContextualMenuItemProps&gt;</code> <br> Custom component to use for rendering individual menu items.</p></li>
+<li><p><b> coverTarget </b> <code>boolean</code> <br> If true, the menu will be positioned to cover the target. If false, it will be positioned next to the target.</p></li>
+<li><p><b> delayUpdateFocusOnHover </b> <code>boolean</code> <br> If true, the contextual menu will not be updated until focus enters the menu via other means. This will only result in different behavior when <code>shouldFocusOnMount = false</code>.</p></li>
+<li><p><b> directionalHint </b> <code>DirectionalHint</code> <br> How the menu should be positioned</p></li>
+<li><p><b> directionalHintFixed </b> <code>boolean</code> <br> If true the position will not change sides in an attempt to fit the ContextualMenu within bounds. It will still attempt to align it to whatever bounds are given.</p></li>
+<li><p><b> directionalHintForRTL </b> <code>DirectionalHint</code> <br> How the menu should be positioned in RTL layouts. If not specified, a mirror of <code>directionalHint</code> will be used.</p></li>
+<li><p><b> doNotLayer </b> <code>boolean</code> <br> If true do not render on a new layer. If false render on a new layer.</p></li>
+<li><p><b> focusZoneProps </b> <code>IFocusZoneProps</code> <br> Props to pass down to the FocusZone. NOTE: the default FocusZoneDirection will be used unless a direction is specified in the focusZoneProps (even if other focusZoneProps are defined)</p></li>
+<li><p><b> gapSpace </b> <code>number</code> <br> The gap between the ContextualMenu and the target</p></li>
+<li><p><b> getMenuClassNames </b> <code>(theme: ITheme, className?: string) =&gt; IContextualMenuClassNames</code> <br> Method to provide the classnames to style the contextual menu.</p></li>
+<li><p><b> hidden </b> <code>boolean</code> <br> If true, renders the ContextualMenu in a hidden state. Use this flag, rather than rendering a ContextualMenu conditionally based on visibility, to improve rendering performance when it becomes visible. Note: When ContextualMenu is hidden its content will not be rendered. It will only render once the ContextualMenu is visible.</p></li>
+<li><p><b> id </b> <code>string</code> <br> ID for the ContextualMenu's root element (inside the callout). Should be used for <code>aria-owns</code> and other such uses, rather than direct reference for programmatic purposes.</p></li>
+<li><p><b> isBeakVisible </b> <code>boolean</code> <br> If true then the beak is visible. If false it will not be shown.</p></li>
+<li><p><b> isSubMenu </b> <code>boolean</code> <br> Whether this menu is a submenu of another menu.</p></li>
+<li><p><b> items </b> <code>IContextualMenuItem[]</code> <br> Menu items to display.</p></li>
+<li><p><b> labelElementId </b> <code>string</code> <br> Used as <code>aria-labelledby</code> for the menu element inside the callout.</p></li>
+<li><p><b> onDismiss </b> <code>(ev?: React.MouseEvent | React.KeyboardEvent, dismissAll?: boolean) =&gt; void</code> <br> Callback when the ContextualMenu tries to close. If <code>dismissAll</code> is true then all submenus will be dismissed.</p></li>
+<li><p><b> onItemClick </b> <code>(ev?: React.MouseEvent&lt;HTMLElement&gt; | React.KeyboardEvent&lt;HTMLElement&gt;, item?: IContextualMenuItem) =&gt; boolean | void</code> <br> Click handler which is invoked if <code>onClick</code> is not passed for individual contextual menu item. Returning true will dismiss the menu even if <code>ev.preventDefault()</code> was called.</p></li>
+<li><p><b> onMenuDismissed </b> <code>(contextualMenu?: IContextualMenuProps) =&gt; void</code> <br> Callback for when the menu is being closed (removing from the DOM).</p></li>
+<li><p><b> onMenuOpened </b> <code>(contextualMenu?: IContextualMenuProps) =&gt; void</code> <br> Callback for when the menu has been opened.</p></li>
+<li><p><b> onRenderMenuList </b> <code>IRenderFunction&lt;IContextualMenuListProps&gt;</code> <br> Method to override the render of the list of menu items.</p></li>
+<li><p><b> onRenderSubMenu </b> <code>IRenderFunction&lt;IContextualMenuProps&gt;</code> <br> Custom render function for a submenu.</p></li>
+<li><p><b> onRestoreFocus </b> <code>(options: { originalElement?: HTMLElement | Window; containsFocus: boolean; }) =&gt; void</code> <br> Called when the component is unmounting, and focus needs to be restored. Argument passed down contains two variables, the element that the underlying popup believes focus should go to and whether or not the popup currently contains focus. If this prop is provided, focus will not be restored automatically, you'll need to call originalElement.focus()</p></li>
+<li><p><b> shouldFocusOnContainer </b> <code>boolean</code> <br> Whether to focus on the contextual menu container (as opposed to the first menu item).</p></li>
+<li><p><b> shouldFocusOnMount </b> <code>boolean</code> <br> Whether to focus on the menu when mounted.</p></li>
+<li><p><b> shouldUpdateWhenHidden </b> <code>boolean</code> <br> If true, the menu will be updated even when <code>hidden=true</code>. Note that this will consume resources to update even when nothing is being shown to the user. This might be helpful if your updates are small and you want the menu to display quickly when <code>hidden</code> is set to false.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IContextualMenuStyleProps, IContextualMenuStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></li>
+<li><p><b> subMenuHoverDelay </b> <code>number</code> <br> Delay (in milliseconds) to wait before expanding / dismissing a submenu on mouseEnter or mouseLeave</p></li>
+<li><p><b> target </b> <code>Target</code> <br> The target that the ContextualMenu should try to position itself based on. It can be either an element, a query selector string resolving to a valid element, or a MouseEvent. If a MouseEvent is given, the origin point of the event will be used.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by higher-order component.</p></li>
+<li><p><b> title </b> <code>string</code> <br> Title to be displayed at the top of the menu, above the items.</p></li>
+<li><p><b> useTargetAsMinWidth </b> <code>boolean</code> <br> If true the context menu will have a minimum width equal to the width of the target element</p></li>
+<li><p><b> useTargetWidth </b> <code>boolean</code> <br> If true the context menu will render as the same width as the target element</p></li>
+</ul></div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="fu">shinyApp</span><span class="op">(</span></span>
-<span class="r-in">    ui <span class="op">=</span> <span class="fu">div</span><span class="op">(</span></span>
-<span class="r-in">      <span class="fu"><a href="Button.html">DefaultButton.shinyInput</a></span><span class="op">(</span><span class="st">"toggleContextualMenu"</span>, id <span class="op">=</span> <span class="st">"target"</span>, text <span class="op">=</span> <span class="st">"Toggle menu"</span><span class="op">)</span>,</span>
-<span class="r-in">      <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/reactOutput.html" class="external-link">reactOutput</a></span><span class="op">(</span><span class="st">"contextualMenu"</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span>,</span>
-<span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">      <span class="va">showContextualMenu</span> <span class="op">&lt;-</span> <span class="fu">reactiveVal</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span>
-<span class="r-in">      <span class="fu">observeEvent</span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">toggleContextualMenu</span>, <span class="op">{</span></span>
-<span class="r-in">        <span class="fu">showContextualMenu</span><span class="op">(</span><span class="op">!</span><span class="fu">showContextualMenu</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">      <span class="op">}</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in">      <span class="va">output</span><span class="op">$</span><span class="va">contextualMenu</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/renderReact.html" class="external-link">renderReact</a></span><span class="op">(</span><span class="op">{</span></span>
-<span class="r-in">        <span class="va">menuItems</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">[1422 chars quoted with '"']</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in">        <span class="fu">ContextualMenu</span><span class="op">(</span></span>
-<span class="r-in">          items <span class="op">=</span> <span class="va">menuItems</span>,</span>
-<span class="r-in">          hidden <span class="op">=</span> <span class="op">!</span><span class="fu">showContextualMenu</span><span class="op">(</span><span class="op">)</span>,</span>
-<span class="r-in">          target <span class="op">=</span> <span class="st">"#target"</span>,</span>
-<span class="r-in">          onItemClick <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"function() { Shiny.setInputValue('toggleContextualMenu', Math.random()); }"</span><span class="op">)</span>,</span>
-<span class="r-in">          onDismiss <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"function() { Shiny.setInputValue('toggleContextualMenu', Math.random()); }"</span><span class="op">)</span></span>
-<span class="r-in">        <span class="op">)</span></span>
-<span class="r-in">      <span class="op">}</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">}</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="fu">shinyApp</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    ui <span class="op">=</span> <span class="fu">div</span><span class="op">(</span></span></span>
+<span class="r-in"><span>      <span class="fu"><a href="Button.html">DefaultButton.shinyInput</a></span><span class="op">(</span><span class="st">"toggleContextualMenu"</span>, id <span class="op">=</span> <span class="st">"target"</span>, text <span class="op">=</span> <span class="st">"Toggle menu"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/reactOutput.html" class="external-link">reactOutput</a></span><span class="op">(</span><span class="st">"contextualMenu"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>      <span class="va">showContextualMenu</span> <span class="op">&lt;-</span> <span class="fu">reactiveVal</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="fu">observeEvent</span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">toggleContextualMenu</span>, <span class="op">{</span></span></span>
+<span class="r-in"><span>        <span class="fu">showContextualMenu</span><span class="op">(</span><span class="op">!</span><span class="fu">showContextualMenu</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="op">}</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span>      <span class="va">output</span><span class="op">$</span><span class="va">contextualMenu</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/renderReact.html" class="external-link">renderReact</a></span><span class="op">(</span><span class="op">{</span></span></span>
+<span class="r-in"><span>        <span class="va">menuItems</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"[</span></span></span>
+<span class="r-in"><span><span class="st">          {</span></span></span>
+<span class="r-in"><span><span class="st">            key: 'newItem',</span></span></span>
+<span class="r-in"><span><span class="st">            text: 'New',</span></span></span>
+<span class="r-in"><span><span class="st">            onClick: () =&gt; console.log('New clicked'),</span></span></span>
+<span class="r-in"><span><span class="st">          },</span></span></span>
+<span class="r-in"><span><span class="st">          {</span></span></span>
+<span class="r-in"><span><span class="st">            key: 'divider_1',</span></span></span>
+<span class="r-in"><span><span class="st">            itemType: 1,</span></span></span>
+<span class="r-in"><span><span class="st">          },</span></span></span>
+<span class="r-in"><span><span class="st">          {</span></span></span>
+<span class="r-in"><span><span class="st">            key: 'rename',</span></span></span>
+<span class="r-in"><span><span class="st">            text: 'Rename',</span></span></span>
+<span class="r-in"><span><span class="st">            onClick: () =&gt; console.log('Rename clicked'),</span></span></span>
+<span class="r-in"><span><span class="st">          },</span></span></span>
+<span class="r-in"><span><span class="st">          {</span></span></span>
+<span class="r-in"><span><span class="st">            key: 'edit',</span></span></span>
+<span class="r-in"><span><span class="st">            text: 'Edit',</span></span></span>
+<span class="r-in"><span><span class="st">            onClick: () =&gt; console.log('Edit clicked'),</span></span></span>
+<span class="r-in"><span><span class="st">          },</span></span></span>
+<span class="r-in"><span><span class="st">          {</span></span></span>
+<span class="r-in"><span><span class="st">            key: 'properties',</span></span></span>
+<span class="r-in"><span><span class="st">            text: 'Properties',</span></span></span>
+<span class="r-in"><span><span class="st">            onClick: () =&gt; console.log('Properties clicked'),</span></span></span>
+<span class="r-in"><span><span class="st">          },</span></span></span>
+<span class="r-in"><span><span class="st">          {</span></span></span>
+<span class="r-in"><span><span class="st">            key: 'linkNoTarget',</span></span></span>
+<span class="r-in"><span><span class="st">            text: 'Link same window',</span></span></span>
+<span class="r-in"><span><span class="st">            href: 'http://bing.com',</span></span></span>
+<span class="r-in"><span><span class="st">          },</span></span></span>
+<span class="r-in"><span><span class="st">          {</span></span></span>
+<span class="r-in"><span><span class="st">            key: 'linkWithTarget',</span></span></span>
+<span class="r-in"><span><span class="st">            text: 'Link new window',</span></span></span>
+<span class="r-in"><span><span class="st">            href: 'http://bing.com',</span></span></span>
+<span class="r-in"><span><span class="st">            target: '_blank',</span></span></span>
+<span class="r-in"><span><span class="st">          },</span></span></span>
+<span class="r-in"><span><span class="st">          {</span></span></span>
+<span class="r-in"><span><span class="st">            key: 'linkWithOnClick',</span></span></span>
+<span class="r-in"><span><span class="st">            name: 'Link click',</span></span></span>
+<span class="r-in"><span><span class="st">            href: 'http://bing.com',</span></span></span>
+<span class="r-in"><span><span class="st">            onClick: function(){</span></span></span>
+<span class="r-in"><span><span class="st">              alert('Link clicked');</span></span></span>
+<span class="r-in"><span><span class="st">              ev.preventDefault();</span></span></span>
+<span class="r-in"><span><span class="st">            },</span></span></span>
+<span class="r-in"><span><span class="st">            target: '_blank',</span></span></span>
+<span class="r-in"><span><span class="st">          },</span></span></span>
+<span class="r-in"><span><span class="st">          {</span></span></span>
+<span class="r-in"><span><span class="st">            key: 'disabled',</span></span></span>
+<span class="r-in"><span><span class="st">            text: 'Disabled item',</span></span></span>
+<span class="r-in"><span><span class="st">            disabled: true,</span></span></span>
+<span class="r-in"><span><span class="st">            onClick: () =&gt; console.error('Disabled item should not be clickable.'),</span></span></span>
+<span class="r-in"><span><span class="st">          },</span></span></span>
+<span class="r-in"><span><span class="st">        ]"</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span>        <span class="fu">ContextualMenu</span><span class="op">(</span></span></span>
+<span class="r-in"><span>          items <span class="op">=</span> <span class="va">menuItems</span>,</span></span>
+<span class="r-in"><span>          hidden <span class="op">=</span> <span class="op">!</span><span class="fu">showContextualMenu</span><span class="op">(</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>          target <span class="op">=</span> <span class="st">"#target"</span>,</span></span>
+<span class="r-in"><span>          onItemClick <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>            <span class="st">"function() { Shiny.setInputValue('toggleContextualMenu', Math.random()); }"</span></span></span>
+<span class="r-in"><span>          <span class="op">)</span>,</span></span>
+<span class="r-in"><span>          onDismiss <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>            <span class="st">"function() { Shiny.setInputValue('toggleContextualMenu', Math.random()); }"</span></span></span>
+<span class="r-in"><span>          <span class="op">)</span></span></span>
+<span class="r-in"><span>        <span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="op">}</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -253,7 +272,7 @@ you need to work using the original docs to achieve the desired result.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

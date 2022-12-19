@@ -95,81 +95,60 @@ you need to work using the original docs to achieve the desired result.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">Pivot</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">PivotItem</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">Pivot</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">PivotItem</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>alwaysRender</dt>
-<dd><p><code>boolean</code> <br> Defines whether to always render the pivot item (regardless of whether it is selected or not). Useful if you're rendering content that is expensive to mount.</p></dd>
-<dt>ariaLabel</dt>
-<dd><p><code>string</code> <br> The aria label of each pivot link which will read by screen reader instead of linkText.</p>
-<p>Note that unless you have compelling requirements you should not override aria-label.</p></dd>
-<dt>headerButtonProps</dt>
-<dd><p><code>IButtonProps | { [key: string]: string | number | boolean; }</code> <br> Props for the header command button. This provides a way to pass in native props, such as data-* and aria-*, for each pivot header/link element.</p></dd>
-<dt>headerText</dt>
-<dd><p><code>string</code> <br> The text displayed of each pivot link.</p></dd>
-<dt>itemCount</dt>
-<dd><p><code>number | string</code> <br> Defines an optional item count displayed in parentheses just after the <code>linkText</code>.</p>
-<p>Examples: completed (4), Unread (99+)</p></dd>
-<dt>itemIcon</dt>
-<dd><p><code>string</code> <br> An optional icon to show next to the pivot link.</p></dd>
-<dt>itemKey</dt>
-<dd><p><code>string</code> <br> An required key to uniquely identify a pivot item.</p>
-<p>Note: The 'key' from react props cannot be used inside component.</p></dd>
-<dt>keytipProps</dt>
-<dd><p><code>IKeytipProps</code> <br> Optional keytip for this PivotItem.</p></dd>
-<dt>linkText</dt>
-<dd><p><code>string</code> <br> The text displayed of each pivot link - renaming to <code>headerText</code>.</p></dd>
-<dt>onRenderItemLink</dt>
-<dd><p><code>IRenderFunction&lt;IPivotItemProps&gt;</code> <br> Optional custom renderer for the pivot item link.</p></dd>
-<dt>className</dt>
-<dd><p><code>string</code> <br> Additional css class to apply to the Pivot</p></dd>
-<dt>componentRef</dt>
-<dd><p><code>IRefObject&lt;IPivot&gt;</code> <br> Optional callback to access the IPivot interface. Use this instead of ref for accessing the public methods and properties of the component.</p></dd>
-<dt>defaultSelectedIndex</dt>
-<dd><p><code>number</code> <br> Default selected index for the pivot. Only provide this if the pivot is an uncontrolled component; otherwise, use the <code>selectedKey</code> property.</p>
-<p>This property is also mutually exclusive with <code>defaultSelectedKey</code>.</p></dd>
-<dt>defaultSelectedKey</dt>
-<dd><p><code>string</code> <br> Default selected key for the pivot. Only provide this if the pivot is an uncontrolled component; otherwise, use the <code>selectedKey</code> property.</p>
-<p>This property is also mutually exclusive with <code>defaultSelectedIndex</code>.</p></dd>
-<dt>getTabId</dt>
-<dd><p><code>(itemKey: string, index: number) =&gt; string</code> <br> Callback to customize how IDs are generated for each tab header. Useful if you're rendering content outside and need to connect aria-labelledby.</p></dd>
-<dt>headersOnly</dt>
-<dd><p><code>boolean</code> <br> Whether to skip rendering the tabpanel with the content of the selected tab. Use this prop if you plan to separately render the tab content and don't want to leave an empty tabpanel in the page that may confuse Screen Readers.</p></dd>
-<dt>initialSelectedIndex</dt>
-<dd><p><code>number</code> <br> Index of the pivot item initially selected. Mutually exclusive with <code>initialSelectedKey</code>. Only provide this if the pivot is an uncontrolled component; otherwise, use <code>selectedKey</code>.</p></dd>
-<dt>initialSelectedKey</dt>
-<dd><p><code>string</code> <br> Key of the pivot item initially selected. Mutually exclusive with <code>initialSelectedIndex</code>. Only provide this if the pivot is an uncontrolled component; otherwise, use <code>selectedKey</code>.</p></dd>
-<dt>linkFormat</dt>
-<dd><p><code>PivotLinkFormat</code> <br> PivotLinkFormat to use (links, tabs)</p></dd>
-<dt>linkSize</dt>
-<dd><p><code>PivotLinkSize</code> <br> PivotLinkSize to use (normal, large)</p></dd>
-<dt>onLinkClick</dt>
-<dd><p><code>(item?: PivotItem, ev?: React.MouseEvent&lt;HTMLElement&gt;) =&gt; void</code> <br> Callback for when the selected pivot item is changed.</p></dd>
-<dt>selectedKey</dt>
-<dd><p><code>string | null</code> <br> Key of the selected pivot item. Updating this will override the Pivot's selected item state. Only provide this if the pivot is a controlled component where you are maintaining the current state; otherwise, use <code>defaultSelectedKey</code>.</p></dd>
-<dt>styles</dt>
-<dd><p><code>IStyleFunctionOrObject&lt;IPivotStyleProps, IPivotStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></dd>
-<dt>theme</dt>
-<dd><p><code>ITheme</code> <br> Theme provided by High-Order Component.</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> alwaysRender </b> <code>boolean</code> <br> Defines whether to always render the pivot item (regardless of whether it is selected or not). Useful if you're rendering content that is expensive to mount.</p></li>
+<li><p><b> ariaLabel </b> <code>string</code> <br> The aria label of each pivot link which will read by screen reader instead of linkText.Note that unless you have compelling requirements you should not override aria-label.</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;{}&gt;</code> <br> Gets the component ref.</p></li>
+<li><p><b> headerButtonProps </b> <code>IButtonProps | { [key: string]: string | number | boolean; }</code> <br> Props for the header command button. This provides a way to pass in native props, such as data-* and aria-*, for each pivot header/link element.</p></li>
+<li><p><b> headerText </b> <code>string</code> <br> The text displayed of each pivot link.</p></li>
+<li><p><b> itemCount </b> <code>number | string</code> <br> Defines an optional item count displayed in parentheses just after the <code>linkText</code>.Examples: completed (4), Unread (99+)</p></li>
+<li><p><b> itemIcon </b> <code>string</code> <br> An optional icon to show next to the pivot link.</p></li>
+<li><p><b> itemKey </b> <code>string</code> <br> An required key to uniquely identify a pivot item.Note: The 'key' from react props cannot be used inside component.</p></li>
+<li><p><b> keytipProps </b> <code>IKeytipProps</code> <br> Optional keytip for this PivotItem.</p></li>
+<li><p><b> linkText </b> <code>string</code> <br> The text displayed of each pivot link - renaming to <code>headerText</code>.</p></li>
+<li><p><b> onRenderItemLink </b> <code>IRenderFunction&lt;IPivotItemProps&gt;</code> <br> Optional custom renderer for the pivot item link.</p></li>
+<li><p><b> className </b> <code>string</code> <br> Additional css class to apply to the Pivot</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IPivot&gt;</code> <br> Optional callback to access the IPivot interface. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> defaultSelectedIndex </b> <code>number</code> <br> Default selected index for the pivot. Only provide this if the pivot is an uncontrolled component; otherwise, use the <code>selectedKey</code> property.This property is also mutually exclusive with <code>defaultSelectedKey</code>.</p></li>
+<li><p><b> defaultSelectedKey </b> <code>string</code> <br> Default selected key for the pivot. Only provide this if the pivot is an uncontrolled component; otherwise, use the <code>selectedKey</code> property.This property is also mutually exclusive with <code>defaultSelectedIndex</code>.</p></li>
+<li><p><b> getTabId </b> <code>(itemKey: string, index: number) =&gt; string</code> <br> Callback to customize how IDs are generated for each tab header. Useful if you're rendering content outside and need to connect aria-labelledby.</p></li>
+<li><p><b> headersOnly </b> <code>boolean</code> <br> Whether to skip rendering the tabpanel with the content of the selected tab. Use this prop if you plan to separately render the tab content and don't want to leave an empty tabpanel in the page that may confuse Screen Readers.</p></li>
+<li><p><b> initialSelectedIndex </b> <code>number</code> <br> Index of the pivot item initially selected. Mutually exclusive with <code>initialSelectedKey</code>. Only provide this if the pivot is an uncontrolled component; otherwise, use <code>selectedKey</code>.</p></li>
+<li><p><b> initialSelectedKey </b> <code>string</code> <br> Key of the pivot item initially selected. Mutually exclusive with <code>initialSelectedIndex</code>. Only provide this if the pivot is an uncontrolled component; otherwise, use <code>selectedKey</code>.</p></li>
+<li><p><b> linkFormat </b> <code>PivotLinkFormat</code> <br> PivotLinkFormat to use (links, tabs)</p></li>
+<li><p><b> linkSize </b> <code>PivotLinkSize</code> <br> PivotLinkSize to use (normal, large)</p></li>
+<li><p><b> onLinkClick </b> <code>(item?: PivotItem, ev?: React.MouseEvent&lt;HTMLElement&gt;) =&gt; void</code> <br> Callback for when the selected pivot item is changed.</p></li>
+<li><p><b> selectedKey </b> <code>string | null</code> <br> Key of the selected pivot item. Updating this will override the Pivot's selected item state. Only provide this if the pivot is a controlled component where you are maintaining the current state; otherwise, use <code>defaultSelectedKey</code>.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IPivotStyleProps, IPivotStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by High-Order Component.</p></li>
+</ul></div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span>
-<span class="r-in">    ui <span class="op">=</span> <span class="fu">Pivot</span><span class="op">(</span></span>
-<span class="r-in">      <span class="fu">PivotItem</span><span class="op">(</span>headerText <span class="op">=</span> <span class="st">"Tab 1"</span>, <span class="fu"><a href="Label.html">Label</a></span><span class="op">(</span><span class="st">"Hello 1"</span><span class="op">)</span><span class="op">)</span>,</span>
-<span class="r-in">      <span class="fu">PivotItem</span><span class="op">(</span>headerText <span class="op">=</span> <span class="st">"Tab 2"</span>, <span class="fu"><a href="Label.html">Label</a></span><span class="op">(</span><span class="st">"Hello 2"</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span>,</span>
-<span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    ui <span class="op">=</span> <span class="fu">Pivot</span><span class="op">(</span></span></span>
+<span class="r-in"><span>      <span class="fu">PivotItem</span><span class="op">(</span>headerText <span class="op">=</span> <span class="st">"Tab 1"</span>, <span class="fu"><a href="Label.html">Label</a></span><span class="op">(</span><span class="st">"Hello 1"</span><span class="op">)</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      <span class="fu">PivotItem</span><span class="op">(</span>headerText <span class="op">=</span> <span class="st">"Tab 2"</span>, <span class="fu"><a href="Label.html">Label</a></span><span class="op">(</span><span class="st">"Hello 2"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -184,7 +163,7 @@ you need to work using the original docs to achieve the desired result.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

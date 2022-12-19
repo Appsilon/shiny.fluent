@@ -116,19 +116,19 @@
 </h3>
 <p>Shiny has a notion of “inputs”, which does not exist in React. Still, you can connect React components to Shiny using appropriate arguments - in particular event handlers and default values. For example, you can use <code>Checkbox</code> in the following way:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span>
-  ui <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/tagList.html" class="external-link">tagList</a></span><span class="op">(</span>
-    <span class="fu"><a href="../reference/Checkbox.html">Checkbox</a></span><span class="op">(</span>onChange <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/setInput.html" class="external-link">setInput</a></span><span class="op">(</span><span class="st">"checkbox"</span>, <span class="fl">2</span><span class="op">)</span>, defaultChecked <span class="op">=</span> <span class="cn">TRUE</span>, label <span class="op">=</span> <span class="st">"Checkbox"</span><span class="op">)</span>,
-    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/textOutput.html" class="external-link">textOutput</a></span><span class="op">(</span><span class="st">"value"</span><span class="op">)</span>
-  <span class="op">)</span>,
-  server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span>
-    <span class="va">output</span><span class="op">$</span><span class="va">value</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/renderPrint.html" class="external-link">renderText</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/deparse.html" class="external-link">deparse</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">checkbox</span><span class="op">)</span><span class="op">)</span>
-  <span class="op">}</span>
-<span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span>
+<span>  ui <span class="op">=</span> <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/tagList.html" class="external-link">tagList</a></span><span class="op">(</span></span>
+<span>    <span class="fu"><a href="../reference/Checkbox.html">Checkbox</a></span><span class="op">(</span>onChange <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/setInput.html" class="external-link">setInput</a></span><span class="op">(</span><span class="st">"checkbox"</span>, <span class="fl">2</span><span class="op">)</span>, defaultChecked <span class="op">=</span> <span class="cn">TRUE</span>, label <span class="op">=</span> <span class="st">"Checkbox"</span><span class="op">)</span>,</span>
+<span>    <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/textOutput.html" class="external-link">textOutput</a></span><span class="op">(</span><span class="st">"value"</span><span class="op">)</span></span>
+<span>  <span class="op">)</span>,</span>
+<span>  server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="va">output</span><span class="op">$</span><span class="va">value</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/renderPrint.html" class="external-link">renderText</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/deparse.html" class="external-link">deparse</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">checkbox</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span><span class="op">)</span></span></code></pre></div>
 <p>With <code>setInput("checkbox", 2)</code> we create a JavaScript function which takes its second argument and sends it to Shiny as <code>input$checkbox</code>. The same effect could be achieved with <code>JS("(e, value) =&gt; Shiny.setInputValue('checkbox', value)")</code>.</p>
 <p>The React interface is powerful, but somewhat inconvenient. To make it easier to use components as Shiny inputs, we provide wrappers with <code>.shinyInput</code> suffix. They provide an interface analogous to vanilla Shiny inputs: <code>inputId</code> and optional <code>value</code>. The checkbox usage above can be translated to:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/Checkbox.html">Checkbox.shinyInput</a></span><span class="op">(</span><span class="st">"checkbox"</span>, value <span class="op">=</span> <span class="cn">TRUE</span>, label <span class="op">=</span> <span class="st">"Checkbox"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/Checkbox.html">Checkbox.shinyInput</a></span><span class="op">(</span><span class="st">"checkbox"</span>, value <span class="op">=</span> <span class="cn">TRUE</span>, label <span class="op">=</span> <span class="st">"Checkbox"</span><span class="op">)</span></span></code></pre></div>
 <p>Additionally, the wrapper:</p>
 <ul>
 <li>can be updated using <code><a href="../reference/Checkbox.html">updateCheckbox.shinyInput()</a></code>,</li>
@@ -140,17 +140,17 @@
 </h3>
 <p>When you need to dynamically render UI, most of the time you can just go with <code>uiOutput</code> and <code>renderUI</code>. However in some cases you might want to use the analogous <code><a href="https://appsilon.github.io/shiny.react/reference/reactOutput.html" class="external-link">?reactOutput</a></code> and <code><a href="https://appsilon.github.io/shiny.react/reference/renderReact.html" class="external-link">?renderReact</a></code>, which preserve the state of components on rerenders. To understand what that means, consider the following example:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span>
-  ui <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span>
-    <span class="fu"><a href="../reference/Checkbox.html">Checkbox.shinyInput</a></span><span class="op">(</span><span class="st">"disabled"</span>, label <span class="op">=</span> <span class="st">"Disable"</span><span class="op">)</span>,
-    <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/reactOutput.html" class="external-link">reactOutput</a></span><span class="op">(</span><span class="st">"ui"</span><span class="op">)</span>
-  <span class="op">)</span>,
-  server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span>
-    <span class="va">output</span><span class="op">$</span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/renderReact.html" class="external-link">renderReact</a></span><span class="op">(</span><span class="op">{</span>
-      <span class="fu"><a href="../reference/TextField.html">TextField.shinyInput</a></span><span class="op">(</span><span class="st">"text"</span>, label <span class="op">=</span> <span class="st">"TextField"</span>, disabled <span class="op">=</span> <span class="va">input</span><span class="op">$</span><span class="va">disabled</span><span class="op">)</span>
-    <span class="op">}</span><span class="op">)</span>
-  <span class="op">}</span>
-<span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span>
+<span>  ui <span class="op">=</span> <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
+<span>    <span class="fu"><a href="../reference/Checkbox.html">Checkbox.shinyInput</a></span><span class="op">(</span><span class="st">"disabled"</span>, label <span class="op">=</span> <span class="st">"Disable"</span><span class="op">)</span>,</span>
+<span>    <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/reactOutput.html" class="external-link">reactOutput</a></span><span class="op">(</span><span class="st">"ui"</span><span class="op">)</span></span>
+<span>  <span class="op">)</span>,</span>
+<span>  server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="va">output</span><span class="op">$</span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/renderReact.html" class="external-link">renderReact</a></span><span class="op">(</span><span class="op">{</span></span>
+<span>      <span class="fu"><a href="../reference/TextField.html">TextField.shinyInput</a></span><span class="op">(</span><span class="st">"text"</span>, label <span class="op">=</span> <span class="st">"TextField"</span>, disabled <span class="op">=</span> <span class="va">input</span><span class="op">$</span><span class="va">disabled</span><span class="op">)</span></span>
+<span>    <span class="op">}</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span><span class="op">)</span></span></code></pre></div>
 <p>This app displays a checkbox and a text field. The text field is rendered dynamically, and whether it is enabled or not depends on the value of the checkbox.</p>
 <p>If we input some text into the text field and toggle the checkbox, the text field will become disabled, but its contents will be preserved. If we replaced <code>reactOutput</code> and <code>renderReact</code> with <code>uiOutput</code> and <code>renderUI</code>, the contents would be cleared each time we toggled the checkbox.</p>
 </div>
@@ -171,7 +171,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer>

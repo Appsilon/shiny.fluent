@@ -90,62 +90,60 @@ you need to work using the original docs to achieve the desired result.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">Slider</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">Slider.shinyInput</span><span class="op">(</span><span class="va">inputId</span>, <span class="va">...</span>, value <span class="op">=</span> <span class="va">defaultValue</span><span class="op">)</span>
-
-<span class="fu">updateSlider.shinyInput</span><span class="op">(</span>
-  session <span class="op">=</span> <span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/domains.html" class="external-link">getDefaultReactiveDomain</a></span><span class="op">(</span><span class="op">)</span>,
-  <span class="va">inputId</span>,
-  <span class="va">...</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">Slider</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">Slider.shinyInput</span><span class="op">(</span><span class="va">inputId</span>, <span class="va">...</span>, value <span class="op">=</span> <span class="va">defaultValue</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">updateSlider.shinyInput</span><span class="op">(</span></span>
+<span>  session <span class="op">=</span> <span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/domains.html" class="external-link">getDefaultReactiveDomain</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="va">inputId</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>value</dt>
-<dd><p><code>number</code> <br> The initial value of the Slider. Use this if you intend to pass in a new value as a result of onChange events. This value is mutually exclusive to defaultValue. Use one or the other.</p></dd>
-<dt>ariaLabel</dt>
-<dd><p><code>string</code> <br> A description of the Slider for the benefit of screen readers.</p></dd>
-<dt>ariaValueText</dt>
-<dd><p><code>(value: number) =&gt; string</code> <br> A text description of the Slider number value for the benefit of screen readers. This should be used when the Slider number value is not accurately represented by a number.</p></dd>
-<dt>buttonProps</dt>
-<dd><p><code>React.HTMLAttributes&lt;HTMLButtonElement&gt;</code> <br> Optional mixin for additional props on the thumb button within the slider.</p></dd>
-<dt>className</dt>
-<dd><p><code>string</code> <br> Optional className to attach to the slider root element.</p></dd>
-<dt>componentRef</dt>
-<dd><p><code>IRefObject&lt;ISlider&gt;</code> <br> Optional callback to access the ISlider interface. Use this instead of ref for accessing the public methods and properties of the component.</p></dd>
-<dt>defaultValue</dt>
-<dd><p><code>number</code> <br> The initial value of the Slider. Use this if you intend for the Slider to be an uncontrolled component. This value is mutually exclusive to value. Use one or the other.</p></dd>
-<dt>disabled</dt>
-<dd><p><code>boolean</code> <br> Optional flag to render the Slider as disabled.</p></dd>
-<dt>label</dt>
-<dd><p><code>string</code> <br> Description label of the Slider</p></dd>
-<dt>max</dt>
-<dd><p><code>number</code> <br> The max value of the Slider</p></dd>
-<dt>min</dt>
-<dd><p><code>number</code> <br> The min value of the Slider</p></dd>
-<dt>onChange</dt>
-<dd><p><code>(value: number) =&gt; void</code> <br> Callback when the value has been changed</p></dd>
-<dt>onChanged</dt>
-<dd><p><code>(event: MouseEvent | TouchEvent | KeyboardEvent, value: number) =&gt; void</code> <br> Callback on mouse up or touch end</p></dd>
-<dt>originFromZero</dt>
-<dd><p><code>boolean</code> <br> Optional flag to attach the origin of slider to zero. Helpful when the range include negatives.</p></dd>
-<dt>showValue</dt>
-<dd><p><code>boolean</code> <br> Whether to show the value on the right of the Slider.</p></dd>
-<dt>snapToStep</dt>
-<dd><p><code>boolean</code> <br> Optional flag to decide that thumb will snap to closest value while moving the slider</p></dd>
-<dt>step</dt>
-<dd><p><code>number</code> <br> The difference between the two adjacent values of the Slider</p></dd>
-<dt>styles</dt>
-<dd><p><code>IStyleFunctionOrObject&lt;ISliderStyleProps, ISliderStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></dd>
-<dt>theme</dt>
-<dd><p><code>ITheme</code> <br> Theme provided by High-Order Component.</p></dd>
-<dt>valueFormat</dt>
-<dd><p><code>(value: number) =&gt; string</code> <br> Optional function to format the slider value.</p></dd>
-<dt>vertical</dt>
-<dd><p><code>boolean</code> <br> Optional flag to render the slider vertically. Defaults to rendering horizontal.</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
+
+<dt>inputId</dt>
+<dd><p>Id of the component</p></dd>
+
+
+<dt>value</dt>
+<dd><p>Value</p></dd>
+
+
+<dt>session</dt>
+<dd><p>Session</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> ariaLabel </b> <code>string</code> <br> A description of the Slider for the benefit of screen readers.</p></li>
+<li><p><b> ariaValueText </b> <code>(value: number) =&gt; string</code> <br> A text description of the Slider number value for the benefit of screen readers. This should be used when the Slider number value is not accurately represented by a number.</p></li>
+<li><p><b> buttonProps </b> <code>React.HTMLAttributes&lt;HTMLButtonElement&gt;</code> <br> Optional mixin for additional props on the thumb button within the slider.</p></li>
+<li><p><b> className </b> <code>string</code> <br> Optional className to attach to the slider root element.</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;ISlider&gt;</code> <br> Optional callback to access the ISlider interface. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> defaultValue </b> <code>number</code> <br> The initial value of the Slider. Use this if you intend for the Slider to be an uncontrolled component. This value is mutually exclusive to value. Use one or the other.</p></li>
+<li><p><b> disabled </b> <code>boolean</code> <br> Optional flag to render the Slider as disabled.</p></li>
+<li><p><b> label </b> <code>string</code> <br> Description label of the Slider</p></li>
+<li><p><b> max </b> <code>number</code> <br> The max value of the Slider</p></li>
+<li><p><b> min </b> <code>number</code> <br> The min value of the Slider</p></li>
+<li><p><b> onChange </b> <code>(value: number) =&gt; void</code> <br> Callback when the value has been changed</p></li>
+<li><p><b> onChanged </b> <code>(event: MouseEvent | TouchEvent | KeyboardEvent, value: number) =&gt; void</code> <br> Callback on mouse up or touch end</p></li>
+<li><p><b> originFromZero </b> <code>boolean</code> <br> Optional flag to attach the origin of slider to zero. Helpful when the range include negatives.</p></li>
+<li><p><b> showValue </b> <code>boolean</code> <br> Whether to show the value on the right of the Slider.</p></li>
+<li><p><b> snapToStep </b> <code>boolean</code> <br> Optional flag to decide that thumb will snap to closest value while moving the slider</p></li>
+<li><p><b> step </b> <code>number</code> <br> The difference between the two adjacent values of the Slider</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;ISliderStyleProps, ISliderStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by High-Order Component.</p></li>
+<li><p><b> value </b> <code>number</code> <br> The initial value of the Slider. Use this if you intend to pass in a new value as a result of onChange events. This value is mutually exclusive to defaultValue. Use one or the other.</p></li>
+<li><p><b> valueFormat </b> <code>(value: number) =&gt; string</code> <br> Optional function to format the slider value.</p></li>
+<li><p><b> vertical </b> <code>boolean</code> <br> Optional flag to render the slider vertically. Defaults to rendering horizontal.</p></li>
+</ul></div>
     <div id="best-practices">
     <h2>Best practices</h2>
     
@@ -169,21 +167,21 @@ you need to work using the original docs to achieve the desired result.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span>
-<span class="r-in">    ui <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
-<span class="r-in">      <span class="fu">Slider.shinyInput</span><span class="op">(</span><span class="st">"slider"</span>, value <span class="op">=</span> <span class="fl">42</span>, min <span class="op">=</span> <span class="op">-</span><span class="fl">100</span>, max <span class="op">=</span> <span class="fl">100</span><span class="op">)</span>,</span>
-<span class="r-in">      <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/textOutput.html" class="external-link">textOutput</a></span><span class="op">(</span><span class="st">"sliderValue"</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span>,</span>
-<span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">      <span class="va">output</span><span class="op">$</span><span class="va">sliderValue</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/renderPrint.html" class="external-link">renderText</a></span><span class="op">(</span><span class="op">{</span></span>
-<span class="r-in">        <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Value: %s"</span>, <span class="va">input</span><span class="op">$</span><span class="va">slider</span><span class="op">)</span></span>
-<span class="r-in">      <span class="op">}</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">}</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    ui <span class="op">=</span> <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>      <span class="fu">Slider.shinyInput</span><span class="op">(</span><span class="st">"slider"</span>, value <span class="op">=</span> <span class="fl">42</span>, min <span class="op">=</span> <span class="op">-</span><span class="fl">100</span>, max <span class="op">=</span> <span class="fl">100</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/textOutput.html" class="external-link">textOutput</a></span><span class="op">(</span><span class="st">"sliderValue"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>      <span class="va">output</span><span class="op">$</span><span class="va">sliderValue</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/renderPrint.html" class="external-link">renderText</a></span><span class="op">(</span><span class="op">{</span></span></span>
+<span class="r-in"><span>        <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Value: %s"</span>, <span class="va">input</span><span class="op">$</span><span class="va">slider</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="op">}</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -198,7 +196,7 @@ you need to work using the original docs to achieve the desired result.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

@@ -90,100 +90,79 @@ you need to work using the original docs to achieve the desired result.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">MaskedTextField</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">TextField</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">TextField</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">TextField.shinyInput</span><span class="op">(</span><span class="va">inputId</span>, <span class="va">...</span>, value <span class="op">=</span> <span class="va">defaultValue</span><span class="op">)</span>
-
-<span class="fu">updateTextField.shinyInput</span><span class="op">(</span>
-  session <span class="op">=</span> <span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/domains.html" class="external-link">getDefaultReactiveDomain</a></span><span class="op">(</span><span class="op">)</span>,
-  <span class="va">inputId</span>,
-  <span class="va">...</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">MaskedTextField</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">TextField</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">TextField</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">TextField.shinyInput</span><span class="op">(</span><span class="va">inputId</span>, <span class="va">...</span>, value <span class="op">=</span> <span class="va">defaultValue</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">updateTextField.shinyInput</span><span class="op">(</span></span>
+<span>  session <span class="op">=</span> <span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/domains.html" class="external-link">getDefaultReactiveDomain</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="va">inputId</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>value</dt>
-<dd><p><code>string</code> <br> Current value of the text field. Only provide this if the text field is a controlled component where you are maintaining its current state; otherwise, use the <code>defaultValue</code> property.</p></dd>
-<dt>ariaLabel</dt>
-<dd><p><code>string</code> <br> Aria label for the text field.</p></dd>
-<dt>autoAdjustHeight</dt>
-<dd><p><code>boolean</code> <br> For multiline text fields, whether or not to auto adjust text field height.</p></dd>
-<dt>autoComplete</dt>
-<dd><p><code>string</code> <br> Whether the input field should have autocomplete enabled. This tells the browser to display options based on earlier typed values. Common values are 'on' and 'off' but for all possible values see the following links: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete#Values https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill</p></dd>
-<dt>borderless</dt>
-<dd><p><code>boolean</code> <br> Whether or not the text field is borderless.</p></dd>
-<dt>className</dt>
-<dd><p><code>string</code> <br> Optional class name that is added to the container of the component.</p></dd>
-<dt>componentRef</dt>
-<dd><p><code>IRefObject&lt;ITextField&gt;</code> <br> Optional callback to access the ITextField component. Use this instead of ref for accessing the public methods and properties of the component.</p></dd>
-<dt>defaultValue</dt>
-<dd><p><code>string</code> <br> Default value of the text field. Only provide this if the text field is an uncontrolled component; otherwise, use the <code>value</code> property.</p></dd>
-<dt>deferredValidationTime</dt>
-<dd><p><code>number</code> <br> Text field will start to validate after users stop typing for <code>deferredValidationTime</code> milliseconds. Updates to this prop will not be respected.</p></dd>
-<dt>description</dt>
-<dd><p><code>string</code> <br> Description displayed below the text field to provide additional details about what text to enter.</p></dd>
-<dt>disabled</dt>
-<dd><p><code>boolean</code> <br> Disabled state of the text field.</p></dd>
-<dt>errorMessage</dt>
-<dd><p><code>string | JSX.Element</code> <br> Static error message displayed below the text field. Use <code>onGetErrorMessage</code> to dynamically change the error message displayed (if any) based on the current value. <code>errorMessage</code> and <code>onGetErrorMessage</code> are mutually exclusive (<code>errorMessage</code> takes precedence).</p></dd>
-<dt>iconProps</dt>
-<dd><p><code>IIconProps</code> <br> Props for an optional icon, displayed in the far right end of the text field.</p></dd>
-<dt>inputClassName</dt>
-<dd><p><code>string</code> <br> Optional class name that is added specifically to the input/textarea element.</p></dd>
-<dt>label</dt>
-<dd><p><code>string</code> <br> Label displayed above the text field (and read by screen readers).</p></dd>
-<dt>mask</dt>
-<dd><p><code>string</code> <br> Only used by MaskedTextField: The masking string that defines the mask's behavior. A backslash will escape any character. Special format characters are: '9': 0-9 'a': a-zA-Z '*': a-zA-Z0-9</p></dd>
-<dt>maskChar</dt>
-<dd><p><code>string</code> <br> Only used by MaskedTextField: The character to show in place of unfilled characters of the mask.</p></dd>
-<dt>maskFormat</dt>
-<dd><p><code>{ [key: string]: RegExp; }</code> <br> Only used by MaskedTextField: An object defining the format characters and corresponding regexp values. Default format characters: { '9': /0-9/, 'a': /a-zA-Z/, '*': /a-zA-Z0-9/ }</p></dd>
-<dt>multiline</dt>
-<dd><p><code>boolean</code> <br> Whether or not the text field is a multiline text field.</p></dd>
-<dt>onChange</dt>
-<dd><p><code>(event: React.FormEvent&lt;HTMLInputElement | HTMLTextAreaElement&gt;, newValue?: string) =&gt; void</code> <br> Callback for when the input value changes. This is called on both <code>input</code> and <code>change</code> events. (In a later version, this will probably only be called for the <code>change</code> event.)</p></dd>
-<dt>onGetErrorMessage</dt>
-<dd><p><code>(value: string) =&gt; string | JSX.Element | PromiseLike&lt;string | JSX.Element&gt; | undefined</code> <br> Function used to determine whether the input value is valid and get an error message if not. Mutually exclusive with the static string <code>errorMessage</code> (it will take precedence over this).</p>
-<p>When it returns <code>string | JSX.Element</code>: - If valid, it returns empty string. - If invalid, it returns the error message and the text field will show a red border and show an error message below the text field.</p>
-<p>When it returns <code>Promise&lt;string | JSX.Element&gt;</code>: - The resolved value is displayed as the error message. - If rejected, the value is thrown away.</p></dd>
-<dt>onNotifyValidationResult</dt>
-<dd><p><code>(errorMessage: string | JSX.Element, value: string | undefined) =&gt; void</code> <br> Function called after validation completes.</p></dd>
-<dt>onRenderDescription</dt>
-<dd><p><code>IRenderFunction&lt;ITextFieldProps&gt;</code> <br> Custom renderer for the description.</p></dd>
-<dt>onRenderLabel</dt>
-<dd><p><code>IRenderFunction&lt;ITextFieldProps&gt;</code> <br> Custom renderer for the label. If you don't call defaultRender, ensure that you give your custom-rendered label an id and that you set the textfield's aria-labelledby prop to that id.</p></dd>
-<dt>onRenderPrefix</dt>
-<dd><p><code>IRenderFunction&lt;ITextFieldProps&gt;</code> <br> Custom render function for prefix.</p></dd>
-<dt>onRenderSuffix</dt>
-<dd><p><code>IRenderFunction&lt;ITextFieldProps&gt;</code> <br> Custom render function for suffix.</p></dd>
-<dt>prefix</dt>
-<dd><p><code>string</code> <br> Prefix displayed before the text field contents. This is not included in the value. Ensure a descriptive label is present to assist screen readers, as the value does not include the prefix.</p></dd>
-<dt>readOnly</dt>
-<dd><p><code>boolean</code> <br> If true, the text field is readonly.</p></dd>
-<dt>resizable</dt>
-<dd><p><code>boolean</code> <br> For multiline text fields, whether or not the field is resizable.</p></dd>
-<dt>styles</dt>
-<dd><p><code>IStyleFunctionOrObject&lt;ITextFieldStyleProps, ITextFieldStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></dd>
-<dt>suffix</dt>
-<dd><p><code>string</code> <br> Suffix displayed after the text field contents. This is not included in the value. Ensure a descriptive label is present to assist screen readers, as the value does not include the suffix.</p></dd>
-<dt>theme</dt>
-<dd><p><code>ITheme</code> <br> Theme (provided through customization).</p></dd>
-<dt>underlined</dt>
-<dd><p><code>boolean</code> <br> Whether or not the text field is underlined.</p></dd>
-<dt>validateOnFocusIn</dt>
-<dd><p><code>boolean</code> <br> Run validation when focus moves into the input, and <strong>do not</strong> validate on change.</p>
-<p>(Unless this prop and/or <code>validateOnFocusOut</code> is set to true, validation will run on every change.)</p></dd>
-<dt>validateOnFocusOut</dt>
-<dd><p><code>boolean</code> <br> Run validation when focus moves out of the input, and <strong>do not</strong> validate on change.</p>
-<p>(Unless this prop and/or <code>validateOnFocusIn</code> is set to true, validation will run on every change.)</p></dd>
-<dt>validateOnLoad</dt>
-<dd><p><code>boolean</code> <br> Whether validation should run when the input is initially rendered.</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
+
+<dt>inputId</dt>
+<dd><p>Id of the component</p></dd>
+
+
+<dt>value</dt>
+<dd><p>Value</p></dd>
+
+
+<dt>session</dt>
+<dd><p>Session</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> ariaLabel </b> <code>string</code> <br> Aria label for the text field.</p></li>
+<li><p><b> autoAdjustHeight </b> <code>boolean</code> <br> For multiline text fields, whether or not to auto adjust text field height.</p></li>
+<li><p><b> autoComplete </b> <code>string</code> <br> Whether the input field should have autocomplete enabled. This tells the browser to display options based on earlier typed values. Common values are 'on' and 'off' but for all possible values see the following links: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete#Values https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill</p></li>
+<li><p><b> borderless </b> <code>boolean</code> <br> Whether or not the text field is borderless.</p></li>
+<li><p><b> className </b> <code>string</code> <br> Optional class name that is added to the container of the component.</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;ITextField&gt;</code> <br> Optional callback to access the ITextField component. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> defaultValue </b> <code>string</code> <br> Default value of the text field. Only provide this if the text field is an uncontrolled component; otherwise, use the <code>value</code> property.</p></li>
+<li><p><b> deferredValidationTime </b> <code>number</code> <br> Text field will start to validate after users stop typing for <code>deferredValidationTime</code> milliseconds. Updates to this prop will not be respected.</p></li>
+<li><p><b> description </b> <code>string</code> <br> Description displayed below the text field to provide additional details about what text to enter.</p></li>
+<li><p><b> disabled </b> <code>boolean</code> <br> Disabled state of the text field.</p></li>
+<li><p><b> errorMessage </b> <code>string | JSX.Element</code> <br> Static error message displayed below the text field. Use <code>onGetErrorMessage</code> to dynamically change the error message displayed (if any) based on the current value. <code>errorMessage</code> and <code>onGetErrorMessage</code> are mutually exclusive (<code>errorMessage</code> takes precedence).</p></li>
+<li><p><b> iconProps </b> <code>IIconProps</code> <br> Props for an optional icon, displayed in the far right end of the text field.</p></li>
+<li><p><b> inputClassName </b> <code>string</code> <br> Optional class name that is added specifically to the input/textarea element.</p></li>
+<li><p><b> label </b> <code>string</code> <br> Label displayed above the text field (and read by screen readers).</p></li>
+<li><p><b> mask </b> <code>string</code> <br> Only used by MaskedTextField: The masking string that defines the mask's behavior. A backslash will escape any character. Special format characters are: '9': <code>[0-9]</code> 'a': <code>[a-zA-Z]</code> '<em>': <code>[a-zA-Z0-9]</code></em>
+ <b> maskChar </b> <code>string</code> <br> Only used by MaskedTextField: The character to show in place of unfilled characters of the mask.
+ <b> maskFormat </b> <code>{ [key: string]: RegExp; }</code> <br> Only used by MaskedTextField: An object defining the format characters and corresponding regexp values. Default format characters: { '9': /<code>[0-9]</code>/, 'a': /<code>[a-zA-Z]</code>/, '': /<code>[a-zA-Z0-9]</code>/ }</p></li>
+<li><p><b> multiline </b> <code>boolean</code> <br> Whether or not the text field is a multiline text field.</p></li>
+<li><p><b> onChange </b> <code>(event: React.FormEvent&lt;HTMLInputElement | HTMLTextAreaElement&gt;, newValue?: string) =&gt; void</code> <br> Callback for when the input value changes. This is called on both <code>input</code> and <code>change</code> events. (In a later version, this will probably only be called for the <code>change</code> event.)</p></li>
+<li><p><b> onGetErrorMessage </b> <code>(value: string) =&gt; string | JSX.Element | PromiseLike&lt;string | JSX.Element&gt; | undefined</code> <br> Function used to determine whether the input value is valid and get an error message if not. Mutually exclusive with the static string <code>errorMessage</code> (it will take precedence over this).When it returns <code>string | JSX.Element</code>: - If valid, it returns empty string. - If invalid, it returns the error message and the text field will show a red border and show an error message below the text field.When it returns <code>Promise&lt;string | JSX.Element&gt;</code>: - The resolved value is displayed as the error message. - If rejected, the value is thrown away.</p></li>
+<li><p><b> onNotifyValidationResult </b> <code>(errorMessage: string | JSX.Element, value: string | undefined) =&gt; void</code> <br> Function called after validation completes.</p></li>
+<li><p><b> onRenderDescription </b> <code>IRenderFunction&lt;ITextFieldProps&gt;</code> <br> Custom renderer for the description.</p></li>
+<li><p><b> onRenderLabel </b> <code>IRenderFunction&lt;ITextFieldProps&gt;</code> <br> Custom renderer for the label. If you don't call defaultRender, ensure that you give your custom-rendered label an id and that you set the textfield's aria-labelledby prop to that id.</p></li>
+<li><p><b> onRenderPrefix </b> <code>IRenderFunction&lt;ITextFieldProps&gt;</code> <br> Custom render function for prefix.</p></li>
+<li><p><b> onRenderSuffix </b> <code>IRenderFunction&lt;ITextFieldProps&gt;</code> <br> Custom render function for suffix.</p></li>
+<li><p><b> prefix </b> <code>string</code> <br> Prefix displayed before the text field contents. This is not included in the value. Ensure a descriptive label is present to assist screen readers, as the value does not include the prefix.</p></li>
+<li><p><b> readOnly </b> <code>boolean</code> <br> If true, the text field is readonly.</p></li>
+<li><p><b> resizable </b> <code>boolean</code> <br> For multiline text fields, whether or not the field is resizable.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;ITextFieldStyleProps, ITextFieldStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></li>
+<li><p><b> suffix </b> <code>string</code> <br> Suffix displayed after the text field contents. This is not included in the value. Ensure a descriptive label is present to assist screen readers, as the value does not include the suffix.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme (provided through customization).</p></li>
+<li><p><b> underlined </b> <code>boolean</code> <br> Whether or not the text field is underlined.</p></li>
+<li><p><b> validateOnFocusIn </b> <code>boolean</code> <br> Run validation when focus moves into the input, and <strong>do not</strong> validate on change.(Unless this prop and/or <code>validateOnFocusOut</code> is set to true, validation will run on every change.)</p></li>
+<li><p><b> validateOnFocusOut </b> <code>boolean</code> <br> Run validation when focus moves out of the input, and <strong>do not</strong> validate on change.(Unless this prop and/or <code>validateOnFocusIn</code> is set to true, validation will run on every change.)</p></li>
+<li><p><b> validateOnLoad </b> <code>boolean</code> <br> Whether validation should run when the input is initially rendered.</p></li>
+<li><p><b> value </b> <code>string</code> <br> Current value of the text field. Only provide this if the text field is a controlled component where you are maintaining its current state; otherwise, use the <code>defaultValue</code> property.</p></li>
+</ul></div>
     <div id="best-practices">
     <h2>Best practices</h2>
     
@@ -191,7 +170,7 @@ you need to work using the original docs to achieve the desired result.</p>
 <h3 id="layout">Layout<a class="anchor" aria-label="anchor" href="#layout"></a></h3>
 
 <ul><li><p>Use a multiline text field when long entries are expected.</p></li>
-<li><p>Don't place a text field in the middle of a sentence, because the sentence structure might not make sense in all languages. For example, "Remind me in textfield weeks" should instead read, "Remind me in this many weeks: textfield".</p></li>
+<li><p>Don't place a text field in the middle of a sentence, because the sentence structure might not make sense in all languages. For example, "Remind me in <code>[textfield]</code> weeks" should instead read, "Remind me in this many weeks: <code>[textfield]</code>".</p></li>
 <li><p>Format the text field for the expected entry. For example, when someone needs to enter a phone number, use an input mask to indicate that three sets of digits should be entered.</p></li>
 </ul></div>
 
@@ -207,21 +186,21 @@ you need to work using the original docs to achieve the desired result.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span>
-<span class="r-in">    ui <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
-<span class="r-in">      <span class="fu">TextField.shinyInput</span><span class="op">(</span><span class="st">"text"</span><span class="op">)</span>,</span>
-<span class="r-in">      <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/textOutput.html" class="external-link">textOutput</a></span><span class="op">(</span><span class="st">"textValue"</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span>,</span>
-<span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">      <span class="va">output</span><span class="op">$</span><span class="va">textValue</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/renderPrint.html" class="external-link">renderText</a></span><span class="op">(</span><span class="op">{</span></span>
-<span class="r-in">        <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Value: %s"</span>, <span class="va">input</span><span class="op">$</span><span class="va">text</span><span class="op">)</span></span>
-<span class="r-in">      <span class="op">}</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">}</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    ui <span class="op">=</span> <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>      <span class="fu">TextField.shinyInput</span><span class="op">(</span><span class="st">"text"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/textOutput.html" class="external-link">textOutput</a></span><span class="op">(</span><span class="st">"textValue"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>      <span class="va">output</span><span class="op">$</span><span class="va">textValue</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/renderPrint.html" class="external-link">renderText</a></span><span class="op">(</span><span class="op">{</span></span></span>
+<span class="r-in"><span>        <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Value: %s"</span>, <span class="va">input</span><span class="op">$</span><span class="va">text</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="op">}</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -236,7 +215,7 @@ you need to work using the original docs to achieve the desired result.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

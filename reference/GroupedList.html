@@ -90,132 +90,96 @@ you need to work using the original docs to achieve the desired result.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">GroupedList</span><span class="op">(</span><span class="va">...</span><span class="op">)</span>
-
-<span class="fu">GroupHeader</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">GroupedList</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">GroupHeader</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>footerText</dt>
-<dd><p><code>string</code> <br> Text to display for the group footer.</p></dd>
-<dt>group</dt>
-<dd><p><code>IGroup</code> <br> The group to be rendered by the header.</p></dd>
-<dt>groupIndex</dt>
-<dd><p><code>number</code> <br> The index of the group.</p></dd>
-<dt>groupLevel</dt>
-<dd><p><code>number</code> <br> The indent level of the group.</p></dd>
-<dt>isCollapsedGroupSelectVisible</dt>
-<dd><p><code>boolean</code> <br> Determines if the group selection check box is shown for collapsed groups.</p></dd>
-<dt>isGroupLoading</dt>
-<dd><p><code>(group: IGroup) =&gt; boolean</code> <br> Callback to determine if a group has missing items and needs to load them from the server.</p></dd>
-<dt>isSelected</dt>
-<dd><p><code>boolean</code> <br> Deprecated at v.65.1 and will be removed by v 1.0. Use <code>selected</code> instead.</p></dd>
-<dt>loadingText</dt>
-<dd><p><code>string</code> <br> Text shown on group headers to indicate the group is being loaded.</p></dd>
-<dt>onGroupHeaderClick</dt>
-<dd><p><code>(group: IGroup) =&gt; void</code> <br> Callback for when the group header is clicked.</p></dd>
-<dt>onRenderTitle</dt>
-<dd><p><code>IRenderFunction&lt;IGroupHeaderProps&gt;</code> <br> Override which allows the caller to provider a custom renderer for the GroupHeader title.</p></dd>
-<dt>onToggleCollapse</dt>
-<dd><p><code>(group: IGroup) =&gt; void</code> <br> Callback for when the group is expanded or collapsed.</p></dd>
-<dt>onToggleSelectGroup</dt>
-<dd><p><code>(group: IGroup) =&gt; void</code> <br> Callback for when the group is selected.</p></dd>
-<dt>onToggleSummarize</dt>
-<dd><p><code>(group: IGroup) =&gt; void</code> <br> Callback for when the group "Show All" link is clicked</p></dd>
-<dt>selected</dt>
-<dd><p><code>boolean</code> <br> If all items in the group are selected.</p></dd>
-<dt>className</dt>
-<dd><p><code>string</code> <br> Optional class name to add to the root element.</p></dd>
-<dt>compact</dt>
-<dd><p><code>boolean</code> <br> Boolean value to indicate if the component should render in compact mode. Set to false by default</p></dd>
-<dt>componentRef</dt>
-<dd><p><code>IRefObject&lt;IGroupedList&gt;</code> <br> Optional callback to access the IGroupedList interface. Use this instead of ref for accessing the public methods and properties of the component.</p></dd>
-<dt>dragDropEvents</dt>
-<dd><p><code>IDragDropEvents</code> <br> Map of callback functions related to drag and drop functionality.</p></dd>
-<dt>dragDropHelper</dt>
-<dd><p><code>IDragDropHelper</code> <br> helper to manage drag/drop across item and groups</p></dd>
-<dt>eventsToRegister</dt>
-<dd><p><code>{ eventName: string; callback: (context: IDragDropContext, event?: any) =&gt; void; }[]</code> <br> Event names and corresponding callbacks that will be registered to groups and rendered elements</p></dd>
-<dt>focusZoneProps</dt>
-<dd><p><code>IFocusZoneProps</code> <br> Optional properties to pass through to the FocusZone.</p></dd>
-<dt>getGroupHeight</dt>
-<dd><p><code>(group: IGroup, groupIndex: number) =&gt; number</code> <br> Optional function to override default group height calculation used by list virtualization.</p></dd>
-<dt>groupProps</dt>
-<dd><p><code>IGroupRenderProps</code> <br> Optional override properties to render groups.</p></dd>
-<dt>groups</dt>
-<dd><p><code>IGroup[]</code> <br> Optional grouping instructions.</p></dd>
-<dt>items</dt>
-<dd><p><code>any[]</code> <br> List of items to render.</p></dd>
-<dt>listProps</dt>
-<dd><p><code>IListProps</code> <br> Optional properties to pass through to the list components being rendered.</p></dd>
-<dt>onGroupExpandStateChanged</dt>
-<dd><p><code>(isSomeGroupExpanded: boolean) =&gt; void</code> <br> Optional callback when the group expand state changes between all collapsed and at least one group is expanded.</p></dd>
-<dt>onRenderCell</dt>
-<dd><p><code>(nestingDepth?: number, item?: any, index?: number) =&gt; React.ReactNode</code> <br> Rendering callback to render the group items.</p></dd>
-<dt>onShouldVirtualize</dt>
-<dd><p><code>(props: IListProps) =&gt; boolean</code> <br> Optional callback to determine whether the list should be rendered in full, or virtualized. Virtualization will add and remove pages of items as the user scrolls them into the visible range. This benefits larger list scenarios by reducing the DOM on the screen, but can negatively affect performance for smaller lists. The default implementation will virtualize when this callback is not provided.</p></dd>
-<dt>selection</dt>
-<dd><p><code>ISelection</code> <br> Optional selection model to track selection state.</p></dd>
-<dt>selectionMode</dt>
-<dd><p><code>SelectionMode</code> <br> Controls how/if the list manages selection.</p></dd>
-<dt>usePageCache</dt>
-<dd><p><code>boolean</code> <br> boolean to control if pages containing unchanged items should be cached, this is a perf optimization The same property in List.Props</p></dd>
-<dt>viewport</dt>
-<dd><p><code>IViewport</code> <br> Optional Viewport, provided by the parent component.</p></dd>
-<dt>checked</dt>
-<dd><p><code>boolean</code> <br></p></dd>
-<dt>ariaPosInSet</dt>
-<dd><p><code>number</code> <br> Defines an element's number or position in the current set of listitems or treeitems</p></dd>
-<dt>ariaSetSize</dt>
-<dd><p><code>number</code> <br> Defines the number of items in the current set of listitems or treeitems</p></dd>
-<dt>expandButtonIcon</dt>
-<dd><p><code>string</code> <br> Defines the name of a custom icon to be used for group headers. If not set, the default icon will be used</p></dd>
-<dt>expandButtonProps</dt>
-<dd><p><code>React.HTMLAttributes&lt;HTMLButtonElement&gt;</code> <br> Native props for the GroupHeader expand and collapse button</p></dd>
-<dt>groupedListId</dt>
-<dd><p><code>string</code> <br> GroupedList id for aria-controls</p></dd>
-<dt>onRenderGroupHeaderCheckbox</dt>
-<dd><p><code>IRenderFunction&lt;IGroupHeaderCheckboxProps&gt;</code> <br> If provided, can be used to render a custom checkbox</p></dd>
-<dt>selectAllButtonProps</dt>
-<dd><p><code>React.HTMLAttributes&lt;HTMLButtonElement&gt;</code> <br> Native props for the GroupHeader select all button</p></dd>
-<dt>useFastIcons</dt>
-<dd><p><code>boolean</code> <br> Whether to use fast icon and check components. The icons can't be targeted by customization but are still customizable via class names.</p></dd>
-<dt>collapseAllVisibility</dt>
-<dd><p><code>CollapseAllVisibility</code> <br> Flag to indicate whether to ignore the collapsing icon on header.</p></dd>
-<dt>footerProps</dt>
-<dd><p><code>IGroupFooterProps</code> <br> Information to pass in to the group footer.</p></dd>
-<dt>getGroupItemLimit</dt>
-<dd><p><code>(group: IGroup) =&gt; number</code> <br> Grouping item limit.</p></dd>
-<dt>headerProps</dt>
-<dd><p><code>IGroupHeaderProps</code> <br> Information to pass in to the group header.</p></dd>
-<dt>isAllGroupsCollapsed</dt>
-<dd><p><code>boolean</code> <br> Boolean indicating if all groups are in collapsed state.</p></dd>
-<dt>onRenderFooter</dt>
-<dd><p><code>IRenderFunction&lt;IGroupFooterProps&gt;</code> <br> Override which allows the caller to provide a custom footer.</p></dd>
-<dt>onRenderHeader</dt>
-<dd><p><code>IRenderFunction&lt;IGroupHeaderProps&gt;</code> <br> Override which allows the caller to provide a custom header.</p></dd>
-<dt>onRenderShowAll</dt>
-<dd><p><code>IRenderFunction&lt;IGroupShowAllProps&gt;</code> <br> Override which allows the caller to provide a custom Show All link.</p></dd>
-<dt>onToggleCollapseAll</dt>
-<dd><p><code>(isAllCollapsed: boolean) =&gt; void</code> <br> Callback for when all groups are expanded or collapsed.</p></dd>
-<dt>role</dt>
-<dd><p><code>string</code> <br> Override which allows the caller to provide a custom aria role</p></dd>
-<dt>showAllProps</dt>
-<dd><p><code>IGroupShowAllProps</code> <br> Information to pass in to the group Show all footer.</p></dd>
-<dt>showEmptyGroups</dt>
-<dd><p><code>boolean</code> <br> Boolean indicating if empty groups are shown</p></dd>
-<dt>showAllLinkText</dt>
-<dd><p><code>string</code> <br> The Show All link text.</p></dd>
-<dt>count</dt>
-<dd><p><code>number</code> <br> Count of spacer(s)</p></dd>
-<dt>indentWidth</dt>
-<dd><p><code>number</code> <br> How much to indent</p></dd>
-<dt>styles</dt>
-<dd><p><code>IStyleFunctionOrObject&lt;IGroupSpacerStyleProps, IGroupSpacerStyles&gt;</code> <br> Style function to be passed in to override the themed or default styles</p></dd>
-<dt>theme</dt>
-<dd><p><code>ITheme</code> <br> Theme from Higher Order Component</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> className </b> <code>string</code> <br> Custom className</p></li>
+<li><p><b> compact </b> <code>boolean</code> <br> Boolean value to indicate if the component should render in compact mode. Set to false by default</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;{}&gt;</code> <br></p></li>
+<li><p><b> expandButtonProps </b> <code>React.HTMLAttributes&lt;HTMLButtonElement&gt;</code> <br> Props for expand/collapse button</p></li>
+<li><p><b> footerText </b> <code>string</code> <br> Text to display for the group footer.</p></li>
+<li><p><b> group </b> <code>IGroup</code> <br> The group to be rendered by the header.</p></li>
+<li><p><b> groupIndex </b> <code>number</code> <br> The index of the group.</p></li>
+<li><p><b> groupLevel </b> <code>number</code> <br> The indent level of the group.</p></li>
+<li><p><b> groups </b> <code>IGroup[]</code> <br> Stores parent group's children.</p></li>
+<li><p><b> indentWidth </b> <code>number</code> <br> Width corresponding to a single level. This is multiplied by the groupLevel to get the full spacer width for the group.</p></li>
+<li><p><b> isCollapsedGroupSelectVisible </b> <code>boolean</code> <br> Determines if the group selection check box is shown for collapsed groups.</p></li>
+<li><p><b> isGroupLoading </b> <code>(group: IGroup) =&gt; boolean</code> <br> Callback to determine if a group has missing items and needs to load them from the server.</p></li>
+<li><p><b> isSelected </b> <code>boolean</code> <br> Deprecated at v.65.1 and will be removed by v 1.0. Use <code>selected</code> instead.</p></li>
+<li><p><b> loadingText </b> <code>string</code> <br> Text shown on group headers to indicate the group is being loaded.</p></li>
+<li><p><b> onGroupHeaderClick </b> <code>(group: IGroup) =&gt; void</code> <br> Callback for when the group header is clicked.</p></li>
+<li><p><b> onRenderTitle </b> <code>IRenderFunction&lt;IGroupHeaderProps&gt;</code> <br> Override which allows the caller to provider a custom renderer for the GroupHeader title.</p></li>
+<li><p><b> onToggleCollapse </b> <code>(group: IGroup) =&gt; void</code> <br> Callback for when the group is expanded or collapsed.</p></li>
+<li><p><b> onToggleSelectGroup </b> <code>(group: IGroup) =&gt; void</code> <br> Callback for when the group is selected.</p></li>
+<li><p><b> onToggleSummarize </b> <code>(group: IGroup) =&gt; void</code> <br> Callback for when the group "Show All" link is clicked</p></li>
+<li><p><b> selected </b> <code>boolean</code> <br> If all items in the group are selected.</p></li>
+<li><p><b> selectionMode </b> <code>SelectionMode</code> <br> The selection mode of the list the group lives within.</p></li>
+<li><p><b> showAllLinkText </b> <code>string</code> <br> Text to display for the group "Show All" link.</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by the Higher Order Component</p></li>
+<li><p><b> viewport </b> <code>IViewport</code> <br> A reference to the viewport in which the header is rendered.</p></li>
+<li><p><b> className </b> <code>string</code> <br> Optional class name to add to the root element.</p></li>
+<li><p><b> compact </b> <code>boolean</code> <br> Boolean value to indicate if the component should render in compact mode. Set to false by default</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IGroupedList&gt;</code> <br> Optional callback to access the IGroupedList interface. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
+<li><p><b> dragDropEvents </b> <code>IDragDropEvents</code> <br> Map of callback functions related to drag and drop functionality.</p></li>
+<li><p><b> dragDropHelper </b> <code>IDragDropHelper</code> <br> helper to manage drag/drop across item and groups</p></li>
+<li><p><b> eventsToRegister </b> <code>{ eventName: string; callback: (context: IDragDropContext, event?: any) =&gt; void; }[]</code> <br> Event names and corresponding callbacks that will be registered to groups and rendered elements</p></li>
+<li><p><b> focusZoneProps </b> <code>IFocusZoneProps</code> <br> Optional properties to pass through to the FocusZone.</p></li>
+<li><p><b> getGroupHeight </b> <code>(group: IGroup, groupIndex: number) =&gt; number</code> <br> Optional function to override default group height calculation used by list virtualization.</p></li>
+<li><p><b> groupProps </b> <code>IGroupRenderProps</code> <br> Optional override properties to render groups.</p></li>
+<li><p><b> groups </b> <code>IGroup[]</code> <br> Optional grouping instructions.</p></li>
+<li><p><b> items </b> <code>any[]</code> <br> List of items to render.</p></li>
+<li><p><b> listProps </b> <code>IListProps</code> <br> Optional properties to pass through to the list components being rendered.</p></li>
+<li><p><b> onGroupExpandStateChanged </b> <code>(isSomeGroupExpanded: boolean) =&gt; void</code> <br> Optional callback when the group expand state changes between all collapsed and at least one group is expanded.</p></li>
+<li><p><b> onRenderCell </b> <code>(nestingDepth?: number, item?: any, index?: number) =&gt; React.ReactNode</code> <br> Rendering callback to render the group items.</p></li>
+<li><p><b> onShouldVirtualize </b> <code>(props: IListProps) =&gt; boolean</code> <br> Optional callback to determine whether the list should be rendered in full, or virtualized. Virtualization will add and remove pages of items as the user scrolls them into the visible range. This benefits larger list scenarios by reducing the DOM on the screen, but can negatively affect performance for smaller lists. The default implementation will virtualize when this callback is not provided.</p></li>
+<li><p><b> selection </b> <code>ISelection</code> <br> Optional selection model to track selection state.</p></li>
+<li><p><b> selectionMode </b> <code>SelectionMode</code> <br> Controls how/if the list manages selection.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IGroupedListStyleProps, IGroupedListStyles&gt;</code> <br> Style function to be passed in to override the themed or default styles</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme that is passed in from Higher Order Component</p></li>
+<li><p><b> usePageCache </b> <code>boolean</code> <br> boolean to control if pages containing unchanged items should be cached, this is a perf optimization The same property in List.Props</p></li>
+<li><p><b> viewport </b> <code>IViewport</code> <br> Optional Viewport, provided by the parent component.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IGroupFooterStyleProps, IGroupFooterStyles&gt;</code> <br> Style function to be passed in to override the themed or default styles</p></li>
+<li><p><b> checked </b> <code>boolean</code> <br></p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br></p></li>
+<li><p><b> ariaPosInSet </b> <code>number</code> <br> Defines an element's number or position in the current set of listitems or treeitems</p></li>
+<li><p><b> ariaSetSize </b> <code>number</code> <br> Defines the number of items in the current set of listitems or treeitems</p></li>
+<li><p><b> expandButtonIcon </b> <code>string</code> <br> Defines the name of a custom icon to be used for group headers. If not set, the default icon will be used</p></li>
+<li><p><b> expandButtonProps </b> <code>React.HTMLAttributes&lt;HTMLButtonElement&gt;</code> <br> Native props for the GroupHeader expand and collapse button</p></li>
+<li><p><b> groupedListId </b> <code>string</code> <br> GroupedList id for aria-controls</p></li>
+<li><p><b> onRenderGroupHeaderCheckbox </b> <code>IRenderFunction&lt;IGroupHeaderCheckboxProps&gt;</code> <br> If provided, can be used to render a custom checkbox</p></li>
+<li><p><b> selectAllButtonProps </b> <code>React.HTMLAttributes&lt;HTMLButtonElement&gt;</code> <br> Native props for the GroupHeader select all button</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IGroupHeaderStyleProps, IGroupHeaderStyles&gt;</code> <br> Style function to be passed in to override the themed or default styles</p></li>
+<li><p><b> useFastIcons </b> <code>boolean</code> <br> Whether to use fast icon and check components. The icons can't be targeted by customization but are still customizable via class names.</p></li>
+<li><p><b> collapseAllVisibility </b> <code>CollapseAllVisibility</code> <br> Flag to indicate whether to ignore the collapsing icon on header.</p></li>
+<li><p><b> footerProps </b> <code>IGroupFooterProps</code> <br> Information to pass in to the group footer.</p></li>
+<li><p><b> getGroupItemLimit </b> <code>(group: IGroup) =&gt; number</code> <br> Grouping item limit.</p></li>
+<li><p><b> headerProps </b> <code>IGroupHeaderProps</code> <br> Information to pass in to the group header.</p></li>
+<li><p><b> isAllGroupsCollapsed </b> <code>boolean</code> <br> Boolean indicating if all groups are in collapsed state.</p></li>
+<li><p><b> onRenderFooter </b> <code>IRenderFunction&lt;IGroupFooterProps&gt;</code> <br> Override which allows the caller to provide a custom footer.</p></li>
+<li><p><b> onRenderHeader </b> <code>IRenderFunction&lt;IGroupHeaderProps&gt;</code> <br> Override which allows the caller to provide a custom header.</p></li>
+<li><p><b> onRenderShowAll </b> <code>IRenderFunction&lt;IGroupShowAllProps&gt;</code> <br> Override which allows the caller to provide a custom Show All link.</p></li>
+<li><p><b> onToggleCollapseAll </b> <code>(isAllCollapsed: boolean) =&gt; void</code> <br> Callback for when all groups are expanded or collapsed.</p></li>
+<li><p><b> role </b> <code>string</code> <br> Override which allows the caller to provide a custom aria role</p></li>
+<li><p><b> showAllProps </b> <code>IGroupShowAllProps</code> <br> Information to pass in to the group Show all footer.</p></li>
+<li><p><b> showEmptyGroups </b> <code>boolean</code> <br> Boolean indicating if empty groups are shown</p></li>
+<li><p><b> showAllLinkText </b> <code>string</code> <br> The Show All link text.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IGroupShowAllStyleProps, IGroupShowAllStyles&gt;</code> <br> Style function to be passed in to override the themed or default styles</p></li>
+<li><p><b> count </b> <code>number</code> <br> Count of spacer(s)</p></li>
+<li><p><b> indentWidth </b> <code>number</code> <br> How much to indent</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IGroupSpacerStyleProps, IGroupSpacerStyles&gt;</code> <br> Style function to be passed in to override the themed or default styles</p></li>
+<li><p><b> theme </b> <code>ITheme</code> <br> Theme from Higher Order Component</p></li>
+</ul></div>
     <div id="best-practices">
     <h2>Best practices</h2>
     
@@ -240,24 +204,24 @@ To avoid this problem, we recommend re-creating the items array backing the grou
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="fu">shinyApp</span><span class="op">(</span></span>
-<span class="r-in">    ui <span class="op">=</span> <span class="fu">GroupedList</span><span class="op">(</span></span>
-<span class="r-in">      items <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="st">"Item A"</span>, <span class="st">"Item B"</span>, <span class="st">"Item C"</span>, <span class="st">"Item D"</span>, <span class="st">"Item E"</span><span class="op">)</span>,</span>
-<span class="r-in">      groups <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">        <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"g1"</span>, name <span class="op">=</span> <span class="st">"Some items"</span>, startIndex <span class="op">=</span> <span class="fl">0</span>, count <span class="op">=</span> <span class="fl">2</span><span class="op">)</span>,</span>
-<span class="r-in">        <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"g2"</span>, name <span class="op">=</span> <span class="st">"More items"</span>, startIndex <span class="op">=</span> <span class="fl">2</span>, count <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span>
-<span class="r-in">      <span class="op">)</span>,</span>
-<span class="r-in">      selectionMode <span class="op">=</span> <span class="fl">0</span>,</span>
-<span class="r-in">      onRenderCell <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"(depth, item) =&gt; (</span>
-<span class="r-in">        jsmodule['react'].createElement('span', { style: { paddingLeft: 49 } }, item)</span>
-<span class="r-in">      )"</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span>,</span>
-<span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="fu">shinyApp</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    ui <span class="op">=</span> <span class="fu">GroupedList</span><span class="op">(</span></span></span>
+<span class="r-in"><span>      items <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="st">"Item A"</span>, <span class="st">"Item B"</span>, <span class="st">"Item C"</span>, <span class="st">"Item D"</span>, <span class="st">"Item E"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      groups <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>        <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"g1"</span>, name <span class="op">=</span> <span class="st">"Some items"</span>, startIndex <span class="op">=</span> <span class="fl">0</span>, count <span class="op">=</span> <span class="fl">2</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>        <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"g2"</span>, name <span class="op">=</span> <span class="st">"More items"</span>, startIndex <span class="op">=</span> <span class="fl">2</span>, count <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="op">)</span>,</span></span>
+<span class="r-in"><span>      selectionMode <span class="op">=</span> <span class="fl">0</span>,</span></span>
+<span class="r-in"><span>      onRenderCell <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"(depth, item) =&gt; (</span></span></span>
+<span class="r-in"><span><span class="st">        jsmodule['react'].createElement('span', { style: { paddingLeft: 49 } }, item)</span></span></span>
+<span class="r-in"><span><span class="st">      )"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -272,7 +236,7 @@ To avoid this problem, we recommend re-creating the items array backing the grou
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

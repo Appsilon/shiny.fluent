@@ -102,91 +102,82 @@ you need to work using the original docs to achieve the desired result.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">OverflowSet</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">OverflowSet</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>key</dt>
-<dd><p><code>string</code> <br> Unique id to identify the item.</p></dd>
-<dt>keytipProps</dt>
-<dd><p><code>IKeytipProps</code> <br> Optional keytip for the overflowSetItem.</p></dd>
-<dt>className</dt>
-<dd><p><code>string</code> <br> Class name</p></dd>
-<dt>componentRef</dt>
-<dd><p><code>IRefObject&lt;IOverflowSet&gt;</code> <br> Gets the component ref.</p></dd>
-<dt>doNotContainWithinFocusZone</dt>
-<dd><p><code>boolean</code> <br> If true do not contain the OverflowSet inside of a FocusZone, otherwise the OverflowSet will contain a FocusZone. If this is set to true focusZoneProps will be ignored. Use one or the other.</p></dd>
-<dt>focusZoneProps</dt>
-<dd><p><code>IFocusZoneProps</code> <br> Custom properties for OverflowSet's FocusZone. If doNotContainWithinFocusZone is set to true focusZoneProps will be ignored. Use one or the other.</p></dd>
-<dt>items</dt>
-<dd><p><code>IOverflowSetItemProps[]</code> <br> An array of items to be rendered by your onRenderItem function in the primary content area</p></dd>
-<dt>itemSubMenuProvider</dt>
-<dd><p><code>(item: IOverflowSetItemProps) =&gt; any[] | undefined</code> <br> Function that will take in an IOverflowSetItemProps and return the subMenu for that item. If not provided, will use 'item.subMenuProps.items' by default. This is only used if your overflow set has keytips.</p></dd>
-<dt>keytipSequences</dt>
-<dd><p><code>string[]</code> <br> Optional full keytip sequence for the overflow button, if it will have a keytip.</p></dd>
-<dt>onRenderItem</dt>
-<dd><p><code>(item: IOverflowSetItemProps) =&gt; any</code> <br> Method to call when trying to render an item.</p></dd>
-<dt>onRenderOverflowButton</dt>
-<dd><p><code>IRenderFunction&lt;any[]&gt;</code> <br> Rendering method for overflow button and contextual menu. The argument to the function is the overflowItems passed in as props to this function.</p></dd>
-<dt>overflowItems</dt>
-<dd><p><code>IOverflowSetItemProps[]</code> <br> An array of items to be passed to overflow contextual menu</p></dd>
-<dt>overflowSide</dt>
-<dd><p><code>'start' | 'end'</code> <br> Controls wether or not the overflow button is placed at the start or end of the items. This gives a reveresed visual behavior but maintains correct keyboard navigation.</p></dd>
-<dt>role</dt>
-<dd><p><code>string</code> <br> The role for the OverflowSet.</p></dd>
-<dt>styles</dt>
-<dd><p><code>IStyleFunctionOrObject&lt;IOverflowSetProps, IOverflowSetStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></dd>
-<dt>vertical</dt>
-<dd><p><code>boolean</code> <br> Change item layout direction to vertical/stacked. If role is set to <code>menubar</code>, <code>vertical={true}</code> will also add proper <code>aria-orientation</code>.</p></dd>
+    <dl><dt>...</dt>
+<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    
+<ul><li><p><b> key </b> <code>string</code> <br> Unique id to identify the item.</p></li>
+<li><p><b> keytipProps </b> <code>IKeytipProps</code> <br> Optional keytip for the overflowSetItem.</p></li>
+<li><p><b> className </b> <code>string</code> <br> Class name</p></li>
+<li><p><b> componentRef </b> <code>IRefObject&lt;IOverflowSet&gt;</code> <br> Gets the component ref.</p></li>
+<li><p><b> doNotContainWithinFocusZone </b> <code>boolean</code> <br> If true do not contain the OverflowSet inside of a FocusZone, otherwise the OverflowSet will contain a FocusZone. If this is set to true focusZoneProps will be ignored. Use one or the other.</p></li>
+<li><p><b> focusZoneProps </b> <code>IFocusZoneProps</code> <br> Custom properties for OverflowSet's FocusZone. If doNotContainWithinFocusZone is set to true focusZoneProps will be ignored. Use one or the other.</p></li>
+<li><p><b> items </b> <code>IOverflowSetItemProps[]</code> <br> An array of items to be rendered by your onRenderItem function in the primary content area</p></li>
+<li><p><b> itemSubMenuProvider </b> <code>(item: IOverflowSetItemProps) =&gt; any[] | undefined</code> <br> Function that will take in an IOverflowSetItemProps and return the subMenu for that item. If not provided, will use 'item.subMenuProps.items' by default. This is only used if your overflow set has keytips.</p></li>
+<li><p><b> keytipSequences </b> <code>string[]</code> <br> Optional full keytip sequence for the overflow button, if it will have a keytip.</p></li>
+<li><p><b> onRenderItem </b> <code>(item: IOverflowSetItemProps) =&gt; any</code> <br> Method to call when trying to render an item.</p></li>
+<li><p><b> onRenderOverflowButton </b> <code>IRenderFunction&lt;any[]&gt;</code> <br> Rendering method for overflow button and contextual menu. The argument to the function is the overflowItems passed in as props to this function.</p></li>
+<li><p><b> overflowItems </b> <code>IOverflowSetItemProps[]</code> <br> An array of items to be passed to overflow contextual menu</p></li>
+<li><p><b> overflowSide </b> <code>'start' | 'end'</code> <br> Controls wether or not the overflow button is placed at the start or end of the items. This gives a reveresed visual behavior but maintains correct keyboard navigation.</p></li>
+<li><p><b> role </b> <code>string</code> <br> The role for the OverflowSet.</p></li>
+<li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IOverflowSetProps, IOverflowSetStyles&gt;</code> <br> Call to provide customized styling that will layer on top of the variant rules.</p></li>
+<li><p><b> vertical </b> <code>boolean</code> <br> Change item layout direction to vertical/stacked. If role is set to <code>menubar</code>, <code>vertical={true}</code> will also add proper <code>aria-orientation</code>.</p></li>
+</ul></div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="va">items</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"item1"</span>, icon <span class="op">=</span> <span class="st">"Add"</span>, name <span class="op">=</span> <span class="st">"Link 1"</span><span class="op">)</span>,</span>
-<span class="r-in">    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"item2"</span>, icon <span class="op">=</span> <span class="st">"Upload"</span>, name <span class="op">=</span> <span class="st">"Link 2"</span><span class="op">)</span>,</span>
-<span class="r-in">    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"item3"</span>, icon <span class="op">=</span> <span class="st">"Share"</span>, name <span class="op">=</span> <span class="st">"Link 3"</span><span class="op">)</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in">  <span class="va">overflowItems</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span class="r-in">    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"item4"</span>, icon <span class="op">=</span> <span class="st">"Mail"</span>, name <span class="op">=</span> <span class="st">"Overflow Link 1"</span><span class="op">)</span>,</span>
-<span class="r-in">    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"item5"</span>, icon <span class="op">=</span> <span class="st">"Calendar"</span>, name <span class="op">=</span> <span class="st">"Overflow Link 2"</span><span class="op">)</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in">  <span class="va">onRenderItem</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"item =&gt;</span>
-<span class="r-in">    jsmodule['react'].createElement(jsmodule['@fluentui/react'].CommandBarButton, {</span>
-<span class="r-in">      role: 'menuitem',</span>
-<span class="r-in">      iconProps: { iconName: item.icon },</span>
-<span class="r-in">      styles: {</span>
-<span class="r-in">        root: { padding: '10px' }</span>
-<span class="r-in">      }</span>
-<span class="r-in">    })</span>
-<span class="r-in">  "</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">onRenderOverflowButton</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"overflowItems =&gt;</span>
-<span class="r-in">    jsmodule['react'].createElement(jsmodule['@fluentui/react'].CommandBarButton, {</span>
-<span class="r-in">      role: 'menuitem',</span>
-<span class="r-in">      title: 'More items',</span>
-<span class="r-in">      styles: {</span>
-<span class="r-in">        root: { padding: '10px' }</span>
-<span class="r-in">      },</span>
-<span class="r-in">      menuIconProps: { iconName: 'More' },</span>
-<span class="r-in">      menuProps: { items: overflowItems }</span>
-<span class="r-in">    })</span>
-<span class="r-in">  "</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span>
-<span class="r-in">    ui <span class="op">=</span> <span class="fu">OverflowSet</span><span class="op">(</span></span>
-<span class="r-in">      vertical <span class="op">=</span> <span class="cn">TRUE</span>,</span>
-<span class="r-in">      items <span class="op">=</span> <span class="va">items</span>,</span>
-<span class="r-in">      overflowItems <span class="op">=</span> <span class="va">overflowItems</span>,</span>
-<span class="r-in">      onRenderItem <span class="op">=</span> <span class="va">onRenderItem</span>,</span>
-<span class="r-in">      onRenderOverflowButton <span class="op">=</span> <span class="va">onRenderOverflowButton</span></span>
-<span class="r-in">    <span class="op">)</span>,</span>
-<span class="r-in">    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="va">items</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"item1"</span>, icon <span class="op">=</span> <span class="st">"Add"</span>, name <span class="op">=</span> <span class="st">"Link 1"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"item2"</span>, icon <span class="op">=</span> <span class="st">"Upload"</span>, name <span class="op">=</span> <span class="st">"Link 2"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"item3"</span>, icon <span class="op">=</span> <span class="st">"Share"</span>, name <span class="op">=</span> <span class="st">"Link 3"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">overflowItems</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"item4"</span>, icon <span class="op">=</span> <span class="st">"Mail"</span>, name <span class="op">=</span> <span class="st">"Overflow Link 1"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"item5"</span>, icon <span class="op">=</span> <span class="st">"Calendar"</span>, name <span class="op">=</span> <span class="st">"Overflow Link 2"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">onRenderItem</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"item =&gt;</span></span></span>
+<span class="r-in"><span><span class="st">    jsmodule['react'].createElement(jsmodule['@fluentui/react'].CommandBarButton, {</span></span></span>
+<span class="r-in"><span><span class="st">      role: 'menuitem',</span></span></span>
+<span class="r-in"><span><span class="st">      iconProps: { iconName: item.icon },</span></span></span>
+<span class="r-in"><span><span class="st">      styles: {</span></span></span>
+<span class="r-in"><span><span class="st">        root: { padding: '10px' }</span></span></span>
+<span class="r-in"><span><span class="st">      }</span></span></span>
+<span class="r-in"><span><span class="st">    })</span></span></span>
+<span class="r-in"><span><span class="st">  "</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">onRenderOverflowButton</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"overflowItems =&gt;</span></span></span>
+<span class="r-in"><span><span class="st">    jsmodule['react'].createElement(jsmodule['@fluentui/react'].CommandBarButton, {</span></span></span>
+<span class="r-in"><span><span class="st">      role: 'menuitem',</span></span></span>
+<span class="r-in"><span><span class="st">      title: 'More items',</span></span></span>
+<span class="r-in"><span><span class="st">      styles: {</span></span></span>
+<span class="r-in"><span><span class="st">        root: { padding: '10px' }</span></span></span>
+<span class="r-in"><span><span class="st">      },</span></span></span>
+<span class="r-in"><span><span class="st">      menuIconProps: { iconName: 'More' },</span></span></span>
+<span class="r-in"><span><span class="st">      menuProps: { items: overflowItems }</span></span></span>
+<span class="r-in"><span><span class="st">    })</span></span></span>
+<span class="r-in"><span><span class="st">  "</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    ui <span class="op">=</span> <span class="fu">OverflowSet</span><span class="op">(</span></span></span>
+<span class="r-in"><span>      vertical <span class="op">=</span> <span class="cn">TRUE</span>,</span></span>
+<span class="r-in"><span>      items <span class="op">=</span> <span class="va">items</span>,</span></span>
+<span class="r-in"><span>      overflowItems <span class="op">=</span> <span class="va">overflowItems</span>,</span></span>
+<span class="r-in"><span>      onRenderItem <span class="op">=</span> <span class="va">onRenderItem</span>,</span></span>
+<span class="r-in"><span>      onRenderOverflowButton <span class="op">=</span> <span class="va">onRenderOverflowButton</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -201,7 +192,7 @@ you need to work using the original docs to achieve the desired result.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>
