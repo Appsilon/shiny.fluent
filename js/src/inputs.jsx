@@ -1,5 +1,5 @@
 import * as Fluent from '@fluentui/react';
-import { ButtonAdapter, InputAdapter } from '@/shiny.react';
+import { ButtonAdapter, InputAdapter, debounce } from '@/shiny.react';
 
 export const ActionButton = ButtonAdapter(Fluent.ActionButton);
 export const CommandBarButton = ButtonAdapter(Fluent.CommandBarButton);
@@ -27,13 +27,13 @@ export const ChoiceGroup = InputAdapter(Fluent.ChoiceGroup, (value, setValue) =>
 export const ColorPicker = InputAdapter(Fluent.ColorPicker, (value, setValue) => ({
   color: value,
   onChange: (e, v) => setValue(v.str),
-}));
+}), { policy: debounce, delay: 250 });
 
 export const ComboBox = InputAdapter(Fluent.ComboBox, (value, setValue) => ({
   selectedKey: value && value.key,
   text: value && value.text,
   onChange: (e, option, i, text) => setValue(option || (text ? { text } : null)),
-}));
+}), { policy: debounce, delay: 250 });
 
 export const DatePicker = InputAdapter(Fluent.DatePicker, (value, setValue) => ({
   value: value ? new Date(value) : undefined,
@@ -81,17 +81,17 @@ export const Rating = InputAdapter(Fluent.Rating, (value, setValue) => ({
 export const SearchBox = InputAdapter(Fluent.SearchBox, (value, setValue) => ({
   value,
   onChange: (e, v) => setValue(v),
-}));
+}), { policy: debounce, delay: 250 });
 
 export const Slider = InputAdapter(Fluent.Slider, (value, setValue) => ({
   value,
   onChange: setValue,
-}));
+}), { policy: debounce, delay: 250 });
 
 export const SpinButton = InputAdapter(Fluent.SpinButton, (value, setValue) => ({
   value,
   onChange: (e, v) => v && setValue(Number(v)),
-}));
+}), { policy: debounce, delay: 250 });
 
 export const SwatchColorPicker = InputAdapter(Fluent.SwatchColorPicker, (value, setValue) => ({
   selectedId: value,
@@ -101,7 +101,7 @@ export const SwatchColorPicker = InputAdapter(Fluent.SwatchColorPicker, (value, 
 export const TextField = InputAdapter(Fluent.TextField, (value, setValue) => ({
   value,
   onChange: (e, v) => setValue(v),
-}));
+}), { policy: debounce, delay: 250 });
 
 export const Toggle = InputAdapter(Fluent.Toggle, (value, setValue) => ({
   checked: value,
