@@ -91,7 +91,7 @@ export const Slider = InputAdapter(Fluent.Slider, (value, setValue) => ({
 export const SpinButton = InputAdapter(Fluent.SpinButton, (value, setValue) => ({
   value,
   onChange: (e, v) => v && setValue(Number(v)),
-}));
+}), { policy: debounce, delay: 250 });
 
 export const SwatchColorPicker = InputAdapter(Fluent.SwatchColorPicker, (value, setValue) => ({
   selectedId: value,
