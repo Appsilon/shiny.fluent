@@ -3,10 +3,10 @@ Title: Microsoft Fluent UI for Shiny Apps
 Version: 0.2.1
 Authors@R:
   c(
-    person(given = "Marek", family = "Rogala", role = "aut", email = "marek@appsilon.com"),
-    person(given = "Kamil", family = "Zyla", role = "aut", email = "kamil@appsilon.com"),
-    person("Developers", "Appsilon", email = "support+opensource@appsilon.com", role = "cre"),
-    person(family = "Appsilon Sp. z o.o.", role = "cph")
+    person("Kamil", "Żyła", role = c("aut", "cre"), email = "opensource+kamil@appsilon.com"),
+    person("Jakub", "Sobolewski", role = "aut", email = "jakub.sobolewski@appsilon.com"),
+    person("Marek", "Rogala", role = "aut", email = "marek@appsilon.com"),
+    person("Appsilon Sp. z o.o.", role = "cph", email = "opensource@appsilon.com")
   )
 Description: It provides all controls from Microsoft Fluent UI.
 URL: https://appsilon.github.io/shiny.fluent, https://github.com/appsilon/shiny.fluent
