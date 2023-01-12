@@ -25,8 +25,8 @@ Imports:
   shiny,
   shiny.react (>= 0.2.2)
 Suggests:
-  RColorBrewer,
   dplyr,
+  DT,
   ggplot2,
   glue,
   knitr,
@@ -34,6 +34,8 @@ Suggests:
   mockery,
   plotly,
   purrr,
+  rcmdcheck,
+  RColorBrewer,
   rmarkdown,
   sass,
   shiny.router,
