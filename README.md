@@ -6,7 +6,7 @@
 # shiny.fluent
 
 <!-- badges: start -->
-[![R build status](https://github.com/Appsilon/shiny.fluent/workflows/R-CMD-check/badge.svg)](https://github.com/Appsilon/shiny.fluent/actions)
+[![CI](https://github.com/Appsilon/shiny.fluent/actions/workflows/ci.yml/badge.svg)](https://github.com/Appsilon/shiny.fluent/actions/workflows/ci.yml)
 <!-- badges: end -->
 
 We believe that a great UI plays a huge role in the success of application projects. shiny.fluent gives your apps:
