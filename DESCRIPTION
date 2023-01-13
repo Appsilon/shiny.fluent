@@ -23,7 +23,7 @@ Imports:
   jsonlite,
   rlang,
   shiny,
-  shiny.react (>= 0.2.2)
+  shiny.react (>= 0.3.0)
 Suggests:
   dplyr,
   DT,
