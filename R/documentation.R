@@ -2954,7 +2954,7 @@ NULL
 #'
 #' - Use the sticky component on block-level elements.
 #' - Sticky components should ideally be section headers and/or footers.
-#' - Use `position: absolute`. Ensure that the parent element has an explicit `height` and `position: relative`, or has space already allocated for the scrollable pane.
+#' - Use `position: absolute`. Ensure that the parent element has an explicit `height` and `position: relative`, or has space already allocated for the scrollable pane.
 #' - Ensure that the total height of `Sticky` components does not exceed the height of the `ScrollablePane`.
 #'
 #' @details
@@ -2994,9 +2994,9 @@ NULL
 #'
 #' - Use placeholder text in the search box to describe what people can search for. For example, "Search", "Search files", or "Search contacts list".
 #' - Although search entry points tend to be similarly visualized, they can provide access to results that range from broad to narrow. By effectively communicating the scope of a search, you can ensure that people's expectations are met by the capabilities of the search you're performing, which will reduce the possibility of frustration. The search entry point should be placed near the content being searched.<br/><br/>Some common search scopes include:
-#'   - **Global**: Search across multiple sources of cloud and local content. Varied results include URLs, documents, media, actions, apps, and more.
-#'   - **Web**: Search a web index. Results include pages, entities, and answers.
-#'   - **My stuff**: Search across devices, cloud, social graphs, and more. Results are varied but are constrained by the connection to user accounts.
+#'   - **Global**: Search across multiple sources of cloud and local content. Varied results include URLs, documents, media, actions, apps, and more.
+#'   - **Web**: Search a web index. Results include pages, entities, and answers.
+#'   - **My stuff**: Search across devices, cloud, social graphs, and more. Results are varied but are constrained by the connection to user accounts.
 #'
 #' @details
 #'
@@ -3489,7 +3489,7 @@ NULL
 #' - Teaching bubbles can be used in sequence to walk people through complex, multistep interactions only. And only show one teaching bubble at a time.
 #' - A maximum of no more than 3 sequenced teaching bubbles should be used in a single experience.
 #' - Sequenced teaching bubbles should have “x of y” text to indicate progress through the sequence. For example, the first teaching bubble in a sequence might be “1 of 3”.)
-#' - Always place the primary button on the left, the secondary button just to the right of it.
+#' - Always place the primary button on the left, the secondary button just to the right of it.
 #' - Show only one primary button that inherits theme color at rest state. In the event there are more than two buttons with equal priority, all buttons should have neutral backgrounds.
 #'
 #' ### Content
@@ -3707,7 +3707,7 @@ NULL
 #' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
 #'
 #' @description
-#' A good tooltip briefly describes unlabeled controls or provides a bit of additional information about labeled controls, when this is useful. It can also help customers navigate the UI by offering additional—not redundant—information about control labels, icons, and links. A tooltip should always add valuable information; use sparingly.
+#' A good tooltip briefly describes unlabeled controls or provides a bit of additional information about labeled controls, when this is useful. It can also help customers navigate the UI by offering additional—not redundant—information about control labels, icons, and links. A tooltip should always add valuable information; use sparingly.
 #'
 #' There are two components you can use to display a tooltip:
 #'
@@ -3892,7 +3892,7 @@ NULL
 #' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
 #'
 #' @description
-#' Pickers are used to select one or more items, such as tags or files, from a large list.
+#' Pickers are used to select one or more items, such as tags or files, from a large list.
 #'
 #'
 #' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/pickers).

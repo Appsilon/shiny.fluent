@@ -34,7 +34,7 @@ you need to work using the original docs to achieve the desired result.
 \itemize{
 \item Use the sticky component on block-level elements.
 \item Sticky components should ideally be section headers and/or footers.
-\item Use \code{position: absolute}. Ensure that the parent element has an explicit \code{height} and \code{position: relative}, or has space already allocated for the scrollable pane.
+\item Use \code{position: absolute}. Ensure that the parent element has an explicit \code{height} and \code{position: relative}, or has space already allocated for the scrollable pane.
 \item Ensure that the total height of \code{Sticky} components does not exceed the height of the \code{ScrollablePane}.
 }
 }

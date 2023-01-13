@@ -51,7 +51,7 @@ you need to work using the original docs to achieve the desired result.
 \item Teaching bubbles can be used in sequence to walk people through complex, multistep interactions only. And only show one teaching bubble at a time.
 \item A maximum of no more than 3 sequenced teaching bubbles should be used in a single experience.
 \item Sequenced teaching bubbles should have “x of y” text to indicate progress through the sequence. For example, the first teaching bubble in a sequence might be “1 of 3”.)
-\item Always place the primary button on the left, the secondary button just to the right of it.
+\item Always place the primary button on the left, the secondary button just to the right of it.
 \item Show only one primary button that inherits theme color at rest state. In the event there are more than two buttons with equal priority, all buttons should have neutral backgrounds.
 }
 }

@@ -10,6 +10,11 @@ const REPLACE_MAP = [
     regex: /\s+$/gm,
     replacement: '',
   },
+  // Replace NNBSP (Narrow No-Break Space, U+202F) characters with normal spaces (U+0020).
+  {
+    regex: /\u202F/gm,
+    replacement: ' ',
+  },
   // Add a whitespace between documentation entries, each ends with "NULL"
   {
     regex: /NULL/gm,
