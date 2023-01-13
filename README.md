@@ -1,12 +1,13 @@
-<a href = "https://appsilon.com/careers/" target="_blank"><img src="http://d2v95fjda94ghc.cloudfront.net/hiring.png" alt="We are hiring!"/></a>
+# shiny.fluent <a href="https://appsilon.github.io/shiny.fluent/"><img src="man/figures/shiny-fluent.png" align="right" alt="shiny.fluent logo" style="height: 140px;"></a>
 
-
-<img src="man/figures/shiny-fluent.png" align="right" alt="" width="130" />
-
-# shiny.fluent
+> _Microsoft Fluent UI for Shiny Apps_
 
 <!-- badges: start -->
+[![CRAN
+status](https://www.r-pkg.org/badges/version/shiny.fluent)](https://cran.r-project.org/package=shiny.fluent)
 [![CI](https://github.com/Appsilon/shiny.fluent/actions/workflows/ci.yml/badge.svg)](https://github.com/Appsilon/shiny.fluent/actions/workflows/ci.yml)
+[![downloads monthly](https://cranlogs.r-pkg.org/badges/shiny.fluent)](https://CRAN.R-project.org/package=shiny.fluent)
+[![downloads total](https://cranlogs.r-pkg.org/badges/grand-total/shiny.fluent)](https://CRAN.R-project.org/package=shiny.fluent)
 <!-- badges: end -->
 
 We believe that a great UI plays a huge role in the success of application projects. shiny.fluent gives your apps:
@@ -27,9 +28,13 @@ As Fluent UI is built in React, shiny.fluent is based on another package called 
 
 ### Installation
 
-To install the packages, run:
-```R
-remotes::install_github("Appsilon/shiny.react")
+Stable version:
+```r
+install.packages("shiny.fluent")
+```
+
+Development version:
+```r
 remotes::install_github("Appsilon/shiny.fluent")
 ```
 
@@ -68,12 +73,15 @@ We recommend the following for starters:
 There are also usage examples for individual components.
 Use `shiny.fluent::runExample()` to list all available examples.
 
-Appsilon
---------
+## Appsilon
 
 <img src="https://avatars0.githubusercontent.com/u/6096772" align="right" alt="" width="6%" />
 
-Appsilon is the **Full Service Certified RStudio Partner**. Learn more
-at [appsilon.com](https://appsilon.com).
+Appsilon is a **Posit (formerly RStudio) Full Service Certified Partner**.<br/>
+Learn more at [appsilon.com](https://appsilon.com).
 
-Get in touch [support+opensource@appsilon.com](mailto:support+opensource@appsilon.com)
+[Get in touch](mailto:opensource@appsilon.com).
+
+Check our [Open Source tools](https://shiny.tools).
+
+<a href = "https://appsilon.com/careers/" target="_blank"><img src="http://d2v95fjda94ghc.cloudfront.net/hiring.png" alt="We are hiring!"/></a>
