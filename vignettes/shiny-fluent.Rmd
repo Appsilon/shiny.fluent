@@ -76,7 +76,7 @@ fluentPeople %>% glimpse()
 fluentSalesDeals %>% glimpse()
 ```
 
-We now need a Fluent component to insert a table. A good way find a component that suits our needs is to go to [shiny.fluent components live demo](https://demo.appsilon.ai/apps/fluentui) or to the [official Fluent UI docs](https://developer.microsoft.com/en-us/fluentui#/controls). Browsing through the list of components, we find `?DetailsList`, which gives a table component with rich configuration options.
+We now need a Fluent component to insert a table. A good way find a component that suits our needs is to launch the showcase dashboard with `shiny.fluent::runExample("dashboard")` or to visit the [official Fluent UI docs](https://developer.microsoft.com/en-us/fluentui#/controls). Browsing through the list of components, we find `?DetailsList`, which gives a table component with rich configuration options.
 
 First, we need to define which columns from our deals data we want to see and how to label them.
 ```{r details_list_columns, eval=FALSE}

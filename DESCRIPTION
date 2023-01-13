@@ -9,7 +9,7 @@ Authors@R:
     person("Appsilon Sp. z o.o.", role = "cph", email = "opensource@appsilon.com")
   )
 Description: It provides all controls from Microsoft Fluent UI.
-URL: https://appsilon.github.io/shiny.fluent, https://github.com/appsilon/shiny.fluent
+URL: https://appsilon.github.io/shiny.fluent/, https://github.com/appsilon/shiny.fluent
 License: LGPL-3
 Encoding: UTF-8
 LazyData: true
