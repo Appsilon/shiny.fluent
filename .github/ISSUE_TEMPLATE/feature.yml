@@ -1,0 +1,38 @@
+name: Feature request
+description: Request a new feature
+body:
+  - type: markdown
+    attributes:
+      value: >
+        Thank you for taking the time to complete this feature request!
+        Please [search](https://github.com/Appsilon/shiny.fluent/issues)
+        through existing issues first to make sure you are not creating a duplicate.
+
+  - type: textarea
+    attributes:
+      label: Motivation
+      description: What is your need? What problem are you trying to solve?
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Feature description
+      description: How would this feature work from user's perspective?
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Implementation ideas
+      description: How would this feature work under the hood?
+
+  - type: textarea
+    attributes:
+      label: Impact
+      description: How often would this feature be used? What if we don't implement it?
+
+  - type: textarea
+    attributes:
+      label: Comments
+      description: Add any other useful information here.

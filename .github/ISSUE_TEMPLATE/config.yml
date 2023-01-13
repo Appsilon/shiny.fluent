@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Documentation
+    url: https://appsilon.github.io/shiny.fluent/
+    about: Learn about shiny.fluent from our documentation
+  - name: Discussions
+    url: https://github.com/Appsilon/shiny.fluent/discussions
+    about: Use the board for questions and general discussion

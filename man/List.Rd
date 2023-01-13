@@ -75,13 +75,15 @@ you need to work using the original docs to achieve the desired result.
 
 Add the data-is-scrollable="true" attribute to your scrollable element containing the List.
 
-By default, the List will use the <body> element as the scrollable element. If you contain List within a scrollable <div> using overflow: auto or scroll, List needs to listen for scroll events on that element instead. On initialization, List will traverse up the DOM looking for the first element with the data-is-scrollable attribute to know which element to listen to for knowing when to re-evaulate the visible window.
+By default, the List will use the \if{html}{\out{<body>}} element as the scrollable element. If you contain List within a scrollable \if{html}{\out{<div>}} using overflow: auto or scroll, List needs to listen for scroll events on that element instead. On initialization, List will traverse up the DOM looking for the first element with the data-is-scrollable attribute to know which element to listen to for knowing when to re-evaulate the visible window.
 }
 
 \subsection{My list isn't re-rendering when I mutate its items, what should I do?}{
 
 To determine if List should re-render its contents, the component performs a referential equality check on the items array in its shouldComponentUpdate method. This is done to minimize the performance overhead associating with re-rendering the virtualized list pages, as recommended by the React documentation.
-As a result of this implementation, List will not determine it should re-render if values within the array are mutated. To avoid this problem, we recommend re-creating the items array using a method such as Array.prototype.concat or ES6 spread syntax shown below:\preformatted{public appendItems(): void \{
+As a result of this implementation, List will not determine it should re-render if values within the array are mutated. To avoid this problem, we recommend re-creating the items array using a method such as Array.prototype.concat or ES6 spread syntax shown below:
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{public appendItems(): void \{
   const \{ items \} = this.state;
 
   this.setState(\{
@@ -94,7 +96,7 @@ public render(): JSX.Element \{
 
   return <List items=\{items\} />;
 \}
-}
+}\if{html}{\out{</div>}}
 
 Since the items array has been re-created, the list will conclude that its contents have changed and it should re-render the new values.
 }
