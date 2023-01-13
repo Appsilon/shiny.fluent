@@ -40,7 +40,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">shiny.fluent</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.3.0</span>
       </span>
     </div>
 
@@ -99,12 +99,11 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-
-<p><a href="https://appsilon.com/careers/" target="_blank" class="external-link"><img src="http://d2v95fjda94ghc.cloudfront.net/hiring.png" alt="We are hiring!"></a></p>
-<p><img src="reference/figures/shiny-fluent.png" align="right" alt="" width="130"></p>
 <div class="section level1">
-<div class="page-header"><h1 id="shinyfluent">shiny.fluent<a class="anchor" aria-label="anchor" href="#shinyfluent"></a>
+<div class="page-header"><h1 id="shinyfluent-">shiny.fluent <a href="https://appsilon.github.io/shiny.fluent/" class="external-link"><img src="reference/figures/shiny-fluent.png" align="right" alt="shiny.fluent logo" style="height: 140px;"></a>
+<a class="anchor" aria-label="anchor" href="#shinyfluent-"></a>
 </h1></div>
+<blockquote><p><em>Microsoft Fluent UI for Shiny Apps</em></p></blockquote>
 <!-- badges: start -->
 <p>We believe that a great UI plays a huge role in the success of application projects. shiny.fluent gives your apps: - beautiful, professional look - rich set of components easily usable in Shiny - fast speed of development that Shiny is famous for.</p>
 <p>As Fluent UI is built in React, shiny.fluent is based on another package called <a href="https://github.com/Appsilon/shiny.react" class="external-link">shiny.react</a>, which allows for using React libraries in Shiny.</p>
@@ -119,16 +118,18 @@
 <div class="section level3">
 <h3 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h3>
-<p>To install the packages, run:</p>
+<p>Stable version:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"Appsilon/shiny.react"</span><span class="op">)</span></span>
-<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"Appsilon/shiny.fluent"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"shiny.fluent"</span><span class="op">)</span></span></code></pre></div>
+<p>Development version:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"Appsilon/shiny.fluent"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="quick-start">Quick start<a class="anchor" aria-label="anchor" href="#quick-start"></a>
 </h3>
 <p>Here’s how to make an app containing a Fluent UI checkbox:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">shinyApp</span><span class="op">(</span></span>
 <span>    ui <span class="op">=</span> <span class="fu">div</span><span class="op">(</span></span>
 <span>      <span class="fu"><a href="reference/Checkbox.html">Checkbox.shinyInput</a></span><span class="op">(</span><span class="st">"checkbox"</span>, value <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
@@ -154,11 +155,12 @@
 <h2 id="appsilon">Appsilon<a class="anchor" aria-label="anchor" href="#appsilon"></a>
 </h2>
 <p><img src="https://avatars0.githubusercontent.com/u/6096772" align="right" alt="" width="6%"></p>
-<p>Appsilon is the <strong>Full Service Certified RStudio Partner</strong>. Learn more at <a href="https://appsilon.com" class="external-link">appsilon.com</a>.</p>
-<p>Get in touch <a href="mailto:support+opensource@appsilon.com">support+opensource@appsilon.com</a></p>
+<p>Appsilon is a <strong>Posit (formerly RStudio) Full Service Certified Partner</strong>.<br> Learn more at <a href="https://appsilon.com" class="external-link">appsilon.com</a>.</p>
+<p><a href="mailto:opensource@appsilon.com">Get in touch</a>.</p>
+<p>Check our <a href="https://shiny.tools" class="external-link">Open Source tools</a>.</p>
+<p><a href="https://appsilon.com/careers/" target="_blank" class="external-link"><img src="http://d2v95fjda94ghc.cloudfront.net/hiring.png" alt="We are hiring!"></a></p>
 </div>
 </div>
-
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -195,9 +197,9 @@
 <div class="developers">
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
+<li>Kamil Żyła <br><small class="roles"> Author, maintainer </small>  </li>
+<li>Jakub Sobolewski <br><small class="roles"> Author </small>  </li>
 <li>Marek Rogala <br><small class="roles"> Author </small>  </li>
-<li>Kamil Zyla <br><small class="roles"> Author </small>  </li>
-<li>Developers Appsilon <br><small class="roles"> Maintainer </small>  </li>
 <li><a href="authors.html">More about authors...</a></li>
 </ul>
 </div>
@@ -205,7 +207,10 @@
 <div class="dev-status">
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
+<li><a href="https://cran.r-project.org/package=shiny.fluent" class="external-link"><img src="https://www.r-pkg.org/badges/version/shiny.fluent" alt="CRAN status"></a></li>
 <li><a href="https://github.com/Appsilon/shiny.fluent/actions/workflows/ci.yml" class="external-link"><img src="https://github.com/Appsilon/shiny.fluent/actions/workflows/ci.yml/badge.svg" alt="CI"></a></li>
+<li><a href="https://CRAN.R-project.org/package=shiny.fluent" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/shiny.fluent" alt="downloads monthly"></a></li>
+<li><a href="https://CRAN.R-project.org/package=shiny.fluent" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/grand-total/shiny.fluent" alt="downloads total"></a></li>
 </ul>
 </div>
 
@@ -215,7 +220,7 @@
 
       <footer><div class="copyright">
   <p></p>
-<p>Developed by Marek Rogala, Kamil Zyla, Developers Appsilon.</p>
+<p>Developed by Kamil Żyła, Jakub Sobolewski, Marek Rogala.</p>
 </div>
 
 <div class="pkgdown">

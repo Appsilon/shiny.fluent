@@ -10,6 +10,9 @@
     <loc>/LICENSE-text.html</loc>
   </url>
   <url>
+    <loc>/PULL_REQUEST_TEMPLATE.html</loc>
+  </url>
+  <url>
     <loc>/articles/index.html</loc>
   </url>
   <url>
@@ -38,9 +41,6 @@
   </url>
   <url>
     <loc>/news/index.html</loc>
-  </url>
-  <url>
-    <loc>/pull_request_template.html</loc>
   </url>
   <url>
     <loc>/reference/ActivityItem.html</loc>

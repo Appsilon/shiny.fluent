@@ -26,7 +26,7 @@ you need to work using the original docs to achieve the desired result."><!-- ma
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">shiny.fluent</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.3.0</span>
       </span>
     </div>
 
@@ -163,7 +163,7 @@ you need to work using the original docs to achieve the desired result.</p>
 
 
 <p>Add the data-is-scrollable="true" attribute to your scrollable element containing the List.</p>
-<p>By default, the List will use the &lt;body&gt; element as the scrollable element. If you contain List within a scrollable &lt;div&gt; using overflow: auto or scroll, List needs to listen for scroll events on that element instead. On initialization, List will traverse up the DOM looking for the first element with the data-is-scrollable attribute to know which element to listen to for knowing when to re-evaulate the visible window.</p>
+<p>By default, the List will use the </p> element as the scrollable element. If you contain List within a scrollable <div> using overflow: auto or scroll, List needs to listen for scroll events on that element instead. On initialization, List will traverse up the DOM looking for the first element with the data-is-scrollable attribute to know which element to listen to for knowing when to re-evaulate the visible window.
 </div>
 
 <div class="section">
@@ -171,21 +171,20 @@ you need to work using the original docs to achieve the desired result.</p>
 
 
 <p>To determine if List should re-render its contents, the component performs a referential equality check on the items array in its shouldComponentUpdate method. This is done to minimize the performance overhead associating with re-rendering the virtualized list pages, as recommended by the React documentation.
-As a result of this implementation, List will not determine it should re-render if values within the array are mutated. To avoid this problem, we recommend re-creating the items array using a method such as Array.prototype.concat or ES6 spread syntax shown below:</p><div class="sourceCode"><pre><code>public appendItems(): void {
-  const { items } = this.state;
-
-  this.setState({
-    items: [...items, ...[{ name: 'Foo' }, { name: 'Bar' }]]
-  })
-}
-
-public render(): JSX.Element {
-  const { items } = this.state;
-
-  return &lt;List items={items} /&gt;;
-}
-</code></pre></div>
-
+As a result of this implementation, List will not determine it should re-render if values within the array are mutated. To avoid this problem, we recommend re-creating the items array using a method such as Array.prototype.concat or ES6 spread syntax shown below:</p>
+<p></p><div class="sourceCode"><pre><code><span id="cb1-1"><a href="#cb1-1"></a>public <span class="kw">appendItems</span>()<span class="op">:</span><span class="st"> </span>void {</span>
+<span id="cb1-2"><a href="#cb1-2"></a>  const { items } =<span class="st"> </span>this.state;</span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a>  <span class="kw">this.setState</span>({</span>
+<span id="cb1-5"><a href="#cb1-5"></a>    items<span class="op">:</span><span class="st"> </span>[...items, ...[{ name<span class="op">:</span><span class="st"> 'Foo'</span> }, { name<span class="op">:</span><span class="st"> 'Bar'</span> }]]</span>
+<span id="cb1-6"><a href="#cb1-6"></a>  })</span>
+<span id="cb1-7"><a href="#cb1-7"></a>}</span>
+<span id="cb1-8"><a href="#cb1-8"></a></span>
+<span id="cb1-9"><a href="#cb1-9"></a>public <span class="kw">render</span>()<span class="op">:</span><span class="st"> </span>JSX.Element {</span>
+<span id="cb1-10"><a href="#cb1-10"></a>  const { items } =<span class="st"> </span>this.state;</span>
+<span id="cb1-11"><a href="#cb1-11"></a></span>
+<span id="cb1-12"><a href="#cb1-12"></a>  return <span class="op">&lt;</span>List items={items} <span class="op">/</span><span class="er">&gt;</span>;</span>
+<span id="cb1-13"><a href="#cb1-13"></a>}</span></code></pre><p></p></div>
 <p>Since the items array has been re-created, the list will conclude that its contents have changed and it should re-render the new values.</p>
 </div>
 
@@ -230,7 +229,7 @@ public render(): JSX.Element {
 
 
       <footer><div class="copyright">
-  <p></p><p>Developed by Marek Rogala, Kamil Zyla, Developers Appsilon.</p>
+  <p></p><p>Developed by Kamil Żyła, Jakub Sobolewski, Marek Rogala.</p>
 </div>
 
 <div class="pkgdown">
@@ -244,5 +243,6 @@ public render(): JSX.Element {
 
   
 
-  </body></html>
+  
+</div></body></html>
 
