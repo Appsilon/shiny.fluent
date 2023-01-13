@@ -10,7 +10,7 @@ Authors@R:
   )
 Description: It provides all controls from Microsoft Fluent UI.
 URL: https://appsilon.github.io/shiny.fluent, https://github.com/appsilon/shiny.fluent
-License: LGPL-3 + file LICENSE
+License: LGPL-3
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
