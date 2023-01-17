@@ -1,3 +1,5 @@
 ### Scrape Fluent UI docs
-Run `yarn install` followed by:
-* `yarn ts-node makeDocs` to generate `fluent-docs.json` and `../R/documentation.R`.
+
+* `yarn install`: Install dependencies.
+* `yarn ts-node makeDocs`: Gnerate `fluent-docs.json` and `../R/documentation.R`.
+* `yarn lint [--fix]`: Lint code.
