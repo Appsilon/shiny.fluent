@@ -10,6 +10,7 @@ source("examples.R")
 source("utils.R")
 source("example_page.R")
 source("home.R")
+source("about.R")
 source("footer.R")
 
 examplePages <- imap(examples, function(example, name) {
@@ -19,7 +20,7 @@ examplePages <- imap(examples, function(example, name) {
 names(examplePages) <- NULL
 
 pages <- c(list(route("/", homePage)),
-  list(route("about", h1("This is about section"))),
+  list(route("about", aboutPage)),
   examplePages
 )
 
