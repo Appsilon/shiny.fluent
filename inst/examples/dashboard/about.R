@@ -4,25 +4,22 @@ card1 <- div(
     tokens = list(childrenGap = 10),
     span(class = "ms-font-su ms-fontColor-themePrimary", "shiny.fluent"),
     Stack(
-      tokens = list(childrenGap = 5),
-      Text("This is About Section..")
-    ),
-    Stack(
-      tokens = list(childrenGap = 10),
-      Stack(
-        tokens = list(childrenGap = 4),
-        Image(
-          src = "img/shiny-fluent.png",
-          width = "100px",
-          height = "100px"
-        ),
+      wrap = TRUE,
+      horizontal = TRUE,
+      tokens = list(childrenGap = 12),
+      Image(
+        src = "img/shiny-fluent.png",
+        width = "100px",
+        height = "100px"
+      ),
+      div(
         Text(
           variant = "large", "Want to know more?",
           block = TRUE
+        ),
+        Text(
+          "This is About Section..."
         )
-      ),
-      Text(
-        "This is About Section..."
       )
     )
   )
