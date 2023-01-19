@@ -18,7 +18,11 @@ examplePages <- imap(examples, function(example, name) {
 })
 names(examplePages) <- NULL
 
-pages <- c(list(route("/", homePage)), examplePages)
+pages <- c(list(route("/", homePage)),
+  list(route("about", h1("This is about section"))),
+  examplePages
+)
+
 router <- lift(make_router)(pages)
 
 layout <- div(class = "grid-container",

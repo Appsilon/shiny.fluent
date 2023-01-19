@@ -44,6 +44,8 @@ farItems <- list(
   ),
   list(
     key = "info",
+    id = "aboutInfo",
+    href = "#!/about",
     text = "Info",
     ariaLabel = "Info",
     iconOnly = TRUE,
