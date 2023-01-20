@@ -9,6 +9,8 @@ resolve <- shiny:::resolve
 #' @param launch.browser Whether to open the app in a browser
 #' @param host The IPv4 address to listen on.
 #' @param display.mode Display mode for the app.
+#' @return This function normally does not return;
+#' interrupt R to stop the application (usually by pressing Ctrl+C or Esc).
 #'
 #' @export
 runExample <- function(

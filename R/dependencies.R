@@ -1,5 +1,7 @@
 #' Shiny Fluent JS dependency
 #'
+#' @return HTML dependency object.
+#'
 #' @export
 shinyFluentDependency <- function() {
   htmltools::htmlDependency(

@@ -1,14 +1,18 @@
-#' Helper function for constructing items for `CommandBar`
+#' Command bar item
+#'
+#' Helper function for constructing items for `CommandBar`.
 #'
 #' CommandBar expects items definition as a nested structure, which gets lengthy and verbose.
 #' This function helps makes this definition shorter. Returns a list with all arguments passed through,
 #' except for `text`, `icon` (which will inserted as proper `iconProps`) and `subitems` (which will be inserted as
-#' proper `subMenuProps`)
+#' proper `subMenuProps`).
 #'
-#' @param text text to be displayed on the menu
-#' @param icon optional name of an icon
-#' @param subitems optional list of CommandBar items
-#' @param ... Additional props to pass to CommandBarItem
+#' @param text Text to be displayed on the menu.
+#' @param icon Optional name of an icon.
+#' @param subitems Optional list of CommandBar items.
+#' @param ... Additional props to pass to CommandBarItem.
+#' @return Item suitable for use in the CommandBar.
+#'
 #' @seealso CommandBar
 #' @export
 CommandBarItem <- function(text, icon = NULL, subitems = NULL, ...) {
@@ -30,6 +34,8 @@ CommandBarItem <- function(text, icon = NULL, subitems = NULL, ...) {
 #'
 #' @param ... The contents of the document body.
 #' @param suppressBootstrap Whether to suppress Bootstrap.
+#' @return Object which can be passed as the UI of a Shiny app.
+#'
 #' @export
 fluentPage <- function(..., suppressBootstrap = TRUE) {
   htmltools::tags$body(class = "ms-Fabric",
@@ -52,6 +58,7 @@ fluentPage <- function(..., suppressBootstrap = TRUE) {
 #' @param path A path to JSON file containing the theme created in Theme Designer
 #' @param json A JSON string containing the theme created in Theme Designer
 #' @return A list with Fluent theme that can be used in \code{\link{ThemeProvider}}
+#'
 #' @seealso [ThemeProvider()] for usage of this function
 #' @export
 parseTheme <- function(path = NULL, json = NULL) {
