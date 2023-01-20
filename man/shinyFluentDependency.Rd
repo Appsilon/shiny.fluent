@@ -6,6 +6,9 @@
 \usage{
 shinyFluentDependency()
 }
+\value{
+HTML dependency object.
+}
 \description{
 Shiny Fluent JS dependency
 }

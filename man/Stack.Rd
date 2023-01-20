@@ -9,7 +9,11 @@ Stack(...)
 Stack(...)
 }
 \arguments{
-\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
+\item{...}{Props to pass to the component.
+The allowed props are listed below in the \bold{Details} section.}
+}
+\value{
+Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 }
 \description{
 A \code{Stack} is a container-type component that abstracts the implementation of a flexbox in order to define the layout of its children components.
@@ -39,8 +43,8 @@ Aside from the previously mentioned properties, there is another property called
 
 \code{Stacks} can be nested inside one another in order to be able to configure the layout of the application as desired.
 
-For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/Stack}{docs}.
-The R package can not handle each and every case, so for advanced use cases
+For more details and examples visit the \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/Stack}{official docs}.
+The R package cannot handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
 }
 

@@ -7,7 +7,11 @@
 HoverCard(...)
 }
 \arguments{
-\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
+\item{...}{Props to pass to the component.
+The allowed props are listed below in the \bold{Details} section.}
+}
+\value{
+Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 }
 \description{
 Hover cards (\code{HoverCard}) show commands and information, such as metadata and activity, when someone hovers over an item.
@@ -16,8 +20,8 @@ Hover cards (\code{HoverCard}) show commands and information, such as metada
 \item Tabbing with a keyboard to the element triggering the HoverCard and opening when the hotKey is pressed (see second example). When the card is opened it will automatically focus the first focusable element of the card content.
 }
 
-For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/HoverCard}{docs}.
-The R package can not handle each and every case, so for advanced use cases
+For more details and examples visit the \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/HoverCard}{official docs}.
+The R package cannot handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
 }
 \details{

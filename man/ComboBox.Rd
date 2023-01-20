@@ -21,19 +21,24 @@ updateComboBox.shinyInput(
 )
 }
 \arguments{
-\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
+\item{...}{Props to pass to the component.
+The allowed props are listed below in the \bold{Details} section.}
 
-\item{inputId}{Id of the component}
+\item{inputId}{ID of the component.}
 
-\item{value}{Value}
+\item{value}{Starting value.}
 
-\item{session}{Session}
+\item{session}{Object passed as the \code{session} argument to Shiny server.}
+}
+\value{
+Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
+The update functions return nothing (called for side effects).
 }
 \description{
 A combo box (\code{ComboBox}) combines a text field and a drop-down menu, giving people a way to select an option from a list or enter their own choice.
 
-For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/ComboBox}{docs}.
-The R package can not handle each and every case, so for advanced use cases
+For more details and examples visit the \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/ComboBox}{official docs}.
+The R package cannot handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
 }
 \details{
