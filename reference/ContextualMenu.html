@@ -3,7 +3,7 @@
 There are variants that originate from a command bar, or from cursor or focus. Those that come from CommandBars use a beak that is horizontally centered on the button. Ones that come from right click and menu button do not have a beak, but appear to the right and below the cursor. ContextualMenus can have submenus from commands, show selection checks, and icons.
 Organize commands in groups divided by rules. This helps users remember command locations, or find less used commands based on proximity to others. One should also group sets of mutually exclusive or multiple selectable options. Use icons sparingly, for high value commands, and don’t mix icons with selection checks, as it makes parsing commands difficult. Avoid submenus of submenus as they can be difficult to invoke or remember.
 For more details and examples visit the official docs.
-The R package can not handle each and every case, so for advanced use cases
+The R package cannot handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -88,8 +88,8 @@ you need to work using the original docs to achieve the desired result."><!-- ma
     <p>ContextualMenus are lists of commands that are based on the context of selection, mouse hover or keyboard focus. They are one of the most effective and highly used command surfaces, and can be used in a variety of places.</p>
 <p>There are variants that originate from a command bar, or from cursor or focus. Those that come from CommandBars use a beak that is horizontally centered on the button. Ones that come from right click and menu button do not have a beak, but appear to the right and below the cursor. ContextualMenus can have submenus from commands, show selection checks, and icons.</p>
 <p>Organize commands in groups divided by rules. This helps users remember command locations, or find less used commands based on proximity to others. One should also group sets of mutually exclusive or multiple selectable options. Use icons sparingly, for high value commands, and don’t mix icons with selection checks, as it makes parsing commands difficult. Avoid submenus of submenus as they can be difficult to invoke or remember.</p>
-<p>For more details and examples visit the official <a href="https://developer.microsoft.com/en-us/fluentui#/controls/web/ContextualMenu" class="external-link">docs</a>.
-The R package can not handle each and every case, so for advanced use cases
+<p>For more details and examples visit the <a href="https://developer.microsoft.com/en-us/fluentui#/controls/web/ContextualMenu" class="external-link">official docs</a>.
+The R package cannot handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.</p>
     </div>
 
@@ -100,9 +100,16 @@ you need to work using the original docs to achieve the desired result.</p>
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>...</dt>
-<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+<dd><p>Props to pass to the component.
+The allowed props are listed below in the <b>Details</b> section.</p></dd>
 
 </dl></div>
+    <div id="value">
+    <h2>Value</h2>
+    
+
+<p>Object with <code>shiny.tag</code> class suitable for use in the UI of a Shiny app.</p>
+    </div>
     <div id="details">
     <h2>Details</h2>
     

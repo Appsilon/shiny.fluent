@@ -9,7 +9,7 @@ ProgressIndicators feature a bar showing total units to completion, and total un
 Status text is generally in units elapsed and total units. If the operation can be canceled, an “X” icon is used and should be placed in the upper right, aligned with the baseline of the operation name. When an error occurs, replace the status text with the error description using ms-fontColor-redDark.
 Real-world examples include copying files to a storage location, saving edits to a file, and more. Use units that are informative and relevant to give the best idea to users of how long the operation will take to complete. Avoid time units as they are rarely accurate enough to be trustworthy. Also, combine steps of a complex operation into one total bar to avoid “rewinding” the bar. Instead change the operation description to reflect the change if necessary. Bars moving backwards reduce confidence in the service.
 For more details and examples visit the official docs.
-The R package can not handle each and every case, so for advanced use cases
+The R package cannot handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -97,8 +97,8 @@ you need to work using the original docs to achieve the desired result."><!-- ma
 <li><p><strong><code>[Object]</code></strong> is being <strong><code>[operation name]</code></strong> from <strong><code>[source name]</code></strong> to <strong><code>[destination name]</code></strong></p></li>
 </ul><p>Status text is generally in units elapsed and total units. If the operation can be canceled, an “X” icon is used and should be placed in the upper right, aligned with the baseline of the operation name. When an error occurs, replace the status text with the error description using ms-fontColor-redDark.</p>
 <p>Real-world examples include copying files to a storage location, saving edits to a file, and more. Use units that are informative and relevant to give the best idea to users of how long the operation will take to complete. Avoid time units as they are rarely accurate enough to be trustworthy. Also, combine steps of a complex operation into one total bar to avoid “rewinding” the bar. Instead change the operation description to reflect the change if necessary. Bars moving backwards reduce confidence in the service.</p>
-<p>For more details and examples visit the official <a href="https://developer.microsoft.com/en-us/fluentui#/controls/web/ProgressIndicator" class="external-link">docs</a>.
-The R package can not handle each and every case, so for advanced use cases
+<p>For more details and examples visit the <a href="https://developer.microsoft.com/en-us/fluentui#/controls/web/ProgressIndicator" class="external-link">official docs</a>.
+The R package cannot handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.</p>
     </div>
 
@@ -109,9 +109,16 @@ you need to work using the original docs to achieve the desired result.</p>
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>...</dt>
-<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+<dd><p>Props to pass to the component.
+The allowed props are listed below in the <b>Details</b> section.</p></dd>
 
 </dl></div>
+    <div id="value">
+    <h2>Value</h2>
+    
+
+<p>Object with <code>shiny.tag</code> class suitable for use in the UI of a Shiny app.</p>
+    </div>
     <div id="details">
     <h2>Details</h2>
     

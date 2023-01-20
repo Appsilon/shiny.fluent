@@ -100,16 +100,7 @@
     <loc>/reference/Dropdown.html</loc>
   </url>
   <url>
-    <loc>/reference/ExtendedPeoplePicker.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ExtendedPicker.html</loc>
-  </url>
-  <url>
     <loc>/reference/Facepile.html</loc>
-  </url>
-  <url>
-    <loc>/reference/FloatingPeoplePicker.html</loc>
   </url>
   <url>
     <loc>/reference/FocusTrapZone.html</loc>
@@ -181,9 +172,6 @@
     <loc>/reference/Pivot.html</loc>
   </url>
   <url>
-    <loc>/reference/Popup.html</loc>
-  </url>
-  <url>
     <loc>/reference/ProgressIndicator.html</loc>
   </url>
   <url>
@@ -197,15 +185,6 @@
   </url>
   <url>
     <loc>/reference/SearchBox.html</loc>
-  </url>
-  <url>
-    <loc>/reference/SelectedItemsList.html</loc>
-  </url>
-  <url>
-    <loc>/reference/SelectedPeopleList.html</loc>
-  </url>
-  <url>
-    <loc>/reference/Selection.html</loc>
   </url>
   <url>
     <loc>/reference/Separator.html</loc>
@@ -247,6 +226,9 @@
     <loc>/reference/Tooltip.html</loc>
   </url>
   <url>
+    <loc>/reference/component.html</loc>
+  </url>
+  <url>
     <loc>/reference/fluentPage.html</loc>
   </url>
   <url>
@@ -259,9 +241,6 @@
     <loc>/reference/index.html</loc>
   </url>
   <url>
-    <loc>/reference/inputDoc.html</loc>
-  </url>
-  <url>
     <loc>/reference/parseTheme.html</loc>
   </url>
   <url>
@@ -272,5 +251,8 @@
   </url>
   <url>
     <loc>/reference/shinyFluentDependency.html</loc>
+  </url>
+  <url>
+    <loc>/reference/shinyInput.html</loc>
   </url>
 </urlset>

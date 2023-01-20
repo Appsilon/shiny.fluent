@@ -3,7 +3,7 @@
 Layers are used to render content outside of a DOM tree, at the end of the document. This allows content to escape traditional boundaries caused by &quot;overflow: hidden&quot; css rules and keeps it on the top without using z-index rules. This is useful for example in ContextualMenu and Tooltip scenarios, where the content should always overlay everything else.
 There are some special considerations. Due to the nature of rendering content elsewhere asynchronously, React refs within content will not be resolvable synchronously at the time the Layer is mounted. Therefore, to use refs correctly, use functional refs ref={ (el) =&amp;gt; { this._root = el; } rather than string refs ref='root'. Additionally measuring the physical Layer element will not include any of the children, since it won't render it. Events that propgate from within the content will not go through the Layer element as well.
 For more details and examples visit the official docs.
-The R package can not handle each and every case, so for advanced use cases
+The R package cannot handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -88,8 +88,8 @@ you need to work using the original docs to achieve the desired result."><!-- ma
     <p>A Layer is a technical component that does not have specific Design guidance.</p>
 <p>Layers are used to render content outside of a DOM tree, at the end of the document. This allows content to escape traditional boundaries caused by "overflow: hidden" css rules and keeps it on the top without using z-index rules. This is useful for example in ContextualMenu and Tooltip scenarios, where the content should always overlay everything else.</p>
 <p>There are some special considerations. Due to the nature of rendering content elsewhere asynchronously, React refs within content will not be resolvable synchronously at the time the Layer is mounted. Therefore, to use refs correctly, use functional refs <code>ref={ (el) =&gt; { this._root = el; }</code> rather than string refs <code>ref='root'</code>. Additionally measuring the physical Layer element will not include any of the children, since it won't render it. Events that propgate from within the content will not go through the Layer element as well.</p>
-<p>For more details and examples visit the official <a href="https://developer.microsoft.com/en-us/fluentui#/controls/web/Layer" class="external-link">docs</a>.
-The R package can not handle each and every case, so for advanced use cases
+<p>For more details and examples visit the <a href="https://developer.microsoft.com/en-us/fluentui#/controls/web/Layer" class="external-link">official docs</a>.
+The R package cannot handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.</p>
     </div>
 
@@ -102,9 +102,16 @@ you need to work using the original docs to achieve the desired result.</p>
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>...</dt>
-<dd><p>Props to pass to <code><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">shiny.react::reactElement</a></code>. See allowed props listed below in <b>Details</b> section</p></dd>
+<dd><p>Props to pass to the component.
+The allowed props are listed below in the <b>Details</b> section.</p></dd>
 
 </dl></div>
+    <div id="value">
+    <h2>Value</h2>
+    
+
+<p>Object with <code>shiny.tag</code> class suitable for use in the UI of a Shiny app.</p>
+    </div>
     <div id="details">
     <h2>Details</h2>
     
