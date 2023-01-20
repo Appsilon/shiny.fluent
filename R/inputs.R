@@ -7,7 +7,6 @@ button <- function(name) {
 }
 
 #' @rdname Button
-#' @inheritParams inputDoc
 #' @export
 ActionButton.shinyInput <- button("ActionButton")
 
@@ -72,7 +71,6 @@ input <- function(name, defaultValue) {
 }
 
 #' @rdname Calendar
-#' @inheritParams inputDoc
 #' @export
 Calendar.shinyInput <- function(inputId, ..., value = shiny.react::JS("new Date()")) {
   if (is.null(value)) {
@@ -194,7 +192,6 @@ TextField.shinyInput <- input("TextField", "")
 updateTextField.shinyInput <- shiny.react::updateReactInput
 
 #' @rdname Toggle
-#' @inheritParams inputDoc
 #' @export
 Toggle.shinyInput <- input("Toggle", FALSE)
 
