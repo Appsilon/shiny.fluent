@@ -7,7 +7,11 @@
 ContextualMenu(...)
 }
 \arguments{
-\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
+\item{...}{Props to pass to the component.
+The allowed props are listed below in the \bold{Details} section.}
+}
+\value{
+Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 }
 \description{
 ContextualMenus are lists of commands that are based on the context of selection, mouse hover or keyboard focus. They are one of the most effective and highly used command surfaces, and can be used in a variety of places.
@@ -16,8 +20,8 @@ There are variants that originate from a command bar, or from cursor or focus. T
 
 Organize commands in groups divided by rules. This helps users remember command locations, or find less used commands based on proximity to others. One should also group sets of mutually exclusive or multiple selectable options. Use icons sparingly, for high value commands, and don’t mix icons with selection checks, as it makes parsing commands difficult. Avoid submenus of submenus as they can be difficult to invoke or remember.
 
-For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/ContextualMenu}{docs}.
-The R package can not handle each and every case, so for advanced use cases
+For more details and examples visit the \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/ContextualMenu}{official docs}.
+The R package cannot handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
 }
 \details{

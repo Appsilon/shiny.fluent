@@ -23,6 +23,10 @@ runExample(
 
 \item{display.mode}{Display mode for the app.}
 }
+\value{
+This function normally does not return;
+interrupt R to stop the application (usually by pressing Ctrl+C or Esc).
+}
 \description{
 Based on shiny::runExample, and takes the same arguments.
 }

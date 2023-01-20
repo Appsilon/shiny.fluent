@@ -11,6 +11,9 @@ fluentPage(..., suppressBootstrap = TRUE)
 
 \item{suppressBootstrap}{Whether to suppress Bootstrap.}
 }
+\value{
+Object which can be passed as the UI of a Shiny app.
+}
 \description{
 Creates a Fluent UI page with sensible defaults (included Fabric CSS classes, proper class given
 to the body tag, suppressed Bootstrap).

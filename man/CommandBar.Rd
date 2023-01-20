@@ -7,7 +7,11 @@
 CommandBar(...)
 }
 \arguments{
-\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
+\item{...}{Props to pass to the component.
+The allowed props are listed below in the \bold{Details} section.}
+}
+\value{
+Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 }
 \description{
 CommandBar is a surface that houses commands that operate on the content of
@@ -33,8 +37,8 @@ labels only as well. In smaller widths, commands can just use icon only, but
 only for the most recognizable and frequently used commands. All other
 commands should go into an overflow where text labels can be shown.
 
-For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/CommandBar}{docs}.
-The R package can not handle each and every case, so for advanced use cases
+For more details and examples visit the \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/CommandBar}{official docs}.
+The R package cannot handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
 }
 \details{

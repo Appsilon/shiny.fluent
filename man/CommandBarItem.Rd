@@ -2,24 +2,30 @@
 % Please edit documentation in R/extensions.R
 \name{CommandBarItem}
 \alias{CommandBarItem}
-\title{Helper function for constructing items for \code{CommandBar}}
+\title{Command bar item}
 \usage{
 CommandBarItem(text, icon = NULL, subitems = NULL, ...)
 }
 \arguments{
-\item{text}{text to be displayed on the menu}
+\item{text}{Text to be displayed on the menu.}
 
-\item{icon}{optional name of an icon}
+\item{icon}{Optional name of an icon.}
 
-\item{subitems}{optional list of CommandBar items}
+\item{subitems}{Optional list of CommandBar items.}
 
-\item{...}{Additional props to pass to CommandBarItem}
+\item{...}{Additional props to pass to CommandBarItem.}
+}
+\value{
+Item suitable for use in the CommandBar.
 }
 \description{
+Helper function for constructing items for \code{CommandBar}.
+}
+\details{
 CommandBar expects items definition as a nested structure, which gets lengthy and verbose.
 This function helps makes this definition shorter. Returns a list with all arguments passed through,
 except for \code{text}, \code{icon} (which will inserted as proper \code{iconProps}) and \code{subitems} (which will be inserted as
-proper \code{subMenuProps})
+proper \code{subMenuProps}).
 }
 \seealso{
 CommandBar

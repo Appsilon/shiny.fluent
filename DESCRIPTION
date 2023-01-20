@@ -8,7 +8,11 @@ Authors@R:
     person("Marek", "Rogala", role = "aut", email = "marek@appsilon.com"),
     person("Appsilon Sp. z o.o.", role = "cph", email = "opensource@appsilon.com")
   )
-Description: It provides all controls from Microsoft Fluent UI.
+Description:
+  A rich set of UI components for building Shiny applications,
+  including inputs, containers, overlays, menus, and various utilities.
+  All components from Fluent UI (the underlying JavaScript library)
+  are available and have usage examples in R.
 URL: https://appsilon.github.io/shiny.fluent/, https://github.com/appsilon/shiny.fluent
 License: LGPL-3
 Encoding: UTF-8

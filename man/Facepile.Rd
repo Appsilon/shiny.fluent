@@ -7,13 +7,17 @@
 Facepile(...)
 }
 \arguments{
-\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
+\item{...}{Props to pass to the component.
+The allowed props are listed below in the \bold{Details} section.}
+}
+\value{
+Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 }
 \description{
 A face pile (\code{Facepile}) displays a list of personas. Each circle represents a person and contains their image or initials. Often this control is used when sharing who has access to a specific view or file, or when assigning someone a task within a workflow.
 
-For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/Facepile}{docs}.
-The R package can not handle each and every case, so for advanced use cases
+For more details and examples visit the \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/Facepile}{official docs}.
+The R package cannot handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
 }
 \details{

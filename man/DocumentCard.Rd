@@ -34,13 +34,17 @@ DocumentCardStatus(...)
 DocumentCardTitle(...)
 }
 \arguments{
-\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
+\item{...}{Props to pass to the component.
+The allowed props are listed below in the \bold{Details} section.}
+}
+\value{
+Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 }
 \description{
 A document card (\code{DocumentCard}) represents a file, and contains additional metadata or actions. This offers people a richer view into a file than the typical grid view.
 
-For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/DocumentCard}{docs}.
-The R package can not handle each and every case, so for advanced use cases
+For more details and examples visit the \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/DocumentCard}{official docs}.
+The R package cannot handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
 }
 \details{

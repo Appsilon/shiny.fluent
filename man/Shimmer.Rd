@@ -13,15 +13,19 @@ ShimmerElementsGroup(...)
 ShimmeredDetailsList(...)
 }
 \arguments{
-\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
+\item{...}{Props to pass to the component.
+The allowed props are listed below in the \bold{Details} section.}
+}
+\value{
+Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 }
 \description{
 Shimmer is a temporary animation placeholder for when a service call takes time to return data and we don't want to block rendering the rest of the UI.
 
 If a smooth transition from Shimmer to content is desired, wrap the content node with a Shimmer element and use the \code{isDataLoaded} prop to trigger the transition. In cases where the content node is not wrapped in a Shimmer, use the \code{shimmerElements} or \code{customElementsGroup} props, and once data arrives, manually replace the Shimmer UI with the intended content. See the examples below for reference.
 
-For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/Shimmer}{docs}.
-The R package can not handle each and every case, so for advanced use cases
+For more details and examples visit the \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/Shimmer}{official docs}.
+The R package cannot handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
 }
 \details{

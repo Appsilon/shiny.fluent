@@ -7,7 +7,11 @@
 MarqueeSelection(...)
 }
 \arguments{
-\item{...}{Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section}
+\item{...}{Props to pass to the component.
+The allowed props are listed below in the \bold{Details} section.}
+}
+\value{
+Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 }
 \description{
 The MarqueeSelection component provides a service which allows the user to drag a rectangle to be drawn around
@@ -20,8 +24,8 @@ When a selection rectangle is dragged, we look for elements with the \strong{dat
 In virtualization cases where items that were once selected are dematerialized, we will keep the item in its
 previous state until we know definitively if it's on/off. (In other words, this works with List.)
 
-For more details and examples visit the official \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/MarqueeSelection}{docs}.
-The R package can not handle each and every case, so for advanced use cases
+For more details and examples visit the \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/MarqueeSelection}{official docs}.
+The R package cannot handle each and every case, so for advanced use cases
 you need to work using the original docs to achieve the desired result.
 }
 \details{

@@ -29,6 +29,15 @@ const customComponentPages = {
   KeytipLayer: 'Keytips',
 };
 
+const ignoredPages = [
+  'ExtendedPeoplePicker', // Empty page.
+  'ExtendedPicker', // Empty page.
+  'FloatingPeoplePicker', // Empty page.
+  'Popup', // Not implemented.
+  'SelectedItemsList', // Empty page.
+  'SelectedPeopleList', // Not implemented.
+];
+
 async function scrapeDocs(outputFile) {
   const docs = await getDocs(DOCS_PATH);
   const apiDocs = await getApiDocs(API_DOCS_PATH);
@@ -95,6 +104,9 @@ function prepareOutput(docs, apiDocs) {
     const page = setDefault(pages, doc.page, {});
     const section = setDefault(page, doc.type, {});
     section[doc.name] = doc.contents;
+  }
+  for (const name of ignoredPages) {
+    delete pages[name];
   }
   for (const [name, page] of Object.entries(pages)) {
     (page as any).link = OFFICIAL_DOCS_URL + name;

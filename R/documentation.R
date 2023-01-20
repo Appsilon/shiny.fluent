@@ -1,13 +1,11 @@
 #' ActivityItem
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' An activity item (`ActivityItem`) represents a person's actions, such as making a comment, mentioning someone with an @mention, editing a document, or moving a file.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/ActivityItem).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/ActivityItem).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #' # Best practices
@@ -43,8 +41,6 @@ NULL
 
 #' Announced
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' The Announced component aims to fill several of the accessibility gaps that exist in various web application experiences.
 #' It provides text for the screen reader in certain scenarios that are lacking comprehensive updates, particularly those showing
@@ -61,8 +57,8 @@ NULL
 #' 4. [Bulk Operations](#/controls/web/announced/bulkoperations): Operations that require multiple sub operations, such as the moving of several files.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Announced).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Announced).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #'
@@ -81,16 +77,14 @@ NULL
 
 #' Breadcrumb
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' Breadcrumbs should be used as a navigational aid in your app or site. They indicate the current page’s location within a hierarchy and help the user understand where they are in relation to the rest of that hierarchy. They also afford one-click access to higher levels of that hierarchy.
 #'
 #' Breadcrumbs are typically placed, in horizontal form, under the masthead or navigation of an experience, above the primary content area.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Breadcrumb).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Breadcrumb).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #'
@@ -122,14 +116,12 @@ NULL
 
 #' Button
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' Buttons give people a way to trigger an action. They’re typically found in forms, dialog panels, and dialogs. Some buttons are specialized for particular tasks, such as navigation, repeated actions, or presenting menus.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Button).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Button).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #' # Best practices
@@ -210,14 +202,12 @@ NULL
 
 #' Calendar
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' The calendar control lets people select and view a single date or a range of dates in their calendar. It’s made up of 3 separate views: the month view, year view, and decade view.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Calendar).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Calendar).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #' # Best practices
@@ -272,14 +262,12 @@ NULL
 
 #' Callout
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' A callout is an anchored tip that can be used to teach people or guide them through the app without blocking them.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Callout).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Callout).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #' # Best practices
@@ -353,14 +341,12 @@ NULL
 
 #' Checkbox
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' Check boxes (`Checkbox`) give people a way to select one or more items from a group, or switch between two mutually exclusive options (checked or unchecked, on or off).
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Checkbox).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Checkbox).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #' # Best practices
@@ -409,14 +395,12 @@ NULL
 
 #' ChoiceGroup
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' Radio buttons (`ChoiceGroup`) let people select a single option from two or more choices.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/ChoiceGroup).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/ChoiceGroup).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #' # Best practices
@@ -464,14 +448,12 @@ NULL
 
 #' Coachmark
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' Coach marks (`Coachmark`) are used to draw a person’s attention to parts of the UI and increase engagement with those elements. A teaching bubble appears on hover or selection of the coach mark.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Coachmark).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Coachmark).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #' # Best practices
@@ -551,14 +533,12 @@ NULL
 
 #' ColorPicker
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' The color picker (`ColorPicker`) is used to browse through and select colors. By default, it lets people navigate through colors on a color spectrum; or specify a color in either Red-Green-Blue (RGB); or alpha color code; or Hexadecimal textboxes.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/ColorPicker).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/ColorPicker).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #'
@@ -614,14 +594,12 @@ NULL
 
 #' ComboBox
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' A combo box (`ComboBox`) combines a text field and a drop-down menu, giving people a way to select an option from a list or enter their own choice.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/ComboBox).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/ComboBox).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #' # Best practices
@@ -681,8 +659,6 @@ NULL
 
 #' CommandBar
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' CommandBar is a surface that houses commands that operate on the content of
 #' the window, panel, or parent region it resides above. CommandBars are one of the most
@@ -708,8 +684,8 @@ NULL
 #' commands should go into an overflow where text labels can be shown.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/CommandBar).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/CommandBar).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #'
@@ -747,8 +723,6 @@ NULL
 
 #' ContextualMenu
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' ContextualMenus are lists of commands that are based on the context of selection, mouse hover or keyboard focus. They are one of the most effective and highly used command surfaces, and can be used in a variety of places.
 #'
@@ -757,8 +731,8 @@ NULL
 #' Organize commands in groups divided by rules. This helps users remember command locations, or find less used commands based on proximity to others. One should also group sets of mutually exclusive or multiple selectable options. Use icons sparingly, for high value commands, and don’t mix icons with selection checks, as it makes parsing commands difficult. Avoid submenus of submenus as they can be difficult to invoke or remember.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/ContextualMenu).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/ContextualMenu).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #'
@@ -837,14 +811,12 @@ NULL
 
 #' DatePicker
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' Picking a date can be tough without context. A date picker (`DatePicker`) offers a drop-down control that’s optimized for picking a single date from a calendar view where contextual information like the day of the week or fullness of the calendar is important. You can modify the calendar to provide additional context or to limit available dates.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/DatePicker).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/DatePicker).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #' # Best practices
@@ -907,14 +879,12 @@ NULL
 
 #' DetailsList
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' A details list (`DetailsList`) is a robust way to display an information-rich collection of items, and allow people to sort, group, and filter the content. Use a details list when information density is critical.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/DetailsList).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/DetailsList).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #' # Best practices
@@ -1158,14 +1128,12 @@ NULL
 
 #' Dialog
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' A dialog box (`Dialog`) is a temporary pop-up that takes focus from the page or app and requires people to interact with it. It’s primarily used for confirming actions, such as deleting a file, or asking people to make a choice.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Dialog).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Dialog).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #' # Best practices
@@ -1275,14 +1243,12 @@ NULL
 
 #' DocumentCard
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' A document card (`DocumentCard`) represents a file, and contains additional metadata or actions. This offers people a richer view into a file than the typical grid view.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/DocumentCard).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/DocumentCard).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #' # Best practices
@@ -1376,14 +1342,12 @@ NULL
 
 #' Dropdown
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' A dropdown menu is a list in which the selected item is always visible while other items are visible on demand by clicking a dropdown button.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Dropdown).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Dropdown).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #' # Best practices
@@ -1429,35 +1393,14 @@ NULL
 #' @name Dropdown
 NULL
 
-#' ExtendedPeoplePicker
-#'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
-#' @description
-#'
-#'
-#'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/ExtendedPeoplePicker).
-#' The R package can not handle each and every case, so for advanced use cases
-#' you need to work using the original docs to achieve the desired result.
-#'
-#'
-#'
-#'
-#' @md
-#' @name ExtendedPeoplePicker
-NULL
-
 #' Facepile
-#'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
 #'
 #' @description
 #' A face pile (`Facepile`) displays a list of personas. Each circle represents a person and contains their image or initials. Often this control is used when sharing who has access to a specific view or file, or when assigning someone a task within a workflow.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Facepile).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Facepile).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #' # Best practices
@@ -1497,28 +1440,7 @@ NULL
 #' @name Facepile
 NULL
 
-#' FloatingPeoplePicker
-#'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
-#' @description
-#'
-#'
-#'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/FloatingPeoplePicker).
-#' The R package can not handle each and every case, so for advanced use cases
-#' you need to work using the original docs to achieve the desired result.
-#'
-#'
-#'
-#'
-#' @md
-#' @name FloatingPeoplePicker
-NULL
-
 #' FocusTrapZone
-#'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
 #'
 #' @description
 #' FocusTrapZone is used to trap the focus in any html element. Pressing tab will circle focus within the inner focusable elements of the FocusTrapZone.
@@ -1526,8 +1448,8 @@ NULL
 #' **Note:** Trapping focus will restrict interaction with other elements in the website such as the side nav. Turn off the "Use trap zone" toggle control to allow this interaction to happen again.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/FocusTrapZone).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/FocusTrapZone).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #'
@@ -1553,16 +1475,14 @@ NULL
 
 #' FocusZone
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' FocusZones abstract arrow key navigation behaviors. Tabbable elements (buttons, anchors, and elements with data-is-focusable='true' attributes) are considered when pressing directional arrow keys and focus is moved appropriately. Tabbing to a zone sets focus only to the current "active" element, making it simple to use the tab key to transition from one zone to the next, rather than through every focusable element.
 #'
 #' Using a FocusZone is simple. Just wrap a bunch of content inside of a FocusZone, and arrows and tabbling will be handled for you! See examples below.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/FocusZone).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/FocusZone).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #'
@@ -1610,14 +1530,12 @@ NULL
 
 #' GroupedList
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' A grouped list (`GroupedList`) allows you to render a set of items as multiple lists with various grouping properties.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/GroupedList).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/GroupedList).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #' # Best practices
@@ -1735,8 +1653,6 @@ NULL
 
 #' HoverCard
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' Hover cards (`HoverCard`) show commands and information, such as metadata and activity, when someone hovers over an item.
 #'
@@ -1744,8 +1660,8 @@ NULL
 #' - Tabbing with a keyboard to the element triggering the HoverCard and opening when the hotKey is pressed (see second example). When the card is opened it will automatically focus the first focusable element of the card content.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/HoverCard).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/HoverCard).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #' # Best practices
@@ -1793,8 +1709,6 @@ NULL
 
 #' Icon
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' In a user interface, an icon is an image that represents an application, a capability, or some other concept or specific entity with meaning for the user. An icon is usually selectable but can also be a nonselectable image, such as a company's logo.
 #'
@@ -1803,8 +1717,8 @@ NULL
 #' Note that icons are not bundled by default and typically must be loaded by calling `initializeIcons` from the `@uifabric/icons` package at the root of your application. See the [icon documentation](#/styles/web/icons#fabric-react) for more details.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Icon).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Icon).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #'
@@ -1830,14 +1744,12 @@ NULL
 
 #' Image
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' An image is a graphic representation of something (e.g photo or illustration). The borders have been added to these examples in order to help visualize empty space in the image frame.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Image).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Image).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #'
@@ -1862,14 +1774,12 @@ NULL
 
 #' Keytips
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #'
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Keytips).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Keytips).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #'
@@ -1905,14 +1815,12 @@ NULL
 
 #' Label
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' Labels give a name or title to a control or group of controls, including text fields, check boxes, combo boxes, radio buttons, and drop-down menus.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Label).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Label).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #' # Best practices
@@ -1945,8 +1853,6 @@ NULL
 
 #' Layer
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' A Layer is a technical component that does not have specific Design guidance.
 #'
@@ -1955,8 +1861,8 @@ NULL
 #' There are some special considerations. Due to the nature of rendering content elsewhere asynchronously, React refs within content will not be resolvable synchronously at the time the Layer is mounted. Therefore, to use refs correctly, use functional refs `ref={ (el) => { this._root = el; }` rather than string refs `ref='root'`. Additionally measuring the physical Layer element will not include any of the children, since it won't render it. Events that propgate from within the content will not go through the Layer element as well.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Layer).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Layer).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #'
@@ -1981,14 +1887,12 @@ NULL
 
 #' Link
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' Links lead to another part of an app, other pages, or help articles. They can also be used to initiate commands.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Link).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Link).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #' # Best practices
@@ -2021,14 +1925,12 @@ NULL
 
 #' List
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' A list provides a base component for rendering large sets of items. It’s agnostic of layout, the tile component used, and selection management.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/List).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/List).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #' # Best practices
@@ -2127,8 +2029,6 @@ NULL
 
 #' MarqueeSelection
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' The MarqueeSelection component provides a service which allows the user to drag a rectangle to be drawn around
 #' items to select them. This works in conjunction with a selection object, which can be used to generically store selection state, separate from a component that consumes the state.
@@ -2141,8 +2041,8 @@ NULL
 #' previous state until we know definitively if it's on/off. (In other words, this works with List.)
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/MarqueeSelection).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/MarqueeSelection).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #'
@@ -2166,14 +2066,12 @@ NULL
 
 #' MessageBar
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' A banner (`MessageBar`) displays errors, warnings, or important information about an open app or file. For example, if a file failed to upload an error message bar should appear.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/MessageBar).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/MessageBar).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #' # Best practices
@@ -2232,14 +2130,12 @@ NULL
 
 #' Modal
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' Modals are temporary pop-ups that take focus from the page or app and require people to interact with them. Unlike a dialog box (`Dialog`), a modal should be used for hosting lengthy content, such as privacy statements or license agreements, or for asking people to perform complex or multiple actions, such as changing settings.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Modal).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Modal).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #' # Best practices
@@ -2288,14 +2184,12 @@ NULL
 
 #' Nav
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' Navs (also called "left nav" or "navigation pane") provide links to the main areas of an app or a site. In larger configurations, the Nav is always on-screen, usually on the left of the view. In smaller configurations, the Nav may collapse into a skinnier version or be completely hidden until the user taps an icon.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Nav).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Nav).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #'
@@ -2327,8 +2221,6 @@ NULL
 
 #' OverflowSet
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' The OverflowSet is a flexible container component that is useful for displaying a primary set of content with additional content in an overflow callout. Note that the example below is only an example of how to render the component, not a specific use case.
 #'
@@ -2337,8 +2229,8 @@ NULL
 #' By default, the OverflowSet is simply `role=group`. If you used as a menu, you will need to add `role="menubar"` and add proper aria roles to each rendered item (`menuitem`, `menuitemcheckbox`, `menuitemradio`)
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/OverflowSet).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/OverflowSet).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #'
@@ -2369,14 +2261,12 @@ NULL
 
 #' Overlay
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' Overlays are used to render a semi-transparent layer on top of existing UI. Overlays help focus the user on the content that sits above the added layer and are often used to help designate a modal or blocking experience. Overlays can be seen used in conjunction with Panels and Dialogs.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Overlay).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Overlay).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #'
@@ -2398,14 +2288,12 @@ NULL
 
 #' Panel
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' Panels are overlays that contain supplementary content and are used for complex creation, edit, or management experiences.  For example, viewing details about an item in a list or editing settings.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Panel).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Panel).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #' # Best practices
@@ -2494,14 +2382,12 @@ NULL
 
 #' PeoplePicker
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' The people picker (`PeoplePicker`) is used to select one or more entities, such as people or groups, from a list. It makes composing an email to someone, or adding them to a group, easy if you don’t know their full name or email address.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/PeoplePicker).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/PeoplePicker).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #' # Best practices
@@ -2529,8 +2415,6 @@ NULL
 
 #' Persona
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' A persona is a visual representation of a person across products, typically showcasing the image that person has chosen to upload themselves. The control can also be used to show that person's online status.
 #'
@@ -2539,8 +2423,8 @@ NULL
 #' The persona control is used in the `PeoplePicker` and `Facepile` controls.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Persona).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Persona).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #' # Best practices
@@ -2606,14 +2490,12 @@ NULL
 
 #' Pickers
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #'
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Pickers).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Pickers).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #'
@@ -2719,8 +2601,6 @@ NULL
 
 #' Pivot
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' The Pivot control and related tabs pattern are used for navigating frequently accessed, distinct content categories. Pivots allow for navigation between two or more content views and relies on text headers to articulate the different sections of content.
 #'
@@ -2729,8 +2609,8 @@ NULL
 #' Tabs are a visual variant of Pivot that use a combination of icons and text or just icons to articulate section content.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Pivot).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Pivot).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #'
@@ -2778,39 +2658,7 @@ NULL
 #' @name Pivot
 NULL
 
-#' Popup
-#'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
-#' @description
-#'
-#'
-#'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Popup).
-#' The R package can not handle each and every case, so for advanced use cases
-#' you need to work using the original docs to achieve the desired result.
-#'
-#'
-#' @details
-#'
-#' \itemize{
-#' \item {\bold{ ariaDescribedBy }} {`string` \cr Defines the element id referencing the element containing the description for the popup.}
-#' \item {\bold{ ariaLabel }} {`string` \cr Accessible label text for the popup.}
-#' \item {\bold{ ariaLabelledBy }} {`string` \cr Defines the element id referencing the element containing label text for popup.}
-#' \item {\bold{ className }} {`string` \cr Optional class name for the root popup div.}
-#' \item {\bold{ onDismiss }} {`(ev?: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>) => any` \cr A callback function for when the popup is dismissed from the close button or light dismiss. If provided, will handle escape keypresses and call this. The event will be stopped/canceled.}
-#' \item {\bold{ onRestoreFocus }} {`(options: { originalElement?: HTMLElement | Window; containsFocus: boolean; }) => void` \cr Called when the component is unmounting, and focus needs to be restored. Argument passed down contains two variables, the element that the underlying popup believes focus should go to * and whether or not the popup currently contains focus. If this is provided, focus will not be restored automatically, you'll need to call originalElement.focus()}
-#' \item {\bold{ role }} {`string` \cr Aria role for popup}
-#' \item {\bold{ shouldRestoreFocus }} {`boolean` \cr If true, when this component is unmounted, focus will be restored to the element that had focus when the component first mounted.}
-#' }
-#'
-#' @md
-#' @name Popup
-NULL
-
 #' ProgressIndicator
-#'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
 #'
 #' @description
 #' ProgressIndicators are used to show the completion status of an operation lasting more than 2 seconds. If the state of progress cannot be determined, use a Spinner instead. ProgressIndicators can appear in a new panel, a flyout, under the UI initiating the operation, or even replacing the initiating UI, as long as the UI can return if the operation is canceled or is stopped.
@@ -2826,8 +2674,8 @@ NULL
 #' Real-world examples include copying files to a storage location, saving edits to a file, and more. Use units that are informative and relevant to give the best idea to users of how long the operation will take to complete. Avoid time units as they are rarely accurate enough to be trustworthy. Also, combine steps of a complex operation into one total bar to avoid “rewinding” the bar. Instead change the operation description to reflect the change if necessary. Bars moving backwards reduce confidence in the service.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/ProgressIndicator).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/ProgressIndicator).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #'
@@ -2853,14 +2701,12 @@ NULL
 
 #' Rating
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' Ratings show people’s opinions of a product, helping others make more informed purchasing decisions. People can also rate products they’ve purchased.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Rating).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Rating).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #' # Best practices
@@ -2901,8 +2747,6 @@ NULL
 
 #' ResizeGroup
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' ResizeGroup is a React component that can be used to help fit the right amount of content within a container. The consumer of the ResizeGroup provides some initial data, a reduce function, and a render function. The render function is responsible for populating the contents of a the container when given some data. The initial data should represent the data that should be rendered when the ResizeGroup has infinite width. If the contents returned by the render function do not fit within the ResizeGroup, the reduce function is called to get a version of the data whose rendered width should be smaller than the data that was just rendered.
 #'
@@ -2913,8 +2757,8 @@ NULL
 #' There is a boolean context property (isMeasured) added to let child components know if they are only being used for measurement purposes. When isMeasured is true, it will signify that the component is not the instance visible to the user. This will not be needed for most scenarios. It is intended to be used to to skip unwanted side effects of mounting a child component more than once. This includes cases where the component makes API requests, requests focus to one of its elements, expensive computations, and/or renders markup unrelated to its size. Be careful not to use this property to change the components rendered output in a way that effects it size in any way.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/ResizeGroup).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/ResizeGroup).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #'
@@ -2939,14 +2783,12 @@ NULL
 
 #' ScrollablePane
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' A scrollable pane (`ScrollablePane`) is a helper component that's used with the `Sticky` component. It will "stick" to the top or bottom of the scrollable region and remain visible.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/ScrollablePane).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/ScrollablePane).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #' # Best practices
@@ -2974,14 +2816,12 @@ NULL
 
 #' SearchBox
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' A search box (`SearchBox`) provides an input field for searching content within a site or app to find specific items.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/SearchBox).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/SearchBox).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #' # Best practices
@@ -3025,47 +2865,7 @@ NULL
 #' @name SearchBox
 NULL
 
-#' SelectedPeopleList
-#'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
-#' @description
-#'
-#'
-#'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/SelectedPeopleList).
-#' The R package can not handle each and every case, so for advanced use cases
-#' you need to work using the original docs to achieve the desired result.
-#'
-#'
-#' @details
-#'
-#' \itemize{
-#' \item {\bold{ blockRecipientRemoval }} {`boolean` \cr }
-#' \item {\bold{ canExpand }} {`boolean` \cr }
-#' \item {\bold{ isEditing }} {`boolean` \cr }
-#' \item {\bold{ isValid }} {`boolean` \cr }
-#' \item {\bold{ key }} {`React.Key` \cr }
-#' \item {\bold{ shouldBlockSelection }} {`boolean` \cr }
-#' \item {\bold{ onExpandItem }} {`() => void` \cr }
-#' \item {\bold{ renderPersonaCoin }} {`IRenderFunction<IPersonaProps>` \cr }
-#' \item {\bold{ renderPrimaryText }} {`IRenderFunction<IPersonaProps>` \cr }
-#' \item {\bold{ copyMenuItemText }} {`string` \cr }
-#' \item {\bold{ editMenuItemText }} {`string` \cr }
-#' \item {\bold{ floatingPickerProps }} {`IBaseFloatingPickerProps<IPersonaProps>` \cr }
-#' \item {\bold{ getEditingItemText }} {`(item: IExtendedPersonaProps) => string` \cr }
-#' \item {\bold{ onExpandGroup }} {`(item: IExtendedPersonaProps) => void` \cr }
-#' \item {\bold{ onRenderFloatingPicker }} {`React.ComponentType<IBaseFloatingPickerProps<IPersonaProps>>` \cr }
-#' \item {\bold{ removeMenuItemText }} {`string` \cr }
-#' }
-#'
-#' @md
-#' @name SelectedPeopleList
-NULL
-
 #' Separator
-#'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
 #'
 #' @description
 #' A separator visually separates content into groups.
@@ -3075,8 +2875,8 @@ NULL
 #' The content is center-aligned by default.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Separator).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Separator).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #'
@@ -3095,16 +2895,14 @@ NULL
 
 #' Shimmer
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' Shimmer is a temporary animation placeholder for when a service call takes time to return data and we don't want to block rendering the rest of the UI.
 #'
 #' If a smooth transition from Shimmer to content is desired, wrap the content node with a Shimmer element and use the `isDataLoaded` prop to trigger the transition. In cases where the content node is not wrapped in a Shimmer, use the `shimmerElements` or `customElementsGroup` props, and once data arrives, manually replace the Shimmer UI with the intended content. See the examples below for reference.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Shimmer).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Shimmer).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #'
@@ -3154,14 +2952,12 @@ NULL
 
 #' Slider
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' A slider provides a visual indication of adjustable content, as well as the current setting in the total range of content. Use a slider when you want people to set defined values (such as volume or brightness), or when people would benefit from instant feedback on the effect of setting changes.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Slider).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Slider).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #' # Best practices
@@ -3209,14 +3005,12 @@ NULL
 
 #' SpinButton
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' A spin button (`SpinButton`) allows someone to incrementally adjust a value in small steps. It’s mainly used for numeric values, but other values are supported too.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/SpinButton).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/SpinButton).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #' # Best practices
@@ -3290,14 +3084,12 @@ NULL
 
 #' Spinner
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' A Spinner is an outline of a circle which animates around itself indicating to the user that things are processing. A Spinner is shown when it's unsure how long a task will take making it the indeterminate version of a ProgressIndicator. They can be various sizes, located inline with content or centered. They generally appear after an action is being processed or committed. They are subtle and generally do not take up much space, but are transitions from the completed task.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Spinner).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Spinner).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #'
@@ -3321,8 +3113,6 @@ NULL
 NULL
 
 #' Stack
-#'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
 #'
 #' @description
 #' A `Stack` is a container-type component that abstracts the implementation of a flexbox in order to define the layout of its children components.
@@ -3352,8 +3142,8 @@ NULL
 #' `Stacks` can be nested inside one another in order to be able to configure the layout of the application as desired.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Stack).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Stack).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #'
@@ -3388,14 +3178,12 @@ NULL
 
 #' SwatchColorPicker
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' A swatch color picker (`SwatchColorPicker`) displays color options as a grid. It can be shown by itself, with a header and dividers, or as a button that expands to show the swatch color picker.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/SwatchColorPicker).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/SwatchColorPicker).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #' # Best practices
@@ -3471,16 +3259,14 @@ NULL
 
 #' TeachingBubble
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' A teaching bubble (`TeachingBubble`) brings attention to a new or important feature, with the goal of increasing engagement with the feature. A teaching bubble typically follows a coach mark.
 #'
 #' Use teaching bubbles sparingly. Consider how frequently people will see it, and how many they’ll see across their entire experience.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/TeachingBubble).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/TeachingBubble).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #' # Best practices
@@ -3543,8 +3329,6 @@ NULL
 
 #' Text
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' Text is a component for displaying text. You can use Text to standardize text across your web app.
 #'
@@ -3553,8 +3337,8 @@ NULL
 #' The Text control is inline wrap by default. You can specify `block` to enable block and `nowrap` to enable `nowrap`. For ellipsis on overflow to work properly, `block` and `nowrap` should be manually set to `true`.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Text).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Text).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #'
@@ -3577,14 +3361,12 @@ NULL
 
 #' TextField
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' Text fields (`TextField`) give people a way to enter and edit text. They’re used in forms, modal dialogs, tables, and other surfaces where text input is required.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/TextField).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/TextField).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #' # Best practices
@@ -3655,14 +3437,12 @@ NULL
 
 #' Toggle
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' A toggle represents a physical switch that allows someone to choose between two mutually exclusive options.  For example, “On/Off”, “Show/Hide”. Choosing an option should produce an immediate result.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Toggle).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Toggle).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #' # Best practices
@@ -3704,8 +3484,6 @@ NULL
 
 #' Tooltip
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' A good tooltip briefly describes unlabeled controls or provides a bit of additional information about labeled controls, when this is useful. It can also help customers navigate the UI by offering additional—not redundant—information about control labels, icons, and links. A tooltip should always add valuable information; use sparingly.
 #'
@@ -3715,8 +3493,8 @@ NULL
 #' - **TooltipHost:** A wrapper that automatically shows a tooltip when the wrapped element is hovered or focused.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Tooltip).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Tooltip).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #' # Best practices
@@ -3781,14 +3559,12 @@ NULL
 
 #' Divider
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #' A Divider is a line that is used to visually differentiate different parts of a UI. They are commonly used in headers and command bars. This divider automatically center algins itself within the parent container and can be customized to be shown in different heights and colors.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Divider).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Divider).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #' # Best practices
@@ -3805,28 +3581,7 @@ NULL
 #' @name Divider
 NULL
 
-#' ExtendedPicker
-#'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
-#' @description
-#'
-#'
-#'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/ExtendedPicker).
-#' The R package can not handle each and every case, so for advanced use cases
-#' you need to work using the original docs to achieve the desired result.
-#'
-#'
-#'
-#'
-#' @md
-#' @name ExtendedPicker
-NULL
-
 #' Keytip
-#'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
 #'
 #' @description
 #' A Keytip is a small popup near a component that indicates a key sequence that will trigger that component. These are not to be confused with keyboard shortcuts; they are instead key sequences to traverse through levels of UI components. Technically, a Keytip is a wrapper around a Callout where the target element is discovered through a 'data-ktp-target' attribute on that element.
@@ -3838,8 +3593,8 @@ NULL
 #' Fluent UI React components that have keytips enabled have an optional 'keytipProps' prop which handles registering, unregistering, and rendering of the keytip. The keySequences of the Keytip should be the full sequence to get to that keytip. There is a 'buildKeytipConfigMap' helper which will build a map of ID -> IKeytipProps to assist in defining your keytips.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Keytip).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Keytip).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #'
@@ -3851,14 +3606,12 @@ NULL
 
 #' Theme
 #'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
 #' @description
 #'
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Theme).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Theme).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #'
@@ -3868,35 +3621,14 @@ NULL
 #' @name Theme
 NULL
 
-#' SelectedItemsList
-#'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
-#'
-#' @description
-#'
-#'
-#'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/SelectedItemsList).
-#' The R package can not handle each and every case, so for advanced use cases
-#' you need to work using the original docs to achieve the desired result.
-#'
-#'
-#'
-#'
-#' @md
-#' @name SelectedItemsList
-NULL
-
 #' pickers
-#'
-#' @param ... Props to pass to \code{shiny.react::reactElement}. See allowed props listed below in \bold{Details} section
 #'
 #' @description
 #' Pickers are used to select one or more items, such as tags or files, from a large list.
 #'
 #'
-#' For more details and examples visit the official [docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/pickers).
-#' The R package can not handle each and every case, so for advanced use cases
+#' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/pickers).
+#' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
 #' # Best practices
@@ -3909,13 +3641,4 @@ NULL
 #'
 #' @md
 #' @name Pickers
-NULL
-
-#' Input docs template
-#'
-#' @param inputId Id of the component
-#' @param value Value
-#' @param session Session
-#' @param ... Props to be passed
-#' @name inputDoc
 NULL
