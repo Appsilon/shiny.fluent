@@ -17,7 +17,7 @@ shiny_appsilon_card <- div(
         Image(
           src = "appsilon-logo.png",
           width = "120px",
-          height = "70px"
+          height = "60px"
         )
       ),
       Stack(
@@ -70,9 +70,9 @@ shiny_fluent_card <- div(
         ),
         Text(
           "We believe that a great UI plays a huge role in the success of
-          application projects. shiny.fluent gives your apps: - beautiful,
-          professional look - rich set of components easily usable in Shiny -
-          fast speed of development that Shiny is famous for. As Fluent UI is
+          application projects. shiny.fluent gives your apps: beautiful,
+          professional look, rich set of components easily usable in Shiny
+          and fast speed of development that Shiny is famous for. As Fluent UI is
           built in React, shiny.fluent is based on another package called
           shiny.react, which allows for using React libraries in Shiny."
         )
@@ -152,14 +152,10 @@ shiny_router_card <- div(
           block = TRUE
         ),
         Text(
-          " With Shiny Router we can actually create a shiny App That
-          behaves like a multipage App. Where you can direct user from
-          one point to another through using hrefs and hyperlinks.
-          This is something we never had in shiny and you might have
-          found yourself stuck in a project where people want to share
-          URL of only one perticular Page. With Shiny Router we try to
-          overcome these challenges in a shiny App. Try the package
-          and Give us your feedback So that we can grow together..."
+          "With shiny.router you can introduce routing to your Shiny application:
+          use the URL to direct user from one view to to another.
+          This not only simplifies the implementation
+          but also allows the users to bookmark or share the URL of a specific view."
         )
       )
     )
