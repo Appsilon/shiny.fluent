@@ -12,8 +12,6 @@ MaskedTextField(...)
 
 TextField(...)
 
-TextField(...)
-
 TextField.shinyInput(inputId, ..., value = defaultValue)
 
 updateTextField.shinyInput(

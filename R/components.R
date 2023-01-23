@@ -429,11 +429,6 @@ Spinner <- component("Spinner")
 #' @export
 Stack <- component("Stack")
 
-#' @rdname Stack
-#' @inherit component params return
-#' @export
-Stack <- component("Stack")
-
 #' @rdname ScrollablePane
 #' @inherit component params return
 #' @export
@@ -463,11 +458,6 @@ TeachingBubbleContent <- component("TeachingBubbleContent")
 #' @inherit component params return
 #' @export
 Text <- component("Text")
-
-#' @rdname TextField
-#' @inherit component params return
-#' @export
-TextField <- component("TextField")
 
 #' @rdname TextField
 #' @inherit component params return

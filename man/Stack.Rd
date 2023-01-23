@@ -5,8 +5,6 @@
 \title{Stack}
 \usage{
 Stack(...)
-
-Stack(...)
 }
 \arguments{
 \item{...}{Props to pass to the component.
