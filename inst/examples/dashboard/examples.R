@@ -746,7 +746,7 @@ examples$Icon <- makeIcon()
 
 makeImage <- function() {
   list(
-    ui = Image(src = "http://placehold.it/350x150"),
+    ui = Image(src = "https://via.placeholder.com/350x150"),
     server = function(input, output) {}
   )
 }
