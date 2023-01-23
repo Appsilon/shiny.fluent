@@ -19,8 +19,11 @@ examplePages <- imap(examples, function(example, name) {
 })
 names(examplePages) <- NULL
 
-pages <- c(list(route("/", homePage)),
-  list(route("about", aboutPage)),
+pages <- c(
+  list(
+    route("/", homePage),
+    route("about", aboutPage)
+  ),
   examplePages
 )
 
