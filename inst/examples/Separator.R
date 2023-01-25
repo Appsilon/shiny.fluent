@@ -1,8 +1,14 @@
 library(shiny.fluent)
 
+ui <- function(id) {
+  ns <- NS(id)
+  Separator("Text")
+}
+
+server <- function(id) {
+  moduleServer(id, function(input, output, session) {})
+}
+
 if (interactive()) {
-  shinyApp(
-    ui = Separator("Text"),
-    server = function(input, output) {}
-  )
+  shinyApp(ui("app"), function(input, output) server("app"))
 }

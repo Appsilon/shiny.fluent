@@ -1,15 +1,22 @@
 library(shiny.fluent)
 
-if (interactive()) {
-  shinyApp(
-    ui = div(
-      Toggle.shinyInput("toggle", value = TRUE),
-      textOutput("toggleValue")
-    ),
-    server = function(input, output) {
-      output$toggleValue <- renderText({
-        sprintf("Value: %s", input$toggle)
-      })
-    }
+ui <- function(id) {
+  ns <- NS(id)
+  div(
+    Toggle.shinyInput(ns("toggle"), value = TRUE),
+    textOutput(ns("toggleValue"))
   )
+}
+
+server <- function(id) {
+  moduleServer(id, function(input, output, session) {
+    
+    output$toggleValue <- renderText({
+      sprintf("Value: %s", input$toggle)
+    })
+  })
+}
+
+if (interactive()) {
+  shinyApp(ui("app"), function(input, output) server("app"))
 }

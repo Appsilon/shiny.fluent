@@ -1,8 +1,14 @@
 library(shiny.fluent)
 
+ui <- function(id) {
+  ns <- NS(id)
+  Link(href = "https://appsilon.com", "Appsilon")
+}
+
+server <- function(id) {
+  moduleServer(id, function(input, output, session) {})
+}
+
 if (interactive()) {
-  shinyApp(
-    ui = Link(href = "https://appsilon.com", "Appsilon"),
-    server = function(input, output) {}
-  )
+  shinyApp(ui("app"), function(input, output) server("app"))
 }
