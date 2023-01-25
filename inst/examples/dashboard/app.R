@@ -1,76 +1,181 @@
-library(shiny.fluent)
 library(shiny.router)
-library(sass)
-library(stringi)
-library(purrr)
+library(shiny)
 
-source("header.R")
-source("navigation.R")
-source("examples.R")
-source("utils.R")
-source("example_page.R")
-source("home.R")
-source("about.R")
-source("footer.R")
+section <- function(name, ...) list(name = name, items = list(...))
+item <- function(name, id) list(type = "item", name = name, id = id)
 
-examplePages <- imap(examples, function(example, name) {
-  page <- makeExamplePage(name, example$ui)
-  route(name, page)
-})
-names(examplePages) <- NULL
-
-pages <- c(
-  list(
-    route("/", homePage),
-    route("about", aboutPage)
+sections <- list(
+  section(
+    "COMPONENTS",
+    item("ActivityItem", "ActivityItem"),
+    item("Announced", "Announced"),
+    item("Breadcrumb", "Breadcrumb"),
+    item("Button", "Button"),
+    item("Calendar", "Calendar"),
+    item("Callout", "Callout"),
+    item("Checkbox", "Checkbox"),
+    item("ChoiceGroup", "ChoiceGroup"),
+    item("Coachmark", "Coachmark"),
+    item("ColorPicker", "ColorPicker"),
+    item("ComboBox", "ComboBox"),
+    item("CommandBar", "CommandBar"),
+    item("ContextualMenu", "ContextualMenu"),
+    item("DatePicker", "DatePicker"),
+    item("DetailsList", "DetailsList"),
+    item("Dialog", "Dialog"),
+    item("DocumentCard", "DocumentCard"),
+    item("Dropdown", "Dropdown"),
+    item("Facepile", "Facepile"),
+    item("FocusTrapZone", "FocusTrapZone"),
+    item("FocusZone", "FocusZone"),
+    item("GroupedList", "GroupedList"),
+    item("HoverCard", "HoverCard"),
+    item("Icon", "Icon"),
+    item("Image", "Image"),
+    item("Keytips", "Keytips"),
+    item("Label", "Label"),
+    item("LayerHost", "LayerHost"),
+    item("Layer", "Layer"),
+    item("Link", "Link"),
+    item("List", "List"),
+    item("MarqueeSelection", "MarqueeSelection"),
+    item("MessageBar", "MessageBar"),
+    item("Modal", "Modal"),
+    item("Nav", "Nav"),
+    item("OverflowSet", "OverflowSet"),
+    item("Overlay", "Overlay"),
+    item("Panel", "Panel"),
+    item("PeoplePicker", "PeoplePicker"),
+    item("Persona", "Persona"),
+    item("Pivot", "Pivot"),
+    item("ProgressIndicator", "ProgressIndicator"),
+    item("Rating", "Rating"),
+    item("ResizeGroup", "ResizeGroup"),
+    item("ScrollablePane", "ScrollablePane"),
+    item("SearchBox", "SearchBox"),
+    item("Separator", "Separator"),
+    item("Shimmer", "Shimmer"),
+    item("Slider", "Slider"),
+    item("SpinButton", "SpinButton"),
+    item("Spinner", "Spinner"),
+    item("Stack", "Stack"),
+    item("SwatchColorPicker", "SwatchColorPicker"),
+    item("TagPicker", "TagPicker"),
+    item("TeachingBubble", "TeachingBubble"),
+    item("TextField", "TextField"),
+    item("Text", "Text"),
+    #item("ThemeAlternative", "ThemeAlternative"),
+    #item("Theme", "Theme"),
+    item("Toggle", "Toggle"),
+    item("Tooltip", "Tooltip")
+    # item("", ""),
+    # item("", ""),
+    # item("", ""),
+    # item("", ""),
+    # item("", ""),
+    # item("", ""),
+    # item("", ""),
+    # item("", ""),
+    # item("", ""),
+    # item("", ""),
+    # item("", ""),
+    # item("", ""),
+    # item("", ""),
+    # item("", ""),
+    # item("", ""),
+    # item("", ""),
+    # item("", ""),
+    # item("", ""),
+    # item("", ""),
+    # item("", ""),
   ),
-  examplePages
-)
-
-router <- lift(make_router)(pages)
-
-layout <- div(class = "grid-container",
-  div(class = "header", header),
-  div(class = "sidenav", navigation(examples)),
-  div(class = "main", router$ui),
-  div(class = "footer", footer)
-)
-
-# shiny.router dependencies do not get picked up because they're added in a non-standard way.
-shiny::addResourcePath("shiny.router", system.file("www", package = "shiny.router"))
-shiny_router_js <- file.path("shiny.router", "shiny.router.js")
-
-ui <- fluidPage(
-  suppressDependencies("bootstrap"),
-  tags$head(
-    tags$link(href = "style.css", rel = "stylesheet", type = "text/css"),
-    shiny::tags$script(type = "text/javascript", src = shiny_router_js),
-    tags$script(src = "examples_scripts.js")
+  section(
+    "FORM CONTROLS"
   ),
-  htmltools::htmlDependency(
-    "office-ui-fabric-core",
-    "11.0.0",
-    list(href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/"),
-    stylesheet = "fabric.min.css"
+  section(
+    "FORM INPUTS"
   ),
-  shiny::tags$body(
-    class = "ms-Fabric",
-    dir = "ltr",
-    layout
+  section(
+    "OVERLAYS"
+  ),
+  section(
+    "CONTEXT"
+    # TODO: HotkeysProvider
   )
 )
+items <- do.call(c, lapply(sections, `[[`, "items"))
 
-sass(
-  sass_file("style.scss"),
-  output = "www/style.css"
-)
-
-server <- function(input, output, session) {
-  router$server(input, output, session)
-
-  purrr::map(examples, function(example) {
-    example$server(input, output)
+makeNav <- function(sections) {
+  lapply(sections, function(section) {
+    tagList(
+      tags$h6(section$name),
+      tags$ul(lapply(section$items, function(item) {
+        tags$li(
+          tags$a(item$name, href = route_link(item$id))
+        )
+      }))
+    )
   })
 }
 
-shinyApp(ui, server)
+readExample <- function(id) {
+  path <- file.path("..", paste0(id, ".R"))
+  code <- readChar(path, file.info(path)$size)
+  module <- new.env()
+  source(path, local = module)
+  print(module$server)
+  list(code = code, ui = module$ui, server = module$server)
+}
+
+makePage <- function(id, name, ui, code) {
+  tagList(
+    tags$h1(name),
+    tags$h3("Example"),
+    # The ID is used to locate the example in Cypress tests.
+    tags$div(`data-example-id` = id, ui),
+    tags$br(),
+    tags$h3("Code"),
+    tags$pre(code)
+  )
+}
+
+makeRouter <- function(items) {
+  routes <- lapply(items, function(item) {
+    example <- readExample(item$id)
+    route(
+      path = item$id,
+      ui = makePage(
+        id = item$id,
+        name = item$name,
+        ui = example$ui(item$id),
+        code = example$code
+      ),
+      server = function() example$server(item$id)
+    )
+  })
+  do.call(shiny.router::make_router, routes)
+}
+
+router <- makeRouter(items)
+
+style <- tags$head(tags$style(HTML("
+  .grid {
+    display: grid;
+    grid-template-columns: 200px minmax(0, 1fr);
+    gap: 1em;
+  }
+")))
+
+shinyApp(
+  ui = tagList(
+    style,
+    tags$div(
+      class = "grid",
+      tags$nav(makeNav(sections)),
+      tags$main(router$ui)
+    )
+  ),
+  server = function(input, output) {
+    router$server()
+  }
+)
