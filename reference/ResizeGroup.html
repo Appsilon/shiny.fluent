@@ -129,43 +129,51 @@ The allowed props are listed below in the <b>Details</b> section.</p></dd>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent/" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://shiny.rstudio.com/" class="external-link">shiny</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent/" class="external-link">shiny.fluent</a></span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
-<span class="r-in"><span>  <span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
-<span class="r-in"><span>    items <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
-<span class="r-in"><span>      <span class="st">"many"</span>, <span class="st">"strings"</span>, <span class="st">"with"</span>, <span class="st">"varying"</span>, <span class="st">"length"</span>, <span class="st">"sometimes"</span>, <span class="st">"very"</span>, <span class="st">"short"</span>,</span></span>
-<span class="r-in"><span>      <span class="st">"other"</span>, <span class="st">"times"</span>, <span class="st">"extraordinarily"</span>, <span class="st">"long"</span></span></span>
+<span class="r-in"><span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>  items <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="st">"many"</span>, <span class="st">"strings"</span>, <span class="st">"with"</span>, <span class="st">"varying"</span>, <span class="st">"length"</span>, <span class="st">"sometimes"</span>, <span class="st">"very"</span>, <span class="st">"short"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"other"</span>, <span class="st">"times"</span>, <span class="st">"extraordinarily"</span>, <span class="st">"long"</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">onRenderData</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"data =&gt;</span></span></span>
+<span class="r-in"><span><span class="st">  data.items.map(item =&gt;</span></span></span>
+<span class="r-in"><span><span class="st">    jsmodule['react'].createElement('div',</span></span></span>
+<span class="r-in"><span><span class="st">      {</span></span></span>
+<span class="r-in"><span><span class="st">        style: {</span></span></span>
+<span class="r-in"><span><span class="st">          display: 'inline-block',</span></span></span>
+<span class="r-in"><span><span class="st">          backgroundColor: 'orange',</span></span></span>
+<span class="r-in"><span><span class="st">          padding: '10px',</span></span></span>
+<span class="r-in"><span><span class="st">          margin: '10px',</span></span></span>
+<span class="r-in"><span><span class="st">          fontSize: '20px',</span></span></span>
+<span class="r-in"><span><span class="st">        }</span></span></span>
+<span class="r-in"><span><span class="st">      },</span></span></span>
+<span class="r-in"><span><span class="st">      item</span></span></span>
+<span class="r-in"><span><span class="st">    )</span></span></span>
+<span class="r-in"><span><span class="st">  )</span></span></span>
+<span class="r-in"><span><span class="st">"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">onReduceData</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"data =&gt; ({ items: data.items.slice(0, -1) })"</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="va">ns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/NS.html" class="external-link">NS</a></span><span class="op">(</span><span class="va">id</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">p</a></span><span class="op">(</span><span class="st">"Resize the browser to see how the elements are hidden when they do not fit:"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>    <span class="fu">ResizeGroup</span><span class="op">(</span></span></span>
+<span class="r-in"><span>      data <span class="op">=</span> <span class="va">data</span>,</span></span>
+<span class="r-in"><span>      onRenderData <span class="op">=</span> <span class="va">onRenderData</span>,</span></span>
+<span class="r-in"><span>      onReduceData <span class="op">=</span> <span class="va">onReduceData</span></span></span>
 <span class="r-in"><span>    <span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="op">)</span></span></span>
-<span class="r-in"><span>  <span class="va">onRenderData</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"data =&gt;</span></span></span>
-<span class="r-in"><span><span class="st">    data.items.map(item =&gt;</span></span></span>
-<span class="r-in"><span><span class="st">      jsmodule['react'].createElement('div',</span></span></span>
-<span class="r-in"><span><span class="st">        {</span></span></span>
-<span class="r-in"><span><span class="st">          style: {</span></span></span>
-<span class="r-in"><span><span class="st">            display: 'inline-block',</span></span></span>
-<span class="r-in"><span><span class="st">            backgroundColor: 'orange',</span></span></span>
-<span class="r-in"><span><span class="st">            padding: '10px',</span></span></span>
-<span class="r-in"><span><span class="st">            margin: '10px',</span></span></span>
-<span class="r-in"><span><span class="st">            fontSize: '20px',</span></span></span>
-<span class="r-in"><span><span class="st">          }</span></span></span>
-<span class="r-in"><span><span class="st">        },</span></span></span>
-<span class="r-in"><span><span class="st">        item</span></span></span>
-<span class="r-in"><span><span class="st">      )</span></span></span>
-<span class="r-in"><span><span class="st">    )</span></span></span>
-<span class="r-in"><span><span class="st">  "</span><span class="op">)</span></span></span>
-<span class="r-in"><span>  <span class="va">onReduceData</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"data =&gt; ({ items: data.items.slice(0, -1) })"</span><span class="op">)</span></span></span>
-<span class="r-in"><span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span></span>
-<span class="r-in"><span>    ui <span class="op">=</span> <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span></span>
-<span class="r-in"><span>      <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">p</a></span><span class="op">(</span><span class="st">"Resize the browser to see how the elements are hidden when they do not fit:"</span><span class="op">)</span>,</span></span>
-<span class="r-in"><span>      <span class="fu">ResizeGroup</span><span class="op">(</span></span></span>
-<span class="r-in"><span>        data <span class="op">=</span> <span class="va">data</span>,</span></span>
-<span class="r-in"><span>        onRenderData <span class="op">=</span> <span class="va">onRenderData</span>,</span></span>
-<span class="r-in"><span>        onReduceData <span class="op">=</span> <span class="va">onReduceData</span></span></span>
-<span class="r-in"><span>      <span class="op">)</span></span></span>
-<span class="r-in"><span>    <span class="op">)</span>,</span></span>
-<span class="r-in"><span>    server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span></span>
-<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">server</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/moduleServer.html" class="external-link">moduleServer</a></span><span class="op">(</span><span class="va">id</span>, <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span><span class="fu">ui</span><span class="op">(</span><span class="st">"app"</span><span class="op">)</span>, <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="fu">server</span><span class="op">(</span><span class="st">"app"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
