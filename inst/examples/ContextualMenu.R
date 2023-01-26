@@ -81,20 +81,16 @@ server <- function(id) {
         items = menuItems,
         hidden = !showContextualMenu(),
         target = "#target",
-        onItemClick = JS(
-          paste0(
-            "function() { ",
-            "Shiny.setInputValue('", ns("toggleContextualMenu"), "', Math.random()); ",
-            "}"
-          )
-        ),
-        onDismiss = JS(
-          paste0(
-            "function() { ",
-            "Shiny.setInputValue('", ns("toggleContextualMenu"), "', Math.random()); ",
-            "}"
-          )
-        )
+        onItemClick = JS(paste0(
+          "function() {",
+          "  Shiny.setInputValue('", ns("toggleContextualMenu"), "', Math.random());",
+          "}"
+        )),
+        onDismiss = JS(paste0(
+          "function() {",
+          "  Shiny.setInputValue('", ns("toggleContextualMenu"), "', Math.random());",
+          "}"
+        ))
       )
     })
   })

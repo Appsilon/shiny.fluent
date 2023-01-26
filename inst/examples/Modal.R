@@ -12,7 +12,6 @@ ui <- function(id) {
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
     ns <- session$ns
-
     modalVisible <- reactiveVal(FALSE)
     observeEvent(input$showModal, modalVisible(TRUE))
     observeEvent(input$hideModal, modalVisible(FALSE))

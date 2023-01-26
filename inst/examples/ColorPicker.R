@@ -11,7 +11,6 @@ ui <- function(id) {
 
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
-
     output$colorValue <- renderText({
       sprintf("Value: %s", input$color)
     })

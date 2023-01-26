@@ -51,20 +51,17 @@ ui <- function(id) {
         noResultsFoundText = 'No color tags found'
       ),
       itemLimit = 2,
-      onChange = JS(
-        paste0(
-          "function(selection) { ",
-          "Shiny.setInputValue('", ns("selectedTags") ,"', JSON.stringify(selection)); ",
-          "}"
-        )
-      )
+      onChange = JS(paste0(
+        "function(selection) {",
+        "  Shiny.setInputValue('", ns("selectedTags") ,"', JSON.stringify(selection));",
+        "}"
+      ))
     )
   )
 }
 
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
-
     output$selectedTags <- renderText({
       if (is.null(input$selectedTags)) {
         "Select up to 2 colors below:"

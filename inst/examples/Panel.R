@@ -12,20 +12,17 @@ ui <- function(id) {
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
     ns <- session$ns
-
     isPanelOpen <- reactiveVal(FALSE)
     output$reactPanel <- renderReact({
       Panel(
         headerText = "Sample panel",
         isOpen = isPanelOpen(),
         "Content goes here.",
-        onDismiss = JS(
-          paste0(
-            "function() { ",
-            "Shiny.setInputValue('", ns("hidePanel"), "', Math.random()); ",
-            "}"
-          )
-        )
+        onDismiss = JS(paste0(
+          "function() {",
+          "  Shiny.setInputValue('", ns("hidePanel"), "', Math.random());",
+          "}"
+        ))
       )
     })
     observeEvent(input$showPanel, isPanelOpen(TRUE))

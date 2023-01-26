@@ -4,78 +4,74 @@ library(shiny.fluent)
 ui <- function(id) {
   ns <- NS(id)
   tagList(
-    tags$script(
-      HTML(
-        paste0("
-          const btnExecute = (el) => {
-            console.log(el);
-            el.click();
-          };
+    tags$script(HTML(paste0("
+      const btnExecute = (el) => {
+        console.log(el);
+        el.click();
+      };
 
-          const keytipConfig = {
-            keytips: [
-              // Button example
+      const keytipConfig = {
+        keytips: [
+          // Button example
+          {
+            id: 'Button',
+            content: '1A',
+            optionalProps: {
+              onExecute: btnExecute,
+            },
+          },
+          {
+            id: 'CompoundButton',
+            content: '1B',
+            optionalProps: {
+              onExecute: btnExecute,
+            },
+          },
+          {
+            id: 'ButtonWithMenu',
+            content: '2A',
+            optionalProps: {
+              onExecute: btnExecute,
+            },
+            children: [
               {
-                id: 'Button',
-                content: '1A',
+                id: 'ButtonMenuItem1',
+                content: 'E',
                 optionalProps: {
                   onExecute: btnExecute,
                 },
               },
               {
-                id: 'CompoundButton',
-                content: '1B',
+                id: 'ButtonMenuItem2',
+                content: '8',
                 optionalProps: {
                   onExecute: btnExecute,
                 },
-              },
-              {
-                id: 'ButtonWithMenu',
-                content: '2A',
-                optionalProps: {
-                  onExecute: btnExecute,
-                },
-                children: [
-                  {
-                    id: 'ButtonMenuItem1',
-                    content: 'E',
-                    optionalProps: {
-                      onExecute: btnExecute,
-                    },
-                  },
-                  {
-                    id: 'ButtonMenuItem2',
-                    content: '8',
-                    optionalProps: {
-                      onExecute: btnExecute,
-                    },
-                  },
-                ],
-              }
-            ],
-          };
-
-          keytipMap = jsmodule['@fluentui/react'].buildKeytipConfigMap(keytipConfig);
-
-          const buttonProps = {
-            items: [
-              {
-                key: 'buttonMenuItem1',
-                text: 'Menu Item 1',
-                keytipProps: keytipMap.ButtonMenuItem1,
-                onClick: () => Shiny.setInputValue('", ns("button3"), "', Math.random())
-              },
-              {
-                key: 'buttonMenuItem2',
-                text: 'Menu Item 2',
-                keytipProps: keytipMap.ButtonMenuItem2,
-                onClick: () => Shiny.setInputValue('", ns("button3"), "', Math.random())
               },
             ],
-          };
-        ")
-      )
-    ),
+          }
+        ],
+      };
+
+      keytipMap = jsmodule['@fluentui/react'].buildKeytipConfigMap(keytipConfig);
+
+      const buttonProps = {
+        items: [
+          {
+            key: 'buttonMenuItem1',
+            text: 'Menu Item 1',
+            keytipProps: keytipMap.ButtonMenuItem1,
+            onClick: () => Shiny.setInputValue('", ns("button3"), "', Math.random())
+          },
+          {
+            key: 'buttonMenuItem2',
+            text: 'Menu Item 2',
+            keytipProps: keytipMap.ButtonMenuItem2,
+            onClick: () => Shiny.setInputValue('", ns("button3"), "', Math.random())
+          },
+        ],
+      };
+    "))),
     textOutput(ns("keytipsResult")),
     div(
       Label(
@@ -117,7 +113,6 @@ ui <- function(id) {
 
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
-
     clicks <- reactiveVal(0)
     addClick <- function() clicks(clicks() + 1)
     output$keytipsResult <- renderText(paste("Buttons clicked: ", clicks()))

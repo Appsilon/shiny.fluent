@@ -11,7 +11,6 @@ ui <- function(id) {
 
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
-
     show <- reactiveVal(FALSE)
     observeEvent(input$toggleCallout, show(!show()))
     output$callout <- renderReact({

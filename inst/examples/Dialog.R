@@ -16,20 +16,18 @@ server <- function(id) {
     isDialogOpen <- reactiveVal(FALSE)
     output$reactDialog <- renderReact({
       dialogContentProps <- list(
-        type=0,
-        title='Missing Subject',
-        closeButtonAriaLabel='Close',
-        subText='Do you want to send this message without a subject?'
+        type = 0,
+        title = "Missing Subject",
+        closeButtonAriaLabel = "Close",
+        subText = "Do you want to send this message without a subject?"
       )
       Dialog(
         hidden = !isDialogOpen(),
-        onDismiss = JS(
-          paste0(
-            "function() { ",
-            "Shiny.setInputValue('", ns("hideDialog"),"', Math.random()); ",
-            "}"
-          )
-        ),
+        onDismiss = JS(paste0(
+          "function() {",
+          "  Shiny.setInputValue('", ns("hideDialog"),"', Math.random());",
+          "}"
+        )),
         dialogContentProps = dialogContentProps,
         modalProps = list(),
         DialogFooter(

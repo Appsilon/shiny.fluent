@@ -12,7 +12,6 @@ ui <- function(id) {
 
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
-
     output$layer <- renderReact({
       box <- div(
         style = "background-color: #60C7FF; margin: 10px; padding: 10px",

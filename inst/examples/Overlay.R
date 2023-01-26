@@ -17,16 +17,14 @@ server <- function(id) {
     output$overlay <- renderReact({
       if (show()) {
         Overlay(
-          onClick = JS(
-            paste0(
-              "function() { ",
-              "Shiny.setInputValue('", ns("toggleOverlay"), "', Math.random()); ",
-              "}"
-            )
-          ),
+          onClick = JS(paste0(
+            "function() {",
+            "  Shiny.setInputValue('", ns("toggleOverlay"), "', Math.random());",
+            "}"
+          )),
           isDarkThemed = TRUE,
           div(
-            style="background: white; width: 50vw; height: 20rem; margin: auto;",
+            style = "background: white; width: 50vw; height: 20rem; margin: auto;",
             div(
               style = "padding: 2rem;",
               h1("Inside Overlay"),

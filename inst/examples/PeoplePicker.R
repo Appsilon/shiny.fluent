@@ -58,8 +58,6 @@ people <- tibble::tibble(
   canExpand = c(NA, NA, NA, NA, NA, NA, NA)
 )
 
-
-
 ui <- function(id) {
   ns <- NS(id)
   tagList(
@@ -79,7 +77,6 @@ ui <- function(id) {
 
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
-
     output$selectedPeople <- renderText({
       if (length(input$selectedPeople) == 0) {
         "Select recipients below:"

@@ -17,7 +17,6 @@ ui <- function(id) {
 
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
-
     output$dropdownValue <- renderText({
       sprintf("Value: %s", input$dropdown)
     })
