@@ -75,19 +75,26 @@ you need to work using the original docs to achieve the desired result.
 }
 
 \examples{
+library(shiny)
 library(shiny.fluent)
 
-if (interactive()) {
-  shinyApp(
-    ui = div(
-      Rating.shinyInput("rating", value = 2),
-      textOutput("ratingValue")
-    ),
-    server = function(input, output) {
-      output$ratingValue <- renderText({
-        sprintf("Value: \%s", input$rating)
-      })
-    }
+ui <- function(id) {
+  ns <- NS(id)
+  div(
+    Rating.shinyInput(ns("rating"), value = 2),
+    textOutput(ns("ratingValue"))
   )
+}
+
+server <- function(id) {
+  moduleServer(id, function(input, output, session) {
+    output$ratingValue <- renderText({
+      sprintf("Value: \%s", input$rating)
+    })
+  })
+}
+
+if (interactive()) {
+  shinyApp(ui("app"), function(input, output) server("app"))
 }
 }

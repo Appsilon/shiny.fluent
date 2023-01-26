@@ -64,6 +64,7 @@ you need to work using the original docs to achieve the desired result.
 }
 
 \examples{
+library(shiny)
 library(shiny.fluent)
 
 assetsUrl <- "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/"
@@ -80,7 +81,7 @@ people <- tibble::tibble(
     malePersonaUrl,
     femalePersonaUrl,
     malePersonaUrl
-  ), 
+  ),
   imageInitials = c("PV", "AR", "AL", "RK", "CB", "VL", "MS"),
   text = c(
     "Annie Lindqvist",
@@ -123,31 +124,37 @@ people <- tibble::tibble(
   canExpand = c(NA, NA, NA, NA, NA, NA, NA)
 )
 
-if (interactive()) {
-  shinyApp(
-    ui = tagList(
-      textOutput("selectedPeople"),
-      NormalPeoplePicker.shinyInput(
-        "selectedPeople",
-        options = people,
-        pickerSuggestionsProps = list(
-          suggestionsHeaderText = 'Matching people',
-          mostRecentlyUsedHeaderText = 'Sales reps',
-          noResultsFoundText = 'No results found',
-          showRemoveButtons = TRUE
-        )
+ui <- function(id) {
+  ns <- NS(id)
+  tagList(
+    textOutput(ns("selectedPeople")),
+    NormalPeoplePicker.shinyInput(
+      ns("selectedPeople"),
+      options = people,
+      pickerSuggestionsProps = list(
+        suggestionsHeaderText = 'Matching people',
+        mostRecentlyUsedHeaderText = 'Sales reps',
+        noResultsFoundText = 'No results found',
+        showRemoveButtons = TRUE
       )
-    ),
-    server = function(input, output) {
-      output$selectedPeople <- renderText({
-        if (length(input$selectedPeople) == 0) {
-          "Select recipients below:"
-        } else {
-          selectedPeople <- dplyr::filter(people, key \%in\% input$selectedPeople)
-          paste("You have selected:", paste(selectedPeople$text, collapse=", "))
-        }
-      })
-    }
+    )
   )
+}
+
+server <- function(id) {
+  moduleServer(id, function(input, output, session) {
+    output$selectedPeople <- renderText({
+      if (length(input$selectedPeople) == 0) {
+        "Select recipients below:"
+      } else {
+        selectedPeople <- dplyr::filter(people, key \%in\% input$selectedPeople)
+        paste("You have selected:", paste(selectedPeople$text, collapse=", "))
+      }
+    })
+  })
+}
+
+if (interactive()) {
+  shinyApp(ui("app"), function(input, output) server("app"))
 }
 }

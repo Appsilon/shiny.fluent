@@ -82,25 +82,32 @@ you need to work using the original docs to achieve the desired result.
 }
 
 \examples{
+library(shiny)
 library(shiny.fluent)
 
-if (interactive()) {
-  options <- list(
-    list(key = "A", text = "Option A"),
-    list(key = "B", text = "Option B"),
-    list(key = "C", text = "Option C")
-  )
+options <- list(
+  list(key = "A", text = "Option A"),
+  list(key = "B", text = "Option B"),
+  list(key = "C", text = "Option C")
+)
 
-  shinyApp(
-    ui = div(
-      Dropdown.shinyInput("dropdown", value = "A", options = options),
-      textOutput("dropdownValue")
-    ),
-    server = function(input, output) {
-      output$dropdownValue <- renderText({
-        sprintf("Value: \%s", input$dropdown)
-      })
-    }
+ui <- function(id) {
+  ns <- NS(id)
+  div(
+    Dropdown.shinyInput(ns("dropdown"), value = "A", options = options),
+    textOutput(ns("dropdownValue"))
   )
+}
+
+server <- function(id) {
+  moduleServer(id, function(input, output, session) {
+    output$dropdownValue <- renderText({
+      sprintf("Value: \%s", input$dropdown)
+    })
+  })
+}
+
+if (interactive()) {
+  shinyApp(ui("app"), function(input, output) server("app"))
 }
 }
