@@ -55,7 +55,7 @@ ui <- function(id) {
         paste0(
           "function(selection) { ",
           "Shiny.setInputValue('", ns("selectedTags") ,"', JSON.stringify(selection)); ",
-          "}" 
+          "}"
         )
       )
     )
@@ -64,7 +64,7 @@ ui <- function(id) {
 
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
-    
+
     output$selectedTags <- renderText({
       if (is.null(input$selectedTags)) {
         "Select up to 2 colors below:"

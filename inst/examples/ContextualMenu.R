@@ -5,8 +5,8 @@ ui <- function(id) {
   ns <- NS(id)
   div(
     DefaultButton.shinyInput(
-      ns("toggleContextualMenu"), 
-      id = "target", 
+      ns("toggleContextualMenu"),
+      id = "target",
       text = "Toggle menu"
     ),
     reactOutput(ns("contextualMenu"))
@@ -16,7 +16,7 @@ ui <- function(id) {
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
     ns <- session$ns
-    
+
     showContextualMenu <- reactiveVal(FALSE)
     observeEvent(input$toggleContextualMenu, {
       showContextualMenu(!showContextualMenu())

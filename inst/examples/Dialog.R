@@ -12,7 +12,7 @@ ui <- function(id) {
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
     ns <- session$ns
-    
+
     isDialogOpen <- reactiveVal(FALSE)
     output$reactDialog <- renderReact({
       dialogContentProps <- list(

@@ -15,7 +15,7 @@ people <- tibble::tibble(
     malePersonaUrl,
     femalePersonaUrl,
     malePersonaUrl
-  ), 
+  ),
   imageInitials = c("PV", "AR", "AL", "RK", "CB", "VL", "MS"),
   text = c(
     "Annie Lindqvist",
@@ -79,7 +79,7 @@ ui <- function(id) {
 
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
-    
+
     output$selectedPeople <- renderText({
       if (length(input$selectedPeople) == 0) {
         "Select recipients below:"

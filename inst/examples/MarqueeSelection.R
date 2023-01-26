@@ -16,7 +16,7 @@ script <- function(id) {
       paste0("
   const React = jsmodule['react'];
   const Fluent = jsmodule['@fluentui/react'];
-  
+
   const theme = Fluent.getTheme();
   const styles = Fluent.mergeStyleSets({
   photoList: {
@@ -27,7 +27,7 @@ script <- function(id) {
     overflow: 'hidden',
     userSelect: 'none',
   },
-  
+
   photoCell: {
     position: 'relative',
     display: 'inline-block',
@@ -48,18 +48,18 @@ script <- function(id) {
     margin: '10px 0',
   },
   });
-  
+
   const useForceUpdate = () => {
   const [, setIt] = React.useState(false);
   return () => setIt(it => !it);
   };
-  
+
   jsmodule.exampleApp = {}
   jsmodule.exampleApp.MarqueeSelectionExample = function(params) {
   const forceUpdate = useForceUpdate();
   const name = params['name'];
   const photos = params['photos'];
-  
+
   if(window.selection === undefined) {
     window.selection = new Fluent.Selection({
       items: photos,
@@ -69,7 +69,7 @@ script <- function(id) {
       }
     });
   }
-  
+
   const items = photos.map((photo, index) => {
     return React.createElement('div',
       {
@@ -83,7 +83,7 @@ script <- function(id) {
         style: { width: photo.width, height: photo.height }
       }, index)
     });
-  
+
   return React.createElement(
     Fluent.MarqueeSelection,
     { selection: window.selection, isEnabled: true },
@@ -114,7 +114,7 @@ ui <- function(id) {
 
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
-    
+
     photos <- lapply(1:50, function(index) {
       randomWidth <- 50 + sample.int(150, 1)
       list(

@@ -21,7 +21,7 @@ ui <- function(id) {
 
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
-    
+
     output$swatchValue <- renderText({
       sprintf("Value: %s", input$color)
     })

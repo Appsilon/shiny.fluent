@@ -15,7 +15,7 @@ ui <- function(id) {
 
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
-    
+
     showBubble <- reactiveVal(FALSE)
     observeEvent(input$toggleTeachingBubble, showBubble(!showBubble()))
     output$teachingBubble <- renderReact({

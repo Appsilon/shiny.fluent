@@ -14,7 +14,7 @@ ui <- function(id) {
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
     ns <- session$ns
-    
+
     coachmarkVisible <- reactiveVal(FALSE)
     observeEvent(input$toggleCoachmark, coachmarkVisible(!coachmarkVisible()))
     observeEvent(input$hideCoachmark, coachmarkVisible(FALSE))

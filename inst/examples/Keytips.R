@@ -11,7 +11,7 @@ ui <- function(id) {
             console.log(el);
             el.click();
           };
-    
+
           const keytipConfig = {
             keytips: [
               // Button example
@@ -54,9 +54,9 @@ ui <- function(id) {
               }
             ],
           };
-    
+
           keytipMap = jsmodule['@fluentui/react'].buildKeytipConfigMap(keytipConfig);
-    
+
           const buttonProps = {
             items: [
               {
@@ -117,7 +117,7 @@ ui <- function(id) {
 
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
-    
+
     clicks <- reactiveVal(0)
     addClick <- function() clicks(clicks() + 1)
     output$keytipsResult <- renderText(paste("Buttons clicked: ", clicks()))

@@ -12,7 +12,7 @@ ui <- function(id) {
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
     ns <- session$ns
-    
+
     isPanelOpen <- reactiveVal(FALSE)
     output$reactPanel <- renderReact({
       Panel(

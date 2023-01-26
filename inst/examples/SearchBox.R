@@ -11,7 +11,7 @@ ui <- function(id) {
 
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
-    
+
     output$searchValue <- renderText({
       sprintf("Value: %s", input$search)
     })

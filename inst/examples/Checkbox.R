@@ -11,7 +11,7 @@ ui <- function(id) {
 
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
-    
+
   output$checkboxValue <- renderText({
     sprintf("Value: %s", input$checkbox)
     })

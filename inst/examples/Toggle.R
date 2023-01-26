@@ -11,7 +11,7 @@ ui <- function(id) {
 
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
-    
+
     output$toggleValue <- renderText({
       sprintf("Value: %s", input$toggle)
     })
