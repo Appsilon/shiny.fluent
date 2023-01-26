@@ -142,6 +142,23 @@ makeRouter <- function(items) {
 router <- makeRouter(items)
 
 style <- tags$head(tags$style(HTML("
+  :root {
+    --AppsilonBlue-weak-1: #4CB8FB;
+    --AppsilonAsh-weak-3: #ECEDEE;
+  }
+  body { 
+    background-color: var(--AppsilonAsh-weak-3);
+    padding: 0;
+    margin: 1em 0 0 0;
+  }
+  nav { margin: 0em 1em 0em 1em; }
+  main {
+    background-color: white;
+    padding: 1em;
+    border-radius: 10px 0px 0px 0px;
+    border-left: solid 3px var(--AppsilonBlue-weak-1);
+    border-top: solid 3px var(--AppsilonBlue-weak-1);
+  }
   .grid {
     display: grid;
     grid-template-columns: 200px minmax(0, 1fr);
@@ -154,6 +171,8 @@ shinyApp(
     style,
     tags$div(
       class = "grid",
+      tags$div(),
+      Text(variant = "xLarge", "Showcase of examples using shiny.fluent"),
       tags$nav(makeNav(sections)),
       tags$main(router$ui)
     )
