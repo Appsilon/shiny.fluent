@@ -230,10 +230,12 @@ NULL
 
 #' Fluent UI themes
 #'
-#' Themes is not a component, but a way to override the default theme in the app.
-#' See https://developer.microsoft.com/en-us/fluentui#/controls/web/themes for details.
+#' `ThemeProvider` is a utility that applies contextual theming to its child components.
+#' See the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/themeprovider)
+#' for details.
 #'
-#' @example inst/examples/Theme.R
+#' @example inst/examples/Theme1.R
+#' @example inst/examples/Theme2.R
 #' @name Theme
 NULL
 
