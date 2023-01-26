@@ -1,5 +1,5 @@
+library(shiny)
 library(shiny.fluent)
-
 
 tokens <- list(childrenGap = 20)
 

@@ -1,3 +1,4 @@
+library(shiny)
 library(shiny.fluent)
 
 navigation_styles <- list(

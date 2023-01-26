@@ -1,3 +1,6 @@
+library(shiny)
+library(shiny.fluent)
+
 options <- list(
   list(key = "A", text = "Option A"),
   list(key = "B", text = "Option B")

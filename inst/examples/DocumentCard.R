@@ -1,3 +1,4 @@
+library(shiny)
 library(shiny.fluent)
 
 title <- "Long_file_name_with_underscores_used_to_separate_all_of_the_words"

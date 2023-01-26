@@ -1,3 +1,4 @@
+library(shiny)
 library(shiny.fluent)
 
 assetsUrl <- "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/"

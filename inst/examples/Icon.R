@@ -1,3 +1,4 @@
+library(shiny)
 library(shiny.fluent)
 
 style <- list(fontSize = 50, margin = 10)

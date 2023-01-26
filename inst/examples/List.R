@@ -1,3 +1,4 @@
+library(shiny)
 library(shiny.fluent)
 
 items <- do.call(paste0, replicate(20, sample(LETTERS, 200, TRUE), FALSE))
