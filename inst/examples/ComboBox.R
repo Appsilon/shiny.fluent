@@ -1,23 +1,30 @@
+library(shiny)
 library(shiny.fluent)
 
-if (interactive()) {
-  options <- list(
-    list(key = "A", text = "Option A"),
-    list(key = "B", text = "Option B"),
-    list(key = "C", text = "Option C")
-  )
+options <- list(
+  list(key = "A", text = "Option A"),
+  list(key = "B", text = "Option B"),
+  list(key = "C", text = "Option C")
+)
 
-  shinyApp(
-    ui = div(
-      ComboBox.shinyInput("combo", value = list(text = "some text"),
-        options = options, allowFreeform = TRUE
-      ),
-      textOutput("comboValue")
+ui <- function(id) {
+  ns <- NS(id)
+  div(
+    ComboBox.shinyInput(ns("combo"), value = list(text = "some text"),
+      options = options, allowFreeform = TRUE
     ),
-    server = function(input, output) {
-      output$comboValue <- renderText({
-        sprintf("Value: %s", input$combo$text)
-      })
-    }
+    textOutput(ns("comboValue"))
   )
+}
+
+server <- function(id) {
+  moduleServer(id, function(input, output, session) {
+    output$comboValue <- renderText({
+      sprintf("Value: %s", input$combo$text)
+    })
+  })
+}
+
+if (interactive()) {
+  shinyApp(ui("app"), function(input, output) server("app"))
 }

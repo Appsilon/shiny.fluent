@@ -82,19 +82,26 @@ you need to work using the original docs to achieve the desired result.
 }
 
 \examples{
+library(shiny)
 library(shiny.fluent)
 
-if (interactive()) {
-  shinyApp(
-    ui = div(
-      Slider.shinyInput("slider", value = 42, min = -100, max = 100),
-      textOutput("sliderValue")
-    ),
-    server = function(input, output) {
-      output$sliderValue <- renderText({
-        sprintf("Value: \%s", input$slider)
-      })
-    }
+ui <- function(id) {
+  ns <- NS(id)
+  div(
+    Slider.shinyInput(ns("slider"), value = 42, min = -100, max = 100),
+    textOutput(ns("sliderValue"))
   )
+}
+
+server <- function(id) {
+  moduleServer(id, function(input, output, session) {
+    output$sliderValue <- renderText({
+      sprintf("Value: \%s", input$slider)
+    })
+  })
+}
+
+if (interactive()) {
+  shinyApp(ui("app"), function(input, output) server("app"))
 }
 }

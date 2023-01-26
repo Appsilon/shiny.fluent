@@ -1,15 +1,22 @@
+library(shiny)
 library(shiny.fluent)
 
-if (interactive()) {
-  shinyApp(
-    ui = div(
-      Checkbox.shinyInput("checkbox", value = FALSE),
-      textOutput("checkboxValue")
-    ),
-    server = function(input, output) {
-      output$checkboxValue <- renderText({
-        sprintf("Value: %s", input$checkbox)
-      })
-    }
+ui <- function(id) {
+  ns <- NS(id)
+  div(
+    Checkbox.shinyInput(ns("checkbox"), value = FALSE),
+    textOutput(ns("checkboxValue"))
   )
+}
+
+server <- function(id) {
+  moduleServer(id, function(input, output, session) {
+    output$checkboxValue <- renderText({
+      sprintf("Value: %s", input$checkbox)
+    })
+  })
+}
+
+if (interactive()) {
+  shinyApp(ui("app"), function(input, output) server("app"))
 }

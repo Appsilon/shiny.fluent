@@ -82,25 +82,32 @@ you need to work using the original docs to achieve the desired result.
 }
 
 \examples{
+library(shiny)
 library(shiny.fluent)
 
-if (interactive()) {
-  options <- list(
-    list(key = "A", text = "Option A"),
-    list(key = "B", text = "Option B"),
-    list(key = "C", text = "Option C")
-  )
+options <- list(
+  list(key = "A", text = "Option A"),
+  list(key = "B", text = "Option B"),
+  list(key = "C", text = "Option C")
+)
 
-  shinyApp(
-    ui = div(
-      ChoiceGroup.shinyInput("choice", value = "B", options = options),
-      textOutput("groupValue")
-    ),
-    server = function(input, output) {
-      output$groupValue <- renderText({
-        sprintf("Value: \%s", input$choice)
-      })
-    }
+ui <- function(id) {
+  ns <- NS(id)
+  div(
+    ChoiceGroup.shinyInput(ns("choice"), value = "B", options = options),
+    textOutput(ns("groupValue"))
   )
+}
+
+server <- function(id) {
+  moduleServer(id, function(input, output, session) {
+    output$groupValue <- renderText({
+      sprintf("Value: \%s", input$choice)
+    })
+  })
+}
+
+if (interactive()) {
+  shinyApp(ui("app"), function(input, output) server("app"))
 }
 }
