@@ -1,3 +1,4 @@
+library(shiny)
 library(shiny.fluent)
 library(shiny.router)
 library(sass)
@@ -13,8 +14,8 @@ source("home.R")
 source("about.R")
 source("footer.R")
 
-examplePages <- imap(examples, function(example, name) {
-  page <- makeExamplePage(name, example$ui)
+examplePages <- imap(examples, function(item, name) {
+  page <- makeExamplePage(c(name), item$ui)
   route(name, page)
 })
 names(examplePages) <- NULL
