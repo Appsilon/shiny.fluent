@@ -11,7 +11,7 @@
       list.files(pattern = "[.][rR]$", full.names = TRUE)
   }
   
-    exampleFiles <- exampleFiles |> 
+  exampleFiles <- exampleFiles %>%
     purrr::discard(function(x) {
       stringr::str_detect(tolower(x), tolower(excludePatterns))
     })
