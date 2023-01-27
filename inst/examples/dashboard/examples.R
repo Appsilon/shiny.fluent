@@ -28,7 +28,8 @@
   })
   
   names(examples) <- basename(exampleFiles) %>%
-    tools::file_path_sans_ext()
+    tools::file_path_sans_ext() %>%
+    as.character()
   
   examples
 }
