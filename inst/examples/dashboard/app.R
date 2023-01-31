@@ -15,8 +15,8 @@ source("home.R")
 source("about.R")
 source("footer.R")
 
-examplePages <- imap(examples, function(item, name) {
-  page <- makeExamplePage(name, item$ui)
+examplePages <- imap(examples, function(example, name) {
+  page <- makeExamplePage(name, example$ui)
   route(name, page)
 })
 names(examplePages) <- NULL
