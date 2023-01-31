@@ -50,3 +50,6 @@ node_modules
 /inst/examples/dashboard/rsconnect/
 docs
 inst/doc
+
+# SASS cache
+inst/examples/dashboard/www/.sass_cache_keys
