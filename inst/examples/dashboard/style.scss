@@ -72,7 +72,7 @@ body {
   background-color: #f3f2f1;
   padding: 30px;
   
-  border-color: #f3f2f1;
+  border-color: var(--AppsilonBlue);
   border-image: linear-gradient(
     to right,
     var(--AppsilonMint) 0 12.5%,
