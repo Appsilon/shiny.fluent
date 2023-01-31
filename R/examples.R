@@ -234,8 +234,8 @@ NULL
 #' See the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/themeprovider)
 #' for details.
 #'
-#' @example inst/examples/Theme1.R
-#' @example inst/examples/Theme2.R
+#' @example inst/examples/ThemeProvider1.R
+#' @example inst/examples/ThemeProvider2.R
 #' @name Theme
 NULL
 

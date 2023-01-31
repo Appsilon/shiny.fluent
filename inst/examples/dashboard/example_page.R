@@ -23,6 +23,7 @@ getHelpList <- function(...) {
 }
 
 makeExamplePage <- function(name, ui) {
+  name <- gsub("[0-9]+$", "", name)
   help <- getHelpList(name)
 
   makePage(name,
