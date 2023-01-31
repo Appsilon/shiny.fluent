@@ -1,21 +1,5 @@
-#
-# Read all the examples on the parent directory and create a list
-# where each element is a shiny dashboard with a 'ui´ and ´sever´ elements
-  buildExamples <- function(exampleFiles = NULL, excludePatterns = "zTheme") {
-  if (is.null(exampleFiles)) {
-    exampleFiles <- base::system.file(
-      file.path('inst', 'examples'), 
-      package = "shiny.fluent"
-    ) 
-    exampleFiles <- file.path("..") %>%
-      list.files(pattern = "[.][rR]$", full.names = TRUE)
-  }
+buildExamples <- function(exampleFiles) {
   
-  exampleFiles <- exampleFiles %>%
-    purrr::discard(function(x) {
-      stringr::str_detect(tolower(x), tolower(excludePatterns))
-    })
-    
   examples <- lapply(exampleFiles, function(path) {
     code <- readChar(path, file.info(path)$size)
     module <- new.env()
