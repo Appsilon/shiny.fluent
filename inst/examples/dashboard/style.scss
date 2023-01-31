@@ -74,7 +74,17 @@ body {
   padding: 30px;
   
   border-color: #f3f2f1;
-  border-image: linear-gradient(90deg, var(--AppsilonMint) 0 12.5%, var(--AppsilonMint-weak-2) 0 25%, var(--AppsilonYellow-weak-1) 0 37.5%, var(--AppsilonRose-weak-1) 0 50%, var(--AppsilonPurple-weak-1) 0 62.5%, var(--AppsilonPurple-weak-2) 0 75%, var(--AppsilonBlue) 0 87.5%, var(--AppsilonBlue-weak-2) 0 100%) 100% 1 0 stretch;
+  border-image: linear-gradient(
+    to right,
+    var(--AppsilonMint) 0 12.5%,
+    var(--AppsilonMint-weak-2) 0 25%,
+    var(--AppsilonYellow-weak-1) 0 37.5%,
+    var(--AppsilonRose-weak-1) 0 50%,
+    var(--AppsilonPurple-weak-1) 0 62.5%,
+    var(--AppsilonPurple-weak-2) 0 75%,
+    var(--AppsilonBlue) 0 87.5%,
+    var(--AppsilonBlue-weak-2) 0 100%
+  ) 100% 1 0 stretch;
   border-top-style: solid;
   border-top-width: 3px;
 }
