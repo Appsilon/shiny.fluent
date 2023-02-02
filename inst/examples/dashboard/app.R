@@ -46,8 +46,7 @@ ui <- fluidPage(
   suppressDependencies("bootstrap"),
   tags$head(
     tags$link(href = "style.css", rel = "stylesheet", type = "text/css"),
-    shiny::tags$script(type = "text/javascript", src = shiny_router_js),
-    tags$script(src = "examples_scripts.js")
+    shiny::tags$script(type = "text/javascript", src = shiny_router_js)
   ),
   htmltools::htmlDependency(
     "office-ui-fabric-core",
