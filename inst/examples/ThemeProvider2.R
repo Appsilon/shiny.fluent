@@ -39,9 +39,6 @@ ui <- function(id) {
   ns <- NS(id)
   ThemeProvider(
     theme = parseTheme(json = theme),
-    # Using this `ifelse` because the dashboard view is not compatible
-    # with `body`, as the background is kept the same as the parent app (dashboard)
-    applyTo = ifelse(id == "app-sample", "body", "element"),
     Stack(
       tokens = list(childrenGap = "10px"),
       style = list(width = 250),
@@ -57,5 +54,5 @@ server <- function(id) {
 }
 
 if (interactive()) {
-  shinyApp(ui("app-sample"), function(input, output) server("app-sample"))
+  shinyApp(ui("app"), function(input, output) server("app"))
 }

@@ -1,20 +1,20 @@
 buildExamples <- function(exampleFiles) {
-  
+
   examples <- lapply(exampleFiles, function(path) {
     code <- readChar(path, file.info(path)$size)
     module <- new.env()
     source(path, local = module)
     list(
-      code = code, 
-      ui = module$ui("app"), 
+      code = code,
+      ui = module$ui("app"),
       server = function(input, output) module$server("app")
     )
   })
-  
+
   names(examples) <- basename(exampleFiles) %>%
     tools::file_path_sans_ext() %>%
     as.character()
-  
+
   examples
 }
 
@@ -23,7 +23,7 @@ buildExamples <- function(exampleFiles) {
 
 # examples <- buildExamples()
 
-## 
+##
 ## Uses explicit list of examples
 
 examples <- c(
@@ -39,7 +39,7 @@ examples <- c(
   "ScrollablePane.R", "SearchBox.R", "Separator.R", "Shimmer.R", "Slider.R",
   "SpinButton.R", "Spinner.R", "Stack.R", "SwatchColorPicker.R", "TagPicker.R",
   "TeachingBubble.R", "TextField.R", "Text.R",
-  "ThemeProvider1.R", "ThemeProvider2.R",
+  "ThemeProvider.R",
   "Toggle.R","Tooltip.R"
 ) %>%
   file.path("..", .)  %>%
