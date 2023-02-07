@@ -1,46 +1,121 @@
-buildExamples <- function(exampleFiles) {
+examples <- c(
+  "ActivityItem",
+  "Announced",
+  "Breadcrumb",
+  "Button",
+  "Calendar",
+  "Callout",
+  "Checkbox",
+  "ChoiceGroup",
+  "Coachmark",
+  "ColorPicker",
+  "ComboBox",
+  "CommandBar",
+  "ContextualMenu",
+  "DatePicker",
+  "DetailsList",
+  "Dialog",
+  "DocumentCard",
+  "Dropdown",
+  "Facepile",
+  "FocusTrapZone",
+  "FocusZone",
+  "GroupedList",
+  "HoverCard",
+  "Icon",
+  "Image",
+  "Keytips",
+  "Label",
+  "Layer",
+  "LayerHost",
+  "Link",
+  "List",
+  "MarqueeSelection",
+  "MessageBar",
+  "Modal",
+  "Nav",
+  "OverflowSet",
+  "Overlay",
+  "Panel",
+  "PeoplePicker",
+  "Persona",
+  "Pivot",
+  "ProgressIndicator",
+  "Rating",
+  "ResizeGroup",
+  "ScrollablePane",
+  "SearchBox",
+  "Separator",
+  "Shimmer",
+  "Slider",
+  "SpinButton",
+  "Spinner",
+  "Stack",
+  "SwatchColorPicker",
+  "TagPicker",
+  "TeachingBubble",
+  "Text",
+  "TextField",
+  "ThemeProvider",
+  "Toggle",
+  "Tooltip"
+)
 
-  examples <- lapply(exampleFiles, function(path) {
-    code <- readChar(path, file.info(path)$size)
-    module <- new.env()
-    source(path, local = module)
-    list(
-      code = code,
-      ui = module$ui("app"),
-      server = function(input, output) module$server("app")
-    )
-  })
+# R help via https://stackoverflow.com/a/8983386
+Rd2list <- function(Rd) {
+  names(Rd) <- substring(sapply(Rd, attr, "Rd_tag"), 2)
+  temp_args <- Rd$arguments
 
-  names(examples) <- basename(exampleFiles) %>%
-    tools::file_path_sans_ext() %>%
-    as.character()
+  Rd$arguments <- NULL
+  myrd <- lapply(Rd, unlist)
+  myrd <- lapply(myrd, paste, collapse = "")
 
-  examples
+  temp_args <-
+    temp_args[sapply(temp_args , attr, "Rd_tag") == "\\item"]
+  temp_args <- lapply(temp_args, lapply, paste, collapse = "")
+  temp_args <- lapply(temp_args, "names<-", c("arg", "description"))
+  myrd$arguments <- temp_args
+
+  myrd
 }
 
-##
-## Uses examples on package
+getHelpList <- function(...) {
+  thefile <- help(...)
+  myrd <- utils:::.getHelpFile(thefile)
+  Rd2list(myrd)
+}
 
-# examples <- buildExamples()
+readExample <- function(path) {
+  code <- readChar(path, file.info(path)$size)
+  module <- new.env()
+  source(path, local = module)
+  list(code = code, ui = module$ui, server = module$server)
+}
 
-##
-## Uses explicit list of examples
+makeExamplePage <- function(name, ui, code) {
+  help <- getHelpList(name)
+  makePage(
+    name,
+    "Fluent UI component",
+    div(
+      makeCard("Description", Text(nowrap = FALSE, help$description)),
+      makeCard("Usage", pre(help$usage)),
+      makeCard("Live example", div(style = "padding: 20px", ui)),
+      makeCard("Live example code", pre(code))
+    )
+  )
+}
 
-examples <- c(
-  "ActivityItem.R", "Announced.R", "Breadcrumb.R", "Button.R", "Calendar.R",
-  "Callout.R", "Checkbox.R", "ChoiceGroup.R", "Coachmark.R", "ColorPicker.R",
-  "ComboBox.R", "CommandBar.R", "ContextualMenu.R", "DatePicker.R",
-  "DetailsList.R", "Dialog.R", "DocumentCard.R", "Dropdown.R", "Facepile.R",
-  "FocusTrapZone.R", "FocusZone.R", "GroupedList.R", "HoverCard.R", "Icon.R",
-  "Image.R", "Keytips.R", "Label.R", "LayerHost.R", "Layer.R", "Link.R",
-  "List.R", "MarqueeSelection.R", "MessageBar.R", "Modal.R", "Nav.R",
-  "OverflowSet.R", "Overlay.R", "Panel.R", "PeoplePicker.R", "Persona.R",
-  "Pivot.R", "ProgressIndicator.R", "Rating.R", "ResizeGroup.R",
-  "ScrollablePane.R", "SearchBox.R", "Separator.R", "Shimmer.R", "Slider.R",
-  "SpinButton.R", "Spinner.R", "Stack.R", "SwatchColorPicker.R", "TagPicker.R",
-  "TeachingBubble.R", "TextField.R", "Text.R",
-  "ThemeProvider.R",
-  "Toggle.R","Tooltip.R"
-) %>%
-  file.path("..", .)  %>%
-  buildExamples()
+makeExampleRoute <- function(name) {
+  path <- file.path("..", paste0(name, ".R"))
+  example <- readExample(path)
+  route(
+    path = name,
+    ui = makeExamplePage(
+      name = name,
+      ui = example$ui(name),
+      code = example$code
+    ),
+    server = function() example$server(name)
+  )
+}

@@ -9,13 +9,14 @@ navigationStyles <- list(
 
 
 linkGroups <- function(examples) {
-  examplesLinks <- imap(examples, function(example, name) {
-    list(name = name,
-         url = paste0('#!/', name),
-         key = name)
+  examplesLinks <- lapply(examples, function(name) {
+    list(
+      name = name,
+      url = paste0('#!/', name),
+      key = name
+    )
   })
-  names(examplesLinks) <- NULL
-  
+
   list(list(links = list(
     list(
       name = 'Home',
@@ -56,7 +57,6 @@ linkGroups <- function(examples) {
          url = 'http://appsilon.com',
          key = 'appsilon')
   )))
-  
 }
 
 platform_picker <- div(
