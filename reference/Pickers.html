@@ -228,10 +228,19 @@ The allowed props are listed below in the <b>Details</b> section.</p></dd>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://shiny.rstudio.com/" class="external-link">shiny</a></span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent/">shiny.fluent</a></span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">makeScript</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">js</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="fu">htmltools</span><span class="fu">::</span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/htmlDependency.html" class="external-link">htmlDependency</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    name <span class="op">=</span> <span class="st">"TagPickerExample"</span>,</span></span>
+<span class="r-in"><span>    version <span class="op">=</span> <span class="st">"0"</span>, <span class="co"># Not used.</span></span></span>
+<span class="r-in"><span>    src <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>href <span class="op">=</span> <span class="st">""</span><span class="op">)</span>, <span class="co"># Not used.</span></span></span>
+<span class="r-in"><span>    head <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"&lt;script&gt;"</span>, <span class="va">js</span>, <span class="st">"&lt;/script&gt;"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">{</span></span></span>
 <span class="r-in"><span>  <span class="va">ns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/NS.html" class="external-link">NS</a></span><span class="op">(</span><span class="va">id</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/tagList.html" class="external-link">tagList</a></span><span class="op">(</span></span></span>
-<span class="r-in"><span>    <span class="va">tags</span><span class="op">$</span><span class="fu">script</span><span class="op">(</span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/HTML.html" class="external-link">HTML</a></span><span class="op">(</span><span class="st">"</span></span></span>
+<span class="r-in"><span>    <span class="fu">makeScript</span><span class="op">(</span><span class="st">"</span></span></span>
 <span class="r-in"><span><span class="st">      testTags = [</span></span></span>
 <span class="r-in"><span><span class="st">        'black',</span></span></span>
 <span class="r-in"><span><span class="st">        'blue',</span></span></span>
@@ -265,7 +274,7 @@ The allowed props are listed below in the <b>Details</b> section.</p></dd>
 <span class="r-in"><span><span class="st">            )</span></span></span>
 <span class="r-in"><span><span class="st">          : [];</span></span></span>
 <span class="r-in"><span><span class="st">      };</span></span></span>
-<span class="r-in"><span><span class="st">    "</span><span class="op">)</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span><span class="st">    "</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>    <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/textOutput.html" class="external-link">textOutput</a></span><span class="op">(</span><span class="fu">ns</span><span class="op">(</span><span class="st">"selectedTags"</span><span class="op">)</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>    <span class="fu">TagPicker</span><span class="op">(</span></span></span>
 <span class="r-in"><span>      onResolveSuggestions <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"filterSuggestedTags"</span><span class="op">)</span>,</span></span>

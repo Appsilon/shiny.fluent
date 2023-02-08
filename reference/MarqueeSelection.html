@@ -150,7 +150,27 @@ The allowed props are listed below in the <b>Details</b> section.</p></dd>
 <span class="r-in"><span><span class="co"># 1. Use mergeStyles and themes from Fluent</span></span></span>
 <span class="r-in"><span><span class="co"># 2. Define custom components</span></span></span>
 <span class="r-in"><span><span class="co"># 3. Send results back to Shiny.</span></span></span>
-<span class="r-in"><span><span class="va">script</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="va">tags</span><span class="op">$</span><span class="fu">script</span><span class="op">(</span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/HTML.html" class="external-link">HTML</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">customComponent</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">name</span>, <span class="va">js</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="va">dependency</span> <span class="op">&lt;-</span> <span class="fu">htmltools</span><span class="fu">::</span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/htmlDependency.html" class="external-link">htmlDependency</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    name <span class="op">=</span> <span class="va">name</span>,</span></span>
+<span class="r-in"><span>    version <span class="op">=</span> <span class="st">"0"</span>, <span class="co"># Not used.</span></span></span>
+<span class="r-in"><span>    src <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>href <span class="op">=</span> <span class="st">""</span><span class="op">)</span>, <span class="co"># Not used.</span></span></span>
+<span class="r-in"><span>    head <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"</span></span></span>
+<span class="r-in"><span><span class="st">      &lt;script&gt;</span></span></span>
+<span class="r-in"><span><span class="st">        (jsmodule.CustomComponents ??= {})."</span>, <span class="va">name</span>, <span class="st">" = (() =&gt; {"</span>, <span class="va">js</span>, <span class="st">"})();</span></span></span>
+<span class="r-in"><span><span class="st">      &lt;/script&gt;</span></span></span>
+<span class="r-in"><span><span class="st">    "</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="kw">function</span><span class="op">(</span><span class="va">...</span><span class="op">)</span> <span class="fu">shiny.react</span><span class="fu">::</span><span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">reactElement</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    module <span class="op">=</span> <span class="st">"CustomComponents"</span>,</span></span>
+<span class="r-in"><span>    name <span class="op">=</span> <span class="va">name</span>,</span></span>
+<span class="r-in"><span>    props <span class="op">=</span> <span class="fu">shiny.react</span><span class="fu">::</span><span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/asProps.html" class="external-link">asProps</a></span><span class="op">(</span><span class="va">...</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>    deps <span class="op">=</span> <span class="va">dependency</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">MarqueeSelectionExample</span> <span class="op">&lt;-</span> <span class="fu">customComponent</span><span class="op">(</span><span class="st">"MarqueeSelectionExample"</span>, <span class="st">"</span></span></span>
 <span class="r-in"><span><span class="st">  const React = jsmodule['react'];</span></span></span>
 <span class="r-in"><span><span class="st">  const Fluent = jsmodule['@fluentui/react'];</span></span></span>
 <span class="r-in"><span><span class="st"></span></span></span>
@@ -191,17 +211,16 @@ The allowed props are listed below in the <b>Details</b> section.</p></dd>
 <span class="r-in"><span><span class="st">    return () =&gt; setIt(it =&gt; !it);</span></span></span>
 <span class="r-in"><span><span class="st">  };</span></span></span>
 <span class="r-in"><span><span class="st"></span></span></span>
-<span class="r-in"><span><span class="st">  jsmodule.exampleApp = {}</span></span></span>
-<span class="r-in"><span><span class="st">  jsmodule.exampleApp.MarqueeSelectionExample = function(params) {</span></span></span>
+<span class="r-in"><span><span class="st">  return function(params) {</span></span></span>
 <span class="r-in"><span><span class="st">    const forceUpdate = useForceUpdate();</span></span></span>
-<span class="r-in"><span><span class="st">    const name = params['name'];</span></span></span>
+<span class="r-in"><span><span class="st">    const inputId = params['inputId'];</span></span></span>
 <span class="r-in"><span><span class="st">    const photos = params['photos'];</span></span></span>
 <span class="r-in"><span><span class="st"></span></span></span>
 <span class="r-in"><span><span class="st">    if (window.selection === undefined) {</span></span></span>
 <span class="r-in"><span><span class="st">      window.selection = new Fluent.Selection({</span></span></span>
 <span class="r-in"><span><span class="st">        items: photos,</span></span></span>
 <span class="r-in"><span><span class="st">        onSelectionChanged: function() {</span></span></span>
-<span class="r-in"><span><span class="st">          Shiny.setInputValue('"</span>, <span class="va">id</span>, <span class="st">"' + name, window.selection.getSelectedIndices());</span></span></span>
+<span class="r-in"><span><span class="st">          Shiny.setInputValue(inputId, window.selection.getSelectedIndices());</span></span></span>
 <span class="r-in"><span><span class="st">          forceUpdate();</span></span></span>
 <span class="r-in"><span><span class="st">        }</span></span></span>
 <span class="r-in"><span><span class="st">      });</span></span></span>
@@ -230,28 +249,21 @@ The allowed props are listed below in the <b>Details</b> section.</p></dd>
 <span class="r-in"><span><span class="st">      React.createElement('ul', { className: styles.photoList }, items)</span></span></span>
 <span class="r-in"><span><span class="st">    );</span></span></span>
 <span class="r-in"><span><span class="st">  };</span></span></span>
-<span class="r-in"><span><span class="st">"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">MarqueeSelectionExample</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">...</span><span class="op">)</span> <span class="fu">shiny.react</span><span class="fu">::</span><span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/reactElement.html" class="external-link">reactElement</a></span><span class="op">(</span></span></span>
-<span class="r-in"><span>  module <span class="op">=</span> <span class="st">"exampleApp"</span>, name <span class="op">=</span> <span class="st">"MarqueeSelectionExample"</span>,</span></span>
-<span class="r-in"><span>  props <span class="op">=</span> <span class="fu">shiny.react</span><span class="fu">::</span><span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/asProps.html" class="external-link">asProps</a></span><span class="op">(</span><span class="va">...</span><span class="op">)</span>,</span></span>
-<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="st">"</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">{</span></span></span>
 <span class="r-in"><span>  <span class="va">ns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/NS.html" class="external-link">NS</a></span><span class="op">(</span><span class="va">id</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/tagList.html" class="external-link">tagList</a></span><span class="op">(</span></span></span>
-<span class="r-in"><span>    <span class="fu">script</span><span class="op">(</span><span class="fu">ns</span><span class="op">(</span><span class="st">""</span><span class="op">)</span><span class="op">)</span>,</span></span>
-<span class="r-in"><span>    <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span></span>
-<span class="r-in"><span>      <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/textOutput.html" class="external-link">textOutput</a></span><span class="op">(</span><span class="fu">ns</span><span class="op">(</span><span class="st">"marqueeResult"</span><span class="op">)</span><span class="op">)</span>,</span></span>
-<span class="r-in"><span>      <span class="fu"><a href="Label.html">Label</a></span><span class="op">(</span><span class="st">"Drag a rectangle around the items below to select them"</span><span class="op">)</span>,</span></span>
-<span class="r-in"><span>      <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/reactOutput.html" class="external-link">reactOutput</a></span><span class="op">(</span><span class="fu">ns</span><span class="op">(</span><span class="st">"marqueeSelection"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-in"><span>    <span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/textOutput.html" class="external-link">textOutput</a></span><span class="op">(</span><span class="fu">ns</span><span class="op">(</span><span class="st">"marqueeResult"</span><span class="op">)</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>    <span class="fu"><a href="Label.html">Label</a></span><span class="op">(</span><span class="st">"Drag a rectangle around the items below to select them"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>    <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/reactOutput.html" class="external-link">reactOutput</a></span><span class="op">(</span><span class="fu">ns</span><span class="op">(</span><span class="st">"marqueeSelection"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">server</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">{</span></span></span>
 <span class="r-in"><span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/moduleServer.html" class="external-link">moduleServer</a></span><span class="op">(</span><span class="va">id</span>, <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>    <span class="va">ns</span> <span class="op">&lt;-</span> <span class="va">session</span><span class="op">$</span><span class="va">ns</span></span></span>
+<span class="r-in"><span></span></span>
 <span class="r-in"><span>    <span class="va">photos</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">50</span>, <span class="kw">function</span><span class="op">(</span><span class="va">index</span><span class="op">)</span> <span class="op">{</span></span></span>
 <span class="r-in"><span>      <span class="va">randomWidth</span> <span class="op">&lt;-</span> <span class="fl">50</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample.int</a></span><span class="op">(</span><span class="fl">150</span>, <span class="fl">1</span><span class="op">)</span></span></span>
 <span class="r-in"><span>      <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
@@ -268,7 +280,7 @@ The allowed props are listed below in the <b>Details</b> section.</p></dd>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span>    <span class="va">output</span><span class="op">$</span><span class="va">marqueeSelection</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/renderReact.html" class="external-link">renderReact</a></span><span class="op">(</span><span class="op">{</span></span></span>
 <span class="r-in"><span>      <span class="fu">MarqueeSelectionExample</span><span class="op">(</span></span></span>
-<span class="r-in"><span>        name <span class="op">=</span> <span class="st">"selectedIndices"</span>,</span></span>
+<span class="r-in"><span>        inputId <span class="op">=</span> <span class="fu">ns</span><span class="op">(</span><span class="st">"selectedIndices"</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>        photos <span class="op">=</span> <span class="va">photos</span></span></span>
 <span class="r-in"><span>      <span class="op">)</span></span></span>
 <span class="r-in"><span>    <span class="op">}</span><span class="op">)</span></span></span>
