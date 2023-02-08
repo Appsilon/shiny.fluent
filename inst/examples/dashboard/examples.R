@@ -107,7 +107,7 @@ makeExamplePage <- function(name, ui, code) {
 }
 
 makeExampleRoute <- function(name) {
-  path <- file.path("..", paste0(name, ".R"))
+  path <- system.file(file.path("examples", paste0(name, ".R")), package = "shiny.fluent")
   example <- readExample(path)
   route(
     path = name,
