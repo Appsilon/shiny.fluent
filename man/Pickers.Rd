@@ -136,10 +136,19 @@ TODO (adjective-object) remove IPersonaprops before the next major version bump}
 library(shiny)
 library(shiny.fluent)
 
+makeScript <- function(js) {
+  htmltools::htmlDependency(
+    name = "TagPickerExample",
+    version = "0", # Not used.
+    src = c(href = ""), # Not used.
+    head = paste0("<script>", js, "</script>")
+  )
+}
+
 ui <- function(id) {
   ns <- NS(id)
   tagList(
-    tags$script(HTML("
+    makeScript("
       testTags = [
         'black',
         'blue',
@@ -173,7 +182,7 @@ ui <- function(id) {
             )
           : [];
       };
-    ")),
+    "),
     textOutput(ns("selectedTags")),
     TagPicker(
       onResolveSuggestions = JS("filterSuggestedTags"),
