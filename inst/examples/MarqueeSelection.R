@@ -10,7 +10,27 @@ library(shiny.fluent)
 # 1. Use mergeStyles and themes from Fluent
 # 2. Define custom components
 # 3. Send results back to Shiny.
-script <- function(id) tags$script(HTML(paste0("
+
+customComponent <- function(name, js) {
+  dependency <- htmltools::htmlDependency(
+    name = name,
+    version = "0", # Not used.
+    src = c(href = ""), # Not used.
+    head = paste0("
+      <script>
+        (jsmodule.CustomComponents ??= {}).", name, " = (() => {", js, "})();
+      </script>
+    ")
+  )
+  function(...) shiny.react::reactElement(
+    module = "CustomComponents",
+    name = name,
+    props = shiny.react::asProps(...),
+    deps = dependency
+  )
+}
+
+MarqueeSelectionExample <- customComponent("MarqueeSelectionExample", "
   const React = jsmodule['react'];
   const Fluent = jsmodule['@fluentui/react'];
 
@@ -51,17 +71,16 @@ script <- function(id) tags$script(HTML(paste0("
     return () => setIt(it => !it);
   };
 
-  jsmodule.exampleApp = {}
-  jsmodule.exampleApp.MarqueeSelectionExample = function(params) {
+  return function(params) {
     const forceUpdate = useForceUpdate();
-    const name = params['name'];
+    const inputId = params['inputId'];
     const photos = params['photos'];
 
     if (window.selection === undefined) {
       window.selection = new Fluent.Selection({
         items: photos,
         onSelectionChanged: function() {
-          Shiny.setInputValue('", id, "' + name, window.selection.getSelectedIndices());
+          Shiny.setInputValue(inputId, window.selection.getSelectedIndices());
           forceUpdate();
         }
       });
@@ -90,28 +109,21 @@ script <- function(id) tags$script(HTML(paste0("
       React.createElement('ul', { className: styles.photoList }, items)
     );
   };
-")))
-
-
-MarqueeSelectionExample <- function(...) shiny.react::reactElement(
-  module = "exampleApp", name = "MarqueeSelectionExample",
-  props = shiny.react::asProps(...),
-)
+")
 
 ui <- function(id) {
   ns <- NS(id)
   tagList(
-    script(ns("")),
-    div(
-      textOutput(ns("marqueeResult")),
-      Label("Drag a rectangle around the items below to select them"),
-      reactOutput(ns("marqueeSelection"))
-    )
+    textOutput(ns("marqueeResult")),
+    Label("Drag a rectangle around the items below to select them"),
+    reactOutput(ns("marqueeSelection"))
   )
 }
 
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
+    ns <- session$ns
+
     photos <- lapply(1:50, function(index) {
       randomWidth <- 50 + sample.int(150, 1)
       list(
@@ -128,7 +140,7 @@ server <- function(id) {
 
     output$marqueeSelection <- renderReact({
       MarqueeSelectionExample(
-        name = "selectedIndices",
+        inputId = ns("selectedIndices"),
         photos = photos
       )
     })

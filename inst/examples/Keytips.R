@@ -1,12 +1,23 @@
 library(shiny)
 library(shiny.fluent)
 
+makeScript <- function(js) {
+  tagList(
+    shiny.react::reactDependency(),
+    htmltools::htmlDependency(
+      name = "KeytipsExample",
+      version = "0", # Not used.
+      src = c(href = ""), # Not used.
+      head = paste0("<script>", js, "</script>")
+    )
+  )
+}
+
 ui <- function(id) {
   ns <- NS(id)
   tagList(
-    tags$script(HTML(paste0("
+    makeScript(paste0("setTimeout(() => {
       const btnExecute = (el) => {
-        console.log(el);
         el.click();
       };
 
@@ -55,7 +66,7 @@ ui <- function(id) {
 
       keytipMap = jsmodule['@fluentui/react'].buildKeytipConfigMap(keytipConfig);
 
-      const buttonProps = {
+      window.buttonProps = {
         items: [
           {
             key: 'buttonMenuItem1',
@@ -71,7 +82,7 @@ ui <- function(id) {
           },
         ],
       };
-    "))),
+    })")),
     textOutput(ns("keytipsResult")),
     div(
       Label(

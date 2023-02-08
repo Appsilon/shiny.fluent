@@ -1,33 +1,27 @@
+library(dplyr)
+library(purrr)
+library(sass)
 library(shiny.fluent)
 library(shiny.router)
-library(sass)
+library(shiny)
 library(stringi)
-library(purrr)
 
 source("header.R")
 source("navigation.R")
-source("examples.R")
 source("utils.R")
-source("example_page.R")
+source("examples.R")
 source("home.R")
 source("about.R")
 source("footer.R")
 
-examplePages <- imap(examples, function(example, name) {
-  page <- makeExamplePage(name, example$ui)
-  route(name, page)
-})
-names(examplePages) <- NULL
-
-pages <- c(
+routes <- c(
   list(
     route("/", homePage),
     route("about", aboutPage)
   ),
-  examplePages
+  lapply(examples, makeExampleRoute)
 )
-
-router <- lift(make_router)(pages)
+router <- do.call(make_router, routes)
 
 layout <- div(class = "grid-container",
   div(class = "header", header),
@@ -44,8 +38,7 @@ ui <- fluidPage(
   suppressDependencies("bootstrap"),
   tags$head(
     tags$link(href = "style.css", rel = "stylesheet", type = "text/css"),
-    shiny::tags$script(type = "text/javascript", src = shiny_router_js),
-    tags$script(src = "examples_scripts.js")
+    shiny::tags$script(type = "text/javascript", src = shiny_router_js)
   ),
   htmltools::htmlDependency(
     "office-ui-fabric-core",
@@ -65,12 +58,8 @@ sass(
   output = "www/style.css"
 )
 
-server <- function(input, output, session) {
-  router$server(input, output, session)
-
-  purrr::map(examples, function(example) {
-    example$server(input, output)
-  })
+server <- function(input, output) {
+  router$server()
 }
 
 shinyApp(ui, server)

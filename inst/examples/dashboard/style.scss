@@ -1,3 +1,14 @@
+:root {
+  --AppsilonBlue: #0099F9;
+  --AppsilonBlue-weak-2: #80CCFC;
+  --AppsilonMint: #1AFFD5;
+  --AppsilonMint-weak-2: #C2FFF4;
+  --AppsilonPurple-weak-1: #994B9D;
+  --AppsilonPurple-weak-2: #BB87BE;
+  --AppsilonRose-weak-1: #FF8692;
+  --AppsilonYellow-weak-1: #FDE16E;
+}
+
 body {
   background-color: rgba(225, 223, 221, 0.2);
   min-height: 611px;
@@ -60,6 +71,21 @@ body {
   grid-area: footer;
   background-color: #f3f2f1;
   padding: 30px;
+  
+  border-color: var(--AppsilonBlue);
+  border-image: linear-gradient(
+    to right,
+    var(--AppsilonMint) 0 12.5%,
+    var(--AppsilonMint-weak-2) 0 25%,
+    var(--AppsilonYellow-weak-1) 0 37.5%,
+    var(--AppsilonRose-weak-1) 0 50%,
+    var(--AppsilonPurple-weak-1) 0 62.5%,
+    var(--AppsilonPurple-weak-2) 0 75%,
+    var(--AppsilonBlue) 0 87.5%,
+    var(--AppsilonBlue-weak-2) 0 100%
+  ) 100% 1 0 stretch;
+  border-top-style: solid;
+  border-top-width: 3px;
 }
 
 .title {

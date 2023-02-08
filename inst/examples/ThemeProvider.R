@@ -37,7 +37,6 @@ ui <- function(id) {
   ns <- NS(id)
   ThemeProvider(
     theme = theme,
-    applyTo = "body",
     Stack(
       tokens = list(childrenGap = "10px"),
       style = list(width = 250),
