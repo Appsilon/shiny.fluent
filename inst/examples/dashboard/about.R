@@ -84,7 +84,7 @@ appsilon <- function() {
         target = "_blank",
         rel = "noopener noreferrer",
         img(
-          src = "../static/images/appsilon-logo.png",
+          src = "../appsilon-logo.png",
           alt = "Appsilon"
         )
       )
@@ -109,37 +109,12 @@ aboutPage <- makePage(
   div(
     class = "modal-dialog",
     div(
-      class = "modal-title",
-      "Arctic Fauna"
-    ),
-    div(
       class = "about-section",
       topic_section(
         header = "About the project",
         description = "This R Shiny dashboard explores artic fauna
           trends using species observation data from the
           Ocean Biodiversity Information System (OBIS)."
-      ),
-      topic_section(
-        header = "Dataset Info",
-        description = "The Arctic Biodiversity Data Service
-        (ABDS) is the data-management framework for the
-        Conservation of Arctic Flora and Fauna (CAFF),
-        the biodiversity working group of the Arctic Council,
-        and its programs and activities, including the Circumpolar
-        Biodiversity Monitoring Programme (CBMP). This Dashboard uses
-        only part of the dataset to show meaningful information."
-      ),
-      div(
-        class = "about-tag",
-        tag(
-          tag_string = "OBIS dataset",
-          hyperlink = "https://obis.org/node/da50007b-7871-46cf-8530-441b5836d2c1"
-        ),
-        tag(
-          tag_string = "OBIS website",
-          hyperlink = "https://abds.is/"
-        )
       ),
       hr(),
       div(
@@ -151,7 +126,7 @@ aboutPage <- makePage(
           class = "card-section",
           card(
             href_link = "https://appsilon.github.io/shiny.fluent/index.html",
-            img_link = "../static/images/shiny-fluent.png",
+            img_link = "../img/shiny-fluent.png",
             card_header = "Shiny.fluent",
             card_text = "We believe that a great UI plays a huge role in
             the success of application projects. Shiny.fluent gives your
@@ -162,18 +137,26 @@ aboutPage <- makePage(
             using React libraries in Shiny."
           ),
           card(
-            href_link = "https://appsilon.github.io/rhino/",
-            img_link = "../static/images/rhino.png",
-            card_header = "Rhino",
-            card_text = "Rhino allows you to create Shiny apps The Appsilon
-            Way - like a fullstack software engineer. Apply best
-            software engineering practices, modularize your code,
-            test it well, make UI beautiful, and think about
-            user adoption from the onset. Rhino is an opinionated
-            framework with a focus on software engineering practices
-            and development tools."
+            href_link = "https://appsilon.github.io/shiny.react/",
+            img_link = "../img/shiny-react.png",
+            card_header = "Shiny.React",
+            card_text = "Most of the shiny apps are build directly in Shiny
+            without using any JS library. React being the Most popular one
+            becomes one of such candidate.
+            This R package enables using React in Shiny apps and is
+            used e.g. by the shiny.fluent package. It contains R and JS
+            code which is independent from the React library
+            (e.g. Fluent UI) that is being wrapped."
           ),
-          empty_card()
+          card(
+            href_link = "https://appsilon.github.io/shiny.router/",
+            img_link = "../img/shiny-router.png",
+            card_header = "shiny.router",
+            card_text = "With shiny.router you can introduce routing to your
+            Shiny application: use the URL to direct user from one view to
+            another. This not only simplifies the implementation but also
+            allows the users to bookmark or share the URL of a specific view."
+          )
         )
       ),
       appsilon()
