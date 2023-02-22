@@ -112,9 +112,9 @@ aboutPage <- makePage(
       class = "about-section",
       topic_section(
         header = "About the project",
-        description = "This R Shiny dashboard explores artic fauna
-          trends using species observation data from the
-          Ocean Biodiversity Information System (OBIS)."
+        description = "This Dashboard demonstrate the usage of 
+        shiny.fluent along with all of the component and with 
+        examples of each in a app."
       ),
       hr(),
       div(
@@ -128,34 +128,33 @@ aboutPage <- makePage(
             href_link = "https://appsilon.github.io/shiny.fluent/index.html",
             img_link = "../img/shiny-fluent.png",
             card_header = "Shiny.fluent",
-            card_text = "We believe that a great UI plays a huge role in
-            the success of application projects. Shiny.fluent gives your
-            apps a beautiful, professional look, rich set of components
-            easily usable in Shiny, and fast speed of development that Shiny
-            is famous for. As Fluent UI is built in React, shiny.fluent is
-            based on another package called shiny.react, which allows for
-            using React libraries in Shiny."
+            card_text = "We believe that a great UI plays a huge role in the 
+            success of application projects. Shiny.fluent gives your apps 
+            that beautiful look and rich set of components that are easy to 
+            use in Shiny - all with the fast speed of development that Shiny 
+            is famous for. As FLuent UI is built in React, shiny.fluent is 
+            based on another packaged called shiny.react, which allows the use 
+            of React libraries in Shiny."
           ),
           card(
             href_link = "https://appsilon.github.io/shiny.react/",
             img_link = "../img/shiny-react.png",
             card_header = "Shiny.React",
-            card_text = "Most of the shiny apps are build directly in Shiny
-            without using any JS library. React being the Most popular one
-            becomes one of such candidate.
-            This R package enables using React in Shiny apps and is
-            used e.g. by the shiny.fluent package. It contains R and JS
-            code which is independent from the React library
-            (e.g. Fluent UI) that is being wrapped."
+            card_text = "This R package enables the use of React in Shiny 
+            apps and is used by the shiny.fluent package. It contains R 
+            and JS code which is independent from the React library (e.g. 
+            Fluent UI) that is being wrapped"
           ),
           card(
             href_link = "https://appsilon.github.io/shiny.router/",
             img_link = "../img/shiny-router.png",
             card_header = "shiny.router",
-            card_text = "With shiny.router you can introduce routing to your
-            Shiny application: use the URL to direct user from one view to
-            another. This not only simplifies the implementation but also
-            allows the users to bookmark or share the URL of a specific view."
+            card_text = "With shiny.router, you can create a Shiny app 
+            that behaves like a multipage app. Introduce routing to 
+            your Shiny applications; use the URL to direct a user 
+            from one view to another. Simplify the implementation 
+            and allow users to bookmark or share the URL of a 
+            specific view"
           )
         )
       ),
