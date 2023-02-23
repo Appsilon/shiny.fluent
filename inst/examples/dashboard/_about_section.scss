@@ -1,0 +1,284 @@
+$dark-blue: #050c31;
+$light-blue: #dbf1ff;
+$aps-blue: #0099f9;
+$brown: #c4c4c4;
+
+$card-bg-color: #172c40;
+$card-border-color: #ededed;
+$card-content-clr: #ecf5ff;
+$aps-bg-color: #f4f8fa;
+$aps-smry-color: #244059;
+
+html {
+  overflow: scroll;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+.modal-dialog {
+  font-family: "Maven Pro", sans-serif;
+  text-align: justify;
+  font-style: normal;
+}
+
+@media only screen and (max-width: 767px) {
+  .modal-dialog {
+    width: 80vw;
+    font-size: 12px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .modal-dialog {
+    width: 70vw;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .modal-dialog {
+    width: 55vw;
+    font-size: 16px;
+  }
+}
+
+.modal-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Maven Pro", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.5em;
+  line-height: 1.1em;
+  padding: 0 2em;
+  color: $dark-blue;
+}
+
+.about-section {
+  line-height: 1.1em;
+  font-family: "Maven Pro", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1em;
+  padding: 0 3em;
+
+  & .about-descr {
+    margin-bottom: 1.1em;
+    line-height: 1em;
+    font-family: "Maven Pro", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.9em;
+  }
+
+  & .about-header {
+    font-family: "Maven Pro", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.1em;
+    color: $dark-blue;
+    margin-bottom: 0.75em;
+  }
+
+  & .about-tag {
+    font-family: "Maven Pro", sans-serif;
+    font-style: normal;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0.8em 0;
+
+    & i {
+      padding-right: 0.5em;
+    }
+
+    & .tag-item {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 0.5em 0.75em;
+      margin-right: 0.5em;
+      margin-top: 0.5em;
+      gap: 0.25em;
+      background: $light-blue;
+      color: $dark-blue;
+      border-radius: 4em;
+
+      & a:link {
+        text-decoration: none;
+        color: $dark-blue;
+      }
+    }
+
+    & .tag-item:hover {
+      background-color: $aps-blue;
+      color: $dark-blue;
+    }
+  }
+
+  & hr {
+    border: 0.1em solid $brown;
+  }
+
+  & .card-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1em 0;
+    font-size: 1em;
+
+    @media only screen and (max-width: 767px) {
+      flex-direction: column;
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 1023px) {
+      flex-direction: row;
+    }
+
+    @media only screen and (min-width: 1024px) {
+      flex-direction: row;
+    }
+
+    .card-package {
+      flex-basis: 30%;
+      display: flex;
+      box-sizing: border-box;
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+      padding: 1.1em;
+      gap: 1.1em;
+      background: $card-bg-color;
+      border: 0.1em solid $card-border-color;
+      box-shadow: 0 1em 2em rgba(0, 0, 0, 0.02);
+      border-radius: 1em;
+    }
+
+    .card-empty {
+      flex-basis: 30%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      & a:link {
+        text-decoration: none;
+        color: $aps-blue;
+      }
+
+      & i {
+        font-size: 3em;
+        color: $light-blue;
+        padding-left: 40%;
+        padding-top: 20%;
+        align-items: center;
+      }
+
+      & .card-empty-caption {
+        font-family: "Maven Pro", sans-serif;
+        font-style: normal;
+        padding: 1em 0;
+        font-size: 1.15em;
+        line-height: 1.1em;
+        font-weight: 600;
+        align-items: center;
+        text-align: center;
+        color: $aps-blue;
+      }
+    }
+
+    .card-heading {
+      font-family: "Maven Pro", sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 1.1em;
+      line-height: 1.1em;
+      color: white;
+    }
+
+    .card-content {
+      font-family: "Maven Pro", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 0.9em;
+      line-height: 1.1em;
+      text-align: center;
+      color: $card-content-clr;
+    }
+
+    .card-footer {
+      font-family: "Maven Pro", sans-serif;
+      font-style: normal;
+      align-items: center;
+      text-align: center;
+      color: $card-bg-color;
+      font-weight: 500;
+      font-size: 1em;
+      line-height: 0.5em;
+      flex-direction: row;
+      justify-content: center;
+      padding: 0.75em 1em;
+      gap: 0.8em;
+      background: white;
+      border-radius: 0.25em;
+      flex: none;
+      order: 1;
+      align-self: stretch;
+      flex-grow: 0;
+      margin-top: auto;
+
+      & a:link {
+        text-decoration: none;
+        color: $dark-blue;
+      }
+    }
+
+    .card-img {
+      img {
+        height: 7em;
+        width: 8em;
+        align-items: center;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .appsilon-card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em;
+    margin: 1rem 0;
+    background: $aps-bg-color;
+    border-radius: 1em;
+
+    .appsilon-pic {
+      flex-shrink: 2;
+      flex-basis: 20%;
+      margin: auto;
+
+      img {
+        height: 3.2em;
+        width: 8em;
+        align-items: center;
+      }
+    }
+
+    .appsilon-summary {
+      flex-grow: 2;
+      font-family: "Maven Pro", sans-serif;
+      font-style: normal;
+      margin: auto;
+      flex-basis: 70%;
+      font-size: 0.9em;
+      line-height: 1em;
+      color: $aps-smry-color;
+    }
+  }
+}
