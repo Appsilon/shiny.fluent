@@ -127,7 +127,7 @@ aboutPage <- makePage(
           card(
             href_link = "https://appsilon.github.io/shiny.fluent/index.html",
             img_link = "../img/shiny-fluent.png",
-            card_header = "Shiny.fluent",
+            card_header = "shiny.fluent",
             card_text = "We believe that a great UI plays a huge role in the 
             success of application projects. Shiny.fluent gives your apps 
             that beautiful look and rich set of components that are easy to 
@@ -139,7 +139,7 @@ aboutPage <- makePage(
           card(
             href_link = "https://appsilon.github.io/shiny.react/",
             img_link = "../img/shiny-react.png",
-            card_header = "Shiny.React",
+            card_header = "shiny.react",
             card_text = "This R package enables the use of React in Shiny 
             apps and is used by the shiny.fluent package. It contains R 
             and JS code which is independent from the React library (e.g. 
