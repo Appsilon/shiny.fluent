@@ -13,6 +13,7 @@ NULL
 NULL
 
 #' @example inst/examples/Button.R
+#' @example inst/examples/Button2.R
 #' @name Button
 NULL
 
