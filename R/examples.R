@@ -53,10 +53,13 @@ NULL
 NULL
 
 #' @example inst/examples/DatePicker.R
+#' @example inst/examples/DatePicker2.R
 #' @name DatePicker
 NULL
 
 #' @example inst/examples/DetailsList.R
+#' @example inst/examples/DetailsList2.R
+#' @example inst/examples/DetailsList3.R
 #' @name DetailsList
 NULL
 
@@ -65,10 +68,12 @@ NULL
 NULL
 
 #' @example inst/examples/DocumentCard.R
+#' @example inst/examples/DocumentCard2.R
 #' @name DocumentCard
 NULL
 
 #' @example inst/examples/Dropdown.R
+#' @example inst/examples/Dropdown2.R
 #' @name Dropdown
 NULL
 
@@ -85,6 +90,7 @@ NULL
 NULL
 
 #' @example inst/examples/GroupedList.R
+#' @example inst/examples/GroupedList2.R
 #' @name GroupedList
 NULL
 
@@ -137,6 +143,7 @@ NULL
 NULL
 
 #' @example inst/examples/Nav.R
+#' @example inst/examples/Nav2.R
 #' @name Nav
 NULL
 
@@ -225,6 +232,7 @@ NULL
 NULL
 
 #' @example inst/examples/TextField.R
+#' @example inst/examples/TextField2.R
 #' @name TextField
 NULL
 
