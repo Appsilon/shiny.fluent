@@ -115,7 +115,6 @@ makeExampleRoute <- function(name) {
       name = name,
       ui = example$ui(name),
       code = example$code
-    ),
-    server = function() example$server(name)
+    )
   )
 }

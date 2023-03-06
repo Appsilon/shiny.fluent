@@ -21,7 +21,7 @@ routes <- c(
   ),
   lapply(examples, makeExampleRoute)
 )
-router <- do.call(make_router, routes)
+router <- do.call(router_ui, routes)
 
 layout <- div(class = "grid-container",
   div(class = "header", header),
@@ -59,7 +59,7 @@ sass(
 )
 
 server <- function(input, output) {
-  router$server()
+  router
 }
 
 shinyApp(ui, server)
