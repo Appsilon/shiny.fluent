@@ -129,7 +129,7 @@
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rstudio.github.io/sass/" class="external-link">sass</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://shiny.rstudio.com/" class="external-link">shiny</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.fluent/">shiny.fluent</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">shiny.router</span><span class="op">)</span></span></code></pre></div>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://appsilon.github.io/shiny.router/" class="external-link">shiny.router</a></span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="single-page-layout">Single page layout<a class="anchor" aria-label="anchor" href="#single-page-layout"></a>
@@ -386,9 +386,9 @@
 <p>To enable switching between pages we will use the <a href="https://appsilon.github.io/shiny.router/" class="external-link">shiny.router</a> package. This way we will also have shareable URLs to individual pages.</p>
 <p>The first step is to define the available routes:</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">router</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny.router/man/make_router.html" class="external-link">make_router</a></span><span class="op">(</span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny.router/man/route.html" class="external-link">route</a></span><span class="op">(</span><span class="st">"/"</span>, <span class="va">home_page</span><span class="op">)</span>,</span>
-<span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny.router/man/route.html" class="external-link">route</a></span><span class="op">(</span><span class="st">"other"</span>, <span class="va">analysis_page</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">router</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://appsilon.github.io/shiny.router/reference/make_router.html" class="external-link">make_router</a></span><span class="op">(</span></span>
+<span>  <span class="fu"><a href="https://appsilon.github.io/shiny.router/reference/route.html" class="external-link">route</a></span><span class="op">(</span><span class="st">"/"</span>, <span class="va">home_page</span><span class="op">)</span>,</span>
+<span>  <span class="fu"><a href="https://appsilon.github.io/shiny.router/reference/route.html" class="external-link">route</a></span><span class="op">(</span><span class="st">"other"</span>, <span class="va">analysis_page</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>Now, we need to put <code>router$ui</code> in the place where we want the selected page to appear. (Currently, we also need to manually include router’s JavaScript dependencies, because <code>shiny.fluent</code> is not compatible with the way <code>shiny.router</code> loads this dependency. We expect this to be resolved in future versions of <code>shiny.router</code>).</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Add shiny.router dependencies manually: they are not picked up because they're added in a non-standard way.</span></span>
