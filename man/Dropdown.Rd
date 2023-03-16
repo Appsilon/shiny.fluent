@@ -111,6 +111,7 @@ server <- function(id) {
 if (interactive()) {
   shinyApp(ui("app"), function(input, output) server("app"))
 }
+
 # Example 2
 library(shiny)
 library(shiny.fluent)
