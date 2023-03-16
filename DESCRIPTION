@@ -43,6 +43,7 @@ Suggests:
   rmarkdown,
   sass,
   shiny.router,
+  sortable,
   stringi,
   testthat (>= 3.0.0),
   tibble,
