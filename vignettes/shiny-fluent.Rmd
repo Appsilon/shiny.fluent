@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 
 ```{r setup, include=FALSE}
 library(shiny.fluent)
-library(tidyverse)
+library(dplyr)
 ```
 
 Let's learn shiny.fluent by building an example app.

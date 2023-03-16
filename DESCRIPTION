@@ -46,6 +46,5 @@ Suggests:
   stringi,
   testthat (>= 3.0.0),
   tibble,
-  tidyverse,
   withr
 Config/testthat/edition: 3
