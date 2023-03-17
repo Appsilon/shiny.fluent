@@ -14,6 +14,14 @@ template:
         gtag('js', new Date());
         gtag('config', 'G-DL2H66RTY1');
       </script>
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-FQQZL5V93G"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-FQQZL5V93G');
+      </script>
       <script async defer src="https://buttons.github.io/buttons.js"></script>
     before_navbar: |
       <a href="https://shiny.tools/#shiny-fluent" class="home"><i class="fa fa-lg fa-chevron-left"></i></a>
