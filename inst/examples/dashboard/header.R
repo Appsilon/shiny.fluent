@@ -53,11 +53,92 @@ farItems <- list(
   )
 )
 
-command_bar <- CommandBar(items = items,
-  farItems = farItems,
-  style = list(width = "100%"))
+appsilon_breakpoints <- breakpointSystem(
+  "appsilon-breakpoints",
+  breakpoint("xs", min = 320),
+  breakpoint("s", min = 428),
+  breakpoint("m", min = 728),
+  breakpoint("l", min = 1024),
+  breakpoint("xl", min = 1200)
+)
 
-logo <- img(src = "appsilon-logo.png", class = "logo")
-title <- div(Text(variant = "xLarge", "shiny.fluent"), class = "title")
+header <- gridPanel(
+  id = "app_header",
+  class = "mobile-collapsed",
+  breakpoint_system = appsilon_breakpoints,
+  areas = list(
+    default = c(
+      "logo . info mobile_controls",
+      "separator separator separator separator",
+      "title title title title",
+      "menu menu menu menu",
+      "cta cta cta cta"
+    ),
+    l = "logo separator title mobile_controls . menu info cta"
+  ),
+  columns = list(
+    default = "auto 1fr auto auto",
+    l = "auto 1px auto auto 1fr auto auto auto"
+  ),
 
-header <- tagList(logo, title, command_bar)
+  rows = list(
+    default = "auto auto auto auto auto",
+    l = "40px"
+  ),
+
+  gap = list(
+    default = "0px",
+    l = "16px"
+  ),
+
+  logo = img(src = "appsilon-logo.png", class = "logo"),
+
+  separator = div(class = "app_header_vertical_separator mobile-toggled"),
+
+  title = div(Text(variant = "xLarge", "shiny.fluent"),
+              class = "title app_header_title mobile-toggled"
+  ),
+
+  command_bar <- CommandBar(items = items,
+                            farItems = farItems,
+                            style = list(width = "100%")),
+
+  cta = PrimaryButton.shinyInput(
+    inputId = "cta_talk",
+    text = "Let's Talk",
+    class = "btn-primary btn-cta mobile-toggled",
+    href = "https://appsilon.com/",
+    target = "_blank"
+  ),
+
+  mobile_controls = div(
+    # Collapse/Expand functionality for mobile
+    tags$script("
+        let header_expand = function() {
+          document.getElementById('app_header').classList
+            .remove('mobile-collapsed');
+          document.getElementById('app_header').classList
+            .add('mobile-expanded');
+        }
+
+        let header_collapse = function() {
+          document.getElementById('app_header').classList.
+            add('mobile-collapsed');
+          document.getElementById('app_header').classList.
+            remove('mobile-expanded');
+        }
+      "),
+
+    icon(
+      "bars",
+      class = "header_control header_expand cta-icon",
+      onclick = "header_expand();"
+    ),
+
+    icon(
+      "xmark",
+      class = "header_control header_collapse cta-icon",
+      onclick = "header_collapse();"
+    )
+  )
+)

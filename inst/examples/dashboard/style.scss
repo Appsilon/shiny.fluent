@@ -1,6 +1,10 @@
 @import "about_section";
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400;1,500&display=swap');
 
-:root {
+
+/*:root {
   --AppsilonBlue: #0099F9;
   --AppsilonBlue-weak-2: #80CCFC;
   --AppsilonMint: #1AFFD5;
@@ -9,7 +13,115 @@
   --AppsilonPurple-weak-2: #BB87BE;
   --AppsilonRose-weak-1: #FF8692;
   --AppsilonYellow-weak-1: #FDE16E;
+}*/
+
+:root {
+  --AppsilonBlue:     #0099F9;
+  --AppsilonNavi:     #15354A;
+  --AppsilonIce:      #A6D5E0;
+  --AppsilonMint:     #1AFFD5;
+  --AppsilonYellow:   #FCD73D;
+  --AppsilonRose:     #FF364A;
+  --AppsilonPurple:   #770F7C;
+  --AppsilonGray:     #6E757B;
+  --AppsilonLightGray:#8A8E91;
+  --AppsilonAsh:      #B3B8BA;
+  --AppsilonSnow:     #FFFFFF;
+
+  --AppsilonBlue-weak-1:   #4CB8FB;
+  --AppsilonBlue-weak-2:   #80CCFC;
+  --AppsilonBlue-weak-3:   #CCEBFE;
+  --AppsilonBlue-strong-1: #0085E1;
+  --AppsilonBlue-strong-2: #0071CD;
+  --AppsilonBlue-strong-3: #005DB9;
+
+  --AppsilonNavi-weak-1:   #29495E;
+  --AppsilonNavi-weak-2:   #3D5D72;
+  --AppsilonNavi-weak-3:   #517186;
+  --AppsilonNavi-strong-1: #0B2B40;
+  --AppsilonNavi-strong-2: #012136;
+  --AppsilonNavi-strong-3: #00172C;
+
+  --AppsilonIce-weak-1:   #B4DCE4;
+  --AppsilonIce-weak-2:   #C3E3EA;
+  --AppsilonIce-weak-3:   #E1F1F4;
+  --AppsilonIce-strong-1: #92C1CC;
+  --AppsilonIce-strong-2: #7EADB8;
+  --AppsilonIce-strong-3: #6A99A4;
+
+  --AppsilonMint-weak-1:   #8CFFEA;
+  --AppsilonMint-weak-2:   #C2FFF4;
+  --AppsilonMint-weak-3:   #EBFFFB;
+  --AppsilonMint-strong-1: #00E1B7;
+  --AppsilonMint-strong-2: #00CDA3;
+  --AppsilonMint-strong-3: #00B999;
+
+  --AppsilonYellow-weak-1:   #FDE16E;
+  --AppsilonYellow-weak-2:   #FEEB9E;
+  --AppsilonYellow-weak-3:   #FEF5CE;
+  --AppsilonYellow-strong-1: #E8C329;
+  --AppsilonYellow-strong-2: #D4AF15;
+  --AppsilonYellow-strong-3: #C09B01;
+
+  --AppsilonRose-weak-1:   #FF8692;
+  --AppsilonRose-weak-2:   #FFAFB7;
+  --AppsilonRose-weak-3:   #FFD7DB;
+  --AppsilonRose-strong-1: #D70E22;
+  --AppsilonRose-strong-2: #C3000E;
+  --AppsilonRose-strong-3: #AF0000;
+
+  --AppsilonPurple-weak-1:   #994B9D;
+  --AppsilonPurple-weak-2:   #BB87BE;
+  --AppsilonPurple-weak-3:   #DDC3DE;
+  --AppsilonPurple-strong-1: #630068;
+  --AppsilonPurple-strong-2: #4F0054;
+  --AppsilonPurple-strong-3: #3B0040;
+
+  --AppsilonGray-weak-1:   #92989C;
+  --AppsilonGray-weak-2:   #B7BABD;
+  --AppsilonGray-weak-3:   #DBDDDE;
+  --AppsilonGray-strong-1: #767A7D;
+  --AppsilonGray-strong-2: #464D53;
+  --AppsilonGray-strong-3: #32393F;
+
+  --AppsilonLightGray-weak-1:   #A7AAAD;
+  --AppsilonLightGray-weak-2:   #C4C6C8;
+  --AppsilonLightGray-weak-3:   #E2E3E3;
+  --AppsilonLightGray-strong-1: #767A7D;
+  --AppsilonLightGray-strong-2: #626669;
+  --AppsilonLightGray-strong-3: #4E5255;
+
+  --AppsilonAsh-weak-1:   #C6CACB;
+  --AppsilonAsh-weak-2:   #D9DCDD;
+  --AppsilonAsh-weak-3:   #ECEDEE;
+  --AppsilonAsh-strong-1: #9FA4A6;
+  --AppsilonAsh-strong-2: #8B9092;
+  --AppsilonAsh-strong-3: #777C7E;
+
+  /* Project Specific Variables */
+  --AppsilonColor-primary:  var(--AppsilonBlue);
+  --AppsilonColor-success:  var(--AppsilonMint-strong-3);
+  --AppsilonColor-info:     var(--AppsilonSnow);
+  --AppsilonColor-warning:  var(--AppsilonNavi-weak-3);
+  --AppsilonColor-danger:   var(--AppsilonSnow);
+
+  --AppsilonBackground-primary:  var(--AppsilonNavi);
+  --AppsilonBackground-success:  var(--AppsilonMint);
+  --AppsilonBackground-info:     var(--AppsilonBlue);
+  --AppsilonBackground-warning:  var(--AppsilonYellow);
+  --AppsilonBackground-danger:   var(--AppsilonRose);
+
+  --AppsilonHighlight-primary:  var(--AppsilonNavi-strong-3);
+  --AppsilonHighlight-success:  var(--AppsilonMint-strong-3);
+  --AppsilonHighlight-info:     var(--AppsilonBlue-strong-3);
+  --AppsilonHighlight-warning:  var(--AppsilonYellow-strong-3);
+  --AppsilonHighlight-danger:   var(--AppsilonRose-strong-3);
+
+  --AppsilonForms-accent: var(--AppsilonNavi);
 }
+
+
+
 
 body {
   background-color: rgba(225, 223, 221, 0.2);
@@ -37,7 +149,7 @@ body {
 .header {
   grid-area: header;
   background-color: #fff;
-  padding: 6px 0px 6px 10px;
+  /*padding: 6px 0px 6px 10px;*/
   display: flex;
 }
 
@@ -73,7 +185,6 @@ body {
   grid-area: footer;
   background-color: #f3f2f1;
   padding: 30px;
-  
   border-color: var(--AppsilonBlue);
   border-image: linear-gradient(
     to right,
@@ -94,7 +205,7 @@ body {
   padding: 0px 14px 0px 14px;
   color: #737373;
   margin: 6px 0px 6px 10px;
-  border-left: 1px solid darkgray;
+  //border-left: 1px solid darkgray;
 }
 
 .page-title {
@@ -138,4 +249,134 @@ body {
 
 .ms-Shimmer-container {
   margin: 10px 0;
+}
+
+#app_header {
+        padding: 12px 10px;
+        justify-content: center;
+        align-items: center;
+      }
+
+.app_header_vertical_separator {
+        background: #C1C7CD;
+        margin: 10px 0;
+        height: calc(100% - 20px);
+      }
+
+.app_header_title {
+        user-select: none;
+        color: #4D5358;
+        font-family: 'Maven Pro';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+.btn-cta {
+        color: white !important;
+        font-size: 14px;
+        height: 40px;
+        padding: 8px 16px 8px 16px;
+        justify-content: center;
+      }
+
+.btn-nav_menu {
+        font-family: 'Maven Pro';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+
+        background: transparent;
+        border: none;
+
+        color: #697077;
+      }
+
+.btn-nav_menu:hover, .btn-nav_menu:active {
+        color: #0099F9 !important;
+        background-color: #F2FAFF !important;
+      }
+
+.cta-icon {
+        background: transparent !important;
+        border: none;
+        color: #0099f9 !important;
+      }
+
+.header_control {
+        display: none;
+        width: 20px;
+        justify-content: center;
+      }
+
+@media (max-width: 1024px) {
+  .app_header_vertical_separator {
+          background: #C1C7CD;
+          margin: 10px 0;
+          height: 1px;
+        }
+
+  .app_header.mobile-collapsed {
+          padding: 12px 24px 12px 0;
+        }
+
+  .app_header_title {
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 24px;
+          color: #040A3C;
+        }
+
+  .header_control {
+          display: block;
+          cursor: pointer;
+        }
+
+  .btn-nav_menu {
+          text-align: left;
+        }
+
+  #app_header.mobile-expanded .mobile-toggled,
+  #app_header.mobile-expanded .header_collapse {
+          display: flex !important;
+        }
+  #app_header.mobile-expanded .header_expand {
+          display: none !important;
+        }
+
+  #app_header.mobile-collapsed .mobile-toggled,
+  #app_header.mobile-collapsed .header_collapse {
+          display: none !important;
+        }
+  #app_header.mobile-collapsed .header_expand {
+          display: flex !important;
+        }
+
+      }
+
+.btn-primary {
+    --bs-btn-color: #000;
+    --bs-btn-bg: #0099F9;
+    --bs-btn-border-color: #0099F9;
+    --bs-btn-hover-color: #000;
+    --bs-btn-hover-bg: #26a8fa;
+    --bs-btn-hover-border-color: #1aa3fa;
+    --bs-btn-focus-shadow-rgb: 0,130,212;
+    --bs-btn-active-color: #000;
+    --bs-btn-active-bg: #33adfa;
+    --bs-btn-active-border-color: #1aa3fa;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
+    --bs-btn-disabled-color: #000;
+    --bs-btn-disabled-bg: #0099F9;
+    --bs-btn-disabled-border-color: #0099F9;
+}
+
+.ms-OverflowSet {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-grow: 0;
+    align-items: stretch;
 }

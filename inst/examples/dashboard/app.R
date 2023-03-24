@@ -5,6 +5,9 @@ library(shiny.fluent)
 library(shiny.router)
 library(shiny)
 library(stringi)
+library(bslib)
+library(imola)
+
 
 source("header.R")
 source("navigation.R")
