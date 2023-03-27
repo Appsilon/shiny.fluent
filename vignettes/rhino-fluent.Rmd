@@ -10,301 +10,212 @@ editor_options:
     wrap: sentence
 ---
 
-This quick tutorial helps to build a basic RShiny application with the structure provided by the `Rhino` package and simultaneously using the `Shiny.fluent` package.
-It introduces the user to the concepts of -
+## 1. Hello World with `rhino` and `shiny.fluent`
 
--   Rhino project structure for a RShiny application and get it running
+### Getting started with our development environment
 
--   Rendering a basic UI using `shiny.fluent` package
+Let us first install and create our `rhino` project structure.
 
--   Building a basic module in Rhino project to perform an action using Shiny.fluent package functions ( for example, using a Checkbox on the UI )
+To install `rhino`, please run the following on a R console in your working directory
 
-## Let's install `rhino` first
-
-We assume that you do not have `rhino` pre-installed.
-In that case, here's how you can install the package 👇
-
-``` r
+```         
 install.packages("rhino")
 ```
 
-💡To use the state of the art JavaScript and Sass development tools provided by Rhino, you'll need to [install Node.js](https://nodejs.org/en/download/) (v12 or later) on your system.
-Rhino will still work without Node.js but with some limitations (described in [JavaScript](https://appsilon.github.io/rhino/articles/tutorial/create-your-first-rhino-app.html#add-javascript-code) and [Sass](https://appsilon.github.io/rhino/articles/tutorial/create-your-first-rhino-app.html#add-custom-styles) sections of our docs).
-
-## Create an initial `rhino` application
-
-Now that you have the package installed, let's use `rhino` to create an initial application for us which we can use for the next steps of our project.
-
-Creating a new Rhino application can be done in two ways - by using the **Create Project** functionality on RStudio IDE or by running **`rhino::init()`** function from the console.
-We'll discuss more about this below 👇
-
-### 👉 Create an application using the RStudio wizard
-
-If you use RStudio, probably the easiest way to create a new Rhino application is to simply use Create `New Project` feature.
-Once Rhino is installed, it will be automatically added as one of the options in RStudio:
-
-Choose it, input the new project name and you are ready to go 👍
-
-![](https://appsilon.github.io/rhino/articles/tutorial/images/rstudio_wizard.png)
-
-### 👉 Create an application using `rhino::init()`
-
-Creating a Rhino application is possible in the R console by running the `init` function:
-
-``` r
-rhino::init("RhinoApplication")
-```
-
-There are two things you need to know when choosing this way of initializing your application:
-
--   **Rhino will not change your working directory** - You need to either open a new R session in your new application directory or manually change the working directory.
+Now that `rhino` is installed, let us use it to initiate a project which will give us a structure
 
 ```         
-setwd("./RhinoApplication")
+rhino::init()
 ```
 
--   **Rhino relies on options added to the projects `.Rprofile` file -** The most robust way to make sure it was correctly sourced is to simply restart the R session.
-
-A result of both paths will be an initial Rhino application with the following structure:
+You will notice that the working directory now has a proper folder structure along with some other files.
+Among those, you will also notice that `renv` is being used to manage the packages/dependencies for the project.
+So, let us now install `shiny.fluent` into the project.
 
 ```         
-.
-├── RhinoApplication.Rproj
-├── app
-│ ├── js
-│ │ └── index.js
-│ ├── logic
-│ │ └── __init__.R
-│ ├── main.R
-│ ├── static
-│ │ └── favicon.ico
-│ ├── styles
-│ │ └── main.scss
-│ └── view
-│     └── __init__.R
-├── app.R
-├── config.yml
-├── dependencies.R
-├── renv.lock
-├── rhino.yml
-└── tests
-    ├── cypress
-    │ └── integration
-    │     └── app.spec.js
-    ├── cypress.json
-    └── testthat
-        └── test-main.R
+renv::install("shiny.fleunt")
 ```
 
-If you want to know more about it, check [this](https://appsilon.github.io/rhino/articles/explanation/application-structure.html) document.
+Using renv for installation benefits us.
+In particular, this means that the local cache of package installations is used when possible.
+This helps to avoid re-downloading packages that have already been downloaded before, and re-compiling packages from source when a binary copy of that package is already available.
 
-### 🚀 Running the initial application
-
-Now, once you are all set up, let's run it:
+Now, head over to the `dependencies.R` file and add `library(shiny.fluent)` to it.
+Upon saving the modified file, please take a snapshot of the dependencies so that the `renv.lock` file is updated.
 
 ```         
-shiny::runApp()
+renv::snaphot()
 ```
 
-And here is what you should be seeing right now 👇
+Maintain this process whenever we need to install a new package in the project henceforth.
 
-![](https://appsilon.github.io/rhino/articles/tutorial/images/init_application.png){width="620" height="268"}
+### Our first development on the app
 
-## Let's install `shiny.fluent` for our project
+-   Open the `app/main.R` file.
 
-💡The rhino project you just started uses `renv` for dependency management.
-You can now install any other package in the same project and include it in the `renv.lock` file.
+-   You will notice that currently it does not have any usage of `shiny.fluent` package to generate the text - "Hello".
+    So let us introduce `shiny.fluent` and use it in our code to do the same action!
 
-Here's how you can install the `shiny.fluent` package 👇
-
-``` r
-install.packages("shiny.fluent")
-```
-
-Now that the package is installed, let us use it for building our very first `rhino` module.
-
-## Use `shiny.fluent` in your Rhino application!
-
-In Rhino, each application view is intended to live as a [Shiny module](https://shiny.rstudio.com/articles/modules.html) and use encapsulation provided by [`box` package](https://klmr.me/box/).
-Also, in rhino apps, even the base ui and server are modules!
-
-In your project, please go to the `app` folder and edit the `main.R` file with the code below
-
-``` r
-# app/main.R
-
+```         
 box::use(
-  shiny[bootstrapPage, moduleServer, NS, tags, textOutput, renderText],
-  shiny.fluent[fluentPage]
+  shiny[moduleServer, NS, renderText, tags, textOutput],
+  shiny.fluent[fluentPage, Text]
 )
 
 #' @export
-# Define user interface function
 ui <- function(id) {
-  # Create namespace for UI elements
   ns <- NS(id)
-  # Define app layout using Fluent UI design system
   fluentPage(
-    tags$h1(
-      textOutput(ns("message")) # Display message generated by server
-    )
+    Text("Hello!", variant = "mega")
   )
 }
 
 #' @export
-# Define server logic function
 server <- function(id) {
-  # Create Shiny module
   moduleServer(id, function(input, output, session) {
-    # Generate message to be displayed in UI
-    output$message <- renderText("👋 This text has been generated using shiny.fluent package inside a Rhino project!")
-  })
+  }
+  )
 }
 ```
 
-The **`box::use`** function is used to load the necessary packages along with their required functions for the app.
-In this case, the app requires the **`shiny`** package for the basic Shiny functionalities and the **`shiny.fluent`** package for the Fluent UI design system.
+The above code uses [`fluentPage`](https://appsilon.github.io/shiny.fluent/reference/fluentPage.html) and [`Text`](https://appsilon.github.io/shiny.fluent/reference/Text.html) from `shiny.fluent` package to render the UI and text.
+You will also notice the [`NS(id)`](https://shiny.rstudio.com/reference/shiny/latest/ns) used in the code to return a namespace function, which has been saved as `ns` and will be invoked later in the shiny module.
 
-The **`ui`** function creates the user interface of the app.
-It takes an **`id`** argument which is used to namespace the UI elements.
-Inside the function, the **`NS`** function is called to create the namespace for the UI elements.
-The **`fluentPage`** function which is from `shiny.fluent` package is used to create the layout of the app.
-It consists of a heading (**`tags$h1`**) and a text output (**`textOutput`**) element that will display a message generated by the server.
-Fluent UI is a design system developed by Microsoft that provides a modern, responsive, and accessible user interface for web applications.
-
-The **`server`** function defines the server logic of the app.
-It takes an **`id`** argument which is used to match the namespace with the UI elements created in the **`ui`** function.
-Inside the function, the **`moduleServer`** function is called to create a Shiny module.
-The **`renderText`** function is used to generate the text output message that will be displayed in the UI.
-
-The exported **`ui`** and **`server`** functions can be used to run the app with the **`shinyApp`** function.
-The app will display a heading and a message that says "👋 This text has been generated using shiny.fluent package inside a Rhino project!" in the web browser.
-
-Upon running the app with `shiny::runApp()`, you should see the following on your screen!
+Now when you run the app, you should be seeing this -
 
 ```{r, echo=FALSE}
 knitr::include_graphics("images/rhino_fluent_1.png")
 ```
 
-## Adding modules to the Rhino App
+Note: If you check the built-in testcases once changes are introduced, running `rhino::test_r()` will give you errors.
+To avoid failed github actions for now (in case you are pushing your code to Github), you may empty the test cases present in `tests\testthat\test-main.R`.
 
-Your application runs, but it doesn't have any meaningful functionality.
-Let's add something there!
+## 2. Show Data in a Table via a `rhino` module
 
-In Rhino, each application view is intended to live as a [Shiny module](https://shiny.rstudio.com/articles/modules.html) and use encapsulation provided by [`box` package](https://klmr.me/box/).
+So, in this section, we will introduce a table to our application that displays random imaginary sales deals.
+The dataset comes from the `shiny.fluent` package itself - [fluentSalesDeals](https://appsilon.github.io/shiny.fluent/reference/fluentSalesDeals.html).
 
-We will now try to code a module that basically creates a checkbox and shows values once checked or unchecked.
+### Creating the module
 
-Rhino already created a good place for new modules, the `app/view` directory.
-So, create a file there, named `checkbox.R` and paste the following code there -
+-   In the `app\view\` folder, let us create a new file and name it `datatable.R`
 
-``` r
-# app/view/checkbox.R
+-   This `app\view\datatable.R` file will be used to display the data table on the UI and we will call this module in the `app/main.R` file once done.
+    Here is the code
 
-box::use(
-  shiny[moduleServer, NS, tags, textOutput, renderText, markdown], # Load shiny package and specific functions
-  shiny.fluent[fluentPage, Checkbox.shinyInput]  # Load shiny.fluent package and specific functions
-)
-
-#' @export
-ui <- function(id) {
-  ns <- NS(id)  # Create namespace for the app
-  fluentPage(  # Create a Fluent UI page
-    markdown("The `checkbox` module works! 🎉"),  # Add markdown text to the page
-    tags$h2(  # Create a heading
-      Checkbox.shinyInput(ns("checkbox"), value = TRUE),  # Add a checkbox input with a default value of TRUE
-      textOutput(ns("checkboxValue"))  # Add a text output that will display the checkbox value
+    ```         
+    box::use(
+      shiny[moduleServer, NS],
+      shiny.fluent[fluentPage, Text, DetailsList]
     )
-  )
-}
 
-#' @export
-server <- function(id) {
-  moduleServer(id, function(input, output, session) {  # Define a module server function that takes in input, output, and session arguments
-    output$checkboxValue <- renderText({  # Render the text output based on the input checkbox value
-        sprintf("Value: %s", input$checkbox)
-      })  
-  })
-}
-```
+    #' @export
+    ui <- function(id) {
+      ns <- NS(id)
+        fluentPage(
+            Text("A randomly generated dataset of imaginary sales deals"),
+            DetailsList(items = shiny.fluent::fluentSalesDeals)
+        )
+    }
 
-Within the **`ui`** function, we use **`fluentPage`** to create a Fluent UI page.
-We then add a **`markdown`** text element to the page, followed by an **`h2`** heading that contains a checkbox input and a text output element.
+    #' @export
+    server <- function(id) {
+      moduleServer(id, function(input, output, session) {
+      })
+    }
+    ```
 
-The checkbox input is created using the **`Checkbox.shinyInput`** function from the **`shiny.fluent`** package.
-We give the checkbox a unique ID by passing **`ns("checkbox")`** as the first argument, which uses the namespace we created earlier.
-We also set a default value of **`TRUE`** for the checkbox.
+So, here we are using [`DetailsList`](https://appsilon.github.io/shiny.fluent/reference/DetailsList.html) function to render the table.
 
-The text output element is created using the **`textOutput`** function from the **`shiny`** package.
-We give it a unique ID using **`ns("checkboxValue")`**, which again uses the namespace we created earlier.
+### Calling the module
 
-The `server` all these UI components once the `checkbox` module is called by the main script.
-So, now we will need to call the `checkbox` module in the `app/main.R` file.
-Notice how we have modified the code that we wrote earlier to get started -
+-   Go to `app/main.R` file and edit it with the following code
 
-``` r
-# app/main.R
-
-# Load necessary packages
+```         
 box::use(
-  shiny[moduleServer, NS, tags, textOutput, renderText],
-  shiny.fluent[fluentPage]
+  shiny[moduleServer, NS],
+  shiny.fluent[fluentPage, Text]
 )
 
-# we need to call the checkbox module here
 box::use(
-  app/view/checkbox,
+  app/view/datatable,
 )
 
 #' @export
-# Define user interface function
 ui <- function(id) {
-  # Create namespace for UI elements
   ns <- NS(id)
-  # Define app layout using Fluent UI design system
   fluentPage(
-    tags$h1(
-      textOutput(ns("message")) # Display message generated by server
-    ),
-    checkbox$ui(ns("checkbox"))  # this includes the UI rendered by the app/view/checkbox.R file
+    Text("Hello!", variant = "mega"),
+    datatable$ui(ns("datatable"))
   )
 }
 
 #' @export
-# Define server logic function
 server <- function(id) {
-  # Create Shiny module
   moduleServer(id, function(input, output, session) {
-    # Generate message to be displayed in UI
-    output$message <- renderText("👋 This text has been generated using shiny.fluent package inside a Rhino project!")
-    checkbox$server("checkbox")
-
-  })
+    datatable$server("datatable")
+  }
+  )
 }
 ```
 
-Did you notice the part that mentions `box::use(…` to call the module we created above? This makes sure that when we use `checkbox$ui(ns("checkbox"))` in the `fluentPage` section of UI and use `checkbox$server("checkbox")` in the `server`, all desired results are rendered on the app.
+Notice here that we have called the `datatable` module by importing it to our main application file first.
+It is now, that the main module will be able to use exported functions from `app/view/datatable.R`.
 
-Cool!
-Let us now run the app.
-Keep your fingers crossed and run `shiny::runApp()` from the console!\
-You must be seeing something like this 👇
+This code in the `app/main.R` file uses the concept of Shiny modules.
+In the **`ui`** function, **`ns`** is used to create a unique namespace for the **`datatable`** element using the **`ns("datatable")`** syntax.
+This is important because when the UI contains multiple instances of the same element (e.g. multiple tables), each instance must have a unique namespace to prevent naming conflicts in the server function.
+
+In the **`server`** function, the **`ns`** function is not used directly, but its generated namespace is used as an argument for the **`datatable$server()`** function call.
+This allows the server to reference the specific instance of the **`datatable`** element that is associated with the current session.
+
+Now run the app.
+You should be seeing something like this -
 
 ```{r, echo=FALSE}
-knitr::include_graphics("images/rhino_fluent_2.gif")
+knitr::include_graphics("images/rhino_fluent_2.png")
 ```
 
-Notice that the value changes to FALSE once the checkbox is checked and viceversa.\
+### Some improvements
 
-Congratulations, you have just learnt how to code Rhino modules with Shiny fluent!
-🚀
+#### Show informative columns with meaningful names
 
-## Further Readings
+-   We will no more display all the columns that come with the dataset.
+    Instead, we will display the `"rep_name", "date", "deal_amount", "city", "is_closed"` columns.
 
-This tutorial has enabled you to get started with a `Rhino` project structure for RShiny apps and using `Shiny.fluent` package to render features on the UI.
-Next steps would be to add more features with modules in your application.
+-   But for that we need to make the names more readable.
+    So, we will assign proper names for every fields using the `tibble` package -
 
-Please consider these resources to go to the next steps!
+    ```         
+    columns <- tibble(
+        fieldName = c("rep_name", "date", "deal_amount", "city", "is_closed"),
+        name = c("Sales Rep", "Date", "Deal Amount", "City", "Is Closed?"))
+    ```
+
+-   Also, we need to mention in the `DetailsList()` function inside UI to only display the names we just assigned in the `columns` object.
+    Here is how the `ui` function now gets modified -
+
+    ``` r
+    #' @export
+    ui <- function(id) {
+      ns <- NS(id)
+        fluentPage(
+            Text("A randomly generated dataset of imaginary sales deals"),
+            DetailsList(items = shiny.fluent::fluentSalesDeals, columns = columns)
+        )
+    }
+    ```
+
+    Remember to include `tibble` inside `box::use()`, else the code will not be able to use the package.
+
+-   Upon running the app with all these changes, you should see the improved table -
+
+```{r, echo=FALSE}
+knitr::include_graphics("images/rhino_fluent_3.png")
+```
+
+## 3.
+
+## Further Suggested Readings
 
 -   [All about Rhino](https://appsilon.com/rhino-r-package-tutorial/)
 
@@ -315,7 +226,3 @@ Please consider these resources to go to the next steps!
 -   [Tutorial: Create your first shiny.fluent dashboard](https://appsilon.github.io/shiny.fluent/articles/shiny-fluent.html)
 
 -   [Tutorial: Full dashboard UI in Shiny and Fluent](https://appsilon.github.io/shiny.fluent/articles/st-sales-reps-dashboard.html)
-
-------------------------------------------------------------------------
-
-Developed with ❤️ by [Appsilon](https://appsilon.com/).
