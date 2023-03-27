@@ -369,12 +369,6 @@ The above code creates a **`div`** element with the following attributes -
 **`style = "height: 500px; overflow: auto;"`** sets the inline CSS style for the **`div`** element.
 Specifically, it sets the height of the **`div`** element to be 500 pixels and enables scrolling within the **`div`** element when its contents overflow its boundaries.
 
-So, this is how the UI should look now -
-
-```{r, echo=FALSE}
-knitr::include_graphics("images/rhino_fluent_gif_2.gif")
-```
-
 ## 5. Render a Bar Chart with logic in a helper function
 
 We will now add a bar chart that plots the deal amounts closed by the sales reps. For this, we will code a helper function and keep it inside the `app/logic` folder.
