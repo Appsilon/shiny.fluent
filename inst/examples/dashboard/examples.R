@@ -89,7 +89,7 @@ readExample <- function(path) {
   code <- readChar(path, file.info(path)$size)
   module <- new.env()
   source(path, local = module)
-  list(code = code, ui = module$ui, server = module$server)
+  list(code = code, ui = module$ui)
 }
 
 makeExamplePage <- function(name, ui, code) {
@@ -115,7 +115,6 @@ makeExampleRoute <- function(name) {
       name = name,
       ui = example$ui(name),
       code = example$code
-    ),
-    server = function() example$server(name)
+    )
   )
 }

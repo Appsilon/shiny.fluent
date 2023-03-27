@@ -14,19 +14,22 @@ source("home.R")
 source("about.R")
 source("footer.R")
 
-routes <- c(
+examples_routes <- lapply(examples, makeExampleRoute)
+
+router_page_elements <- append(
   list(
     route("/", homePage),
     route("about", aboutPage)
   ),
-  lapply(examples, makeExampleRoute)
+  examples_routes
 )
-router <- do.call(make_router, routes)
+
+router_page <- do.call(router_ui, router_page_elements)
 
 layout <- div(class = "grid-container",
   div(class = "header", header),
   div(class = "sidenav", navigation(examples)),
-  div(class = "main", router$ui),
+  div(class = "main", router_page),
   div(class = "footer", footer)
 )
 
@@ -58,8 +61,8 @@ sass(
   output = "www/style.css"
 )
 
-server <- function(input, output) {
-  router$server()
+server <- function(input, output, session) {
+  router_server()
 }
 
 shinyApp(ui, server)
