@@ -5,6 +5,7 @@ library(shiny.fluent)
 library(shiny.router)
 library(shiny)
 library(stringi)
+library(rlang)
 
 source("header.R")
 source("navigation.R")
@@ -21,7 +22,7 @@ router_page_elements <- append(
     route("/", homePage),
     route("about", aboutPage)
   ),
-  examples_routes
+  map(examples_routes, "router")
 )
 
 router_page <- do.call(router_ui, router_page_elements)
@@ -63,6 +64,13 @@ sass(
 
 server <- function(input, output, session) {
   router_server()
+  example_servers <- unlist(map(examples_routes, "server"))
+  lapply(
+    examples,
+    function(item, data = example_servers) {
+      data[[item]](item)
+    }
+  )
 }
 
 shinyApp(ui, server)
