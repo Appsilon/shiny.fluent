@@ -109,13 +109,19 @@ makeExamplePage <- function(name, ui, code) {
 makeExampleRoute <- function(name) {
   path <- system.file(file.path("examples", paste0(name, ".R")), package = "shiny.fluent")
   example <- readExample(path)
-  route(
-    path = name,
-    ui = makeExamplePage(
-      name = name,
-      ui = example$ui(name),
-      code = example$code
-    ),
-    server = function() example$server(name)
+  example_server <- list()
+  example_server[[name]] <- example$server
+  return(
+    list(
+      server = example_server,
+      router = route(
+        path = name,
+        ui = makeExamplePage(
+          name = name,
+          ui = example$ui(name),
+          code = example$code
+        )
+      )
+    )
   )
 }
