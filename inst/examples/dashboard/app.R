@@ -5,7 +5,6 @@ library(shiny.fluent)
 library(shiny.router)
 library(shiny)
 library(stringi)
-library(rlang)
 
 source("header.R")
 source("navigation.R")
@@ -67,8 +66,8 @@ server <- function(input, output, session) {
   example_servers <- unlist(map(examples_routes, "server"))
   lapply(
     examples,
-    function(item, data = example_servers) {
-      data[[item]](item)
+    function(item, modules = example_servers) {
+      modules[[item]](item)
     }
   )
 }
