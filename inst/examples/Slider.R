@@ -4,7 +4,7 @@ library(shiny.fluent)
 ui <- function(id) {
   ns <- NS(id)
   div(
-    Slider.shinyInput(ns("slider"), value = 42, min = -100, max = 100),
+    Slider.shinyInput(ns("slider"), value = 0, min = -100, max = 100),
     textOutput(ns("sliderValue"))
   )
 }
