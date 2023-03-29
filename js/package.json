@@ -3,9 +3,9 @@
   "scripts": {
     "lint": "eslint --ext .js,.jsx src cypress",
     "start-e2e-test-app": "cd ../inst/examples/e2e-test && Rscript -e 'shiny::runApp(port=8888)'",
-    "e2e-test": "start-server-and-test start-e2e-test-app http://localhost:8888 'cypress run'",
-    "start-e2e-router-app": "cd ../inst/examples/dashboard && Rscript -e 'shiny::runApp(port=8888)'",
-    "e2e-router": "start-server-and-test start-e2e-router-app http://localhost:8888 'cypress run --spec \"cypress/integration/dashboard.cy.js\"'"
+    "e2e-test": "start-server-and-test start-e2e-test-app http://localhost:8888 'cypress run --spec \"cypress/integration/e2e-test/*.js\"'",
+    "start-e2e-router-app": "cd ../inst/examples/dashboard && Rscript -e 'shiny::runApp(port=8889)'",
+    "e2e-router": "start-server-and-test start-e2e-router-app http://localhost:8889 'cypress run --config baseUrl=http://localhost:8889 --spec \"cypress/integration/dashboard/*.js\"'"
   },
   "babel": {
     "presets": [
