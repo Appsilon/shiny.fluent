@@ -23,8 +23,11 @@ Remove any extraneous code that isn't directly related to the issue at hand.
 such as the full contents of the app.R file.
 3. **Reproducible**: Ensure that the problem actually appears in the example.
 Include information like the R and package version, operating system, and browser.
-4. **Readable**: Use individual Markdown code blocks for each file or code snippet.
-Use proper indentation, comments, and descriptive names.
+4. **Readable**: Use individual [Markdown code blocks](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#quoting-code)
+for each file or code snippet.
+
+[Reprex do's and don'ts](https://reprex.tidyverse.org/articles/reprex-dos-and-donts.html)
+provides even great tips for writing code examples.
 
 Providing a good code example is crucial for us to reproduce and understand the bug.
 It increases the likelihood of addressing the issue quickly and effectively.
