@@ -228,7 +228,8 @@ knitr::include_graphics("images/rhino_fluent_2.png")
     ```         
     columns <- tibble(
         fieldName = c("rep_name", "date", "deal_amount", "city", "is_closed"),
-        name = c("Sales Rep", "Date", "Deal Amount", "City", "Is Closed?"))
+        name = c("Sales Rep", "Date", "Deal Amount", "City", "Is Closed?")
+        )
     ```
 
 -   Also, we need to mention in the `DetailsList()` function inside UI to only display the names we just assigned in the `columns` object.
@@ -288,7 +289,8 @@ knitr::include_graphics("images/rhino_fluent_3.png")
 
     columns <- tibble(
         fieldName = c("rep_name", "date", "deal_amount", "city", "is_closed"),
-        name = c("Sales Rep", "Date", "Deal Amount", "City", "Is Closed?"))
+        name = c("Sales Rep", "Date", "Deal Amount", "City", "Is Closed?")
+        )
 
     #' @export
     ui <- function(id) {
@@ -341,7 +343,8 @@ box::use(
 
 columns <- tibble(
     fieldName = c("rep_name", "date", "deal_amount", "city", "is_closed"),
-    name = c("Sales Rep", "Date", "Deal Amount", "City", "Is Closed?"))
+    name = c("Sales Rep", "Date", "Deal Amount", "City", "Is Closed?")
+    )
 
 #' @export
 ui <- function(id) {
@@ -413,7 +416,8 @@ box::use(
 
 columns <- tibble(
     fieldName = c("rep_name", "date", "deal_amount", "city", "is_closed"),
-    name = c("Sales Rep", "Date", "Deal Amount", "City", "Is Closed?"))
+    name = c("Sales Rep", "Date", "Deal Amount", "City", "Is Closed?")
+    )
 
 #' @export
 ui <- function(id) {
@@ -561,7 +565,8 @@ box::use(
 
 columns <- tibble(
   fieldName = c("rep_name", "date", "deal_amount", "city", "is_closed"),
-  name = c("Sales Rep", "Date", "Deal Amount", "City", "Is Closed?"))
+  name = c("Sales Rep", "Date", "Deal Amount", "City", "Is Closed?")
+  )
 
 #' @export
 ui <- function(id) {
