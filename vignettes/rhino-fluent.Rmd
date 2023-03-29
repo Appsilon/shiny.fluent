@@ -297,7 +297,8 @@ knitr::include_graphics("images/rhino_fluent_3.png")
       ns <- NS(id)
         fluentPage(
             Text("A randomly generated dataset of imaginary sales deals"),
-            uiOutput(ns("datatable")))
+            uiOutput(ns("datatable"))
+            )
     }
 
     #' @export
@@ -352,7 +353,8 @@ ui <- function(id) {
     fluentPage(
         Text("A randomly generated dataset of imaginary sales deals"),
         Toggle.shinyInput(ns("includeOpen"), label = "Include open deals"),
-        uiOutput(ns("datatable")))
+        uiOutput(ns("datatable"))
+        )
 }
 
 #' @export
