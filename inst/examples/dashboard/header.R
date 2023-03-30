@@ -51,8 +51,7 @@ command_bar <- CommandBar(
 )
 
 
-appsilon_header <- function() {
-
+header <- function() {
   appsilon_breakpoints <- breakpointSystem(
     "appsilon-breakpoints",
     breakpoint("xs", min = 320),
@@ -64,11 +63,8 @@ appsilon_header <- function() {
 
   gridPanel(
     id = "app_header",
-
     class = "mobile-collapsed",
-
     breakpoint_system = appsilon_breakpoints,
-
     areas = list(
       default = c(
         "logo . info mobile_controls",
@@ -79,33 +75,25 @@ appsilon_header <- function() {
       ),
       l = "logo separator title mobile_controls . menu info cta"
     ),
-
     columns = list(
       default = "auto 1fr auto auto",
       l = "auto 1px auto auto 1fr auto auto auto"
     ),
-
     rows = list(
       default = "auto auto auto auto auto",
       l = "40px"
     ),
-
     gap = list(
       default = "0px",
       l = "16px"
     ),
-
     logo = img(src = "appsilon-logo.png", class = "logo"),
-
     separator = div(class = "app_header_vertical_separator mobile-toggled"),
-
     title = div(
       "shiny.fluent",
       class = "app_header_title mobile-toggled"
     ),
-
-    commandBar = command_bar,
-
+    command_bar,
     info = IconButton.shinyInput(
       "cta_info",
       class = "cta-icon",
@@ -135,13 +123,11 @@ appsilon_header <- function() {
             remove('mobile-expanded');
         }
       "),
-
       icon(
         "bars",
         class = "header_control header_expand cta-icon",
         onclick = "header_expand();"
       ),
-
       icon(
         "xmark",
         class = "header_control header_collapse cta-icon",

@@ -28,7 +28,7 @@ router_page_elements <- append(
 router_page <- do.call(router_ui, router_page_elements)
 
 layout <- div(class = "grid-container",
-  div(class = "header", appsilon_header()),
+  div(class = "header", header()),
   div(class = "sidenav", navigation(examples)),
   div(class = "main", router_page),
   div(class = "footer", footer)
