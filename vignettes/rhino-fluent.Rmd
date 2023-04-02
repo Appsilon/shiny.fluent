@@ -54,7 +54,9 @@ renv::snaphot()
 
 Maintain this process whenever we need to install a new package in the project henceforth.
 
-Note: It is always a good practice to install all required packages at the beginning of your project. However, for the sake of this tutorial, we introduce you to a new package when the need arises. For a routine usecase and/or practice, please install all required packages at the beginning. 
+Note: It is always a good practice to install all required packages at the beginning of your project.
+However, for the sake of this tutorial, we introduce you to a new package when the need arises.
+For a routine usecase and/or practice, please install all required packages at the beginning.
 
 ### Our first development on the app
 
@@ -153,10 +155,9 @@ The dataset comes from the `shiny.fluent` package itself - [fluentSalesDeals](ht
     #' @export
     server <- function(id) {
       moduleServer(id, function(input, output, session) {
-      
+
       })
     }
-    
     ```
 
 `fluentSalesDeals` is a dataset available with the `shiny.fluent` package and to use it, we use `::` for directly fetching the dataset from the library.
@@ -243,7 +244,7 @@ knitr::include_graphics("images/rhino_fluent_2.png")
       shiny.fluent[fluentPage, Text, DetailsList],
       tibble[tibble]
     )
-    
+
     #' @export
     ui <- function(id) {
       ns <- NS(id)
@@ -252,14 +253,13 @@ knitr::include_graphics("images/rhino_fluent_2.png")
             DetailsList(items = shiny.fluent::fluentSalesDeals, columns = columns)
         )
     }
-    
+
     #' @export
     server <- function(id) {
       moduleServer(id, function(input, output, session) {
-      
+
       })
     }
-    
     ```
 
     Remember to include `tibble` inside `box::use()`, else the code will not be able to use the package.
@@ -372,7 +372,6 @@ server <- function(id) {
     })
   })
 }
-
 ```
 
 This code is defining a reactive expression called **`filtered_deals`** in an R Shiny application.
@@ -382,9 +381,9 @@ The **`filter()`** function is used to filter rows from a data frame based on on
 
 In this case, the **`filter()`** function is filtering rows from **`shiny.fluent::fluentSalesDeals`** based on two conditions:
 
-* **`is_closed`**: This is a logical column in the **`shiny.fluent::fluentSalesDeals`** data frame that indicates whether a sales deal has been closed or not.
+-   **`is_closed`**: This is a logical column in the **`shiny.fluent::fluentSalesDeals`** data frame that indicates whether a sales deal has been closed or not.
 
-* **`input$includeOpen`**: This is a reactive input object that is defined in the UI part of the code.
+-   **`input$includeOpen`**: This is a reactive input object that is defined in the UI part of the code.
     It is used to determine whether open deals (i.e. deals that have not been closed) should be included in the filtered data or not.
 
 The **`|`** symbol between the two conditions is the logical OR operator, which means that the **`filter()`** function will return all rows where either **`is_closed`** is TRUE or **`input$includeOpen`** is TRUE.
@@ -449,8 +448,8 @@ server <- function(id) {
     })
   })
 }
-
 ```
+
 The above code creates a **`div`** element with the following attributes -
 
 **`class = "ms-depth-64"`**assigns the CSS class **`ms-depth-64`** to the **`div`** element, which may define the element's visual appearance and behavior.
@@ -464,7 +463,9 @@ So, this is how the UI should look now -
 knitr::include_graphics("images/rhino_fluent_gif_2.gif")
 ```
 
-Note: Inline styling is a bad practice! For styling, use Sass setup provided by Rhino. Please refer to this [rhino documentation](https://appsilon.github.io/rhino/articles/tutorial/create-your-first-rhino-app.html#add-custom-styles) for details.
+Note: Inline styling is a bad practice!
+For styling, use Sass setup provided by Rhino.
+Please refer to this [rhino documentation](https://appsilon.github.io/rhino/articles/tutorial/create-your-first-rhino-app.html#add-custom-styles) for details.
 
 ## Render a Bar Chart with logic in a helper function
 
@@ -484,7 +485,7 @@ We will now add a bar chart that plots the deal amounts closed by the sales reps
     box::use(
       ggplot2[ggplot, aes, geom_bar, labs, theme_light],
     )
-    
+
     #' @export
     generate_barchart <- function(filtered_data) {
       ggplot(filtered_data, aes(x = rep_name, y = deal_amount, fill = rep_name)) +
@@ -520,14 +521,13 @@ We will now add a bar chart that plots the deal amounts closed by the sales reps
     box::use(
       app/logic/barchart[generate_barchart],
     )
-    
     ```
 
-  Here, we have called the `plotly` library, and also the function that we defined in the `app/logic` folder.
+Here, we have called the `plotly` library, and also the function that we defined in the `app/logic` folder.
 
 -   Now, we will add one more `div` in the ui section after the datatable to make room for the bar chart
 
-```
+```         
   div(
       class = "ms-depth-64",
       style = "height: 500px; overflow: auto;",
@@ -535,10 +535,12 @@ We will now add a bar chart that plots the deal amounts closed by the sales reps
       )
       
 ```
+
 `plotlyOutput` will help us to render the graph
 
-Note: Inline styling is a bad practice! For styling, use Sass setup provided by Rhino. Please refer to this [rhino documentation](https://appsilon.github.io/rhino/articles/tutorial/create-your-first-rhino-app.html#add-custom-styles) for details.
-
+Note: Inline styling is a bad practice!
+For styling, use Sass setup provided by Rhino.
+Please refer to this [rhino documentation](https://appsilon.github.io/rhino/articles/tutorial/create-your-first-rhino-app.html#add-custom-styles) for details.
 
 -   Similarly, in the server section, we will need to add some code to ask the backend of the application for rendering the barchart
 
@@ -550,7 +552,7 @@ Note: Inline styling is a bad practice! For styling, use Sass setup provided by 
 
 Here is the whole snippet
 
-```
+```         
 # app/view/datatable.R
 
 box::use(
@@ -607,7 +609,6 @@ server <- function(id) {
     })
   })
 }
-
 ```
 
 Once ready, on running the application, we should see the plotly bar chart rendering successfully and also responding to our interactions with the toggle input button.
@@ -638,7 +639,6 @@ div(
   ),
   style = "display: flex; flex-wrap: wrap;"
 )
-
 ```
 
 We also set the **`margin-left`** and **`margin-right`** to 0 pixels to remove any horizontal margin that might exist.
@@ -656,7 +656,6 @@ generate_barchart <- function(filtered_data) {
     theme_light()+
     theme(axis.text.x = element_text(angle = 60, hjust = 1))
 }
-
 ```
 
 We just need to add the **`theme(axis.text.x = element_text(angle = 90, hjust = 1))`** line to the **`ggplot`** call.
@@ -684,7 +683,6 @@ ui <- function(id) {
     datatable$ui(ns("datatable"))
   )
 }
-
 ```
 
 ```{r, echo=FALSE}
@@ -694,6 +692,14 @@ knitr::include_graphics("images/rhino_fluent_5.png")
 ```{r, echo=FALSE}
 knitr::include_graphics("images/rhino_fluent_6.png")
 ```
+
+### Use `Sass` setup provided by `rhino` instead of inline CSS
+
+This tutorial uses inline CSS in some places from a proof of concept perspective.
+Inline CSS is not a good coding practice, especially when it comes to projects on production!
+We highly recommend using the `Sass` setup that is available in the `rhino` project structure.
+
+Please refer to this [resource](https://appsilon.github.io/rhino/articles/tutorial/create-your-first-rhino-app.html) to get started with the same.
 
 ## Next Steps and Further Suggested Readings
 
