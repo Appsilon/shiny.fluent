@@ -268,7 +268,7 @@ ui <- fluentPage(
 
 # ---- router ----
 
-router <- make_router(
+router <- router_ui(
   route("/", home_page),
   route("other", analysis_page))
 
@@ -281,7 +281,7 @@ shiny_router_script_tag <- shiny::tags$script(type = "text/javascript", src = sh
 
 
 ui <- fluentPage(
-  layout(router$ui),
+  layout(router),
   tags$head(
     tags$link(href = "style.css", rel = "stylesheet", type = "text/css"),
     shiny_router_script_tag
@@ -293,7 +293,7 @@ ui <- fluentPage(
 server <- function(input, output, session) {
 
 # ---- router-server ----
-  router$server(input, output, session)
+  router_server()
 
 # ---- server-rest ----
   filtered_deals <- reactive({
