@@ -1,4 +1,5 @@
 library(dplyr)
+library(imola)
 library(purrr)
 library(sass)
 library(shiny.fluent)
@@ -27,7 +28,7 @@ router_page_elements <- append(
 router_page <- do.call(router_ui, router_page_elements)
 
 layout <- div(class = "grid-container",
-  div(class = "header", header),
+  div(class = "header", header()),
   div(class = "sidenav", navigation(examples)),
   div(class = "main", router_page),
   div(class = "footer", footer)
@@ -46,7 +47,7 @@ ui <- fluidPage(
   htmltools::htmlDependency(
     "office-ui-fabric-core",
     "11.0.0",
-    list(href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/"),
+    list(href = "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/"),
     stylesheet = "fabric.min.css"
   ),
   shiny::tags$body(
