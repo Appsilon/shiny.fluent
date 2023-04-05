@@ -1,9 +1,9 @@
 ---
-title: "Tutorial: Build a Rhino application using shiny.fluent"
+title: "Tutorial: Build a rhino application using shiny.fluent"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteEncoding{UTF-8}
-  %\VignetteIndexEntry{Tutorial: Build a Rhino application using shiny.fluent}
+  %\VignetteIndexEntry{Tutorial: Build a rhino application using shiny.fluent}
   %\VignetteEngine{knitr::rmarkdown}
 editor_options: 
   markdown: 
@@ -19,99 +19,79 @@ Let us first install and create our `rhino` project structure.
 To install `rhino`, please run the following on a R console in your working directory
 
 ```         
+# In R console         
 install.packages("rhino")
 ```
 
-Now, initialize a new Rhino application.
+Now, initialize a new rhino application.
 You can do it either by using RStudio Wizard or a function `rhino::init()`.
 
-More details on how to create a Rhino app can be found in the [Rhino tutorial](https://appsilon.github.io/rhino/articles/tutorial/create-your-first-rhino-app.html#create-an-initial-application).
+More details on how to create a rhino app can be found in the [rhino tutorial](https://appsilon.github.io/rhino/articles/tutorial/create-your-first-rhino-app.html#create-an-initial-application).
 
 You will notice that the working directory now has a proper folder structure along with some other files.
-Among those, you will also notice that `renv` is being used to manage the packages/dependencies for the project.
-So, let us now install `shiny.fluent` into the project.
+
+rhino relies on the [`renv` package](https://rstudio.github.io/renv/index.html) for dependency management.
+To add the `shiny.fluent` package to our project, first, we need to install it.
+
+Additionally, we will be also using the `dplyr`, `ggplot2`, `plotly` and `tibble` package for this application.
+To save us time in the tutorial we will install them all here.
+Please note that for every new package you add, you will need to install them, add them to `dependencies.R`, and run [`renv::snapshot()`](https://rstudio.github.io/renv/reference/snapshot.html) to update the `renv.lock` file.
 
 ```         
-renv::install("shiny.fleunt")
+# In R console
+renv::install(c("dplyr", "ggplot2", "plotly", "shiny.fluent", "tibble"))
 ```
 
-Using renv for installation benefits us.
-In particular, this means that the local cache of package installations is used when possible.
-This helps to avoid re-downloading packages that have already been downloaded before, and re-compiling packages from source when a binary copy of that package is already available.
+Now that the packages are installed, head over to the `dependencies.R` file and add `shiny.fluent` to it along with the others as shown below.
 
-Now, head over to the `dependencies.R` file and add `shiny.fluent` to it as shown below.
+```
+# dependencies.R
 
-```         
+# This file allows packrat (used by rsconnect during deployment) to pick up dependencies.
+library(dplyr)
+library(ggplot2)
+library(plotly)
 library(rhino)
 library(shiny.fluent)
+library(tibble)
 ```
 
 Upon saving the modified file, please take a snapshot of the dependencies so that the `renv.lock` file is updated.
 
-```         
+```
+# In R console   
 renv::snaphot()
 ```
-
-Maintain this process whenever we need to install a new package in the project henceforth.
-
-Note: It is always a good practice to install all required packages at the beginning of your project.
-However, for the sake of this tutorial, we introduce you to a new package when the need arises.
-For a routine usecase and/or practice, please install all required packages at the beginning.
-
+If you now check the `renv.lock` file, you will see it is updated with the `shiny.fluent` and other packages.
 ### Our first development on the app
 
--   Open the `app/main.R` file.
-    By default, it has the following code -
-
-    ```         
-    box::use(
-      shiny[bootstrapPage, moduleServer, NS, renderText, tags, textOutput],
-    )
-
-    #' @export
-    ui <- function(id) {
-      ns <- NS(id)
-      bootstrapPage(
-        tags$h3(
-          textOutput(ns("message"))
-        )
-      )
-    }
-
-    #' @export
-    server <- function(id) {
-      moduleServer(id, function(input, output, session) {
-        output$message <- renderText("Hello!")
-      })
-    }
-    ```
-
--   You will notice that currently the `main.R` file's code does not have any usage of `shiny.fluent` package to generate the text - "Hello!".
-    So let us introduce `shiny.fluent` and use it in our code to do the same action!
+Upon viewing the default `app/main.R` file, you will notice that the code does not have any usage of `shiny.fluent` package to generate the text - "Hello!". So, let us introduce `shiny.fluent` and use it in our code to generate some text!
 
 ```         
+# app/main.R
+
 box::use(
-  shiny[moduleServer, NS],
+  shiny[moduleServer, NS, div],
   shiny.fluent[fluentPage, Text]
 )
 
 #' @export
 ui <- function(id) {
   ns <- NS(id)
-  fluentPage(
-    Text("Hello!", variant = "mega")
+  fluentPage(      
+    Text("Sales Data Dashboard", variant = "xxLarge")
   )
 }
 
 #' @export
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
-  
+    
   })
 }
 ```
 
-The above code uses [`fluentPage`](https://appsilon.github.io/shiny.fluent/reference/fluentPage.html) and [`Text`](https://appsilon.github.io/shiny.fluent/reference/Text.html) from `shiny.fluent` package to render the UI and text.
+The above code uses [`fluentPage`](https://appsilon.github.io/shiny.fluent/reference/fluentPage.html) and [`Text`](https://appsilon.github.io/shiny.fluent/reference/Text.html) from `shiny.fluent` package to render the UI and the sentence - "Sales Data Dashboard".
 You will also notice the [`NS(id)`](https://shiny.rstudio.com/reference/shiny/latest/ns) used in the code to return a namespace function, which has been saved as `ns` and will be invoked later in the shiny module.
 
 Now when you run the app, you should be seeing this -
@@ -130,61 +110,64 @@ The dataset comes from the `shiny.fluent` package itself - [fluentSalesDeals](ht
 
 ### Creating the module
 
--   In the `app/view/` folder, let us create a new file and name it `datatable.R`
+In the `app/view/` folder, let us create a new file and name it `datatable.R`
 
--   This `app/view/datatable.R` file will be used to display the data table on the UI and we will call this module in the `app/main.R` file once done.
-    Here is the code
+This `app/view/datatable.R` file will be used to display the data table on the UI and we will call this module in the `app/main.R` file once done. Here is the code
 
-    ```         
-    #app/view/datatable.R
-
-    box::use(
-      shiny[moduleServer, NS],
-      shiny.fluent[fluentPage, Text, DetailsList]
-    )
-
-    #' @export
-    ui <- function(id) {
-      ns <- NS(id)
-        fluentPage(
-            Text("A randomly generated dataset of imaginary sales deals"),
-            DetailsList(items = shiny.fluent::fluentSalesDeals)
-        )
-    }
-
-    #' @export
-    server <- function(id) {
-      moduleServer(id, function(input, output, session) {
-
-      })
-    }
-    ```
-
-`fluentSalesDeals` is a dataset available with the `shiny.fluent` package and to use it, we use `::` for directly fetching the dataset from the library.
-
-So, here we are using [`DetailsList`](https://appsilon.github.io/shiny.fluent/reference/DetailsList.html) function to render the table.
-
-### Calling the module
-
--   Go to `app/main.R` file and edit it with the following code
-
-```         
-#app/main.R
+```
+# app/view/datatable.R
 
 box::use(
-  shiny[moduleServer, NS],
-  shiny.fluent[fluentPage, Text]
-)
-
-box::use(
-  app/view/datatable,
+  shiny[moduleServer, NS, div, uiOutput, renderUI],
+  shiny.fluent[fluentPage, Text, DetailsList]
 )
 
 #' @export
 ui <- function(id) {
   ns <- NS(id)
-  fluentPage(
-    Text("Hello!", variant = "mega"),
+    div(
+      Text("A randomly generated dataset of imaginary sales deals", variant = "large"),
+      uiOutput(ns("datatable"))
+    )
+}
+
+#' @export
+server <- function(id) {
+  moduleServer(id, function(input, output, session) {
+    output$datatable <- renderUI({
+      # Datasets are the only case when you need to use :: in `box`.
+      # This issue should be solved in the next `box` release.
+      DetailsList(items = shiny.fluent::fluentSalesDeals)
+    })
+  })
+}
+```
+
+`fluentSalesDeals` is a dataset available with the `shiny.fluent` package and to use it, we use `::` for directly fetching the dataset from the library. Datasets are the only case when you need to use `::` in `box`.
+
+So, here we are using [`DetailsList`](https://appsilon.github.io/shiny.fluent/reference/DetailsList.html) function in the server side to render the table on the UI.
+
+### Calling the module
+
+Our shiny module `app/view/datatable.R` is ready, but unless we call it in the `app/main.R` file, we won't see any changes on the app. Let us thus go to `app/main.R` file and edit it with the following code -
+
+```         
+# app/main.R
+
+box::use(
+  shiny[moduleServer, NS, div],
+  shiny.fluent[fluentPage, Text]
+)
+
+box::use(
+  app/view/datatable
+)
+
+#' @export
+ui <- function(id) {
+  ns <- NS(id)
+  fluentPage(      
+    Text("Sales Data Dashboard", variant = "xxLarge"),
     datatable$ui(ns("datatable"))
   )
 }
@@ -193,21 +176,14 @@ ui <- function(id) {
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
     datatable$server("datatable")
-  }
-  )
+  })
 }
 ```
 
+This code in the `app/main.R` file is based the concept of [Shiny modules](https://shiny.rstudio.com/articles/modules.html) where [box modules in rhino](https://appsilon.github.io/rhino/articles/explanation/box-modules.html) are used.
+
 Notice here that we have called the `datatable` module by importing it to our main application file first.
-It is now, that the main module will be able to use exported functions from `app/view/datatable.R`.
-
-This code in the `app/main.R` file is based the concept of [Shiny modules](https://shiny.rstudio.com/articles/modules.html) where [box modules in Rhino](https://appsilon.github.io/rhino/articles/explanation/box-modules.html) are used.
-
-In the **`ui`** function, **`ns`** is used to create a unique namespace for the **`datatable`** element using the **`ns("datatable")`** syntax.
-This is important because when the UI contains multiple instances of the same element (e.g. multiple tables), each instance must have a unique namespace to prevent naming conflicts in the server function.
-
-In the **`server`** function, the **`ns`** function is not used directly, but its generated namespace is used as an argument for the **`datatable$server()`** function call.
-This allows the server to reference the specific instance of the **`datatable`** element that is associated with the current session.
+It is now, that the `main` module will be able to use exported functions from `app/view/datatable.R` module.
 
 Now run the app.
 You should be seeing something like this -
@@ -220,115 +196,67 @@ knitr::include_graphics("images/rhino_fluent_2.png")
 
 #### Show informative columns with meaningful names
 
--   We will no more display all the columns that come with the dataset.
-    Instead, we will display the `"rep_name", "date", "deal_amount", "city", "is_closed"` columns.
+We will no more display all the columns that come with the dataset. Instead, we will display the `"rep_name", "date", "deal_amount", "city", "is_closed"` columns.
 
--   But for that we need to make the names more readable.
-    So, we will assign proper names for every fields using the `tibble` package -
+But for that we need to make the names more readable. So, we will assign proper names for every fields using the `tibble` package.
 
-    ```         
-    columns <- tibble(
-        fieldName = c("rep_name", "date", "deal_amount", "city", "is_closed"),
-        name = c("Sales Rep", "Date", "Deal Amount", "City", "Is Closed?")
-        )
-    ```
+```
+columns <- tibble(
+  fieldName = c("rep_name", "date", "deal_amount", "city", "is_closed"),
+  name = c("Sales Rep", "Date", "Deal Amount", "City", "Is Closed?")
+)
+```
 
--   Also, we need to mention in the `DetailsList()` function inside UI to only display the names we just assigned in the `columns` object.
-    Here is how the `ui` function now gets modified -
+Also, we need to mention in the `DetailsList()` function to only display the names we just assigned in the `columns` object. Here is how the code gets modified -
 
-    ``` r
-    #app/view/databale.R
+```
+# app/view/datatable.R
 
-    box::use(
-      shiny[moduleServer, NS, uiOutput, renderUI],
-      shiny.fluent[fluentPage, Text, DetailsList],
-      tibble[tibble]
-    )
+box::use(
+  shiny[moduleServer, NS, div, uiOutput, renderUI],
+  shiny.fluent[fluentPage, Text, DetailsList],
+  tibble[tibble]
+)
 
-    #' @export
-    ui <- function(id) {
-      ns <- NS(id)
-        fluentPage(
-            Text("A randomly generated dataset of imaginary sales deals"),
-            DetailsList(items = shiny.fluent::fluentSalesDeals, columns = columns)
-        )
-    }
+columns <- tibble(
+  fieldName = c("rep_name", "date", "deal_amount", "city", "is_closed"),
+  name = c("Sales Rep", "Date", "Deal Amount", "City", "Is Closed?")
+)
 
-    #' @export
-    server <- function(id) {
-      moduleServer(id, function(input, output, session) {
+#' @export
+ui <- function(id) {
+  ns <- NS(id)
+  div(
+    Text("A randomly generated dataset of imaginary sales deals", variant = "large"),
+    uiOutput(ns("datatable"))
+  )
+}
 
-      })
-    }
-    ```
+#' @export
+server <- function(id) {
+  moduleServer(id, function(input, output, session) {
+    output$datatable <- renderUI({
+      DetailsList(items = shiny.fluent::fluentSalesDeals, columns = columns)
+    })
+  })
+}
+```
 
-    Remember to include `tibble` inside `box::use()`, else the code will not be able to use the package.
-
--   Upon running the app with all these changes, you should see the improved table -
+Remember to include `tibble` inside `box::use()`, else the code will not be able to use the package. Upon running the app with all these changes, you should see the improved table -
 
 ```{r, echo=FALSE}
 knitr::include_graphics("images/rhino_fluent_3.png")
 ```
 
-#### Render the Table from the server side inside the `datatable` module
-
--   Till now, we did not do anything inside the server side of the `app/view/datatable.R` file.
-    Let us now use the server side to render the table rather than the UI side.
-    This is particularly helpful when we want to introduce more features inside the table - such as user inputs.
-
--   So, here is the new modified `app/view/databale.R` file
-
-    ```         
-    #app/view/databale.R
-
-    box::use(
-      shiny[moduleServer, NS, uiOutput, renderUI],
-      shiny.fluent[fluentPage, Text, DetailsList],
-      tibble[tibble]
-    )
-
-    columns <- tibble(
-        fieldName = c("rep_name", "date", "deal_amount", "city", "is_closed"),
-        name = c("Sales Rep", "Date", "Deal Amount", "City", "Is Closed?")
-        )
-
-    #' @export
-    ui <- function(id) {
-      ns <- NS(id)
-        fluentPage(
-            Text("A randomly generated dataset of imaginary sales deals"),
-            uiOutput(ns("datatable"))
-            )
-    }
-
-    #' @export
-    server <- function(id) {
-      moduleServer(id, function(input, output, session) {
-        output$datatable <- renderUI({
-            DetailsList(items = shiny.fluent::fluentSalesDeals, columns = columns)
-        })
-      })
-    }
-    ```
-
-The **`DetailsList`** table is being rendered inside the **`renderUI`** function, which generates UI output dynamically based on the **`items`** and **`columns`** arguments.
-The **`renderUI`** function is triggered whenever there is a change in the input values or reactive expressions that depend on them (we will explore this further).
-
-The **`columns`** data frame defines the field names and column names for the **`DetailsList`**.
-The **`fieldName`** column contains the names of the columns in the **`shiny.fluent::fluentSalesDeals`** data frame, and the **`name`** column contains the display names for those columns.
-
-## Add a simple toggle input feature for the table
+## Add a simple toggle input feature for the table with basic styling
 
 Till now, we could only view table with all the data it has.
 We will now add a functionality to view those rows in the table where value of the "Is Closed?" column is 1 by default and provide a toggle to the user to also include results where the value is 0.
 The "Is Closed?" column basically indicates whether the deal is closed or not with values 0 and 1 where 0 means False/No and 1 means True/Yes.
 
--   Let us first install the `dplyr` package.
-    Please follow the same process we followed for `shiny.fluent` installation.
+We will make use of the `dplyr` package now. We will use [`Toggle.shinyInput`](https://appsilon.github.io/shiny.fluent/reference/Toggle.html) from `shiny.fluent` package which represents a physical switch that allows someone to choose between two mutually exclusive options. For example,"On/Off","Show/Hide". Choosing an option should produce an immediate result.
 
--   We will use [`Toggle.shinyInput`](https://appsilon.github.io/shiny.fluent/reference/Toggle.html) from `shiny.fluent` package which represents a physical switch that allows someone to choose between two mutually exclusive options.For example,"On/Off","Show/Hide".Choosing an option should produce an immediate result.
-
--   In the UI, we include the code for showing the toggle for input - `Toggle.shinyInput(ns("includeOpen"), label = "Include open deals"),` and work on the input provided inside the server section
+In the UI, we include the code for showing the toggle for input - `Toggle.shinyInput(ns("includeOpen"), label = "Include open deals"),` and work on the input provided inside the server section
 
 So, the `app/view/datatable.R` file now is modified to -
 
@@ -336,136 +264,178 @@ So, the `app/view/datatable.R` file now is modified to -
 # app/view/datatable.R
 
 box::use(
-  dplyr[filter]
-  shiny[moduleServer, NS, uiOutput, renderUI, reactive],
+  dplyr[filter],
+  shiny[moduleServer, NS, div, uiOutput, renderUI, reactive],
   shiny.fluent[fluentPage, Text, DetailsList, Toggle.shinyInput],
   tibble[tibble]
 )
 
 columns <- tibble(
-    fieldName = c("rep_name", "date", "deal_amount", "city", "is_closed"),
-    name = c("Sales Rep", "Date", "Deal Amount", "City", "Is Closed?")
-    )
+  fieldName = c("rep_name", "date", "deal_amount", "city", "is_closed"),
+  name = c("Sales Rep", "Date", "Deal Amount", "City", "Is Closed?")
+)
 
 #' @export
 ui <- function(id) {
   ns <- NS(id)
-    fluentPage(
-        Text("A randomly generated dataset of imaginary sales deals"),
-        Toggle.shinyInput(ns("includeOpen"), label = "Include open deals"),
-        uiOutput(ns("datatable"))
-        )
+  div(
+    Text("A randomly generated dataset of imaginary sales deals", variant = "large"),
+    div(
+      class = "ms-depth-4",
+      Toggle.shinyInput(ns("includeOpen"), label = "Include open deals")
+    ),
+    uiOutput(ns("datatable")),
+  )
 }
 
 #' @export
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
-    
     filtered_deals <- reactive({
       shiny.fluent::fluentSalesDeals |> filter(
         is_closed | input$includeOpen
       )
     })
-
     output$datatable <- renderUI({
-        DetailsList(items = filtered_deals(), columns = columns)
+      DetailsList(items = filtered_deals(), columns = columns)
     })
   })
 }
 ```
 
-This code is defining a reactive expression called **`filtered_deals`** in an R Shiny application.
+This code is defining a reactive expression called `filtered_deals` in an R Shiny application.
 
-The reactive expression uses the **`|>`** operator to pipe the **`shiny.fluent::fluentSalesDeals`** data frame to the **`filter()`** function which comes from the `dplyr` package.
-The **`filter()`** function is used to filter rows from a data frame based on one or more conditions.
+The reactive expression uses the `|>` operator to pipe the `shiny.fluent::fluentSalesDeals` data frame to the `filter()` function which comes from the `dplyr` package.
+The `filter()` function is used to filter rows from a data frame based on one or more conditions.
 
-In this case, the **`filter()`** function is filtering rows from **`shiny.fluent::fluentSalesDeals`** based on two conditions:
+In this case, the `filter()` function is filtering rows from `shiny.fluent::fluentSalesDeals` based on two conditions:
 
--   **`is_closed`**: This is a logical column in the **`shiny.fluent::fluentSalesDeals`** data frame that indicates whether a sales deal has been closed or not.
+-   `is_closed`: This is a logical column in the `shiny.fluent::fluentSalesDeals` data frame that indicates whether a sales deal has been closed or not.
 
--   **`input$includeOpen`**: This is a reactive input object that is defined in the UI part of the code.
+-   `input$includeOpen`: This is a reactive input object that is defined in the UI part of the code.
     It is used to determine whether open deals (i.e. deals that have not been closed) should be included in the filtered data or not.
 
-The **`|`** symbol between the two conditions is the logical OR operator, which means that the **`filter()`** function will return all rows where either **`is_closed`** is TRUE or **`input$includeOpen`** is TRUE.
+The `|` symbol between the two conditions is the logical OR operator, which means that the `filter()` function will return all rows where either `is_closed` is TRUE or `input$includeOpen` is TRUE.
 
-This is how the app looks now!
+Also, please notice that we have added the style for `class = "ms-depth-4"` in the `app/style/main.scss` file. The [`ms-depth-8`](https://developer.microsoft.com/en-us/fluentui#/styles/web/elevation) class is a predefined core class from Microsoft's Fluent UI which provides elevation to the div, `ms-depth-4` being the lowest.
+
+Here is the `app/style/main.scss` file now -
+
+```
+# app/style/main.scss
+
+.ms-depth-4{
+    display: flex; 
+    flex-wrap: wrap;
+    padding: 5px;
+}
+```
+If you try running the application right now, you will not see any changes. That is because rhino uses minified `app/static/app.min.css` for styling. To use it, you will need to build it using the rhino function -
+
+```
+# in R console
+rhino::build_sass()
+```
+Please refer to [rhino documentation](https://appsilon.github.io/rhino/articles/tutorial/create-your-first-rhino-app.html#add-custom-styles) for more details on styling.
+
+So, this is how the app looks and works now!
 
 ```{r, echo=FALSE}
 knitr::include_graphics("images/rhino_fluent_gif_1.gif")
 ```
 
-## Improve visuals for the table with elevated cards
+## Improve visuals and layout for the table with elevated cards
 
-We can create cards with elevations just like in Fluent UI [documentation](https://developer.microsoft.com/en-us/fluentui#/styles/web/elevation).
-Let us style the data table area.
+We can create cards with elevations just like in Fluent UI [documentation](https://developer.microsoft.com/en-us/fluentui#/styles/web/elevation), as we partially covered it above. For creating cards, we can use [`Stack`](https://appsilon.github.io/shiny.fluent/reference/Stack.html) from `shiny.fluent`.
 
-The following code does 2 things -
+We will also style the data table area. The following code does the following - 
 
--   Creates an elevated card around the data table area
+* Confines the height and width of the table area.
+* Creates an elevated card around the data table area.
 
--   Confines the height of the table area
-
-```         
+```
 # app/view/datatable.R
 
 box::use(
-  dplyr[filter]
-  shiny[moduleServer, NS, uiOutput, renderUI, reactive],
-  shiny.fluent[fluentPage, Text, DetailsList, Toggle.shinyInput],
+  dplyr[filter],
+  shiny[moduleServer, NS, div, uiOutput, renderUI, reactive, span],
+  shiny.fluent[fluentPage, Text, DetailsList, Toggle.shinyInput, Stack],
   tibble[tibble]
 )
 
 columns <- tibble(
-    fieldName = c("rep_name", "date", "deal_amount", "city", "is_closed"),
-    name = c("Sales Rep", "Date", "Deal Amount", "City", "Is Closed?")
-    )
+  fieldName = c("rep_name", "date", "deal_amount", "city", "is_closed"),
+  name = c("Sales Rep", "Date", "Deal Amount", "City", "Is Closed?")
+)
 
 #' @export
 ui <- function(id) {
   ns <- NS(id)
-    fluentPage(
-        Text("A randomly generated dataset of imaginary sales deals"),
-        Toggle.shinyInput(ns("includeOpen"), label = "Include open deals"),
-        div(
-          class = "ms-depth-64", 
-          style = "height: 500px; overflow: auto;",
-          uiOutput(ns("datatable"))
-        ))
+  div(
+    Text("A randomly generated dataset of imaginary sales deals", variant = "large"),
+    div(
+      class = "ms-depth-4",
+      Toggle.shinyInput(ns("includeOpen"), label = "Include open deals")
+    ),
+    Stack(
+      horizontal = TRUE,
+      tokens = list(padding = 20, childrenGap = 10),
+      span(class = "ms-depth-8", uiOutput(ns("datatable")))
+    )
+  )
 }
 
 #' @export
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
-    
     filtered_deals <- reactive({
       shiny.fluent::fluentSalesDeals |> filter(
         is_closed | input$includeOpen
       )
     })
-
     output$datatable <- renderUI({
-        DetailsList(items = filtered_deals(), columns = columns)
+      DetailsList(items = filtered_deals(), columns = columns)
     })
   })
 }
 ```
+The `Stack` element in the code allows for stacking multiple elements vertically or horizontally.
 
-The above code creates a **`div`** element with the following attributes -
+The horizontal argument is set to TRUE to horizontally stack the two elements. The tokens argument is a list that specifies the padding and the gap between the two elements. In this case, the padding is set to 20 and the childrenGap is set to 10. This will add a padding of 20 pixels and a gap of 10 pixels between the other `span` of the `Stack` element.
 
-**`class = "ms-depth-64"`**assigns the CSS class **`ms-depth-64`** to the **`div`** element, which may define the element's visual appearance and behavior.
+The span element has a class attribute set to `ms-depth-8`. This is a class provided by the Microsoft fluent UI that adds a shadow effect to the element, giving it a depth effect. The `uiOutput` element is used to render the `DetailsList` element that contains the filtered data.
 
-**`style = "height: 500px; overflow: auto;"`** sets the inline CSS style for the **`div`** element.
-Specifically, it sets the height of the **`div`** element to be 500 pixels and enables scrolling within the **`div`** element when its contents overflow its boundaries.
+The style for the class `ms-depth-8` is added in the `app/style/main.scss` file. So the file now is modified to -
+```
+# app/style/main.scss
+
+.ms-depth-4{
+    display: flex; 
+    flex-wrap: wrap;
+    padding: 5px;
+}
+
+.ms-depth-8{
+    height: 500px; 
+    overflow: auto; 
+    width: 50%; 
+    display: inline-block;
+}
+```
+
+The Sass code limits the height of the table to 500 pixels, width to 50% of the screen size and allows scrolling through the data. Similar to the previous usecase, we would again have to repeat the Sass building process with `rhino` as the file has been updated.
+
+```
+# in R console
+rhino::build_sass()
+```
 
 So, this is how the UI should look now -
 
 ```{r, echo=FALSE}
 knitr::include_graphics("images/rhino_fluent_gif_2.gif")
 ```
-
-Note: Inline styling is a bad practice!
-For styling, use Sass setup provided by Rhino.
-Please refer to this [rhino documentation](https://appsilon.github.io/rhino/articles/tutorial/create-your-first-rhino-app.html#add-custom-styles) for details.
+Note that we now we have space beside the table for additional UI component(s).
 
 ## Render a Bar Chart with logic in a helper function
 
@@ -473,137 +443,89 @@ We will now add a bar chart that plots the deal amounts closed by the sales reps
 
 ### Helper function in the logic folder of the `rhino` project
 
--   Go to the `app/logic` folder and create a new `.R` file.
-    Lets name it `barchart.R`
+* Go to the `app/logic` folder and create a new `.R` file. Lets name it `barchart.R`.
+* We shall use the `gglplot2` and `plotly` packages (which we installed in the beginning) for this purpose. 
 
--   Install `gglplot2` and `plotly` packages for this purpose.
-    Please follow the same steps that were followed previously during and after new package installation.
+Here is the code -
 
--   Here is the code -
+```
+# app/logic/barchart.R
 
-    ```         
-    box::use(
-      ggplot2[ggplot, aes, geom_bar, labs, theme_light],
-    )
+box::use(
+  ggplot2[ggplot, aes, geom_bar, labs, theme_light, theme, element_text],
+)
 
-    #' @export
-    generate_barchart <- function(filtered_data) {
-      ggplot(filtered_data, aes(x = rep_name, y = deal_amount, fill = rep_name)) +
+#' @export
+generate_barchart <- function(filtered_data) {
+        ggplot(filtered_data, aes(x = rep_name, y = deal_amount, fill = rep_name)) +
         geom_bar(stat = "identity") +
         labs(x = "Sales Rep Name", y = "Deal Amount") +
-        theme_light()
-    }
-    ```
+        theme_light() +
+        theme(axis.text.x = element_text(angle = 60, hjust = 1))
+}
+```
 
--   The above code block loads the **`ggplot2`** package and imports several functions from it.
-    It then defines a function called **`generate_barchart()`** that takes a **`filtered_data`** argument as input.
-    The function uses the **`ggplot()`** function to create a bar chart with **`x = rep_name`** and **`y = deal_amount`**, where **`rep_name`** and **`deal_amount`** are columns in the **`filtered_data`** data frame.
-    The **`fill`** aesthetic is also set to **`rep_name`**, which maps each bar to a unique color based on the **`rep_name`** variable.
-    The function also adds labels to the x and y axes and applies the **`theme_light()`** theme to the plot.
-    Finally, the function is exported with **`#' @export`**, which makes it available to other packages and scripts that import this one.
+The above code block loads the `ggplot2` package and imports several functions from it. It then defines a function called `generate_barchart()` that takes a `filtered_data` argument as input. The function uses the `ggplot()` function to create a bar chart with `x = rep_name` and `y = deal_amount`, where `rep_name` and `deal_amount` are columns in the `filtered_data` data frame. The `fill` aesthetic is also set to `rep_name`, which maps each bar to a unique color based on the `rep_name` variable. The function also adds labels to the x and y axes and applies the `theme_light()` theme to the plot.
+
+The `element_text()` function takes several arguments to customize the text appearance, including the `angle` argument to specify the rotation angle in degrees. Here, we set the angle to 60 degrees to rotate the labels slightly vertically, and we set the `hjust` argument to 1 to align the labels to the right of the tick marks.
 
 ### Call the helper function in the desired `rhino` module
 
--   Now let us go back to the `app/view/datatable.R` file.
-    Here we need to call the `generate_barchart()` function we just created along with the required dependencies to render it on UI as a plotly bar chart.
+Now let us go back to the `app/view/datatable.R` file. Here we need to call the `generate_barchart()` function we just created along with the required dependencies to render it on UI as a plotly bar chart.
 
--   So, the code begins with
+Also, we will attempt to keep the barchart beside the table as another elevated card.
 
-    ```         
-    box::use(
-      dplyr[filter],
-      plotly[plotlyOutput, renderPlotly],
-      shiny[moduleServer, NS, uiOutput, renderUI, reactive, div],
-      shiny.fluent[fluentPage, Text, DetailsList, Toggle.shinyInput],
-      tibble[tibble]
-    )
+So, the code is now modified to -
 
-    box::use(
-      app/logic/barchart[generate_barchart],
-    )
-    ```
-
-Here, we have called the `plotly` library, and also the function that we defined in the `app/logic` folder.
-
--   Now, we will add one more `div` in the ui section after the datatable to make room for the bar chart
-
-```         
-  div(
-      class = "ms-depth-64",
-      style = "height: 500px; overflow: auto;",
-      plotlyOutput(ns("barchart"))
-      )
-      
 ```
-
-`plotlyOutput` will help us to render the graph
-
-Note: Inline styling is a bad practice!
-For styling, use Sass setup provided by Rhino.
-Please refer to this [rhino documentation](https://appsilon.github.io/rhino/articles/tutorial/create-your-first-rhino-app.html#add-custom-styles) for details.
-
--   Similarly, in the server section, we will need to add some code to ask the backend of the application for rendering the barchart
-
-    ```         
-     output$barchart <- renderPlotly({
-            generate_barchart(filtered_deals())
-        })
-    ```
-
-Here is the whole snippet
-
-```         
 # app/view/datatable.R
 
 box::use(
   dplyr[filter],
   plotly[plotlyOutput, renderPlotly],
-  shiny[moduleServer, NS, uiOutput, renderUI, reactive, div],
-  shiny.fluent[fluentPage, Text, DetailsList, Toggle.shinyInput],
+  shiny[moduleServer, NS, div, uiOutput, renderUI, reactive, span],
+  shiny.fluent[fluentPage, Text, DetailsList, Toggle.shinyInput, Stack],
   tibble[tibble]
 )
 
 box::use(
-  app/logic/barchart[generate_barchart],
+  app/logic/barchart[generate_barchart]
 )
 
 columns <- tibble(
   fieldName = c("rep_name", "date", "deal_amount", "city", "is_closed"),
   name = c("Sales Rep", "Date", "Deal Amount", "City", "Is Closed?")
-  )
+)
 
 #' @export
 ui <- function(id) {
   ns <- NS(id)
-  fluentPage(
-    Text("A randomly generated dataset of imaginary sales deals"),
-    Toggle.shinyInput(ns("includeOpen"), label = "Include open deals"),
+  div(
+    Text("A randomly generated dataset of imaginary sales deals", variant = "large"),
     div(
-      class = "ms-depth-64", 
-      style = "height: 500px; overflow: auto;",
-      uiOutput(ns("datatable"))
+      class = "ms-depth-4",
+      Toggle.shinyInput(ns("includeOpen"), label = "Include open deals")
     ),
-    div(
-      class = "ms-depth-64",
-      style = "height: 500px; overflow: auto;",
-      plotlyOutput(ns("barchart"))
-    ))
+    Stack(
+      horizontal = TRUE,
+      tokens = list(padding = 20, childrenGap = 10),
+      span(class = "ms-depth-8", uiOutput(ns("datatable"))),
+      span(class = "ms-depth-8", plotlyOutput(ns("barchart")))
+    )
+  )
 }
 
 #' @export
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
-    
     filtered_deals <- reactive({
       shiny.fluent::fluentSalesDeals |> filter(
         is_closed | input$includeOpen
       )
     })
-    
     output$datatable <- renderUI({
       DetailsList(items = filtered_deals(), columns = columns)
     })
-    
     output$barchart <- renderPlotly({
       generate_barchart(filtered_deals())
     })
@@ -611,97 +533,19 @@ server <- function(id) {
 }
 ```
 
+Here, we have called the `plotly` library, and also the function that we defined in the `app/logic` folder. `plotlyOutput` will help us to render the graph.
+
+Similar to previous usecase, we have added `plotlyOutput` inside the `Stack` so that it is rendered horizontally beside the table as a card. It has the same styling as of the data table's card, hence no need to define the style separately. 
+
+In the server section, we use `renderPlotly` to ask the backend of the application for rendering the barchart.
+
 Once ready, on running the application, we should see the plotly bar chart rendering successfully and also responding to our interactions with the toggle input button.
 
 ```{r, echo=FALSE}
-knitr::include_graphics("images/rhino_fluent_4.png")
+knitr::include_graphics("images/rhino_fluent_gif_3.gif")
 ```
 
-## Some Improvements for better User Experience
-
-### Keep the data table and bar chart on the same row
-
-This can be done by wrapping the `div`s into a parent `div` and using the **`container-fluid`** class to ensure that the **`div`**s fill the screen horizontally.
-
-```         
-div(
-  class = "container-fluid",
-  style = "margin-left: 0px; margin-right: 0px;",
-  div(
-    class = "ms-depth-8",
-    style = "height: 500px; overflow: auto; width: 50%; display: inline-block;",
-    uiOutput(ns("datatable"))
-  ),
-  div(
-    class = "ms-depth-8",
-    style = "height: 500px; overflow: auto; width: 50%; display: inline-block;",
-    plotlyOutput(ns("barchart"))
-  ),
-  style = "display: flex; flex-wrap: wrap;"
-)
-```
-
-We also set the **`margin-left`** and **`margin-right`** to 0 pixels to remove any horizontal margin that might exist.
-To make the **`div`**s display side by side, we set the **`display`** property to **`inline-block`**.
-We also set the width of each **`div`** to **`50%`** to ensure that they fill half the screen each.
-
-### Change orientation of X axis labels in plotly bar chart
-
-```         
-#' @export
-generate_barchart <- function(filtered_data) {
-  ggplot(filtered_data, aes(x = rep_name, y = deal_amount, fill = rep_name)) +
-    geom_bar(stat = "identity") +
-    labs(x = "Sales Rep Name", y = "Deal Amount") +
-    theme_light()+
-    theme(axis.text.x = element_text(angle = 60, hjust = 1))
-}
-```
-
-We just need to add the **`theme(axis.text.x = element_text(angle = 90, hjust = 1))`** line to the **`ggplot`** call.
-This modifies the **`axis.text.x`** element of the plot's theme, which controls the appearance of the X axis labels.
-
-The **`element_text()`** function takes several arguments to customize the text appearance, including the **`angle`** argument to specify the rotation angle in degrees.
-Here, we set the angle to 60 degrees to rotate the labels slightly vertically, and we set the **`hjust`** argument to 1 to align the labels to the right of the tick marks.
-
-### Change the application header
-
-We will no longer keep it as "Hello!".
-Instead, just like we did in the datatable module, we will put a new text into a card and add some styling.
-Here is the change we used for the tutorial -
-
-```         
-#' @export
-ui <- function(id) {
-  ns <- NS(id)
-  fluentPage(
-    div(
-      class = "ms-depth-8",
-      style = "padding: 5px;",
-      Text("Sales Data Dashboard", variant = "xxLarge")
-    ),
-    datatable$ui(ns("datatable"))
-  )
-}
-```
-
-```{r, echo=FALSE}
-knitr::include_graphics("images/rhino_fluent_5.png")
-```
-
-```{r, echo=FALSE}
-knitr::include_graphics("images/rhino_fluent_6.png")
-```
-
-### Use `Sass` setup provided by `rhino` instead of inline CSS
-
-This tutorial uses inline CSS in some places from a proof of concept perspective.
-Inline CSS is not a good coding practice, especially when it comes to projects on production!
-We highly recommend using the `Sass` setup that is available in the `rhino` project structure.
-
-Please refer to this [resource](https://appsilon.github.io/rhino/articles/tutorial/create-your-first-rhino-app.html) to get started with the same.
-
-## Next Steps and Further Suggested Readings
+## Next Steps and Suggested Readings
 
 By now, we have explored `rhino` and `shiny.fluent` packages to an extent, but this is just the beginning.
 It is strongly recommended for the reader to further explore these packages and build great RShiny applications.
@@ -709,12 +553,8 @@ Congratulations on coming this far and all the best for the road that lies ahead
 
 Following are some resources which could be considered for further exploration -
 
--   [All about Rhino](https://appsilon.com/rhino-r-package-tutorial/)
-
--   [Reference for all Shiny.fluent functions](https://appsilon.github.io/shiny.fluent/reference/index.html)
-
--   [How to use shiny.fluent with Shiny modules](https://appsilon.github.io/shiny.fluent/articles/sz-how-to-shiny-modules.html)
-
--   [Tutorial: Create your first shiny.fluent dashboard](https://appsilon.github.io/shiny.fluent/articles/shiny-fluent.html)
-
--   [Tutorial: Full dashboard UI in Shiny and Fluent](https://appsilon.github.io/shiny.fluent/articles/st-sales-reps-dashboard.html)
+* [All about rhino](https://appsilon.com/rhino-r-package-tutorial/)
+* [Reference for all Shiny.fluent functions](https://appsilon.github.io/shiny.fluent/reference/index.html)
+* [How to use shiny.fluent with Shiny modules](https://appsilon.github.io/shiny.fluent/articles/sz-how-to-shiny-modules.html)
+* [Tutorial: Create your first shiny.fluent dashboard](https://appsilon.github.io/shiny.fluent/articles/shiny-fluent.html)
+* [Tutorial: Full dashboard UI in Shiny and Fluent](https://appsilon.github.io/shiny.fluent/articles/st-sales-reps-dashboard.html)
