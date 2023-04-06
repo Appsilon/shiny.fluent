@@ -16,7 +16,7 @@ editor_options:
 
 Let us first install and create our `rhino` project structure.
 
-To install `rhino`, please run the following on a R console in your working directory
+To install `rhino`, please run the following in the R console:
 
 ```         
 # In R console         
@@ -26,11 +26,11 @@ install.packages("rhino")
 Now, initialize a new rhino application.
 You can do it either by using RStudio Wizard or a function `rhino::init()`.
 
-More details on how to create a rhino app can be found in the [rhino tutorial](https://appsilon.github.io/rhino/articles/tutorial/create-your-first-rhino-app.html#create-an-initial-application).
+More details on how to create a Rhino app can be found in the [Rhino tutorial](https://appsilon.github.io/rhino/articles/tutorial/create-your-first-rhino-app.html#create-an-initial-application).
 
 You will notice that the working directory now has a proper folder structure along with some other files.
 
-rhino relies on the [`renv` package](https://rstudio.github.io/renv/index.html) for dependency management.
+Rhino relies on the [`renv` package](https://rstudio.github.io/renv/index.html) for dependency management.
 To add the `shiny.fluent` package to our project, first, we need to install it.
 
 Additionally, we will be also using the `dplyr`, `ggplot2`, `plotly` and `tibble` package for this application.
@@ -63,6 +63,7 @@ Upon saving the modified file, please take a snapshot of the dependencies so tha
 renv::snaphot()
 ```
 If you now check the `renv.lock` file, you will see it is updated with the `shiny.fluent` and other packages.
+
 ### Our first development on the app
 
 Upon viewing the default `app/main.R` file, you will notice that the code does not have any usage of `shiny.fluent` package to generate the text - "Hello!". So, let us introduce `shiny.fluent` and use it in our code to generate some text!
@@ -101,7 +102,7 @@ knitr::include_graphics("images/rhino_fluent_1.png")
 ```
 
 Note: If you check the built-in testcases once changes are introduced, running `rhino::test_r()` will give you errors.
-To avoid failed github actions for now (in case you are pushing your code to Github), you may empty the test cases present in `tests/testthat/test-main.R`.
+To avoid failed GitHub Actions for now (in case you are pushing your code to GitHub), you may empty the test cases present in `tests/testthat/test-main.R`.
 
 ## Show Data in a Table via a `rhino` module
 
@@ -324,7 +325,7 @@ Here is the `app/style/main.scss` file now -
 ```
 # app/style/main.scss
 
-.ms-depth-4{
+.ms-depth-4 {
     display: flex; 
     flex-wrap: wrap;
     padding: 5px;
@@ -405,17 +406,17 @@ The horizontal argument is set to TRUE to horizontally stack the two elements. T
 
 The span element has a class attribute set to `ms-depth-8`. This is a class provided by the Microsoft fluent UI that adds a shadow effect to the element, giving it a depth effect. The `uiOutput` element is used to render the `DetailsList` element that contains the filtered data.
 
-The style for the class `ms-depth-8` is added in the `app/style/main.scss` file. So the file now is modified to -
+The additional style for the class `ms-depth-8` is added in the `app/style/main.scss` file. So it now is modified to -
 ```
 # app/style/main.scss
 
-.ms-depth-4{
+.ms-depth-4 {
     display: flex; 
     flex-wrap: wrap;
     padding: 5px;
 }
 
-.ms-depth-8{
+.ms-depth-8 {
     height: 500px; 
     overflow: auto; 
     width: 50%; 
