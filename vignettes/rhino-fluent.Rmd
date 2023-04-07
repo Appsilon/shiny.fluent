@@ -66,7 +66,7 @@ If you now check the `renv.lock` file, you will see it is updated with the `shin
 
 ### Our first development on the app
 
-Upon viewing the default `app/main.R` file, you will notice that the code does not have any usage of `shiny.fluent` package to generate the text - "Hello!". So, let us introduce `shiny.fluent` and use it in our code to generate some text!
+Upon viewing the default `app/main.R` file, you will notice that the code does not have any usage of `shiny.fluent` package to generate the UI. So, let us introduce `shiny.fluent` and use it in our code to generate some text!
 
 ```         
 # app/main.R
@@ -157,7 +157,7 @@ Our shiny module `app/view/datatable.R` is ready, but unless we call it in the `
 
 box::use(
   shiny[moduleServer, NS],
-  shiny.fluent[fluentPage, Text]
+  shiny.fluent[fluentPage, Text],
 )
 
 box::use(
@@ -424,119 +424,13 @@ knitr::include_graphics("images/rhino_fluent_gif_2.gif")
 ```
 Note that we now we have space beside the table for additional UI component(s).
 
-## Render a Bar Chart with logic in a helper function
+## Create separate `rhino` modules for toggle input and datatable
 
-We will now add a bar chart that plots the deal amounts closed by the sales reps. For this, we will code a helper function and keep it inside the `app/logic` folder.
+Now that we have successfully introduced a datatable and a toggle input in our application, let us further create different Rhino modules for them!
 
-### Helper function in the logic folder of the `rhino` project
+We already have the datatable module with us. We will thus create one more module - `app/view/toggle.R` and make some modifications in `app/view/datatable`. 
 
-* Go to the `app/logic` folder and create a new `.R` file. Lets name it `barchart.R`.
-* We shall use the `gglplot2` and `plotly` packages (which we installed in the beginning) for this purpose. 
-
-Here is the code -
-
-```
-# app/logic/barchart.R
-
-box::use(
-  ggplot2[aes, element_text, geom_bar, ggplot, labs, theme, theme_light],
-)
-
-#' @export
-generate_barchart <- function(filtered_data) {
-  ggplot(filtered_data, aes(x = rep_name, y = deal_amount, fill = rep_name)) +
-    geom_bar(stat = "identity") +
-    labs(x = "Sales Rep Name", y = "Deal Amount") +
-    theme_light() +
-    theme(axis.text.x = element_text(angle = 60, hjust = 1))
-}
-```
-
-The above code block loads the `ggplot2` package and generates a barchart with names of the sales reps on the X axis and the number of deals on the Y axis.
-
-### Call the helper function in the desired `rhino` module
-
-Now let us go back to the `app/view/datatable.R` file. Here we need to call the `generate_barchart()` function we just created along with the required dependencies to render it on UI as a plotly bar chart.
-
-Also, we will attempt to keep the barchart beside the table as another elevated card.
-
-So, the code is now modified to -
-
-```
-# app/view/datatable.R
-
-box::use(
-  dplyr[filter],
-  plotly[plotlyOutput, renderPlotly],
-  shiny[div, moduleServer, NS, reactive, renderUI, span, uiOutput],
-  shiny.fluent[DetailsList, Stack, Text, Toggle.shinyInput],
-  tibble[tibble],
-)
-
-box::use(
-  app/logic/barchart[generate_barchart],
-)
-
-columns <- tibble(
-  fieldName = c("rep_name", "date", "deal_amount", "city", "is_closed"),
-  name = c("Sales Rep", "Date", "Deal Amount", "City", "Is Closed?")
-)
-
-#' @export
-ui <- function(id) {
-  ns <- NS(id)
-  div(
-    Text("A randomly generated dataset of imaginary sales deals", variant = "large"),
-    div(
-      class = "ms-depth-4",
-      Toggle.shinyInput(ns("includeOpen"), label = "Include open deals")
-    ),
-    Stack(
-      horizontal = TRUE,
-      tokens = list(padding = 20, childrenGap = 10),
-      span(class = "ms-depth-8", uiOutput(ns("datatable"))),
-      span(class = "ms-depth-8", plotlyOutput(ns("barchart")))
-    )
-  )
-}
-
-#' @export
-server <- function(id) {
-  moduleServer(id, function(input, output, session) {
-    filtered_deals <- reactive({
-      shiny.fluent::fluentSalesDeals |> filter(
-        is_closed | input$includeOpen
-      )
-    })
-    output$datatable <- renderUI({
-      DetailsList(items = filtered_deals(), columns = columns)
-    })
-    output$barchart <- renderPlotly({
-      generate_barchart(filtered_deals())
-    })
-  })
-}
-```
-
-Here, we have called the `plotly` library, and also the function that we defined in the `app/logic` folder. `plotlyOutput` will help us to render the graph.
-
-Similar to previous usecase, we have added `plotlyOutput` inside the `Stack` so that it is rendered horizontally beside the table as a card. It has the same styling as of the data table's card, hence no need to define the style separately. 
-
-In the server section, we use `renderPlotly` to ask the backend of the application for rendering the barchart.
-
-Once ready, on running the application, we should see the plotly bar chart rendering successfully and also responding to our interactions with the toggle input button.
-
-```{r, echo=FALSE}
-knitr::include_graphics("images/rhino_fluent_gif_3.gif")
-```
-
-## Create rhino modules for toggle button and barchart
-
-Now that we have successfully developed a working application with a data table, a toggle input and a barchart, let us further create different rhino modules for these features!
-
-We already have the datatable module with us. We will thus create two more modules - `app/view/toggle.R` and `app/view/plot.R` along with some modifications to `app/view/datatable`. 
-
-These modules will br called from the main file.
+These modules will be called from the main file.
 
 ### The `app/view/toggle.R` module -
 
@@ -545,7 +439,7 @@ These modules will br called from the main file.
 
 box::use(
   dplyr[filter],
-  shiny[div, moduleServer, NS, observeEvent, reactive],
+  shiny[div, moduleServer, NS, reactive],
   shiny.fluent[Text, Toggle.shinyInput],
 )
 
@@ -569,17 +463,13 @@ server <- function(id) {
         is_closed | input$includeOpen
       )
     })
-    observeEvent(input$includeOpen, {
-      filtered_deals()
-    })
-    return(filtered_deals())      
+    return(filtered_deals)      
   }) 
 }
-
 ```
 This module displays a text in the UI along with a toggle input item which the user can interact with. The styling remains the same as we discussed in the previous sections.
 
-It sets up an observer in the server that watches for changes to the `includeOpen` input from the toggle. Whenever this input changes, the `filtered_deals()` reactive expression is called to update the filtered data frame and ultimately the filtered data is returned to the main module.
+As the user interacts with the toggle input, the data is filtered in the server. This filtered data is returned to the main module.
 
 ### The modified `app/view/datatable.R` module
 
@@ -589,7 +479,7 @@ As the `toggle` module returns the filtered data, it is used in the `datatable` 
 # app/view/datatable.R
 
 box::use(
-  shiny[moduleServer, NS, reactive, renderUI, span, uiOutput],
+  shiny[moduleServer, NS, reactive, renderUI, uiOutput],
   shiny.fluent[DetailsList],
   tibble[tibble],
 )
@@ -618,9 +508,83 @@ Please notice, that inside the server function, the response obtained from the `
 
 We are not returning any information from this module to the main module as it's sole purpose is to display given data in a table with desired columns in an easily readable form.
 
-### The `app/view/plot.R` module
+### The modified `app/main.R` module
 
-This module also obtains the data returned from the `toggle` module and renders a barchart using the `app/logic/barchart.R` logic.
+Since we modified the modules, `app/main.R` also has to be modified.
+
+```
+# app/main.R
+
+box::use(
+  shiny[moduleServer, NS, observe, span],
+  shiny.fluent[fluentPage, Stack, Text],
+)
+
+box::use(
+  app/view/datatable,
+  app/view/toggle,
+)
+
+#' @export
+ui <- function(id) {
+  ns <- NS(id)
+  fluentPage(      
+    Text("Sales Data Dashboard", variant = "xxLarge"),
+    toggle$ui(ns("toggle")),
+    Stack(
+      horizontal = TRUE,
+      tokens = list(padding = 20, childrenGap = 10),
+      span(class = "ms-depth-8", datatable$ui(ns("datatable")))
+    )
+  )
+}
+
+#' @export
+server <- function(id) {
+  moduleServer(id, function(input, output, session) {
+    observe({
+      data <-toggle$server("toggle")
+      datatable$server("datatable", data)
+    })
+  })
+}
+```
+Here we have used the `toggle` and `datatable` modules and called them from the code.
+
+## Create a `rhino` module to render a bar chart with logic in a helper function
+
+We will now add a bar chart that plots the summarized amount of deals closed by the sales reps. For this, we will code a helper function and keep it inside the `app/logic` folder.
+
+### Define the helper function
+
+Go to the `app/logic` folder and create a new `.R` file. Lets name it `barchart.R`. We shall use the `gglplot2` and `plotly` packages now (which we installed in the beginning) for this purpose. 
+
+Here is the code -
+
+```
+# app/logic/barchart.R
+
+box::use(
+  ggplot2[aes, element_text, geom_bar, ggplot, labs, theme, theme_light],
+)
+
+#' @export
+generate_barchart <- function(filtered_data) {
+  ggplot(filtered_data, aes(x = rep_name, y = deal_amount, fill = rep_name)) +
+    geom_bar(stat = "identity") +
+    labs(x = "Sales Rep Name", y = "Deal Amount") +
+    theme_light() +
+    theme(axis.text.x = element_text(angle = 60, hjust = 1))
+}
+```
+
+The above code block loads the `ggplot2` package and generates a barchart with names of the sales reps on the X axis and the  summarized amount of deals on the Y axis.
+
+### Create a new `rhino` module and call the helper function
+
+Now let us create a new file in `app/view` folder and name it `plot.R`. 
+
+This module, like the `app/view/datatable.R` module, also obtains the data returned from the `toggle` module and renders a barchart using the `app/logic/barchart.R` logic.
 
 ```
 # app/view/plot.R
@@ -649,17 +613,17 @@ server <- function(id, data) {
   })
 }
 ```
-### The modified `app/main.R` module
 
-So far we have created the modules that we need for the app's contents. 
+Here, we have called the `plotly` library, and also the function that we defined in the `app/logic` folder. `plotlyOutput` will help us to render the graph.
 
-To make them work, we would need to call them in the main module. Here is how the main module has changed -
+### Modify the `app/main.R` module
+
+To view the barchart on the application, we need to use and call it from the main module. 
 
 ```
-# app/view/main.R
-
+# app/main.R
 box::use(
-  shiny[moduleServer, NS, reactive, span],
+  shiny[moduleServer, NS, observe, span],
   shiny.fluent[fluentPage, Stack, Text],
 )
 
@@ -687,16 +651,21 @@ ui <- function(id) {
 #' @export
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
-    data <- reactive({
-      toggle$server("toggle")      
+    observe({
+      data <-toggle$server("toggle")
+      datatable$server("datatable", data)
+      plot$server("plot", data)
     })
-    datatable$server("datatable", data)
-    plot$server("plot", data)
   })
 }
 ```
 The code now uses all the other modules that we just created/modified, creates the cards in the UI using `Stack` in a `fluentPage` from the `shiny.fluent` package, calls the modules accordingly and passes on the relevant information to each other in the server to have a working web application.
 
+Once ready, on running the application, we should see the plotly bar chart rendering successfully and also responding to our interactions with the toggle input button.
+
+```{r, echo=FALSE}
+knitr::include_graphics("images/rhino_fluent_gif_3.gif")
+```
 ## Next Steps and Suggested Readings
 
 By now, we have explored `rhino` and `shiny.fluent` packages to an extent, but this is just the beginning.
