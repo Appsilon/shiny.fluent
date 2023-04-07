@@ -72,8 +72,8 @@ Upon viewing the default `app/main.R` file, you will notice that the code does n
 # app/main.R
 
 box::use(
-  shiny[moduleServer, NS, div],
-  shiny.fluent[fluentPage, Text]
+  shiny[moduleServer, NS],
+  shiny.fluent[fluentPage, Text],
 )
 
 #' @export
@@ -119,8 +119,8 @@ This `app/view/datatable.R` file will be used to display the data table on the U
 # app/view/datatable.R
 
 box::use(
-  shiny[moduleServer, NS, div, uiOutput, renderUI],
-  shiny.fluent[fluentPage, Text, DetailsList]
+  shiny[div, moduleServer, NS, renderUI, uiOutput],
+  shiny.fluent[DetailsList, Text],
 )
 
 #' @export
@@ -156,12 +156,12 @@ Our shiny module `app/view/datatable.R` is ready, but unless we call it in the `
 # app/main.R
 
 box::use(
-  shiny[moduleServer, NS, div],
+  shiny[moduleServer, NS],
   shiny.fluent[fluentPage, Text]
 )
 
 box::use(
-  app/view/datatable
+  app/view/datatable,
 )
 
 #' @export
@@ -193,9 +193,7 @@ You should be seeing something like this -
 knitr::include_graphics("images/rhino_fluent_2.png")
 ```
 
-### Some improvements
-
-#### Show informative columns with meaningful names
+### Show informative columns with meaningful names
 
 We will no more display all the columns that come with the dataset. Instead, we will display the `"rep_name", "date", "deal_amount", "city", "is_closed"` columns.
 
@@ -214,9 +212,9 @@ Also, we need to mention in the `DetailsList()` function to only display the nam
 # app/view/datatable.R
 
 box::use(
-  shiny[moduleServer, NS, div, uiOutput, renderUI],
-  shiny.fluent[fluentPage, Text, DetailsList],
-  tibble[tibble]
+  shiny[div, moduleServer, NS, renderUI, uiOutput],
+  shiny.fluent[DetailsList, Text],
+  tibble[tibble],
 )
 
 columns <- tibble(
@@ -266,9 +264,9 @@ So, the `app/view/datatable.R` file now is modified to -
 
 box::use(
   dplyr[filter],
-  shiny[moduleServer, NS, div, uiOutput, renderUI, reactive],
-  shiny.fluent[fluentPage, Text, DetailsList, Toggle.shinyInput],
-  tibble[tibble]
+  shiny[div, moduleServer, NS, reactive, renderUI, uiOutput],
+  shiny.fluent[DetailsList, Text, Toggle.shinyInput],
+  tibble[tibble],
 )
 
 columns <- tibble(
@@ -304,26 +302,14 @@ server <- function(id) {
 }
 ```
 
-This code is defining a reactive expression called `filtered_deals` in an R Shiny application.
+This code is being used to determine whether open deals (i.e. deals that have not been closed) should be included in the filtered data or not. The `|` symbol between the two conditions is the logical OR operator, which means that the `filter()` function will return all rows where either `is_closed` is TRUE or `input$includeOpen` is TRUE.
 
-The reactive expression uses the `|>` operator to pipe the `shiny.fluent::fluentSalesDeals` data frame to the `filter()` function which comes from the `dplyr` package.
-The `filter()` function is used to filter rows from a data frame based on one or more conditions.
-
-In this case, the `filter()` function is filtering rows from `shiny.fluent::fluentSalesDeals` based on two conditions:
-
--   `is_closed`: This is a logical column in the `shiny.fluent::fluentSalesDeals` data frame that indicates whether a sales deal has been closed or not.
-
--   `input$includeOpen`: This is a reactive input object that is defined in the UI part of the code.
-    It is used to determine whether open deals (i.e. deals that have not been closed) should be included in the filtered data or not.
-
-The `|` symbol between the two conditions is the logical OR operator, which means that the `filter()` function will return all rows where either `is_closed` is TRUE or `input$includeOpen` is TRUE.
-
-Also, please notice that we have added the style for `class = "ms-depth-4"` in the `app/style/main.scss` file. The [`ms-depth-8`](https://developer.microsoft.com/en-us/fluentui#/styles/web/elevation) class is a predefined core class from Microsoft's Fluent UI which provides elevation to the div, `ms-depth-4` being the lowest.
+Also, please notice that we have added an additional style to the class `ms-depth-4` in the `app/style/main.scss` file. The [`ms-depth-8`](https://developer.microsoft.com/en-us/fluentui#/styles/web/elevation) class is a predefined core class from Microsoft's Fluent UI which provides elevation to the div, `ms-depth-4` being the lowest.
 
 Here is the `app/style/main.scss` file now -
 
 ```
-# app/style/main.scss
+// app/style/main.scss
 
 .ms-depth-4 {
     display: flex; 
@@ -359,9 +345,9 @@ We will also style the data table area. The following code does the following -
 
 box::use(
   dplyr[filter],
-  shiny[moduleServer, NS, div, uiOutput, renderUI, reactive, span],
-  shiny.fluent[fluentPage, Text, DetailsList, Toggle.shinyInput, Stack],
-  tibble[tibble]
+  shiny[div, moduleServer, NS, reactive, renderUI, span, uiOutput],
+  shiny.fluent[DetailsList, Stack, Text, Toggle.shinyInput],
+  tibble[tibble],
 )
 
 columns <- tibble(
@@ -408,7 +394,7 @@ The span element has a class attribute set to `ms-depth-8`. This is a class prov
 
 The additional style for the class `ms-depth-8` is added in the `app/style/main.scss` file. So it now is modified to -
 ```
-# app/style/main.scss
+// app/style/main.scss
 
 .ms-depth-4 {
     display: flex; 
@@ -453,22 +439,20 @@ Here is the code -
 # app/logic/barchart.R
 
 box::use(
-  ggplot2[ggplot, aes, geom_bar, labs, theme_light, theme, element_text],
+  ggplot2[aes, element_text, geom_bar, ggplot, labs, theme, theme_light],
 )
 
 #' @export
 generate_barchart <- function(filtered_data) {
-        ggplot(filtered_data, aes(x = rep_name, y = deal_amount, fill = rep_name)) +
-        geom_bar(stat = "identity") +
-        labs(x = "Sales Rep Name", y = "Deal Amount") +
-        theme_light() +
-        theme(axis.text.x = element_text(angle = 60, hjust = 1))
+  ggplot(filtered_data, aes(x = rep_name, y = deal_amount, fill = rep_name)) +
+    geom_bar(stat = "identity") +
+    labs(x = "Sales Rep Name", y = "Deal Amount") +
+    theme_light() +
+    theme(axis.text.x = element_text(angle = 60, hjust = 1))
 }
 ```
 
-The above code block loads the `ggplot2` package and imports several functions from it. It then defines a function called `generate_barchart()` that takes a `filtered_data` argument as input. The function uses the `ggplot()` function to create a bar chart with `x = rep_name` and `y = deal_amount`, where `rep_name` and `deal_amount` are columns in the `filtered_data` data frame. The `fill` aesthetic is also set to `rep_name`, which maps each bar to a unique color based on the `rep_name` variable. The function also adds labels to the x and y axes and applies the `theme_light()` theme to the plot.
-
-The `element_text()` function takes several arguments to customize the text appearance, including the `angle` argument to specify the rotation angle in degrees. Here, we set the angle to 60 degrees to rotate the labels slightly vertically, and we set the `hjust` argument to 1 to align the labels to the right of the tick marks.
+The above code block loads the `ggplot2` package and generates a barchart with names of the sales reps on the X axis and the number of deals on the Y axis.
 
 ### Call the helper function in the desired `rhino` module
 
@@ -484,13 +468,13 @@ So, the code is now modified to -
 box::use(
   dplyr[filter],
   plotly[plotlyOutput, renderPlotly],
-  shiny[moduleServer, NS, div, uiOutput, renderUI, reactive, span],
-  shiny.fluent[fluentPage, Text, DetailsList, Toggle.shinyInput, Stack],
-  tibble[tibble]
+  shiny[div, moduleServer, NS, reactive, renderUI, span, uiOutput],
+  shiny.fluent[DetailsList, Stack, Text, Toggle.shinyInput],
+  tibble[tibble],
 )
 
 box::use(
-  app/logic/barchart[generate_barchart]
+  app/logic/barchart[generate_barchart],
 )
 
 columns <- tibble(
