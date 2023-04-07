@@ -530,6 +530,170 @@ Once ready, on running the application, we should see the plotly bar chart rende
 knitr::include_graphics("images/rhino_fluent_gif_3.gif")
 ```
 
+## Create rhino modules for toggle button and barchart
+
+Now that we have successfully developed a working application with a data table, a toggle input and a barchart, let us further create different rhino modules for these features!
+
+We already have the datatable module with us. We will thus create two more modules - `app/view/toggle.R` and `app/view/plot.R` along with some modifications to `app/view/datatable`. 
+
+These modules will br called from the main file.
+
+### The `app/view/toggle.R` module -
+
+```
+# app/view/toggle.R
+
+box::use(
+  shiny[div, moduleServer, NS, reactive],
+  shiny.fluent[Text, Toggle.shinyInput],
+)
+
+#' @export
+ui <- function(id) {
+  ns <- NS(id)
+  div(
+    Text("A randomly generated dataset of imaginary sales deals", variant = "large"),
+    div(
+      class = "ms-depth-4",
+      Toggle.shinyInput(ns("includeOpen"), label = "Include open deals")
+    )
+  )
+}
+
+#' @export
+server <- function(id) {
+  moduleServer(id, function(input, output, session) {
+    return(reactive({
+      input$includeOpen
+    })) 
+  })
+}
+```
+This module displays a text in the UI along with a toggle input item. The styling remains the same as we discussed in the previous sections.
+
+When the user interacts with the Shiny app and changes the `includeOpen` input, the reactive expression in the server will automatically update to reflect the new value. The `moduleServer` function inside server then returns this reactive expression as its output.
+
+### The modified `app/view/datatable.R` module
+
+The `toggle` module when called in the main module, passes on the above discussed output to the datatable module so that the data is filtered accordingly. Hence, our `datatable` module is also modified accordingly as shown below -
+
+```
+# app/view/datatable.R
+
+box::use(
+  dplyr[filter],
+  shiny[moduleServer, NS, reactive, renderUI, span, uiOutput],
+  shiny.fluent[DetailsList],
+  tibble[tibble],
+)
+
+columns <- tibble(
+  fieldName = c("rep_name", "date", "deal_amount", "city", "is_closed"),
+  name = c("Sales Rep", "Date", "Deal Amount", "City", "Is Closed?")
+)
+
+#' @export
+ui <- function(id) {
+  ns <- NS(id)
+  uiOutput(ns("datatable"))
+}
+
+#' @export
+server <- function(id, toggle) {
+  moduleServer(id, function(input, output, session) {
+    filtered_deals <- reactive({
+      shiny.fluent::fluentSalesDeals |> filter(
+        is_closed | toggle()
+      )
+    })
+    output$datatable <- renderUI({
+      DetailsList(items = filtered_deals(), columns = columns)
+    })
+    return(filtered_deals())
+  })
+}
+```
+Please notice, that inside the server function, the response obtained from the `toggle` module earlier is also passed on to be used in filtering the data. The filtered data is then returned to the main module, now to be used by the `plot` module.
+
+### The `app/view/plot.R` module
+
+This module obtains the data from the `datatable` module and renders a barchart using the `app/logic/barchart.R` logic.
+
+```
+# app/view/plot.R
+
+box::use(
+  plotly[plotlyOutput, renderPlotly],
+  shiny[moduleServer, NS],
+)
+
+box::use(
+  app/logic/barchart[generate_barchart],
+)
+
+#' @export
+ui <- function(id) {
+  ns <- NS(id)
+  plotlyOutput(ns("barchart"))
+}
+
+#' @export
+server <- function(id, data) {
+  moduleServer(id, function(input, output, session) {
+    output$barchart <- renderPlotly({
+      generate_barchart(data())
+    })
+  })
+}
+```
+### The modified `app/main.R` module
+
+So far we have created the modules that we need for the app's contents. 
+
+To make them work, we would need to call them in the main module. Here is how the main module has changed -
+
+```
+# app/view/main.R
+
+box::use(
+  shiny[moduleServer, NS, reactive, span],
+  shiny.fluent[fluentPage, Stack, Text],
+)
+
+box::use(
+  app/view/datatable,
+  app/view/toggle,
+  app/view/plot,
+)
+
+#' @export
+ui <- function(id) {
+  ns <- NS(id)
+  fluentPage(      
+    Text("Sales Data Dashboard", variant = "xxLarge"),
+    toggle$ui(ns("toggle")),
+    Stack(
+      horizontal = TRUE,
+      tokens = list(padding = 20, childrenGap = 10),
+      span(class = "ms-depth-8", datatable$ui(ns("datatable"))),
+      span(class = "ms-depth-8", plot$ui(ns("plot")))
+    )
+  )
+}
+
+#' @export
+server <- function(id) {
+  moduleServer(id, function(input, output, session) {
+    toggle <- toggle$server("toggle")
+    data <- reactive({
+      datatable$server("datatable", toggle)
+    })
+    plot$server("plot", data)
+  })
+}
+```
+The code now uses all the other modules that we just created/modified, creates the cards in the UI using `Stack` in a `fluentPage` from the `shiny.fluent` package, calls the modules accordingly and passes on the relevant information to each other in the server to have a working web application.
+
 ## Next Steps and Suggested Readings
 
 By now, we have explored `rhino` and `shiny.fluent` packages to an extent, but this is just the beginning.
