@@ -544,7 +544,8 @@ These modules will br called from the main file.
 # app/view/toggle.R
 
 box::use(
-  shiny[div, moduleServer, NS, reactive],
+  dplyr[filter],
+  shiny[div, moduleServer, NS, observeEvent, reactive],
   shiny.fluent[Text, Toggle.shinyInput],
 )
 
@@ -563,25 +564,31 @@ ui <- function(id) {
 #' @export
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
-    return(reactive({
-      input$includeOpen
-    })) 
-  })
+    filtered_deals <- reactive({
+      shiny.fluent::fluentSalesDeals |> filter(
+        is_closed | input$includeOpen
+      )
+    })
+    observeEvent(input$includeOpen, {
+      filtered_deals()
+    })
+    return(filtered_deals())      
+  }) 
 }
-```
-This module displays a text in the UI along with a toggle input item. The styling remains the same as we discussed in the previous sections.
 
-When the user interacts with the Shiny app and changes the `includeOpen` input, the reactive expression in the server will automatically update to reflect the new value. The `moduleServer` function inside server then returns this reactive expression as its output.
+```
+This module displays a text in the UI along with a toggle input item which the user can interact with. The styling remains the same as we discussed in the previous sections.
+
+It sets up an observer in the server that watches for changes to the `includeOpen` input from the toggle. Whenever this input changes, the `filtered_deals()` reactive expression is called to update the filtered data frame and ultimately the filtered data is returned to the main module.
 
 ### The modified `app/view/datatable.R` module
 
-The `toggle` module when called in the main module, passes on the above discussed output to the datatable module so that the data is filtered accordingly. Hence, our `datatable` module is also modified accordingly as shown below -
+As the `toggle` module returns the filtered data, it is used in the `datatable` module so that the data is displayed on a table accordingly. Hence, our `datatable` module is modified as shown below -
 
 ```
 # app/view/datatable.R
 
 box::use(
-  dplyr[filter],
   shiny[moduleServer, NS, reactive, renderUI, span, uiOutput],
   shiny.fluent[DetailsList],
   tibble[tibble],
@@ -599,25 +606,21 @@ ui <- function(id) {
 }
 
 #' @export
-server <- function(id, toggle) {
+server <- function(id, data) {
   moduleServer(id, function(input, output, session) {
-    filtered_deals <- reactive({
-      shiny.fluent::fluentSalesDeals |> filter(
-        is_closed | toggle()
-      )
-    })
     output$datatable <- renderUI({
-      DetailsList(items = filtered_deals(), columns = columns)
+      DetailsList(items = data(), columns = columns)
     })
-    return(filtered_deals())
   })
 }
 ```
-Please notice, that inside the server function, the response obtained from the `toggle` module earlier is also passed on to be used in filtering the data. The filtered data is then returned to the main module, now to be used by the `plot` module.
+Please notice, that inside the server function, the response obtained from the `toggle` module earlier is also passed on to be used in displaying the data in a table. 
+
+We are not returning any information from this module to the main module as it's sole purpose is to display given data in a table with desired columns in an easily readable form.
 
 ### The `app/view/plot.R` module
 
-This module obtains the data from the `datatable` module and renders a barchart using the `app/logic/barchart.R` logic.
+This module also obtains the data returned from the `toggle` module and renders a barchart using the `app/logic/barchart.R` logic.
 
 ```
 # app/view/plot.R
@@ -684,10 +687,10 @@ ui <- function(id) {
 #' @export
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
-    toggle <- toggle$server("toggle")
     data <- reactive({
-      datatable$server("datatable", toggle)
+      toggle$server("toggle")      
     })
+    datatable$server("datatable", data)
     plot$server("plot", data)
   })
 }
