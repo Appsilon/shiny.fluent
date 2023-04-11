@@ -404,7 +404,7 @@ The additional style for the class `ms-depth-8` is added in the `app/style/main.
 
 .ms-depth-8 {
     height: 500px; 
-    overflow: auto; 
+    overflow: overlay; 
     width: 50%; 
     display: inline-block;
 }
@@ -447,11 +447,8 @@ box::use(
 ui <- function(id) {
   ns <- NS(id)
   div(
-    Text("A randomly generated dataset of imaginary sales deals", variant = "large"),
-    div(
-      class = "ms-depth-4",
-      Toggle.shinyInput(ns("includeOpen"), label = "Include open deals")
-    )
+    class = "ms-depth-4",
+    Toggle.shinyInput(ns("includeOpen"), label = "Include open deals")
   )
 }
 
@@ -467,7 +464,7 @@ server <- function(id) {
   }) 
 }
 ```
-This module displays a text in the UI along with a toggle input item which the user can interact with. The styling remains the same as we discussed in the previous sections.
+This module displays a toggle input item on the UI which the user can interact with. The styling remains the same as we discussed in the previous sections.
 
 As the user interacts with the toggle input, the data is filtered in the server. This filtered data is returned to the main module.
 
@@ -516,7 +513,7 @@ Since we modified the modules, `app/main.R` also has to be modified.
 # app/main.R
 
 box::use(
-  shiny[moduleServer, NS, observe, span],
+  shiny[moduleServer, NS, span],
   shiny.fluent[fluentPage, Stack, Text],
 )
 
@@ -530,6 +527,7 @@ ui <- function(id) {
   ns <- NS(id)
   fluentPage(      
     Text("Sales Data Dashboard", variant = "xxLarge"),
+    Text("A randomly generated dataset of imaginary sales deals", variant = "large"),
     toggle$ui(ns("toggle")),
     Stack(
       horizontal = TRUE,
@@ -542,10 +540,8 @@ ui <- function(id) {
 #' @export
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
-    observe({
-      data <-toggle$server("toggle")
-      datatable$server("datatable", data)
-    })
+    data <-toggle$server("toggle")
+    datatable$server("datatable", data)
   })
 }
 ```
@@ -578,7 +574,7 @@ generate_barchart <- function(filtered_data) {
 }
 ```
 
-The above code block loads the `ggplot2` package and generates a barchart with names of the sales reps on the X axis and the  summarized amount of deals on the Y axis.
+The above code block loads the `ggplot2` package and generates a barchart with the names of the sales reps on the X axis and the summarized amount of deals on the Y axis.
 
 ### Create a new `rhino` module and call the helper function
 
@@ -623,7 +619,7 @@ To view the barchart on the application, we need to use and call it from the mai
 ```
 # app/main.R
 box::use(
-  shiny[moduleServer, NS, observe, span],
+  shiny[moduleServer, NS, span],
   shiny.fluent[fluentPage, Stack, Text],
 )
 
@@ -638,6 +634,7 @@ ui <- function(id) {
   ns <- NS(id)
   fluentPage(      
     Text("Sales Data Dashboard", variant = "xxLarge"),
+    Text("A randomly generated dataset of imaginary sales deals", variant = "large"),
     toggle$ui(ns("toggle")),
     Stack(
       horizontal = TRUE,
@@ -651,11 +648,9 @@ ui <- function(id) {
 #' @export
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
-    observe({
-      data <-toggle$server("toggle")
-      datatable$server("datatable", data)
-      plot$server("plot", data)
-    })
+    data <-toggle$server("toggle")
+    datatable$server("datatable", data)
+    plot$server("plot", data)
   })
 }
 ```
