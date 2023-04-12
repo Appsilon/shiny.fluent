@@ -308,7 +308,7 @@ server <- function(id) {
 
 This code is being used to determine whether open deals (i.e. deals that have not been closed) should be included in the filtered data or not. The `|` symbol between the two conditions is the logical OR operator, which means that the `filter()` function will return all rows where either `is_closed` is TRUE or `input$includeOpen` is TRUE.
 
-Also, please notice that we have added an additional style to the class `ms-depth-4` in the `app/style/main.scss` file. The [`ms-depth-8`](https://developer.microsoft.com/en-us/fluentui#/styles/web/elevation) class is a predefined core class from Microsoft's Fluent UI which provides elevation to the div, `ms-depth-4` being the lowest.
+Also, please notice that we have added an additional style to the class `ms-depth-4` in the `app/style/main.scss` file. [`ms-depth-X`](https://developer.microsoft.com/en-us/fluentui#/styles/web/elevation) classes are a part of Microsoft's Fluent UI and provide elevation (depth) to components.
 
 Here is the `app/style/main.scss` file now -
 
@@ -669,6 +669,7 @@ Once ready, on running the application, we should see the plotly bar chart rende
 ```{r, echo=FALSE}
 knitr::include_graphics("images/rhino_fluent_gif_3.gif")
 ```
+
 ## Next Steps and Suggested Readings
 
 By now, we have explored `rhino` and `shiny.fluent` packages to an extent, but this is just the beginning.
