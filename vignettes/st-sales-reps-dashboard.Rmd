@@ -206,7 +206,7 @@ The first step is to define the available routes:
 ```{r router, eval=FALSE}
 ```
 
-Now, we need to put `router$ui` in the place where we want the selected page to appear. (Currently, we also need to manually include router's JavaScript dependencies, because `shiny.fluent` is not compatible with the way `shiny.router` loads this dependency. We expect this to be resolved in future versions of `shiny.router`).
+Now, we need to put `router` in the place where we want the selected page to appear.
 
 ```{r router-ui, eval=FALSE}
 ```
