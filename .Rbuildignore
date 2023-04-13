@@ -10,3 +10,4 @@
 ^doc$
 ^data-raw$
 ^scrape-docs/
+^vignettes/
