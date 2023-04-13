@@ -4,11 +4,12 @@ pkgdown_sha: ~
 articles:
   shiny-fluent: shiny-fluent.html
   st-sales-reps-dashboard: st-sales-reps-dashboard.html
+  st-shiny-fluent-and-rhino: st-shiny-fluent-and-rhino.html
   sz-how-to-shiny-modules: sz-how-to-shiny-modules.html
   sz-how-to-troubleshoot: sz-how-to-troubleshoot.html
   sz-how-to-use-fluent-docs: sz-how-to-use-fluent-docs.html
   topic_react-in-shiny: topic_react-in-shiny.html
-last_built: 2023-04-12T14:37Z
+last_built: 2023-04-13T10:53Z
 urls:
   reference: https://appsilon.github.io/shiny.fluent/reference
   article: https://appsilon.github.io/shiny.fluent/articles
