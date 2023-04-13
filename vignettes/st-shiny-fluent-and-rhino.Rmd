@@ -1,12 +1,12 @@
 ---
-title: "Tutorial: Build a rhino application using shiny.fluent"
+title: "Tutorial: Build a Rhino application using shiny.fluent"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteEncoding{UTF-8}
-  %\VignetteIndexEntry{Tutorial: Build a rhino application using shiny.fluent}
+  %\VignetteIndexEntry{Tutorial: Build a Rhino application using shiny.fluent}
   %\VignetteEngine{knitr::rmarkdown}
-editor_options: 
-  markdown: 
+editor_options:
+  markdown:
     wrap: sentence
 ---
 
@@ -18,8 +18,8 @@ Let us first install and create our `rhino` project structure.
 
 To install `rhino`, please run the following in the R console:
 
-```         
-# In R console         
+```
+# In R console
 install.packages("rhino")
 ```
 
@@ -37,7 +37,7 @@ Additionally, we will be also using the `dplyr`, `ggplot2`, `plotly` and `tibble
 To save us time in the tutorial we will install them all here.
 Please note that for every new package you add, you will need to install them, add them to `dependencies.R`, and run [`renv::snapshot()`](https://rstudio.github.io/renv/reference/snapshot.html) to update the `renv.lock` file.
 
-```         
+```
 # In R console
 renv::install(c("dplyr", "ggplot2", "plotly", "shiny.fluent", "tibble"))
 ```
@@ -59,7 +59,7 @@ library(tibble)
 Upon saving the modified file, please take a snapshot of the dependencies so that the `renv.lock` file is updated.
 
 ```
-# In R console   
+# In R console
 renv::snaphot()
 ```
 If you now check the `renv.lock` file, you will see it is updated with the `shiny.fluent` and other packages.
@@ -68,7 +68,7 @@ If you now check the `renv.lock` file, you will see it is updated with the `shin
 
 Upon viewing the default `app/main.R` file, you will notice that the code does not have any usage of `shiny.fluent` package to generate the UI. So, let us introduce `shiny.fluent` and use it in our code to generate some text!
 
-```         
+```
 # app/main.R
 
 box::use(
@@ -79,7 +79,7 @@ box::use(
 #' @export
 ui <- function(id) {
   ns <- NS(id)
-  fluentPage(      
+  fluentPage(
     Text("Sales Data Dashboard", variant = "xxLarge")
   )
 }
@@ -87,7 +87,7 @@ ui <- function(id) {
 #' @export
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
-    
+
   })
 }
 ```
@@ -152,7 +152,7 @@ So, here we are using [`DetailsList`](https://appsilon.github.io/shiny.fluent/re
 
 Our shiny module `app/view/datatable.R` is ready, but unless we call it in the `app/main.R` file, we won't see any changes on the app. Let us thus go to `app/main.R` file and edit it with the following code -
 
-```         
+```
 # app/main.R
 
 box::use(
@@ -167,7 +167,7 @@ box::use(
 #' @export
 ui <- function(id) {
   ns <- NS(id)
-  fluentPage(      
+  fluentPage(
     Text("Sales Data Dashboard", variant = "xxLarge"),
     datatable$ui(ns("datatable"))
   )
@@ -261,7 +261,7 @@ In the UI, we include the code for showing the toggle for input - `Toggle.shinyI
 
 So, the `app/view/datatable.R` file now is modified to -
 
-```         
+```
 # app/view/datatable.R
 
 box::use(
@@ -316,7 +316,7 @@ Here is the `app/style/main.scss` file now -
 // app/style/main.scss
 
 .ms-depth-4 {
-    display: flex; 
+    display: flex;
     flex-wrap: wrap;
     padding: 5px;
 }
@@ -339,7 +339,7 @@ knitr::include_graphics("images/rhino_fluent_gif_1.gif")
 
 We can create cards with elevations just like in Fluent UI [documentation](https://developer.microsoft.com/en-us/fluentui#/styles/web/elevation), as we partially covered it above. For creating cards, we can use [`Stack`](https://appsilon.github.io/shiny.fluent/reference/Stack.html) from `shiny.fluent`.
 
-We will also style the data table area. The following code does the following - 
+We will also style the data table area. The following code does the following -
 
 * Confines the height and width of the table area.
 * Creates an elevated card around the data table area.
@@ -403,15 +403,15 @@ The additional style for the class `ms-depth-8` is added in the `app/style/main.
 // app/style/main.scss
 
 .ms-depth-4 {
-    display: flex; 
+    display: flex;
     flex-wrap: wrap;
     padding: 5px;
 }
 
 .ms-depth-8 {
-    height: 500px; 
-    overflow: overlay; 
-    width: 50%; 
+    height: 500px;
+    overflow: overlay;
+    width: 50%;
     display: inline-block;
 }
 ```
@@ -434,11 +434,11 @@ Note that we now we have space beside the table for additional UI component(s).
 
 Now that we have successfully introduced a datatable and a toggle input in our application, let us further create different Rhino modules for them!
 
-We already have the datatable module with us. We will thus create one more module - `app/view/toggle.R` and make some modifications in `app/view/datatable`. 
+We already have the datatable module with us. We will thus create one more module - `app/view/toggle.R` and make some modifications in `app/view/datatable`.
 
 These modules will be called from the main file.
 
-### The `app/view/toggle.R` module -
+### The `app/view/toggle.R` module
 
 ```
 # app/view/toggle.R
@@ -468,8 +468,8 @@ server <- function(id) {
         is_closed | input$includeOpen
       )
     })
-    return(filtered_deals)      
-  }) 
+    return(filtered_deals)
+  })
 }
 ```
 This module displays a toggle input item on the UI which the user can interact with. The styling remains the same as we discussed in the previous sections.
@@ -509,7 +509,7 @@ server <- function(id, data) {
   })
 }
 ```
-Please notice, that inside the server function, the response obtained from the `toggle` module earlier is also passed on to be used in displaying the data in a table. 
+Please notice, that inside the server function, the response obtained from the `toggle` module earlier is also passed on to be used in displaying the data in a table.
 
 We are not returning any information from this module to the main module as it's sole purpose is to display given data in a table with desired columns in an easily readable form.
 
@@ -533,7 +533,7 @@ box::use(
 #' @export
 ui <- function(id) {
   ns <- NS(id)
-  fluentPage(      
+  fluentPage(
     Text("Sales Data Dashboard", variant = "xxLarge"),
     Text("A randomly generated dataset of imaginary sales deals", variant = "large"),
     toggle$ui(ns("toggle")),
@@ -561,7 +561,7 @@ We will now add a bar chart that plots the summarized amount of deals closed by 
 
 ### Define the helper function
 
-Go to the `app/logic` folder and create a new `.R` file. Lets name it `barchart.R`. We shall use the `gglplot2` and `plotly` packages now (which we installed in the beginning) for this purpose. 
+Go to the `app/logic` folder and create a new `.R` file. Lets name it `barchart.R`. We shall use the `gglplot2` and `plotly` packages now (which we installed in the beginning) for this purpose.
 
 Here is the code -
 
@@ -586,7 +586,7 @@ The above code block loads the `ggplot2` package and generates a barchart with t
 
 ### Create a new `rhino` module and call the helper function
 
-Now let us create a new file in `app/view` folder and name it `plot.R`. 
+Now let us create a new file in `app/view` folder and name it `plot.R`.
 
 This module, like the `app/view/datatable.R` module, also obtains the data returned from the `toggle` module and renders a barchart using the `app/logic/barchart.R` logic.
 
@@ -622,7 +622,7 @@ Here, we have called the `plotly` library, and also the function that we defined
 
 ### Modify the `app/main.R` module
 
-To view the barchart on the application, we need to use and call it from the main module. 
+To view the barchart on the application, we need to use and call it from the main module.
 
 ```
 # app/main.R
@@ -640,7 +640,7 @@ box::use(
 #' @export
 ui <- function(id) {
   ns <- NS(id)
-  fluentPage(      
+  fluentPage(
     Text("Sales Data Dashboard", variant = "xxLarge"),
     Text("A randomly generated dataset of imaginary sales deals", variant = "large"),
     toggle$ui(ns("toggle")),
@@ -676,7 +676,7 @@ By now, we have explored `rhino` and `shiny.fluent` packages to an extent, but t
 It is strongly recommended for the reader to further explore these packages and build great RShiny applications.
 Congratulations on coming this far and all the best for the road that lies ahead!
 
-Following are some resources which could be considered for further exploration -
+Following are some resources which could be considered for further exploration:
 
 * [All about rhino](https://appsilon.com/rhino-r-package-tutorial/)
 * [Reference for all Shiny.fluent functions](https://appsilon.github.io/shiny.fluent/reference/index.html)
