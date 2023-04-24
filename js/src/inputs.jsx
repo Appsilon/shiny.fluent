@@ -1,6 +1,16 @@
 import * as Fluent from '@fluentui/react';
 import { ButtonAdapter, InputAdapter, debounce } from '@/shiny.react';
 
+function handleMultiSelect(option, value, propsOptions) {
+  const options = new Set(propsOptions.map((item) => item.key));
+  let newValue = (Array.isArray(value) ? value : [value])
+    .filter((key) => options.has(key)); // Some options might have been removed.
+  newValue = option.selected
+    ? [...newValue, option.key]
+    : newValue.filter((key) => key !== option.key);
+  return newValue;
+}
+
 export const ActionButton = ButtonAdapter(Fluent.ActionButton);
 export const CommandBarButton = ButtonAdapter(Fluent.CommandBarButton);
 export const CommandButton = ButtonAdapter(Fluent.CommandButton);
@@ -34,13 +44,7 @@ export const ComboBox = InputAdapter(Fluent.ComboBox, (value, setValue, props) =
   text: value && value.text,
   onChange: (e, option, i, text) => {
     if (props.multiSelect) {
-      const options = new Set(props.options.map((item) => item.key));
-      let newValue = (Array.isArray(value) ? value : [value])
-        .filter((key) => options.has(key)); // Some options might have been removed.
-      newValue = option.selected
-        ? [...newValue, option.key]
-        : newValue.filter((key) => key !== option.key);
-      setValue(newValue);
+      setValue(handleMultiSelect(option, value, props.options));
     } else {
       setValue(option || (text ? { text } : null));
     }
@@ -57,13 +61,7 @@ export const Dropdown = InputAdapter(Fluent.Dropdown, (value, setValue, props) =
   selectedKey: value,
   onChange: (e, v) => {
     if (props.multiSelect) {
-      const options = new Set(props.options.map((item) => item.key));
-      let newValue = (Array.isArray(value) ? value : [value])
-        .filter((key) => options.has(key)); // Some options might have been removed.
-      newValue = v.selected
-        ? [...newValue, v.key]
-        : newValue.filter((key) => key !== v.key);
-      setValue(newValue);
+      setValue(handleMultiSelect(v, value, props.options));
     } else {
       setValue(v.key);
     }
