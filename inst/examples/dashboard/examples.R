@@ -92,13 +92,19 @@ readExample <- function(path) {
   list(code = code, ui = module$ui, server = module$server)
 }
 
+makeText <- function(text) {
+  strsplit(text, "\\n\\n")[[1]] %>%
+    map(Text) %>%
+    Stack(tokens = list(childrenGap = 10))
+}
+
 makeExamplePage <- function(name, example) {
   help <- getHelpList(name)
   makePage(
     name,
     "Fluent UI component",
     div(
-      makeCard("Description", Text(nowrap = FALSE, help$description)),
+      makeCard("Description", makeText(help$description)),
       makeCard("Usage", pre(help$usage)),
       imap(example, makeLiveExamplePage)
     )
