@@ -92,7 +92,7 @@ readExample <- function(path) {
   list(code = code, ui = module$ui, server = module$server)
 }
 
-makeExamplePage <- function(name, ui, code) {
+makeExamplePage <- function(name, example) {
   help <- getHelpList(name)
   makePage(
     name,
@@ -100,27 +100,38 @@ makeExamplePage <- function(name, ui, code) {
     div(
       makeCard("Description", Text(nowrap = FALSE, help$description)),
       makeCard("Usage", pre(help$usage)),
-      makeCard("Live example", div(style = "padding: 20px", ui)),
-      makeCard("Live example code", pre(code))
+      imap(example, makeLiveExamplePage)
     )
   )
 }
 
+makeLiveExamplePage <- function(example, id) {
+  tagList(
+    makeCard("Live example", div(style = "padding: 20px", example$ui(id))),
+    makeCard("Live example code", pre(example$code))
+  )
+}
+
 makeExampleRoute <- function(name) {
-  path <- system.file(file.path("examples", paste0(name, ".R")), package = "shiny.fluent")
-  example <- readExample(path)
-  example_server <- list()
-  example_server[[name]] <- example$server
-  return(
-    list(
-      server = example_server,
-      router = route(
-        path = name,
-        ui = makeExamplePage(
-          name = name,
-          ui = example$ui(name),
-          code = example$code
-        )
+  examples_files <- list.files(
+    system.file("examples", package = "shiny.fluent"),
+    full.names = TRUE
+  )
+  # Match on component names with optional digits at the end
+  pattern <- paste0("^", name, "([0-9]+)?.R")
+  path <- examples_files[grepl(pattern, basename(examples_files))]
+  examples_names  <- tools::file_path_sans_ext(basename(path))
+  example <- path %>%
+    map(readExample) %>%
+    set_names(examples_names)
+
+  list(
+    server = map(example, "server"),
+    router = route(
+      path = name,
+      ui = makeExamplePage(
+        name = name,
+        example = example
       )
     )
   )

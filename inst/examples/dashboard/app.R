@@ -64,13 +64,10 @@ sass(
 
 server <- function(input, output, session) {
   router_server()
-  example_servers <- unlist(map(examples_routes, "server"))
-  lapply(
-    examples,
-    function(item, modules = example_servers) {
-      modules[[item]](item)
-    }
-  )
+  examples_routes %>%
+    map("server") %>%
+    flatten() %>%
+    iwalk(function(server, id) server(id))
 }
 
 shinyApp(ui, server)

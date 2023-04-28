@@ -7,7 +7,7 @@ library(shiny.fluent)
 CustomComponents <- tags$script(HTML("(function() {
   const { InputAdapter } = jsmodule['@/shiny.react'];
   const { TextField } = jsmodule['@fluentui/react'];
-  const CustomComponents = jsmodule['CustomComponents'] = {};
+  const CustomComponents = jsmodule['CustomComponents'] ??= {};
 
   CustomComponents.UpperCaseTextField = InputAdapter(TextField, (value, setValue) => ({
     value: value.toUpperCase(),
