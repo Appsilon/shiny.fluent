@@ -4,16 +4,23 @@
 \alias{CommandBarItem}
 \title{Command bar item}
 \usage{
-CommandBarItem(text, icon = NULL, subitems = NULL, ...)
+CommandBarItem(
+  key,
+  text,
+  onClick = setInputValue(inputId = key, value = 0),
+  ...
+)
 }
 \arguments{
 \item{text}{Text to be displayed on the menu.}
 
+\item{onClick}{A JS function that runs on item click. By default it sends input value to \code{input[[key]]}}
+
+\item{...}{Additional props to pass to CommandBarItem.}
+
 \item{icon}{Optional name of an icon.}
 
 \item{subitems}{Optional list of CommandBar items.}
-
-\item{...}{Additional props to pass to CommandBarItem.}
 }
 \value{
 Item suitable for use in the CommandBar.

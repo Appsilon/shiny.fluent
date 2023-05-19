@@ -1,3 +1,18 @@
+setInputValue <- function(inputId, value, event = TRUE) {
+  fmt <- if (event) {
+    "() => Shiny.setInputValue('%s', %s, { priority: 'event' })"
+  } else {
+    "() => Shiny.setInputValue('%s', %s)"
+  }
+  JS(sprintf(fmt, inputId, if (!is.numeric(value)) sprintf("'%s'", value) else value))
+}
+
+commandBarItem <- "CommandBarItem"
+
+isCommandBarItem <- function(x) {
+  isTRUE(attr(x, "componentName") == commandBarItem)
+}
+
 #' Command bar item
 #'
 #' Helper function for constructing items for `CommandBar`.
@@ -10,18 +25,52 @@
 #' @param text Text to be displayed on the menu.
 #' @param icon Optional name of an icon.
 #' @param subitems Optional list of CommandBar items.
+#' @param onClick A JS function that runs on item click. By default it sends input value to `input[[key]]`
 #' @param ... Additional props to pass to CommandBarItem.
 #' @return Item suitable for use in the CommandBar.
 #'
 #' @seealso CommandBar
 #' @export
-CommandBarItem <- function(text, icon = NULL, subitems = NULL, ...) {
-  props <- rlang::dots_list(...)
+CommandBarItem <- function(
+  key,
+  text,
+  onClick = setInputValue(inputId = key, value = 0),
+  ...
+) {
+  structure(
+    list(
+      key = key,
+      text = text,
+      onClick = onClick,
+      ...
+    ),
+    componentName = commandBarItem
+  )
+}
 
-  props$text <- text
-  if (is.character(icon)) props$iconProps <- list(iconName = icon)
-  if (!is.null(subitems)) props$subMenuProps <- list(items = subitems)
-  props
+#' CommandBar.shinyInput
+#'
+#' CommandBar extension that sends values of clicked CommandBarItems
+#'
+#' @params inputId Input name
+#' @return A CommandBar
+#'
+#' @seealso CommandBarItem
+#' @rdname CommandBar
+#' @export
+CommandBar.shinyInput <- function(
+  inputId,
+  ...,
+  itemValueGetter = function(el) el$key
+) {
+  attachOnClick <- function(el) {
+    el$onClick <- setInputValue(inputId, itemValueGetter(el))
+    el
+  }
+  args <- list(...)
+  args$items <- recursiveModify(args$items, attachOnClick, isCommandBarItem)
+  args$farItems <- recursiveModify(args$farItems, attachOnClick, isCommandBarItem)
+  do.call(CommandBar, args)
 }
 
 #' Basic Fluent UI page

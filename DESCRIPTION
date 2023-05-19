@@ -25,6 +25,7 @@ Depends:
 Imports:
   htmltools,
   jsonlite,
+  purrr,
   rlang,
   shiny,
   shiny.react (>= 0.3.0)
@@ -39,7 +40,6 @@ Suggests:
   leaflet,
   mockery,
   plotly,
-  purrr,
   rcmdcheck,
   RColorBrewer,
   rmarkdown,
