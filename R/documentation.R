@@ -51,10 +51,10 @@ NULL
 #'
 #' The Announced component currently has the following documented use cases:
 #'
-#' 1. [Quick Actions](#/controls/web/announced/quickactions): Operations such as editing text or deletion that are short enough that they do not require a status during progress.
-#' 2. [Search Results](#/controls/web/announced/searchresults): Appearance of search results such as in contact fields or search boxes.
-#' 3. [Lazy Loading](#/controls/web/announced/lazyloading): "Lazy loading" of page sections that do not appear all at once.
-#' 4. [Bulk Operations](#/controls/web/announced/bulkoperations): Operations that require multiple sub operations, such as the moving of several files.
+#' 1. [Quick Actions](https://developer.microsoft.com/en-us/fluentui#/controls/web/announced/quickactions): Operations such as editing text or deletion that are short enough that they do not require a status during progress.
+#' 2. [Search Results](https://developer.microsoft.com/en-us/fluentui#/controls/web/announced/searchresults): Appearance of search results such as in contact fields or search boxes.
+#' 3. [Lazy Loading](https://developer.microsoft.com/en-us/fluentui#/controls/web/announced/lazyloading): "Lazy loading" of page sections that do not appear all at once.
+#' 4. [Bulk Operations](https://developer.microsoft.com/en-us/fluentui#/controls/web/announced/bulkoperations): Operations that require multiple sub operations, such as the moving of several files.
 #'
 #'
 #' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Announced).
@@ -1712,9 +1712,9 @@ NULL
 #' @description
 #' In a user interface, an icon is an image that represents an application, a capability, or some other concept or specific entity with meaning for the user. An icon is usually selectable but can also be a nonselectable image, such as a company's logo.
 #'
-#' For a list of icons, visit our [icon documentation](#/styles/web/icons).
+#' For a list of icons, visit our [icon documentation](https://developer.microsoft.com/en-us/fluentui#/styles/web/icons).
 #'
-#' Note that icons are not bundled by default and typically must be loaded by calling `initializeIcons` from the `@uifabric/icons` package at the root of your application. See the [icon documentation](#/styles/web/icons#fabric-react) for more details.
+#' Note that icons are not bundled by default and typically must be loaded by calling `initializeIcons` from the `@uifabric/icons` package at the root of your application. See the [icon documentation](https://developer.microsoft.com/en-us/fluentui#/styles/web/icons#fabric-react) for more details.
 #'
 #'
 #' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Icon).
