@@ -23,10 +23,10 @@ Some real-world applications of the component include copying, uploading, or mov
 
 The Announced component currently has the following documented use cases:
 \enumerate{
-\item \href{#/controls/web/announced/quickactions}{Quick Actions}: Operations such as editing text or deletion that are short enough that they do not require a status during progress.
-\item \href{#/controls/web/announced/searchresults}{Search Results}: Appearance of search results such as in contact fields or search boxes.
-\item \href{#/controls/web/announced/lazyloading}{Lazy Loading}: "Lazy loading" of page sections that do not appear all at once.
-\item \href{#/controls/web/announced/bulkoperations}{Bulk Operations}: Operations that require multiple sub operations, such as the moving of several files.
+\item \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/announced/quickactions}{Quick Actions}: Operations such as editing text or deletion that are short enough that they do not require a status during progress.
+\item \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/announced/searchresults}{Search Results}: Appearance of search results such as in contact fields or search boxes.
+\item \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/announced/lazyloading}{Lazy Loading}: "Lazy loading" of page sections that do not appear all at once.
+\item \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/announced/bulkoperations}{Bulk Operations}: Operations that require multiple sub operations, such as the moving of several files.
 }
 
 For more details and examples visit the \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/Announced}{official docs}.
