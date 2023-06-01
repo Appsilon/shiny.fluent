@@ -64,3 +64,7 @@ jobs:
           spec: cypress/integration/dashboard/*.js
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+
+      - name: Test coverage
+        run: |
+          Rscript -e 'covr::codecov()'

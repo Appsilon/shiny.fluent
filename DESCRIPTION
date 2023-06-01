@@ -29,6 +29,7 @@ Imports:
   shiny,
   shiny.react (>= 0.3.0)
 Suggests:
+  covr,
   dplyr,
   DT,
   ggplot2,
