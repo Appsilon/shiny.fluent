@@ -45,6 +45,7 @@ Suggests:
   rmarkdown,
   sass,
   shiny.router,
+  shinyjs,
   sortable,
   stringi,
   testthat (>= 3.0.0),
