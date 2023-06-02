@@ -34,6 +34,7 @@ Suggests:
   DT,
   ggplot2,
   glue,
+  imola,
   knitr,
   leaflet,
   mockery,
