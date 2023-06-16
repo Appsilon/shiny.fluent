@@ -133,11 +133,11 @@
 <span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">calcUI</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="va">ns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/NS.html" class="external-link">NS</a></span><span class="op">(</span><span class="va">id</span><span class="op">)</span></span>
+<span>  <span class="va">ns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/NS.html" class="external-link">NS</a></span><span class="op">(</span><span class="va">id</span><span class="op">)</span></span>
 <span>  <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span>style <span class="op">=</span> <span class="st">"margin: 15px 0px 15px"</span>,</span>
 <span>    <span class="fu"><a href="../reference/ChoiceGroup.html">ChoiceGroup</a></span><span class="op">(</span><span class="fu">ns</span><span class="op">(</span><span class="st">"mode"</span><span class="op">)</span>, label <span class="op">=</span> <span class="st">"Operation"</span>, value <span class="op">=</span> <span class="st">"add"</span>, options <span class="op">=</span> <span class="va">calcModes</span><span class="op">)</span>,</span>
 <span>    <span class="fu"><a href="../reference/Label.html">Label</a></span><span class="op">(</span><span class="st">"Values"</span><span class="op">)</span>,</span>
-<span>    <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/flowLayout.html" class="external-link">flowLayout</a></span><span class="op">(</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/flowLayout.html" class="external-link">flowLayout</a></span><span class="op">(</span></span>
 <span>      <span class="fu"><a href="../reference/SpinButton.html">SpinButton</a></span><span class="op">(</span><span class="fu">ns</span><span class="op">(</span><span class="st">"a"</span><span class="op">)</span>, label <span class="op">=</span> <span class="st">"A = "</span>, value <span class="op">=</span> <span class="fl">3</span><span class="op">)</span>,</span>
 <span>      <span class="fu"><a href="../reference/SpinButton.html">SpinButton</a></span><span class="op">(</span><span class="fu">ns</span><span class="op">(</span><span class="st">"b"</span><span class="op">)</span>, label <span class="op">=</span> <span class="st">"B = "</span>, value <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span>
 <span>    <span class="op">)</span></span>
@@ -145,9 +145,9 @@
 <span><span class="op">}</span></span>
 <span></span>
 <span><span class="va">calcServer</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/moduleServer.html" class="external-link">moduleServer</a></span><span class="op">(</span><span class="va">id</span>, <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="va">result</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/reactive.html" class="external-link">reactive</a></span><span class="op">(</span><span class="op">{</span></span>
-<span>      <span class="kw"><a href="https://rdrr.io/r/base/switch.html" class="external-link">switch</a></span><span class="op">(</span><span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/req.html" class="external-link">req</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">mode</span><span class="op">)</span>,</span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/moduleServer.html" class="external-link">moduleServer</a></span><span class="op">(</span><span class="va">id</span>, <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="va">result</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/reactive.html" class="external-link">reactive</a></span><span class="op">(</span><span class="op">{</span></span>
+<span>      <span class="kw"><a href="https://rdrr.io/r/base/switch.html" class="external-link">switch</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/req.html" class="external-link">req</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">mode</span><span class="op">)</span>,</span>
 <span>        add <span class="op">=</span> <span class="va">input</span><span class="op">$</span><span class="va">a</span> <span class="op">+</span> <span class="va">input</span><span class="op">$</span><span class="va">b</span>,</span>
 <span>        mul <span class="op">=</span> <span class="va">input</span><span class="op">$</span><span class="va">a</span> <span class="op">*</span> <span class="va">input</span><span class="op">$</span><span class="va">b</span></span>
 <span>      <span class="op">)</span></span>
@@ -156,14 +156,14 @@
 <span>  <span class="op">}</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
 <span></span>
-<span><span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span>
-<span>  ui <span class="op">=</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/fluidPage.html" class="external-link">fluidPage</a></span><span class="op">(</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span></span>
+<span>  ui <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/fluidPage.html" class="external-link">fluidPage</a></span><span class="op">(</span></span>
 <span>    <span class="fu">calcUI</span><span class="op">(</span><span class="st">"calc"</span><span class="op">)</span>,</span>
-<span>    <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/textOutput.html" class="external-link">textOutput</a></span><span class="op">(</span><span class="st">"result"</span><span class="op">)</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/textOutput.html" class="external-link">textOutput</a></span><span class="op">(</span><span class="st">"result"</span><span class="op">)</span></span>
 <span>  <span class="op">)</span>,</span>
 <span>  server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span>
 <span>    <span class="va">result</span> <span class="op">&lt;-</span> <span class="fu">calcServer</span><span class="op">(</span><span class="st">"calc"</span><span class="op">)</span></span>
-<span>    <span class="va">output</span><span class="op">$</span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/renderPrint.html" class="external-link">renderText</a></span><span class="op">(</span></span>
+<span>    <span class="va">output</span><span class="op">$</span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/renderPrint.html" class="external-link">renderText</a></span><span class="op">(</span></span>
 <span>      <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"The module returned"</span>, <span class="fu">result</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span>    <span class="op">)</span></span>
 <span>  <span class="op">}</span></span>

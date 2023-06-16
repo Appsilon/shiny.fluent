@@ -135,7 +135,7 @@
 <span></span>
 <span><span class="va">server</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span>
 <span></span>
-<span><span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span><span class="va">ui</span>, <span class="va">server</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span><span class="va">ui</span>, <span class="va">server</span><span class="op">)</span></span></code></pre></div>
 <p>Let’s see what our app looks like right now.</p>
 <p><img src="images/tutorial-part1-step1.png" width="143"></p>
 <p>Yay! It may not look very impressive, but this text is rendered in Shiny with the whole power of Fluent UI and <a href="https://reactjs.org" class="external-link">React</a>.</p>
@@ -205,15 +205,15 @@
 <p>Let’s now display our sales deals in a table. As we plan to later make the table change dynamically, we put it in a regular Shiny <code>uiOutput</code>. Let’s also assume that for now we want to filter out deals that have <code>is_closed</code> equal to <code>1</code>.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/fluentPage.html">fluentPage</a></span><span class="op">(</span></span>
-<span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/htmlOutput.html" class="external-link">uiOutput</a></span><span class="op">(</span><span class="st">"analysis"</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/htmlOutput.html" class="external-link">uiOutput</a></span><span class="op">(</span><span class="st">"analysis"</span><span class="op">)</span></span>
 <span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">server</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="va">filtered_deals</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/reactive.html" class="external-link">reactive</a></span><span class="op">(</span><span class="op">{</span></span>
+<span>  <span class="va">filtered_deals</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/reactive.html" class="external-link">reactive</a></span><span class="op">(</span><span class="op">{</span></span>
 <span>    <span class="va">filtered_deals</span> <span class="op">&lt;-</span> <span class="va">fluentSalesDeals</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">is_closed</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span></span>
 <span>  <span class="op">}</span><span class="op">)</span></span>
 <span></span>
-<span>  <span class="va">output</span><span class="op">$</span><span class="va">analysis</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/renderUI.html" class="external-link">renderUI</a></span><span class="op">(</span><span class="op">{</span></span>
+<span>  <span class="va">output</span><span class="op">$</span><span class="va">analysis</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/renderUI.html" class="external-link">renderUI</a></span><span class="op">(</span><span class="op">{</span></span>
 <span>    <span class="va">items_list</span> <span class="op">&lt;-</span> <span class="kw">if</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="fu">filtered_deals</span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span><span class="op">{</span></span>
 <span>      <span class="fu"><a href="../reference/DetailsList.html">DetailsList</a></span><span class="op">(</span>items <span class="op">=</span> <span class="fu">filtered_deals</span><span class="op">(</span><span class="op">)</span>, columns <span class="op">=</span> <span class="va">details_list_columns</span><span class="op">)</span></span>
 <span>    <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
@@ -228,7 +228,7 @@
 <span>  <span class="op">}</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
 <span></span>
-<span><span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span><span class="va">ui</span>, <span class="va">server</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span><span class="va">ui</span>, <span class="va">server</span><span class="op">)</span></span></code></pre></div>
 <p>In addition to <code><a href="../reference/DetailsList.html">?DetailsList</a></code> and <code><a href="../reference/Text.html">?Text</a></code>, in the code above we used <code><a href="../reference/Stack.html">?Stack</a></code>, which arranges elements in its area.</p>
 <p><img src="images/tutorial-part1-step2.png" width="911"></p>
 </div>
@@ -251,18 +251,18 @@
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/fluentPage.html">fluentPage</a></span><span class="op">(</span></span>
 <span>  <span class="va">filters</span>,</span>
-<span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/htmlOutput.html" class="external-link">uiOutput</a></span><span class="op">(</span><span class="st">"analysis"</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/htmlOutput.html" class="external-link">uiOutput</a></span><span class="op">(</span><span class="st">"analysis"</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
 <p>In the server function of our application, we can now access the input values using the IDs we provided in the same way as with any other Shiny input. Let’s use the selected dates to apply additional filtering to the deals:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
-<span id="cb9-2"><a href="#cb9-2"></a>  filtered_deals &lt;-<span class="st"> </span><span class="kw">reactive</span>({</span>
-<span id="cb9-3"><a href="#cb9-3"></a>    <span class="kw">req</span>(input<span class="op">$</span>fromDate)</span>
-<span id="cb9-4"><a href="#cb9-4"></a>    filtered_deals &lt;-<span class="st"> </span>fluentSalesDeals <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(</span>
-<span id="cb9-5"><a href="#cb9-5"></a>      date <span class="op">&gt;=</span><span class="st"> </span>input<span class="op">$</span>fromDate,</span>
-<span id="cb9-6"><a href="#cb9-6"></a>      date <span class="op">&lt;=</span><span class="st"> </span>input<span class="op">$</span>toDate,</span>
-<span id="cb9-7"><a href="#cb9-7"></a>      is_closed <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span></span>
-<span id="cb9-8"><a href="#cb9-8"></a>    )</span>
-<span id="cb9-9"><a href="#cb9-9"></a>  })</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a>  filtered_deals &lt;-<span class="st"> </span><span class="kw">reactive</span>({</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a>    <span class="kw">req</span>(input<span class="op">$</span>fromDate)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true"></a>    filtered_deals &lt;-<span class="st"> </span>fluentSalesDeals <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true"></a>      date <span class="op">&gt;=</span><span class="st"> </span>input<span class="op">$</span>fromDate,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true"></a>      date <span class="op">&lt;=</span><span class="st"> </span>input<span class="op">$</span>toDate,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true"></a>      is_closed <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true"></a>    )</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true"></a>  })</span></code></pre></div>
 <p>This is what our application looks like now:</p>
 <p><img src="images/tutorial-part1-step3.png" width="632"></p>
 </div>
@@ -326,28 +326,28 @@
 <code class="sourceCode R"><span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/fluentPage.html">fluentPage</a></span><span class="op">(</span></span>
 <span>  <span class="va">tags</span><span class="op">$</span><span class="fu">style</span><span class="op">(</span><span class="st">".card { padding: 28px; margin-bottom: 28px; }"</span><span class="op">)</span>,</span>
 <span>  <span class="fu">makeCard</span><span class="op">(</span><span class="st">"Filters"</span>, <span class="va">filters</span>, size <span class="op">=</span> <span class="fl">4</span>, style <span class="op">=</span> <span class="st">"max-height: 320px;"</span><span class="op">)</span>,</span>
-<span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/htmlOutput.html" class="external-link">uiOutput</a></span><span class="op">(</span><span class="st">"analysis"</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/htmlOutput.html" class="external-link">uiOutput</a></span><span class="op">(</span><span class="st">"analysis"</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
 <p>Let’s move our attention to the server function. We can access the values of the filtering controls using the provided IDs just like before.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
-<span id="cb13-2"><a href="#cb13-2"></a>  filtered_deals &lt;-<span class="st"> </span><span class="kw">reactive</span>({</span>
-<span id="cb13-3"><a href="#cb13-3"></a>    <span class="kw">req</span>(input<span class="op">$</span>fromDate)</span>
-<span id="cb13-4"><a href="#cb13-4"></a>    selectedPeople &lt;-<span class="st"> </span>(</span>
-<span id="cb13-5"><a href="#cb13-5"></a>      <span class="cf">if</span> (<span class="kw">length</span>(input<span class="op">$</span>selectedPeople) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) input<span class="op">$</span>selectedPeople</span>
-<span id="cb13-6"><a href="#cb13-6"></a>      <span class="cf">else</span> fluentPeople<span class="op">$</span>key</span>
-<span id="cb13-7"><a href="#cb13-7"></a>    )</span>
-<span id="cb13-8"><a href="#cb13-8"></a>    minClosedVal &lt;-<span class="st"> </span><span class="cf">if</span> (<span class="kw">isTRUE</span>(input<span class="op">$</span>closedOnly)) <span class="dv">1</span> <span class="cf">else</span> <span class="dv">0</span></span>
-<span id="cb13-9"><a href="#cb13-9"></a></span>
-<span id="cb13-10"><a href="#cb13-10"></a>    filtered_deals &lt;-<span class="st"> </span>fluentSalesDeals <span class="op">%&gt;%</span></span>
-<span id="cb13-11"><a href="#cb13-11"></a><span class="st">      </span><span class="kw">filter</span>(</span>
-<span id="cb13-12"><a href="#cb13-12"></a>        rep_id <span class="op">%in%</span><span class="st"> </span>selectedPeople,</span>
-<span id="cb13-13"><a href="#cb13-13"></a>        date <span class="op">&gt;=</span><span class="st"> </span>input<span class="op">$</span>fromDate,</span>
-<span id="cb13-14"><a href="#cb13-14"></a>        date <span class="op">&lt;=</span><span class="st"> </span>input<span class="op">$</span>toDate,</span>
-<span id="cb13-15"><a href="#cb13-15"></a>        deal_amount <span class="op">&gt;=</span><span class="st"> </span>input<span class="op">$</span>slider,</span>
-<span id="cb13-16"><a href="#cb13-16"></a>        is_closed <span class="op">&gt;=</span><span class="st"> </span>minClosedVal</span>
-<span id="cb13-17"><a href="#cb13-17"></a>      ) <span class="op">%&gt;%</span></span>
-<span id="cb13-18"><a href="#cb13-18"></a><span class="st">      </span><span class="kw">mutate</span>(<span class="dt">is_closed =</span> <span class="kw">ifelse</span>(is_closed <span class="op">==</span><span class="st"> </span><span class="dv">1</span>, <span class="st">"Yes"</span>, <span class="st">"No"</span>))</span>
-<span id="cb13-19"><a href="#cb13-19"></a>  })</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true"></a>server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output, session) {</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true"></a>  filtered_deals &lt;-<span class="st"> </span><span class="kw">reactive</span>({</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true"></a>    <span class="kw">req</span>(input<span class="op">$</span>fromDate)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true"></a>    selectedPeople &lt;-<span class="st"> </span>(</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true"></a>      <span class="cf">if</span> (<span class="kw">length</span>(input<span class="op">$</span>selectedPeople) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) input<span class="op">$</span>selectedPeople</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true"></a>      <span class="cf">else</span> fluentPeople<span class="op">$</span>key</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true"></a>    )</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true"></a>    minClosedVal &lt;-<span class="st"> </span><span class="cf">if</span> (<span class="kw">isTRUE</span>(input<span class="op">$</span>closedOnly)) <span class="dv">1</span> <span class="cf">else</span> <span class="dv">0</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true"></a></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true"></a>    filtered_deals &lt;-<span class="st"> </span>fluentSalesDeals <span class="op">%&gt;%</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true"></a><span class="st">      </span><span class="kw">filter</span>(</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true"></a>        rep_id <span class="op">%in%</span><span class="st"> </span>selectedPeople,</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true"></a>        date <span class="op">&gt;=</span><span class="st"> </span>input<span class="op">$</span>fromDate,</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true"></a>        date <span class="op">&lt;=</span><span class="st"> </span>input<span class="op">$</span>toDate,</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true"></a>        deal_amount <span class="op">&gt;=</span><span class="st"> </span>input<span class="op">$</span>slider,</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true"></a>        is_closed <span class="op">&gt;=</span><span class="st"> </span>minClosedVal</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true"></a>      ) <span class="op">%&gt;%</span></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true"></a><span class="st">      </span><span class="kw">mutate</span>(<span class="dt">is_closed =</span> <span class="kw">ifelse</span>(is_closed <span class="op">==</span><span class="st"> </span><span class="dv">1</span>, <span class="st">"Yes"</span>, <span class="st">"No"</span>))</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true"></a>  })</span></code></pre></div>
 <p>Finally, let’s refactor the table output and wrap it in a card.</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span>    <span class="fu">makeCard</span><span class="op">(</span><span class="st">"Top results"</span>, <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span>style<span class="op">=</span><span class="st">"max-height: 500px; overflow: auto"</span>, <span class="va">items_list</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
@@ -366,7 +366,7 @@
 <span>    <span class="fu">makeCard</span><span class="op">(</span><span class="st">"Filters"</span>, <span class="va">filters</span>, size <span class="op">=</span> <span class="fl">4</span>, style <span class="op">=</span> <span class="st">"max-height: 320px"</span><span class="op">)</span>,</span>
 <span>    <span class="fu">makeCard</span><span class="op">(</span><span class="st">"Deals count"</span>, <span class="fu">plotlyOutput</span><span class="op">(</span><span class="st">"plot"</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">8</span>, style <span class="op">=</span> <span class="st">"max-height: 320px"</span><span class="op">)</span></span>
 <span>  <span class="op">)</span>,</span>
-<span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/htmlOutput.html" class="external-link">uiOutput</a></span><span class="op">(</span><span class="st">"analysis"</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/htmlOutput.html" class="external-link">uiOutput</a></span><span class="op">(</span><span class="st">"analysis"</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
 <p>We also add a <code>leafletOutput()</code> to the UI generated in the server function:</p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">

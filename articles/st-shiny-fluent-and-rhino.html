@@ -162,7 +162,7 @@
 <span></span>
 <span><span class="co">#' @export</span></span>
 <span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="va">ns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/NS.html" class="external-link">NS</a></span><span class="op">(</span><span class="va">id</span><span class="op">)</span></span>
+<span>  <span class="va">ns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/NS.html" class="external-link">NS</a></span><span class="op">(</span><span class="va">id</span><span class="op">)</span></span>
 <span>  <span class="fu"><a href="../reference/fluentPage.html">fluentPage</a></span><span class="op">(</span></span>
 <span>    <span class="fu"><a href="../reference/Text.html">Text</a></span><span class="op">(</span><span class="st">"Sales Data Dashboard"</span>, variant <span class="op">=</span> <span class="st">"xxLarge"</span><span class="op">)</span></span>
 <span>  <span class="op">)</span></span>
@@ -170,7 +170,7 @@
 <span></span>
 <span><span class="co">#' @export</span></span>
 <span><span class="va">server</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/moduleServer.html" class="external-link">moduleServer</a></span><span class="op">(</span><span class="va">id</span>, <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/moduleServer.html" class="external-link">moduleServer</a></span><span class="op">(</span><span class="va">id</span>, <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span></span>
 <span></span>
 <span>  <span class="op">}</span><span class="op">)</span></span>
 <span><span class="op">}</span></span></code></pre>
@@ -198,17 +198,17 @@
 <span></span>
 <span><span class="co">#' @export</span></span>
 <span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="va">ns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/NS.html" class="external-link">NS</a></span><span class="op">(</span><span class="va">id</span><span class="op">)</span></span>
+<span>  <span class="va">ns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/NS.html" class="external-link">NS</a></span><span class="op">(</span><span class="va">id</span><span class="op">)</span></span>
 <span>    <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
 <span>      <span class="fu"><a href="../reference/Text.html">Text</a></span><span class="op">(</span><span class="st">"A randomly generated dataset of imaginary sales deals"</span>, variant <span class="op">=</span> <span class="st">"large"</span><span class="op">)</span>,</span>
-<span>      <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/htmlOutput.html" class="external-link">uiOutput</a></span><span class="op">(</span><span class="fu">ns</span><span class="op">(</span><span class="st">"datatable"</span><span class="op">)</span><span class="op">)</span></span>
+<span>      <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/htmlOutput.html" class="external-link">uiOutput</a></span><span class="op">(</span><span class="fu">ns</span><span class="op">(</span><span class="st">"datatable"</span><span class="op">)</span><span class="op">)</span></span>
 <span>    <span class="op">)</span></span>
 <span><span class="op">}</span></span>
 <span></span>
 <span><span class="co">#' @export</span></span>
 <span><span class="va">server</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/moduleServer.html" class="external-link">moduleServer</a></span><span class="op">(</span><span class="va">id</span>, <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="va">output</span><span class="op">$</span><span class="va">datatable</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/renderUI.html" class="external-link">renderUI</a></span><span class="op">(</span><span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/moduleServer.html" class="external-link">moduleServer</a></span><span class="op">(</span><span class="va">id</span>, <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="va">output</span><span class="op">$</span><span class="va">datatable</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/renderUI.html" class="external-link">renderUI</a></span><span class="op">(</span><span class="op">{</span></span>
 <span>      <span class="co"># Datasets are the only case when you need to use :: in `box`.</span></span>
 <span>      <span class="co"># This issue should be solved in the next `box` release.</span></span>
 <span>      <span class="fu"><a href="../reference/DetailsList.html">DetailsList</a></span><span class="op">(</span>items <span class="op">=</span> <span class="fu">shiny.fluent</span><span class="fu">::</span><span class="va"><a href="../reference/fluentSalesDeals.html">fluentSalesDeals</a></span><span class="op">)</span></span>
@@ -235,7 +235,7 @@
 <span></span>
 <span><span class="co">#' @export</span></span>
 <span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="va">ns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/NS.html" class="external-link">NS</a></span><span class="op">(</span><span class="va">id</span><span class="op">)</span></span>
+<span>  <span class="va">ns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/NS.html" class="external-link">NS</a></span><span class="op">(</span><span class="va">id</span><span class="op">)</span></span>
 <span>  <span class="fu"><a href="../reference/fluentPage.html">fluentPage</a></span><span class="op">(</span></span>
 <span>    <span class="fu"><a href="../reference/Text.html">Text</a></span><span class="op">(</span><span class="st">"Sales Data Dashboard"</span>, variant <span class="op">=</span> <span class="st">"xxLarge"</span><span class="op">)</span>,</span>
 <span>    <span class="va">datatable</span><span class="op">$</span><span class="fu">ui</span><span class="op">(</span><span class="fu">ns</span><span class="op">(</span><span class="st">"datatable"</span><span class="op">)</span><span class="op">)</span></span>
@@ -244,7 +244,7 @@
 <span></span>
 <span><span class="co">#' @export</span></span>
 <span><span class="va">server</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/moduleServer.html" class="external-link">moduleServer</a></span><span class="op">(</span><span class="va">id</span>, <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/moduleServer.html" class="external-link">moduleServer</a></span><span class="op">(</span><span class="va">id</span>, <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span></span>
 <span>    <span class="va">datatable</span><span class="op">$</span><span class="fu">server</span><span class="op">(</span><span class="st">"datatable"</span><span class="op">)</span></span>
 <span>  <span class="op">}</span><span class="op">)</span></span>
 <span><span class="op">}</span></span></code></pre>
@@ -278,17 +278,17 @@
 <span></span>
 <span><span class="co">#' @export</span></span>
 <span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="va">ns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/NS.html" class="external-link">NS</a></span><span class="op">(</span><span class="va">id</span><span class="op">)</span></span>
+<span>  <span class="va">ns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/NS.html" class="external-link">NS</a></span><span class="op">(</span><span class="va">id</span><span class="op">)</span></span>
 <span>  <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
 <span>    <span class="fu"><a href="../reference/Text.html">Text</a></span><span class="op">(</span><span class="st">"A randomly generated dataset of imaginary sales deals"</span>, variant <span class="op">=</span> <span class="st">"large"</span><span class="op">)</span>,</span>
-<span>    <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/htmlOutput.html" class="external-link">uiOutput</a></span><span class="op">(</span><span class="fu">ns</span><span class="op">(</span><span class="st">"datatable"</span><span class="op">)</span><span class="op">)</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/htmlOutput.html" class="external-link">uiOutput</a></span><span class="op">(</span><span class="fu">ns</span><span class="op">(</span><span class="st">"datatable"</span><span class="op">)</span><span class="op">)</span></span>
 <span>  <span class="op">)</span></span>
 <span><span class="op">}</span></span>
 <span></span>
 <span><span class="co">#' @export</span></span>
 <span><span class="va">server</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/moduleServer.html" class="external-link">moduleServer</a></span><span class="op">(</span><span class="va">id</span>, <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="va">output</span><span class="op">$</span><span class="va">datatable</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/renderUI.html" class="external-link">renderUI</a></span><span class="op">(</span><span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/moduleServer.html" class="external-link">moduleServer</a></span><span class="op">(</span><span class="va">id</span>, <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="va">output</span><span class="op">$</span><span class="va">datatable</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/renderUI.html" class="external-link">renderUI</a></span><span class="op">(</span><span class="op">{</span></span>
 <span>      <span class="co"># Datasets are the only case when you need to use :: in `box`.</span></span>
 <span>      <span class="co"># This issue should be solved in the next `box` release.</span></span>
 <span>      <span class="fu"><a href="../reference/DetailsList.html">DetailsList</a></span><span class="op">(</span>items <span class="op">=</span> <span class="fu">shiny.fluent</span><span class="fu">::</span><span class="va"><a href="../reference/fluentSalesDeals.html">fluentSalesDeals</a></span>, columns <span class="op">=</span> <span class="va">columns</span><span class="op">)</span></span>
@@ -322,28 +322,28 @@
 <span></span>
 <span><span class="co">#' @export</span></span>
 <span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="va">ns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/NS.html" class="external-link">NS</a></span><span class="op">(</span><span class="va">id</span><span class="op">)</span></span>
+<span>  <span class="va">ns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/NS.html" class="external-link">NS</a></span><span class="op">(</span><span class="va">id</span><span class="op">)</span></span>
 <span>  <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
 <span>    <span class="fu"><a href="../reference/Text.html">Text</a></span><span class="op">(</span><span class="st">"A randomly generated dataset of imaginary sales deals"</span>, variant <span class="op">=</span> <span class="st">"large"</span><span class="op">)</span>,</span>
 <span>    <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
 <span>      class <span class="op">=</span> <span class="st">"ms-depth-4"</span>,</span>
 <span>      <span class="fu"><a href="../reference/Toggle.html">Toggle.shinyInput</a></span><span class="op">(</span><span class="fu">ns</span><span class="op">(</span><span class="st">"includeOpen"</span><span class="op">)</span>, label <span class="op">=</span> <span class="st">"Include open deals"</span><span class="op">)</span></span>
 <span>    <span class="op">)</span>,</span>
-<span>    <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/htmlOutput.html" class="external-link">uiOutput</a></span><span class="op">(</span><span class="fu">ns</span><span class="op">(</span><span class="st">"datatable"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/htmlOutput.html" class="external-link">uiOutput</a></span><span class="op">(</span><span class="fu">ns</span><span class="op">(</span><span class="st">"datatable"</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>  <span class="op">)</span></span>
 <span><span class="op">}</span></span>
 <span></span>
 <span><span class="co">#' @export</span></span>
 <span><span class="va">server</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/moduleServer.html" class="external-link">moduleServer</a></span><span class="op">(</span><span class="va">id</span>, <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="va">filtered_deals</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/reactive.html" class="external-link">reactive</a></span><span class="op">(</span><span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/moduleServer.html" class="external-link">moduleServer</a></span><span class="op">(</span><span class="va">id</span>, <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="va">filtered_deals</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/reactive.html" class="external-link">reactive</a></span><span class="op">(</span><span class="op">{</span></span>
 <span>      <span class="co"># Datasets are the only case when you need to use :: in `box`.</span></span>
 <span>      <span class="co"># This issue should be solved in the next `box` release.</span></span>
 <span>      <span class="fu">shiny.fluent</span><span class="fu">::</span><span class="va"><a href="../reference/fluentSalesDeals.html">fluentSalesDeals</a></span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span></span>
 <span>        <span class="va">is_closed</span> <span class="op">|</span> <span class="va">input</span><span class="op">$</span><span class="va">includeOpen</span></span>
 <span>      <span class="op">)</span></span>
 <span>    <span class="op">}</span><span class="op">)</span></span>
-<span>    <span class="va">output</span><span class="op">$</span><span class="va">datatable</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/renderUI.html" class="external-link">renderUI</a></span><span class="op">(</span><span class="op">{</span></span>
+<span>    <span class="va">output</span><span class="op">$</span><span class="va">datatable</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/renderUI.html" class="external-link">renderUI</a></span><span class="op">(</span><span class="op">{</span></span>
 <span>      <span class="fu"><a href="../reference/DetailsList.html">DetailsList</a></span><span class="op">(</span>items <span class="op">=</span> <span class="fu">filtered_deals</span><span class="op">(</span><span class="op">)</span>, columns <span class="op">=</span> <span class="va">columns</span><span class="op">)</span></span>
 <span>    <span class="op">}</span><span class="op">)</span></span>
 <span>  <span class="op">}</span><span class="op">)</span></span>
@@ -390,7 +390,7 @@
 <span></span>
 <span><span class="co">#' @export</span></span>
 <span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="va">ns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/NS.html" class="external-link">NS</a></span><span class="op">(</span><span class="va">id</span><span class="op">)</span></span>
+<span>  <span class="va">ns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/NS.html" class="external-link">NS</a></span><span class="op">(</span><span class="va">id</span><span class="op">)</span></span>
 <span>  <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
 <span>    <span class="fu"><a href="../reference/Text.html">Text</a></span><span class="op">(</span><span class="st">"A randomly generated dataset of imaginary sales deals"</span>, variant <span class="op">=</span> <span class="st">"large"</span><span class="op">)</span>,</span>
 <span>    <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
@@ -400,22 +400,22 @@
 <span>    <span class="fu"><a href="../reference/Stack.html">Stack</a></span><span class="op">(</span></span>
 <span>      horizontal <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>      tokens <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>padding <span class="op">=</span> <span class="fl">20</span>, childrenGap <span class="op">=</span> <span class="fl">10</span><span class="op">)</span>,</span>
-<span>      <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">span</a></span><span class="op">(</span>class <span class="op">=</span> <span class="st">"ms-depth-8"</span>, <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/htmlOutput.html" class="external-link">uiOutput</a></span><span class="op">(</span><span class="fu">ns</span><span class="op">(</span><span class="st">"datatable"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span>      <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">span</a></span><span class="op">(</span>class <span class="op">=</span> <span class="st">"ms-depth-8"</span>, <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/htmlOutput.html" class="external-link">uiOutput</a></span><span class="op">(</span><span class="fu">ns</span><span class="op">(</span><span class="st">"datatable"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span>    <span class="op">)</span></span>
 <span>  <span class="op">)</span></span>
 <span><span class="op">}</span></span>
 <span></span>
 <span><span class="co">#' @export</span></span>
 <span><span class="va">server</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/moduleServer.html" class="external-link">moduleServer</a></span><span class="op">(</span><span class="va">id</span>, <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="va">filtered_deals</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/reactive.html" class="external-link">reactive</a></span><span class="op">(</span><span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/moduleServer.html" class="external-link">moduleServer</a></span><span class="op">(</span><span class="va">id</span>, <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="va">filtered_deals</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/reactive.html" class="external-link">reactive</a></span><span class="op">(</span><span class="op">{</span></span>
 <span>      <span class="co"># Datasets are the only case when you need to use :: in `box`.</span></span>
 <span>      <span class="co"># This issue should be solved in the next `box` release.</span></span>
 <span>      <span class="fu">shiny.fluent</span><span class="fu">::</span><span class="va"><a href="../reference/fluentSalesDeals.html">fluentSalesDeals</a></span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span></span>
 <span>        <span class="va">is_closed</span> <span class="op">|</span> <span class="va">input</span><span class="op">$</span><span class="va">includeOpen</span></span>
 <span>      <span class="op">)</span></span>
 <span>    <span class="op">}</span><span class="op">)</span></span>
-<span>    <span class="va">output</span><span class="op">$</span><span class="va">datatable</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/renderUI.html" class="external-link">renderUI</a></span><span class="op">(</span><span class="op">{</span></span>
+<span>    <span class="va">output</span><span class="op">$</span><span class="va">datatable</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/renderUI.html" class="external-link">renderUI</a></span><span class="op">(</span><span class="op">{</span></span>
 <span>      <span class="fu"><a href="../reference/DetailsList.html">DetailsList</a></span><span class="op">(</span>items <span class="op">=</span> <span class="fu">filtered_deals</span><span class="op">(</span><span class="op">)</span>, columns <span class="op">=</span> <span class="va">columns</span><span class="op">)</span></span>
 <span>    <span class="op">}</span><span class="op">)</span></span>
 <span>  <span class="op">}</span><span class="op">)</span></span>
@@ -463,7 +463,7 @@
 <span></span>
 <span><span class="co">#' @export</span></span>
 <span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="va">ns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/NS.html" class="external-link">NS</a></span><span class="op">(</span><span class="va">id</span><span class="op">)</span></span>
+<span>  <span class="va">ns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/NS.html" class="external-link">NS</a></span><span class="op">(</span><span class="va">id</span><span class="op">)</span></span>
 <span>  <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
 <span>    class <span class="op">=</span> <span class="st">"ms-depth-4"</span>,</span>
 <span>    <span class="fu"><a href="../reference/Toggle.html">Toggle.shinyInput</a></span><span class="op">(</span><span class="fu">ns</span><span class="op">(</span><span class="st">"includeOpen"</span><span class="op">)</span>, label <span class="op">=</span> <span class="st">"Include open deals"</span><span class="op">)</span></span>
@@ -472,8 +472,8 @@
 <span></span>
 <span><span class="co">#' @export</span></span>
 <span><span class="va">server</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/moduleServer.html" class="external-link">moduleServer</a></span><span class="op">(</span><span class="va">id</span>, <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="va">filtered_deals</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/reactive.html" class="external-link">reactive</a></span><span class="op">(</span><span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/moduleServer.html" class="external-link">moduleServer</a></span><span class="op">(</span><span class="va">id</span>, <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="va">filtered_deals</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/reactive.html" class="external-link">reactive</a></span><span class="op">(</span><span class="op">{</span></span>
 <span>      <span class="co"># Datasets are the only case when you need to use :: in `box`.</span></span>
 <span>      <span class="co"># This issue should be solved in the next `box` release.</span></span>
 <span>      <span class="fu">shiny.fluent</span><span class="fu">::</span><span class="va"><a href="../reference/fluentSalesDeals.html">fluentSalesDeals</a></span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span></span>
@@ -505,14 +505,14 @@
 <span></span>
 <span><span class="co">#' @export</span></span>
 <span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="va">ns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/NS.html" class="external-link">NS</a></span><span class="op">(</span><span class="va">id</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/htmlOutput.html" class="external-link">uiOutput</a></span><span class="op">(</span><span class="fu">ns</span><span class="op">(</span><span class="st">"datatable"</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="va">ns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/NS.html" class="external-link">NS</a></span><span class="op">(</span><span class="va">id</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/htmlOutput.html" class="external-link">uiOutput</a></span><span class="op">(</span><span class="fu">ns</span><span class="op">(</span><span class="st">"datatable"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
 <span></span>
 <span><span class="co">#' @export</span></span>
 <span><span class="va">server</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span>, <span class="va">data</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/moduleServer.html" class="external-link">moduleServer</a></span><span class="op">(</span><span class="va">id</span>, <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="va">output</span><span class="op">$</span><span class="va">datatable</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/renderUI.html" class="external-link">renderUI</a></span><span class="op">(</span><span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/moduleServer.html" class="external-link">moduleServer</a></span><span class="op">(</span><span class="va">id</span>, <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="va">output</span><span class="op">$</span><span class="va">datatable</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/renderUI.html" class="external-link">renderUI</a></span><span class="op">(</span><span class="op">{</span></span>
 <span>      <span class="fu"><a href="../reference/DetailsList.html">DetailsList</a></span><span class="op">(</span>items <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="op">)</span>, columns <span class="op">=</span> <span class="va">columns</span><span class="op">)</span></span>
 <span>    <span class="op">}</span><span class="op">)</span></span>
 <span>  <span class="op">}</span><span class="op">)</span></span>
@@ -538,7 +538,7 @@
 <span></span>
 <span><span class="co">#' @export</span></span>
 <span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="va">ns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/NS.html" class="external-link">NS</a></span><span class="op">(</span><span class="va">id</span><span class="op">)</span></span>
+<span>  <span class="va">ns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/NS.html" class="external-link">NS</a></span><span class="op">(</span><span class="va">id</span><span class="op">)</span></span>
 <span>  <span class="fu"><a href="../reference/fluentPage.html">fluentPage</a></span><span class="op">(</span></span>
 <span>    <span class="fu"><a href="../reference/Text.html">Text</a></span><span class="op">(</span><span class="st">"Sales Data Dashboard"</span>, variant <span class="op">=</span> <span class="st">"xxLarge"</span><span class="op">)</span>,</span>
 <span>    <span class="fu"><a href="../reference/Text.html">Text</a></span><span class="op">(</span><span class="st">"A randomly generated dataset of imaginary sales deals"</span>, variant <span class="op">=</span> <span class="st">"large"</span><span class="op">)</span>,</span>
@@ -553,7 +553,7 @@
 <span></span>
 <span><span class="co">#' @export</span></span>
 <span><span class="va">server</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/moduleServer.html" class="external-link">moduleServer</a></span><span class="op">(</span><span class="va">id</span>, <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/moduleServer.html" class="external-link">moduleServer</a></span><span class="op">(</span><span class="va">id</span>, <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span></span>
 <span>    <span class="va">data</span> <span class="op">&lt;-</span><span class="va">toggle</span><span class="op">$</span><span class="fu">server</span><span class="op">(</span><span class="st">"toggle"</span><span class="op">)</span></span>
 <span>    <span class="va">datatable</span><span class="op">$</span><span class="fu">server</span><span class="op">(</span><span class="st">"datatable"</span>, <span class="va">data</span><span class="op">)</span></span>
 <span>  <span class="op">}</span><span class="op">)</span></span>
@@ -604,13 +604,13 @@
 <span></span>
 <span><span class="co">#' @export</span></span>
 <span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="va">ns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/NS.html" class="external-link">NS</a></span><span class="op">(</span><span class="va">id</span><span class="op">)</span></span>
+<span>  <span class="va">ns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/NS.html" class="external-link">NS</a></span><span class="op">(</span><span class="va">id</span><span class="op">)</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/plotly/man/plotly-shiny.html" class="external-link">plotlyOutput</a></span><span class="op">(</span><span class="fu">ns</span><span class="op">(</span><span class="st">"barchart"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
 <span></span>
 <span><span class="co">#' @export</span></span>
 <span><span class="va">server</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span>, <span class="va">data</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/moduleServer.html" class="external-link">moduleServer</a></span><span class="op">(</span><span class="va">id</span>, <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/moduleServer.html" class="external-link">moduleServer</a></span><span class="op">(</span><span class="va">id</span>, <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span></span>
 <span>    <span class="va">output</span><span class="op">$</span><span class="va">barchart</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/plotly/man/plotly-shiny.html" class="external-link">renderPlotly</a></span><span class="op">(</span><span class="op">{</span></span>
 <span>      <span class="fu">generate_barchart</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span>    <span class="op">}</span><span class="op">)</span></span>
@@ -636,7 +636,7 @@
 <span></span>
 <span><span class="co">#' @export</span></span>
 <span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="va">ns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/NS.html" class="external-link">NS</a></span><span class="op">(</span><span class="va">id</span><span class="op">)</span></span>
+<span>  <span class="va">ns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/NS.html" class="external-link">NS</a></span><span class="op">(</span><span class="va">id</span><span class="op">)</span></span>
 <span>  <span class="fu"><a href="../reference/fluentPage.html">fluentPage</a></span><span class="op">(</span></span>
 <span>    <span class="fu"><a href="../reference/Text.html">Text</a></span><span class="op">(</span><span class="st">"Sales Data Dashboard"</span>, variant <span class="op">=</span> <span class="st">"xxLarge"</span><span class="op">)</span>,</span>
 <span>    <span class="fu"><a href="../reference/Text.html">Text</a></span><span class="op">(</span><span class="st">"A randomly generated dataset of imaginary sales deals"</span>, variant <span class="op">=</span> <span class="st">"large"</span><span class="op">)</span>,</span>
@@ -652,7 +652,7 @@
 <span></span>
 <span><span class="co">#' @export</span></span>
 <span><span class="va">server</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/moduleServer.html" class="external-link">moduleServer</a></span><span class="op">(</span><span class="va">id</span>, <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/moduleServer.html" class="external-link">moduleServer</a></span><span class="op">(</span><span class="va">id</span>, <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span></span>
 <span>    <span class="va">data</span> <span class="op">&lt;-</span><span class="va">toggle</span><span class="op">$</span><span class="fu">server</span><span class="op">(</span><span class="st">"toggle"</span><span class="op">)</span></span>
 <span>    <span class="va">datatable</span><span class="op">$</span><span class="fu">server</span><span class="op">(</span><span class="st">"datatable"</span>, <span class="va">data</span><span class="op">)</span></span>
 <span>    <span class="va">plot</span><span class="op">$</span><span class="fu">server</span><span class="op">(</span><span class="st">"plot"</span>, <span class="va">data</span><span class="op">)</span></span>
