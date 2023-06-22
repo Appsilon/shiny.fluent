@@ -22,9 +22,9 @@ Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 \description{
 In a user interface, an icon is an image that represents an application, a capability, or some other concept or specific entity with meaning for the user. An icon is usually selectable but can also be a nonselectable image, such as a company's logo.
 
-For a list of icons, visit our \href{#/styles/web/icons}{icon documentation}.
+For a list of icons, visit our \href{https://developer.microsoft.com/en-us/fluentui#/styles/web/icons}{icon documentation}.
 
-Note that icons are not bundled by default and typically must be loaded by calling \code{initializeIcons} from the \verb{@uifabric/icons} package at the root of your application. See the \href{#/styles/web/icons#fabric-react}{icon documentation} for more details.
+Note that icons are not bundled by default and typically must be loaded by calling \code{initializeIcons} from the \verb{@uifabric/icons} package at the root of your application. See the \href{https://developer.microsoft.com/en-us/fluentui#/styles/web/icons#fabric-react}{icon documentation} for more details.
 
 For more details and examples visit the \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/Icon}{official docs}.
 The R package cannot handle each and every case, so for advanced use cases
