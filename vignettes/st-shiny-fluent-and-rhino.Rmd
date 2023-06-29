@@ -15,6 +15,7 @@ editor_options:
 ### Getting started with our development environment
 
 Let us first install and create our `rhino` project structure.
+Note: Ensure Rhino v1.4.0 or later is installed for this tutorial.
 
 To install `rhino`, please run the following in the R console:
 
@@ -136,7 +137,6 @@ ui <- function(id) {
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
     output$datatable <- renderUI({
-      # Note : If you are using `box>=1.1.3`, import datasets directly without using `shiny.fluent::fluentSalesDeals`
       DetailsList(items = fluentSalesDeals)
     })
   })
@@ -234,7 +234,6 @@ ui <- function(id) {
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
     output$datatable <- renderUI({
-      # Note : If you are using `box>=1.1.3`, import datasets directly without using `shiny.fluent::fluentSalesDeals`
       # This issue should be solved in the next `box` release.
       DetailsList(items = fluentSalesDeals, columns = columns)
     })
@@ -292,7 +291,6 @@ ui <- function(id) {
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
     filtered_deals <- reactive({
-      # Note : If you are using `box>=1.1.3`, import datasets directly without using `shiny.fluent::fluentSalesDeals`
       fluentSalesDeals |> filter(
         is_closed | input$includeOpen
       )
@@ -378,7 +376,6 @@ ui <- function(id) {
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
     filtered_deals <- reactive({
-       # Note : If you are using `box>=1.1.3`, import datasets directly without using `shiny.fluent::fluentSalesDeals`
       fluentSalesDeals |> filter(
         is_closed | input$includeOpen
       )
@@ -459,7 +456,6 @@ ui <- function(id) {
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
     filtered_deals <- reactive({
-      # Note : If you are using `box>=1.1.3`, import datasets directly without using `shiny.fluent::fluentSalesDeals`
       fluentSalesDeals |> filter(
         is_closed | input$includeOpen
       )
