@@ -13,6 +13,9 @@ makeCard <- function(title, content) {
   div(
     class = "card ms-depth-8",
     Text(variant = "large", title, block = TRUE),
-    content
+    div(
+      style = "margin-top: 10px;",
+      content
+    )
   )
 }

@@ -22,7 +22,7 @@ router_page_elements <- append(
     route("/", homePage),
     route("about", aboutPage)
   ),
-  map(examples_routes, "router")
+  map(examples_routes, "route")
 )
 
 router_page <- do.call(router_ui, router_page_elements)
@@ -65,7 +65,7 @@ sass(
 server <- function(input, output, session) {
   router_server()
   examples_routes %>%
-    map("server") %>%
+    map("servers") %>%
     flatten() %>%
     iwalk(function(server, id) server(id))
 }
