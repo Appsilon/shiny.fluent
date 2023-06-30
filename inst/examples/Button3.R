@@ -5,7 +5,7 @@ library(shiny.fluent)
 library(shinyjs)
 
 # This example app shows how to use a Fluent UI Button to trigger a file upload.
-# File upload is not natively supported by shiny.fluent, so shinyjs is used
+# File upload is not natively supported by shiny.fluent so shinyjs is used
 # to trigger the file upload input.
 ui <- function(id) {
   ns <- NS(id)
