@@ -113,14 +113,13 @@ makeExamplePage <- function(name, example) {
 }
 
 makeLiveExamplePage <- function(example, id) {
-  tagList(
-    makeCard(
-      title = Text("Live example", variant = "large"),
-      content = tagList(
-        example$ui(id),
-        Separator(),
-        pre(example$code)
-      )
+  makeCard(
+    title = Text("Live example", variant = "large"),
+    content = div(
+      id = id,
+      example$ui(id),
+      Separator(),
+      pre(example$code)
     )
   )
 }
