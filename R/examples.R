@@ -14,6 +14,8 @@ NULL
 
 #' @example inst/examples/Button.R
 #' @example inst/examples/Button2.R
+#' @example inst/examples/Button3.R
+#' @example inst/examples/Button4.R
 #' @name Button
 NULL
 

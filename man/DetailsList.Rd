@@ -368,7 +368,7 @@ CustomComponents <- tags$script(HTML("(function() {
   const React = jsmodule['react'];
   const Fluent = jsmodule['@fluentui/react'];
   const Shiny = jsmodule['@/shiny'];
-  const CustomComponents = jsmodule['CustomComponents'] = {};
+  const CustomComponents = jsmodule['CustomComponents'] ??= {};
 
   function useSelection(inputId) {
     const selection = React.useRef(new Fluent.Selection({
