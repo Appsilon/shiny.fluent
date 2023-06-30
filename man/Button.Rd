@@ -377,7 +377,7 @@ ui <- function(id) {
         )
       )
     ),
-    textOutput("file_path")
+    textOutput(ns("file_path"))
   )
 }
 
