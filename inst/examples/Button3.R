@@ -39,8 +39,8 @@ server <- function(input, output) {
     click("uploadFile")
   })
 
-  output$file_path <- renderPrint({
-    input$uploadFile
+  output$file_path <- renderText({
+    input$uploadFile$name
   })
 }
 
