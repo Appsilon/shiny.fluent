@@ -231,7 +231,7 @@ The update functions return nothing (called for side effects).</p>
 <span class="r-in"><span><span class="va">CustomComponents</span> <span class="op">&lt;-</span> <span class="va">tags</span><span class="op">$</span><span class="fu">script</span><span class="op">(</span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/HTML.html" class="external-link">HTML</a></span><span class="op">(</span><span class="st">"(function() {</span></span></span>
 <span class="r-in"><span><span class="st">  const { InputAdapter } = jsmodule['@/shiny.react'];</span></span></span>
 <span class="r-in"><span><span class="st">  const { TextField } = jsmodule['@fluentui/react'];</span></span></span>
-<span class="r-in"><span><span class="st">  const CustomComponents = jsmodule['CustomComponents'] = {};</span></span></span>
+<span class="r-in"><span><span class="st">  const CustomComponents = jsmodule['CustomComponents'] ??= {};</span></span></span>
 <span class="r-in"><span><span class="st"></span></span></span>
 <span class="r-in"><span><span class="st">  CustomComponents.UpperCaseTextField = InputAdapter(TextField, (value, setValue) =&gt; ({</span></span></span>
 <span class="r-in"><span><span class="st">    value: value.toUpperCase(),</span></span></span>

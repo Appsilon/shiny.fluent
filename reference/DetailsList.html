@@ -448,7 +448,7 @@ To avoid this problem, we recommend re-creating the items array backing the Deta
 <span class="r-in"><span><span class="st">  const React = jsmodule['react'];</span></span></span>
 <span class="r-in"><span><span class="st">  const Fluent = jsmodule['@fluentui/react'];</span></span></span>
 <span class="r-in"><span><span class="st">  const Shiny = jsmodule['@/shiny'];</span></span></span>
-<span class="r-in"><span><span class="st">  const CustomComponents = jsmodule['CustomComponents'] = {};</span></span></span>
+<span class="r-in"><span><span class="st">  const CustomComponents = jsmodule['CustomComponents'] ??= {};</span></span></span>
 <span class="r-in"><span><span class="st"></span></span></span>
 <span class="r-in"><span><span class="st">  function useSelection(inputId) {</span></span></span>
 <span class="r-in"><span><span class="st">    const selection = React.useRef(new Fluent.Selection({</span></span></span>
