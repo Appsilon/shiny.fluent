@@ -10,10 +10,12 @@ makePage <- function (title, subtitle, contents) {
 }
 
 makeCard <- function(title, content) {
-  div(class = "card ms-depth-8",
-      Stack(
-        tokens = list(childrenGap = 5),
-        Text(variant = "large", title, block = TRUE),
-        content
-      ))
+  div(
+    class = "card ms-depth-8",
+    Text(variant = "large", title, block = TRUE),
+    div(
+      style = "margin-top: 10px;",
+      content
+    )
+  )
 }
