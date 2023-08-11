@@ -15,6 +15,7 @@ editor_options:
 ### Getting started with our development environment
 
 Let us first install and create our `rhino` project structure.
+Note: Ensure Rhino v1.4.0 or later is installed for this tutorial.
 
 To install `rhino`, please run the following in the R console:
 
@@ -120,7 +121,7 @@ This `app/view/datatable.R` file will be used to display the data table on the U
 
 box::use(
   shiny[div, moduleServer, NS, renderUI, uiOutput],
-  shiny.fluent[DetailsList, Text],
+  shiny.fluent[DetailsList, Text, fluentSalesDeals],
 )
 
 #' @export
@@ -136,15 +137,13 @@ ui <- function(id) {
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
     output$datatable <- renderUI({
-      # Datasets are the only case when you need to use :: in `box`.
-      # This issue should be solved in the next `box` release.
-      DetailsList(items = shiny.fluent::fluentSalesDeals)
+      DetailsList(items = fluentSalesDeals)
     })
   })
 }
 ```
 
-`fluentSalesDeals` is a dataset available with the `shiny.fluent` package and to use it, we use `::` for directly fetching the dataset from the library. Datasets are the only case when you need to use `::` in `box`.
+`fluentSalesDeals` is a dataset available with the `shiny.fluent` package.
 
 So, here we are using [`DetailsList`](https://appsilon.github.io/shiny.fluent/reference/DetailsList.html) function in the server side to render the table on the UI.
 
@@ -213,7 +212,7 @@ Also, we need to mention in the `DetailsList()` function to only display the nam
 
 box::use(
   shiny[div, moduleServer, NS, renderUI, uiOutput],
-  shiny.fluent[DetailsList, Text],
+  shiny.fluent[DetailsList, Text, fluentSalesDeals],
   tibble[tibble],
 )
 
@@ -235,9 +234,8 @@ ui <- function(id) {
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
     output$datatable <- renderUI({
-      # Datasets are the only case when you need to use :: in `box`.
       # This issue should be solved in the next `box` release.
-      DetailsList(items = shiny.fluent::fluentSalesDeals, columns = columns)
+      DetailsList(items = fluentSalesDeals, columns = columns)
     })
   })
 }
@@ -267,7 +265,7 @@ So, the `app/view/datatable.R` file now is modified to -
 box::use(
   dplyr[filter],
   shiny[div, moduleServer, NS, reactive, renderUI, uiOutput],
-  shiny.fluent[DetailsList, Text, Toggle.shinyInput],
+  shiny.fluent[DetailsList, Text, Toggle.shinyInput, fluentSalesDeals],
   tibble[tibble],
 )
 
@@ -293,9 +291,7 @@ ui <- function(id) {
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
     filtered_deals <- reactive({
-      # Datasets are the only case when you need to use :: in `box`.
-      # This issue should be solved in the next `box` release.
-      shiny.fluent::fluentSalesDeals |> filter(
+      fluentSalesDeals |> filter(
         is_closed | input$includeOpen
       )
     })
@@ -350,7 +346,7 @@ We will also style the data table area. The following code does the following -
 box::use(
   dplyr[filter],
   shiny[div, moduleServer, NS, reactive, renderUI, span, uiOutput],
-  shiny.fluent[DetailsList, Stack, Text, Toggle.shinyInput],
+  shiny.fluent[DetailsList, Stack, Text, Toggle.shinyInput, fluentSalesDeals],
   tibble[tibble],
 )
 
@@ -380,9 +376,7 @@ ui <- function(id) {
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
     filtered_deals <- reactive({
-      # Datasets are the only case when you need to use :: in `box`.
-      # This issue should be solved in the next `box` release.
-      shiny.fluent::fluentSalesDeals |> filter(
+      fluentSalesDeals |> filter(
         is_closed | input$includeOpen
       )
     })
@@ -446,7 +440,7 @@ These modules will be called from the main file.
 box::use(
   dplyr[filter],
   shiny[div, moduleServer, NS, reactive],
-  shiny.fluent[Text, Toggle.shinyInput],
+  shiny.fluent[Text, Toggle.shinyInput, fluentSalesDeals],
 )
 
 #' @export
@@ -462,9 +456,7 @@ ui <- function(id) {
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
     filtered_deals <- reactive({
-      # Datasets are the only case when you need to use :: in `box`.
-      # This issue should be solved in the next `box` release.
-      shiny.fluent::fluentSalesDeals |> filter(
+      fluentSalesDeals |> filter(
         is_closed | input$includeOpen
       )
     })
