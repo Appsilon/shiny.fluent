@@ -123,7 +123,7 @@
 <div class="section level3">
 <h3 id="getting-started-with-our-development-environment">Getting started with our development environment<a class="anchor" aria-label="anchor" href="#getting-started-with-our-development-environment"></a>
 </h3>
-<p>Let us first install and create our <code>rhino</code> project structure.</p>
+<p>Let us first install and create our <code>rhino</code> project structure. Note: Ensure Rhino v1.4.0 or later is installed for this tutorial.</p>
 <p>To install <code>rhino</code>, please run the following in the R console:</p>
 <pre><code><span><span class="co"># In R console</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"rhino"</span><span class="op">)</span></span></code></pre>
@@ -193,7 +193,7 @@
 <span></span>
 <span><span class="fu">box</span><span class="fu">::</span><span class="fu">use</span><span class="op">(</span></span>
 <span>  <span class="va">shiny</span><span class="op">[</span><span class="va">div</span>, <span class="va">moduleServer</span>, <span class="va">NS</span>, <span class="va">renderUI</span>, <span class="va">uiOutput</span><span class="op">]</span>,</span>
-<span>  <span class="va">shiny.fluent</span><span class="op">[</span><span class="va">DetailsList</span>, <span class="va">Text</span><span class="op">]</span>,</span>
+<span>  <span class="va">shiny.fluent</span><span class="op">[</span><span class="va">DetailsList</span>, <span class="va">Text</span>, <span class="va">fluentSalesDeals</span><span class="op">]</span>,</span>
 <span><span class="op">)</span></span>
 <span></span>
 <span><span class="co">#' @export</span></span>
@@ -209,13 +209,11 @@
 <span><span class="va">server</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/moduleServer.html" class="external-link">moduleServer</a></span><span class="op">(</span><span class="va">id</span>, <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span></span>
 <span>    <span class="va">output</span><span class="op">$</span><span class="va">datatable</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/renderUI.html" class="external-link">renderUI</a></span><span class="op">(</span><span class="op">{</span></span>
-<span>      <span class="co"># Datasets are the only case when you need to use :: in `box`.</span></span>
-<span>      <span class="co"># This issue should be solved in the next `box` release.</span></span>
-<span>      <span class="fu"><a href="../reference/DetailsList.html">DetailsList</a></span><span class="op">(</span>items <span class="op">=</span> <span class="fu">shiny.fluent</span><span class="fu">::</span><span class="va"><a href="../reference/fluentSalesDeals.html">fluentSalesDeals</a></span><span class="op">)</span></span>
+<span>      <span class="fu"><a href="../reference/DetailsList.html">DetailsList</a></span><span class="op">(</span>items <span class="op">=</span> <span class="va">fluentSalesDeals</span><span class="op">)</span></span>
 <span>    <span class="op">}</span><span class="op">)</span></span>
 <span>  <span class="op">}</span><span class="op">)</span></span>
 <span><span class="op">}</span></span></code></pre>
-<p><code>fluentSalesDeals</code> is a dataset available with the <code>shiny.fluent</code> package and to use it, we use <code>::</code> for directly fetching the dataset from the library. Datasets are the only case when you need to use <code>::</code> in <code>box</code>.</p>
+<p><code>fluentSalesDeals</code> is a dataset available with the <code>shiny.fluent</code> package.</p>
 <p>So, here we are using <a href="https://appsilon.github.io/shiny.fluent/reference/DetailsList.html"><code>DetailsList</code></a> function in the server side to render the table on the UI.</p>
 </div>
 <div class="section level3">
@@ -267,7 +265,7 @@
 <span></span>
 <span><span class="fu">box</span><span class="fu">::</span><span class="fu">use</span><span class="op">(</span></span>
 <span>  <span class="va">shiny</span><span class="op">[</span><span class="va">div</span>, <span class="va">moduleServer</span>, <span class="va">NS</span>, <span class="va">renderUI</span>, <span class="va">uiOutput</span><span class="op">]</span>,</span>
-<span>  <span class="va">shiny.fluent</span><span class="op">[</span><span class="va">DetailsList</span>, <span class="va">Text</span><span class="op">]</span>,</span>
+<span>  <span class="va">shiny.fluent</span><span class="op">[</span><span class="va">DetailsList</span>, <span class="va">Text</span>, <span class="va">fluentSalesDeals</span><span class="op">]</span>,</span>
 <span>  <span class="va">tibble</span><span class="op">[</span><span class="va">tibble</span><span class="op">]</span>,</span>
 <span><span class="op">)</span></span>
 <span></span>
@@ -289,9 +287,8 @@
 <span><span class="va">server</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/moduleServer.html" class="external-link">moduleServer</a></span><span class="op">(</span><span class="va">id</span>, <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span></span>
 <span>    <span class="va">output</span><span class="op">$</span><span class="va">datatable</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/renderUI.html" class="external-link">renderUI</a></span><span class="op">(</span><span class="op">{</span></span>
-<span>      <span class="co"># Datasets are the only case when you need to use :: in `box`.</span></span>
 <span>      <span class="co"># This issue should be solved in the next `box` release.</span></span>
-<span>      <span class="fu"><a href="../reference/DetailsList.html">DetailsList</a></span><span class="op">(</span>items <span class="op">=</span> <span class="fu">shiny.fluent</span><span class="fu">::</span><span class="va"><a href="../reference/fluentSalesDeals.html">fluentSalesDeals</a></span>, columns <span class="op">=</span> <span class="va">columns</span><span class="op">)</span></span>
+<span>      <span class="fu"><a href="../reference/DetailsList.html">DetailsList</a></span><span class="op">(</span>items <span class="op">=</span> <span class="va">fluentSalesDeals</span>, columns <span class="op">=</span> <span class="va">columns</span><span class="op">)</span></span>
 <span>    <span class="op">}</span><span class="op">)</span></span>
 <span>  <span class="op">}</span><span class="op">)</span></span>
 <span><span class="op">}</span></span></code></pre>
@@ -311,7 +308,7 @@
 <span><span class="fu">box</span><span class="fu">::</span><span class="fu">use</span><span class="op">(</span></span>
 <span>  <span class="va">dplyr</span><span class="op">[</span><span class="va">filter</span><span class="op">]</span>,</span>
 <span>  <span class="va">shiny</span><span class="op">[</span><span class="va">div</span>, <span class="va">moduleServer</span>, <span class="va">NS</span>, <span class="va">reactive</span>, <span class="va">renderUI</span>, <span class="va">uiOutput</span><span class="op">]</span>,</span>
-<span>  <span class="va">shiny.fluent</span><span class="op">[</span><span class="va">DetailsList</span>, <span class="va">Text</span>, <span class="va">Toggle.shinyInput</span><span class="op">]</span>,</span>
+<span>  <span class="va">shiny.fluent</span><span class="op">[</span><span class="va">DetailsList</span>, <span class="va">Text</span>, <span class="va">Toggle.shinyInput</span>, <span class="va">fluentSalesDeals</span><span class="op">]</span>,</span>
 <span>  <span class="va">tibble</span><span class="op">[</span><span class="va">tibble</span><span class="op">]</span>,</span>
 <span><span class="op">)</span></span>
 <span></span>
@@ -337,9 +334,7 @@
 <span><span class="va">server</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/moduleServer.html" class="external-link">moduleServer</a></span><span class="op">(</span><span class="va">id</span>, <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span></span>
 <span>    <span class="va">filtered_deals</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/reactive.html" class="external-link">reactive</a></span><span class="op">(</span><span class="op">{</span></span>
-<span>      <span class="co"># Datasets are the only case when you need to use :: in `box`.</span></span>
-<span>      <span class="co"># This issue should be solved in the next `box` release.</span></span>
-<span>      <span class="fu">shiny.fluent</span><span class="fu">::</span><span class="va"><a href="../reference/fluentSalesDeals.html">fluentSalesDeals</a></span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span></span>
+<span>      <span class="va">fluentSalesDeals</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span></span>
 <span>        <span class="va">is_closed</span> <span class="op">|</span> <span class="va">input</span><span class="op">$</span><span class="va">includeOpen</span></span>
 <span>      <span class="op">)</span></span>
 <span>    <span class="op">}</span><span class="op">)</span></span>
@@ -379,7 +374,7 @@
 <span><span class="fu">box</span><span class="fu">::</span><span class="fu">use</span><span class="op">(</span></span>
 <span>  <span class="va">dplyr</span><span class="op">[</span><span class="va">filter</span><span class="op">]</span>,</span>
 <span>  <span class="va">shiny</span><span class="op">[</span><span class="va">div</span>, <span class="va">moduleServer</span>, <span class="va">NS</span>, <span class="va">reactive</span>, <span class="va">renderUI</span>, <span class="va">span</span>, <span class="va">uiOutput</span><span class="op">]</span>,</span>
-<span>  <span class="va">shiny.fluent</span><span class="op">[</span><span class="va">DetailsList</span>, <span class="va">Stack</span>, <span class="va">Text</span>, <span class="va">Toggle.shinyInput</span><span class="op">]</span>,</span>
+<span>  <span class="va">shiny.fluent</span><span class="op">[</span><span class="va">DetailsList</span>, <span class="va">Stack</span>, <span class="va">Text</span>, <span class="va">Toggle.shinyInput</span>, <span class="va">fluentSalesDeals</span><span class="op">]</span>,</span>
 <span>  <span class="va">tibble</span><span class="op">[</span><span class="va">tibble</span><span class="op">]</span>,</span>
 <span><span class="op">)</span></span>
 <span></span>
@@ -409,9 +404,7 @@
 <span><span class="va">server</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/moduleServer.html" class="external-link">moduleServer</a></span><span class="op">(</span><span class="va">id</span>, <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span></span>
 <span>    <span class="va">filtered_deals</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/reactive.html" class="external-link">reactive</a></span><span class="op">(</span><span class="op">{</span></span>
-<span>      <span class="co"># Datasets are the only case when you need to use :: in `box`.</span></span>
-<span>      <span class="co"># This issue should be solved in the next `box` release.</span></span>
-<span>      <span class="fu">shiny.fluent</span><span class="fu">::</span><span class="va"><a href="../reference/fluentSalesDeals.html">fluentSalesDeals</a></span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span></span>
+<span>      <span class="va">fluentSalesDeals</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span></span>
 <span>        <span class="va">is_closed</span> <span class="op">|</span> <span class="va">input</span><span class="op">$</span><span class="va">includeOpen</span></span>
 <span>      <span class="op">)</span></span>
 <span>    <span class="op">}</span><span class="op">)</span></span>
@@ -458,7 +451,7 @@
 <span><span class="fu">box</span><span class="fu">::</span><span class="fu">use</span><span class="op">(</span></span>
 <span>  <span class="va">dplyr</span><span class="op">[</span><span class="va">filter</span><span class="op">]</span>,</span>
 <span>  <span class="va">shiny</span><span class="op">[</span><span class="va">div</span>, <span class="va">moduleServer</span>, <span class="va">NS</span>, <span class="va">reactive</span><span class="op">]</span>,</span>
-<span>  <span class="va">shiny.fluent</span><span class="op">[</span><span class="va">Text</span>, <span class="va">Toggle.shinyInput</span><span class="op">]</span>,</span>
+<span>  <span class="va">shiny.fluent</span><span class="op">[</span><span class="va">Text</span>, <span class="va">Toggle.shinyInput</span>, <span class="va">fluentSalesDeals</span><span class="op">]</span>,</span>
 <span><span class="op">)</span></span>
 <span></span>
 <span><span class="co">#' @export</span></span>
@@ -474,9 +467,7 @@
 <span><span class="va">server</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/moduleServer.html" class="external-link">moduleServer</a></span><span class="op">(</span><span class="va">id</span>, <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span></span>
 <span>    <span class="va">filtered_deals</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/reactive.html" class="external-link">reactive</a></span><span class="op">(</span><span class="op">{</span></span>
-<span>      <span class="co"># Datasets are the only case when you need to use :: in `box`.</span></span>
-<span>      <span class="co"># This issue should be solved in the next `box` release.</span></span>
-<span>      <span class="fu">shiny.fluent</span><span class="fu">::</span><span class="va"><a href="../reference/fluentSalesDeals.html">fluentSalesDeals</a></span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span></span>
+<span>      <span class="va">fluentSalesDeals</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span></span>
 <span>        <span class="va">is_closed</span> <span class="op">|</span> <span class="va">input</span><span class="op">$</span><span class="va">includeOpen</span></span>
 <span>      <span class="op">)</span></span>
 <span>    <span class="op">}</span><span class="op">)</span></span>
