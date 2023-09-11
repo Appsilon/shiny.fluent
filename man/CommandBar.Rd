@@ -13,6 +13,8 @@ CommandBar.shinyInput(inputId, ..., itemValueGetter = function(el) el$key)
 \arguments{
 \item{...}{Props to pass to the component.
 The allowed props are listed below in the \bold{Details} section.}
+
+\item{inputId}{Input name}
 }
 \value{
 A CommandBar

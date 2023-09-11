@@ -52,7 +52,7 @@ CommandBarItem <- function(
 #'
 #' CommandBar extension that sends values of clicked CommandBarItems
 #'
-#' @params inputId Input name
+#' @param inputId Input name
 #' @return A CommandBar
 #'
 #' @seealso CommandBarItem
