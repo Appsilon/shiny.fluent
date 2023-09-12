@@ -1,14 +1,14 @@
 import * as Fluent from '@fluentui/react';
 import { ButtonAdapter, InputAdapter, debounce } from '@/shiny.react';
 
-function handleMultiSelect(option, value, propsOptions) {
+function handleMultiSelect(option, selectedKeys, propsOptions) {
   const options = new Set(propsOptions.map((item) => item.key));
-  let newValue = (Array.isArray(value) ? value : [value])
+  let currentSelectedOptionKeys = (Array.isArray(selectedKeys) ? selectedKeys : [selectedKeys])
     .filter((key) => options.has(key)); // Some options might have been removed.
-  newValue = option.selected
-    ? [...newValue, option.key]
-    : newValue.filter((key) => key !== option.key);
-  return newValue;
+  currentSelectedOptionKeys = option.selected
+    ? [...currentSelectedOptionKeys, option.key]
+    : currentSelectedOptionKeys.filter((key) => key !== option.key);
+  return currentSelectedOptionKeys;
 }
 
 export const ActionButton = ButtonAdapter(Fluent.ActionButton);
@@ -40,13 +40,12 @@ export const ColorPicker = InputAdapter(Fluent.ColorPicker, (value, setValue) =>
 }), { policy: debounce, delay: 250 });
 
 export const ComboBox = InputAdapter(Fluent.ComboBox, (value, setValue, props) => ({
-  selectedKey: value && value.key,
-  text: value && value.text,
-  onChange: (e, option, i, text) => {
+  onChange: (event, option, index, text) => {
+    const newOption = option || (text ? { text, key: text, selected: true } : null);
     if (props.multiSelect) {
-      setValue(handleMultiSelect(option, value, props.options));
+      setValue(handleMultiSelect(newOption, value, props.options));
     } else {
-      setValue(option || (text ? { text } : null));
+      setValue(newOption.key);
     }
   },
 }), { policy: debounce, delay: 250 });
