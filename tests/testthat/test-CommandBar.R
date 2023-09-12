@@ -45,7 +45,7 @@ far_items <- function() {
 }
 
 describe("CommandBar", {
-  it("should set input of `key` of clicked CommandBarItem", {
+  it("should set input after clicking on a CommandBarItem", {
     skip_on_cran()
 
     # Arrange
@@ -98,7 +98,7 @@ describe("CommandBar.shinyInput", {
     expect_null(value)
   })
 
-  it("should set input on id of CommandBar with `key` value of clicked CommandBarItem", {
+  it("should set input after clicking on CommandBarItem with with `key` value of clicked item", {
     skip_on_cran()
 
     # Arrange
@@ -113,7 +113,7 @@ describe("CommandBar.shinyInput", {
     expect_equal(value, "download_value")
   })
 
-  it("should set input on id of CommandBar with `key` value of clicked nested CommandBarItem", {
+  it("should set input after clicking on nested CommandBarItem with `key` value of clicked item", {
     skip_on_cran()
 
     # Arrange
@@ -130,22 +130,7 @@ describe("CommandBar.shinyInput", {
     expect_equal(value, "email_message_value")
   })
 
-  it("should set input on id of CommandBar with `key` value of a clicked farItem", {
-    skip_on_cran()
-
-    # Arrange
-    app <- init_driver(test_app())
-    withr::defer(app$stop())
-
-    # Act
-    app$click(selector = "#tile")
-    value <- app$get_value(input = "commandBar")
-
-    # Assert
-    expect_equal(value, "tile_value")
-  })
-
-  it("should work with unset `farItems`", {
+  it("should work with only `items` added to CommandBar", {
     skip_on_cran()
 
     # Arrange
@@ -168,7 +153,7 @@ describe("CommandBar.shinyInput", {
     expect_equal(value, "download_value")
   })
 
-  it("should work with unset `items`", {
+  it("should work with only `farItems` added to CommandBar", {
     skip_on_cran()
 
     # Arrange
