@@ -15,25 +15,22 @@ isCommandBarItem <- function(x) {
 
 #' Command bar item
 #'
-#' Helper function for constructing items for `CommandBar`.
-#'
-#' CommandBar expects items definition as a nested structure, which gets lengthy and verbose.
-#' This function helps makes this definition shorter. Returns a list with all arguments passed through,
-#' except for `text`, `icon` (which will inserted as proper `iconProps`) and `subitems` (which will be inserted as
-#' proper `subMenuProps`).
+#' Helper function for constructing items for `CommandBar` and `CommandBar.shinyInput`.
 #'
 #' @param key Key of the item.
 #' @param text Text to be displayed on the menu.
-#' @param onClick A JS function that runs on item click. By default it sends input value to `input[[key]]`
+#' @param onClick A JS function that runs on item click. By default it sends input value to `input[[key]]`.
+#'   If used within `CommandBar.shinyInput`, it will send the value to the input ID specified
+#'   in `inputId` argument of `CommandBar.shinyInput`.
 #' @param ... Additional props to pass to CommandBarItem.
-#' @return Item suitable for use in the CommandBar.
+#' @return Item suitable for use in the `CommandBar` and `CommandBar.shinyInput`.
 #'
 #' @seealso CommandBar
 #' @export
 CommandBarItem <- function(
   key,
   text,
-  onClick = setInputValue(inputId = key, value = 0),
+  onClick = setInputValue(inputId = key, value = 0, event = TRUE),
   ...
 ) {
   structure(
