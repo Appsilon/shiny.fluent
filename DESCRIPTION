@@ -29,6 +29,7 @@ Imports:
   shiny,
   shiny.react (>= 0.3.0)
 Suggests:
+  chromote,
   covr,
   dplyr,
   DT,
@@ -46,6 +47,7 @@ Suggests:
   shiny.i18n (>= 0.3.0),
   shiny.router (>= 0.3.1),
   shinyjs,
+  shinytest2,
   sortable,
   stringi,
   testthat (>= 3.0.0),
