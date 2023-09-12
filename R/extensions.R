@@ -49,16 +49,10 @@ CommandBarItem <- function(
 
 #' CommandBar.shinyInput
 #'
-#' CommandBar extension that sends values of clicked CommandBarItems
+#' @param inputId ID of the component. Value of the clicked CommandBarItem will be sent to this ID.
+#' @param itemValueGetter A function that takes a CommandBarItem and returns a value to be sent to Shiny. By default it returns `key` of the item.
+#' @rdname CommandBar
 #'
-#' @param inputId Input name
-#' @param ... Arguments passed to CommandBar.
-#' @param itemValueGetter A function that takes a CommandBarItem and returns a value to be sent to Shiny.
-#'   By default it returns `key` of the item.
-#' @return A CommandBar component.
-#'
-#' @seealso CommandBarItem
-# #' @rdname CommandBar
 #' @export
 CommandBar.shinyInput <- function(
   inputId,
