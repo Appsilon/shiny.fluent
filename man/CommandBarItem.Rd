@@ -12,15 +12,13 @@ CommandBarItem(
 )
 }
 \arguments{
+\item{key}{Key of the item.}
+
 \item{text}{Text to be displayed on the menu.}
 
 \item{onClick}{A JS function that runs on item click. By default it sends input value to \code{input[[key]]}}
 
 \item{...}{Additional props to pass to CommandBarItem.}
-
-\item{icon}{Optional name of an icon.}
-
-\item{subitems}{Optional list of CommandBar items.}
 }
 \value{
 Item suitable for use in the CommandBar.

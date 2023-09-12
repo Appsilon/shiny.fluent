@@ -22,9 +22,8 @@ isCommandBarItem <- function(x) {
 #' except for `text`, `icon` (which will inserted as proper `iconProps`) and `subitems` (which will be inserted as
 #' proper `subMenuProps`).
 #'
+#' @param key Key of the item.
 #' @param text Text to be displayed on the menu.
-#' @param icon Optional name of an icon.
-#' @param subitems Optional list of CommandBar items.
 #' @param onClick A JS function that runs on item click. By default it sends input value to `input[[key]]`
 #' @param ... Additional props to pass to CommandBarItem.
 #' @return Item suitable for use in the CommandBar.
@@ -53,10 +52,13 @@ CommandBarItem <- function(
 #' CommandBar extension that sends values of clicked CommandBarItems
 #'
 #' @param inputId Input name
-#' @return A CommandBar
+#' @param ... Arguments passed to CommandBar.
+#' @param itemValueGetter A function that takes a CommandBarItem and returns a value to be sent to Shiny.
+#'   By default it returns `key` of the item.
+#' @return A CommandBar component.
 #'
 #' @seealso CommandBarItem
-#' @rdname CommandBar
+# #' @rdname CommandBar
 #' @export
 CommandBar.shinyInput <- function(
   inputId,

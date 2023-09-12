@@ -11,3 +11,4 @@
 ^data-raw$
 ^scrape-docs/
 ^vignettes/
+^.*\.sass_cache_keys
