@@ -6,7 +6,9 @@ function handleMultiSelect(option, selectedKeys, propsOptions) {
   const options = new Set(propsOptions.map((item) => item.key));
   let currentSelectedOptionKeys = (Array.isArray(selectedKeys) ? selectedKeys : [selectedKeys])
     .filter((key) => options.has(key)); // Some options might have been removed.
-  currentSelectedOptionKeys = option.selected
+  // If option doesn't have selected property it comes from freeform, so it's selected by default.
+  const selected = option.selected ?? true;
+  currentSelectedOptionKeys = selected
     ? [...currentSelectedOptionKeys, option.key]
     : currentSelectedOptionKeys.filter((key) => key !== option.key);
   return currentSelectedOptionKeys;
