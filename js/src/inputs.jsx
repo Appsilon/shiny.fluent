@@ -40,6 +40,8 @@ export const ColorPicker = InputAdapter(Fluent.ColorPicker, (value, setValue) =>
 }), { policy: debounce, delay: 250 });
 
 export const ComboBox = InputAdapter(Fluent.ComboBox, (value, setValue, props) => ({
+  selectedKeys: value,
+  selectedKey: value,
   onChange: (event, option, index, text) => {
     const newOption = option || (text ? { text, key: text, selected: true } : null);
     if (props.multiSelect) {
