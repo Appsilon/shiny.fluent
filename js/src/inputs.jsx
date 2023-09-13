@@ -1,5 +1,6 @@
 import * as Fluent from '@fluentui/react';
 import { ButtonAdapter, InputAdapter, debounce } from '@/shiny.react';
+import { useState } from 'react';
 
 function handleMultiSelect(option, selectedKeys, propsOptions) {
   const options = new Set(propsOptions.map((item) => item.key));
@@ -9,6 +10,14 @@ function handleMultiSelect(option, selectedKeys, propsOptions) {
     ? [...currentSelectedOptionKeys, option.key]
     : currentSelectedOptionKeys.filter((key) => key !== option.key);
   return currentSelectedOptionKeys;
+}
+
+function getSelectedOptionText(options, value, delimiter = ', ') {
+  const selectedKeys = new Set(value);
+  return options
+    .filter((option) => selectedKeys.has(option.key))
+    .map((option) => option?.text)
+    .join(delimiter);
 }
 
 export const ActionButton = ButtonAdapter(Fluent.ActionButton);
@@ -39,18 +48,27 @@ export const ColorPicker = InputAdapter(Fluent.ColorPicker, (value, setValue) =>
   onChange: (e, v) => setValue(v.str),
 }), { policy: debounce, delay: 250 });
 
-export const ComboBox = InputAdapter(Fluent.ComboBox, (value, setValue, props) => ({
-  selectedKeys: value,
-  selectedKey: value,
-  onChange: (event, option, index, text) => {
-    const newOption = option || (text ? { text, key: text, selected: true } : null);
-    if (props.multiSelect) {
-      setValue(handleMultiSelect(newOption, value, props.options));
-    } else {
-      setValue(newOption.key);
-    }
-  },
-}), { policy: debounce, delay: 250 });
+export const ComboBox = InputAdapter(Fluent.ComboBox, (value, setValue, props) => {
+  const [options, setOptions] = useState(props.options);
+  return ({
+    selectedKey: value,
+    text: (typeof value === 'string') ? value : getSelectedOptionText(options, value, props.multiSelectDelimiter || ', '),
+    options,
+    onChange: (_event, option, _index, text) => {
+      let key = option?.key || text;
+      const newOption = option || { key, text };
+      // Add new option if freeform is allowed
+      if (props?.allowFreeform && !option && text) {
+        setOptions((prevOptions) => [...prevOptions, newOption]);
+      }
+      if (props.multiSelect) {
+        key = handleMultiSelect(newOption, value, options);
+      }
+      setValue(key);
+    },
+  })
+}, { policy: debounce, delay: 250 });
+
 
 export const DatePicker = InputAdapter(Fluent.DatePicker, (value, setValue) => ({
   value: value ? new Date(value) : undefined,
