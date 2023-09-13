@@ -33,6 +33,10 @@ jobs:
         run: yarn install
         working-directory: js
 
+      - name: Install shiny.react
+        run: |
+          Rscript -e 'remotes::install_github("Appsilon/shiny.react@override-props")'
+
       - name: R CMD check
         if: always()
         uses: r-lib/actions/check-r-package@v2
