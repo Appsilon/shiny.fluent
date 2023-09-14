@@ -68,9 +68,8 @@ export const ComboBox = InputAdapter(Fluent.ComboBox, (value, setValue, props) =
       }
       setValue(key);
     },
-  })
+  });
 }, { policy: debounce, delay: 250 });
-
 
 export const DatePicker = InputAdapter(Fluent.DatePicker, (value, setValue) => ({
   value: value ? new Date(value) : undefined,
