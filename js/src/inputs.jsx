@@ -54,7 +54,7 @@ export const ComboBox = InputAdapter(Fluent.ComboBox, (value, setValue, props) =
   const [options, setOptions] = useState(props.options);
   return ({
     selectedKey: value,
-    text: (typeof value === 'string') ? value : getSelectedOptionText(options, value, props.multiSelectDelimiter || ', '),
+    text: getSelectedOptionText(options, value, props.multiSelectDelimiter || ', ') || value,
     options,
     onChange: (_event, option, _index, text) => {
       let key = option?.key || text;
