@@ -35,6 +35,7 @@ jobs:
 
       - name: Install shiny.react
         run: |
+          Rscript -e 'install.packages("remotes")'
           Rscript -e 'remotes::install_github("Appsilon/shiny.react@override-props")'
 
       - name: R CMD check
