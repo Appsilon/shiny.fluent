@@ -525,7 +525,7 @@ describe('Update from server works', () => {
   });
 
   it('ComboBox.shinyInput() works', () => {
-    comboBoxDefaultTest('Option B', 'B');
+    comboBoxDefaultTest('Option C', 'C');
   });
 
   it('Dropdown.shinyInput() works', () => {
