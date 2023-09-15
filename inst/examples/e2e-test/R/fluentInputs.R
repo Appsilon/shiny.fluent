@@ -134,7 +134,7 @@ fluentInputsServer <- function(id) {
       updateColorPicker.shinyInput(session, "colorPicker", value = "#FFFFFF")
       updateComboBox.shinyInput(session, "comboBox", value = "C")
       updateDropdown.shinyInput(session, "dropdown", value = "C")
-      updateDropdown.shinyInput(session, "dropdownMultiselect", options = updatedOptions, value = c("X", "Z"))
+      updateDropdown.shinyInput(session, "dropdownMultiselect", options = updatedOptions, value = c("A", "B"))
       updateCalendar.shinyInput(session, "datePicker", value = "2015-06-25T12:00:00.000Z")
       updateSwatchColorPicker.shinyInput(session, "swatchColorPicker", value = "white")
       updateToggle.shinyInput(session, "toggle", value = FALSE)

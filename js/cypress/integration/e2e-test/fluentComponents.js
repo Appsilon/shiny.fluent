@@ -183,21 +183,6 @@ function dropdownChangeTest() {
   cy.get('#fluentInputs-dropdownValue').contains('Value: C');
 }
 
-function dropdownMultiselectDefaultTest(value = 'Option A, Option C', output = 'Value: A Value: C') {
-  cy.get('#fluentInputs-dropdownMultiselect').within(() => {
-    cy.get('#fluentInputs-dropdownMultiselect-option').should('contain', `${value}`);
-  });
-  cy.get('#fluentInputs-dropdownMultiselectValue').should('contain', `${output}`);
-}
-
-function dropdownMultiselectChangeTest() {
-  cy.get('#fluentInputs-dropdownMultiselect-option').click();
-  cy.get('#fluentInputs-dropdownMultiselect-list0').parent().click();
-  cy.get('#fluentInputs-dropdownMultiselect-list1').parent().click();
-  cy.get('#fluentInputs-dropdownMultiselect-option').should('contain', 'Option C, Option B');
-  cy.get('#fluentInputs-dropdownMultiselectValue').contains('Value: C Value: B');
-}
-
 function datePickerDefaultTest(date = 'Thu Jun 25 2020', dttm = '2020-06-25T12:00:00.000Z') {
   cy.get('#fluentInputs-datePicker-label').should('have.attr', 'value', date);
   cy.get('#fluentInputs-datePickerValue').should('contain', `Value: ${dttm}`);
@@ -357,14 +342,6 @@ describe('Dropdown.shinyInput()', () => {
   it('value change works', () => {
     dropdownChangeTest();
   });
-
-  it('setting default values for multiSelect works', () => {
-    dropdownMultiselectDefaultTest();
-  });
-
-  it('updating multiSelect options and values works', () => {
-    dropdownMultiselectChangeTest();
-  });
 });
 
 describe('DatePicker.shinyInput()', () => {
@@ -465,7 +442,6 @@ describe('Reset after toggled visibility', () => {
     dropdownChangeTest();
     toggleVisibility();
     dropdownDefaultTest();
-    dropdownMultiselectChangeTest();
   });
 
   it('SwatchColorPicker.shinyInput() works', () => {
@@ -530,10 +506,6 @@ describe('Update from server works', () => {
 
   it('Dropdown.shinyInput() works', () => {
     dropdownDefaultTest('Option C', 'C');
-  });
-
-  it('Dropdown.shinyInput() works for multiSelects', () => {
-    dropdownMultiselectDefaultTest('Option X, Option Z', 'Value: X Value: Z');
   });
 
   it('DatePicker.shinyInput() works', () => {

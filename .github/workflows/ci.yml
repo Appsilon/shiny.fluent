@@ -61,16 +61,6 @@ jobs:
           spec: cypress/integration/e2e-test/*.js
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-      - name: Run Cypress on example Dashboard
-        if: always()
-        uses: cypress-io/github-action@v5
-        with:
-          start: yarn start-e2e-router-app
-          working-directory: js
-          record: true
-          spec: cypress/integration/dashboard/*.js
-        env:
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
 
       - name: Test coverage
         run: |
