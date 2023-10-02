@@ -1,69 +1,91 @@
 library(shiny)
 library(shiny.fluent)
 
-items <- list(
+items <- function(ns) {
   list(
-    key = "newItem",
-    text = "New",
-    cacheKey = "myCacheKey",
-    iconProps = list(iconName = "Add"),
-    subMenuProps = list(
-      items = list(
-        list(
-          key = "emailMessage",
-          text = "Email message",
-          iconProps = list(iconName = "Mail")
-        ),
-        list(
-          key = "calendarEvent",
-          text = "Calendar event",
-          iconProps = list(iconName = "Calendar")
+    CommandBarItem(
+      key = ns("newItem"),
+      text = "New",
+      cacheKey = "myCacheKey",
+      split = TRUE,
+      iconProps = list(iconName = "Add"),
+      subMenuProps = list(
+        items = list(
+          CommandBarItem(
+            key = ns("emailMessage"),
+            text = "Email message",
+            iconProps = list(iconName = "Mail")
+          ),
+          CommandBarItem(
+            key = ns("calendarEvent"),
+            text = "Calendar event",
+            iconProps = list(iconName = "Calendar")
+          )
         )
       )
+    ),
+    CommandBarItem(
+      key = ns("upload"),
+      text = "Upload",
+      iconProps = list(iconName = "Upload")
+    ),
+    CommandBarItem(
+      key = ns("share"),
+      text = "Share",
+      iconProps = list(iconName = "Share")
+    ),
+    CommandBarItem(
+      key = ns("download"),
+      text = "Download",
+      iconProps = list(iconName = "Download")
     )
-  ),
-  list(
-    key = "upload",
-    text = "Upload",
-    iconProps = list(iconName = "Upload")
-  ),
-  list(
-    key = "share",
-    text = "Share",
-    iconProps = list(iconName = "Share")
-  ),
-  list(
-    key = "download",
-    text = "Download",
-    iconProps = list(iconName = "Download")
   )
-)
+}
 
-farItems <- list(
+farItems <- function(ns) {
   list(
-    key = "tile",
-    text = "Grid view",
-    ariaLabel = "Grid view",
-    iconOnly = TRUE,
-    iconProps = list(iconName = "Tiles")
-  ),
-  list(
-    key = "info",
-    text = "Info",
-    ariaLabel = "Info",
-    iconOnly = TRUE,
-    iconProps = list(iconName = "Info")
+    CommandBarItem(
+      key = ns("tile"),
+      text = "Grid view",
+      ariaLabel = "Grid view",
+      iconOnly = TRUE,
+      iconProps = list(iconName = "Tiles")
+    ),
+    CommandBarItem(
+      key = ns("info"),
+      text = "Info",
+      ariaLabel = "Info",
+      iconOnly = TRUE,
+      iconProps = list(iconName = "Info")
+    )
   )
-)
-
+}
 
 ui <- function(id) {
   ns <- NS(id)
-  CommandBar(items = items, farItems = farItems)
+  tagList(
+    CommandBar(
+      items = items(ns),
+      farItems = farItems(ns)
+    ),
+    textOutput(ns("commandBarItems")),
+    CommandBar.shinyInput(
+      inputId = ns("commandBar"),
+      items = items(identity),
+      farItems = farItems(identity)
+    ),
+    textOutput(ns("commandBar"))
+  )
 }
 
 server <- function(id) {
-  moduleServer(id, function(input, output, session) { })
+  moduleServer(id, function(input, output, session) {
+    commandBarItemClicked <- reactiveVal()
+    observeEvent(input$newItem, commandBarItemClicked("newItem clicked (explicitly observed)"))
+    observeEvent(input$upload, commandBarItemClicked("upload clicked (explicitly observed)"))
+    output$commandBarItems <- renderText(commandBarItemClicked())
+    output$commandBar <- renderText(input$commandBar)
+  })
 }
 
 if (interactive()) {

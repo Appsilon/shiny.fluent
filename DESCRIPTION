@@ -25,10 +25,11 @@ Depends:
 Imports:
   htmltools,
   jsonlite,
-  rlang,
+  purrr,
   shiny,
   shiny.react (>= 0.3.0)
 Suggests:
+  chromote,
   covr,
   dplyr,
   DT,
@@ -39,7 +40,6 @@ Suggests:
   leaflet,
   mockery,
   plotly,
-  purrr,
   rcmdcheck,
   RColorBrewer,
   rmarkdown,
@@ -47,6 +47,7 @@ Suggests:
   shiny.i18n (>= 0.3.0),
   shiny.router (>= 0.3.1),
   shinyjs,
+  shinytest2,
   sortable,
   stringi,
   testthat (>= 3.0.0),

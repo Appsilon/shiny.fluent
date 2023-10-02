@@ -4,28 +4,29 @@
 \alias{CommandBarItem}
 \title{Command bar item}
 \usage{
-CommandBarItem(text, icon = NULL, subitems = NULL, ...)
+CommandBarItem(
+  key,
+  text,
+  onClick = setInputValue(inputId = key, value = 0, event = TRUE),
+  ...
+)
 }
 \arguments{
+\item{key}{Key of the item.}
+
 \item{text}{Text to be displayed on the menu.}
 
-\item{icon}{Optional name of an icon.}
-
-\item{subitems}{Optional list of CommandBar items.}
+\item{onClick}{A JS function that runs on item click. By default it sends input value to \code{input[[key]]}.
+If used within \code{CommandBar.shinyInput}, it will send the value to the input ID specified
+in \code{inputId} argument of \code{CommandBar.shinyInput}.}
 
 \item{...}{Additional props to pass to CommandBarItem.}
 }
 \value{
-Item suitable for use in the CommandBar.
+Item suitable for use in the \code{CommandBar} and \code{CommandBar.shinyInput}.
 }
 \description{
-Helper function for constructing items for \code{CommandBar}.
-}
-\details{
-CommandBar expects items definition as a nested structure, which gets lengthy and verbose.
-This function helps makes this definition shorter. Returns a list with all arguments passed through,
-except for \code{text}, \code{icon} (which will inserted as proper \code{iconProps}) and \code{subitems} (which will be inserted as
-proper \code{subMenuProps}).
+Helper function for constructing items for \code{CommandBar} and \code{CommandBar.shinyInput}.
 }
 \seealso{
 CommandBar

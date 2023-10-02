@@ -1,27 +1,69 @@
+setInputValue <- function(inputId, value, event = TRUE) {
+  fmt <- if (event) {
+    "() => Shiny.setInputValue('%s', %s, { priority: 'event' })"
+  } else {
+    "() => Shiny.setInputValue('%s', %s)"
+  }
+  JS(sprintf(fmt, inputId, if (!is.numeric(value)) sprintf("'%s'", value) else value))
+}
+
+commandBarItem <- "CommandBarItem"
+
+isCommandBarItem <- function(x) {
+  isTRUE(attr(x, "componentName") == commandBarItem)
+}
+
 #' Command bar item
 #'
-#' Helper function for constructing items for `CommandBar`.
+#' Helper function for constructing items for `CommandBar` and `CommandBar.shinyInput`.
 #'
-#' CommandBar expects items definition as a nested structure, which gets lengthy and verbose.
-#' This function helps makes this definition shorter. Returns a list with all arguments passed through,
-#' except for `text`, `icon` (which will inserted as proper `iconProps`) and `subitems` (which will be inserted as
-#' proper `subMenuProps`).
-#'
+#' @param key Key of the item.
 #' @param text Text to be displayed on the menu.
-#' @param icon Optional name of an icon.
-#' @param subitems Optional list of CommandBar items.
+#' @param onClick A JS function that runs on item click. By default it sends input value to `input[[key]]`.
+#'   If used within `CommandBar.shinyInput`, it will send the value to the input ID specified
+#'   in `inputId` argument of `CommandBar.shinyInput`.
 #' @param ... Additional props to pass to CommandBarItem.
-#' @return Item suitable for use in the CommandBar.
+#' @return Item suitable for use in the `CommandBar` and `CommandBar.shinyInput`.
 #'
 #' @seealso CommandBar
 #' @export
-CommandBarItem <- function(text, icon = NULL, subitems = NULL, ...) {
-  props <- rlang::dots_list(...)
+CommandBarItem <- function(
+  key,
+  text,
+  onClick = setInputValue(inputId = key, value = 0, event = TRUE),
+  ...
+) {
+  structure(
+    list(
+      key = key,
+      text = text,
+      onClick = onClick,
+      ...
+    ),
+    componentName = commandBarItem
+  )
+}
 
-  props$text <- text
-  if (is.character(icon)) props$iconProps <- list(iconName = icon)
-  if (!is.null(subitems)) props$subMenuProps <- list(items = subitems)
-  props
+#' CommandBar.shinyInput
+#'
+#' @param inputId ID of the component. Value of the clicked CommandBarItem will be sent to this ID.
+#' @param itemValueGetter A function that takes a CommandBarItem and returns a value to be sent to Shiny. By default it returns `key` of the item.
+#' @rdname CommandBar
+#'
+#' @export
+CommandBar.shinyInput <- function(
+  inputId,
+  ...,
+  itemValueGetter = function(el) el$key
+) {
+  attachOnClick <- function(el) {
+    el$onClick <- setInputValue(inputId, itemValueGetter(el))
+    el
+  }
+  args <- list(...)
+  args$items <- recursiveModify(args$items, attachOnClick, isCommandBarItem)
+  args$farItems <- recursiveModify(args$farItems, attachOnClick, isCommandBarItem)
+  do.call(CommandBar, args)
 }
 
 #' Basic Fluent UI page
