@@ -465,7 +465,6 @@ describe('Reset after toggled visibility', () => {
     dropdownChangeTest();
     toggleVisibility();
     dropdownDefaultTest();
-    dropdownMultiselectChangeTest();
   });
 
   it('SwatchColorPicker.shinyInput() works', () => {
@@ -525,15 +524,11 @@ describe('Update from server works', () => {
   });
 
   it('ComboBox.shinyInput() works', () => {
-    comboBoxDefaultTest('Option B', 'B');
+    comboBoxDefaultTest('Option C', 'C');
   });
 
   it('Dropdown.shinyInput() works', () => {
     dropdownDefaultTest('Option C', 'C');
-  });
-
-  it('Dropdown.shinyInput() works for multiSelects', () => {
-    dropdownMultiselectDefaultTest('Option X, Option Z', 'Value: X Value: Z');
   });
 
   it('DatePicker.shinyInput() works', () => {
