@@ -109,7 +109,7 @@ options <- list(
 ui <- function(id) {
   ns <- NS(id)
   div(
-    ComboBox.shinyInput(ns("combo"), value = list(text = "some text"),
+    ComboBox.shinyInput(ns("combo"), value = "some text",
       options = options, allowFreeform = TRUE
     ),
     textOutput(ns("comboValue"))
@@ -119,7 +119,7 @@ ui <- function(id) {
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
     output$comboValue <- renderText({
-      sprintf("Value: \%s", input$combo$text)
+      sprintf("Value: \%s", input$combo)
     })
   })
 }
