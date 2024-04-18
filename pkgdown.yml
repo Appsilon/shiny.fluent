@@ -1,5 +1,5 @@
 pandoc: 2.9.2.1
-pkgdown: 2.0.7
+pkgdown: 2.0.8
 pkgdown_sha: ~
 articles:
   shiny-fluent: shiny-fluent.html
@@ -9,7 +9,7 @@ articles:
   sz-how-to-troubleshoot: sz-how-to-troubleshoot.html
   sz-how-to-use-fluent-docs: sz-how-to-use-fluent-docs.html
   topic_react-in-shiny: topic_react-in-shiny.html
-last_built: 2023-10-02T14:16Z
+last_built: 2024-04-18T20:49Z
 urls:
   reference: https://appsilon.github.io/shiny.fluent/reference
   article: https://appsilon.github.io/shiny.fluent/articles
