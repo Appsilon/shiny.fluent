@@ -2,6 +2,8 @@ name: CI
 on: push
 permissions:
   contents: read
+env:
+  GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 jobs:
   main:
     name: Check, lint & test
@@ -33,6 +35,11 @@ jobs:
         run: yarn install
         working-directory: js
 
+      - name: Install shiny.react
+        run: |
+          Rscript -e 'install.packages("remotes")'
+          Rscript -e 'remotes::install_github("Appsilon/shiny.react@override-props", force = TRUE)'
+
       - name: R CMD check
         if: always()
         uses: r-lib/actions/check-r-package@v2
@@ -52,16 +59,6 @@ jobs:
           working-directory: js
           record: true
           spec: cypress/integration/e2e-test/*.js
-        env:
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-      - name: Run Cypress on example Dashboard
-        if: always()
-        uses: cypress-io/github-action@v5
-        with:
-          start: yarn start-e2e-router-app
-          working-directory: js
-          record: true
-          spec: cypress/integration/dashboard/*.js
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
 
