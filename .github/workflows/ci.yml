@@ -22,6 +22,13 @@ jobs:
         with:
           extra-packages: local::. # Necessary to avoid object usage linter errors.
 
+      - name: Install shiny.react with React 18.3.1
+        if: always()
+        env:
+          GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          Rscript -e 'install.packages("remotes"); remotes::install_github("Appsilon/shiny.react@upgrade-react")'
+
       - name: Install Node.js and Yarn
         uses: actions/setup-node@v3
         with:
