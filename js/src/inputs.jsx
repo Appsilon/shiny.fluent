@@ -30,8 +30,8 @@ export const ColorPicker = InputAdapter(Fluent.ColorPicker, (value, setValue) =>
 }), { policy: debounce, delay: 250 });
 
 export const ComboBox = InputAdapter(Fluent.ComboBox, (value, setValue) => ({
-  selectedKey: value && value.key,
-  text: value && value.text,
+  selectedKey: value.key || value,
+  text: value.text || value,
   onChange: (e, option, i, text) => setValue(option || (text ? { text } : null)),
 }), { policy: debounce, delay: 250 });
 

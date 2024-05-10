@@ -22,7 +22,11 @@ module.exports = {
   ],
   rules: {},
   settings: {
-    'import/resolver': 'webpack',
+    'import/resolver': {
+      webpack: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx']
+      }
+    },
     react: { version: '17' }
   },
 };

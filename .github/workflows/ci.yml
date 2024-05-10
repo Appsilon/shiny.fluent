@@ -58,7 +58,8 @@ jobs:
           start: yarn start-e2e-test-app
           working-directory: js
           record: true
-          spec: cypress/integration/e2e-test/*.js
+          spec: cypress/e2e/e2e-test/*.js
+          config: baseUrl=http://localhost:8887
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
       - name: Run Cypress on example Dashboard
@@ -68,7 +69,8 @@ jobs:
           start: yarn start-e2e-router-app
           working-directory: js
           record: true
-          spec: cypress/integration/dashboard/*.js
+          spec: cypress/e2e/dashboard/*.js
+          config: baseUrl=http://localhost:8886
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
 
