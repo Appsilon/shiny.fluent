@@ -1,5 +1,5 @@
 describe('Fluent components inside Shiny tabset', () => {
-  before(() => {
+  beforeEach(() => {
     cy.visit('/');
     cy.get('#deepMixing-tabs1').within(() => {
       cy.get('a[data-value=JSX]').click();
@@ -16,8 +16,10 @@ describe('Fluent components inside Shiny tabset', () => {
 });
 
 describe('JSX inside uiOutput inside JSX', () => {
-  before(() => {
-    cy.get('[data-cy=deepMixing-pivot] > .ms-Pivot > button[name="Leaflet inside a Pivot"]').click();
+  beforeEach(() => {
+    cy.visit('/');
+    cy.reload();
+    cy.contains('Leaflet inside a Pivot').click();
   });
 
   it('Leaflet inside Pivot is visible', () => {
@@ -28,9 +30,10 @@ describe('JSX inside uiOutput inside JSX', () => {
 });
 
 describe('Leaflet in Pivot in uiOutput in Pivot in uiOutput in JSX', () => {
-  before(() => {
-    cy.get('[data-cy=deepMixing-pivot] > .ms-Pivot > button[name="Another level of nesting"]').click();
-    cy.get('[data-cy=deepMixing-nestedPivot] > .ms-Pivot > button[name="Leaflet inside a Pivot"]').click();
+  beforeEach(() => {
+    cy.visit('/');
+    cy.get('[data-cy=deepMixing-pivot] [data-content="Another level of nesting"]').click();
+    cy.get('[data-cy=deepMixing-nestedPivot] [data-content="Leaflet inside a Pivot"]').click();
   });
 
   it('Leaflet inside nested Pivot is visible', () => {

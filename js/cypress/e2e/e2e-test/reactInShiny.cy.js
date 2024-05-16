@@ -48,9 +48,14 @@ describe('Spinner()', () => {
 });
 
 describe('Dynamic rendering', () => {
+  beforeEach(() => {
+    cy.visit('/');
+  });
+
   it('Label works', () => {
     cy.get('[data-cy=reactInShiny-label]').contains("I'm a Label with count value = 0");
-    cy.get('#reactInShiny-count').clear().type(10);
+    cy.get('#reactInShiny-count').clear();
+    cy.get('#reactInShiny-count').type(10);
     cy.get('[data-cy=reactInShiny-label]').contains("I'm a Label with count value = 10");
   });
 

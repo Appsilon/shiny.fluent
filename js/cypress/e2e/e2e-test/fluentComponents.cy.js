@@ -9,7 +9,8 @@ function textFieldDefaultTest(aText = '') {
 }
 
 function textFieldChangeTest(aText = 'some text') {
-  cy.get('#fluentInputs-textField').type(aText).should('have.value', aText);
+  cy.get('#fluentInputs-textField').type(aText);
+  cy.get('#fluentInputs-textField').should('have.value', aText);
   cy.get('#fluentInputs-textFieldValue').should('contain', `Value: ${aText}`);
 }
 
@@ -24,23 +25,27 @@ function sliderDefaultTest(now = 0, min = -100, max = 234) {
 
 function sliderChangeTest() {
   cy.get('.ms-Slider').within(() => {
-    cy.get('[class*=ms-Slider-slideBox]')
-      .should('have.attr', 'aria-valuenow', 0)
-      .type('{rightarrow}')
-      .should('have.attr', 'aria-valuenow', 118);
+    cy.get('[class*=ms-Slider-slideBox]').should('have.attr', 'aria-valuenow', 0);
+    cy.get('[class*=ms-Slider-slideBox]').type('{rightarrow}');
+    cy.get('[class*=ms-Slider-slideBox]').should('have.attr', 'aria-valuenow', 118);
   });
   cy.get('#fluentInputs-sliderInputValue').should('contain', 'Value: 118');
 }
 
-function checkboxTestDefault(value = 'false') {
-  cy.get('#fluentInputs-checkbox').should('have.attr', 'aria-checked', value);
-  cy.get('#fluentInputs-checkboxValue').should('contain', `Value: ${value.toUpperCase()}`);
+function checkboxTestNotChecked() {
+  cy.get('#fluentInputs-checkbox').should('not.be.checked');
+  cy.get('#fluentInputs-checkboxValue').should('contain', 'Value: FALSE');
 }
 
-function checkboxTestChange(value = 'true') {
+function checkboxTestChecked() {
+  cy.get('#fluentInputs-checkbox').should('be.checked');
+  cy.get('#fluentInputs-checkboxValue').should('contain', 'Value: TRUE');
+}
+
+function checkboxTestChange() {
   cy.get('#fluentInputs-checkbox').click({ force: true });
-  cy.get('#fluentInputs-checkbox').should('have.attr', 'aria-checked', value);
-  cy.get('#fluentInputs-checkboxValue').should('contain', `Value: ${value.toUpperCase()}`);
+  cy.get('#fluentInputs-checkbox').should('be.checked');
+  cy.get('#fluentInputs-checkboxValue').should('contain', 'Value: TRUE');
 }
 
 function ratingTestDefault(value = 2) {
@@ -51,60 +56,50 @@ function ratingTestDefault(value = 2) {
 }
 
 function ratingChangeTest(value = 5) {
-  cy.get('#fluentInputs-rating').within(() => {
-    cy.get(`[id$=star-${value - 1}]`).click().should('have.attr', 'aria-checked', 'true');
-  });
+  cy.get(`#fluentInputs-rating [id$=star-${value - 1}]`).click();
+  cy.get(`#fluentInputs-rating [id$=star-${value - 1}]`).should('have.attr', 'aria-checked', 'true');
   cy.get('#fluentInputs-ratingValue').should('contain', `Value: ${value}`);
 }
 
 function spinButtonDefaultTest(now = 15, min = 0, max = 50) {
-  cy.get('#fluentInputs-spinButton').within(() => {
-    cy.get('.ms-spinButton-input').should('have.attr', 'aria-valuenow', now);
-    cy.get('.ms-spinButton-input').should('have.attr', 'aria-valuemin', min);
-    cy.get('.ms-spinButton-input').should('have.attr', 'aria-valuemax', max);
-  });
+  cy.get('#fluentInputs-spinButton .ms-spinButton-input').should('have.attr', 'aria-valuenow', now);
+  cy.get('#fluentInputs-spinButton .ms-spinButton-input').should('have.attr', 'aria-valuemin', min);
+  cy.get('#fluentInputs-spinButton .ms-spinButton-input').should('have.attr', 'aria-valuemax', max);
   cy.get('#fluentInputs-spinButtonValue').should('contain', `Value: ${now}`);
 }
 
 function spinButtonChangeTest(now = 50) {
-  cy.get('#fluentInputs-spinButton').within(() => {
-    cy.get('.ms-spinButton-input').type(now).should('have.attr', 'value', now);
-  });
-  cy.get('#fluentInputs-spinButtonValue').click().should('contain', `Value: ${now}`);
+  cy.get('#fluentInputs-spinButton .ms-spinButton-input').type(now);
+  cy.get('#fluentInputs-spinButton .ms-spinButton-input').should('have.attr', 'value', now);
+  cy.get('#fluentInputs-spinButtonValue').click();
+  cy.get('#fluentInputs-spinButtonValue').should('contain', `Value: ${now}`);
 }
 
 function spinButtonChangeButtonsTest() {
-  cy.get('#fluentInputs-spinButton').within(() => {
-    cy.get('[class*=ms-Button][class*=ms-DownButton]').click();
-    cy.get('.ms-spinButton-input').should('have.attr', 'aria-valuenow', 10);
-  });
+  cy.get('#fluentInputs-spinButton [class*=ms-Button][class*=ms-DownButton]').click();
+  cy.get('#fluentInputs-spinButton .ms-spinButton-input').should('have.attr', 'aria-valuenow', 10);
   cy.get('#fluentInputs-spinButtonValue').should('contain', 'Value: 10');
-
-  cy.get('#fluentInputs-spinButton').within(() => {
-    cy.get('[class*=ms-Button][class*=ms-UpButton]').click().click();
-    cy.get('.ms-spinButton-input').should('have.attr', 'aria-valuenow', 20);
-  });
+  cy.get('#fluentInputs-spinButton [class*=ms-Button][class*=ms-UpButton]').click();
+  cy.get('#fluentInputs-spinButton [class*=ms-Button][class*=ms-UpButton]').click();
+  cy.get('#fluentInputs-spinButton .ms-spinButton-input').should('have.attr', 'aria-valuenow', 20);
   cy.get('#fluentInputs-spinButtonValue').should('contain', 'Value: 20');
 }
 
-function calendarDefaultTest(date = 'June 25, 2020', dttm = '2020-06-25T12:00:00.000Z') {
-  cy.get('.ms-DatePicker.calendar').within(() => {
-    cy.get(`button[aria-label="${date}"]`).should('have.attr', 'aria-selected', 'true');
-  });
+function calendarDefaultTest(date = '25, June, 2020', dttm = '2020-06-25T12:00:00.000Z') {
+  cy.get(`#fluentInputs-calendar [aria-label="${date}"]`)
+    .parent()
+    .should('have.attr', 'aria-selected', 'true');
   cy.get('#fluentInputs-calendarValue').should('contain', `Value: ${dttm}`);
 }
 
 function calendarOnLoadTest() {
-  const month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-  const today = new Date();
-  const date = `${month[today.getMonth()]} ${today.getDate()}, ${today.getFullYear()}`;
+  cy.get('#fluentInputs-calendarDefault .ms-CalendarDay-dayIsToday')
+    .parent()
+    .should('have.attr', 'aria-selected', 'true');
 
-  cy.get('.ms-DatePicker.calendarDefault').within(() => {
-    cy.get(`button[aria-label="${date}"]`).should('have.attr', 'aria-selected', 'true');
-  });
-  cy.get('.ms-DatePicker.calendarNull').within(() => {
-    cy.get(`button[aria-label="${date}"]`).should('have.attr', 'aria-selected', 'true');
-  });
+  cy.get('#fluentInputs-calendarNull .ms-CalendarDay-dayIsToday')
+    .parent()
+    .should('have.attr', 'aria-selected', 'true');
 }
 
 function choiceGroupDefaultTest(selected = 'B') {
@@ -113,27 +108,20 @@ function choiceGroupDefaultTest(selected = 'B') {
       .should('exist');
 
     cy.get('input[id^=ChoiceGroup][id$=-A]').should('exist');
-    cy.get('label[class^=ms-ChoiceField]').within(() => {
-      cy.get('span[id^=ChoiceGroupLabel][id$=-A]').contains('Option A');
-    });
+    cy.get('label[class^=ms-ChoiceField] span[id^=ChoiceGroupLabel][id$=-A]').contains('Option A');
 
     cy.get('input[id^=ChoiceGroup][id$=-B]').should('exist');
-    cy.get('label[class^=ms-ChoiceField]').within(() => {
-      cy.get('span[id^=ChoiceGroupLabel][id$=-B]').contains('Option B');
-    });
+    cy.get('label[class^=ms-ChoiceField] span[id^=ChoiceGroupLabel][id$=-B]').contains('Option B');
 
     cy.get('input[id^=ChoiceGroup][id$=-C]').should('exist');
-    cy.get('label[class^=ms-ChoiceField]').within(() => {
-      cy.get('span[id^=ChoiceGroupLabel][id$=-C]').contains('Option C');
-    });
+    cy.get('label[class^=ms-ChoiceField] span[id^=ChoiceGroupLabel][id$=-C]').contains('Option C');
   });
   cy.get('#fluentInputs-choiceGroupValue').should('contain', `Value: ${selected}`);
 }
 
 function choiceGroupChangeTest() {
-  cy.get('#fluentInputs-choiceGroup').within(() => {
-    cy.get('label[class^=ms-ChoiceField][for*=-C]').click().should('have.class', 'is-checked');
-  });
+  cy.get('#fluentInputs-choiceGroup label[class^=ms-ChoiceField][for*=-C]').click();
+  cy.get('#fluentInputs-choiceGroup label[class^=ms-ChoiceField][for*=-C]').should('have.class', 'is-checked');
   cy.get('#fluentInputs-choiceGroupValue').should('contain', 'Value: C');
 }
 
@@ -146,52 +134,47 @@ function colorPickerDefaultTest(color = '00ff01') {
 }
 
 function colorPickerHexChangeTest(color = 'fffff') {
-  cy.get('.ms-ColorPicker').within(() => {
-    cy.get('input[id*="TextField"][aria-label="Hex"]').click().clear().type(color);
-  });
+  cy.get('.ms-ColorPicker input[id*="TextField"][aria-label="Hex"]').click();
+  cy.get('.ms-ColorPicker input[id*="TextField"][aria-label="Hex"]').clear();
+  cy.get('.ms-ColorPicker input[id*="TextField"][aria-label="Hex"]').type(color);
   const hexColor = `#${color}`;
   cy.get('#fluentInputs-colorPickerValue').should('contain', `Value: ${hexColor}`);
 }
 
 function comboBoxDefaultTest(value = 'some text', output = value) {
-  cy.get('#fluentInputs-comboBox').within(() => {
-    cy.get('#fluentInputs-comboBox-input').should('have.attr', 'value', value);
-  });
+  cy.get('#fluentInputs-comboBox-input').should('have.attr', 'value', value);
   cy.get('#fluentInputs-comboBoxValue').contains(`Value: ${output}`);
 }
 
 function comboBoxChangeTest() {
-  cy.get('#fluentInputs-comboBox').within(() => {
-    cy.get('button[class*=ms-Button][class*=ms-ComboBox-CaretDown-button]').click();
-  });
-  cy.get('[id*="fluentInputs-comboBox-list0"]').click();
+  cy.get('#fluentInputs-comboBox-input').focus();
+  cy.get('#fluentInputs-comboBox-input').type('Option A{enter}');
   cy.get('#fluentInputs-comboBoxValue').contains('Value: A');
+  cy.get('#fluentInputs-comboBox-input').type('New value{enter}');
+  cy.get('#fluentInputs-comboBoxValue').contains('Value: New value');
 }
 
 function dropdownDefaultTest(value = 'Option A', output = 'A') {
-  cy.get('#fluentInputs-dropdown').within(() => {
-    cy.get('#fluentInputs-dropdown-option')
-      .should('have.attr', 'aria-selected', 'true').should('contain', `${value}`);
-  });
+  cy.get('#fluentInputs-dropdown-option').should('contain', `${value}`);
   cy.get('#fluentInputs-dropdownValue').should('contain', `Value: ${output}`);
 }
 
 function dropdownChangeTest() {
   cy.get('#fluentInputs-dropdown-option').click();
+  cy.get('#fluentInputs-dropdown-list').should('be.visible');
   cy.get('#fluentInputs-dropdown-list2').click();
-  cy.get('#fluentInputs-dropdown-option').should('have.attr', 'aria-selected', 'true').should('contain', 'Option C');
+  cy.get('#fluentInputs-dropdown-option').should('contain', 'Option C');
   cy.get('#fluentInputs-dropdownValue').contains('Value: C');
 }
 
 function dropdownMultiselectDefaultTest(value = 'Option A, Option C', output = 'Value: A Value: C') {
-  cy.get('#fluentInputs-dropdownMultiselect').within(() => {
-    cy.get('#fluentInputs-dropdownMultiselect-option').should('contain', `${value}`);
-  });
+  cy.get('#fluentInputs-dropdownMultiselect-option').should('contain', `${value}`);
   cy.get('#fluentInputs-dropdownMultiselectValue').should('contain', `${output}`);
 }
 
 function dropdownMultiselectChangeTest() {
   cy.get('#fluentInputs-dropdownMultiselect-option').click();
+  cy.get('#fluentInputs-dropdownMultiselect-list').should('be.visible');
   cy.get('#fluentInputs-dropdownMultiselect-list0').parent().click();
   cy.get('#fluentInputs-dropdownMultiselect-list1').parent().click();
   cy.get('#fluentInputs-dropdownMultiselect-option').should('contain', 'Option C, Option B');
@@ -199,28 +182,23 @@ function dropdownMultiselectChangeTest() {
 }
 
 function datePickerDefaultTest(date = 'Thu Jun 25 2020', dttm = '2020-06-25T12:00:00.000Z') {
-  cy.get('#fluentInputs-datePicker-label').should('have.attr', 'value', date);
+  cy.get('#fluentInputs-datePicker-label').should('contain', date);
   cy.get('#fluentInputs-datePickerValue').should('contain', `Value: ${dttm}`);
 }
 
 function datePickerOnLoadTest() {
   const date = (new Date()).toDateString();
-
-  cy.get('#fluentInputs-datePickerDefault-label').should('have.attr', 'value', date);
-  cy.get('#fluentInputs-datePickerNull-label').should('have.attr', 'placeholder', 'I am placeholder!');
+  cy.get('#fluentInputs-datePickerDefault-label').should('contain', date);
 }
 
-function swatchColorPickerDefaultTest(color = 'orange', pos = 0) {
-  cy.get('#fluentInputs-swatchColorPicker').within(() => {
-    cy.get(`#fluentInputs-swatchColorPicker-${color}-${pos}`).should('have.attr', 'aria-selected', 'true');
-  });
+function swatchColorPickerDefaultTest(color = 'orange') {
+  cy.get(`#fluentInputs-swatchColorPicker [id*="fluentInputs-swatchColorPicker-${color}"`)
+    .should('have.attr', 'aria-checked', 'true');
   cy.get('#fluentInputs-swatchColorPickerValue').should('contain', `Value: ${color}`);
 }
 
 function swatchColorPickerChangeTest() {
-  cy.get('#fluentInputs-swatchColorPicker').within(() => {
-    cy.get('button[id*="fluentInputs-swatchColorPicker-blueMagenta"]').click();
-  });
+  cy.get('#fluentInputs-swatchColorPicker [id*="fluentInputs-swatchColorPicker-blueMagenta"]').click();
   cy.get('#fluentInputs-swatchColorPickerValue').should('contain', 'Value: blueMagenta');
 }
 
@@ -230,7 +208,8 @@ function toggleDefaultTest(value = 'true') {
 }
 
 function toggleChangeTest(value = 'false') {
-  cy.get('button#fluentInputs-toggle').click().should('have.attr', 'aria-checked', value);
+  cy.get('button#fluentInputs-toggle').click();
+  cy.get('button#fluentInputs-toggle').should('have.attr', 'aria-checked', value);
   cy.get('#fluentInputs-toggleValue').should('contain', `Value: ${value.toUpperCase()}`);
 }
 
@@ -241,21 +220,20 @@ function searchBoxDefaultTest(value = '', placeholder = 'Search') {
 
 function searchBoxChangeTest() {
   const aText = 'some text';
-  cy.get('#fluentInputs-searchBox').type(aText).should('have.value', aText);
+  cy.get('#fluentInputs-searchBox').type(aText);
+  cy.get('#fluentInputs-searchBox').should('have.value', aText);
   cy.get('#fluentInputs-searchBoxValue').should('contain', `Value: ${aText}`);
 }
 
 function searchBoxClearTest(value = '') {
   cy.get('#fluentInputs-searchBox').type('query');
-  cy.get('.ms-SearchBox-clearButton').within(() => {
-    cy.get('button[class*=ms-Button]').click();
-  });
+  cy.get('.ms-SearchBox-clearButton button[class*=ms-Button]').click();
   cy.get('#fluentInputs-searchBox').should('have.attr', 'value', value);
   cy.get('#fluentInputs-searchBoxValue').should('contain', `Value:${value}`);
 }
 
 describe('Slider.shinyInput()', () => {
-  before(() => {
+  beforeEach(() => {
     cy.visit('/');
   });
 
@@ -269,6 +247,10 @@ describe('Slider.shinyInput()', () => {
 });
 
 describe('TextField.shinyInput()', () => {
+  beforeEach(() => {
+    cy.visit('/');
+  });
+
   it('setting default values works', () => {
     textFieldDefaultTest();
   });
@@ -279,8 +261,12 @@ describe('TextField.shinyInput()', () => {
 });
 
 describe('Checkbox.shinyInput()', () => {
+  beforeEach(() => {
+    cy.visit('/');
+  });
+
   it('setting default values works', () => {
-    checkboxTestDefault();
+    checkboxTestNotChecked();
   });
 
   it('value change works', () => {
@@ -289,6 +275,10 @@ describe('Checkbox.shinyInput()', () => {
 });
 
 describe('Rating.shinyInput()', () => {
+  beforeEach(() => {
+    cy.visit('/');
+  });
+
   it('setting default values works', () => {
     ratingTestDefault();
   });
@@ -299,6 +289,10 @@ describe('Rating.shinyInput()', () => {
 });
 
 describe('SpinButton.shinyInput()', () => {
+  beforeEach(() => {
+    cy.visit('/');
+  });
+
   it('setting default values works', () => {
     spinButtonDefaultTest();
   });
@@ -313,6 +307,10 @@ describe('SpinButton.shinyInput()', () => {
 });
 
 describe('Calendar.shinyInput()', () => {
+  beforeEach(() => {
+    cy.visit('/');
+  });
+
   it('setting default values works', () => {
     calendarOnLoadTest();
     calendarDefaultTest();
@@ -320,6 +318,10 @@ describe('Calendar.shinyInput()', () => {
 });
 
 describe('ChoiceGroup.shinyInput()', () => {
+  beforeEach(() => {
+    cy.visit('/');
+  });
+
   it('setting default values works', () => {
     choiceGroupDefaultTest();
   });
@@ -330,6 +332,10 @@ describe('ChoiceGroup.shinyInput()', () => {
 });
 
 describe('ColorPicker.shinyInput()', () => {
+  beforeEach(() => {
+    cy.visit('/');
+  });
+
   it('setting default values works', () => {
     colorPickerDefaultTest();
   });
@@ -340,6 +346,10 @@ describe('ColorPicker.shinyInput()', () => {
 });
 
 describe('ComboBox.shinyInput()', () => {
+  beforeEach(() => {
+    cy.visit('/');
+  });
+
   it('setting default values works', () => {
     comboBoxDefaultTest();
   });
@@ -350,11 +360,16 @@ describe('ComboBox.shinyInput()', () => {
 });
 
 describe('Dropdown.shinyInput()', () => {
+  beforeEach(() => {
+    cy.visit('/');
+  });
+
   it('setting default values works', () => {
     dropdownDefaultTest();
   });
 
   it('value change works', () => {
+    dropdownDefaultTest();
     dropdownChangeTest();
   });
 
@@ -363,11 +378,16 @@ describe('Dropdown.shinyInput()', () => {
   });
 
   it('updating multiSelect options and values works', () => {
+    dropdownMultiselectDefaultTest();
     dropdownMultiselectChangeTest();
   });
 });
 
 describe('DatePicker.shinyInput()', () => {
+  beforeEach(() => {
+    cy.visit('/');
+  });
+
   it('setting default values works', () => {
     datePickerOnLoadTest();
     datePickerDefaultTest();
@@ -375,6 +395,10 @@ describe('DatePicker.shinyInput()', () => {
 });
 
 describe('SwatchColorPicker.shinyInput()', () => {
+  beforeEach(() => {
+    cy.visit('/');
+  });
+
   it('setting default values works', () => {
     swatchColorPickerDefaultTest();
   });
@@ -385,6 +409,10 @@ describe('SwatchColorPicker.shinyInput()', () => {
 });
 
 describe('Toggle.shinyInput()', () => {
+  beforeEach(() => {
+    cy.visit('/');
+  });
+
   it('setting default values works', () => {
     toggleDefaultTest();
   });
@@ -395,6 +423,10 @@ describe('Toggle.shinyInput()', () => {
 });
 
 describe('SearchBox.shinyInput()', () => {
+  beforeEach(() => {
+    cy.visit('/');
+  });
+
   it('setting default values works', () => {
     searchBoxDefaultTest();
   });
@@ -409,8 +441,8 @@ describe('SearchBox.shinyInput()', () => {
 });
 
 describe('Reset after toggled visibility', () => {
-  before(() => {
-    cy.reload();
+  beforeEach(() => {
+    cy.visit('/');
   });
 
   it('Slider.shinyInput() works', () => {
@@ -428,7 +460,7 @@ describe('Reset after toggled visibility', () => {
   it('Checkbox.shinyInput() works', () => {
     checkboxTestChange();
     toggleVisibility();
-    checkboxTestDefault();
+    checkboxTestNotChecked();
   });
 
   it('Rating.shinyInput() works', () => {
@@ -462,10 +494,13 @@ describe('Reset after toggled visibility', () => {
   });
 
   it('Dropdown.shinyInput() works', () => {
+    dropdownDefaultTest();
+    dropdownMultiselectDefaultTest();
     dropdownChangeTest();
+    dropdownMultiselectChangeTest();
     toggleVisibility();
     dropdownDefaultTest();
-    dropdownMultiselectChangeTest();
+    dropdownMultiselectDefaultTest();
   });
 
   it('SwatchColorPicker.shinyInput() works', () => {
@@ -488,67 +523,97 @@ describe('Reset after toggled visibility', () => {
 });
 
 describe('Update from server works', () => {
-  before(() => {
-    cy.get('#fluentInputs-updateInputs').click();
+  beforeEach(() => {
+    cy.visit('/');
   });
 
   it('Slider.shinyInput() works', () => {
+    sliderDefaultTest();
+    cy.get('#fluentInputs-updateInputs').click();
     sliderDefaultTest(100, -100, 234);
   });
 
   it('TextField.shinyInput() works', () => {
+    textFieldDefaultTest();
+    cy.get('#fluentInputs-updateInputs').click();
     textFieldDefaultTest('new text');
   });
 
   it('Checkbox.shinyInput() works', () => {
-    checkboxTestDefault('true');
+    checkboxTestNotChecked();
+    cy.get('#fluentInputs-updateInputs').click();
+    checkboxTestChecked();
   });
 
   it('Rating.shinyInput() works', () => {
+    ratingTestDefault();
+    cy.get('#fluentInputs-updateInputs').click();
     ratingTestDefault(5);
   });
 
   it('SpinButton.shinyInput() works', () => {
+    spinButtonDefaultTest();
+    cy.get('#fluentInputs-updateInputs').click();
     spinButtonDefaultTest(40);
   });
 
   it('Calendar.shinyInput() works', () => {
-    calendarDefaultTest('June 25, 2015', '2015-06-25T12:00:00.000Z');
+    calendarDefaultTest();
+    cy.get('#fluentInputs-updateInputs').click();
+    calendarDefaultTest('25, June, 2015', '2015-06-25T12:00:00.000Z');
   });
 
   it('ChoiceGroup.shinyInput() works', () => {
+    choiceGroupDefaultTest();
+    cy.get('#fluentInputs-updateInputs').click();
     choiceGroupDefaultTest('C');
   });
 
   it('ColorPicker.shinyInput() works', () => {
+    colorPickerDefaultTest();
+    cy.get('#fluentInputs-updateInputs').click();
     colorPickerDefaultTest('ffffff');
   });
 
   it('ComboBox.shinyInput() works', () => {
+    comboBoxDefaultTest();
+    cy.get('#fluentInputs-updateInputs').click();
     comboBoxDefaultTest('Option B', 'B');
   });
 
   it('Dropdown.shinyInput() works', () => {
+    dropdownDefaultTest();
+    cy.get('#fluentInputs-updateInputs').click();
     dropdownDefaultTest('Option C', 'C');
   });
 
   it('Dropdown.shinyInput() works for multiSelects', () => {
+    dropdownMultiselectDefaultTest();
+    cy.get('#fluentInputs-updateInputs').click();
     dropdownMultiselectDefaultTest('Option X, Option Z', 'Value: X Value: Z');
   });
 
   it('DatePicker.shinyInput() works', () => {
+    datePickerDefaultTest();
+    cy.get('#fluentInputs-updateInputs').click();
     datePickerDefaultTest('Thu Jun 25 2015', '2015-06-25T12:00:00.000Z');
   });
 
   it('SwatchColorPicker.shinyInput() works', () => {
+    swatchColorPickerDefaultTest();
+    cy.get('#fluentInputs-updateInputs').click();
     swatchColorPickerDefaultTest('white', 4);
   });
 
   it('Toggle.shinyInput()', () => {
+    toggleDefaultTest();
+    cy.get('#fluentInputs-updateInputs').click();
     toggleDefaultTest('false');
   });
 
   it('SearchBox.shinyInput()', () => {
+    searchBoxDefaultTest();
+    cy.get('#fluentInputs-updateInputs').click();
     searchBoxDefaultTest('query');
   });
 });

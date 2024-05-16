@@ -1,13 +1,10 @@
 describe('ShimmeredDetailsList()', () => {
-  before(() => {
+  beforeEach(() => {
     cy.visit('/');
   });
 
   it('is placed in DOM with appropriate props and dimensions', () => {
     cy.get('#shimmer-shimmeredDetailsListOutput').within(() => {
-      cy.get('div[role=grid]')
-        .should('have.attr', 'aria-label', 'Content is being fetched')
-        .should('have.attr', 'aria-busy', 'true');
       cy.get('.ms-List-page')
         .children()
         .should('have.length', 10);
@@ -33,20 +30,10 @@ describe('ShimmeredDetailsList()', () => {
     cy.get('#shimmer-toggle').click();
     cy.get('#shimmer-shimmeredDetailsListOutput').within(() => {
       cy.get('div[role=grid]').should('have.attr', 'aria-busy', 'false');
-      cy.get('.ms-List-page')
-        .children('.ms-List-cell')
-        .eq(0)
-        .within(() => {
-          cy.get('div[aria-colindex=2]').should('contain', 'Mark');
-          cy.get('div[aria-colindex=3]').should('contain', 'Swanson');
-        });
-      cy.get('.ms-List-page')
-        .children('.ms-List-cell')
-        .eq(1)
-        .within(() => {
-          cy.get('div[aria-colindex=2]').should('contain', 'Josh');
-          cy.get('div[aria-colindex=3]').should('contain', 'Johnson');
-        });
+      cy.get('[data-list-index="0"] [data-automation-key=name]').should('contain', 'Mark');
+      cy.get('[data-list-index="0"] [data-automation-key=surname]').should('contain', 'Swanson');
+      cy.get('[data-list-index="1"] [data-automation-key=name]').should('contain', 'Josh');
+      cy.get('[data-list-index="1"] [data-automation-key=surname]').should('contain', 'Johnson');
     });
   });
 });

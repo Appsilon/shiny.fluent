@@ -2,10 +2,12 @@
   "private": true,
   "scripts": {
     "lint": "eslint --ext .js,.jsx src cypress",
-    "start-e2e-test-app": "cd ../inst/examples/e2e-test && Rscript -e 'shiny::runApp(port=8888)'",
-    "e2e-test": "start-server-and-test start-e2e-test-app http://localhost:8888 'cypress run --spec \"cypress/integration/e2e-test/*.js\"'",
-    "start-e2e-router-app": "cd ../inst/examples/dashboard && Rscript -e 'shiny::runApp(port=8889)'",
-    "e2e-router": "start-server-and-test start-e2e-router-app http://localhost:8889 'cypress run --config baseUrl=http://localhost:8889 --spec \"cypress/integration/dashboard/*.js\"'"
+    "start-e2e-test-app": "cd ../inst/examples/e2e-test && Rscript -e 'shiny::runApp(port=8887)'",
+    "test-e2e-test-app": "cypress run --config baseUrl=http://localhost:8887 --spec 'cypress/e2e/e2e-test/*.js'",
+    "e2e-test": "start-server-and-test start-e2e-test-app http://localhost:8887 test-e2e-test-app",
+    "start-e2e-router-app": "cd ../inst/examples/dashboard && Rscript -e 'shiny::runApp(port=8886)'",
+    "test-e2e-router-app": "cypress run --config baseUrl=http://localhost:8886 --spec 'cypress/e2e/dashboard/*.js'",
+    "e2e-router": "start-server-and-test start-e2e-router-app http://localhost:8886 test-e2e-router-app"
   },
   "babel": {
     "presets": [
@@ -19,21 +21,21 @@
     "@babel/preset-react": "^7.12.10",
     "@babel/register": "^7.12.10",
     "babel-eslint": "^10.1.0",
-    "babel-loader": "^8.0.4",
-    "cypress": "^7.2.0",
-    "eslint": "7.24.0",
-    "eslint-config-airbnb": "18.2.1",
+    "babel-loader": "^9.1.3",
+    "cypress": "13.8.1",
+    "eslint": "8.56.0",
+    "eslint-config-airbnb": "19.0.4",
     "eslint-import-resolver-webpack": "^0.13.0",
-    "eslint-plugin-cypress": "^2.11.2",
+    "eslint-plugin-cypress": "^3.2.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.21.5",
-    "eslint-plugin-react-hooks": "4.0.0",
-    "start-server-and-test": "^1.12.1",
+    "eslint-plugin-react-hooks": "4.6.2",
+    "start-server-and-test": "^2.0.3",
     "webpack": "^5.17.0",
-    "webpack-cli": "^4.4.0"
+    "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "@fluentui/react": "^8.6.1"
+    "@fluentui/react": "8.118.2"
   }
 }

@@ -22,6 +22,13 @@ jobs:
         with:
           extra-packages: local::. # Necessary to avoid object usage linter errors.
 
+      - name: Install shiny.react with React 18.3.1
+        if: always()
+        env:
+          GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          Rscript -e 'install.packages("remotes"); remotes::install_github("Appsilon/shiny.react")'
+
       - name: Install Node.js and Yarn
         uses: actions/setup-node@v3
         with:
@@ -51,7 +58,8 @@ jobs:
           start: yarn start-e2e-test-app
           working-directory: js
           record: true
-          spec: cypress/integration/e2e-test/*.js
+          spec: cypress/e2e/e2e-test/*.js
+          config: baseUrl=http://localhost:8887
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
       - name: Run Cypress on example Dashboard
@@ -61,7 +69,8 @@ jobs:
           start: yarn start-e2e-router-app
           working-directory: js
           record: true
-          spec: cypress/integration/dashboard/*.js
+          spec: cypress/e2e/dashboard/*.js
+          config: baseUrl=http://localhost:8886
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
 

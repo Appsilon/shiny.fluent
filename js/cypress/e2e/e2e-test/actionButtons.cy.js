@@ -1,61 +1,44 @@
-function test() {
-  let clicks = 1;
-  return (name) => {
-    cy.get(`#actionButtons-${name}`).click();
-    cy.get('#actionButtons-clicks').should('contain', `Number of clicks: ${clicks}`);
-    clicks += 1;
-  };
+function testButtonClick(name) {
+  cy.get(`#actionButtons-${name}`).click();
+  cy.get('#actionButtons-clicks').should('contain', 'Number of clicks: 1');
 }
-const testButtonClick = test();
 
-describe('DefaultButton.shinyInput()', () => {
-  before(() => {
+describe('Clicking buttons', () => {
+  beforeEach(() => {
     cy.visit('/');
   });
 
-  it('click works', () => {
+  it('DefaultButton.shinyInput()', () => {
     testButtonClick('defaultButton');
   });
-});
 
-describe('PrimaryButton.shinyInput()', () => {
-  it('click works', () => {
+  it('PrimaryButton.shinyInput()', () => {
     testButtonClick('primaryButton');
   });
-});
 
-describe('CompoundButton.shinyInput()', () => {
-  it('click works', () => {
+  it('CompoundButton.shinyInput()', () => {
     testButtonClick('compoundButton');
   });
-});
 
-describe('ActionButton.shinyInput()', () => {
-  it('click works', () => {
+  it('ActionButton.shinyInput()', () => {
     testButtonClick('actionButton');
   });
-});
 
-describe('CommandBarButton.shinyInput()', () => {
-  it('click works', () => {
+  it('CommandBarButton.shinyInput()', () => {
     testButtonClick('actionButton');
   });
-});
 
-describe('CommandButton.shinyInput()', () => {
-  it('click works', () => {
+  it('CommandButton.shinyInput()', () => {
     testButtonClick('actionButton');
   });
-});
 
-describe('IconButton.shinyInput()', () => {
-  it('click works', () => {
+  it('IconButton.shinyInput()', () => {
     testButtonClick('actionButton');
   });
 });
 
 describe('Updating buttons', () => {
-  before(() => {
+  beforeEach(() => {
     cy.visit('/');
     cy.get('#actionButtons-update').click();
   });

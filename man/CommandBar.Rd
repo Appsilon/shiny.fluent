@@ -160,8 +160,8 @@ ui <- function(id) {
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
     commandBarItemClicked <- reactiveVal()
-    observeEvent(input$newItem, commandBarItemClicked("newItem clicked"))
-    observeEvent(input$upload, commandBarItemClicked("upload clicked"))
+    observeEvent(input$newItem, commandBarItemClicked("newItem clicked (explicitly observed)"))
+    observeEvent(input$upload, commandBarItemClicked("upload clicked (explicitly observed)"))
     output$commandBarItems <- renderText(commandBarItemClicked())
     output$commandBar <- renderText(input$commandBar)
   })
