@@ -27,7 +27,7 @@ jobs:
         env:
           GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          Rscript -e 'install.packages("remotes"); remotes::install_github("Appsilon/shiny.react@upgrade-react")'
+          Rscript -e 'install.packages("remotes"); remotes::install_github("Appsilon/shiny.react")'
 
       - name: Install Node.js and Yarn
         uses: actions/setup-node@v3
