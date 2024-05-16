@@ -3,8 +3,8 @@ Title: Microsoft Fluent UI for Shiny Apps
 Version: 0.3.0.900
 Authors@R:
   c(
-    person("Kamil", "Żyła", role = c("aut", "cre"), email = "opensource+kamil@appsilon.com"),
-    person("Jakub", "Sobolewski", role = "aut", email = "jakub.sobolewski@appsilon.com"),
+    person("Jakub", "Sobolewski", role = c("aut", "cre"), email = "opensource+jakub.sobolewski@appsilon.com"),
+    person("Kamil", "Żyła", role = "aut", email = "kamil@appsilon.com"),
     person("Marek", "Rogala", role = "aut", email = "marek@appsilon.com"),
     person("Appsilon Sp. z o.o.", role = "cph", email = "opensource@appsilon.com")
   )
