@@ -147,10 +147,11 @@ function comboBoxDefaultTest(value = 'some text', output = value) {
 }
 
 function comboBoxChangeTest() {
-  cy.get('#fluentInputs-comboBox-input + button').click();
-  cy.get('#fluentInputs-comboBox-list');
-  cy.get('#fluentInputs-comboBox-list0').click();
+  cy.get('#fluentInputs-comboBox-input').focus();
+  cy.get('#fluentInputs-comboBox-input').type('Option A{enter}');
   cy.get('#fluentInputs-comboBoxValue').contains('Value: A');
+  cy.get('#fluentInputs-comboBox-input').type('New value{enter}');
+  cy.get('#fluentInputs-comboBoxValue').contains('Value: New value');
 }
 
 function dropdownDefaultTest(value = 'Option A', output = 'A') {
