@@ -25,81 +25,81 @@ you need to work using the original docs to achieve the desired result.
 }
 \details{
 \itemize{
-\item {\bold{ className }} {\code{string} \cr Custom className}
-\item {\bold{ compact }} {\code{boolean} \cr Boolean value to indicate if the component should render in compact mode. Set to false by default}
-\item {\bold{ componentRef }} {\verb{IRefObject<\{\}>} \cr }
-\item {\bold{ expandButtonProps }} {\verb{React.HTMLAttributes<HTMLButtonElement>} \cr Props for expand/collapse button}
-\item {\bold{ footerText }} {\code{string} \cr Text to display for the group footer.}
-\item {\bold{ group }} {\code{IGroup} \cr The group to be rendered by the header.}
-\item {\bold{ groupIndex }} {\code{number} \cr The index of the group.}
-\item {\bold{ groupLevel }} {\code{number} \cr The indent level of the group.}
-\item {\bold{ groups }} {\code{IGroup[]} \cr Stores parent group's children.}
-\item {\bold{ indentWidth }} {\code{number} \cr Width corresponding to a single level. This is multiplied by the groupLevel to get the full spacer width for the group.}
-\item {\bold{ isCollapsedGroupSelectVisible }} {\code{boolean} \cr Determines if the group selection check box is shown for collapsed groups.}
-\item {\bold{ isGroupLoading }} {\verb{(group: IGroup) => boolean} \cr Callback to determine if a group has missing items and needs to load them from the server.}
-\item {\bold{ isSelected }} {\code{boolean} \cr Deprecated at v.65.1 and will be removed by v 1.0. Use \code{selected} instead.}
-\item {\bold{ loadingText }} {\code{string} \cr Text shown on group headers to indicate the group is being loaded.}
-\item {\bold{ onGroupHeaderClick }} {\verb{(group: IGroup) => void} \cr Callback for when the group header is clicked.}
-\item {\bold{ onRenderTitle }} {\verb{IRenderFunction<IGroupHeaderProps>} \cr Override which allows the caller to provider a custom renderer for the GroupHeader title.}
-\item {\bold{ onToggleCollapse }} {\verb{(group: IGroup) => void} \cr Callback for when the group is expanded or collapsed.}
-\item {\bold{ onToggleSelectGroup }} {\verb{(group: IGroup) => void} \cr Callback for when the group is selected.}
-\item {\bold{ onToggleSummarize }} {\verb{(group: IGroup) => void} \cr Callback for when the group "Show All" link is clicked}
-\item {\bold{ selected }} {\code{boolean} \cr If all items in the group are selected.}
-\item {\bold{ selectionMode }} {\code{SelectionMode} \cr The selection mode of the list the group lives within.}
-\item {\bold{ showAllLinkText }} {\code{string} \cr Text to display for the group "Show All" link.}
-\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by the Higher Order Component}
-\item {\bold{ viewport }} {\code{IViewport} \cr A reference to the viewport in which the header is rendered.}
-\item {\bold{ className }} {\code{string} \cr Optional class name to add to the root element.}
-\item {\bold{ compact }} {\code{boolean} \cr Boolean value to indicate if the component should render in compact mode. Set to false by default}
-\item {\bold{ componentRef }} {\verb{IRefObject<IGroupedList>} \cr Optional callback to access the IGroupedList interface. Use this instead of ref for accessing the public methods and properties of the component.}
-\item {\bold{ dragDropEvents }} {\code{IDragDropEvents} \cr Map of callback functions related to drag and drop functionality.}
-\item {\bold{ dragDropHelper }} {\code{IDragDropHelper} \cr helper to manage drag/drop across item and groups}
-\item {\bold{ eventsToRegister }} {\verb{\{ eventName: string; callback: (context: IDragDropContext, event?: any) => void; \}[]} \cr Event names and corresponding callbacks that will be registered to groups and rendered elements}
-\item {\bold{ focusZoneProps }} {\code{IFocusZoneProps} \cr Optional properties to pass through to the FocusZone.}
-\item {\bold{ getGroupHeight }} {\verb{(group: IGroup, groupIndex: number) => number} \cr Optional function to override default group height calculation used by list virtualization.}
-\item {\bold{ groupProps }} {\code{IGroupRenderProps} \cr Optional override properties to render groups.}
-\item {\bold{ groups }} {\code{IGroup[]} \cr Optional grouping instructions.}
-\item {\bold{ items }} {\code{any[]} \cr List of items to render.}
-\item {\bold{ listProps }} {\code{IListProps} \cr Optional properties to pass through to the list components being rendered.}
-\item {\bold{ onGroupExpandStateChanged }} {\verb{(isSomeGroupExpanded: boolean) => void} \cr Optional callback when the group expand state changes between all collapsed and at least one group is expanded.}
-\item {\bold{ onRenderCell }} {\verb{(nestingDepth?: number, item?: any, index?: number) => React.ReactNode} \cr Rendering callback to render the group items.}
-\item {\bold{ onShouldVirtualize }} {\verb{(props: IListProps) => boolean} \cr Optional callback to determine whether the list should be rendered in full, or virtualized. Virtualization will add and remove pages of items as the user scrolls them into the visible range. This benefits larger list scenarios by reducing the DOM on the screen, but can negatively affect performance for smaller lists. The default implementation will virtualize when this callback is not provided.}
-\item {\bold{ selection }} {\code{ISelection} \cr Optional selection model to track selection state.}
-\item {\bold{ selectionMode }} {\code{SelectionMode} \cr Controls how/if the list manages selection.}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IGroupedListStyleProps, IGroupedListStyles>} \cr Style function to be passed in to override the themed or default styles}
-\item {\bold{ theme }} {\code{ITheme} \cr Theme that is passed in from Higher Order Component}
-\item {\bold{ usePageCache }} {\code{boolean} \cr boolean to control if pages containing unchanged items should be cached, this is a perf optimization The same property in List.Props}
-\item {\bold{ viewport }} {\code{IViewport} \cr Optional Viewport, provided by the parent component.}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IGroupFooterStyleProps, IGroupFooterStyles>} \cr Style function to be passed in to override the themed or default styles}
-\item {\bold{ checked }} {\code{boolean} \cr }
-\item {\bold{ theme }} {\code{ITheme} \cr }
-\item {\bold{ ariaPosInSet }} {\code{number} \cr Defines an element's number or position in the current set of listitems or treeitems}
-\item {\bold{ ariaSetSize }} {\code{number} \cr Defines the number of items in the current set of listitems or treeitems}
-\item {\bold{ expandButtonIcon }} {\code{string} \cr Defines the name of a custom icon to be used for group headers. If not set, the default icon will be used}
-\item {\bold{ expandButtonProps }} {\verb{React.HTMLAttributes<HTMLButtonElement>} \cr Native props for the GroupHeader expand and collapse button}
-\item {\bold{ groupedListId }} {\code{string} \cr GroupedList id for aria-controls}
-\item {\bold{ onRenderGroupHeaderCheckbox }} {\verb{IRenderFunction<IGroupHeaderCheckboxProps>} \cr If provided, can be used to render a custom checkbox}
-\item {\bold{ selectAllButtonProps }} {\verb{React.HTMLAttributes<HTMLButtonElement>} \cr Native props for the GroupHeader select all button}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IGroupHeaderStyleProps, IGroupHeaderStyles>} \cr Style function to be passed in to override the themed or default styles}
-\item {\bold{ useFastIcons }} {\code{boolean} \cr Whether to use fast icon and check components. The icons can't be targeted by customization but are still customizable via class names.}
-\item {\bold{ collapseAllVisibility }} {\code{CollapseAllVisibility} \cr Flag to indicate whether to ignore the collapsing icon on header.}
-\item {\bold{ footerProps }} {\code{IGroupFooterProps} \cr Information to pass in to the group footer.}
-\item {\bold{ getGroupItemLimit }} {\verb{(group: IGroup) => number} \cr Grouping item limit.}
-\item {\bold{ headerProps }} {\code{IGroupHeaderProps} \cr Information to pass in to the group header.}
-\item {\bold{ isAllGroupsCollapsed }} {\code{boolean} \cr Boolean indicating if all groups are in collapsed state.}
-\item {\bold{ onRenderFooter }} {\verb{IRenderFunction<IGroupFooterProps>} \cr Override which allows the caller to provide a custom footer.}
-\item {\bold{ onRenderHeader }} {\verb{IRenderFunction<IGroupHeaderProps>} \cr Override which allows the caller to provide a custom header.}
-\item {\bold{ onRenderShowAll }} {\verb{IRenderFunction<IGroupShowAllProps>} \cr Override which allows the caller to provide a custom Show All link.}
-\item {\bold{ onToggleCollapseAll }} {\verb{(isAllCollapsed: boolean) => void} \cr Callback for when all groups are expanded or collapsed.}
-\item {\bold{ role }} {\code{string} \cr Override which allows the caller to provide a custom aria role}
-\item {\bold{ showAllProps }} {\code{IGroupShowAllProps} \cr Information to pass in to the group Show all footer.}
-\item {\bold{ showEmptyGroups }} {\code{boolean} \cr Boolean indicating if empty groups are shown}
-\item {\bold{ showAllLinkText }} {\code{string} \cr The Show All link text.}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IGroupShowAllStyleProps, IGroupShowAllStyles>} \cr Style function to be passed in to override the themed or default styles}
-\item {\bold{ count }} {\code{number} \cr Count of spacer(s)}
-\item {\bold{ indentWidth }} {\code{number} \cr How much to indent}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IGroupSpacerStyleProps, IGroupSpacerStyles>} \cr Style function to be passed in to override the themed or default styles}
-\item {\bold{ theme }} {\code{ITheme} \cr Theme from Higher Order Component}
+\item \bold{ className } \code{string} \cr Custom className
+\item \bold{ compact } \code{boolean} \cr Boolean value to indicate if the component should render in compact mode. Set to false by default
+\item \bold{ componentRef } \verb{IRefObject<\{\}>} \cr
+\item \bold{ expandButtonProps } \verb{React.HTMLAttributes<HTMLButtonElement>} \cr Props for expand/collapse button
+\item \bold{ footerText } \code{string} \cr Text to display for the group footer.
+\item \bold{ group } \code{IGroup} \cr The group to be rendered by the header.
+\item \bold{ groupIndex } \code{number} \cr The index of the group.
+\item \bold{ groupLevel } \code{number} \cr The indent level of the group.
+\item \bold{ groups } \code{IGroup[]} \cr Stores parent group's children.
+\item \bold{ indentWidth } \code{number} \cr Width corresponding to a single level. This is multiplied by the groupLevel to get the full spacer width for the group.
+\item \bold{ isCollapsedGroupSelectVisible } \code{boolean} \cr Determines if the group selection check box is shown for collapsed groups.
+\item \bold{ isGroupLoading } \verb{(group: IGroup) => boolean} \cr Callback to determine if a group has missing items and needs to load them from the server.
+\item \bold{ isSelected } \code{boolean} \cr Deprecated at v.65.1 and will be removed by v 1.0. Use \code{selected} instead.
+\item \bold{ loadingText } \code{string} \cr Text shown on group headers to indicate the group is being loaded.
+\item \bold{ onGroupHeaderClick } \verb{(group: IGroup) => void} \cr Callback for when the group header is clicked.
+\item \bold{ onRenderTitle } \verb{IRenderFunction<IGroupHeaderProps>} \cr Override which allows the caller to provider a custom renderer for the GroupHeader title.
+\item \bold{ onToggleCollapse } \verb{(group: IGroup) => void} \cr Callback for when the group is expanded or collapsed.
+\item \bold{ onToggleSelectGroup } \verb{(group: IGroup) => void} \cr Callback for when the group is selected.
+\item \bold{ onToggleSummarize } \verb{(group: IGroup) => void} \cr Callback for when the group "Show All" link is clicked
+\item \bold{ selected } \code{boolean} \cr If all items in the group are selected.
+\item \bold{ selectionMode } \code{SelectionMode} \cr The selection mode of the list the group lives within.
+\item \bold{ showAllLinkText } \code{string} \cr Text to display for the group "Show All" link.
+\item \bold{ theme } \code{ITheme} \cr Theme provided by the Higher Order Component
+\item \bold{ viewport } \code{IViewport} \cr A reference to the viewport in which the header is rendered.
+\item \bold{ className } \code{string} \cr Optional class name to add to the root element.
+\item \bold{ compact } \code{boolean} \cr Boolean value to indicate if the component should render in compact mode. Set to false by default
+\item \bold{ componentRef } \verb{IRefObject<IGroupedList>} \cr Optional callback to access the IGroupedList interface. Use this instead of ref for accessing the public methods and properties of the component.
+\item \bold{ dragDropEvents } \code{IDragDropEvents} \cr Map of callback functions related to drag and drop functionality.
+\item \bold{ dragDropHelper } \code{IDragDropHelper} \cr helper to manage drag/drop across item and groups
+\item \bold{ eventsToRegister } \verb{\{ eventName: string; callback: (context: IDragDropContext, event?: any) => void; \}[]} \cr Event names and corresponding callbacks that will be registered to groups and rendered elements
+\item \bold{ focusZoneProps } \code{IFocusZoneProps} \cr Optional properties to pass through to the FocusZone.
+\item \bold{ getGroupHeight } \verb{(group: IGroup, groupIndex: number) => number} \cr Optional function to override default group height calculation used by list virtualization.
+\item \bold{ groupProps } \code{IGroupRenderProps} \cr Optional override properties to render groups.
+\item \bold{ groups } \code{IGroup[]} \cr Optional grouping instructions.
+\item \bold{ items } \code{any[]} \cr List of items to render.
+\item \bold{ listProps } \code{IListProps} \cr Optional properties to pass through to the list components being rendered.
+\item \bold{ onGroupExpandStateChanged } \verb{(isSomeGroupExpanded: boolean) => void} \cr Optional callback when the group expand state changes between all collapsed and at least one group is expanded.
+\item \bold{ onRenderCell } \verb{(nestingDepth?: number, item?: any, index?: number) => React.ReactNode} \cr Rendering callback to render the group items.
+\item \bold{ onShouldVirtualize } \verb{(props: IListProps) => boolean} \cr Optional callback to determine whether the list should be rendered in full, or virtualized. Virtualization will add and remove pages of items as the user scrolls them into the visible range. This benefits larger list scenarios by reducing the DOM on the screen, but can negatively affect performance for smaller lists. The default implementation will virtualize when this callback is not provided.
+\item \bold{ selection } \code{ISelection} \cr Optional selection model to track selection state.
+\item \bold{ selectionMode } \code{SelectionMode} \cr Controls how/if the list manages selection.
+\item \bold{ styles } \verb{IStyleFunctionOrObject<IGroupedListStyleProps, IGroupedListStyles>} \cr Style function to be passed in to override the themed or default styles
+\item \bold{ theme } \code{ITheme} \cr Theme that is passed in from Higher Order Component
+\item \bold{ usePageCache } \code{boolean} \cr boolean to control if pages containing unchanged items should be cached, this is a perf optimization The same property in List.Props
+\item \bold{ viewport } \code{IViewport} \cr Optional Viewport, provided by the parent component.
+\item \bold{ styles } \verb{IStyleFunctionOrObject<IGroupFooterStyleProps, IGroupFooterStyles>} \cr Style function to be passed in to override the themed or default styles
+\item \bold{ checked } \code{boolean} \cr
+\item \bold{ theme } \code{ITheme} \cr
+\item \bold{ ariaPosInSet } \code{number} \cr Defines an element's number or position in the current set of listitems or treeitems
+\item \bold{ ariaSetSize } \code{number} \cr Defines the number of items in the current set of listitems or treeitems
+\item \bold{ expandButtonIcon } \code{string} \cr Defines the name of a custom icon to be used for group headers. If not set, the default icon will be used
+\item \bold{ expandButtonProps } \verb{React.HTMLAttributes<HTMLButtonElement>} \cr Native props for the GroupHeader expand and collapse button
+\item \bold{ groupedListId } \code{string} \cr GroupedList id for aria-controls
+\item \bold{ onRenderGroupHeaderCheckbox } \verb{IRenderFunction<IGroupHeaderCheckboxProps>} \cr If provided, can be used to render a custom checkbox
+\item \bold{ selectAllButtonProps } \verb{React.HTMLAttributes<HTMLButtonElement>} \cr Native props for the GroupHeader select all button
+\item \bold{ styles } \verb{IStyleFunctionOrObject<IGroupHeaderStyleProps, IGroupHeaderStyles>} \cr Style function to be passed in to override the themed or default styles
+\item \bold{ useFastIcons } \code{boolean} \cr Whether to use fast icon and check components. The icons can't be targeted by customization but are still customizable via class names.
+\item \bold{ collapseAllVisibility } \code{CollapseAllVisibility} \cr Flag to indicate whether to ignore the collapsing icon on header.
+\item \bold{ footerProps } \code{IGroupFooterProps} \cr Information to pass in to the group footer.
+\item \bold{ getGroupItemLimit } \verb{(group: IGroup) => number} \cr Grouping item limit.
+\item \bold{ headerProps } \code{IGroupHeaderProps} \cr Information to pass in to the group header.
+\item \bold{ isAllGroupsCollapsed } \code{boolean} \cr Boolean indicating if all groups are in collapsed state.
+\item \bold{ onRenderFooter } \verb{IRenderFunction<IGroupFooterProps>} \cr Override which allows the caller to provide a custom footer.
+\item \bold{ onRenderHeader } \verb{IRenderFunction<IGroupHeaderProps>} \cr Override which allows the caller to provide a custom header.
+\item \bold{ onRenderShowAll } \verb{IRenderFunction<IGroupShowAllProps>} \cr Override which allows the caller to provide a custom Show All link.
+\item \bold{ onToggleCollapseAll } \verb{(isAllCollapsed: boolean) => void} \cr Callback for when all groups are expanded or collapsed.
+\item \bold{ role } \code{string} \cr Override which allows the caller to provide a custom aria role
+\item \bold{ showAllProps } \code{IGroupShowAllProps} \cr Information to pass in to the group Show all footer.
+\item \bold{ showEmptyGroups } \code{boolean} \cr Boolean indicating if empty groups are shown
+\item \bold{ showAllLinkText } \code{string} \cr The Show All link text.
+\item \bold{ styles } \verb{IStyleFunctionOrObject<IGroupShowAllStyleProps, IGroupShowAllStyles>} \cr Style function to be passed in to override the themed or default styles
+\item \bold{ count } \code{number} \cr Count of spacer(s)
+\item \bold{ indentWidth } \code{number} \cr How much to indent
+\item \bold{ styles } \verb{IStyleFunctionOrObject<IGroupSpacerStyleProps, IGroupSpacerStyles>} \cr Style function to be passed in to override the themed or default styles
+\item \bold{ theme } \code{ITheme} \cr Theme from Higher Order Component
 }
 }
 \section{Best practices}{

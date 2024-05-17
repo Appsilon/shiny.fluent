@@ -40,22 +40,22 @@ you need to work using the original docs to achieve the desired result.
 }
 \details{
 \itemize{
-\item {\bold{ allowZeroStars }} {\code{boolean} \cr Allow the rating value to be set to 0 instead of a minimum of 1.}
-\item {\bold{ ariaLabelFormat }} {\code{string} \cr Optional label format for a rating star that will be read by screen readers. Can be used like "\{0\} of \{1\} stars selected", where \{0\} will be substituted by the current rating and \{1\} will be substituted by the max rating.}
-\item {\bold{ ariaLabelId }} {\code{string} \cr Deprecated: Optional id of label describing this instance of Rating.}
-\item {\bold{ componentRef }} {\verb{IRefObject<IRating>} \cr Optional callback to access the IRating interface. Use this instead of ref for accessing the public methods and properties of the component.}
-\item {\bold{ getAriaLabel }} {\verb{(rating: number, max: number) => string} \cr }
-\item {\bold{ icon }} {\code{string} \cr Custom icon}
-\item {\bold{ max }} {\code{number} \cr Maximum rating, defaults to 5, has to be \>= min}
-\item {\bold{ min }} {\code{number} \cr Minimum rating, defaults to 1, has to be \>= 0}
-\item {\bold{ onChange }} {\verb{(event: React.FocusEvent<HTMLElement>, rating?: number) => void} \cr Callback issued when the rating changes.}
-\item {\bold{ onChanged }} {\verb{(rating: number) => void} \cr }
-\item {\bold{ rating }} {\code{number} \cr Selected rating, has to be an integer between min and max}
-\item {\bold{ readOnly }} {\code{boolean} \cr Optional flag to mark rating control as readOnly}
-\item {\bold{ size }} {\code{RatingSize} \cr Size of rating, defaults to small}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IRatingStyleProps, IRatingStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
-\item {\bold{ theme }} {\code{ITheme} \cr Theme (provided through customization.)}
-\item {\bold{ unselectedIcon }} {\code{string} \cr Custom icon for unselected rating elements.}
+\item \bold{ allowZeroStars } \code{boolean} \cr Allow the rating value to be set to 0 instead of a minimum of 1.
+\item \bold{ ariaLabelFormat } \code{string} \cr Optional label format for a rating star that will be read by screen readers. Can be used like "\{0\} of \{1\} stars selected", where \{0\} will be substituted by the current rating and \{1\} will be substituted by the max rating.
+\item \bold{ ariaLabelId } \code{string} \cr Deprecated: Optional id of label describing this instance of Rating.
+\item \bold{ componentRef } \verb{IRefObject<IRating>} \cr Optional callback to access the IRating interface. Use this instead of ref for accessing the public methods and properties of the component.
+\item \bold{ getAriaLabel } \verb{(rating: number, max: number) => string} \cr
+\item \bold{ icon } \code{string} \cr Custom icon
+\item \bold{ max } \code{number} \cr Maximum rating, defaults to 5, has to be \>= min
+\item \bold{ min } \code{number} \cr Minimum rating, defaults to 1, has to be \>= 0
+\item \bold{ onChange } \verb{(event: React.FocusEvent<HTMLElement>, rating?: number) => void} \cr Callback issued when the rating changes.
+\item \bold{ onChanged } \verb{(rating: number) => void} \cr
+\item \bold{ rating } \code{number} \cr Selected rating, has to be an integer between min and max
+\item \bold{ readOnly } \code{boolean} \cr Optional flag to mark rating control as readOnly
+\item \bold{ size } \code{RatingSize} \cr Size of rating, defaults to small
+\item \bold{ styles } \verb{IStyleFunctionOrObject<IRatingStyleProps, IRatingStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.
+\item \bold{ theme } \code{ITheme} \cr Theme (provided through customization.)
+\item \bold{ unselectedIcon } \code{string} \cr Custom icon for unselected rating elements.
 }
 }
 \section{Best practices}{

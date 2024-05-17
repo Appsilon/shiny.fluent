@@ -26,10 +26,10 @@ you need to work using the original docs to achieve the desired result.
 }
 \details{
 \itemize{
-\item {\bold{ alignContent }} {\code{'start' | 'center' | 'end'} \cr Where the content should be aligned in the separator.}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<ISeparatorStyleProps, ISeparatorStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
-\item {\bold{ theme }} {\code{ITheme} \cr Theme (provided through customization.)}
-\item {\bold{ vertical }} {\code{boolean} \cr Whether the element is a vertical separator.}
+\item \bold{ alignContent } \code{'start' | 'center' | 'end'} \cr Where the content should be aligned in the separator.
+\item \bold{ styles } \verb{IStyleFunctionOrObject<ISeparatorStyleProps, ISeparatorStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.
+\item \bold{ theme } \code{ITheme} \cr Theme (provided through customization.)
+\item \bold{ vertical } \code{boolean} \cr Whether the element is a vertical separator.
 }
 }
 \examples{

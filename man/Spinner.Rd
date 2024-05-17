@@ -22,16 +22,16 @@ you need to work using the original docs to achieve the desired result.
 }
 \details{
 \itemize{
-\item {\bold{ ariaLabel }} {\code{string} \cr Alternative status label for screen reader}
-\item {\bold{ ariaLive }} {\code{'assertive' | 'polite' | 'off'} \cr Politeness setting for label update announcement.}
-\item {\bold{ className }} {\code{string} \cr Additional CSS class(es) to apply to the Spinner.}
-\item {\bold{ componentRef }} {\verb{IRefObject<ISpinner>} \cr Optional callback to access the ISpinner interface. Use this instead of ref for accessing the public methods and properties of the component.}
-\item {\bold{ label }} {\code{string} \cr The label to show next to the Spinner. Label updates will be announced to the screen readers. Use ariaLive to control politeness level.}
-\item {\bold{ labelPosition }} {\code{SpinnerLabelPosition} \cr The position of the label in regards of the spinner animation.}
-\item {\bold{ size }} {\code{SpinnerSize} \cr The size of Spinner to render. \{ extraSmall, small, medium, large \}}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<ISpinnerStyleProps, ISpinnerStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
-\item {\bold{ theme }} {\code{ITheme} \cr Theme (provided through customization.)}
-\item {\bold{ type }} {\code{SpinnerType} \cr Deprecated and will be removed at \>= 2.0.0. Use \code{SpinnerSize} instead.}
+\item \bold{ ariaLabel } \code{string} \cr Alternative status label for screen reader
+\item \bold{ ariaLive } \code{'assertive' | 'polite' | 'off'} \cr Politeness setting for label update announcement.
+\item \bold{ className } \code{string} \cr Additional CSS class(es) to apply to the Spinner.
+\item \bold{ componentRef } \verb{IRefObject<ISpinner>} \cr Optional callback to access the ISpinner interface. Use this instead of ref for accessing the public methods and properties of the component.
+\item \bold{ label } \code{string} \cr The label to show next to the Spinner. Label updates will be announced to the screen readers. Use ariaLive to control politeness level.
+\item \bold{ labelPosition } \code{SpinnerLabelPosition} \cr The position of the label in regards of the spinner animation.
+\item \bold{ size } \code{SpinnerSize} \cr The size of Spinner to render. \{ extraSmall, small, medium, large \}
+\item \bold{ styles } \verb{IStyleFunctionOrObject<ISpinnerStyleProps, ISpinnerStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.
+\item \bold{ theme } \code{ITheme} \cr Theme (provided through customization.)
+\item \bold{ type } \code{SpinnerType} \cr Deprecated and will be removed at \>= 2.0.0. Use \code{SpinnerSize} instead.
 }
 }
 \examples{

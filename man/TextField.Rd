@@ -43,50 +43,56 @@ you need to work using the original docs to achieve the desired result.
 }
 \details{
 \itemize{
-\item {\bold{ ariaLabel }} {\code{string} \cr Aria label for the text field.}
-\item {\bold{ autoAdjustHeight }} {\code{boolean} \cr For multiline text fields, whether or not to auto adjust text field height.}
-\item {\bold{ autoComplete }} {\code{string} \cr Whether the input field should have autocomplete enabled. This tells the browser to display options based on earlier typed values. Common values are 'on' and 'off' but for all possible values see the following links: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete#Values https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill}
-\item {\bold{ borderless }} {\code{boolean} \cr Whether or not the text field is borderless.}
-\item {\bold{ className }} {\code{string} \cr Optional class name that is added to the container of the component.}
-\item {\bold{ componentRef }} {\verb{IRefObject<ITextField>} \cr Optional callback to access the ITextField component. Use this instead of ref for accessing the public methods and properties of the component.}
-\item {\bold{ defaultValue }} {\code{string} \cr Default value of the text field. Only provide this if the text field is an uncontrolled component; otherwise, use the \code{value} property.}
-\item {\bold{ deferredValidationTime }} {\code{number} \cr Text field will start to validate after users stop typing for \code{deferredValidationTime} milliseconds. Updates to this prop will not be respected.}
-\item {\bold{ description }} {\code{string} \cr Description displayed below the text field to provide additional details about what text to enter.}
-\item {\bold{ disabled }} {\code{boolean} \cr Disabled state of the text field.}
-\item {\bold{ errorMessage }} {\code{string | JSX.Element} \cr Static error message displayed below the text field. Use \code{onGetErrorMessage} to dynamically change the error message displayed (if any) based on the current value. \code{errorMessage} and \code{onGetErrorMessage} are mutually exclusive (\code{errorMessage} takes precedence).}
-\item {\bold{ iconProps }} {\code{IIconProps} \cr Props for an optional icon, displayed in the far right end of the text field.}
-\item {\bold{ inputClassName }} {\code{string} \cr Optional class name that is added specifically to the input/textarea element.}
-\item {\bold{ label }} {\code{string} \cr Label displayed above the text field (and read by screen readers).}
-\item {\bold{ mask }} {\code{string} \cr Only used by MaskedTextField: The masking string that defines the mask's behavior. A backslash will escape any character. Special format characters are: '9': \verb{[0-9]} 'a': \verb{[a-zA-Z]} '\emph{': \verb{[a-zA-Z0-9]}}
-\item {\bold{ maskChar }} {\code{string} \cr Only used by MaskedTextField: The character to show in place of unfilled characters of the mask.}
-\item {\bold{ maskFormat }} {\verb{\{ [key: string]: RegExp; \}} \cr Only used by MaskedTextField: An object defining the format characters and corresponding regexp values. Default format characters: \{ '9': /\verb{[0-9]}/, 'a': /\verb{[a-zA-Z]}/, '}': /\verb{[a-zA-Z0-9]}/ \}}
-\item {\bold{ multiline }} {\code{boolean} \cr Whether or not the text field is a multiline text field.}
-\item {\bold{ onChange }} {\verb{(event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, newValue?: string) => void} \cr Callback for when the input value changes. This is called on both \code{input} and \code{change} events. (In a later version, this will probably only be called for the \code{change} event.)}
-\item {\bold{ onGetErrorMessage }} {\verb{(value: string) => string | JSX.Element | PromiseLike<string | JSX.Element> | undefined} \cr Function used to determine whether the input value is valid and get an error message if not. Mutually exclusive with the static string \code{errorMessage} (it will take precedence over this).
+\item \bold{ ariaLabel } \code{string} \cr Aria label for the text field.
+\item \bold{ autoAdjustHeight } \code{boolean} \cr For multiline text fields, whether or not to auto adjust text field height.
+\item \bold{ autoComplete } \code{string} \cr Whether the input field should have autocomplete enabled. This tells the browser to display options based on earlier typed values. Common values are 'on' and 'off' but for all possible values see the following links: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete#Values https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill
+\item \bold{ borderless } \code{boolean} \cr Whether or not the text field is borderless.
+\item \bold{ className } \code{string} \cr Optional class name that is added to the container of the component.
+\item \bold{ componentRef } \verb{IRefObject<ITextField>} \cr Optional callback to access the ITextField component. Use this instead of ref for accessing the public methods and properties of the component.
+\item \bold{ defaultValue } \code{string} \cr Default value of the text field. Only provide this if the text field is an uncontrolled component; otherwise, use the \code{value} property.
+\item \bold{ deferredValidationTime } \code{number} \cr Text field will start to validate after users stop typing for \code{deferredValidationTime} milliseconds. Updates to this prop will not be respected.
+\item \bold{ description } \code{string} \cr Description displayed below the text field to provide additional details about what text to enter.
+\item \bold{ disabled } \code{boolean} \cr Disabled state of the text field.
+\item \bold{ errorMessage } \code{string | JSX.Element} \cr Static error message displayed below the text field. Use \code{onGetErrorMessage} to dynamically change the error message displayed (if any) based on the current value. \code{errorMessage} and \code{onGetErrorMessage} are mutually exclusive (\code{errorMessage} takes precedence).
+\item \bold{ iconProps } \code{IIconProps} \cr Props for an optional icon, displayed in the far right end of the text field.
+\item \bold{ inputClassName } \code{string} \cr Optional class name that is added specifically to the input/textarea element.
+\item \bold{ label } \code{string} \cr Label displayed above the text field (and read by screen readers).
+\item \bold{ mask } \code{string} \cr Only used by MaskedTextField: The masking string that defines the mask's behavior. A backslash will escape any character. Special format characters are: '9': \verb{[0-9]} 'a': \verb{[a-zA-Z]} '*': \verb{[a-zA-Z0-9]}
+\item \bold{ maskChar } \code{string} \cr Only used by MaskedTextField: The character to show in place of unfilled characters of the mask.
+\item \bold{ maskFormat } \verb{\{ [key: string]: RegExp; \}} \cr Only used by MaskedTextField: An object defining the format characters and corresponding regexp values. Default format characters: \{ '9': /\verb{[0-9]}/, 'a': /\verb{[a-zA-Z]}/, '*': /\verb{[a-zA-Z0-9]}/ \}
+\item \bold{ multiline } \code{boolean} \cr Whether or not the text field is a multiline text field.
+\item \bold{ onChange } \verb{(event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, newValue?: string) => void} \cr Callback for when the input value changes. This is called on both \code{input} and \code{change} events. (In a later version, this will probably only be called for the \code{change} event.)
+\item \bold{ onGetErrorMessage } \verb{(value: string) => string | JSX.Element | PromiseLike<string | JSX.Element> | undefined} \cr Function used to determine whether the input value is valid and get an error message if not. Mutually exclusive with the static string \code{errorMessage} (it will take precedence over this).
+}
 
 When it returns \code{string | JSX.Element}: - If valid, it returns empty string. - If invalid, it returns the error message and the text field will show a red border and show an error message below the text field.
 
-When it returns \verb{Promise<string | JSX.Element>}: - The resolved value is displayed as the error message. - If rejected, the value is thrown away.}
-\item {\bold{ onNotifyValidationResult }} {\verb{(errorMessage: string | JSX.Element, value: string | undefined) => void} \cr Function called after validation completes.}
-\item {\bold{ onRenderDescription }} {\verb{IRenderFunction<ITextFieldProps>} \cr Custom renderer for the description.}
-\item {\bold{ onRenderLabel }} {\verb{IRenderFunction<ITextFieldProps>} \cr Custom renderer for the label. If you don't call defaultRender, ensure that you give your custom-rendered label an id and that you set the textfield's aria-labelledby prop to that id.}
-\item {\bold{ onRenderPrefix }} {\verb{IRenderFunction<ITextFieldProps>} \cr Custom render function for prefix.}
-\item {\bold{ onRenderSuffix }} {\verb{IRenderFunction<ITextFieldProps>} \cr Custom render function for suffix.}
-\item {\bold{ prefix }} {\code{string} \cr Prefix displayed before the text field contents. This is not included in the value. Ensure a descriptive label is present to assist screen readers, as the value does not include the prefix.}
-\item {\bold{ readOnly }} {\code{boolean} \cr If true, the text field is readonly.}
-\item {\bold{ resizable }} {\code{boolean} \cr For multiline text fields, whether or not the field is resizable.}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<ITextFieldStyleProps, ITextFieldStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
-\item {\bold{ suffix }} {\code{string} \cr Suffix displayed after the text field contents. This is not included in the value. Ensure a descriptive label is present to assist screen readers, as the value does not include the suffix.}
-\item {\bold{ theme }} {\code{ITheme} \cr Theme (provided through customization).}
-\item {\bold{ underlined }} {\code{boolean} \cr Whether or not the text field is underlined.}
-\item {\bold{ validateOnFocusIn }} {\code{boolean} \cr Run validation when focus moves into the input, and \strong{do not} validate on change.
+When it returns \verb{Promise<string | JSX.Element>}: - The resolved value is displayed as the error message. - If rejected, the value is thrown away.
+\itemize{
+\item \bold{ onNotifyValidationResult } \verb{(errorMessage: string | JSX.Element, value: string | undefined) => void} \cr Function called after validation completes.
+\item \bold{ onRenderDescription } \verb{IRenderFunction<ITextFieldProps>} \cr Custom renderer for the description.
+\item \bold{ onRenderLabel } \verb{IRenderFunction<ITextFieldProps>} \cr Custom renderer for the label. If you don't call defaultRender, ensure that you give your custom-rendered label an id and that you set the textfield's aria-labelledby prop to that id.
+\item \bold{ onRenderPrefix } \verb{IRenderFunction<ITextFieldProps>} \cr Custom render function for prefix.
+\item \bold{ onRenderSuffix } \verb{IRenderFunction<ITextFieldProps>} \cr Custom render function for suffix.
+\item \bold{ prefix } \code{string} \cr Prefix displayed before the text field contents. This is not included in the value. Ensure a descriptive label is present to assist screen readers, as the value does not include the prefix.
+\item \bold{ readOnly } \code{boolean} \cr If true, the text field is readonly.
+\item \bold{ resizable } \code{boolean} \cr For multiline text fields, whether or not the field is resizable.
+\item \bold{ styles } \verb{IStyleFunctionOrObject<ITextFieldStyleProps, ITextFieldStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.
+\item \bold{ suffix } \code{string} \cr Suffix displayed after the text field contents. This is not included in the value. Ensure a descriptive label is present to assist screen readers, as the value does not include the suffix.
+\item \bold{ theme } \code{ITheme} \cr Theme (provided through customization).
+\item \bold{ underlined } \code{boolean} \cr Whether or not the text field is underlined.
+\item \bold{ validateOnFocusIn } \code{boolean} \cr Run validation when focus moves into the input, and \strong{do not} validate on change.
+}
 
-(Unless this prop and/or \code{validateOnFocusOut} is set to true, validation will run on every change.)}
-\item {\bold{ validateOnFocusOut }} {\code{boolean} \cr Run validation when focus moves out of the input, and \strong{do not} validate on change.
+(Unless this prop and/or \code{validateOnFocusOut} is set to true, validation will run on every change.)
+\itemize{
+\item \bold{ validateOnFocusOut } \code{boolean} \cr Run validation when focus moves out of the input, and \strong{do not} validate on change.
+}
 
-(Unless this prop and/or \code{validateOnFocusIn} is set to true, validation will run on every change.)}
-\item {\bold{ validateOnLoad }} {\code{boolean} \cr Whether validation should run when the input is initially rendered.}
-\item {\bold{ value }} {\code{string} \cr Current value of the text field. Only provide this if the text field is a controlled component where you are maintaining its current state; otherwise, use the \code{defaultValue} property.}
+(Unless this prop and/or \code{validateOnFocusIn} is set to true, validation will run on every change.)
+\itemize{
+\item \bold{ validateOnLoad } \code{boolean} \cr Whether validation should run when the input is initially rendered.
+\item \bold{ value } \code{string} \cr Current value of the text field. Only provide this if the text field is a controlled component where you are maintaining its current state; otherwise, use the \code{defaultValue} property.
 }
 }
 \section{Best practices}{

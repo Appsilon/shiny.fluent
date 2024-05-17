@@ -22,9 +22,9 @@ Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 \description{
 In a user interface, an icon is an image that represents an application, a capability, or some other concept or specific entity with meaning for the user. An icon is usually selectable but can also be a nonselectable image, such as a company's logo.
 
-For a list of icons, visit our \href{https://developer.microsoft.com/en-us/fluentui#/styles/web/icons}{icon documentation}.
+For a list of icons, visit our \href{#/styles/web/icons}{icon documentation}.
 
-Note that icons are not bundled by default and typically must be loaded by calling \code{initializeIcons} from the \verb{@uifabric/icons} package at the root of your application. See the \href{https://developer.microsoft.com/en-us/fluentui#/styles/web/icons#fabric-react}{icon documentation} for more details.
+Note that icons are not bundled by default and typically must be loaded by calling \code{initializeIcons} from the \verb{@uifabric/icons} package at the root of your application. See the \href{#/styles/web/icons#fabric-react}{icon documentation} for more details.
 
 For more details and examples visit the \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/Icon}{official docs}.
 The R package cannot handle each and every case, so for advanced use cases
@@ -32,17 +32,17 @@ you need to work using the original docs to achieve the desired result.
 }
 \details{
 \itemize{
-\item {\bold{ className }} {\code{string} \cr Custom class to style the icon.}
-\item {\bold{ iconName }} {\code{string} \cr The name of the icon to use from the icon font. If string is empty, a placeholder icon will be rendered the same width as an icon.}
-\item {\bold{ ariaLabel }} {\code{string} \cr The aria label of the icon for the benefit of screen readers.}
-\item {\bold{ iconName }} {\code{string} \cr The name of the icon to use from the icon font. If string is empty, a placeholder icon will be rendered the same width as an icon.}
-\item {\bold{ iconType }} {\code{IconType} \cr The type of icon to render (image or icon font).}
-\item {\bold{ imageErrorAs }} {\verb{React.ComponentType<IImageProps>} \cr If rendering an image icon, this component will be rendered in the event that loading the image fails.}
-\item {\bold{ imageProps }} {\code{IImageProps} \cr If rendering an image icon, these props will be passed to the Image component.}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IIconStyleProps, IIconStyles>} \cr Gets the styles for an Icon.}
-\item {\bold{ theme }} {\code{ITheme} \cr }
-\item {\bold{ className }} {\code{string} \cr Custom class to style the icon.}
-\item {\bold{ imageProps }} {\code{IImageProps} \cr Props passed to the Image component.}
+\item \bold{ className } \code{string} \cr Custom class to style the icon.
+\item \bold{ iconName } \code{string} \cr The name of the icon to use from the icon font. If string is empty, a placeholder icon will be rendered the same width as an icon.
+\item \bold{ ariaLabel } \code{string} \cr The aria label of the icon for the benefit of screen readers.
+\item \bold{ iconName } \code{string} \cr The name of the icon to use from the icon font. If string is empty, a placeholder icon will be rendered the same width as an icon.
+\item \bold{ iconType } \code{IconType} \cr The type of icon to render (image or icon font).
+\item \bold{ imageErrorAs } \verb{React.ComponentType<IImageProps>} \cr If rendering an image icon, this component will be rendered in the event that loading the image fails.
+\item \bold{ imageProps } \code{IImageProps} \cr If rendering an image icon, these props will be passed to the Image component.
+\item \bold{ styles } \verb{IStyleFunctionOrObject<IIconStyleProps, IIconStyles>} \cr Gets the styles for an Icon.
+\item \bold{ theme } \code{ITheme} \cr
+\item \bold{ className } \code{string} \cr Custom class to style the icon.
+\item \bold{ imageProps } \code{IImageProps} \cr Props passed to the Image component.
 }
 }
 \examples{

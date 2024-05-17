@@ -22,47 +22,49 @@ you need to work using the original docs to achieve the desired result.
 }
 \details{
 \itemize{
-\item {\bold{ alignTargetEdge }} {\code{boolean} \cr If true the positioning logic will prefer to flip edges rather than to nudge the rectangle to fit within bounds, thus making sure the element aligns perfectly with target's alignment edge}
-\item {\bold{ ariaDescribedBy }} {\code{string} \cr Defines the element id referencing the element containing the description for the callout.}
-\item {\bold{ ariaLabel }} {\code{string} \cr Accessible label text for callout.}
-\item {\bold{ ariaLabelledBy }} {\code{string} \cr Defines the element id referencing the element containing label text for callout.}
-\item {\bold{ backgroundColor }} {\code{string} \cr The background color of the Callout in hex format ie. #ffffff.}
-\item {\bold{ beakWidth }} {\code{number} \cr The width of the beak.}
-\item {\bold{ bounds }} {\verb{IRectangle | ((target?: Target, targetWindow?: Window) => IRectangle | undefined)} \cr The bounding rectangle (or callback that returns a rectangle) for which the contextual menu can appear in.}
-\item {\bold{ calloutMaxHeight }} {\code{number} \cr Set max height of callout When not set the callout will expand with contents up to the bottom of the screen}
-\item {\bold{ calloutMaxWidth }} {\code{number} \cr Custom width for callout including borders. If value is 0, no width is applied.}
-\item {\bold{ calloutWidth }} {\code{number} \cr Custom width for callout including borders. If value is 0, no width is applied.}
-\item {\bold{ className }} {\code{string} \cr CSS class to apply to the callout.}
-\item {\bold{ coverTarget }} {\code{boolean} \cr If true the position returned will have the menu element cover the target. If false then it will position next to the target;}
-\item {\bold{ directionalHint }} {\code{DirectionalHint} \cr How the element should be positioned}
-\item {\bold{ directionalHintFixed }} {\code{boolean} \cr If true the position will not change sides in an attempt to fit the callout within bounds. It will still attempt to align it to whatever bounds are given.}
-\item {\bold{ directionalHintForRTL }} {\code{DirectionalHint} \cr How the element should be positioned in RTL layouts. If not specified, a mirror of the \code{directionalHint} alignment edge will be used instead. This means that \code{DirectionalHint.BottomLeft} will change to \code{DirectionalHint.BottomRight} but \code{DirectionalHint.LeftAuto} will not change.}
-\item {\bold{ doNotLayer }} {\code{boolean} \cr If true do not render on a new layer. If false render on a new layer.}
-\item {\bold{ finalHeight }} {\code{number} \cr Specify the final height of the content. To be used when expanding the content dynamically so that callout can adjust its position.}
-\item {\bold{ gapSpace }} {\code{number} \cr The gap between the Callout and the target}
-\item {\bold{ hidden }} {\code{boolean} \cr If specified, renders the Callout in a hidden state. Use this flag, rather than rendering a callout conditionally based on visibility, to improve rendering performance when it becomes visible. Note: When callout is hidden its content will not be rendered. It will only render once the callout is visible.}
-\item {\bold{ hideOverflow }} {\code{boolean} \cr Manually set OverflowYHidden style prop to true on calloutMain element A variety of callout load animations will need this to hide the scollbar that can appear}
-\item {\bold{ isBeakVisible }} {\code{boolean} \cr If true then the beak is visible. If false it will not be shown.}
-\item {\bold{ layerProps }} {\code{ILayerProps} \cr Optional props to pass to the Layer component hosting the panel.}
-\item {\bold{ minPagePadding }} {\code{number} \cr The minimum distance the callout will be away from the edge of the screen.}
-\item {\bold{ onDismiss }} {\verb{(ev?: any) => void} \cr Callback when the Callout tries to close.}
-\item {\bold{ onLayerMounted }} {\verb{() => void} \cr Optional callback when the layer content has mounted.}
-\item {\bold{ onPositioned }} {\verb{(positions?: ICalloutPositionedInfo) => void} \cr Optional callback that is called once the callout has been correctly positioned.}
-\item {\bold{ onRestoreFocus }} {\verb{(options: \{ originalElement?: HTMLElement | Window; containsFocus: boolean; \}) => void} \cr Called when the component is unmounting, and focus needs to be restored. Argument passed down contains two variables, the element that the underlying popup believes focus should go to * and whether or not the popup currently contains focus. If this is provided, focus will not be restored automatically, you'll need to call originalElement.focus()}
-\item {\bold{ onScroll }} {\verb{() => void} \cr Callback when the Callout body is scrolled.}
-\item {\bold{ preventDismissOnLostFocus }} {\code{boolean} \cr If true then the callout will not dismiss when it loses focus}
-\item {\bold{ preventDismissOnResize }} {\code{boolean} \cr If true then the callout will not dismiss on resize}
-\item {\bold{ preventDismissOnScroll }} {\code{boolean} \cr If true then the callout will not dismiss on scroll}
-\item {\bold{ role }} {\code{string} \cr Aria role assigned to the callout (Eg. dialog, alertdialog).}
-\item {\bold{ setInitialFocus }} {\code{boolean} \cr If true then the callout will attempt to focus the first focusable element that it contains. If it doesn't find an element, no focus will be set and the method will return false. This means that it's the contents responsibility to either set focus or have focusable items.}
-\item {\bold{ shouldRestoreFocus }} {\code{boolean} \cr If true, when this component is unmounted, focus will be restored to the element that had focus when the component first mounted.}
-\item {\bold{ shouldUpdateWhenHidden }} {\code{boolean} \cr If true, the component will be updated even when hidden=true. Note that this would consume resources to update even though nothing is being shown to the user. This might be helpful though if your updates are small and you want the callout to be revealed fast to the user when hidden is set to false.}
-\item {\bold{ style }} {\code{React.CSSProperties} \cr CSS style to apply to the callout.
+\item \bold{ alignTargetEdge } \code{boolean} \cr If true the positioning logic will prefer to flip edges rather than to nudge the rectangle to fit within bounds, thus making sure the element aligns perfectly with target's alignment edge
+\item \bold{ ariaDescribedBy } \code{string} \cr Defines the element id referencing the element containing the description for the callout.
+\item \bold{ ariaLabel } \code{string} \cr Accessible label text for callout.
+\item \bold{ ariaLabelledBy } \code{string} \cr Defines the element id referencing the element containing label text for callout.
+\item \bold{ backgroundColor } \code{string} \cr The background color of the Callout in hex format ie. #ffffff.
+\item \bold{ beakWidth } \code{number} \cr The width of the beak.
+\item \bold{ bounds } \verb{IRectangle | ((target?: Target, targetWindow?: Window) => IRectangle | undefined)} \cr The bounding rectangle (or callback that returns a rectangle) for which the contextual menu can appear in.
+\item \bold{ calloutMaxHeight } \code{number} \cr Set max height of callout When not set the callout will expand with contents up to the bottom of the screen
+\item \bold{ calloutMaxWidth } \code{number} \cr Custom width for callout including borders. If value is 0, no width is applied.
+\item \bold{ calloutWidth } \code{number} \cr Custom width for callout including borders. If value is 0, no width is applied.
+\item \bold{ className } \code{string} \cr CSS class to apply to the callout.
+\item \bold{ coverTarget } \code{boolean} \cr If true the position returned will have the menu element cover the target. If false then it will position next to the target;
+\item \bold{ directionalHint } \code{DirectionalHint} \cr How the element should be positioned
+\item \bold{ directionalHintFixed } \code{boolean} \cr If true the position will not change sides in an attempt to fit the callout within bounds. It will still attempt to align it to whatever bounds are given.
+\item \bold{ directionalHintForRTL } \code{DirectionalHint} \cr How the element should be positioned in RTL layouts. If not specified, a mirror of the \code{directionalHint} alignment edge will be used instead. This means that \code{DirectionalHint.BottomLeft} will change to \code{DirectionalHint.BottomRight} but \code{DirectionalHint.LeftAuto} will not change.
+\item \bold{ doNotLayer } \code{boolean} \cr If true do not render on a new layer. If false render on a new layer.
+\item \bold{ finalHeight } \code{number} \cr Specify the final height of the content. To be used when expanding the content dynamically so that callout can adjust its position.
+\item \bold{ gapSpace } \code{number} \cr The gap between the Callout and the target
+\item \bold{ hidden } \code{boolean} \cr If specified, renders the Callout in a hidden state. Use this flag, rather than rendering a callout conditionally based on visibility, to improve rendering performance when it becomes visible. Note: When callout is hidden its content will not be rendered. It will only render once the callout is visible.
+\item \bold{ hideOverflow } \code{boolean} \cr Manually set OverflowYHidden style prop to true on calloutMain element A variety of callout load animations will need this to hide the scollbar that can appear
+\item \bold{ isBeakVisible } \code{boolean} \cr If true then the beak is visible. If false it will not be shown.
+\item \bold{ layerProps } \code{ILayerProps} \cr Optional props to pass to the Layer component hosting the panel.
+\item \bold{ minPagePadding } \code{number} \cr The minimum distance the callout will be away from the edge of the screen.
+\item \bold{ onDismiss } \verb{(ev?: any) => void} \cr Callback when the Callout tries to close.
+\item \bold{ onLayerMounted } \verb{() => void} \cr Optional callback when the layer content has mounted.
+\item \bold{ onPositioned } \verb{(positions?: ICalloutPositionedInfo) => void} \cr Optional callback that is called once the callout has been correctly positioned.
+\item \bold{ onRestoreFocus } \verb{(options: \{ originalElement?: HTMLElement | Window; containsFocus: boolean; \}) => void} \cr Called when the component is unmounting, and focus needs to be restored. Argument passed down contains two variables, the element that the underlying popup believes focus should go to * and whether or not the popup currently contains focus. If this is provided, focus will not be restored automatically, you'll need to call originalElement.focus()
+\item \bold{ onScroll } \verb{() => void} \cr Callback when the Callout body is scrolled.
+\item \bold{ preventDismissOnLostFocus } \code{boolean} \cr If true then the callout will not dismiss when it loses focus
+\item \bold{ preventDismissOnResize } \code{boolean} \cr If true then the callout will not dismiss on resize
+\item \bold{ preventDismissOnScroll } \code{boolean} \cr If true then the callout will not dismiss on scroll
+\item \bold{ role } \code{string} \cr Aria role assigned to the callout (Eg. dialog, alertdialog).
+\item \bold{ setInitialFocus } \code{boolean} \cr If true then the callout will attempt to focus the first focusable element that it contains. If it doesn't find an element, no focus will be set and the method will return false. This means that it's the contents responsibility to either set focus or have focusable items.
+\item \bold{ shouldRestoreFocus } \code{boolean} \cr If true, when this component is unmounted, focus will be restored to the element that had focus when the component first mounted.
+\item \bold{ shouldUpdateWhenHidden } \code{boolean} \cr If true, the component will be updated even when hidden=true. Note that this would consume resources to update even though nothing is being shown to the user. This might be helpful though if your updates are small and you want the callout to be revealed fast to the user when hidden is set to false.
+\item \bold{ style } \code{React.CSSProperties} \cr CSS style to apply to the callout.
+}
 
-If you set \code{overflowY} in this object, it provides a performance optimization by preventing Popup (underlying component of Callout) from calculating whether it needs a scroll bar.}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<ICalloutContentStyleProps, ICalloutContentStyles>} \cr Optional styles for the component.}
-\item {\bold{ target }} {\code{Target} \cr The target that the Callout should try to position itself based on. It can be either an Element a querySelector string of a valid Element or a MouseEvent. If MouseEvent is given then the origin point of the event will be used.}
-\item {\bold{ theme }} {\code{ITheme} \cr Optional theme for component}
+If you set \code{overflowY} in this object, it provides a performance optimization by preventing Popup (underlying component of Callout) from calculating whether it needs a scroll bar.
+\itemize{
+\item \bold{ styles } \verb{IStyleFunctionOrObject<ICalloutContentStyleProps, ICalloutContentStyles>} \cr Optional styles for the component.
+\item \bold{ target } \code{Target} \cr The target that the Callout should try to position itself based on. It can be either an Element a querySelector string of a valid Element or a MouseEvent. If MouseEvent is given then the origin point of the event will be used.
+\item \bold{ theme } \code{ITheme} \cr Optional theme for component
 }
 }
 \section{Best practices}{

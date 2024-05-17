@@ -44,14 +44,14 @@ you need to work using the original docs to achieve the desired result.
 }
 \details{
 \itemize{
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IPeoplePickerItemSelectedStyleProps, IPeoplePickerItemSelectedStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
-\item {\bold{ ValidationState }} {\code{ValidationState} \cr }
-\item {\bold{ className }} {\code{string} \cr Additional CSS class(es) to apply to the PeoplePickerItem root element.}
-\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by High-Order Component.}
-\item {\bold{ compact }} {\code{boolean} \cr Flag that controls whether each suggested PeoplePicker item (Persona) is rendered with or without secondary text for compact look.}
-\item {\bold{ personaProps }} {\code{IPersonaProps} \cr Persona props for each suggested for picking PeoplePicker item.}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IPeoplePickerItemSuggestionStyleProps, IPeoplePickerItemSuggestionStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
-\item {\bold{ suggestionsProps }} {\code{IBasePickerSuggestionsProps} \cr General common props for all PeoplePicker items suggestions.}
+\item \bold{ styles } \verb{IStyleFunctionOrObject<IPeoplePickerItemSelectedStyleProps, IPeoplePickerItemSelectedStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.
+\item \bold{ ValidationState } \code{ValidationState} \cr
+\item \bold{ className } \code{string} \cr Additional CSS class(es) to apply to the PeoplePickerItem root element.
+\item \bold{ theme } \code{ITheme} \cr Theme provided by High-Order Component.
+\item \bold{ compact } \code{boolean} \cr Flag that controls whether each suggested PeoplePicker item (Persona) is rendered with or without secondary text for compact look.
+\item \bold{ personaProps } \code{IPersonaProps} \cr Persona props for each suggested for picking PeoplePicker item.
+\item \bold{ styles } \verb{IStyleFunctionOrObject<IPeoplePickerItemSuggestionStyleProps, IPeoplePickerItemSuggestionStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.
+\item \bold{ suggestionsProps } \code{IBasePickerSuggestionsProps} \cr General common props for all PeoplePicker items suggestions.
 }
 }
 \section{Best practices}{

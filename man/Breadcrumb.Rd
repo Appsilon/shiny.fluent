@@ -24,23 +24,23 @@ you need to work using the original docs to achieve the desired result.
 }
 \details{
 \itemize{
-\item {\bold{ ariaLabel }} {\code{string} \cr Aria label for the root element of the breadcrumb (which is a navigation landmark).}
-\item {\bold{ className }} {\code{string} \cr Optional class for the root breadcrumb element.}
-\item {\bold{ componentRef }} {\verb{IRefObject<IBreadcrumb>} \cr Optional callback to access the IBreadcrumb interface. Use this instead of ref for accessing the public methods and properties of the component.}
-\item {\bold{ dividerAs }} {\verb{IComponentAs<IDividerAsProps>} \cr Render a custom divider in place of the default chevron \code{>}}
-\item {\bold{ focusZoneProps }} {\code{IFocusZoneProps} \cr Extra props for the root FocusZone.}
-\item {\bold{ items }} {\code{IBreadcrumbItem[]} \cr Collection of breadcrumbs to render}
-\item {\bold{ maxDisplayedItems }} {\code{number} \cr The maximum number of breadcrumbs to display before coalescing. If not specified, all breadcrumbs will be rendered.}
-\item {\bold{ onGrowData }} {\verb{(data: IBreadcrumbData) => IBreadcrumbData | undefined} \cr Method that determines how to group the length of the breadcrumb. Return undefined to never increase breadcrumb length.}
-\item {\bold{ onReduceData }} {\verb{(data: IBreadcrumbData) => IBreadcrumbData | undefined} \cr Method that determines how to reduce the length of the breadcrumb. Return undefined to never reduce breadcrumb length.}
-\item {\bold{ onRenderItem }} {\verb{IRenderFunction<IBreadcrumbItem>} \cr Custom render function for each breadcrumb item.}
-\item {\bold{ onRenderOverflowIcon }} {\verb{IRenderFunction<IButtonProps>} \cr Render a custom overflow icon in place of the default icon \code{...}}
-\item {\bold{ overflowAriaLabel }} {\code{string} \cr Aria label for the overflow button.}
-\item {\bold{ overflowIndex }} {\code{number} \cr Optional index where overflow items will be collapsed. Defaults to 0.}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IBreadcrumbStyleProps, IBreadcrumbStyles>} \cr }
-\item {\bold{ theme }} {\code{ITheme} \cr }
-\item {\bold{ tooltipHostProps }} {\code{ITooltipHostProps} \cr Extra props for the TooltipHost which wraps each breadcrumb item.}
-\item {\bold{ item }} {\code{IBreadcrumbItem} \cr Breadcrumb item to left of the divider to be passed for custom rendering. For overflowed items, it will be last item in the list.}
+\item \bold{ ariaLabel } \code{string} \cr Aria label for the root element of the breadcrumb (which is a navigation landmark).
+\item \bold{ className } \code{string} \cr Optional class for the root breadcrumb element.
+\item \bold{ componentRef } \verb{IRefObject<IBreadcrumb>} \cr Optional callback to access the IBreadcrumb interface. Use this instead of ref for accessing the public methods and properties of the component.
+\item \bold{ dividerAs } \verb{IComponentAs<IDividerAsProps>} \cr Render a custom divider in place of the default chevron \code{>}
+\item \bold{ focusZoneProps } \code{IFocusZoneProps} \cr Extra props for the root FocusZone.
+\item \bold{ items } \code{IBreadcrumbItem[]} \cr Collection of breadcrumbs to render
+\item \bold{ maxDisplayedItems } \code{number} \cr The maximum number of breadcrumbs to display before coalescing. If not specified, all breadcrumbs will be rendered.
+\item \bold{ onGrowData } \verb{(data: IBreadcrumbData) => IBreadcrumbData | undefined} \cr Method that determines how to group the length of the breadcrumb. Return undefined to never increase breadcrumb length.
+\item \bold{ onReduceData } \verb{(data: IBreadcrumbData) => IBreadcrumbData | undefined} \cr Method that determines how to reduce the length of the breadcrumb. Return undefined to never reduce breadcrumb length.
+\item \bold{ onRenderItem } \verb{IRenderFunction<IBreadcrumbItem>} \cr Custom render function for each breadcrumb item.
+\item \bold{ onRenderOverflowIcon } \verb{IRenderFunction<IButtonProps>} \cr Render a custom overflow icon in place of the default icon \code{...}
+\item \bold{ overflowAriaLabel } \code{string} \cr Aria label for the overflow button.
+\item \bold{ overflowIndex } \code{number} \cr Optional index where overflow items will be collapsed. Defaults to 0.
+\item \bold{ styles } \verb{IStyleFunctionOrObject<IBreadcrumbStyleProps, IBreadcrumbStyles>} \cr
+\item \bold{ theme } \code{ITheme} \cr
+\item \bold{ tooltipHostProps } \code{ITooltipHostProps} \cr Extra props for the TooltipHost which wraps each breadcrumb item.
+\item \bold{ item } \code{IBreadcrumbItem} \cr Breadcrumb item to left of the divider to be passed for custom rendering. For overflowed items, it will be last item in the list.
 }
 }
 \examples{

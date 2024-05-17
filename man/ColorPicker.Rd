@@ -40,47 +40,49 @@ you need to work using the original docs to achieve the desired result.
 }
 \details{
 \itemize{
-\item {\bold{ alphaLabel }} {\code{string} \cr Label for the alpha textfield.}
-\item {\bold{ alphaSliderHidden }} {\code{boolean} \cr Whether to hide the alpha (or transparency) slider and text field.}
-\item {\bold{ alphaType }} {\code{'alpha' | 'transparency' | 'none'} \cr \code{alpha} (the default) means display a slider and text field for editing alpha values. \code{transparency} also displays a slider and text field but for editing transparency values. \code{none} hides these controls.
+\item \bold{ alphaLabel } \code{string} \cr Label for the alpha textfield.
+\item \bold{ alphaSliderHidden } \code{boolean} \cr Whether to hide the alpha (or transparency) slider and text field.
+\item \bold{ alphaType } \code{'alpha' | 'transparency' | 'none'} \cr \code{alpha} (the default) means display a slider and text field for editing alpha values. \code{transparency} also displays a slider and text field but for editing transparency values. \code{none} hides these controls.
+}
 
-Alpha represents the opacity of the color, whereas transparency represents the transparentness of the color: i.e. a 30\% transparent color has 70\% opaqueness.}
-\item {\bold{ blueLabel }} {\code{string} \cr Label for the blue text field.}
-\item {\bold{ className }} {\code{string} \cr Additional CSS class(es) to apply to the ColorPicker.}
-\item {\bold{ color }} {\code{IColor | string} \cr Object or CSS-compatible string to describe the color.}
-\item {\bold{ componentRef }} {\verb{IRefObject<IColorPicker>} \cr Gets the component ref.}
-\item {\bold{ greenLabel }} {\code{string} \cr Label for the green text field.}
-\item {\bold{ hexLabel }} {\code{string} \cr Label for the hex text field.}
-\item {\bold{ onChange }} {\verb{(ev: React.SyntheticEvent<HTMLElement>, color: IColor) => void} \cr Callback for when the user changes the color. (Not called when the color is changed via props.)}
-\item {\bold{ redLabel }} {\code{string} \cr Label for the red text field.}
-\item {\bold{ showPreview }} {\code{boolean} \cr Whether to show color preview box.}
-\item {\bold{ strings }} {\code{IColorPickerStrings} \cr Labels for elements within the ColorPicker. Defaults are provided in English only.}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IColorPickerStyleProps, IColorPickerStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
-\item {\bold{ theme }} {\code{ITheme} \cr Theme (provided through customization).}
-\item {\bold{ ariaDescription }} {\code{string} \cr Detailed description for how to use the color rectangle. Moving the thumb horizontally adjusts saturation and moving it vertically adjusts value (essentially, brightness).}
-\item {\bold{ ariaLabel }} {\code{string} \cr Label of the ColorRectangle for the benefit of screen reader users.}
-\item {\bold{ ariaValueFormat }} {\code{string} \cr Format string for the color rectangle's current value as read by screen readers. The string must include descriptions and two placeholders for the current values: \code{{0}} for saturation and \code{{1}} for value/brightness.}
-\item {\bold{ className }} {\code{string} \cr Additional CSS class(es) to apply to the ColorRectangle.}
-\item {\bold{ color }} {\code{IColor} \cr Current color of the rectangle.}
-\item {\bold{ componentRef }} {\verb{IRefObject<IColorRectangle>} \cr Gets the component ref.}
-\item {\bold{ minSize }} {\code{number} \cr Minimum width and height.}
-\item {\bold{ onChange }} {\verb{(ev: React.MouseEvent | React.KeyboardEvent, color: IColor) => void} \cr Callback for when the color changes.}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IColorRectangleStyleProps, IColorRectangleStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
-\item {\bold{ theme }} {\code{ITheme} \cr Theme (provided through customization).}
-\item {\bold{ ariaLabel }} {\code{string} \cr Label of the ColorSlider for the benefit of screen reader users.}
-\item {\bold{ className }} {\code{string} \cr Additional CSS class(es) to apply to the ColorSlider.}
-\item {\bold{ componentRef }} {\verb{IRefObject<IColorSlider>} \cr Gets the component ref.}
-\item {\bold{ isAlpha }} {\code{boolean} \cr If true, the slider represents an alpha slider and will display a gray checkered pattern in the background. Otherwise, the slider represents a hue slider.}
-\item {\bold{ maxValue }} {\code{number} \cr Maximum value of the slider.}
-\item {\bold{ minValue }} {\code{number} \cr Minimum value of the slider.}
-\item {\bold{ onChange }} {\verb{(event: React.MouseEvent | React.KeyboardEvent, newValue?: number) => void} \cr Callback issued when the value changes.}
-\item {\bold{ overlayColor }} {\code{string} \cr Hex color to use when rendering an alpha or transparency slider's overlay, \emph{without} the \verb{#}.}
-\item {\bold{ overlayStyle }} {\code{React.CSSProperties} \cr Custom style for the overlay element.}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IColorSliderStyleProps, IColorSliderStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
-\item {\bold{ theme }} {\code{ITheme} \cr Theme (provided through customization).}
-\item {\bold{ thumbColor }} {\code{string} \cr CSS-compatible string for the color of the thumb element.}
-\item {\bold{ type }} {\code{'hue' | 'alpha' | 'transparency'} \cr Type of slider to display.}
-\item {\bold{ value }} {\code{number} \cr Current value of the slider.}
+Alpha represents the opacity of the color, whereas transparency represents the transparentness of the color: i.e. a 30\% transparent color has 70\% opaqueness.
+\itemize{
+\item \bold{ blueLabel } \code{string} \cr Label for the blue text field.
+\item \bold{ className } \code{string} \cr Additional CSS class(es) to apply to the ColorPicker.
+\item \bold{ color } \code{IColor | string} \cr Object or CSS-compatible string to describe the color.
+\item \bold{ componentRef } \verb{IRefObject<IColorPicker>} \cr Gets the component ref.
+\item \bold{ greenLabel } \code{string} \cr Label for the green text field.
+\item \bold{ hexLabel } \code{string} \cr Label for the hex text field.
+\item \bold{ onChange } \verb{(ev: React.SyntheticEvent<HTMLElement>, color: IColor) => void} \cr Callback for when the user changes the color. (Not called when the color is changed via props.)
+\item \bold{ redLabel } \code{string} \cr Label for the red text field.
+\item \bold{ showPreview } \code{boolean} \cr Whether to show color preview box.
+\item \bold{ strings } \code{IColorPickerStrings} \cr Labels for elements within the ColorPicker. Defaults are provided in English only.
+\item \bold{ styles } \verb{IStyleFunctionOrObject<IColorPickerStyleProps, IColorPickerStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.
+\item \bold{ theme } \code{ITheme} \cr Theme (provided through customization).
+\item \bold{ ariaDescription } \code{string} \cr Detailed description for how to use the color rectangle. Moving the thumb horizontally adjusts saturation and moving it vertically adjusts value (essentially, brightness).
+\item \bold{ ariaLabel } \code{string} \cr Label of the ColorRectangle for the benefit of screen reader users.
+\item \bold{ ariaValueFormat } \code{string} \cr Format string for the color rectangle's current value as read by screen readers. The string must include descriptions and two placeholders for the current values: \code{{0}} for saturation and \code{{1}} for value/brightness.
+\item \bold{ className } \code{string} \cr Additional CSS class(es) to apply to the ColorRectangle.
+\item \bold{ color } \code{IColor} \cr Current color of the rectangle.
+\item \bold{ componentRef } \verb{IRefObject<IColorRectangle>} \cr Gets the component ref.
+\item \bold{ minSize } \code{number} \cr Minimum width and height.
+\item \bold{ onChange } \verb{(ev: React.MouseEvent | React.KeyboardEvent, color: IColor) => void} \cr Callback for when the color changes.
+\item \bold{ styles } \verb{IStyleFunctionOrObject<IColorRectangleStyleProps, IColorRectangleStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.
+\item \bold{ theme } \code{ITheme} \cr Theme (provided through customization).
+\item \bold{ ariaLabel } \code{string} \cr Label of the ColorSlider for the benefit of screen reader users.
+\item \bold{ className } \code{string} \cr Additional CSS class(es) to apply to the ColorSlider.
+\item \bold{ componentRef } \verb{IRefObject<IColorSlider>} \cr Gets the component ref.
+\item \bold{ isAlpha } \code{boolean} \cr If true, the slider represents an alpha slider and will display a gray checkered pattern in the background. Otherwise, the slider represents a hue slider.
+\item \bold{ maxValue } \code{number} \cr Maximum value of the slider.
+\item \bold{ minValue } \code{number} \cr Minimum value of the slider.
+\item \bold{ onChange } \verb{(event: React.MouseEvent | React.KeyboardEvent, newValue?: number) => void} \cr Callback issued when the value changes.
+\item \bold{ overlayColor } \code{string} \cr Hex color to use when rendering an alpha or transparency slider's overlay, \emph{without} the \verb{#}.
+\item \bold{ overlayStyle } \code{React.CSSProperties} \cr Custom style for the overlay element.
+\item \bold{ styles } \verb{IStyleFunctionOrObject<IColorSliderStyleProps, IColorSliderStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.
+\item \bold{ theme } \code{ITheme} \cr Theme (provided through customization).
+\item \bold{ thumbColor } \code{string} \cr CSS-compatible string for the color of the thumb element.
+\item \bold{ type } \code{'hue' | 'alpha' | 'transparency'} \cr Type of slider to display.
+\item \bold{ value } \code{number} \cr Current value of the slider.
 }
 }
 \examples{

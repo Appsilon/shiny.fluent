@@ -22,13 +22,13 @@ you need to work using the original docs to achieve the desired result.
 }
 \details{
 \itemize{
-\item {\bold{ allowTouchBodyScroll }} {\code{boolean} \cr Allow body scroll on touch devices. Changing after mounting has no effect.}
-\item {\bold{ className }} {\code{string} \cr Additional css class to apply to the Overlay}
-\item {\bold{ componentRef }} {\verb{IRefObject<IOverlay>} \cr Gets the component ref.}
-\item {\bold{ isDarkThemed }} {\code{boolean} \cr Whether to use the dark-themed overlay.}
-\item {\bold{ onClick }} {\verb{() => void} \cr }
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IOverlayStyleProps, IOverlayStyles>} \cr Call to provide customized styling that will layer on top of the variant rules}
-\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by HOC.}
+\item \bold{ allowTouchBodyScroll } \code{boolean} \cr Allow body scroll on touch devices. Changing after mounting has no effect.
+\item \bold{ className } \code{string} \cr Additional css class to apply to the Overlay
+\item \bold{ componentRef } \verb{IRefObject<IOverlay>} \cr Gets the component ref.
+\item \bold{ isDarkThemed } \code{boolean} \cr Whether to use the dark-themed overlay.
+\item \bold{ onClick } \verb{() => void} \cr
+\item \bold{ styles } \verb{IStyleFunctionOrObject<IOverlayStyleProps, IOverlayStyles>} \cr Call to provide customized styling that will layer on top of the variant rules
+\item \bold{ theme } \code{ITheme} \cr Theme provided by HOC.
 }
 }
 \examples{

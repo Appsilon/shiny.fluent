@@ -51,29 +51,29 @@ you need to work using the original docs to achieve the desired result.
 }
 \details{
 \itemize{
-\item {\bold{ buttonStyles }} {\code{IButtonStyles} \cr Custom styles for individual button}
-\item {\bold{ cacheKey }} {\code{string} \cr A custom cache key to be used for this item. If \code{cacheKey} is changed, the cache will invalidate. Defaults to \code{key} value.}
-\item {\bold{ commandBarButtonAs }} {\verb{IComponentAs<ICommandBarItemProps>} \cr Method to override the render of the individual command bar button. Not used when item is rendered in overflow.}
-\item {\bold{ iconOnly }} {\code{boolean} \cr Show only an icon for this item, not text. Does not apply if item is in the overflow.}
-\item {\bold{ renderedInOverflow }} {\code{boolean} \cr Context under which the item is being rendered. This value is mutated by the CommandBar and is useful for adjusting the \code{onRender} function.}
-\item {\bold{ tooltipHostProps }} {\code{ITooltipHostProps} \cr Props for the tooltip when in \code{iconOnly} mode.}
-\item {\bold{ ariaLabel }} {\code{string} \cr Accessibility text to be read by the screen reader when the user's focus enters the command bar. The screen reader will read this text after reading information about the first focusable item in the command bar.}
-\item {\bold{ buttonAs }} {\verb{IComponentAs<IButtonProps>} \cr Custom component for the near and far item buttons. Not used for overflow menu items.}
-\item {\bold{ className }} {\code{string} \cr Additional css class to apply to the command bar}
-\item {\bold{ componentRef }} {\verb{IRefObject<ICommandBar>} \cr Optional callback to access the ICommandBar interface. Use this instead of ref for accessing the public methods and properties of the component.}
-\item {\bold{ dataDidRender }} {\verb{(renderedData: any) => void} \cr Function to be called every time data is rendered. It provides the data that was actually rendered. A use case would be adding telemetry when a particular control is shown in an overflow or dropped as a result of \code{onReduceData}, or to count the number of renders that an implementation of \code{onReduceData} triggers.}
-\item {\bold{ farItems }} {\code{ICommandBarItemProps[]} \cr Items to render on the right side (or left, in RTL). ICommandBarItemProps extends IContextualMenuItem.}
-\item {\bold{ items }} {\code{ICommandBarItemProps[]} \cr Items to render. ICommandBarItemProps extends IContextualMenuItem.}
-\item {\bold{ onDataGrown }} {\verb{(movedItem: ICommandBarItemProps) => void} \cr Callback invoked when data has been grown.}
-\item {\bold{ onDataReduced }} {\verb{(movedItem: ICommandBarItemProps) => void} \cr Callback invoked when data has been reduced.}
-\item {\bold{ onGrowData }} {\verb{(data: ICommandBarData) => ICommandBarData | undefined} \cr Custom function to grow data if items are too small for the given space. Return \code{undefined} if no more steps can be taken to avoid infinate loop.}
-\item {\bold{ onReduceData }} {\verb{(data: ICommandBarData) => ICommandBarData | undefined} \cr Custom function to reduce data if items do not fit in given space. Return \code{undefined} if no more steps can be taken to avoid infinate loop.}
-\item {\bold{ overflowButtonAs }} {\verb{IComponentAs<IButtonProps>} \cr Custom component for the overflow button.}
-\item {\bold{ overflowButtonProps }} {\code{IButtonProps} \cr Props to be passed to overflow button. If \code{menuProps} are passed through this prop, any items provided will be prepended to any computed overflow items.}
-\item {\bold{ overflowItems }} {\code{ICommandBarItemProps[]} \cr Default items to have in the overflow menu. ICommandBarItemProps extends IContextualMenuItem.}
-\item {\bold{ shiftOnReduce }} {\code{boolean} \cr When true, items will be 'shifted' off the front of the array when reduced, and unshifted during grow.}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<ICommandBarStyleProps, ICommandBarStyles>} \cr Customized styling that will layer on top of the variant rules.}
-\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by HOC.}
+\item \bold{ buttonStyles } \code{IButtonStyles} \cr Custom styles for individual button
+\item \bold{ cacheKey } \code{string} \cr A custom cache key to be used for this item. If \code{cacheKey} is changed, the cache will invalidate. Defaults to \code{key} value.
+\item \bold{ commandBarButtonAs } \verb{IComponentAs<ICommandBarItemProps>} \cr Method to override the render of the individual command bar button. Not used when item is rendered in overflow.
+\item \bold{ iconOnly } \code{boolean} \cr Show only an icon for this item, not text. Does not apply if item is in the overflow.
+\item \bold{ renderedInOverflow } \code{boolean} \cr Context under which the item is being rendered. This value is mutated by the CommandBar and is useful for adjusting the \code{onRender} function.
+\item \bold{ tooltipHostProps } \code{ITooltipHostProps} \cr Props for the tooltip when in \code{iconOnly} mode.
+\item \bold{ ariaLabel } \code{string} \cr Accessibility text to be read by the screen reader when the user's focus enters the command bar. The screen reader will read this text after reading information about the first focusable item in the command bar.
+\item \bold{ buttonAs } \verb{IComponentAs<IButtonProps>} \cr Custom component for the near and far item buttons. Not used for overflow menu items.
+\item \bold{ className } \code{string} \cr Additional css class to apply to the command bar
+\item \bold{ componentRef } \verb{IRefObject<ICommandBar>} \cr Optional callback to access the ICommandBar interface. Use this instead of ref for accessing the public methods and properties of the component.
+\item \bold{ dataDidRender } \verb{(renderedData: any) => void} \cr Function to be called every time data is rendered. It provides the data that was actually rendered. A use case would be adding telemetry when a particular control is shown in an overflow or dropped as a result of \code{onReduceData}, or to count the number of renders that an implementation of \code{onReduceData} triggers.
+\item \bold{ farItems } \code{ICommandBarItemProps[]} \cr Items to render on the right side (or left, in RTL). ICommandBarItemProps extends IContextualMenuItem.
+\item \bold{ items } \code{ICommandBarItemProps[]} \cr Items to render. ICommandBarItemProps extends IContextualMenuItem.
+\item \bold{ onDataGrown } \verb{(movedItem: ICommandBarItemProps) => void} \cr Callback invoked when data has been grown.
+\item \bold{ onDataReduced } \verb{(movedItem: ICommandBarItemProps) => void} \cr Callback invoked when data has been reduced.
+\item \bold{ onGrowData } \verb{(data: ICommandBarData) => ICommandBarData | undefined} \cr Custom function to grow data if items are too small for the given space. Return \code{undefined} if no more steps can be taken to avoid infinate loop.
+\item \bold{ onReduceData } \verb{(data: ICommandBarData) => ICommandBarData | undefined} \cr Custom function to reduce data if items do not fit in given space. Return \code{undefined} if no more steps can be taken to avoid infinate loop.
+\item \bold{ overflowButtonAs } \verb{IComponentAs<IButtonProps>} \cr Custom component for the overflow button.
+\item \bold{ overflowButtonProps } \code{IButtonProps} \cr Props to be passed to overflow button. If \code{menuProps} are passed through this prop, any items provided will be prepended to any computed overflow items.
+\item \bold{ overflowItems } \code{ICommandBarItemProps[]} \cr Default items to have in the overflow menu. ICommandBarItemProps extends IContextualMenuItem.
+\item \bold{ shiftOnReduce } \code{boolean} \cr When true, items will be 'shifted' off the front of the array when reduced, and unshifted during grow.
+\item \bold{ styles } \verb{IStyleFunctionOrObject<ICommandBarStyleProps, ICommandBarStyles>} \cr Customized styling that will layer on top of the variant rules.
+\item \bold{ theme } \code{ITheme} \cr Theme provided by HOC.
 }
 }
 \examples{

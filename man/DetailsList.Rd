@@ -22,190 +22,192 @@ you need to work using the original docs to achieve the desired result.
 }
 \details{
 \itemize{
-\item {\bold{ onColumnDragEnd }} {\verb{(props: \{ dropLocation?: ColumnDragEndLocation; \}, event: MouseEvent) => void} \cr Callback to notify the column dragEnd event to List Need this to check whether the dragEnd has happened on corresponding list or outside of the list}
-\item {\bold{ cellStyleProps }} {\code{ICellStyleProps} \cr Custom styles for cell rendering.}
-\item {\bold{ column }} {\code{IColumn} \cr The column definition for the component instance.}
-\item {\bold{ columnIndex }} {\code{number} \cr The column index for the component instance.}
-\item {\bold{ componentRef }} {\verb{() => void} \cr A reference to the component instance.}
-\item {\bold{ dragDropHelper }} {\code{IDragDropHelper | null} \cr The drag and drop helper for the component instance.}
-\item {\bold{ isDraggable }} {\code{boolean} \cr Whether or not the column can be re-ordered via drag and drop.}
-\item {\bold{ isDropped }} {\code{boolean} \cr Whether or not the column has been dropped via drag and drop.}
-\item {\bold{ onColumnClick }} {\verb{(ev: React.MouseEvent<HTMLElement>, column: IColumn) => void} \cr Callback fired when click event occurs.}
-\item {\bold{ onColumnContextMenu }} {\verb{(column: IColumn, ev: React.MouseEvent<HTMLElement>) => void} \cr Callback fired on contextual menu event to provide contextual menu UI.}
-\item {\bold{ onRenderColumnHeaderTooltip }} {\verb{IRenderFunction<IDetailsColumnRenderTooltipProps>} \cr Render function for providing a column header tooltip.}
-\item {\bold{ parentId }} {\code{string} \cr Parent ID used for accessibility label(s).}
-\item {\bold{ setDraggedItemIndex }} {\verb{(itemIndex: number) => void} \cr }
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IDetailsColumnStyleProps, IDetailsColumnStyles>} \cr The component styles to respect during render.}
-\item {\bold{ theme }} {\code{ITheme} \cr The theme object to respect during render.}
-\item {\bold{ updateDragInfo }} {\verb{(props: \{ itemIndex: number; \}, event?: MouseEvent) => void} \cr Callback on drag and drop event.}
-\item {\bold{ useFastIcons }} {\code{boolean} \cr Whether to use fast icon and check components. The icons can't be targeted by customization but are still customizable via class names.}
-\item {\bold{ columns }} {\code{IColumn[]} \cr Column metadata}
-\item {\bold{ selection }} {\code{ISelection} \cr Selection from utilities}
-\item {\bold{ selectionMode }} {\code{SelectionMode} \cr Selection mode}
-\item {\bold{ onRenderFooter }} {\verb{IRenderFunction<IDetailsGroupDividerProps>} \cr }
-\item {\bold{ onRenderHeader }} {\verb{IRenderFunction<IDetailsGroupDividerProps>} \cr }
-\item {\bold{ ariaLabel }} {\code{string} \cr ariaLabel for the entire header}
-\item {\bold{ ariaLabelForSelectAllCheckbox }} {\code{string} \cr ariaLabel for the header checkbox that selects or deselects everything}
-\item {\bold{ ariaLabelForSelectionColumn }} {\code{string} \cr ariaLabel for the selection column}
-\item {\bold{ ariaLabelForToggleAllGroupsButton }} {\code{string} \cr ariaLabel for expand/collapse group button}
-\item {\bold{ className }} {\code{string} \cr Overriding class name}
-\item {\bold{ collapseAllVisibility }} {\code{CollapseAllVisibility} \cr Whether to collapse for all visibility}
-\item {\bold{ columnReorderOptions }} {\code{IColumnReorderOptions} \cr Column reordering options}
-\item {\bold{ columnReorderProps }} {\code{IColumnReorderHeaderProps} \cr Column reordering options}
-\item {\bold{ componentRef }} {\verb{IRefObject<IDetailsHeader>} \cr Ref to the component itself}
-\item {\bold{ isAllCollapsed }} {\code{boolean} \cr Whether or not all is collapsed}
-\item {\bold{ layoutMode }} {\code{DetailsListLayoutMode} \cr Layout mode - fixedColumns or justified}
-\item {\bold{ minimumPixelsForDrag }} {\code{number} \cr Minimum pixels to be moved before dragging is registered}
-\item {\bold{ onColumnAutoResized }} {\verb{(column: IColumn, columnIndex: number) => void} \cr Callback for when column is automatically resized}
-\item {\bold{ onColumnClick }} {\verb{(ev: React.MouseEvent<HTMLElement>, column: IColumn) => void} \cr Callback for when the column is clicked}
-\item {\bold{ onColumnContextMenu }} {\verb{(column: IColumn, ev: React.MouseEvent<HTMLElement>) => void} \cr Callback for when the column needs to show a context menu}
-\item {\bold{ onColumnIsSizingChanged }} {\verb{(column: IColumn, isSizing: boolean) => void} \cr Callback for when column sizing has changed}
-\item {\bold{ onColumnResized }} {\verb{(column: IColumn, newWidth: number, columnIndex: number) => void} \cr Callback for when column is resized}
-\item {\bold{ onRenderColumnHeaderTooltip }} {\verb{IRenderFunction<IDetailsColumnRenderTooltipProps>} \cr Callback to render a tooltip for the column header}
-\item {\bold{ onRenderDetailsCheckbox }} {\verb{IRenderFunction<IDetailsCheckboxProps>} \cr If provided, can be used to render a custom checkbox}
-\item {\bold{ onToggleCollapseAll }} {\verb{(isAllCollapsed: boolean) => void} \cr Callback for when collapse all is toggled}
-\item {\bold{ selectAllVisibility }} {\code{SelectAllVisibility} \cr Select all button visibility}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IDetailsHeaderStyleProps, IDetailsHeaderStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
-\item {\bold{ theme }} {\code{ITheme} \cr Theme from the Higher Order Component}
-\item {\bold{ useFastIcons }} {\code{boolean} \cr Whether to use fast icon and check components. The icons can't be targeted by customization but are still customizable via class names.}
-\item {\bold{ columns }} {\code{IColumn[]} \cr Column metadata}
-\item {\bold{ selection }} {\code{ISelection} \cr Selection from utilities}
-\item {\bold{ selectionMode }} {\code{SelectionMode} \cr Selection mode}
-\item {\bold{ cellStyleProps }} {\code{ICellStyleProps} \cr Rules for rendering column cells.}
-\item {\bold{ checkboxVisibility }} {\code{CheckboxVisibility | undefined} \cr Checkbox visibility}
-\item {\bold{ columns }} {\code{IColumn[]} \cr Column metadata}
-\item {\bold{ groupNestingDepth }} {\code{number} \cr Nesting depth of a grouping}
-\item {\bold{ indentWidth }} {\code{number | undefined} \cr How much to indent}
-\item {\bold{ rowWidth }} {\code{number} \cr Minimum width of the row.}
-\item {\bold{ selection }} {\code{ISelection | undefined} \cr Selection from utilities}
-\item {\bold{ selectionMode }} {\code{SelectionMode | undefined} \cr Selection mode}
-\item {\bold{ viewport }} {\code{IViewport | undefined} \cr View port of the virtualized list}
-\item {\bold{ ariaLabel }} {\code{string} \cr Accessible label describing or summarizing the list.}
-\item {\bold{ ariaLabelForGrid }} {\code{string} \cr Accessible label for the grid within the list.}
-\item {\bold{ ariaLabelForListHeader }} {\code{string} \cr Accessible label for the list header.}
-\item {\bold{ ariaLabelForSelectAllCheckbox }} {\code{string} \cr Accessible label for the select all checkbox.}
-\item {\bold{ ariaLabelForSelectionColumn }} {\code{string} \cr Accessible label for the name of the selection column.}
-\item {\bold{ cellStyleProps }} {\code{ICellStyleProps} \cr Props impacting the render style of cells. Since these have an impact on calculated column widths, they are handled separately from normal theme styling, but they are passed to the styling system.}
-\item {\bold{ checkboxCellClassName }} {\code{string} \cr Class name to add to the cell of a checkbox.}
-\item {\bold{ checkboxVisibility }} {\code{CheckboxVisibility} \cr Controls the visibility of selection check box.}
-\item {\bold{ checkButtonAriaLabel }} {\code{string} \cr Accessible label for the check button.}
-\item {\bold{ className }} {\code{string} \cr Class name to add to the root element.}
-\item {\bold{ columnReorderOptions }} {\code{IColumnReorderOptions} \cr Options for column reordering using drag and drop.}
-\item {\bold{ columns }} {\code{IColumn[]} \cr column defitions. If none are provided, default columns will be created based on the items' properties.}
-\item {\bold{ compact }} {\code{boolean} \cr Whether to render in compact mode.}
-\item {\bold{ componentRef }} {\verb{IRefObject<IDetailsList>} \cr Callback to access the IDetailsList interface. Use this instead of ref for accessing the public methods and properties of the component.}
-\item {\bold{ constrainMode }} {\code{ConstrainMode} \cr Controls how the list contrains overflow.}
-\item {\bold{ disableSelectionZone }} {\code{boolean} \cr Whether to disable the built-in SelectionZone, so the host component can provide its own.}
-\item {\bold{ dragDropEvents }} {\code{IDragDropEvents} \cr Map of callback functions related to row drag and drop functionality.}
-\item {\bold{ enableUpdateAnimations }} {\code{boolean} \cr Whether to animate updates}
-\item {\bold{ enterModalSelectionOnTouch }} {\code{boolean} \cr Whether the selection zone should enter modal state on touch.}
-\item {\bold{ getCellValueKey }} {\verb{(item?: any, index?: number, column?: IColumn) => string} \cr If provided, will be the "default" item column cell value return. A column's \code{getValueKey} can override \code{getCellValueKey}.}
-\item {\bold{ getGroupHeight }} {\code{IGroupedListProps['getGroupHeight']} \cr Callback to override default group height calculation used by list virtualization.}
-\item {\bold{ getKey }} {\verb{(item: any, index?: number) => string} \cr Callback to get the item key, to be used in the selection and on render. Must be provided if sorting or filtering is enabled.}
-\item {\bold{ getRowAriaDescribedBy }} {\verb{(item: any) => string} \cr Callback to get the aria-describedby IDs (space-separated strings) of elements that describe the item.}
-\item {\bold{ getRowAriaLabel }} {\verb{(item: any) => string} \cr Callback to get the aria-label string for a given item.}
-\item {\bold{ groupProps }} {\code{IDetailsGroupRenderProps} \cr Override properties to render groups.}
-\item {\bold{ groups }} {\code{IGroup[]} \cr Grouping instructions.}
-\item {\bold{ indentWidth }} {\code{number} \cr Override for the indent width used for group nesting.}
-\item {\bold{ initialFocusedIndex }} {\code{number} \cr Default index to set focus to once the items have rendered and the index exists.}
-\item {\bold{ isHeaderVisible }} {\code{boolean} \cr Controls the visibility of the header.}
-\item {\bold{ isPlaceholderData }} {\code{boolean} \cr Set this to true to indicate that the items being displayed are placeholder data.}
-\item {\bold{ items }} {\code{any[]} \cr The items to render.}
-\item {\bold{ layoutMode }} {\code{DetailsListLayoutMode} \cr Controls how the columns are adjusted.}
-\item {\bold{ listProps }} {\code{IListProps} \cr Properties to pass through to the List components being rendered.}
-\item {\bold{ minimumPixelsForDrag }} {\code{number} \cr The minimum mouse move distance to interpret the action as drag event.}
-\item {\bold{ onActiveItemChanged }} {\verb{(item?: any, index?: number, ev?: React.FocusEvent<HTMLElement>) => void} \cr Callback for when an item in the list becomes active by clicking anywhere inside the row or navigating to it with the keyboard.}
-\item {\bold{ onColumnHeaderClick }} {\verb{(ev?: React.MouseEvent<HTMLElement>, column?: IColumn) => void} \cr Callback for when the user clicks on the column header.}
-\item {\bold{ onColumnHeaderContextMenu }} {\verb{(column?: IColumn, ev?: React.MouseEvent<HTMLElement>) => void} \cr Callback for when the user asks for a contextual menu (usually via right click) from a column header.}
-\item {\bold{ onColumnResize }} {\verb{(column?: IColumn, newWidth?: number, columnIndex?: number) => void} \cr Callback fired on column resize}
-\item {\bold{ onDidUpdate }} {\verb{(detailsList?: DetailsListBase) => void} \cr Callback for when the list has been updated. Useful for telemetry tracking externally.}
-\item {\bold{ onItemContextMenu }} {\verb{(item?: any, index?: number, ev?: Event) => void | boolean} \cr Callback for when the context menu of an item has been accessed. If undefined or false is returned, \code{ev.preventDefault()} will be called.}
-\item {\bold{ onItemInvoked }} {\verb{(item?: any, index?: number, ev?: Event) => void} \cr Callback for when a given row has been invoked (by pressing enter while it is selected.)}
-\item {\bold{ onRenderCheckbox }} {\verb{IRenderFunction<IDetailsListCheckboxProps>} \cr If provided, can be used to render a custom checkbox.}
-\item {\bold{ onRenderDetailsFooter }} {\verb{IRenderFunction<IDetailsFooterProps>} \cr An override to render the details footer.}
-\item {\bold{ onRenderDetailsHeader }} {\verb{IRenderFunction<IDetailsHeaderProps>} \cr An override to render the details header.}
-\item {\bold{ onRenderItemColumn }} {\verb{(item?: any, index?: number, column?: IColumn) => React.ReactNode} \cr If provided, will be the "default" item column renderer method. This affects cells within the rows, not the rows themselves. If a column definition provides its own \code{onRender} method, that will be used instead of this.}
-\item {\bold{ onRenderMissingItem }} {\verb{(index?: number, rowProps?: IDetailsRowProps) => React.ReactNode} \cr Callback for what to render when the item is missing.}
-\item {\bold{ onRenderRow }} {\verb{IRenderFunction<IDetailsRowProps>} \cr Callback to override the default row rendering.}
-\item {\bold{ onRowDidMount }} {\verb{(item?: any, index?: number) => void} \cr Callback for when a given row has been mounted. Useful for identifying when a row has been rendered on the page.}
-\item {\bold{ onRowWillUnmount }} {\verb{(item?: any, index?: number) => void} \cr Callback for when a given row has been unmounted. Useful for identifying when a row has been removed from the page.}
-\item {\bold{ onShouldVirtualize }} {\verb{(props: IListProps) => boolean} \cr Callback to determine whether the list should be rendered in full, or virtualized.
+\item \bold{ onColumnDragEnd } \verb{(props: \{ dropLocation?: ColumnDragEndLocation; \}, event: MouseEvent) => void} \cr Callback to notify the column dragEnd event to List Need this to check whether the dragEnd has happened on corresponding list or outside of the list
+\item \bold{ cellStyleProps } \code{ICellStyleProps} \cr Custom styles for cell rendering.
+\item \bold{ column } \code{IColumn} \cr The column definition for the component instance.
+\item \bold{ columnIndex } \code{number} \cr The column index for the component instance.
+\item \bold{ componentRef } \verb{() => void} \cr A reference to the component instance.
+\item \bold{ dragDropHelper } \code{IDragDropHelper | null} \cr The drag and drop helper for the component instance.
+\item \bold{ isDraggable } \code{boolean} \cr Whether or not the column can be re-ordered via drag and drop.
+\item \bold{ isDropped } \code{boolean} \cr Whether or not the column has been dropped via drag and drop.
+\item \bold{ onColumnClick } \verb{(ev: React.MouseEvent<HTMLElement>, column: IColumn) => void} \cr Callback fired when click event occurs.
+\item \bold{ onColumnContextMenu } \verb{(column: IColumn, ev: React.MouseEvent<HTMLElement>) => void} \cr Callback fired on contextual menu event to provide contextual menu UI.
+\item \bold{ onRenderColumnHeaderTooltip } \verb{IRenderFunction<IDetailsColumnRenderTooltipProps>} \cr Render function for providing a column header tooltip.
+\item \bold{ parentId } \code{string} \cr Parent ID used for accessibility label(s).
+\item \bold{ setDraggedItemIndex } \verb{(itemIndex: number) => void} \cr
+\item \bold{ styles } \verb{IStyleFunctionOrObject<IDetailsColumnStyleProps, IDetailsColumnStyles>} \cr The component styles to respect during render.
+\item \bold{ theme } \code{ITheme} \cr The theme object to respect during render.
+\item \bold{ updateDragInfo } \verb{(props: \{ itemIndex: number; \}, event?: MouseEvent) => void} \cr Callback on drag and drop event.
+\item \bold{ useFastIcons } \code{boolean} \cr Whether to use fast icon and check components. The icons can't be targeted by customization but are still customizable via class names.
+\item \bold{ columns } \code{IColumn[]} \cr Column metadata
+\item \bold{ selection } \code{ISelection} \cr Selection from utilities
+\item \bold{ selectionMode } \code{SelectionMode} \cr Selection mode
+\item \bold{ onRenderFooter } \verb{IRenderFunction<IDetailsGroupDividerProps>} \cr
+\item \bold{ onRenderHeader } \verb{IRenderFunction<IDetailsGroupDividerProps>} \cr
+\item \bold{ ariaLabel } \code{string} \cr ariaLabel for the entire header
+\item \bold{ ariaLabelForSelectAllCheckbox } \code{string} \cr ariaLabel for the header checkbox that selects or deselects everything
+\item \bold{ ariaLabelForSelectionColumn } \code{string} \cr ariaLabel for the selection column
+\item \bold{ ariaLabelForToggleAllGroupsButton } \code{string} \cr ariaLabel for expand/collapse group button
+\item \bold{ className } \code{string} \cr Overriding class name
+\item \bold{ collapseAllVisibility } \code{CollapseAllVisibility} \cr Whether to collapse for all visibility
+\item \bold{ columnReorderOptions } \code{IColumnReorderOptions} \cr Column reordering options
+\item \bold{ columnReorderProps } \code{IColumnReorderHeaderProps} \cr Column reordering options
+\item \bold{ componentRef } \verb{IRefObject<IDetailsHeader>} \cr Ref to the component itself
+\item \bold{ isAllCollapsed } \code{boolean} \cr Whether or not all is collapsed
+\item \bold{ layoutMode } \code{DetailsListLayoutMode} \cr Layout mode - fixedColumns or justified
+\item \bold{ minimumPixelsForDrag } \code{number} \cr Minimum pixels to be moved before dragging is registered
+\item \bold{ onColumnAutoResized } \verb{(column: IColumn, columnIndex: number) => void} \cr Callback for when column is automatically resized
+\item \bold{ onColumnClick } \verb{(ev: React.MouseEvent<HTMLElement>, column: IColumn) => void} \cr Callback for when the column is clicked
+\item \bold{ onColumnContextMenu } \verb{(column: IColumn, ev: React.MouseEvent<HTMLElement>) => void} \cr Callback for when the column needs to show a context menu
+\item \bold{ onColumnIsSizingChanged } \verb{(column: IColumn, isSizing: boolean) => void} \cr Callback for when column sizing has changed
+\item \bold{ onColumnResized } \verb{(column: IColumn, newWidth: number, columnIndex: number) => void} \cr Callback for when column is resized
+\item \bold{ onRenderColumnHeaderTooltip } \verb{IRenderFunction<IDetailsColumnRenderTooltipProps>} \cr Callback to render a tooltip for the column header
+\item \bold{ onRenderDetailsCheckbox } \verb{IRenderFunction<IDetailsCheckboxProps>} \cr If provided, can be used to render a custom checkbox
+\item \bold{ onToggleCollapseAll } \verb{(isAllCollapsed: boolean) => void} \cr Callback for when collapse all is toggled
+\item \bold{ selectAllVisibility } \code{SelectAllVisibility} \cr Select all button visibility
+\item \bold{ styles } \verb{IStyleFunctionOrObject<IDetailsHeaderStyleProps, IDetailsHeaderStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.
+\item \bold{ theme } \code{ITheme} \cr Theme from the Higher Order Component
+\item \bold{ useFastIcons } \code{boolean} \cr Whether to use fast icon and check components. The icons can't be targeted by customization but are still customizable via class names.
+\item \bold{ columns } \code{IColumn[]} \cr Column metadata
+\item \bold{ selection } \code{ISelection} \cr Selection from utilities
+\item \bold{ selectionMode } \code{SelectionMode} \cr Selection mode
+\item \bold{ cellStyleProps } \code{ICellStyleProps} \cr Rules for rendering column cells.
+\item \bold{ checkboxVisibility } \code{CheckboxVisibility | undefined} \cr Checkbox visibility
+\item \bold{ columns } \code{IColumn[]} \cr Column metadata
+\item \bold{ groupNestingDepth } \code{number} \cr Nesting depth of a grouping
+\item \bold{ indentWidth } \code{number | undefined} \cr How much to indent
+\item \bold{ rowWidth } \code{number} \cr Minimum width of the row.
+\item \bold{ selection } \code{ISelection | undefined} \cr Selection from utilities
+\item \bold{ selectionMode } \code{SelectionMode | undefined} \cr Selection mode
+\item \bold{ viewport } \code{IViewport | undefined} \cr View port of the virtualized list
+\item \bold{ ariaLabel } \code{string} \cr Accessible label describing or summarizing the list.
+\item \bold{ ariaLabelForGrid } \code{string} \cr Accessible label for the grid within the list.
+\item \bold{ ariaLabelForListHeader } \code{string} \cr Accessible label for the list header.
+\item \bold{ ariaLabelForSelectAllCheckbox } \code{string} \cr Accessible label for the select all checkbox.
+\item \bold{ ariaLabelForSelectionColumn } \code{string} \cr Accessible label for the name of the selection column.
+\item \bold{ cellStyleProps } \code{ICellStyleProps} \cr Props impacting the render style of cells. Since these have an impact on calculated column widths, they are handled separately from normal theme styling, but they are passed to the styling system.
+\item \bold{ checkboxCellClassName } \code{string} \cr Class name to add to the cell of a checkbox.
+\item \bold{ checkboxVisibility } \code{CheckboxVisibility} \cr Controls the visibility of selection check box.
+\item \bold{ checkButtonAriaLabel } \code{string} \cr Accessible label for the check button.
+\item \bold{ className } \code{string} \cr Class name to add to the root element.
+\item \bold{ columnReorderOptions } \code{IColumnReorderOptions} \cr Options for column reordering using drag and drop.
+\item \bold{ columns } \code{IColumn[]} \cr column defitions. If none are provided, default columns will be created based on the items' properties.
+\item \bold{ compact } \code{boolean} \cr Whether to render in compact mode.
+\item \bold{ componentRef } \verb{IRefObject<IDetailsList>} \cr Callback to access the IDetailsList interface. Use this instead of ref for accessing the public methods and properties of the component.
+\item \bold{ constrainMode } \code{ConstrainMode} \cr Controls how the list contrains overflow.
+\item \bold{ disableSelectionZone } \code{boolean} \cr Whether to disable the built-in SelectionZone, so the host component can provide its own.
+\item \bold{ dragDropEvents } \code{IDragDropEvents} \cr Map of callback functions related to row drag and drop functionality.
+\item \bold{ enableUpdateAnimations } \code{boolean} \cr Whether to animate updates
+\item \bold{ enterModalSelectionOnTouch } \code{boolean} \cr Whether the selection zone should enter modal state on touch.
+\item \bold{ getCellValueKey } \verb{(item?: any, index?: number, column?: IColumn) => string} \cr If provided, will be the "default" item column cell value return. A column's \code{getValueKey} can override \code{getCellValueKey}.
+\item \bold{ getGroupHeight } \code{IGroupedListProps['getGroupHeight']} \cr Callback to override default group height calculation used by list virtualization.
+\item \bold{ getKey } \verb{(item: any, index?: number) => string} \cr Callback to get the item key, to be used in the selection and on render. Must be provided if sorting or filtering is enabled.
+\item \bold{ getRowAriaDescribedBy } \verb{(item: any) => string} \cr Callback to get the aria-describedby IDs (space-separated strings) of elements that describe the item.
+\item \bold{ getRowAriaLabel } \verb{(item: any) => string} \cr Callback to get the aria-label string for a given item.
+\item \bold{ groupProps } \code{IDetailsGroupRenderProps} \cr Override properties to render groups.
+\item \bold{ groups } \code{IGroup[]} \cr Grouping instructions.
+\item \bold{ indentWidth } \code{number} \cr Override for the indent width used for group nesting.
+\item \bold{ initialFocusedIndex } \code{number} \cr Default index to set focus to once the items have rendered and the index exists.
+\item \bold{ isHeaderVisible } \code{boolean} \cr Controls the visibility of the header.
+\item \bold{ isPlaceholderData } \code{boolean} \cr Set this to true to indicate that the items being displayed are placeholder data.
+\item \bold{ items } \code{any[]} \cr The items to render.
+\item \bold{ layoutMode } \code{DetailsListLayoutMode} \cr Controls how the columns are adjusted.
+\item \bold{ listProps } \code{IListProps} \cr Properties to pass through to the List components being rendered.
+\item \bold{ minimumPixelsForDrag } \code{number} \cr The minimum mouse move distance to interpret the action as drag event.
+\item \bold{ onActiveItemChanged } \verb{(item?: any, index?: number, ev?: React.FocusEvent<HTMLElement>) => void} \cr Callback for when an item in the list becomes active by clicking anywhere inside the row or navigating to it with the keyboard.
+\item \bold{ onColumnHeaderClick } \verb{(ev?: React.MouseEvent<HTMLElement>, column?: IColumn) => void} \cr Callback for when the user clicks on the column header.
+\item \bold{ onColumnHeaderContextMenu } \verb{(column?: IColumn, ev?: React.MouseEvent<HTMLElement>) => void} \cr Callback for when the user asks for a contextual menu (usually via right click) from a column header.
+\item \bold{ onColumnResize } \verb{(column?: IColumn, newWidth?: number, columnIndex?: number) => void} \cr Callback fired on column resize
+\item \bold{ onDidUpdate } \verb{(detailsList?: DetailsListBase) => void} \cr Callback for when the list has been updated. Useful for telemetry tracking externally.
+\item \bold{ onItemContextMenu } \verb{(item?: any, index?: number, ev?: Event) => void | boolean} \cr Callback for when the context menu of an item has been accessed. If undefined or false is returned, \code{ev.preventDefault()} will be called.
+\item \bold{ onItemInvoked } \verb{(item?: any, index?: number, ev?: Event) => void} \cr Callback for when a given row has been invoked (by pressing enter while it is selected.)
+\item \bold{ onRenderCheckbox } \verb{IRenderFunction<IDetailsListCheckboxProps>} \cr If provided, can be used to render a custom checkbox.
+\item \bold{ onRenderDetailsFooter } \verb{IRenderFunction<IDetailsFooterProps>} \cr An override to render the details footer.
+\item \bold{ onRenderDetailsHeader } \verb{IRenderFunction<IDetailsHeaderProps>} \cr An override to render the details header.
+\item \bold{ onRenderItemColumn } \verb{(item?: any, index?: number, column?: IColumn) => React.ReactNode} \cr If provided, will be the "default" item column renderer method. This affects cells within the rows, not the rows themselves. If a column definition provides its own \code{onRender} method, that will be used instead of this.
+\item \bold{ onRenderMissingItem } \verb{(index?: number, rowProps?: IDetailsRowProps) => React.ReactNode} \cr Callback for what to render when the item is missing.
+\item \bold{ onRenderRow } \verb{IRenderFunction<IDetailsRowProps>} \cr Callback to override the default row rendering.
+\item \bold{ onRowDidMount } \verb{(item?: any, index?: number) => void} \cr Callback for when a given row has been mounted. Useful for identifying when a row has been rendered on the page.
+\item \bold{ onRowWillUnmount } \verb{(item?: any, index?: number) => void} \cr Callback for when a given row has been unmounted. Useful for identifying when a row has been removed from the page.
+\item \bold{ onShouldVirtualize } \verb{(props: IListProps) => boolean} \cr Callback to determine whether the list should be rendered in full, or virtualized.
+}
 
 Virtualization will add and remove pages of items as the user scrolls them into the visible range. This benefits larger list scenarios by reducing the DOM on the screen, but can negatively affect performance for smaller lists.
 
-The default implementation will virtualize when this callback is not provided.}
-\item {\bold{ rowElementEventMap }} {\verb{\{ eventName: string; callback: (context: IDragDropContext, event?: any) => void; \}[]} \cr Event names and corresponding callbacks that will be registered to rendered row elements.}
-\item {\bold{ selection }} {\code{ISelection} \cr Selection model to track selection state.}
-\item {\bold{ selectionMode }} {\code{SelectionMode} \cr Controls how/if the details list manages selection. Options include none, single, multiple}
-\item {\bold{ selectionPreservedOnEmptyClick }} {\code{boolean} \cr By default, selection is cleared when clicking on an empty (non-focusable) section of the screen. Setting this value to true overrides that behavior and maintains selection.}
-\item {\bold{ selectionZoneProps }} {\code{ISelectionZoneProps} \cr Additional props to pass through to the SelectionZone created by default.}
-\item {\bold{ setKey }} {\code{string} \cr A key that uniquely identifies the given items. If provided, the selection will be reset when the key changes.}
-\item {\bold{ shouldApplyApplicationRole }} {\code{boolean} \cr Whether the role \code{application} should be applied to the list.}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IDetailsListStyleProps, IDetailsListStyles>} \cr Custom overrides to the themed or default styles.}
-\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by a higher-order component.}
-\item {\bold{ useFastIcons }} {\code{boolean} \cr Whether to use fast icon and check components. The icons can't be targeted by customization but are still customizable via class names.}
-\item {\bold{ usePageCache }} {\code{boolean} \cr Whether to enable render page caching. This is an experimental performance optimization that is off by default.}
-\item {\bold{ useReducedRowRenderer }} {\code{boolean} \cr Whether to re-render a row only when props changed. Might cause regression when depending on external updates.}
-\item {\bold{ viewport }} {\code{IViewport} \cr Viewport info, provided by the \code{withViewport} decorator.}
-\item {\bold{ cellsByColumn }} {\verb{\{ [columnKey: string]: React.ReactNode; \}} \cr Optional pre-rendered content per column. Preferred over onRender or onRenderItemColumn if provided.}
-\item {\bold{ checkboxCellClassName }} {\code{string} \cr Class name for the checkbox cell}
-\item {\bold{ checkButtonAriaLabel }} {\code{string} \cr Check button's aria label}
-\item {\bold{ className }} {\code{string} \cr Overriding class name}
-\item {\bold{ collapseAllVisibility }} {\code{CollapseAllVisibility} \cr Collapse all visibility}
-\item {\bold{ compact }} {\code{boolean} \cr Whether to render in compact mode}
-\item {\bold{ componentRef }} {\verb{IRefObject<IDetailsRow>} \cr Ref of the component}
-\item {\bold{ dragDropEvents }} {\code{IDragDropEvents} \cr Handling drag and drop events}
-\item {\bold{ dragDropHelper }} {\code{IDragDropHelper} \cr Helper for the drag and drop}
-\item {\bold{ enableUpdateAnimations }} {\code{boolean} \cr Whether to animate updates}
-\item {\bold{ eventsToRegister }} {\verb{\{ eventName: string; callback: (item?: any, index?: number, event?: any) => void; \}[]} \cr A list of events to register}
-\item {\bold{ getRowAriaDescribedBy }} {\verb{(item: any) => string} \cr Callback for getting the row aria-describedby}
-\item {\bold{ getRowAriaLabel }} {\verb{(item: any) => string} \cr Callback for getting the row aria label}
-\item {\bold{ item }} {\code{any} \cr Data source for this component}
-\item {\bold{ itemIndex }} {\code{number} \cr Index of the collection of items of the DetailsList}
-\item {\bold{ onDidMount }} {\verb{(row?: DetailsRowBase) => void} \cr Callback for did mount for parent}
-\item {\bold{ onRenderCheck }} {\verb{(props: IDetailsRowCheckProps) => JSX.Element} \cr Callback for rendering a checkbox}
-\item {\bold{ onRenderDetailsCheckbox }} {\verb{IRenderFunction<IDetailsCheckboxProps>} \cr If provided, can be used to render a custom checkbox}
-\item {\bold{ onWillUnmount }} {\verb{(row?: DetailsRowBase) => void} \cr Callback for will mount for parent}
-\item {\bold{ rowFieldsAs }} {\verb{React.ComponentType<IDetailsRowFieldsProps>} \cr DOM element into which to render row field}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IDetailsRowStyleProps, IDetailsRowStyles>} \cr Overriding styles to this row}
-\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by styled() function}
-\item {\bold{ useFastIcons }} {\code{boolean} \cr Whether to use fast icon and check components. The icons can't be targeted by customization but are still customizable via class names.}
-\item {\bold{ useReducedRowRenderer }} {\code{boolean} \cr Rerender DetailsRow only when props changed. Might cause regression when depending on external updates.}
-\item {\bold{ anySelected }} {\code{boolean} \cr Is any selected - also true for isSelectionModal}
-\item {\bold{ canSelect }} {\code{boolean} \cr Can this checkbox be selectable}
-\item {\bold{ checkClassName }} {\code{string} \cr The classname to be passed down to Check component}
-\item {\bold{ className }} {\code{string} \cr Optional className to attach to the slider root element.}
-\item {\bold{ compact }} {\code{boolean} \cr Is this in compact mode?}
-\item {\bold{ isHeader }} {\code{boolean} \cr Is the check part of the header in a DetailsList}
-\item {\bold{ isVisible }} {\code{boolean} \cr Whether or not this checkbox is visible}
-\item {\bold{ onRenderDetailsCheckbox }} {\verb{IRenderFunction<IDetailsCheckboxProps>} \cr If provided, can be used to render a custom checkbox}
-\item {\bold{ selected }} {\code{boolean} \cr Whether or not this check is selected}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IDetailsRowCheckStyleProps, IDetailsRowCheckStyles>} \cr Style override}
-\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by High-Order Component.}
-\item {\bold{ useFastIcons }} {\code{boolean} \cr Whether to use fast icon and check components. The icons can't be targeted by customization but are still customizable via class names.}
-\item {\bold{ cellStyleProps }} {\code{ICellStyleProps} \cr Style properties to customize cell render output.}
-\item {\bold{ columns }} {\code{IColumn[]} \cr Columns metadata}
-\item {\bold{ columnStartIndex }} {\code{number} \cr Index to start for the column}
-\item {\bold{ compact }} {\code{boolean} \cr whether to render as a compact field}
-\item {\bold{ enableUpdateAnimations }} {\code{boolean} \cr }
-\item {\bold{ item }} {\code{any} \cr Data source for this component}
-\item {\bold{ itemIndex }} {\code{number} \cr The item index of the collection for the DetailsList}
-\item {\bold{ rowClassNames }} {\verb{\{ [k in keyof Pick<IDetailsRowStyles, 'isMultiline' | 'isRowHeader' | 'cell' | 'cellAnimation' | 'cellPadded' | 'cellUnpadded' | 'fields'>]: string; \}} \cr Subset of classnames currently generated in DetailsRow that are used within DetailsRowFields.}
-\item {\bold{ columns }} {\code{IColumn[]} \cr Column metadata}
-\item {\bold{ selection }} {\code{ISelection} \cr Selection from utilities}
-\item {\bold{ selectionMode }} {\code{SelectionMode} \cr Selection mode}
-\item {\bold{ ariaLabelForShimmer }} {\code{string} \cr Aria label for shimmer. Set on grid while shimmer is enabled.}
-\item {\bold{ detailsListStyles }} {\code{IDetailsListProps['styles']} \cr DetailsList styles to pass through.}
-\item {\bold{ enableShimmer }} {\code{boolean} \cr Boolean flag to control when to render placeholders vs real items. It's up to the consumer app to know when fetching of the data is done to toggle this prop.}
-\item {\bold{ onRenderCustomPlaceholder }} {\verb{(rowProps: IDetailsRowProps, index?: number, defaultRender?: (props: IDetailsRowProps) => React.ReactNode) => React.ReactNode} \cr Custom placeholder renderer to be used when in need to override the default placeholder of a DetailsRow. \code{rowProps} argument is passed to leverage the calculated column measurements done by DetailsList or you can use the optional arguments of item \code{index} and \code{defaultRender} to execute additional logic before rendering the default placeholder.}
-\item {\bold{ removeFadingOverlay }} {\code{boolean} \cr Determines whether to remove a fading out to bottom overlay over the shimmering items used to further emphasize the unknown number of items that will be fetched.}
-\item {\bold{ shimmerLines }} {\code{number} \cr Number of shimmer placeholder lines to render.}
-\item {\bold{ shimmerOverlayStyles }} {\verb{IStyleFunctionOrObject<IShimmeredDetailsListStyleProps, IShimmeredDetailsListStyles>} \cr Custom styles to override the styles specific to the ShimmeredDetailsList root area.}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IShimmeredDetailsListStyleProps, IShimmeredDetailsListStyles>} \cr Custom styles to override the styles specific to the ShimmeredDetailsList root area.}
-\item {\bold{ skipViewportMeasures }} {\code{boolean} \cr Whether or not to use ResizeObserver (if available) to detect and measure viewport on 'resize' events.
-
-Falls back to window 'resize' event.}
+The default implementation will virtualize when this callback is not provided.
+\itemize{
+\item \bold{ rowElementEventMap } \verb{\{ eventName: string; callback: (context: IDragDropContext, event?: any) => void; \}[]} \cr Event names and corresponding callbacks that will be registered to rendered row elements.
+\item \bold{ selection } \code{ISelection} \cr Selection model to track selection state.
+\item \bold{ selectionMode } \code{SelectionMode} \cr Controls how/if the details list manages selection. Options include none, single, multiple
+\item \bold{ selectionPreservedOnEmptyClick } \code{boolean} \cr By default, selection is cleared when clicking on an empty (non-focusable) section of the screen. Setting this value to true overrides that behavior and maintains selection.
+\item \bold{ selectionZoneProps } \code{ISelectionZoneProps} \cr Additional props to pass through to the SelectionZone created by default.
+\item \bold{ setKey } \code{string} \cr A key that uniquely identifies the given items. If provided, the selection will be reset when the key changes.
+\item \bold{ shouldApplyApplicationRole } \code{boolean} \cr Whether the role \code{application} should be applied to the list.
+\item \bold{ styles } \verb{IStyleFunctionOrObject<IDetailsListStyleProps, IDetailsListStyles>} \cr Custom overrides to the themed or default styles.
+\item \bold{ theme } \code{ITheme} \cr Theme provided by a higher-order component.
+\item \bold{ useFastIcons } \code{boolean} \cr Whether to use fast icon and check components. The icons can't be targeted by customization but are still customizable via class names.
+\item \bold{ usePageCache } \code{boolean} \cr Whether to enable render page caching. This is an experimental performance optimization that is off by default.
+\item \bold{ useReducedRowRenderer } \code{boolean} \cr Whether to re-render a row only when props changed. Might cause regression when depending on external updates.
+\item \bold{ viewport } \code{IViewport} \cr Viewport info, provided by the \code{withViewport} decorator.
+\item \bold{ cellsByColumn } \verb{\{ [columnKey: string]: React.ReactNode; \}} \cr Optional pre-rendered content per column. Preferred over onRender or onRenderItemColumn if provided.
+\item \bold{ checkboxCellClassName } \code{string} \cr Class name for the checkbox cell
+\item \bold{ checkButtonAriaLabel } \code{string} \cr Check button's aria label
+\item \bold{ className } \code{string} \cr Overriding class name
+\item \bold{ collapseAllVisibility } \code{CollapseAllVisibility} \cr Collapse all visibility
+\item \bold{ compact } \code{boolean} \cr Whether to render in compact mode
+\item \bold{ componentRef } \verb{IRefObject<IDetailsRow>} \cr Ref of the component
+\item \bold{ dragDropEvents } \code{IDragDropEvents} \cr Handling drag and drop events
+\item \bold{ dragDropHelper } \code{IDragDropHelper} \cr Helper for the drag and drop
+\item \bold{ enableUpdateAnimations } \code{boolean} \cr Whether to animate updates
+\item \bold{ eventsToRegister } \verb{\{ eventName: string; callback: (item?: any, index?: number, event?: any) => void; \}[]} \cr A list of events to register
+\item \bold{ getRowAriaDescribedBy } \verb{(item: any) => string} \cr Callback for getting the row aria-describedby
+\item \bold{ getRowAriaLabel } \verb{(item: any) => string} \cr Callback for getting the row aria label
+\item \bold{ item } \code{any} \cr Data source for this component
+\item \bold{ itemIndex } \code{number} \cr Index of the collection of items of the DetailsList
+\item \bold{ onDidMount } \verb{(row?: DetailsRowBase) => void} \cr Callback for did mount for parent
+\item \bold{ onRenderCheck } \verb{(props: IDetailsRowCheckProps) => JSX.Element} \cr Callback for rendering a checkbox
+\item \bold{ onRenderDetailsCheckbox } \verb{IRenderFunction<IDetailsCheckboxProps>} \cr If provided, can be used to render a custom checkbox
+\item \bold{ onWillUnmount } \verb{(row?: DetailsRowBase) => void} \cr Callback for will mount for parent
+\item \bold{ rowFieldsAs } \verb{React.ComponentType<IDetailsRowFieldsProps>} \cr DOM element into which to render row field
+\item \bold{ styles } \verb{IStyleFunctionOrObject<IDetailsRowStyleProps, IDetailsRowStyles>} \cr Overriding styles to this row
+\item \bold{ theme } \code{ITheme} \cr Theme provided by styled() function
+\item \bold{ useFastIcons } \code{boolean} \cr Whether to use fast icon and check components. The icons can't be targeted by customization but are still customizable via class names.
+\item \bold{ useReducedRowRenderer } \code{boolean} \cr Rerender DetailsRow only when props changed. Might cause regression when depending on external updates.
+\item \bold{ anySelected } \code{boolean} \cr Is any selected - also true for isSelectionModal
+\item \bold{ canSelect } \code{boolean} \cr Can this checkbox be selectable
+\item \bold{ checkClassName } \code{string} \cr The classname to be passed down to Check component
+\item \bold{ className } \code{string} \cr Optional className to attach to the slider root element.
+\item \bold{ compact } \code{boolean} \cr Is this in compact mode?
+\item \bold{ isHeader } \code{boolean} \cr Is the check part of the header in a DetailsList
+\item \bold{ isVisible } \code{boolean} \cr Whether or not this checkbox is visible
+\item \bold{ onRenderDetailsCheckbox } \verb{IRenderFunction<IDetailsCheckboxProps>} \cr If provided, can be used to render a custom checkbox
+\item \bold{ selected } \code{boolean} \cr Whether or not this check is selected
+\item \bold{ styles } \verb{IStyleFunctionOrObject<IDetailsRowCheckStyleProps, IDetailsRowCheckStyles>} \cr Style override
+\item \bold{ theme } \code{ITheme} \cr Theme provided by High-Order Component.
+\item \bold{ useFastIcons } \code{boolean} \cr Whether to use fast icon and check components. The icons can't be targeted by customization but are still customizable via class names.
+\item \bold{ cellStyleProps } \code{ICellStyleProps} \cr Style properties to customize cell render output.
+\item \bold{ columns } \code{IColumn[]} \cr Columns metadata
+\item \bold{ columnStartIndex } \code{number} \cr Index to start for the column
+\item \bold{ compact } \code{boolean} \cr whether to render as a compact field
+\item \bold{ enableUpdateAnimations } \code{boolean} \cr
+\item \bold{ item } \code{any} \cr Data source for this component
+\item \bold{ itemIndex } \code{number} \cr The item index of the collection for the DetailsList
+\item \bold{ rowClassNames } \verb{\{ [k in keyof Pick<IDetailsRowStyles, 'isMultiline' | 'isRowHeader' | 'cell' | 'cellAnimation' | 'cellPadded' | 'cellUnpadded' | 'fields'>]: string; \}} \cr Subset of classnames currently generated in DetailsRow that are used within DetailsRowFields.
+\item \bold{ columns } \code{IColumn[]} \cr Column metadata
+\item \bold{ selection } \code{ISelection} \cr Selection from utilities
+\item \bold{ selectionMode } \code{SelectionMode} \cr Selection mode
+\item \bold{ ariaLabelForShimmer } \code{string} \cr Aria label for shimmer. Set on grid while shimmer is enabled.
+\item \bold{ detailsListStyles } \code{IDetailsListProps['styles']} \cr DetailsList styles to pass through.
+\item \bold{ enableShimmer } \code{boolean} \cr Boolean flag to control when to render placeholders vs real items. It's up to the consumer app to know when fetching of the data is done to toggle this prop.
+\item \bold{ onRenderCustomPlaceholder } \verb{(rowProps: IDetailsRowProps, index?: number, defaultRender?: (props: IDetailsRowProps) => React.ReactNode) => React.ReactNode} \cr Custom placeholder renderer to be used when in need to override the default placeholder of a DetailsRow. \code{rowProps} argument is passed to leverage the calculated column measurements done by DetailsList or you can use the optional arguments of item \code{index} and \code{defaultRender} to execute additional logic before rendering the default placeholder.
+\item \bold{ removeFadingOverlay } \code{boolean} \cr Determines whether to remove a fading out to bottom overlay over the shimmering items used to further emphasize the unknown number of items that will be fetched.
+\item \bold{ shimmerLines } \code{number} \cr Number of shimmer placeholder lines to render.
+\item \bold{ shimmerOverlayStyles } \verb{IStyleFunctionOrObject<IShimmeredDetailsListStyleProps, IShimmeredDetailsListStyles>} \cr Custom styles to override the styles specific to the ShimmeredDetailsList root area.
+\item \bold{ styles } \verb{IStyleFunctionOrObject<IShimmeredDetailsListStyleProps, IShimmeredDetailsListStyles>} \cr Custom styles to override the styles specific to the ShimmeredDetailsList root area.
+\item \bold{ skipViewportMeasures } \code{boolean} \cr Whether or not to use ResizeObserver (if available) to detect and measure viewport on 'resize' events.
 }
+
+Falls back to window 'resize' event.
 }
 \section{Best practices}{
 \subsection{Layout}{

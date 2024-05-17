@@ -40,27 +40,27 @@ you need to work using the original docs to achieve the desired result.
 }
 \details{
 \itemize{
-\item {\bold{ ariaLabel }} {\code{string} \cr A description of the Slider for the benefit of screen readers.}
-\item {\bold{ ariaValueText }} {\verb{(value: number) => string} \cr A text description of the Slider number value for the benefit of screen readers. This should be used when the Slider number value is not accurately represented by a number.}
-\item {\bold{ buttonProps }} {\verb{React.HTMLAttributes<HTMLButtonElement>} \cr Optional mixin for additional props on the thumb button within the slider.}
-\item {\bold{ className }} {\code{string} \cr Optional className to attach to the slider root element.}
-\item {\bold{ componentRef }} {\verb{IRefObject<ISlider>} \cr Optional callback to access the ISlider interface. Use this instead of ref for accessing the public methods and properties of the component.}
-\item {\bold{ defaultValue }} {\code{number} \cr The initial value of the Slider. Use this if you intend for the Slider to be an uncontrolled component. This value is mutually exclusive to value. Use one or the other.}
-\item {\bold{ disabled }} {\code{boolean} \cr Optional flag to render the Slider as disabled.}
-\item {\bold{ label }} {\code{string} \cr Description label of the Slider}
-\item {\bold{ max }} {\code{number} \cr The max value of the Slider}
-\item {\bold{ min }} {\code{number} \cr The min value of the Slider}
-\item {\bold{ onChange }} {\verb{(value: number) => void} \cr Callback when the value has been changed}
-\item {\bold{ onChanged }} {\verb{(event: MouseEvent | TouchEvent | KeyboardEvent, value: number) => void} \cr Callback on mouse up or touch end}
-\item {\bold{ originFromZero }} {\code{boolean} \cr Optional flag to attach the origin of slider to zero. Helpful when the range include negatives.}
-\item {\bold{ showValue }} {\code{boolean} \cr Whether to show the value on the right of the Slider.}
-\item {\bold{ snapToStep }} {\code{boolean} \cr Optional flag to decide that thumb will snap to closest value while moving the slider}
-\item {\bold{ step }} {\code{number} \cr The difference between the two adjacent values of the Slider}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<ISliderStyleProps, ISliderStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
-\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by High-Order Component.}
-\item {\bold{ value }} {\code{number} \cr The initial value of the Slider. Use this if you intend to pass in a new value as a result of onChange events. This value is mutually exclusive to defaultValue. Use one or the other.}
-\item {\bold{ valueFormat }} {\verb{(value: number) => string} \cr Optional function to format the slider value.}
-\item {\bold{ vertical }} {\code{boolean} \cr Optional flag to render the slider vertically. Defaults to rendering horizontal.}
+\item \bold{ ariaLabel } \code{string} \cr A description of the Slider for the benefit of screen readers.
+\item \bold{ ariaValueText } \verb{(value: number) => string} \cr A text description of the Slider number value for the benefit of screen readers. This should be used when the Slider number value is not accurately represented by a number.
+\item \bold{ buttonProps } \verb{React.HTMLAttributes<HTMLButtonElement>} \cr Optional mixin for additional props on the thumb button within the slider.
+\item \bold{ className } \code{string} \cr Optional className to attach to the slider root element.
+\item \bold{ componentRef } \verb{IRefObject<ISlider>} \cr Optional callback to access the ISlider interface. Use this instead of ref for accessing the public methods and properties of the component.
+\item \bold{ defaultValue } \code{number} \cr The initial value of the Slider. Use this if you intend for the Slider to be an uncontrolled component. This value is mutually exclusive to value. Use one or the other.
+\item \bold{ disabled } \code{boolean} \cr Optional flag to render the Slider as disabled.
+\item \bold{ label } \code{string} \cr Description label of the Slider
+\item \bold{ max } \code{number} \cr The max value of the Slider
+\item \bold{ min } \code{number} \cr The min value of the Slider
+\item \bold{ onChange } \verb{(value: number) => void} \cr Callback when the value has been changed
+\item \bold{ onChanged } \verb{(event: MouseEvent | TouchEvent | KeyboardEvent, value: number) => void} \cr Callback on mouse up or touch end
+\item \bold{ originFromZero } \code{boolean} \cr Optional flag to attach the origin of slider to zero. Helpful when the range include negatives.
+\item \bold{ showValue } \code{boolean} \cr Whether to show the value on the right of the Slider.
+\item \bold{ snapToStep } \code{boolean} \cr Optional flag to decide that thumb will snap to closest value while moving the slider
+\item \bold{ step } \code{number} \cr The difference between the two adjacent values of the Slider
+\item \bold{ styles } \verb{IStyleFunctionOrObject<ISliderStyleProps, ISliderStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.
+\item \bold{ theme } \code{ITheme} \cr Theme provided by High-Order Component.
+\item \bold{ value } \code{number} \cr The initial value of the Slider. Use this if you intend to pass in a new value as a result of onChange events. This value is mutually exclusive to defaultValue. Use one or the other.
+\item \bold{ valueFormat } \verb{(value: number) => string} \cr Optional function to format the slider value.
+\item \bold{ vertical } \code{boolean} \cr Optional flag to render the slider vertically. Defaults to rendering horizontal.
 }
 }
 \section{Best practices}{

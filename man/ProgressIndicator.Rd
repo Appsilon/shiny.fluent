@@ -33,17 +33,17 @@ you need to work using the original docs to achieve the desired result.
 }
 \details{
 \itemize{
-\item {\bold{ ariaValueText }} {\code{string} \cr Text alternative of the progress status, used by screen readers for reading the value of the progress.}
-\item {\bold{ barHeight }} {\code{number} \cr Height of the ProgressIndicator}
-\item {\bold{ className }} {\code{string} \cr Additional css class to apply to the ProgressIndicator}
-\item {\bold{ description }} {\code{React.ReactNode} \cr Text describing or supplementing the operation. May be a string or React virtual elements.}
-\item {\bold{ label }} {\code{React.ReactNode} \cr Label to display above the control. May be a string or React virtual elements.}
-\item {\bold{ onRenderProgress }} {\verb{IRenderFunction<IProgressIndicatorProps>} \cr A render override for the progress track.}
-\item {\bold{ percentComplete }} {\code{number} \cr Percentage of the operation's completeness, numerically between 0 and 1. If this is not set, the indeterminate progress animation will be shown instead.}
-\item {\bold{ progressHidden }} {\code{boolean} \cr Whether or not to hide the progress state.}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IProgressIndicatorStyleProps, IProgressIndicatorStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.}
-\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by High-Order Component.}
-\item {\bold{ title }} {\code{string} \cr Deprecated at v0.43.0, to be removed at \>= v0.53.0. Use \code{label} instead.}
+\item \bold{ ariaValueText } \code{string} \cr Text alternative of the progress status, used by screen readers for reading the value of the progress.
+\item \bold{ barHeight } \code{number} \cr Height of the ProgressIndicator
+\item \bold{ className } \code{string} \cr Additional css class to apply to the ProgressIndicator
+\item \bold{ description } \code{React.ReactNode} \cr Text describing or supplementing the operation. May be a string or React virtual elements.
+\item \bold{ label } \code{React.ReactNode} \cr Label to display above the control. May be a string or React virtual elements.
+\item \bold{ onRenderProgress } \verb{IRenderFunction<IProgressIndicatorProps>} \cr A render override for the progress track.
+\item \bold{ percentComplete } \code{number} \cr Percentage of the operation's completeness, numerically between 0 and 1. If this is not set, the indeterminate progress animation will be shown instead.
+\item \bold{ progressHidden } \code{boolean} \cr Whether or not to hide the progress state.
+\item \bold{ styles } \verb{IStyleFunctionOrObject<IProgressIndicatorStyleProps, IProgressIndicatorStyles>} \cr Call to provide customized styling that will layer on top of the variant rules.
+\item \bold{ theme } \code{ITheme} \cr Theme provided by High-Order Component.
+\item \bold{ title } \code{string} \cr Deprecated at v0.43.0, to be removed at \>= v0.53.0. Use \code{label} instead.
 }
 }
 \examples{
