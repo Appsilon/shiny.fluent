@@ -25,12 +25,12 @@ you need to work using the original docs to achieve the desired result.
 }
 \details{
 \itemize{
-\item {\bold{ className }} {\code{string} \cr Additional css class to apply to the ScrollablePane}
-\item {\bold{ componentRef }} {\verb{IRefObject<IScrollablePane>} \cr Optional callback to access the IScrollablePane interface. Use this instead of ref for accessing the public methods and properties of the component.}
-\item {\bold{ initialScrollPosition }} {\code{number} \cr Sets the initial scroll position of the ScrollablePane}
-\item {\bold{ scrollbarVisibility }} {\code{ScrollbarVisibility} \cr }
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IScrollablePaneStyleProps, IScrollablePaneStyles>} \cr Call to provide customized styling that will layer on top of the variant rules}
-\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by HOC.}
+\item \bold{ className } \code{string} \cr Additional css class to apply to the ScrollablePane
+\item \bold{ componentRef } \verb{IRefObject<IScrollablePane>} \cr Optional callback to access the IScrollablePane interface. Use this instead of ref for accessing the public methods and properties of the component.
+\item \bold{ initialScrollPosition } \code{number} \cr Sets the initial scroll position of the ScrollablePane
+\item \bold{ scrollbarVisibility } \code{ScrollbarVisibility} \cr
+\item \bold{ styles } \verb{IStyleFunctionOrObject<IScrollablePaneStyleProps, IScrollablePaneStyles>} \cr Call to provide customized styling that will layer on top of the variant rules
+\item \bold{ theme } \code{ITheme} \cr Theme provided by HOC.
 }
 }
 \section{Best practices}{

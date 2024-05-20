@@ -40,36 +40,36 @@ you need to work using the original docs to achieve the desired result.
 }
 \details{
 \itemize{
-\item {\bold{ allFocusable }} {\code{boolean} \cr Allows all dates and buttons to be focused, including disabled ones}
-\item {\bold{ autoNavigateOnSelection }} {\code{boolean} \cr Whether the month view should automatically navigate to the next or previous date range depending on the selected date. If this property is set to true and the currently displayed month is March 2017, if the user clicks on a day outside the month, i.e., April 1st, the picker will automatically navigate to the month of April.}
-\item {\bold{ className }} {\code{string} \cr Optional class name to add to the root element.}
-\item {\bold{ componentRef }} {\verb{IRefObject<ICalendar>} \cr Optional callback to access the ICalendar interface. Use this instead of ref for accessing the public methods and properties of the component.}
-\item {\bold{ dateRangeType }} {\code{DateRangeType} \cr The date range type indicating how many days should be selected as the user selects days}
-\item {\bold{ dateTimeFormatter }} {\code{ICalendarFormatDateCallbacks} \cr Apply additional formating to dates, for example localized date formatting.}
-\item {\bold{ firstDayOfWeek }} {\code{DayOfWeek} \cr The first day of the week for your locale.}
-\item {\bold{ firstWeekOfYear }} {\code{FirstWeekOfYear} \cr Defines when the first week of the year should start, FirstWeekOfYear.FirstDay, FirstWeekOfYear.FirstFullWeek or FirstWeekOfYear.FirstFourDayWeek are the possible values}
-\item {\bold{ highlightCurrentMonth }} {\code{boolean} \cr Whether the month picker should highlight the current month}
-\item {\bold{ highlightSelectedMonth }} {\code{boolean} \cr Whether the month picker should highlight the selected month}
-\item {\bold{ isDayPickerVisible }} {\code{boolean} \cr Whether the day picker is shown beside the month picker or hidden.}
-\item {\bold{ isMonthPickerVisible }} {\code{boolean} \cr Whether the month picker is shown beside the day picker or hidden.}
-\item {\bold{ maxDate }} {\code{Date} \cr If set the Calendar will not allow navigation to or selection of a date later than this value.}
-\item {\bold{ minDate }} {\code{Date} \cr If set the Calendar will not allow navigation to or selection of a date earlier than this value.}
-\item {\bold{ navigationIcons }} {\code{ICalendarIconStrings} \cr Customize navigation icons using ICalendarIconStrings}
-\item {\bold{ onDismiss }} {\verb{() => void} \cr Callback issued when calendar is closed}
-\item {\bold{ onSelectDate }} {\verb{(date: Date, selectedDateRangeArray?: Date[]) => void} \cr Callback issued when a date is selected}
-\item {\bold{ restrictedDates }} {\code{Date[]} \cr If set the Calendar will not allow selection of dates in this array.}
-\item {\bold{ selectDateOnClick }} {\code{boolean} \cr When clicking on "Today", select the date and close the calendar.}
-\item {\bold{ shouldFocusOnMount }} {\code{boolean} \cr This property has been removed at 0.80.0 in place of the \code{focus} method, to be removed \@ 1.0.0.}
-\item {\bold{ showCloseButton }} {\code{boolean} \cr Whether the close button should be shown or not}
-\item {\bold{ showGoToToday }} {\code{boolean} \cr Whether the "Go to today" link should be shown or not}
-\item {\bold{ showMonthPickerAsOverlay }} {\code{boolean} \cr Show month picker on top of date picker when visible.}
-\item {\bold{ showSixWeeksByDefault }} {\code{boolean} \cr Whether the calendar should show 6 weeks by default.}
-\item {\bold{ showWeekNumbers }} {\code{boolean} \cr Whether the calendar should show the week number (weeks 1 to 53) before each week row}
-\item {\bold{ strings }} {\code{ICalendarStrings | null} \cr Localized strings to use in the Calendar}
-\item {\bold{ today }} {\code{Date} \cr Value of today. If null, current time in client machine will be used.}
-\item {\bold{ value }} {\code{Date} \cr Default value of the Calendar, if any}
-\item {\bold{ workWeekDays }} {\code{DayOfWeek[]} \cr The days that are selectable when dateRangeType is WorkWeek. If dateRangeType is not WorkWeek this property does nothing.}
-\item {\bold{ yearPickerHidden }} {\code{boolean} \cr Whether the year picker is enabled}
+\item \bold{ allFocusable } \code{boolean} \cr Allows all dates and buttons to be focused, including disabled ones
+\item \bold{ autoNavigateOnSelection } \code{boolean} \cr Whether the month view should automatically navigate to the next or previous date range depending on the selected date. If this property is set to true and the currently displayed month is March 2017, if the user clicks on a day outside the month, i.e., April 1st, the picker will automatically navigate to the month of April.
+\item \bold{ className } \code{string} \cr Optional class name to add to the root element.
+\item \bold{ componentRef } \verb{IRefObject<ICalendar>} \cr Optional callback to access the ICalendar interface. Use this instead of ref for accessing the public methods and properties of the component.
+\item \bold{ dateRangeType } \code{DateRangeType} \cr The date range type indicating how many days should be selected as the user selects days
+\item \bold{ dateTimeFormatter } \code{ICalendarFormatDateCallbacks} \cr Apply additional formating to dates, for example localized date formatting.
+\item \bold{ firstDayOfWeek } \code{DayOfWeek} \cr The first day of the week for your locale.
+\item \bold{ firstWeekOfYear } \code{FirstWeekOfYear} \cr Defines when the first week of the year should start, FirstWeekOfYear.FirstDay, FirstWeekOfYear.FirstFullWeek or FirstWeekOfYear.FirstFourDayWeek are the possible values
+\item \bold{ highlightCurrentMonth } \code{boolean} \cr Whether the month picker should highlight the current month
+\item \bold{ highlightSelectedMonth } \code{boolean} \cr Whether the month picker should highlight the selected month
+\item \bold{ isDayPickerVisible } \code{boolean} \cr Whether the day picker is shown beside the month picker or hidden.
+\item \bold{ isMonthPickerVisible } \code{boolean} \cr Whether the month picker is shown beside the day picker or hidden.
+\item \bold{ maxDate } \code{Date} \cr If set the Calendar will not allow navigation to or selection of a date later than this value.
+\item \bold{ minDate } \code{Date} \cr If set the Calendar will not allow navigation to or selection of a date earlier than this value.
+\item \bold{ navigationIcons } \code{ICalendarIconStrings} \cr Customize navigation icons using ICalendarIconStrings
+\item \bold{ onDismiss } \verb{() => void} \cr Callback issued when calendar is closed
+\item \bold{ onSelectDate } \verb{(date: Date, selectedDateRangeArray?: Date[]) => void} \cr Callback issued when a date is selected
+\item \bold{ restrictedDates } \code{Date[]} \cr If set the Calendar will not allow selection of dates in this array.
+\item \bold{ selectDateOnClick } \code{boolean} \cr When clicking on "Today", select the date and close the calendar.
+\item \bold{ shouldFocusOnMount } \code{boolean} \cr This property has been removed at 0.80.0 in place of the \code{focus} method, to be removed \@ 1.0.0.
+\item \bold{ showCloseButton } \code{boolean} \cr Whether the close button should be shown or not
+\item \bold{ showGoToToday } \code{boolean} \cr Whether the "Go to today" link should be shown or not
+\item \bold{ showMonthPickerAsOverlay } \code{boolean} \cr Show month picker on top of date picker when visible.
+\item \bold{ showSixWeeksByDefault } \code{boolean} \cr Whether the calendar should show 6 weeks by default.
+\item \bold{ showWeekNumbers } \code{boolean} \cr Whether the calendar should show the week number (weeks 1 to 53) before each week row
+\item \bold{ strings } \code{ICalendarStrings | null} \cr Localized strings to use in the Calendar
+\item \bold{ today } \code{Date} \cr Value of today. If null, current time in client machine will be used.
+\item \bold{ value } \code{Date} \cr Default value of the Calendar, if any
+\item \bold{ workWeekDays } \code{DayOfWeek[]} \cr The days that are selectable when dateRangeType is WorkWeek. If dateRangeType is not WorkWeek this property does nothing.
+\item \bold{ yearPickerHidden } \code{boolean} \cr Whether the year picker is enabled
 }
 }
 \section{Best practices}{

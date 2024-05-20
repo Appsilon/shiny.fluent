@@ -22,12 +22,12 @@ you need to work using the original docs to achieve the desired result.
 }
 \details{
 \itemize{
-\item {\bold{ as }} {\verb{IComponentAs<React.AllHTMLAttributes<HTMLElement>>} \cr Render the root element as another type.}
-\item {\bold{ componentRef }} {\verb{IRefObject<ILabel>} \cr Optional callback to access the ILabel interface. Use this instead of ref for accessing the public methods and properties of the component.}
-\item {\bold{ disabled }} {\code{boolean} \cr Renders the label as disabled.}
-\item {\bold{ required }} {\code{boolean} \cr Whether the associated form field is required or not}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<ILabelStyleProps, ILabelStyles>} \cr Styles for the label.}
-\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by HOC.}
+\item \bold{ as } \verb{IComponentAs<React.AllHTMLAttributes<HTMLElement>>} \cr Render the root element as another type.
+\item \bold{ componentRef } \verb{IRefObject<ILabel>} \cr Optional callback to access the ILabel interface. Use this instead of ref for accessing the public methods and properties of the component.
+\item \bold{ disabled } \code{boolean} \cr Renders the label as disabled.
+\item \bold{ required } \code{boolean} \cr Whether the associated form field is required or not
+\item \bold{ styles } \verb{IStyleFunctionOrObject<ILabelStyleProps, ILabelStyles>} \cr Styles for the label.
+\item \bold{ theme } \code{ITheme} \cr Theme provided by HOC.
 }
 }
 \section{Best practices}{

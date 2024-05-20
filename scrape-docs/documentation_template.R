@@ -18,11 +18,9 @@
 #'
 #' @details
 #'
-#' \itemize{
 {{#props}}
-#' \item {\bold{ {{name}} }} {`{{type}}` \cr {{description}}}
+#' * \bold{ {{name}} } `{{type}}` \cr {{description}}
 {{/props}}
-#' }
 #'
 #' @md
 #' @name {{name}}

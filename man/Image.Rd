@@ -22,16 +22,16 @@ you need to work using the original docs to achieve the desired result.
 }
 \details{
 \itemize{
-\item {\bold{ className }} {\code{string} \cr Additional css class to apply to the Component}
-\item {\bold{ coverStyle }} {\code{ImageCoverStyle} \cr Specifies the cover style to be used for this image. If not specified, this will be dynamically calculated based on the aspect ratio for the image.}
-\item {\bold{ errorSrc }} {\code{string} \cr Deprecated at v1.3.6, to replace the src in case of errors, use \code{onLoadingStateChange} instead and rerender the Image with a difference src.}
-\item {\bold{ imageFit }} {\code{ImageFit} \cr Used to determine how the image is scaled and cropped to fit the frame.}
-\item {\bold{ maximizeFrame }} {\code{boolean} \cr If true, the image frame will expand to fill its parent container.}
-\item {\bold{ onLoadingStateChange }} {\verb{(loadState: ImageLoadState) => void} \cr Optional callback method for when the image load state has changed. The 'loadState' parameter indicates the current state of the Image.}
-\item {\bold{ shouldFadeIn }} {\code{boolean} \cr If true, fades the image in when loaded.}
-\item {\bold{ shouldStartVisible }} {\code{boolean} \cr If true, the image starts as visible and is hidden on error. Otherwise, the image is hidden until it is successfully loaded. This disables shouldFadeIn.}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IImageStyleProps, IImageStyles>} \cr Call to provide customized styling that will layer on top of the variant rules}
-\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by HOC.}
+\item \bold{ className } \code{string} \cr Additional css class to apply to the Component
+\item \bold{ coverStyle } \code{ImageCoverStyle} \cr Specifies the cover style to be used for this image. If not specified, this will be dynamically calculated based on the aspect ratio for the image.
+\item \bold{ errorSrc } \code{string} \cr Deprecated at v1.3.6, to replace the src in case of errors, use \code{onLoadingStateChange} instead and rerender the Image with a difference src.
+\item \bold{ imageFit } \code{ImageFit} \cr Used to determine how the image is scaled and cropped to fit the frame.
+\item \bold{ maximizeFrame } \code{boolean} \cr If true, the image frame will expand to fill its parent container.
+\item \bold{ onLoadingStateChange } \verb{(loadState: ImageLoadState) => void} \cr Optional callback method for when the image load state has changed. The 'loadState' parameter indicates the current state of the Image.
+\item \bold{ shouldFadeIn } \code{boolean} \cr If true, fades the image in when loaded.
+\item \bold{ shouldStartVisible } \code{boolean} \cr If true, the image starts as visible and is hidden on error. Otherwise, the image is hidden until it is successfully loaded. This disables shouldFadeIn.
+\item \bold{ styles } \verb{IStyleFunctionOrObject<IImageStyleProps, IImageStyles>} \cr Call to provide customized styling that will layer on top of the variant rules
+\item \bold{ theme } \code{ITheme} \cr Theme provided by HOC.
 }
 }
 \examples{

@@ -78,10 +78,10 @@ Use `shiny.fluent::runExample()` to list all available examples.
 <img src="https://avatars0.githubusercontent.com/u/6096772" align="right" alt="" width="6%" />
 
 Appsilon is a **Posit (formerly RStudio) Full Service Certified Partner**.<br/>
-Learn more at [appsilon.com](https://appsilon.com).
+Learn more at [appsilon.com](https://www.appsilon.com/).
 
 Get in touch [opensource@appsilon.com](mailto:opensource@appsilon.com)
 
 Explore the [Rhinoverse](https://rhinoverse.dev) - a family of R packages built around [Rhino](https://appsilon.github.io/rhino/)!
 
-<a href = "https://appsilon.com/careers/" target="_blank"><img src="https://raw.githubusercontent.com/Appsilon/website-cdn/gh-pages/WeAreHiring1.png" alt="We are hiring!"/></a>
+<a href = "https://www.appsilon.com/careers" target="_blank"><img src="https://raw.githubusercontent.com/Appsilon/website-cdn/gh-pages/WeAreHiring1.png" alt="We are hiring!"/></a>

@@ -49,77 +49,79 @@ you need to work using the original docs to achieve the desired result.
 }
 \details{
 \itemize{
-\item {\bold{ actions }} {\code{IButtonProps[]} \cr The actions available for this document.}
-\item {\bold{ className }} {\code{string} \cr Optional override class name}
-\item {\bold{ componentRef }} {\verb{IRefObject<IDocumentCardActions>} \cr Gets the component ref.}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IDocumentCardActionsStyleProps, IDocumentCardActionsStyles>} \cr Call to provide customized styling that will layer on top of the variant rules}
-\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by HOC.}
-\item {\bold{ views }} {\code{Number} \cr The number of views this document has received.}
-\item {\bold{ activity }} {\code{string} \cr Describes the activity that has taken place, such as "Created Feb 23, 2016".}
-\item {\bold{ className }} {\code{string} \cr Optional override class name}
-\item {\bold{ componentRef }} {\verb{IRefObject<IDocumentCardActivity>} \cr Gets the component ref.}
-\item {\bold{ people }} {\code{IDocumentCardActivityPerson[]} \cr One or more people who are involved in this activity.}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IDocumentCardActivityStyleProps, IDocumentCardActivityStyles>} \cr Call to provide customized styling that will layer on top of the variant rules}
-\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by HOC.}
-\item {\bold{ className }} {\code{string} \cr Optional override class name}
-\item {\bold{ componentRef }} {\verb{IRefObject<IDocumentCardDetails>} \cr Gets the component ref.}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IDocumentCardDetailsStyleProps, IDocumentCardDetailsStyles>} \cr Call to provide customized styling that will layer on top of the variant rules}
-\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by HOC.}
-\item {\bold{ className }} {\code{string} \cr Optional override class name}
-\item {\bold{ componentRef }} {\verb{IRefObject<IDocumentCardImage>} \cr Gets the component ref.}
-\item {\bold{ height }} {\code{number} \cr If provided, forces the preview image to be this height.}
-\item {\bold{ iconProps }} {\code{IIconProps} \cr The props for the icon associated with this document type.}
-\item {\bold{ imageFit }} {\code{ImageFit} \cr Used to determine how to size the image to fit the dimensions of the component. If both dimensions are provided, then the image is fit using ImageFit.scale, otherwise ImageFit.none is used.}
-\item {\bold{ imageSrc }} {\code{string} \cr Path to the preview image.}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IDocumentCardImageStyleProps, IDocumentCardImageStyles>} \cr Call to provide customized styling that will layer on top of the variant rules}
-\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by HOC.}
-\item {\bold{ width }} {\code{number} \cr If provided, forces the preview image to be this width.}
-\item {\bold{ ariaLabel }} {\code{string} \cr Aria label for the link to the document location.}
-\item {\bold{ className }} {\code{string} \cr Optional override class name}
-\item {\bold{ componentRef }} {\verb{IRefObject<IDocumentCardLocation>} \cr Gets the component ref.}
-\item {\bold{ location }} {\code{string} \cr Text for the location of the document.}
-\item {\bold{ locationHref }} {\code{string} \cr URL to navigate to for this location.}
-\item {\bold{ onClick }} {\verb{(ev?: React.MouseEvent<HTMLElement>) => void} \cr Function to call when the location is clicked.}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IDocumentCardLocationStyleProps, IDocumentCardLocationStyles>} \cr Call to provide customized styling that will layer on top of the variant rules}
-\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by HOC.}
-\item {\bold{ className }} {\code{string} \cr Optional override class name}
-\item {\bold{ componentRef }} {\verb{IRefObject<IDocumentCardLogo>} \cr Gets the component ref.}
-\item {\bold{ logoIcon }} {\code{string} \cr Describes DocumentCard Logo badge.}
-\item {\bold{ logoName }} {\code{string} \cr Describe Logo name, optional.}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IDocumentCardLogoStyleProps, IDocumentCardLogoStyles>} \cr Call to provide customized styling that will layer on top of the variant rules}
-\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by HOC.}
-\item {\bold{ className }} {\code{string} \cr Optional override class name}
-\item {\bold{ componentRef }} {\verb{IRefObject<IDocumentCardPreview>} \cr Gets the component ref.}
-\item {\bold{ getOverflowDocumentCountText }} {\verb{(overflowCount: number) => string} \cr The function return string that will describe the number of overflow documents. such as (overflowCount: number) =\> \verb{+$\{ overflowCount \} more},}
-\item {\bold{ previewImages }} {\code{IDocumentCardPreviewImage[]} \cr One or more preview images to display.}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IDocumentCardPreviewStyleProps, IDocumentCardPreviewStyles>} \cr Call to provide customized styling that will layer on top of the variant rules}
-\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by HOC.}
-\item {\bold{ accentColor }} {\code{string} \cr Hex color value of the line below the card, which should correspond to the document type. This should only be supplied when using the 'compact' card layout.
+\item \bold{ actions } \code{IButtonProps[]} \cr The actions available for this document.
+\item \bold{ className } \code{string} \cr Optional override class name
+\item \bold{ componentRef } \verb{IRefObject<IDocumentCardActions>} \cr Gets the component ref.
+\item \bold{ styles } \verb{IStyleFunctionOrObject<IDocumentCardActionsStyleProps, IDocumentCardActionsStyles>} \cr Call to provide customized styling that will layer on top of the variant rules
+\item \bold{ theme } \code{ITheme} \cr Theme provided by HOC.
+\item \bold{ views } \code{Number} \cr The number of views this document has received.
+\item \bold{ activity } \code{string} \cr Describes the activity that has taken place, such as "Created Feb 23, 2016".
+\item \bold{ className } \code{string} \cr Optional override class name
+\item \bold{ componentRef } \verb{IRefObject<IDocumentCardActivity>} \cr Gets the component ref.
+\item \bold{ people } \code{IDocumentCardActivityPerson[]} \cr One or more people who are involved in this activity.
+\item \bold{ styles } \verb{IStyleFunctionOrObject<IDocumentCardActivityStyleProps, IDocumentCardActivityStyles>} \cr Call to provide customized styling that will layer on top of the variant rules
+\item \bold{ theme } \code{ITheme} \cr Theme provided by HOC.
+\item \bold{ className } \code{string} \cr Optional override class name
+\item \bold{ componentRef } \verb{IRefObject<IDocumentCardDetails>} \cr Gets the component ref.
+\item \bold{ styles } \verb{IStyleFunctionOrObject<IDocumentCardDetailsStyleProps, IDocumentCardDetailsStyles>} \cr Call to provide customized styling that will layer on top of the variant rules
+\item \bold{ theme } \code{ITheme} \cr Theme provided by HOC.
+\item \bold{ className } \code{string} \cr Optional override class name
+\item \bold{ componentRef } \verb{IRefObject<IDocumentCardImage>} \cr Gets the component ref.
+\item \bold{ height } \code{number} \cr If provided, forces the preview image to be this height.
+\item \bold{ iconProps } \code{IIconProps} \cr The props for the icon associated with this document type.
+\item \bold{ imageFit } \code{ImageFit} \cr Used to determine how to size the image to fit the dimensions of the component. If both dimensions are provided, then the image is fit using ImageFit.scale, otherwise ImageFit.none is used.
+\item \bold{ imageSrc } \code{string} \cr Path to the preview image.
+\item \bold{ styles } \verb{IStyleFunctionOrObject<IDocumentCardImageStyleProps, IDocumentCardImageStyles>} \cr Call to provide customized styling that will layer on top of the variant rules
+\item \bold{ theme } \code{ITheme} \cr Theme provided by HOC.
+\item \bold{ width } \code{number} \cr If provided, forces the preview image to be this width.
+\item \bold{ ariaLabel } \code{string} \cr Aria label for the link to the document location.
+\item \bold{ className } \code{string} \cr Optional override class name
+\item \bold{ componentRef } \verb{IRefObject<IDocumentCardLocation>} \cr Gets the component ref.
+\item \bold{ location } \code{string} \cr Text for the location of the document.
+\item \bold{ locationHref } \code{string} \cr URL to navigate to for this location.
+\item \bold{ onClick } \verb{(ev?: React.MouseEvent<HTMLElement>) => void} \cr Function to call when the location is clicked.
+\item \bold{ styles } \verb{IStyleFunctionOrObject<IDocumentCardLocationStyleProps, IDocumentCardLocationStyles>} \cr Call to provide customized styling that will layer on top of the variant rules
+\item \bold{ theme } \code{ITheme} \cr Theme provided by HOC.
+\item \bold{ className } \code{string} \cr Optional override class name
+\item \bold{ componentRef } \verb{IRefObject<IDocumentCardLogo>} \cr Gets the component ref.
+\item \bold{ logoIcon } \code{string} \cr Describes DocumentCard Logo badge.
+\item \bold{ logoName } \code{string} \cr Describe Logo name, optional.
+\item \bold{ styles } \verb{IStyleFunctionOrObject<IDocumentCardLogoStyleProps, IDocumentCardLogoStyles>} \cr Call to provide customized styling that will layer on top of the variant rules
+\item \bold{ theme } \code{ITheme} \cr Theme provided by HOC.
+\item \bold{ className } \code{string} \cr Optional override class name
+\item \bold{ componentRef } \verb{IRefObject<IDocumentCardPreview>} \cr Gets the component ref.
+\item \bold{ getOverflowDocumentCountText } \verb{(overflowCount: number) => string} \cr The function return string that will describe the number of overflow documents. such as (overflowCount: number) =\> \verb{+$\{ overflowCount \} more},
+\item \bold{ previewImages } \code{IDocumentCardPreviewImage[]} \cr One or more preview images to display.
+\item \bold{ styles } \verb{IStyleFunctionOrObject<IDocumentCardPreviewStyleProps, IDocumentCardPreviewStyles>} \cr Call to provide customized styling that will layer on top of the variant rules
+\item \bold{ theme } \code{ITheme} \cr Theme provided by HOC.
+\item \bold{ accentColor } \code{string} \cr Hex color value of the line below the card, which should correspond to the document type. This should only be supplied when using the 'compact' card layout.
+}
 
-Deprecated at v4.17.1, to be removed at \>= v5.0.0.}
-\item {\bold{ children }} {\code{React.ReactNode} \cr Child components to render within the card.}
-\item {\bold{ className }} {\code{string} \cr Optional override class name}
-\item {\bold{ componentRef }} {\verb{IRefObject<IDocumentCard>} \cr Optional callback to access the IDocumentCard interface. Use this instead of ref for accessing the public methods and properties of the component.}
-\item {\bold{ onClick }} {\verb{(ev?: React.SyntheticEvent<HTMLElement>) => void} \cr Function to call when the card is clicked or keyboard Enter/Space is pushed.}
-\item {\bold{ onClickHref }} {\code{string} \cr A URL to navigate to when the card is clicked. If a function has also been provided, it will be used instead of the URL.}
-\item {\bold{ onClickTarget }} {\code{string} \cr A target browser context for opening the link. If not specified, will open in the same tab/window.}
-\item {\bold{ role }} {\code{string} \cr Aria role assigned to the documentCard (Eg. button, link). Use this to override the default assignment.}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IDocumentCardStyleProps, IDocumentCardStyles>} \cr Call to provide customized styling that will layer on top of the variant rules}
-\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by HOC.}
-\item {\bold{ type }} {\code{DocumentCardType} \cr The type of DocumentCard to display.}
-\item {\bold{ className }} {\code{string} \cr Optional override class name}
-\item {\bold{ componentRef }} {\verb{IRefObject<IDocumentCardStatus>} \cr Gets the component ref.}
-\item {\bold{ status }} {\code{string} \cr Describe status information. Required field.}
-\item {\bold{ statusIcon }} {\code{string} \cr Describes DocumentCard status icon.}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IDocumentCardStatusStyleProps, IDocumentCardStatusStyles>} \cr Call to provide customized styling that will layer on top of the variant rules}
-\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by HOC.}
-\item {\bold{ className }} {\code{string} \cr Optional override class name}
-\item {\bold{ componentRef }} {\verb{IRefObject<IDocumentCardTitle>} \cr Gets the component ref.}
-\item {\bold{ shouldTruncate }} {\code{boolean} \cr Whether we truncate the title to fit within the box. May have a performance impact.}
-\item {\bold{ showAsSecondaryTitle }} {\code{boolean} \cr Whether show as title as secondary title style such as smaller font and lighter color.}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IDocumentCardTitleStyleProps, IDocumentCardTitleStyles>} \cr Call to provide customized styling that will layer on top of the variant rules}
-\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by HOC.}
-\item {\bold{ title }} {\code{string} \cr Title text. If the card represents more than one document, this should be the title of one document and a "+X" string. For example, a collection of four documents would have a string of "Document.docx +3".}
+Deprecated at v4.17.1, to be removed at \>= v5.0.0.
+\itemize{
+\item \bold{ children } \code{React.ReactNode} \cr Child components to render within the card.
+\item \bold{ className } \code{string} \cr Optional override class name
+\item \bold{ componentRef } \verb{IRefObject<IDocumentCard>} \cr Optional callback to access the IDocumentCard interface. Use this instead of ref for accessing the public methods and properties of the component.
+\item \bold{ onClick } \verb{(ev?: React.SyntheticEvent<HTMLElement>) => void} \cr Function to call when the card is clicked or keyboard Enter/Space is pushed.
+\item \bold{ onClickHref } \code{string} \cr A URL to navigate to when the card is clicked. If a function has also been provided, it will be used instead of the URL.
+\item \bold{ onClickTarget } \code{string} \cr A target browser context for opening the link. If not specified, will open in the same tab/window.
+\item \bold{ role } \code{string} \cr Aria role assigned to the documentCard (Eg. button, link). Use this to override the default assignment.
+\item \bold{ styles } \verb{IStyleFunctionOrObject<IDocumentCardStyleProps, IDocumentCardStyles>} \cr Call to provide customized styling that will layer on top of the variant rules
+\item \bold{ theme } \code{ITheme} \cr Theme provided by HOC.
+\item \bold{ type } \code{DocumentCardType} \cr The type of DocumentCard to display.
+\item \bold{ className } \code{string} \cr Optional override class name
+\item \bold{ componentRef } \verb{IRefObject<IDocumentCardStatus>} \cr Gets the component ref.
+\item \bold{ status } \code{string} \cr Describe status information. Required field.
+\item \bold{ statusIcon } \code{string} \cr Describes DocumentCard status icon.
+\item \bold{ styles } \verb{IStyleFunctionOrObject<IDocumentCardStatusStyleProps, IDocumentCardStatusStyles>} \cr Call to provide customized styling that will layer on top of the variant rules
+\item \bold{ theme } \code{ITheme} \cr Theme provided by HOC.
+\item \bold{ className } \code{string} \cr Optional override class name
+\item \bold{ componentRef } \verb{IRefObject<IDocumentCardTitle>} \cr Gets the component ref.
+\item \bold{ shouldTruncate } \code{boolean} \cr Whether we truncate the title to fit within the box. May have a performance impact.
+\item \bold{ showAsSecondaryTitle } \code{boolean} \cr Whether show as title as secondary title style such as smaller font and lighter color.
+\item \bold{ styles } \verb{IStyleFunctionOrObject<IDocumentCardTitleStyleProps, IDocumentCardTitleStyles>} \cr Call to provide customized styling that will layer on top of the variant rules
+\item \bold{ theme } \code{ITheme} \cr Theme provided by HOC.
+\item \bold{ title } \code{string} \cr Title text. If the card represents more than one document, this should be the title of one document and a "+X" string. For example, a collection of four documents would have a string of "Document.docx +3".
 }
 }
 \section{Best practices}{

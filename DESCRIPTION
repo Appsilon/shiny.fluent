@@ -27,7 +27,7 @@ Imports:
   jsonlite,
   purrr,
   shiny,
-  shiny.react (>= 0.3.0)
+  shiny.react (>= 0.4.0)
 Suggests:
   chromote,
   covr,

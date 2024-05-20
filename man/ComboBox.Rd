@@ -43,42 +43,42 @@ you need to work using the original docs to achieve the desired result.
 }
 \details{
 \itemize{
-\item {\bold{ allowFreeform }} {\code{boolean} \cr Whether the ComboBox is free form, meaning that the user input is not bound to provided options. Defaults to false.}
-\item {\bold{ ariaDescribedBy }} {\code{string} \cr Optional prop to add a string id that can be referenced inside the aria-describedby attribute}
-\item {\bold{ autoComplete }} {\code{'on' | 'off'} \cr Whether the ComboBox auto completes. As the user is inputing text, it will be suggested potential matches from the list of options. If the combo box is expanded, this will also scroll to the suggested option, and give it a selected style.}
-\item {\bold{ autofill }} {\code{IAutofillProps} \cr The AutofillProps to be passed into the Autofill component inside combobox}
-\item {\bold{ buttonIconProps }} {\code{IIconProps} \cr The IconProps to use for the button aspect of the combobox}
-\item {\bold{ caretDownButtonStyles }} {\verb{Partial<IButtonStyles>} \cr Styles for the caret down button.}
-\item {\bold{ comboBoxOptionStyles }} {\verb{Partial<IComboBoxOptionStyles>} \cr Default styles that should be applied to ComboBox options, in case an option does not come with user-defined custom styles}
-\item {\bold{ componentRef }} {\verb{IRefObject<IComboBox>} \cr Optional callback to access the IComboBox interface. Use this instead of ref for accessing the public methods and properties of the component.}
-\item {\bold{ dropdownMaxWidth }} {\code{number} \cr Custom max width for dropdown}
-\item {\bold{ dropdownWidth }} {\code{number} \cr Custom width for dropdown (unless useComboBoxAsMenuWidth is undefined or false)}
-\item {\bold{ getClassNames }} {\verb{(theme: ITheme, isOpen: boolean, disabled: boolean, required: boolean, focused: boolean, allowFreeForm: boolean, hasErrorMessage: boolean, className?: string) => IComboBoxClassNames} \cr Custom function for providing the classNames for the ComboBox. Can be used to provide all styles for the component instead of applying them on top of the default styles.}
-\item {\bold{ iconButtonProps }} {\code{IButtonProps} \cr Optional iconButton props on combo box}
-\item {\bold{ isButtonAriaHidden }} {\code{boolean} \cr Sets the 'aria-hidden' attribute on the ComboBox's button element instructing screen readers how to handle the element. This element is hidden by default because all functionality is handled by the input element and the arrow button is only meant to be decorative.}
-\item {\bold{ keytipProps }} {\code{IKeytipProps} \cr Optional keytip for this combo box}
-\item {\bold{ multiSelectDelimiter }} {\code{string} \cr When multiple items are selected, this will be used to separate values in the combobox input.}
-\item {\bold{ onChange }} {\verb{(event: React.FormEvent<IComboBox>, option?: IComboBoxOption, index?: number, value?: string) => void} \cr Callback issued when either: 1) the selected option changes 2) a manually edited value is submitted. In this case there may not be a matched option if allowFreeform is also true (and hence only value would be true, the other parameter would be null in this case)}
-\item {\bold{ onItemClick }} {\verb{(event: React.FormEvent<IComboBox>, option?: IComboBoxOption, index?: number) => void} \cr Callback issued when a ComboBox item is clicked.}
-\item {\bold{ onMenuDismiss }} {\verb{() => void} \cr Function that gets invoked before the menu gets dismissed}
-\item {\bold{ onMenuDismissed }} {\verb{() => void} \cr Function that gets invoked when the ComboBox menu is dismissed}
-\item {\bold{ onMenuOpen }} {\verb{() => void} \cr Function that gets invoked when the ComboBox menu is launched}
-\item {\bold{ onPendingValueChanged }} {\verb{(option?: IComboBoxOption, index?: number, value?: string) => void} \cr Callback issued when the user changes the pending value in ComboBox. This will be called any time the component is updated and there is a current pending value. Option, index, and value will all be undefined if no change has taken place and the previously entered pending value is still valid.}
-\item {\bold{ onRenderLabel }} {\verb{IRenderFunction<IOnRenderComboBoxLabelProps>} \cr Custom render function for the label text.}
-\item {\bold{ onRenderLowerContent }} {\verb{IRenderFunction<IComboBoxProps>} \cr Add additional content below the callout list.}
-\item {\bold{ onRenderUpperContent }} {\verb{IRenderFunction<IComboBoxProps>} \cr Add additional content above the callout list.}
-\item {\bold{ onResolveOptions }} {\verb{(options: IComboBoxOption[]) => IComboBoxOption[] | PromiseLike<IComboBoxOption[]>} \cr Callback issued when the options should be resolved, if they have been updated or if they need to be passed in the first time}
-\item {\bold{ onScrollToItem }} {\verb{(itemIndex: number) => void} \cr Callback issued when the ComboBox requests the list to scroll to a specific element}
-\item {\bold{ options }} {\code{IComboBoxOption[]} \cr Collection of options for this ComboBox}
-\item {\bold{ persistMenu }} {\code{boolean} \cr Menu will not be created or destroyed when opened or closed, instead it will be hidden. This will improve perf of the menu opening but could potentially impact overall perf by having more elements in the dom. Should only be used when perf is important. Note: This may increase the amount of time it takes for the comboBox itself to mount.}
-\item {\bold{ scrollSelectedToTop }} {\code{boolean} \cr When options are scrollable the selected option is positioned at the top of the callout when it is opened (unless it has reached the end of the scrollbar).}
-\item {\bold{ shouldRestoreFocus }} {\code{boolean} \cr When specified, determines whether the callout (the menu which drops down) should restore the focus after being dismissed or not. If false, then the menu will not try to set focus to whichever element had focus before the menu was opened.}
-\item {\bold{ styles }} {\verb{Partial<IComboBoxStyles>} \cr Custom styles for this component}
-\item {\bold{ text }} {\code{string} \cr Value to show in the input, does not have to map to a combobox option}
-\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by HOC.}
-\item {\bold{ useComboBoxAsMenuWidth }} {\code{boolean} \cr Whether to use the ComboBoxes width as the menu's width}
-\item {\bold{ multiselectAccessibleText }} {\code{string} \cr Accessible text for label when combobox is multiselected.}
-\item {\bold{ props }} {\code{IComboBoxProps} \cr Props to render the combobox.}
+\item \bold{ allowFreeform } \code{boolean} \cr Whether the ComboBox is free form, meaning that the user input is not bound to provided options. Defaults to false.
+\item \bold{ ariaDescribedBy } \code{string} \cr Optional prop to add a string id that can be referenced inside the aria-describedby attribute
+\item \bold{ autoComplete } \code{'on' | 'off'} \cr Whether the ComboBox auto completes. As the user is inputing text, it will be suggested potential matches from the list of options. If the combo box is expanded, this will also scroll to the suggested option, and give it a selected style.
+\item \bold{ autofill } \code{IAutofillProps} \cr The AutofillProps to be passed into the Autofill component inside combobox
+\item \bold{ buttonIconProps } \code{IIconProps} \cr The IconProps to use for the button aspect of the combobox
+\item \bold{ caretDownButtonStyles } \verb{Partial<IButtonStyles>} \cr Styles for the caret down button.
+\item \bold{ comboBoxOptionStyles } \verb{Partial<IComboBoxOptionStyles>} \cr Default styles that should be applied to ComboBox options, in case an option does not come with user-defined custom styles
+\item \bold{ componentRef } \verb{IRefObject<IComboBox>} \cr Optional callback to access the IComboBox interface. Use this instead of ref for accessing the public methods and properties of the component.
+\item \bold{ dropdownMaxWidth } \code{number} \cr Custom max width for dropdown
+\item \bold{ dropdownWidth } \code{number} \cr Custom width for dropdown (unless useComboBoxAsMenuWidth is undefined or false)
+\item \bold{ getClassNames } \verb{(theme: ITheme, isOpen: boolean, disabled: boolean, required: boolean, focused: boolean, allowFreeForm: boolean, hasErrorMessage: boolean, className?: string) => IComboBoxClassNames} \cr Custom function for providing the classNames for the ComboBox. Can be used to provide all styles for the component instead of applying them on top of the default styles.
+\item \bold{ iconButtonProps } \code{IButtonProps} \cr Optional iconButton props on combo box
+\item \bold{ isButtonAriaHidden } \code{boolean} \cr Sets the 'aria-hidden' attribute on the ComboBox's button element instructing screen readers how to handle the element. This element is hidden by default because all functionality is handled by the input element and the arrow button is only meant to be decorative.
+\item \bold{ keytipProps } \code{IKeytipProps} \cr Optional keytip for this combo box
+\item \bold{ multiSelectDelimiter } \code{string} \cr When multiple items are selected, this will be used to separate values in the combobox input.
+\item \bold{ onChange } \verb{(event: React.FormEvent<IComboBox>, option?: IComboBoxOption, index?: number, value?: string) => void} \cr Callback issued when either: 1) the selected option changes 2) a manually edited value is submitted. In this case there may not be a matched option if allowFreeform is also true (and hence only value would be true, the other parameter would be null in this case)
+\item \bold{ onItemClick } \verb{(event: React.FormEvent<IComboBox>, option?: IComboBoxOption, index?: number) => void} \cr Callback issued when a ComboBox item is clicked.
+\item \bold{ onMenuDismiss } \verb{() => void} \cr Function that gets invoked before the menu gets dismissed
+\item \bold{ onMenuDismissed } \verb{() => void} \cr Function that gets invoked when the ComboBox menu is dismissed
+\item \bold{ onMenuOpen } \verb{() => void} \cr Function that gets invoked when the ComboBox menu is launched
+\item \bold{ onPendingValueChanged } \verb{(option?: IComboBoxOption, index?: number, value?: string) => void} \cr Callback issued when the user changes the pending value in ComboBox. This will be called any time the component is updated and there is a current pending value. Option, index, and value will all be undefined if no change has taken place and the previously entered pending value is still valid.
+\item \bold{ onRenderLabel } \verb{IRenderFunction<IOnRenderComboBoxLabelProps>} \cr Custom render function for the label text.
+\item \bold{ onRenderLowerContent } \verb{IRenderFunction<IComboBoxProps>} \cr Add additional content below the callout list.
+\item \bold{ onRenderUpperContent } \verb{IRenderFunction<IComboBoxProps>} \cr Add additional content above the callout list.
+\item \bold{ onResolveOptions } \verb{(options: IComboBoxOption[]) => IComboBoxOption[] | PromiseLike<IComboBoxOption[]>} \cr Callback issued when the options should be resolved, if they have been updated or if they need to be passed in the first time
+\item \bold{ onScrollToItem } \verb{(itemIndex: number) => void} \cr Callback issued when the ComboBox requests the list to scroll to a specific element
+\item \bold{ options } \code{IComboBoxOption[]} \cr Collection of options for this ComboBox
+\item \bold{ persistMenu } \code{boolean} \cr Menu will not be created or destroyed when opened or closed, instead it will be hidden. This will improve perf of the menu opening but could potentially impact overall perf by having more elements in the dom. Should only be used when perf is important. Note: This may increase the amount of time it takes for the comboBox itself to mount.
+\item \bold{ scrollSelectedToTop } \code{boolean} \cr When options are scrollable the selected option is positioned at the top of the callout when it is opened (unless it has reached the end of the scrollbar).
+\item \bold{ shouldRestoreFocus } \code{boolean} \cr When specified, determines whether the callout (the menu which drops down) should restore the focus after being dismissed or not. If false, then the menu will not try to set focus to whichever element had focus before the menu was opened.
+\item \bold{ styles } \verb{Partial<IComboBoxStyles>} \cr Custom styles for this component
+\item \bold{ text } \code{string} \cr Value to show in the input, does not have to map to a combobox option
+\item \bold{ theme } \code{ITheme} \cr Theme provided by HOC.
+\item \bold{ useComboBoxAsMenuWidth } \code{boolean} \cr Whether to use the ComboBoxes width as the menu's width
+\item \bold{ multiselectAccessibleText } \code{string} \cr Accessible text for label when combobox is multiselected.
+\item \bold{ props } \code{IComboBoxProps} \cr Props to render the combobox.
 }
 }
 \section{Best practices}{

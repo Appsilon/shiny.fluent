@@ -50,26 +50,26 @@ you need to work using the original docs to achieve the desired result.
 }
 \details{
 \itemize{
-\item {\bold{ align }} {\code{'auto' | 'stretch' | 'baseline' | 'start' | 'center' | 'end'} \cr Defines how to align the StackItem along the x-axis (for vertical Stacks) or the y-axis (for horizontal Stacks).}
-\item {\bold{ className }} {\code{string} \cr Defines a CSS class name used to style the StackItem.}
-\item {\bold{ disableShrink }} {\code{boolean} \cr Defines whether the StackItem should be prevented from shrinking. This can be used to prevent a StackItem from shrinking when it is inside of a Stack that has shrinking items.}
-\item {\bold{ grow }} {\code{boolean | number | 'inherit' | 'initial' | 'unset'} \cr Defines how much to grow the StackItem in proportion to its siblings.}
-\item {\bold{ order }} {\code{number | string} \cr Defines order of the StackItem.}
-\item {\bold{ shrink }} {\code{boolean | number | 'inherit' | 'initial' | 'unset'} \cr Defines at what ratio should the StackItem shrink to fit the available space.}
-\item {\bold{ verticalFill }} {\code{boolean} \cr Defines whether the StackItem should take up 100\% of the height of its parent.}
-\item {\bold{ as }} {\verb{React.ElementType<React.HTMLAttributes<HTMLElement>>} \cr Defines how to render the Stack.}
-\item {\bold{ disableShrink }} {\code{boolean} \cr Defines whether Stack children should not shrink to fit the available space.}
-\item {\bold{ gap }} {\code{number | string} \cr Defines the spacing between Stack children. The property is specified as a value for 'row gap', followed optionally by a value for 'column gap'. If 'column gap' is omitted, it's set to the same value as 'row gap'.}
-\item {\bold{ grow }} {\code{boolean | number | 'inherit' | 'initial' | 'unset'} \cr Defines how much to grow the Stack in proportion to its siblings.}
-\item {\bold{ horizontal }} {\code{boolean} \cr Defines whether to render Stack children horizontally.}
-\item {\bold{ horizontalAlign }} {\code{Alignment} \cr Defines how to align Stack children horizontally (along the x-axis).}
-\item {\bold{ maxHeight }} {\code{number | string} \cr Defines the maximum height that the Stack can take.}
-\item {\bold{ maxWidth }} {\code{number | string} \cr Defines the maximum width that the Stack can take.}
-\item {\bold{ padding }} {\code{number | string} \cr Defines the inner padding of the Stack.}
-\item {\bold{ reversed }} {\code{boolean} \cr Defines whether to render Stack children in the opposite direction (bottom-to-top if it's a vertical Stack and right-to-left if it's a horizontal Stack).}
-\item {\bold{ verticalAlign }} {\code{Alignment} \cr Defines how to align Stack children vertically (along the y-axis).}
-\item {\bold{ verticalFill }} {\code{boolean} \cr Defines whether the Stack should take up 100\% of the height of its parent. This property is required to be set to true when using the \code{grow} flag on children in vertical oriented Stacks. Stacks are rendered as block elements and grow horizontally to the container already.}
-\item {\bold{ wrap }} {\code{boolean} \cr Defines whether Stack children should wrap onto multiple rows or columns when they are about to overflow the size of the Stack.}
+\item \bold{ align } \code{'auto' | 'stretch' | 'baseline' | 'start' | 'center' | 'end'} \cr Defines how to align the StackItem along the x-axis (for vertical Stacks) or the y-axis (for horizontal Stacks).
+\item \bold{ className } \code{string} \cr Defines a CSS class name used to style the StackItem.
+\item \bold{ disableShrink } \code{boolean} \cr Defines whether the StackItem should be prevented from shrinking. This can be used to prevent a StackItem from shrinking when it is inside of a Stack that has shrinking items.
+\item \bold{ grow } \code{boolean | number | 'inherit' | 'initial' | 'unset'} \cr Defines how much to grow the StackItem in proportion to its siblings.
+\item \bold{ order } \code{number | string} \cr Defines order of the StackItem.
+\item \bold{ shrink } \code{boolean | number | 'inherit' | 'initial' | 'unset'} \cr Defines at what ratio should the StackItem shrink to fit the available space.
+\item \bold{ verticalFill } \code{boolean} \cr Defines whether the StackItem should take up 100\% of the height of its parent.
+\item \bold{ as } \verb{React.ElementType<React.HTMLAttributes<HTMLElement>>} \cr Defines how to render the Stack.
+\item \bold{ disableShrink } \code{boolean} \cr Defines whether Stack children should not shrink to fit the available space.
+\item \bold{ gap } \code{number | string} \cr Defines the spacing between Stack children. The property is specified as a value for 'row gap', followed optionally by a value for 'column gap'. If 'column gap' is omitted, it's set to the same value as 'row gap'.
+\item \bold{ grow } \code{boolean | number | 'inherit' | 'initial' | 'unset'} \cr Defines how much to grow the Stack in proportion to its siblings.
+\item \bold{ horizontal } \code{boolean} \cr Defines whether to render Stack children horizontally.
+\item \bold{ horizontalAlign } \code{Alignment} \cr Defines how to align Stack children horizontally (along the x-axis).
+\item \bold{ maxHeight } \code{number | string} \cr Defines the maximum height that the Stack can take.
+\item \bold{ maxWidth } \code{number | string} \cr Defines the maximum width that the Stack can take.
+\item \bold{ padding } \code{number | string} \cr Defines the inner padding of the Stack.
+\item \bold{ reversed } \code{boolean} \cr Defines whether to render Stack children in the opposite direction (bottom-to-top if it's a vertical Stack and right-to-left if it's a horizontal Stack).
+\item \bold{ verticalAlign } \code{Alignment} \cr Defines how to align Stack children vertically (along the y-axis).
+\item \bold{ verticalFill } \code{boolean} \cr Defines whether the Stack should take up 100\% of the height of its parent. This property is required to be set to true when using the \code{grow} flag on children in vertical oriented Stacks. Stacks are rendered as block elements and grow horizontally to the container already.
+\item \bold{ wrap } \code{boolean} \cr Defines whether Stack children should wrap onto multiple rows or columns when they are about to overflow the size of the Stack.
 }
 }
 \examples{

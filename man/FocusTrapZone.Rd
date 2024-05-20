@@ -27,17 +27,17 @@ you need to work using the original docs to achieve the desired result.
 }
 \details{
 \itemize{
-\item {\bold{ ariaLabelledBy }} {\code{string} \cr Sets the aria-labelledby attribute.}
-\item {\bold{ componentRef }} {\verb{IRefObject<IFocusTrapZone>} \cr Optional callback to access the IFocusTrapZone interface. Use this instead of ref for accessing the public methods and properties of the component.}
-\item {\bold{ disabled }} {\code{boolean} \cr Whether to disable the FocusTrapZone's focus trapping behavior.}
-\item {\bold{ disableFirstFocus }} {\code{boolean} \cr Do not put focus onto the first element inside the focus trap zone.}
-\item {\bold{ elementToFocusOnDismiss }} {\code{HTMLElement} \cr Sets the element to focus on when exiting the FocusTrapZone.}
-\item {\bold{ enableAriaHiddenSiblings }} {\code{boolean} \cr Puts aria-hidden=true on all non-ancestors of the current element, for screen readers. This is an experimental feature that will be graduated to default behavior after testing. This flag will be removed with the next major release.}
-\item {\bold{ firstFocusableSelector }} {\verb{string | (() => string)} \cr Class name (not actual selector) for first focusable item. Do not append a dot. Only applies if \code{focusPreviouslyFocusedInnerElement} is false.}
-\item {\bold{ focusPreviouslyFocusedInnerElement }} {\code{boolean} \cr Specifies which descendant element to focus when \code{focus()} is called. If false, use the first focusable descendant, filtered by the \code{firstFocusableSelector} property if present. If true, use the element that was focused when the trap zone last had a focused descendant (or fall back to the first focusable descendant if the trap zone has never been focused).}
-\item {\bold{ forceFocusInsideTrap }} {\code{boolean} \cr Whether the focus trap zone should force focus to stay inside of it.}
-\item {\bold{ ignoreExternalFocusing }} {\code{boolean} \cr If false (the default), the trap zone will restore focus to the element which activated it once the trap zone is unmounted or disabled. Set to true to disable this behavior.}
-\item {\bold{ isClickableOutsideFocusTrap }} {\code{boolean} \cr Whether clicks are allowed outside this FocusTrapZone.}
+\item \bold{ ariaLabelledBy } \code{string} \cr Sets the aria-labelledby attribute.
+\item \bold{ componentRef } \verb{IRefObject<IFocusTrapZone>} \cr Optional callback to access the IFocusTrapZone interface. Use this instead of ref for accessing the public methods and properties of the component.
+\item \bold{ disabled } \code{boolean} \cr Whether to disable the FocusTrapZone's focus trapping behavior.
+\item \bold{ disableFirstFocus } \code{boolean} \cr Do not put focus onto the first element inside the focus trap zone.
+\item \bold{ elementToFocusOnDismiss } \code{HTMLElement} \cr Sets the element to focus on when exiting the FocusTrapZone.
+\item \bold{ enableAriaHiddenSiblings } \code{boolean} \cr Puts aria-hidden=true on all non-ancestors of the current element, for screen readers. This is an experimental feature that will be graduated to default behavior after testing. This flag will be removed with the next major release.
+\item \bold{ firstFocusableSelector } \verb{string | (() => string)} \cr Class name (not actual selector) for first focusable item. Do not append a dot. Only applies if \code{focusPreviouslyFocusedInnerElement} is false.
+\item \bold{ focusPreviouslyFocusedInnerElement } \code{boolean} \cr Specifies which descendant element to focus when \code{focus()} is called. If false, use the first focusable descendant, filtered by the \code{firstFocusableSelector} property if present. If true, use the element that was focused when the trap zone last had a focused descendant (or fall back to the first focusable descendant if the trap zone has never been focused).
+\item \bold{ forceFocusInsideTrap } \code{boolean} \cr Whether the focus trap zone should force focus to stay inside of it.
+\item \bold{ ignoreExternalFocusing } \code{boolean} \cr If false (the default), the trap zone will restore focus to the element which activated it once the trap zone is unmounted or disabled. Set to true to disable this behavior.
+\item \bold{ isClickableOutsideFocusTrap } \code{boolean} \cr Whether clicks are allowed outside this FocusTrapZone.
 }
 }
 \examples{

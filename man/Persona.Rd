@@ -26,46 +26,46 @@ you need to work using the original docs to achieve the desired result.
 }
 \details{
 \itemize{
-\item {\bold{ className }} {\code{string} \cr Additional css class to apply to the PersonaCoin}
-\item {\bold{ componentRef }} {\verb{IRefObject<\{\}>} \cr Gets the component ref.}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IPersonaCoinStyleProps, IPersonaCoinStyles>} \cr Call to provide customized styling that will layer on top of the variant rules}
-\item {\bold{ componentRef }} {\verb{IRefObject<\{\}>} \cr Gets the component ref.}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IPersonaPresenceStyleProps, IPersonaPresenceStyles>} \cr Call to provide customized styling that will layer on top of the variant rules}
-\item {\bold{ className }} {\code{string} \cr Additional CSS class(es) to apply to the Persona}
-\item {\bold{ componentRef }} {\verb{IRefObject<IPersona>} \cr Optional callback to access the IPersona interface. Use this instead of ref for accessing the public methods and properties of the component.}
-\item {\bold{ onRenderOptionalText }} {\verb{IRenderFunction<IPersonaProps>} \cr Optional custom renderer for the optional text.}
-\item {\bold{ onRenderPrimaryText }} {\verb{IRenderFunction<IPersonaProps>} \cr Optional custom renderer for the primary text.}
-\item {\bold{ onRenderSecondaryText }} {\verb{IRenderFunction<IPersonaProps>} \cr Optional custom renderer for the secondary text.}
-\item {\bold{ onRenderTertiaryText }} {\verb{IRenderFunction<IPersonaProps>} \cr Optional custom renderer for the tertiary text.}
-\item {\bold{ styles }} {\verb{IStyleFunctionOrObject<IPersonaStyleProps, IPersonaStyles>} \cr Call to provide customized styling that will layer on top of variant rules}
-\item {\bold{ allowPhoneInitials }} {\code{boolean} \cr Whether initials are calculated for phone numbers and number sequences. Example: Set property to true to get initials for project names consisting of numbers only.}
-\item {\bold{ coinProps }} {\code{IPersonaCoinProps} \cr Optional HTML element props for Persona coin.}
-\item {\bold{ coinSize }} {\code{number} \cr Optional custom persona coin size in pixel.}
-\item {\bold{ hidePersonaDetails }} {\code{boolean} \cr Whether to not render persona details, and just render the persona image/initials.}
-\item {\bold{ imageAlt }} {\code{string} \cr Alt text for the image to use. Defaults to an empty string.}
-\item {\bold{ imageInitials }} {\code{string} \cr The user's initials to display in the image area when there is no image.}
-\item {\bold{ imageShouldFadeIn }} {\code{boolean} \cr If true, adds the css class 'is-fadeIn' to the image.}
-\item {\bold{ imageShouldStartVisible }} {\code{boolean} \cr If true, the image starts as visible and is hidden on error. Otherwise, the image is hidden until it is successfully loaded. This disables imageShouldFadeIn.}
-\item {\bold{ imageUrl }} {\code{string} \cr Url to the image to use, should be a square aspect ratio and big enough to fit in the image area.}
-\item {\bold{ initialsColor }} {\code{PersonaInitialsColor | string} \cr The background color when the user's initials are displayed.}
-\item {\bold{ isOutOfOffice }} {\code{boolean} \cr This flag can be used to signal the persona is out of office. This will change the way the presence icon looks for statuses that support dual-presence.}
-\item {\bold{ onPhotoLoadingStateChange }} {\verb{(newImageLoadState: ImageLoadState) => void} \cr Optional callback for when loading state of the photo changes}
-\item {\bold{ onRenderCoin }} {\verb{IRenderFunction<IPersonaSharedProps>} \cr Optional custom renderer for the coin}
-\item {\bold{ onRenderInitials }} {\verb{IRenderFunction<IPersonaSharedProps>} \cr Optional custom renderer for the initials}
-\item {\bold{ onRenderPersonaCoin }} {\verb{IRenderFunction<IPersonaSharedProps>} \cr Optional custom renderer for the coin}
-\item {\bold{ optionalText }} {\code{string} \cr Optional text to display, usually a custom message set. The optional text will only be shown when using size100.}
-\item {\bold{ presence }} {\code{PersonaPresence} \cr Presence of the person to display - will not display presence if undefined.}
-\item {\bold{ presenceColors }} {\code{{ available: string; away: string; busy: string; dnd: string; offline: string; oof: string; background: string; }} \cr The colors to be used for the presence-icon and it's background}
-\item {\bold{ presenceTitle }} {\code{string} \cr Presence title to be shown as a tooltip on hover over the presence icon.}
-\item {\bold{ primaryText }} {\code{string} \cr Primary text to display, usually the name of the person.}
-\item {\bold{ secondaryText }} {\code{string} \cr Secondary text to display, usually the role of the user.}
-\item {\bold{ showInitialsUntilImageLoads }} {\code{boolean} \cr If true renders the initials while the image is loading. This only applies when an imageUrl is provided.}
-\item {\bold{ showSecondaryText }} {\code{boolean} \cr }
-\item {\bold{ showUnknownPersonaCoin }} {\code{boolean} \cr If true, show the special coin for unknown persona. It has '?' in place of initials, with static font and background colors}
-\item {\bold{ size }} {\code{PersonaSize} \cr Decides the size of the control.}
-\item {\bold{ tertiaryText }} {\code{string} \cr Tertiary text to display, usually the status of the user. The tertiary text will only be shown when using size72 or size100.}
-\item {\bold{ text }} {\code{string} \cr Primary text to display, usually the name of the person.}
-\item {\bold{ theme }} {\code{ITheme} \cr Theme provided by High-Order Component.}
+\item \bold{ className } \code{string} \cr Additional css class to apply to the PersonaCoin
+\item \bold{ componentRef } \verb{IRefObject<\{\}>} \cr Gets the component ref.
+\item \bold{ styles } \verb{IStyleFunctionOrObject<IPersonaCoinStyleProps, IPersonaCoinStyles>} \cr Call to provide customized styling that will layer on top of the variant rules
+\item \bold{ componentRef } \verb{IRefObject<\{\}>} \cr Gets the component ref.
+\item \bold{ styles } \verb{IStyleFunctionOrObject<IPersonaPresenceStyleProps, IPersonaPresenceStyles>} \cr Call to provide customized styling that will layer on top of the variant rules
+\item \bold{ className } \code{string} \cr Additional CSS class(es) to apply to the Persona
+\item \bold{ componentRef } \verb{IRefObject<IPersona>} \cr Optional callback to access the IPersona interface. Use this instead of ref for accessing the public methods and properties of the component.
+\item \bold{ onRenderOptionalText } \verb{IRenderFunction<IPersonaProps>} \cr Optional custom renderer for the optional text.
+\item \bold{ onRenderPrimaryText } \verb{IRenderFunction<IPersonaProps>} \cr Optional custom renderer for the primary text.
+\item \bold{ onRenderSecondaryText } \verb{IRenderFunction<IPersonaProps>} \cr Optional custom renderer for the secondary text.
+\item \bold{ onRenderTertiaryText } \verb{IRenderFunction<IPersonaProps>} \cr Optional custom renderer for the tertiary text.
+\item \bold{ styles } \verb{IStyleFunctionOrObject<IPersonaStyleProps, IPersonaStyles>} \cr Call to provide customized styling that will layer on top of variant rules
+\item \bold{ allowPhoneInitials } \code{boolean} \cr Whether initials are calculated for phone numbers and number sequences. Example: Set property to true to get initials for project names consisting of numbers only.
+\item \bold{ coinProps } \code{IPersonaCoinProps} \cr Optional HTML element props for Persona coin.
+\item \bold{ coinSize } \code{number} \cr Optional custom persona coin size in pixel.
+\item \bold{ hidePersonaDetails } \code{boolean} \cr Whether to not render persona details, and just render the persona image/initials.
+\item \bold{ imageAlt } \code{string} \cr Alt text for the image to use. Defaults to an empty string.
+\item \bold{ imageInitials } \code{string} \cr The user's initials to display in the image area when there is no image.
+\item \bold{ imageShouldFadeIn } \code{boolean} \cr If true, adds the css class 'is-fadeIn' to the image.
+\item \bold{ imageShouldStartVisible } \code{boolean} \cr If true, the image starts as visible and is hidden on error. Otherwise, the image is hidden until it is successfully loaded. This disables imageShouldFadeIn.
+\item \bold{ imageUrl } \code{string} \cr Url to the image to use, should be a square aspect ratio and big enough to fit in the image area.
+\item \bold{ initialsColor } \code{PersonaInitialsColor | string} \cr The background color when the user's initials are displayed.
+\item \bold{ isOutOfOffice } \code{boolean} \cr This flag can be used to signal the persona is out of office. This will change the way the presence icon looks for statuses that support dual-presence.
+\item \bold{ onPhotoLoadingStateChange } \verb{(newImageLoadState: ImageLoadState) => void} \cr Optional callback for when loading state of the photo changes
+\item \bold{ onRenderCoin } \verb{IRenderFunction<IPersonaSharedProps>} \cr Optional custom renderer for the coin
+\item \bold{ onRenderInitials } \verb{IRenderFunction<IPersonaSharedProps>} \cr Optional custom renderer for the initials
+\item \bold{ onRenderPersonaCoin } \verb{IRenderFunction<IPersonaSharedProps>} \cr Optional custom renderer for the coin
+\item \bold{ optionalText } \code{string} \cr Optional text to display, usually a custom message set. The optional text will only be shown when using size100.
+\item \bold{ presence } \code{PersonaPresence} \cr Presence of the person to display - will not display presence if undefined.
+\item \bold{ presenceColors } \code{{ available: string; away: string; busy: string; dnd: string; offline: string; oof: string; background: string; }} \cr The colors to be used for the presence-icon and it's background
+\item \bold{ presenceTitle } \code{string} \cr Presence title to be shown as a tooltip on hover over the presence icon.
+\item \bold{ primaryText } \code{string} \cr Primary text to display, usually the name of the person.
+\item \bold{ secondaryText } \code{string} \cr Secondary text to display, usually the role of the user.
+\item \bold{ showInitialsUntilImageLoads } \code{boolean} \cr If true renders the initials while the image is loading. This only applies when an imageUrl is provided.
+\item \bold{ showSecondaryText } \code{boolean} \cr
+\item \bold{ showUnknownPersonaCoin } \code{boolean} \cr If true, show the special coin for unknown persona. It has '?' in place of initials, with static font and background colors
+\item \bold{ size } \code{PersonaSize} \cr Decides the size of the control.
+\item \bold{ tertiaryText } \code{string} \cr Tertiary text to display, usually the status of the user. The tertiary text will only be shown when using size72 or size100.
+\item \bold{ text } \code{string} \cr Primary text to display, usually the name of the person.
+\item \bold{ theme } \code{ITheme} \cr Theme provided by High-Order Component.
 }
 }
 \section{Best practices}{

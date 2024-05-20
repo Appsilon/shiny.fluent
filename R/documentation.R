@@ -16,24 +16,22 @@
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ activityDescription }} {`React.ReactNode[] | React.ReactNode` \cr An element describing the activity that took place. If no activityDescription, activityDescriptionText, or onRenderActivityDescription are included, no description of the activity is shown.}
-#' \item {\bold{ activityDescriptionText }} {`string` \cr Text describing the activity that occurred and naming the people involved in it. Deprecated, use `activityDescription` instead.}
-#' \item {\bold{ activityIcon }} {`React.ReactNode` \cr An element containing an icon shown next to the activity item.}
-#' \item {\bold{ activityPersonas }} {`Array<IPersonaSharedProps>` \cr If activityIcon is not set, then the persona props in this array will be used as the icon for this activity item.}
-#' \item {\bold{ animateBeaconSignal }} {`boolean` \cr Enables/Disables the beacon that radiates from the center of the center of the activity icon. Signals an activity has started.}
-#' \item {\bold{ beaconColorOne }} {`string` \cr Beacon color one}
-#' \item {\bold{ beaconColorTwo }} {`string` \cr Beacon color two}
-#' \item {\bold{ comments }} {`React.ReactNode[] | React.ReactNode` \cr An element containing the text of comments or \@mention messages. If no comments, commentText, or onRenderComments are included, no comments are shown.}
-#' \item {\bold{ commentText }} {`string` \cr Text of comments or \@mention messages. Deprecated, use `comments` instead.}
-#' \item {\bold{ isCompact }} {`boolean` \cr Indicated if the compact styling should be used.}
-#' \item {\bold{ onRenderActivityDescription }} {`IRenderFunction<IActivityItemProps>` \cr A renderer for the description of the current activity.}
-#' \item {\bold{ onRenderComments }} {`IRenderFunction<IActivityItemProps>` \cr A renderer that adds the text of a comment below the activity description.}
-#' \item {\bold{ onRenderIcon }} {`IRenderFunction<IActivityItemProps>` \cr A renderer to create the icon next to the activity item.}
-#' \item {\bold{ onRenderTimeStamp }} {`IRenderFunction<IActivityItemProps>` \cr A renderer adds a time stamp. If not included, timeStamp is shown as plain text below the activity.}
-#' \item {\bold{ styles }} {`IActivityItemStyles` \cr Optional styling for the elements within the Activity Item.}
-#' \item {\bold{ timeStamp }} {`string | React.ReactNode[] | React.ReactNode` \cr Element shown as a timestamp on this activity. If not included, no timestamp is shown.}
-#' }
+#' * \bold{ activityDescription } `React.ReactNode[] | React.ReactNode` \cr An element describing the activity that took place. If no activityDescription, activityDescriptionText, or onRenderActivityDescription are included, no description of the activity is shown.
+#' * \bold{ activityDescriptionText } `string` \cr Text describing the activity that occurred and naming the people involved in it. Deprecated, use `activityDescription` instead.
+#' * \bold{ activityIcon } `React.ReactNode` \cr An element containing an icon shown next to the activity item.
+#' * \bold{ activityPersonas } `Array<IPersonaSharedProps>` \cr If activityIcon is not set, then the persona props in this array will be used as the icon for this activity item.
+#' * \bold{ animateBeaconSignal } `boolean` \cr Enables/Disables the beacon that radiates from the center of the center of the activity icon. Signals an activity has started.
+#' * \bold{ beaconColorOne } `string` \cr Beacon color one
+#' * \bold{ beaconColorTwo } `string` \cr Beacon color two
+#' * \bold{ comments } `React.ReactNode[] | React.ReactNode` \cr An element containing the text of comments or \@mention messages. If no comments, commentText, or onRenderComments are included, no comments are shown.
+#' * \bold{ commentText } `string` \cr Text of comments or \@mention messages. Deprecated, use `comments` instead.
+#' * \bold{ isCompact } `boolean` \cr Indicated if the compact styling should be used.
+#' * \bold{ onRenderActivityDescription } `IRenderFunction<IActivityItemProps>` \cr A renderer for the description of the current activity.
+#' * \bold{ onRenderComments } `IRenderFunction<IActivityItemProps>` \cr A renderer that adds the text of a comment below the activity description.
+#' * \bold{ onRenderIcon } `IRenderFunction<IActivityItemProps>` \cr A renderer to create the icon next to the activity item.
+#' * \bold{ onRenderTimeStamp } `IRenderFunction<IActivityItemProps>` \cr A renderer adds a time stamp. If not included, timeStamp is shown as plain text below the activity.
+#' * \bold{ styles } `IActivityItemStyles` \cr Optional styling for the elements within the Activity Item.
+#' * \bold{ timeStamp } `string | React.ReactNode[] | React.ReactNode` \cr Element shown as a timestamp on this activity. If not included, no timestamp is shown.
 #'
 #' @md
 #' @name ActivityItem
@@ -51,10 +49,10 @@ NULL
 #'
 #' The Announced component currently has the following documented use cases:
 #'
-#' 1. [Quick Actions](https://developer.microsoft.com/en-us/fluentui#/controls/web/announced/quickactions): Operations such as editing text or deletion that are short enough that they do not require a status during progress.
-#' 2. [Search Results](https://developer.microsoft.com/en-us/fluentui#/controls/web/announced/searchresults): Appearance of search results such as in contact fields or search boxes.
-#' 3. [Lazy Loading](https://developer.microsoft.com/en-us/fluentui#/controls/web/announced/lazyloading): "Lazy loading" of page sections that do not appear all at once.
-#' 4. [Bulk Operations](https://developer.microsoft.com/en-us/fluentui#/controls/web/announced/bulkoperations): Operations that require multiple sub operations, such as the moving of several files.
+#' 1. [Quick Actions](#/controls/web/announced/quickactions): Operations such as editing text or deletion that are short enough that they do not require a status during progress.
+#' 2. [Search Results](#/controls/web/announced/searchresults): Appearance of search results such as in contact fields or search boxes.
+#' 3. [Lazy Loading](#/controls/web/announced/lazyloading): "Lazy loading" of page sections that do not appear all at once.
+#' 4. [Bulk Operations](#/controls/web/announced/bulkoperations): Operations that require multiple sub operations, such as the moving of several files.
 #'
 #'
 #' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Announced).
@@ -64,12 +62,10 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ "aria-live" }} {`'off' | 'polite' | 'assertive'` \cr Priority with which the screen reader should treat updates to this region  @default 'polite'}
-#' \item {\bold{ as }} {`React.ElementType` \cr Optionally render the root of this component as another component type or primitive. The custom type **must** preserve any children or native props passed in.  @default 'div'}
-#' \item {\bold{ message }} {`string` \cr The status message provided as screen reader output}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<{}, IAnnouncedStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' }
+#' * \bold{ "aria-live" } `'off' | 'polite' | 'assertive'` \cr Priority with which the screen reader should treat updates to this region  @default 'polite'
+#' * \bold{ as } `React.ElementType` \cr Optionally render the root of this component as another component type or primitive. The custom type **must** preserve any children or native props passed in.  @default 'div'
+#' * \bold{ message } `string` \cr The status message provided as screen reader output
+#' * \bold{ styles } `IStyleFunctionOrObject<{}, IAnnouncedStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
 #'
 #' @md
 #' @name Announced
@@ -90,25 +86,23 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ ariaLabel }} {`string` \cr Aria label for the root element of the breadcrumb (which is a navigation landmark).}
-#' \item {\bold{ className }} {`string` \cr Optional class for the root breadcrumb element.}
-#' \item {\bold{ componentRef }} {`IRefObject<IBreadcrumb>` \cr Optional callback to access the IBreadcrumb interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ dividerAs }} {`IComponentAs<IDividerAsProps>` \cr Render a custom divider in place of the default chevron `>`}
-#' \item {\bold{ focusZoneProps }} {`IFocusZoneProps` \cr Extra props for the root FocusZone.}
-#' \item {\bold{ items }} {`IBreadcrumbItem[]` \cr Collection of breadcrumbs to render}
-#' \item {\bold{ maxDisplayedItems }} {`number` \cr The maximum number of breadcrumbs to display before coalescing. If not specified, all breadcrumbs will be rendered.}
-#' \item {\bold{ onGrowData }} {`(data: IBreadcrumbData) => IBreadcrumbData | undefined` \cr Method that determines how to group the length of the breadcrumb. Return undefined to never increase breadcrumb length.}
-#' \item {\bold{ onReduceData }} {`(data: IBreadcrumbData) => IBreadcrumbData | undefined` \cr Method that determines how to reduce the length of the breadcrumb. Return undefined to never reduce breadcrumb length.}
-#' \item {\bold{ onRenderItem }} {`IRenderFunction<IBreadcrumbItem>` \cr Custom render function for each breadcrumb item.}
-#' \item {\bold{ onRenderOverflowIcon }} {`IRenderFunction<IButtonProps>` \cr Render a custom overflow icon in place of the default icon `...`}
-#' \item {\bold{ overflowAriaLabel }} {`string` \cr Aria label for the overflow button.}
-#' \item {\bold{ overflowIndex }} {`number` \cr Optional index where overflow items will be collapsed. Defaults to 0.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IBreadcrumbStyleProps, IBreadcrumbStyles>` \cr }
-#' \item {\bold{ theme }} {`ITheme` \cr }
-#' \item {\bold{ tooltipHostProps }} {`ITooltipHostProps` \cr Extra props for the TooltipHost which wraps each breadcrumb item.}
-#' \item {\bold{ item }} {`IBreadcrumbItem` \cr Breadcrumb item to left of the divider to be passed for custom rendering. For overflowed items, it will be last item in the list.}
-#' }
+#' * \bold{ ariaLabel } `string` \cr Aria label for the root element of the breadcrumb (which is a navigation landmark).
+#' * \bold{ className } `string` \cr Optional class for the root breadcrumb element.
+#' * \bold{ componentRef } `IRefObject<IBreadcrumb>` \cr Optional callback to access the IBreadcrumb interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ dividerAs } `IComponentAs<IDividerAsProps>` \cr Render a custom divider in place of the default chevron `>`
+#' * \bold{ focusZoneProps } `IFocusZoneProps` \cr Extra props for the root FocusZone.
+#' * \bold{ items } `IBreadcrumbItem[]` \cr Collection of breadcrumbs to render
+#' * \bold{ maxDisplayedItems } `number` \cr The maximum number of breadcrumbs to display before coalescing. If not specified, all breadcrumbs will be rendered.
+#' * \bold{ onGrowData } `(data: IBreadcrumbData) => IBreadcrumbData | undefined` \cr Method that determines how to group the length of the breadcrumb. Return undefined to never increase breadcrumb length.
+#' * \bold{ onReduceData } `(data: IBreadcrumbData) => IBreadcrumbData | undefined` \cr Method that determines how to reduce the length of the breadcrumb. Return undefined to never reduce breadcrumb length.
+#' * \bold{ onRenderItem } `IRenderFunction<IBreadcrumbItem>` \cr Custom render function for each breadcrumb item.
+#' * \bold{ onRenderOverflowIcon } `IRenderFunction<IButtonProps>` \cr Render a custom overflow icon in place of the default icon `...`
+#' * \bold{ overflowAriaLabel } `string` \cr Aria label for the overflow button.
+#' * \bold{ overflowIndex } `number` \cr Optional index where overflow items will be collapsed. Defaults to 0.
+#' * \bold{ styles } `IStyleFunctionOrObject<IBreadcrumbStyleProps, IBreadcrumbStyles>` \cr
+#' * \bold{ theme } `ITheme` \cr
+#' * \bold{ tooltipHostProps } `ITooltipHostProps` \cr Extra props for the TooltipHost which wraps each breadcrumb item.
+#' * \bold{ item } `IBreadcrumbItem` \cr Breadcrumb item to left of the divider to be passed for custom rendering. For overflowed items, it will be last item in the list.
 #'
 #' @md
 #' @name Breadcrumb
@@ -141,60 +135,58 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ baseClassName }} {`string` \cr }
-#' \item {\bold{ variantClassName }} {`string` \cr }
-#' \item {\bold{ allowDisabledFocus }} {`boolean` \cr Whether the button can have focus in disabled mode}
-#' \item {\bold{ ariaDescription }} {`string` \cr Detailed description of the button for the benefit of screen readers.
+#' * \bold{ baseClassName } `string` \cr
+#' * \bold{ variantClassName } `string` \cr
+#' * \bold{ allowDisabledFocus } `boolean` \cr Whether the button can have focus in disabled mode
+#' * \bold{ ariaDescription } `string` \cr Detailed description of the button for the benefit of screen readers.
 #'
-#' Besides the compound button, other button types will need more information provided to screen reader.}
-#' \item {\bold{ ariaHidden }} {`boolean` \cr If provided and is true it adds an 'aria-hidden' attribute instructing screen readers to ignore the element.}
-#' \item {\bold{ ariaLabel }} {`string` \cr The aria label of the button for the benefit of screen readers.}
-#' \item {\bold{ buttonType }} {`ButtonType` \cr Deprecated at v1.2.3, to be removed at \>= v2.0.0. Use specific button component instead.}
-#' \item {\bold{ checked }} {`boolean` \cr Whether the button is checked}
-#' \item {\bold{ className }} {`string` \cr If provided, additional class name to provide on the root element.}
-#' \item {\bold{ componentRef }} {`IRefObject<IButton>` \cr Optional callback to access the IButton interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ data }} {`any` \cr Any custom data the developer wishes to associate with the menu item.}
-#' \item {\bold{ defaultRender }} {`any` \cr yet unknown docs}
-#' \item {\bold{ description }} {`IStyle` \cr Style for the description text if applicable (for compound buttons.) Deprecated, use `secondaryText` instead.}
-#' \item {\bold{ disabled }} {`boolean` \cr Whether the button is disabled}
-#' \item {\bold{ getClassNames }} {`(theme: ITheme, className: string, variantClassName: string, iconClassName: string | undefined, menuIconClassName: string | undefined, disabled: boolean, checked: boolean, expanded: boolean, hasMenu: boolean, isSplit: boolean | undefined, allowDisabledFocus: boolean) => IButtonClassNames` \cr Method to provide the classnames to style a button. The default value for this prop is the getClassnames func defined in BaseButton.classnames.}
-#' \item {\bold{ getSplitButtonClassNames }} {`(disabled: boolean, expanded: boolean, checked: boolean, allowDisabledFocus: boolean) => ISplitButtonClassNames` \cr Method to provide the classnames to style a button. The default value for this prop is the getClassnames func defined in BaseButton.classnames.}
-#' \item {\bold{ href }} {`string` \cr If provided, this component will be rendered as an anchor.}
-#' \item {\bold{ iconProps }} {`IIconProps` \cr The props for the icon shown in the button.}
-#' \item {\bold{ keytipProps }} {`IKeytipProps` \cr Optional keytip for this button}
-#' \item {\bold{ menuAs }} {`IComponentAs<IContextualMenuProps>` \cr Render a custom menu in place of the normal one.}
-#' \item {\bold{ menuIconProps }} {`IIconProps` \cr The props for the icon shown when providing a menu dropdown.}
-#' \item {\bold{ menuProps }} {`IContextualMenuProps` \cr Props for button menu. Providing this will default to showing the menu icon. See menuIconProps for overriding how the default icon looks. Providing this in addition of onClick and setting the split property to true will render a SplitButton.}
-#' \item {\bold{ menuTriggerKeyCode }} {`KeyCodes | null` \cr Provides a custom KeyCode that can be used to open the button menu. The default KeyCode is the down arrow. A value of null can be provided to disable the key codes for opening the button menu.}
-#' \item {\bold{ onAfterMenuDismiss }} {`() => void` \cr Callback that runs after Button's contextualmenu was closed (removed from the DOM)}
-#' \item {\bold{ onMenuClick }} {`(ev?: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>, button?: IButtonProps) => void` \cr Optional callback when menu is clicked.}
-#' \item {\bold{ onRenderAriaDescription }} {`IRenderFunction<IButtonProps>` \cr Custom render function for the aria description element.}
-#' \item {\bold{ onRenderChildren }} {`IRenderFunction<IButtonProps>` \cr Custom render function for rendering the button children.}
-#' \item {\bold{ onRenderDescription }} {`IRenderFunction<IButtonProps>` \cr Custom render function for the desciption text.}
-#' \item {\bold{ onRenderIcon }} {`IRenderFunction<IButtonProps>` \cr Custom render function for the icon}
-#' \item {\bold{ onRenderMenu }} {`IRenderFunction<IContextualMenuProps>` \cr Deprecated at v6.3.2, to be removed at \>= v7.0.0. Use `menuAs` instead.}
-#' \item {\bold{ onRenderMenuIcon }} {`IRenderFunction<IButtonProps>` \cr Custom render function for button menu icon}
-#' \item {\bold{ onRenderText }} {`IRenderFunction<IButtonProps>` \cr Custom render function for the label text.}
-#' \item {\bold{ persistMenu }} {`boolean` \cr Menu will not be created or destroyed when opened or closed, instead it will be hidden. This will improve perf of the menu opening but could potentially impact overall perf by having more elements in the dom. Should only be used when perf is important. Note: This may increase the amount of time it takes for the button itself to mount.}
-#' \item {\bold{ primary }} {`boolean` \cr Changes the visual presentation of the button to be emphasized (if defined)}
-#' \item {\bold{ primaryActionButtonProps }} {`IButtonProps` \cr Optional props to be applied only to the primary action button of SplitButton and not to the overall SplitButton container}
-#' \item {\bold{ primaryDisabled }} {`boolean` \cr If set to true and if this is a splitButton (split == true) then the primary action of a split button is disabled.}
-#' \item {\bold{ renderPersistedMenuHiddenOnMount }} {`boolean` \cr If true, the persisted menu is rendered hidden when the button initially mounts. Non-persisted menus will not be in the component tree unless they are being shown
+#' Besides the compound button, other button types will need more information provided to screen reader.
+#' * \bold{ ariaHidden } `boolean` \cr If provided and is true it adds an 'aria-hidden' attribute instructing screen readers to ignore the element.
+#' * \bold{ ariaLabel } `string` \cr The aria label of the button for the benefit of screen readers.
+#' * \bold{ buttonType } `ButtonType` \cr Deprecated at v1.2.3, to be removed at \>= v2.0.0. Use specific button component instead.
+#' * \bold{ checked } `boolean` \cr Whether the button is checked
+#' * \bold{ className } `string` \cr If provided, additional class name to provide on the root element.
+#' * \bold{ componentRef } `IRefObject<IButton>` \cr Optional callback to access the IButton interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ data } `any` \cr Any custom data the developer wishes to associate with the menu item.
+#' * \bold{ defaultRender } `any` \cr yet unknown docs
+#' * \bold{ description } `IStyle` \cr Style for the description text if applicable (for compound buttons.) Deprecated, use `secondaryText` instead.
+#' * \bold{ disabled } `boolean` \cr Whether the button is disabled
+#' * \bold{ getClassNames } `(theme: ITheme, className: string, variantClassName: string, iconClassName: string | undefined, menuIconClassName: string | undefined, disabled: boolean, checked: boolean, expanded: boolean, hasMenu: boolean, isSplit: boolean | undefined, allowDisabledFocus: boolean) => IButtonClassNames` \cr Method to provide the classnames to style a button. The default value for this prop is the getClassnames func defined in BaseButton.classnames.
+#' * \bold{ getSplitButtonClassNames } `(disabled: boolean, expanded: boolean, checked: boolean, allowDisabledFocus: boolean) => ISplitButtonClassNames` \cr Method to provide the classnames to style a button. The default value for this prop is the getClassnames func defined in BaseButton.classnames.
+#' * \bold{ href } `string` \cr If provided, this component will be rendered as an anchor.
+#' * \bold{ iconProps } `IIconProps` \cr The props for the icon shown in the button.
+#' * \bold{ keytipProps } `IKeytipProps` \cr Optional keytip for this button
+#' * \bold{ menuAs } `IComponentAs<IContextualMenuProps>` \cr Render a custom menu in place of the normal one.
+#' * \bold{ menuIconProps } `IIconProps` \cr The props for the icon shown when providing a menu dropdown.
+#' * \bold{ menuProps } `IContextualMenuProps` \cr Props for button menu. Providing this will default to showing the menu icon. See menuIconProps for overriding how the default icon looks. Providing this in addition of onClick and setting the split property to true will render a SplitButton.
+#' * \bold{ menuTriggerKeyCode } `KeyCodes | null` \cr Provides a custom KeyCode that can be used to open the button menu. The default KeyCode is the down arrow. A value of null can be provided to disable the key codes for opening the button menu.
+#' * \bold{ onAfterMenuDismiss } `() => void` \cr Callback that runs after Button's contextualmenu was closed (removed from the DOM)
+#' * \bold{ onMenuClick } `(ev?: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>, button?: IButtonProps) => void` \cr Optional callback when menu is clicked.
+#' * \bold{ onRenderAriaDescription } `IRenderFunction<IButtonProps>` \cr Custom render function for the aria description element.
+#' * \bold{ onRenderChildren } `IRenderFunction<IButtonProps>` \cr Custom render function for rendering the button children.
+#' * \bold{ onRenderDescription } `IRenderFunction<IButtonProps>` \cr Custom render function for the desciption text.
+#' * \bold{ onRenderIcon } `IRenderFunction<IButtonProps>` \cr Custom render function for the icon
+#' * \bold{ onRenderMenu } `IRenderFunction<IContextualMenuProps>` \cr Deprecated at v6.3.2, to be removed at \>= v7.0.0. Use `menuAs` instead.
+#' * \bold{ onRenderMenuIcon } `IRenderFunction<IButtonProps>` \cr Custom render function for button menu icon
+#' * \bold{ onRenderText } `IRenderFunction<IButtonProps>` \cr Custom render function for the label text.
+#' * \bold{ persistMenu } `boolean` \cr Menu will not be created or destroyed when opened or closed, instead it will be hidden. This will improve perf of the menu opening but could potentially impact overall perf by having more elements in the dom. Should only be used when perf is important. Note: This may increase the amount of time it takes for the button itself to mount.
+#' * \bold{ primary } `boolean` \cr Changes the visual presentation of the button to be emphasized (if defined)
+#' * \bold{ primaryActionButtonProps } `IButtonProps` \cr Optional props to be applied only to the primary action button of SplitButton and not to the overall SplitButton container
+#' * \bold{ primaryDisabled } `boolean` \cr If set to true and if this is a splitButton (split == true) then the primary action of a split button is disabled.
+#' * \bold{ renderPersistedMenuHiddenOnMount } `boolean` \cr If true, the persisted menu is rendered hidden when the button initially mounts. Non-persisted menus will not be in the component tree unless they are being shown
 #'
-#' Note: This increases the time the button will take to mount, but can improve perceived menu open perf. when the user opens the menu.}
-#' \item {\bold{ rootProps }} {`React.ButtonHTMLAttributes<HTMLButtonElement> | React.AnchorHTMLAttributes<HTMLAnchorElement>` \cr Deprecated at v0.56.2, to be removed at \>= v1.0.0. Just pass in button props instead. they will be mixed into the button/anchor element rendered by the component.}
-#' \item {\bold{ secondaryText }} {`string` \cr Description of the action this button takes. Only used for compound buttons}
-#' \item {\bold{ split }} {`boolean` \cr If set to true, and if menuProps and onClick are provided, the button will render as a SplitButton.}
-#' \item {\bold{ splitButtonAriaLabel }} {`string` \cr Accessible label for the dropdown chevron button if this button is split.}
-#' \item {\bold{ splitButtonMenuProps }} {`IButtonProps` \cr Experimental prop that get passed into the menuButton that's rendered as part of split button. Anything passed in will likely need to have accompanying style changes.}
-#' \item {\bold{ styles }} {`IButtonStyles` \cr Custom styling for individual elements within the button DOM.}
-#' \item {\bold{ text }} {`string` \cr Text to render button label. If text is supplied, it will override any string in button children. Other children components will be passed through after the text.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by HOC.}
-#' \item {\bold{ toggle }} {`boolean` \cr Whether button is a toggle button with distinct on and off states. This should be true for buttons that permanently change state when a press event finishes, such as a volume mute button.}
-#' \item {\bold{ toggled }} {`boolean` \cr Any custom data the developer wishes to associate with the menu item. Deprecated, use `checked` if setting state.}
-#' \item {\bold{ uniqueId }} {`string | number` \cr Unique id to identify the item. Typically a duplicate of key value.}
-#' }
+#' Note: This increases the time the button will take to mount, but can improve perceived menu open perf. when the user opens the menu.
+#' * \bold{ rootProps } `React.ButtonHTMLAttributes<HTMLButtonElement> | React.AnchorHTMLAttributes<HTMLAnchorElement>` \cr Deprecated at v0.56.2, to be removed at \>= v1.0.0. Just pass in button props instead. they will be mixed into the button/anchor element rendered by the component.
+#' * \bold{ secondaryText } `string` \cr Description of the action this button takes. Only used for compound buttons
+#' * \bold{ split } `boolean` \cr If set to true, and if menuProps and onClick are provided, the button will render as a SplitButton.
+#' * \bold{ splitButtonAriaLabel } `string` \cr Accessible label for the dropdown chevron button if this button is split.
+#' * \bold{ splitButtonMenuProps } `IButtonProps` \cr Experimental prop that get passed into the menuButton that's rendered as part of split button. Anything passed in will likely need to have accompanying style changes.
+#' * \bold{ styles } `IButtonStyles` \cr Custom styling for individual elements within the button DOM.
+#' * \bold{ text } `string` \cr Text to render button label. If text is supplied, it will override any string in button children. Other children components will be passed through after the text.
+#' * \bold{ theme } `ITheme` \cr Theme provided by HOC.
+#' * \bold{ toggle } `boolean` \cr Whether button is a toggle button with distinct on and off states. This should be true for buttons that permanently change state when a press event finishes, such as a volume mute button.
+#' * \bold{ toggled } `boolean` \cr Any custom data the developer wishes to associate with the menu item. Deprecated, use `checked` if setting state.
+#' * \bold{ uniqueId } `string | number` \cr Unique id to identify the item. Typically a duplicate of key value.
 #'
 #' @md
 #' @name Button
@@ -223,38 +215,36 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ allFocusable }} {`boolean` \cr Allows all dates and buttons to be focused, including disabled ones}
-#' \item {\bold{ autoNavigateOnSelection }} {`boolean` \cr Whether the month view should automatically navigate to the next or previous date range depending on the selected date. If this property is set to true and the currently displayed month is March 2017, if the user clicks on a day outside the month, i.e., April 1st, the picker will automatically navigate to the month of April.}
-#' \item {\bold{ className }} {`string` \cr Optional class name to add to the root element.}
-#' \item {\bold{ componentRef }} {`IRefObject<ICalendar>` \cr Optional callback to access the ICalendar interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ dateRangeType }} {`DateRangeType` \cr The date range type indicating how many days should be selected as the user selects days}
-#' \item {\bold{ dateTimeFormatter }} {`ICalendarFormatDateCallbacks` \cr Apply additional formating to dates, for example localized date formatting.}
-#' \item {\bold{ firstDayOfWeek }} {`DayOfWeek` \cr The first day of the week for your locale.}
-#' \item {\bold{ firstWeekOfYear }} {`FirstWeekOfYear` \cr Defines when the first week of the year should start, FirstWeekOfYear.FirstDay, FirstWeekOfYear.FirstFullWeek or FirstWeekOfYear.FirstFourDayWeek are the possible values}
-#' \item {\bold{ highlightCurrentMonth }} {`boolean` \cr Whether the month picker should highlight the current month}
-#' \item {\bold{ highlightSelectedMonth }} {`boolean` \cr Whether the month picker should highlight the selected month}
-#' \item {\bold{ isDayPickerVisible }} {`boolean` \cr Whether the day picker is shown beside the month picker or hidden.}
-#' \item {\bold{ isMonthPickerVisible }} {`boolean` \cr Whether the month picker is shown beside the day picker or hidden.}
-#' \item {\bold{ maxDate }} {`Date` \cr If set the Calendar will not allow navigation to or selection of a date later than this value.}
-#' \item {\bold{ minDate }} {`Date` \cr If set the Calendar will not allow navigation to or selection of a date earlier than this value.}
-#' \item {\bold{ navigationIcons }} {`ICalendarIconStrings` \cr Customize navigation icons using ICalendarIconStrings}
-#' \item {\bold{ onDismiss }} {`() => void` \cr Callback issued when calendar is closed}
-#' \item {\bold{ onSelectDate }} {`(date: Date, selectedDateRangeArray?: Date[]) => void` \cr Callback issued when a date is selected}
-#' \item {\bold{ restrictedDates }} {`Date[]` \cr If set the Calendar will not allow selection of dates in this array.}
-#' \item {\bold{ selectDateOnClick }} {`boolean` \cr When clicking on "Today", select the date and close the calendar.}
-#' \item {\bold{ shouldFocusOnMount }} {`boolean` \cr This property has been removed at 0.80.0 in place of the `focus` method, to be removed \@ 1.0.0.}
-#' \item {\bold{ showCloseButton }} {`boolean` \cr Whether the close button should be shown or not}
-#' \item {\bold{ showGoToToday }} {`boolean` \cr Whether the "Go to today" link should be shown or not}
-#' \item {\bold{ showMonthPickerAsOverlay }} {`boolean` \cr Show month picker on top of date picker when visible.}
-#' \item {\bold{ showSixWeeksByDefault }} {`boolean` \cr Whether the calendar should show 6 weeks by default.}
-#' \item {\bold{ showWeekNumbers }} {`boolean` \cr Whether the calendar should show the week number (weeks 1 to 53) before each week row}
-#' \item {\bold{ strings }} {`ICalendarStrings | null` \cr Localized strings to use in the Calendar}
-#' \item {\bold{ today }} {`Date` \cr Value of today. If null, current time in client machine will be used.}
-#' \item {\bold{ value }} {`Date` \cr Default value of the Calendar, if any}
-#' \item {\bold{ workWeekDays }} {`DayOfWeek[]` \cr The days that are selectable when dateRangeType is WorkWeek. If dateRangeType is not WorkWeek this property does nothing.}
-#' \item {\bold{ yearPickerHidden }} {`boolean` \cr Whether the year picker is enabled}
-#' }
+#' * \bold{ allFocusable } `boolean` \cr Allows all dates and buttons to be focused, including disabled ones
+#' * \bold{ autoNavigateOnSelection } `boolean` \cr Whether the month view should automatically navigate to the next or previous date range depending on the selected date. If this property is set to true and the currently displayed month is March 2017, if the user clicks on a day outside the month, i.e., April 1st, the picker will automatically navigate to the month of April.
+#' * \bold{ className } `string` \cr Optional class name to add to the root element.
+#' * \bold{ componentRef } `IRefObject<ICalendar>` \cr Optional callback to access the ICalendar interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ dateRangeType } `DateRangeType` \cr The date range type indicating how many days should be selected as the user selects days
+#' * \bold{ dateTimeFormatter } `ICalendarFormatDateCallbacks` \cr Apply additional formating to dates, for example localized date formatting.
+#' * \bold{ firstDayOfWeek } `DayOfWeek` \cr The first day of the week for your locale.
+#' * \bold{ firstWeekOfYear } `FirstWeekOfYear` \cr Defines when the first week of the year should start, FirstWeekOfYear.FirstDay, FirstWeekOfYear.FirstFullWeek or FirstWeekOfYear.FirstFourDayWeek are the possible values
+#' * \bold{ highlightCurrentMonth } `boolean` \cr Whether the month picker should highlight the current month
+#' * \bold{ highlightSelectedMonth } `boolean` \cr Whether the month picker should highlight the selected month
+#' * \bold{ isDayPickerVisible } `boolean` \cr Whether the day picker is shown beside the month picker or hidden.
+#' * \bold{ isMonthPickerVisible } `boolean` \cr Whether the month picker is shown beside the day picker or hidden.
+#' * \bold{ maxDate } `Date` \cr If set the Calendar will not allow navigation to or selection of a date later than this value.
+#' * \bold{ minDate } `Date` \cr If set the Calendar will not allow navigation to or selection of a date earlier than this value.
+#' * \bold{ navigationIcons } `ICalendarIconStrings` \cr Customize navigation icons using ICalendarIconStrings
+#' * \bold{ onDismiss } `() => void` \cr Callback issued when calendar is closed
+#' * \bold{ onSelectDate } `(date: Date, selectedDateRangeArray?: Date[]) => void` \cr Callback issued when a date is selected
+#' * \bold{ restrictedDates } `Date[]` \cr If set the Calendar will not allow selection of dates in this array.
+#' * \bold{ selectDateOnClick } `boolean` \cr When clicking on "Today", select the date and close the calendar.
+#' * \bold{ shouldFocusOnMount } `boolean` \cr This property has been removed at 0.80.0 in place of the `focus` method, to be removed \@ 1.0.0.
+#' * \bold{ showCloseButton } `boolean` \cr Whether the close button should be shown or not
+#' * \bold{ showGoToToday } `boolean` \cr Whether the "Go to today" link should be shown or not
+#' * \bold{ showMonthPickerAsOverlay } `boolean` \cr Show month picker on top of date picker when visible.
+#' * \bold{ showSixWeeksByDefault } `boolean` \cr Whether the calendar should show 6 weeks by default.
+#' * \bold{ showWeekNumbers } `boolean` \cr Whether the calendar should show the week number (weeks 1 to 53) before each week row
+#' * \bold{ strings } `ICalendarStrings | null` \cr Localized strings to use in the Calendar
+#' * \bold{ today } `Date` \cr Value of today. If null, current time in client machine will be used.
+#' * \bold{ value } `Date` \cr Default value of the Calendar, if any
+#' * \bold{ workWeekDays } `DayOfWeek[]` \cr The days that are selectable when dateRangeType is WorkWeek. If dateRangeType is not WorkWeek this property does nothing.
+#' * \bold{ yearPickerHidden } `boolean` \cr Whether the year picker is enabled
 #'
 #' @md
 #' @name Calendar
@@ -291,49 +281,47 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ alignTargetEdge }} {`boolean` \cr If true the positioning logic will prefer to flip edges rather than to nudge the rectangle to fit within bounds, thus making sure the element aligns perfectly with target's alignment edge}
-#' \item {\bold{ ariaDescribedBy }} {`string` \cr Defines the element id referencing the element containing the description for the callout.}
-#' \item {\bold{ ariaLabel }} {`string` \cr Accessible label text for callout.}
-#' \item {\bold{ ariaLabelledBy }} {`string` \cr Defines the element id referencing the element containing label text for callout.}
-#' \item {\bold{ backgroundColor }} {`string` \cr The background color of the Callout in hex format ie. #ffffff.}
-#' \item {\bold{ beakWidth }} {`number` \cr The width of the beak.}
-#' \item {\bold{ bounds }} {`IRectangle | ((target?: Target, targetWindow?: Window) => IRectangle | undefined)` \cr The bounding rectangle (or callback that returns a rectangle) for which the contextual menu can appear in.}
-#' \item {\bold{ calloutMaxHeight }} {`number` \cr Set max height of callout When not set the callout will expand with contents up to the bottom of the screen}
-#' \item {\bold{ calloutMaxWidth }} {`number` \cr Custom width for callout including borders. If value is 0, no width is applied.}
-#' \item {\bold{ calloutWidth }} {`number` \cr Custom width for callout including borders. If value is 0, no width is applied.}
-#' \item {\bold{ className }} {`string` \cr CSS class to apply to the callout.}
-#' \item {\bold{ coverTarget }} {`boolean` \cr If true the position returned will have the menu element cover the target. If false then it will position next to the target;}
-#' \item {\bold{ directionalHint }} {`DirectionalHint` \cr How the element should be positioned}
-#' \item {\bold{ directionalHintFixed }} {`boolean` \cr If true the position will not change sides in an attempt to fit the callout within bounds. It will still attempt to align it to whatever bounds are given.}
-#' \item {\bold{ directionalHintForRTL }} {`DirectionalHint` \cr How the element should be positioned in RTL layouts. If not specified, a mirror of the `directionalHint` alignment edge will be used instead. This means that `DirectionalHint.BottomLeft` will change to `DirectionalHint.BottomRight` but `DirectionalHint.LeftAuto` will not change.}
-#' \item {\bold{ doNotLayer }} {`boolean` \cr If true do not render on a new layer. If false render on a new layer.}
-#' \item {\bold{ finalHeight }} {`number` \cr Specify the final height of the content. To be used when expanding the content dynamically so that callout can adjust its position.}
-#' \item {\bold{ gapSpace }} {`number` \cr The gap between the Callout and the target}
-#' \item {\bold{ hidden }} {`boolean` \cr If specified, renders the Callout in a hidden state. Use this flag, rather than rendering a callout conditionally based on visibility, to improve rendering performance when it becomes visible. Note: When callout is hidden its content will not be rendered. It will only render once the callout is visible.}
-#' \item {\bold{ hideOverflow }} {`boolean` \cr Manually set OverflowYHidden style prop to true on calloutMain element A variety of callout load animations will need this to hide the scollbar that can appear}
-#' \item {\bold{ isBeakVisible }} {`boolean` \cr If true then the beak is visible. If false it will not be shown.}
-#' \item {\bold{ layerProps }} {`ILayerProps` \cr Optional props to pass to the Layer component hosting the panel.}
-#' \item {\bold{ minPagePadding }} {`number` \cr The minimum distance the callout will be away from the edge of the screen.}
-#' \item {\bold{ onDismiss }} {`(ev?: any) => void` \cr Callback when the Callout tries to close.}
-#' \item {\bold{ onLayerMounted }} {`() => void` \cr Optional callback when the layer content has mounted.}
-#' \item {\bold{ onPositioned }} {`(positions?: ICalloutPositionedInfo) => void` \cr Optional callback that is called once the callout has been correctly positioned.}
-#' \item {\bold{ onRestoreFocus }} {`(options: { originalElement?: HTMLElement | Window; containsFocus: boolean; }) => void` \cr Called when the component is unmounting, and focus needs to be restored. Argument passed down contains two variables, the element that the underlying popup believes focus should go to * and whether or not the popup currently contains focus. If this is provided, focus will not be restored automatically, you'll need to call originalElement.focus()}
-#' \item {\bold{ onScroll }} {`() => void` \cr Callback when the Callout body is scrolled.}
-#' \item {\bold{ preventDismissOnLostFocus }} {`boolean` \cr If true then the callout will not dismiss when it loses focus}
-#' \item {\bold{ preventDismissOnResize }} {`boolean` \cr If true then the callout will not dismiss on resize}
-#' \item {\bold{ preventDismissOnScroll }} {`boolean` \cr If true then the callout will not dismiss on scroll}
-#' \item {\bold{ role }} {`string` \cr Aria role assigned to the callout (Eg. dialog, alertdialog).}
-#' \item {\bold{ setInitialFocus }} {`boolean` \cr If true then the callout will attempt to focus the first focusable element that it contains. If it doesn't find an element, no focus will be set and the method will return false. This means that it's the contents responsibility to either set focus or have focusable items.}
-#' \item {\bold{ shouldRestoreFocus }} {`boolean` \cr If true, when this component is unmounted, focus will be restored to the element that had focus when the component first mounted.}
-#' \item {\bold{ shouldUpdateWhenHidden }} {`boolean` \cr If true, the component will be updated even when hidden=true. Note that this would consume resources to update even though nothing is being shown to the user. This might be helpful though if your updates are small and you want the callout to be revealed fast to the user when hidden is set to false.}
-#' \item {\bold{ style }} {`React.CSSProperties` \cr CSS style to apply to the callout.
+#' * \bold{ alignTargetEdge } `boolean` \cr If true the positioning logic will prefer to flip edges rather than to nudge the rectangle to fit within bounds, thus making sure the element aligns perfectly with target's alignment edge
+#' * \bold{ ariaDescribedBy } `string` \cr Defines the element id referencing the element containing the description for the callout.
+#' * \bold{ ariaLabel } `string` \cr Accessible label text for callout.
+#' * \bold{ ariaLabelledBy } `string` \cr Defines the element id referencing the element containing label text for callout.
+#' * \bold{ backgroundColor } `string` \cr The background color of the Callout in hex format ie. #ffffff.
+#' * \bold{ beakWidth } `number` \cr The width of the beak.
+#' * \bold{ bounds } `IRectangle | ((target?: Target, targetWindow?: Window) => IRectangle | undefined)` \cr The bounding rectangle (or callback that returns a rectangle) for which the contextual menu can appear in.
+#' * \bold{ calloutMaxHeight } `number` \cr Set max height of callout When not set the callout will expand with contents up to the bottom of the screen
+#' * \bold{ calloutMaxWidth } `number` \cr Custom width for callout including borders. If value is 0, no width is applied.
+#' * \bold{ calloutWidth } `number` \cr Custom width for callout including borders. If value is 0, no width is applied.
+#' * \bold{ className } `string` \cr CSS class to apply to the callout.
+#' * \bold{ coverTarget } `boolean` \cr If true the position returned will have the menu element cover the target. If false then it will position next to the target;
+#' * \bold{ directionalHint } `DirectionalHint` \cr How the element should be positioned
+#' * \bold{ directionalHintFixed } `boolean` \cr If true the position will not change sides in an attempt to fit the callout within bounds. It will still attempt to align it to whatever bounds are given.
+#' * \bold{ directionalHintForRTL } `DirectionalHint` \cr How the element should be positioned in RTL layouts. If not specified, a mirror of the `directionalHint` alignment edge will be used instead. This means that `DirectionalHint.BottomLeft` will change to `DirectionalHint.BottomRight` but `DirectionalHint.LeftAuto` will not change.
+#' * \bold{ doNotLayer } `boolean` \cr If true do not render on a new layer. If false render on a new layer.
+#' * \bold{ finalHeight } `number` \cr Specify the final height of the content. To be used when expanding the content dynamically so that callout can adjust its position.
+#' * \bold{ gapSpace } `number` \cr The gap between the Callout and the target
+#' * \bold{ hidden } `boolean` \cr If specified, renders the Callout in a hidden state. Use this flag, rather than rendering a callout conditionally based on visibility, to improve rendering performance when it becomes visible. Note: When callout is hidden its content will not be rendered. It will only render once the callout is visible.
+#' * \bold{ hideOverflow } `boolean` \cr Manually set OverflowYHidden style prop to true on calloutMain element A variety of callout load animations will need this to hide the scollbar that can appear
+#' * \bold{ isBeakVisible } `boolean` \cr If true then the beak is visible. If false it will not be shown.
+#' * \bold{ layerProps } `ILayerProps` \cr Optional props to pass to the Layer component hosting the panel.
+#' * \bold{ minPagePadding } `number` \cr The minimum distance the callout will be away from the edge of the screen.
+#' * \bold{ onDismiss } `(ev?: any) => void` \cr Callback when the Callout tries to close.
+#' * \bold{ onLayerMounted } `() => void` \cr Optional callback when the layer content has mounted.
+#' * \bold{ onPositioned } `(positions?: ICalloutPositionedInfo) => void` \cr Optional callback that is called once the callout has been correctly positioned.
+#' * \bold{ onRestoreFocus } `(options: { originalElement?: HTMLElement | Window; containsFocus: boolean; }) => void` \cr Called when the component is unmounting, and focus needs to be restored. Argument passed down contains two variables, the element that the underlying popup believes focus should go to * and whether or not the popup currently contains focus. If this is provided, focus will not be restored automatically, you'll need to call originalElement.focus()
+#' * \bold{ onScroll } `() => void` \cr Callback when the Callout body is scrolled.
+#' * \bold{ preventDismissOnLostFocus } `boolean` \cr If true then the callout will not dismiss when it loses focus
+#' * \bold{ preventDismissOnResize } `boolean` \cr If true then the callout will not dismiss on resize
+#' * \bold{ preventDismissOnScroll } `boolean` \cr If true then the callout will not dismiss on scroll
+#' * \bold{ role } `string` \cr Aria role assigned to the callout (Eg. dialog, alertdialog).
+#' * \bold{ setInitialFocus } `boolean` \cr If true then the callout will attempt to focus the first focusable element that it contains. If it doesn't find an element, no focus will be set and the method will return false. This means that it's the contents responsibility to either set focus or have focusable items.
+#' * \bold{ shouldRestoreFocus } `boolean` \cr If true, when this component is unmounted, focus will be restored to the element that had focus when the component first mounted.
+#' * \bold{ shouldUpdateWhenHidden } `boolean` \cr If true, the component will be updated even when hidden=true. Note that this would consume resources to update even though nothing is being shown to the user. This might be helpful though if your updates are small and you want the callout to be revealed fast to the user when hidden is set to false.
+#' * \bold{ style } `React.CSSProperties` \cr CSS style to apply to the callout.
 #'
-#' If you set `overflowY` in this object, it provides a performance optimization by preventing Popup (underlying component of Callout) from calculating whether it needs a scroll bar.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<ICalloutContentStyleProps, ICalloutContentStyles>` \cr Optional styles for the component.}
-#' \item {\bold{ target }} {`Target` \cr The target that the Callout should try to position itself based on. It can be either an Element a querySelector string of a valid Element or a MouseEvent. If MouseEvent is given then the origin point of the event will be used.}
-#' \item {\bold{ theme }} {`ITheme` \cr Optional theme for component}
-#' }
+#' If you set `overflowY` in this object, it provides a performance optimization by preventing Popup (underlying component of Callout) from calculating whether it needs a scroll bar.
+#' * \bold{ styles } `IStyleFunctionOrObject<ICalloutContentStyleProps, ICalloutContentStyles>` \cr Optional styles for the component.
+#' * \bold{ target } `Target` \cr The target that the Callout should try to position itself based on. It can be either an Element a querySelector string of a valid Element or a MouseEvent. If MouseEvent is given then the origin point of the event will be used.
+#' * \bold{ theme } `ITheme` \cr Optional theme for component
 #'
 #' @md
 #' @name Callout
@@ -365,29 +353,27 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ ariaDescribedBy }} {`string` \cr ID for element that provides extended information for the checkbox.}
-#' \item {\bold{ ariaLabel }} {`string` \cr Accessible label for the checkbox.}
-#' \item {\bold{ ariaLabelledBy }} {`string` \cr ID for element that contains label information for the checkbox.}
-#' \item {\bold{ ariaPositionInSet }} {`number` \cr The position in the parent set (if in a set) for aria-posinset.}
-#' \item {\bold{ ariaSetSize }} {`number` \cr The total size of the parent set (if in a set) for aria-setsize.}
-#' \item {\bold{ boxSide }} {`'start' | 'end'` \cr Allows you to set the checkbox to be at the before (start) or after (end) the label.}
-#' \item {\bold{ checked }} {`boolean` \cr Checked state. Mutually exclusive to "defaultChecked". Use this if you control the checked state at a higher level and plan to pass in the correct value based on handling onChange events and re-rendering.}
-#' \item {\bold{ checkmarkIconProps }} {`IIconProps` \cr Custom icon props for the check mark rendered by the checkbox}
-#' \item {\bold{ className }} {`string` \cr Additional class name to provide on the root element, in addition to the ms-Checkbox class.}
-#' \item {\bold{ componentRef }} {`IRefObject<ICheckbox>` \cr Optional callback to access the ICheckbox interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ defaultChecked }} {`boolean` \cr Default checked state. Mutually exclusive to "checked". Use this if you want an uncontrolled component, and want the Checkbox instance to maintain its own state.}
-#' \item {\bold{ defaultIndeterminate }} {`boolean` \cr Optional uncontrolled indeterminate visual state for checkbox. Setting indeterminate state takes visual precedence over checked or defaultChecked props given but does not affect checked state. This is not a toggleable state. On load the checkbox will receive indeterminate visual state and after the user's first click it will be removed exposing the true state of the checkbox.}
-#' \item {\bold{ disabled }} {`boolean` \cr Disabled state of the checkbox.}
-#' \item {\bold{ indeterminate }} {`boolean` \cr Optional controlled indeterminate visual state for checkbox. Setting indeterminate state takes visual precedence over checked or defaultChecked props given but does not affect checked state. This should not be a toggleable state. On load the checkbox will receive indeterminate visual state and after the first user click it should be removed by your supplied onChange callback function exposing the true state of the checkbox.}
-#' \item {\bold{ inputProps }} {`React.ButtonHTMLAttributes<HTMLElement | HTMLButtonElement>` \cr Optional input props that will be mixed into the input element, *before* other props are applied. This allows you to extend the input element with additional attributes, such as data-automation-id needed for automation. Note that if you provide, for example, "disabled" as well as "inputProps.disabled", the former will take precedence over the later.}
-#' \item {\bold{ keytipProps }} {`IKeytipProps` \cr Optional keytip for this checkbox}
-#' \item {\bold{ label }} {`string` \cr Label to display next to the checkbox.}
-#' \item {\bold{ onChange }} {`(ev?: React.FormEvent<HTMLElement | HTMLInputElement>, checked?: boolean) => void` \cr Callback that is called when the checked value has changed.}
-#' \item {\bold{ onRenderLabel }} {`IRenderFunction<ICheckboxProps>` \cr Custom render function for the label.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<ICheckboxStyleProps, ICheckboxStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by HOC.}
-#' }
+#' * \bold{ ariaDescribedBy } `string` \cr ID for element that provides extended information for the checkbox.
+#' * \bold{ ariaLabel } `string` \cr Accessible label for the checkbox.
+#' * \bold{ ariaLabelledBy } `string` \cr ID for element that contains label information for the checkbox.
+#' * \bold{ ariaPositionInSet } `number` \cr The position in the parent set (if in a set) for aria-posinset.
+#' * \bold{ ariaSetSize } `number` \cr The total size of the parent set (if in a set) for aria-setsize.
+#' * \bold{ boxSide } `'start' | 'end'` \cr Allows you to set the checkbox to be at the before (start) or after (end) the label.
+#' * \bold{ checked } `boolean` \cr Checked state. Mutually exclusive to "defaultChecked". Use this if you control the checked state at a higher level and plan to pass in the correct value based on handling onChange events and re-rendering.
+#' * \bold{ checkmarkIconProps } `IIconProps` \cr Custom icon props for the check mark rendered by the checkbox
+#' * \bold{ className } `string` \cr Additional class name to provide on the root element, in addition to the ms-Checkbox class.
+#' * \bold{ componentRef } `IRefObject<ICheckbox>` \cr Optional callback to access the ICheckbox interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ defaultChecked } `boolean` \cr Default checked state. Mutually exclusive to "checked". Use this if you want an uncontrolled component, and want the Checkbox instance to maintain its own state.
+#' * \bold{ defaultIndeterminate } `boolean` \cr Optional uncontrolled indeterminate visual state for checkbox. Setting indeterminate state takes visual precedence over checked or defaultChecked props given but does not affect checked state. This is not a toggleable state. On load the checkbox will receive indeterminate visual state and after the user's first click it will be removed exposing the true state of the checkbox.
+#' * \bold{ disabled } `boolean` \cr Disabled state of the checkbox.
+#' * \bold{ indeterminate } `boolean` \cr Optional controlled indeterminate visual state for checkbox. Setting indeterminate state takes visual precedence over checked or defaultChecked props given but does not affect checked state. This should not be a toggleable state. On load the checkbox will receive indeterminate visual state and after the first user click it should be removed by your supplied onChange callback function exposing the true state of the checkbox.
+#' * \bold{ inputProps } `React.ButtonHTMLAttributes<HTMLElement | HTMLButtonElement>` \cr Optional input props that will be mixed into the input element, *before* other props are applied. This allows you to extend the input element with additional attributes, such as data-automation-id needed for automation. Note that if you provide, for example, "disabled" as well as "inputProps.disabled", the former will take precedence over the later.
+#' * \bold{ keytipProps } `IKeytipProps` \cr Optional keytip for this checkbox
+#' * \bold{ label } `string` \cr Label to display next to the checkbox.
+#' * \bold{ onChange } `(ev?: React.FormEvent<HTMLElement | HTMLInputElement>, checked?: boolean) => void` \cr Callback that is called when the checked value has changed.
+#' * \bold{ onRenderLabel } `IRenderFunction<ICheckboxProps>` \cr Custom render function for the label.
+#' * \bold{ styles } `IStyleFunctionOrObject<ICheckboxStyleProps, ICheckboxStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
+#' * \bold{ theme } `ITheme` \cr Theme provided by HOC.
 #'
 #' @md
 #' @name Checkbox
@@ -421,26 +407,24 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ componentRef }} {`IRefObject<IChoiceGroupOption>` \cr Optional callback to access the IChoiceGroup interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ focused }} {`boolean` \cr Indicates if the ChoiceGroupOption should appear focused, visually}
-#' \item {\bold{ name }} {`string` \cr This value is used to group each ChoiceGroupOption into the same logical ChoiceGroup}
-#' \item {\bold{ onBlur }} {`(ev: React.FocusEvent<HTMLElement>, props?: IChoiceGroupOption) => void` \cr A callback for receiving a notification when the choice has lost focus.}
-#' \item {\bold{ onChange }} {`(evt?: React.FormEvent<HTMLElement | HTMLInputElement>, props?: IChoiceGroupOption) => void` \cr A callback for receiving a notification when the choice has been changed.}
-#' \item {\bold{ onFocus }} {`(ev?: React.FocusEvent<HTMLElement | HTMLInputElement>, props?: IChoiceGroupOption) => void | undefined` \cr A callback for receiving a notification when the choice has received focus.}
-#' \item {\bold{ required }} {`boolean` \cr If true, it specifies that an option must be selected in the ChoiceGroup before submitting the form}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme (provided through customization.)}
-#' \item {\bold{ ariaLabelledBy }} {`string` \cr ID of an element to use as the aria label for this ChoiceGroup.}
-#' \item {\bold{ componentRef }} {`IRefObject<IChoiceGroup>` \cr Optional callback to access the IChoiceGroup interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ defaultSelectedKey }} {`string | number` \cr The key of the option that will be initially checked.}
-#' \item {\bold{ label }} {`string` \cr Descriptive label for the choice group.}
-#' \item {\bold{ onChange }} {`(ev?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IChoiceGroupOption) => void` \cr A callback for receiving a notification when the choice has been changed.}
-#' \item {\bold{ onChanged }} {`(option: IChoiceGroupOption, evt?: React.FormEvent<HTMLElement | HTMLInputElement>) => void` \cr Deprecated and will be removed by 07/17/2017. Use `onChange` instead.}
-#' \item {\bold{ options }} {`IChoiceGroupOption[]` \cr The options for the choice group.}
-#' \item {\bold{ selectedKey }} {`string | number` \cr The key of the selected option. If you provide this, you must maintain selection state by observing onChange events and passing a new value in when changed.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IChoiceGroupStyleProps, IChoiceGroupStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme (provided through customization).}
-#' }
+#' * \bold{ componentRef } `IRefObject<IChoiceGroupOption>` \cr Optional callback to access the IChoiceGroup interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ focused } `boolean` \cr Indicates if the ChoiceGroupOption should appear focused, visually
+#' * \bold{ name } `string` \cr This value is used to group each ChoiceGroupOption into the same logical ChoiceGroup
+#' * \bold{ onBlur } `(ev: React.FocusEvent<HTMLElement>, props?: IChoiceGroupOption) => void` \cr A callback for receiving a notification when the choice has lost focus.
+#' * \bold{ onChange } `(evt?: React.FormEvent<HTMLElement | HTMLInputElement>, props?: IChoiceGroupOption) => void` \cr A callback for receiving a notification when the choice has been changed.
+#' * \bold{ onFocus } `(ev?: React.FocusEvent<HTMLElement | HTMLInputElement>, props?: IChoiceGroupOption) => void | undefined` \cr A callback for receiving a notification when the choice has received focus.
+#' * \bold{ required } `boolean` \cr If true, it specifies that an option must be selected in the ChoiceGroup before submitting the form
+#' * \bold{ theme } `ITheme` \cr Theme (provided through customization.)
+#' * \bold{ ariaLabelledBy } `string` \cr ID of an element to use as the aria label for this ChoiceGroup.
+#' * \bold{ componentRef } `IRefObject<IChoiceGroup>` \cr Optional callback to access the IChoiceGroup interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ defaultSelectedKey } `string | number` \cr The key of the option that will be initially checked.
+#' * \bold{ label } `string` \cr Descriptive label for the choice group.
+#' * \bold{ onChange } `(ev?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IChoiceGroupOption) => void` \cr A callback for receiving a notification when the choice has been changed.
+#' * \bold{ onChanged } `(option: IChoiceGroupOption, evt?: React.FormEvent<HTMLElement | HTMLInputElement>) => void` \cr Deprecated and will be removed by 07/17/2017. Use `onChange` instead.
+#' * \bold{ options } `IChoiceGroupOption[]` \cr The options for the choice group.
+#' * \bold{ selectedKey } `string | number` \cr The key of the selected option. If you provide this, you must maintain selection state by observing onChange events and passing a new value in when changed.
+#' * \bold{ styles } `IStyleFunctionOrObject<IChoiceGroupStyleProps, IChoiceGroupStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
+#' * \bold{ theme } `ITheme` \cr Theme (provided through customization).
 #'
 #' @md
 #' @name ChoiceGroup
@@ -466,66 +450,64 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ ariaAlertText }} {`string` \cr Text to announce to screen reader / narrator when Coachmark is displayed}
-#' \item {\bold{ ariaDescribedBy }} {`string` \cr Defines the element id referencing the element containing the description for the Coachmark.}
-#' \item {\bold{ ariaDescribedByText }} {`string` \cr Defines the text content for the ariaDescribedBy element}
-#' \item {\bold{ ariaLabelledBy }} {`string` \cr Defines the element id referencing the element containing label text for Coachmark.}
-#' \item {\bold{ ariaLabelledByText }} {`string` \cr Defines the text content for the ariaLabelledBy element}
-#' \item {\bold{ beaconColorOne }} {`string` \cr Beacon color one.}
-#' \item {\bold{ beaconColorTwo }} {`string` \cr Beacon color two.}
-#' \item {\bold{ beakHeight }} {`number` \cr The height of the Beak component.}
-#' \item {\bold{ beakWidth }} {`number` \cr The width of the Beak component.}
-#' \item {\bold{ className }} {`string` \cr If provided, additional class name to provide on the root element.}
-#' \item {\bold{ collapsed }} {`boolean` \cr The starting collapsed state for the Coachmark. Use `isCollapsed` instead.}
-#' \item {\bold{ color }} {`string` \cr Color of the Coachmark/TeachingBubble.}
-#' \item {\bold{ componentRef }} {`IRefObject<ICoachmark>` \cr Optional callback to access the ICoachmark interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ delayBeforeCoachmarkAnimation }} {`number` \cr Delay in milliseconds before Coachmark animation appears.}
-#' \item {\bold{ delayBeforeMouseOpen }} {`number` \cr Delay before allowing mouse movements to open the Coachmark.}
-#' \item {\bold{ height }} {`number` \cr The height of the Coachmark.}
-#' \item {\bold{ isCollapsed }} {`boolean` \cr The starting collapsed state for the Coachmark.}
-#' \item {\bold{ isPositionForced }} {`boolean` \cr Whether or not to force the Coachmark/TeachingBubble content to fit within the window bounds.}
-#' \item {\bold{ mouseProximityOffset }} {`number` \cr The distance in pixels the mouse is located before opening up the Coachmark.}
-#' \item {\bold{ onAnimationOpenEnd }} {`() => void` \cr Callback when the opening animation completes.}
-#' \item {\bold{ onAnimationOpenStart }} {`() => void` \cr Callback when the opening animation begins.}
-#' \item {\bold{ onDismiss }} {`(ev?: any) => void` \cr Callback when the Coachmark tries to close.}
-#' \item {\bold{ onMouseMove }} {`(e: MouseEvent) => void` \cr Callback to run when the mouse moves.}
-#' \item {\bold{ persistentBeak }} {`boolean` \cr If true then the Coachmark beak (arrow pointing towards target) will always be visible as long as Coachmark is visible}
-#' \item {\bold{ positioningContainerProps }} {`IPositioningContainerProps` \cr Props to pass to the PositioningContainer component. Specify the `directionalHint` to indicate on which edge the Coachmark/TeachingBubble should be positioned.}
-#' \item {\bold{ preventDismissOnLostFocus }} {`boolean` \cr If true then the Coachmark will not dismiss when it loses focus}
-#' \item {\bold{ preventFocusOnMount }} {`boolean` \cr If true then focus will not be set to the Coachmark when it mounts. Useful in cases where focus on coachmark is causing other components in page to dismiss upon losing focus.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<ICoachmarkStyleProps, ICoachmarkStyles>` \cr Call to provide customized styling that will layer on top of the variant rules}
-#' \item {\bold{ target }} {`HTMLElement | string | null` \cr The target that the Coachmark should try to position itself based on.}
-#' \item {\bold{ teachingBubbleRef }} {`ITeachingBubble` \cr Ref for TeachingBubble}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by higher order component.}
-#' \item {\bold{ width }} {`number` \cr The width of the Coachmark.}
-#' \item {\bold{ ariaDescribedBy }} {`string` \cr Defines the element id referencing the element containing the description for the positioningContainer.}
-#' \item {\bold{ ariaLabel }} {`string` \cr Accessible label text for positioningContainer.}
-#' \item {\bold{ ariaLabelledBy }} {`string` \cr Defines the element id referencing the element containing label text for positioningContainer.}
-#' \item {\bold{ backgroundColor }} {`string` \cr The background color of the positioningContainer in hex format ie. #ffffff.}
-#' \item {\bold{ bounds }} {`IRectangle` \cr The bounding rectangle for which the contextual menu can appear in.}
-#' \item {\bold{ className }} {`string` \cr CSS class to apply to the positioningContainer.}
-#' \item {\bold{ componentRef }} {`IRefObject<IPositioningContainer>` \cr All props for your component are to be defined here.}
-#' \item {\bold{ coverTarget }} {`boolean` \cr If true the position returned will have the menu element cover the target. If false then it will position next to the target;}
-#' \item {\bold{ directionalHint }} {`DirectionalHint` \cr How the element should be positioned}
-#' \item {\bold{ directionalHintFixed }} {`boolean` \cr If true the position will not change sides in an attempt to fit the positioningContainer within bounds. It will still attempt to align it to whatever bounds are given.}
-#' \item {\bold{ directionalHintForRTL }} {`DirectionalHint` \cr How the element should be positioned in RTL layouts. If not specified, a mirror of `directionalHint` will be used instead}
-#' \item {\bold{ doNotLayer }} {`boolean` \cr If true do not render on a new layer. If false render on a new layer.}
-#' \item {\bold{ finalHeight }} {`number` \cr Specify the final height of the content. To be used when expanding the content dynamically so that positioningContainer can adjust its position.}
-#' \item {\bold{ minPagePadding }} {`number` \cr The minimum distance the positioningContainer will be away from the edge of the screen.}
-#' \item {\bold{ offsetFromTarget }} {`number` \cr The gap between the positioningContainer and the target}
-#' \item {\bold{ onDismiss }} {`(ev?: any) => void` \cr Callback when the positioningContainer tries to close.}
-#' \item {\bold{ onLayerMounted }} {`() => void` \cr Optional callback when the layer content has mounted.}
-#' \item {\bold{ onPositioned }} {`(positions?: IPositionedData) => void` \cr Optional callback that is called once the positioningContainer has been correctly positioned.}
-#' \item {\bold{ positioningContainerMaxHeight }} {`number` \cr Set max height of positioningContainer When not set the positioningContainer will expand with contents up to the bottom of the screen}
-#' \item {\bold{ positioningContainerWidth }} {`number` \cr Custom width for positioningContainer including borders. If value is 0, no width is applied.}
-#' \item {\bold{ preventDismissOnScroll }} {`boolean` \cr If true then the onClose will not not dismiss on scroll}
-#' \item {\bold{ role }} {`string` \cr Aria role assigned to the positioningContainer (Eg. dialog, alertdialog).}
-#' \item {\bold{ setInitialFocus }} {`boolean` \cr If true then the positioningContainer will attempt to focus the first focusable element that it contains. If it doesn't find an element, no focus will be set and the method will return false. This means that it's the contents responsibility to either set focus or have focusable items.}
-#' \item {\bold{ target }} {`HTMLElement | string | MouseEvent | Point | null` \cr The target that the positioningContainer should try to position itself based on. It can be either an HTMLElement a querySelector string of a valid HTMLElement or a MouseEvent. If MouseEvent is given then the origin point of the event will be used.}
-#' \item {\bold{ targetPoint }} {`Point` \cr Point used to position the positioningContainer. Deprecated, use `target` instead.}
-#' \item {\bold{ useTargetPoint }} {`boolean` \cr If true use a point rather than rectangle to position the positioningContainer. For example it can be used to position based on a click.}
-#' }
+#' * \bold{ ariaAlertText } `string` \cr Text to announce to screen reader / narrator when Coachmark is displayed
+#' * \bold{ ariaDescribedBy } `string` \cr Defines the element id referencing the element containing the description for the Coachmark.
+#' * \bold{ ariaDescribedByText } `string` \cr Defines the text content for the ariaDescribedBy element
+#' * \bold{ ariaLabelledBy } `string` \cr Defines the element id referencing the element containing label text for Coachmark.
+#' * \bold{ ariaLabelledByText } `string` \cr Defines the text content for the ariaLabelledBy element
+#' * \bold{ beaconColorOne } `string` \cr Beacon color one.
+#' * \bold{ beaconColorTwo } `string` \cr Beacon color two.
+#' * \bold{ beakHeight } `number` \cr The height of the Beak component.
+#' * \bold{ beakWidth } `number` \cr The width of the Beak component.
+#' * \bold{ className } `string` \cr If provided, additional class name to provide on the root element.
+#' * \bold{ collapsed } `boolean` \cr The starting collapsed state for the Coachmark. Use `isCollapsed` instead.
+#' * \bold{ color } `string` \cr Color of the Coachmark/TeachingBubble.
+#' * \bold{ componentRef } `IRefObject<ICoachmark>` \cr Optional callback to access the ICoachmark interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ delayBeforeCoachmarkAnimation } `number` \cr Delay in milliseconds before Coachmark animation appears.
+#' * \bold{ delayBeforeMouseOpen } `number` \cr Delay before allowing mouse movements to open the Coachmark.
+#' * \bold{ height } `number` \cr The height of the Coachmark.
+#' * \bold{ isCollapsed } `boolean` \cr The starting collapsed state for the Coachmark.
+#' * \bold{ isPositionForced } `boolean` \cr Whether or not to force the Coachmark/TeachingBubble content to fit within the window bounds.
+#' * \bold{ mouseProximityOffset } `number` \cr The distance in pixels the mouse is located before opening up the Coachmark.
+#' * \bold{ onAnimationOpenEnd } `() => void` \cr Callback when the opening animation completes.
+#' * \bold{ onAnimationOpenStart } `() => void` \cr Callback when the opening animation begins.
+#' * \bold{ onDismiss } `(ev?: any) => void` \cr Callback when the Coachmark tries to close.
+#' * \bold{ onMouseMove } `(e: MouseEvent) => void` \cr Callback to run when the mouse moves.
+#' * \bold{ persistentBeak } `boolean` \cr If true then the Coachmark beak (arrow pointing towards target) will always be visible as long as Coachmark is visible
+#' * \bold{ positioningContainerProps } `IPositioningContainerProps` \cr Props to pass to the PositioningContainer component. Specify the `directionalHint` to indicate on which edge the Coachmark/TeachingBubble should be positioned.
+#' * \bold{ preventDismissOnLostFocus } `boolean` \cr If true then the Coachmark will not dismiss when it loses focus
+#' * \bold{ preventFocusOnMount } `boolean` \cr If true then focus will not be set to the Coachmark when it mounts. Useful in cases where focus on coachmark is causing other components in page to dismiss upon losing focus.
+#' * \bold{ styles } `IStyleFunctionOrObject<ICoachmarkStyleProps, ICoachmarkStyles>` \cr Call to provide customized styling that will layer on top of the variant rules
+#' * \bold{ target } `HTMLElement | string | null` \cr The target that the Coachmark should try to position itself based on.
+#' * \bold{ teachingBubbleRef } `ITeachingBubble` \cr Ref for TeachingBubble
+#' * \bold{ theme } `ITheme` \cr Theme provided by higher order component.
+#' * \bold{ width } `number` \cr The width of the Coachmark.
+#' * \bold{ ariaDescribedBy } `string` \cr Defines the element id referencing the element containing the description for the positioningContainer.
+#' * \bold{ ariaLabel } `string` \cr Accessible label text for positioningContainer.
+#' * \bold{ ariaLabelledBy } `string` \cr Defines the element id referencing the element containing label text for positioningContainer.
+#' * \bold{ backgroundColor } `string` \cr The background color of the positioningContainer in hex format ie. #ffffff.
+#' * \bold{ bounds } `IRectangle` \cr The bounding rectangle for which the contextual menu can appear in.
+#' * \bold{ className } `string` \cr CSS class to apply to the positioningContainer.
+#' * \bold{ componentRef } `IRefObject<IPositioningContainer>` \cr All props for your component are to be defined here.
+#' * \bold{ coverTarget } `boolean` \cr If true the position returned will have the menu element cover the target. If false then it will position next to the target;
+#' * \bold{ directionalHint } `DirectionalHint` \cr How the element should be positioned
+#' * \bold{ directionalHintFixed } `boolean` \cr If true the position will not change sides in an attempt to fit the positioningContainer within bounds. It will still attempt to align it to whatever bounds are given.
+#' * \bold{ directionalHintForRTL } `DirectionalHint` \cr How the element should be positioned in RTL layouts. If not specified, a mirror of `directionalHint` will be used instead
+#' * \bold{ doNotLayer } `boolean` \cr If true do not render on a new layer. If false render on a new layer.
+#' * \bold{ finalHeight } `number` \cr Specify the final height of the content. To be used when expanding the content dynamically so that positioningContainer can adjust its position.
+#' * \bold{ minPagePadding } `number` \cr The minimum distance the positioningContainer will be away from the edge of the screen.
+#' * \bold{ offsetFromTarget } `number` \cr The gap between the positioningContainer and the target
+#' * \bold{ onDismiss } `(ev?: any) => void` \cr Callback when the positioningContainer tries to close.
+#' * \bold{ onLayerMounted } `() => void` \cr Optional callback when the layer content has mounted.
+#' * \bold{ onPositioned } `(positions?: IPositionedData) => void` \cr Optional callback that is called once the positioningContainer has been correctly positioned.
+#' * \bold{ positioningContainerMaxHeight } `number` \cr Set max height of positioningContainer When not set the positioningContainer will expand with contents up to the bottom of the screen
+#' * \bold{ positioningContainerWidth } `number` \cr Custom width for positioningContainer including borders. If value is 0, no width is applied.
+#' * \bold{ preventDismissOnScroll } `boolean` \cr If true then the onClose will not not dismiss on scroll
+#' * \bold{ role } `string` \cr Aria role assigned to the positioningContainer (Eg. dialog, alertdialog).
+#' * \bold{ setInitialFocus } `boolean` \cr If true then the positioningContainer will attempt to focus the first focusable element that it contains. If it doesn't find an element, no focus will be set and the method will return false. This means that it's the contents responsibility to either set focus or have focusable items.
+#' * \bold{ target } `HTMLElement | string | MouseEvent | Point | null` \cr The target that the positioningContainer should try to position itself based on. It can be either an HTMLElement a querySelector string of a valid HTMLElement or a MouseEvent. If MouseEvent is given then the origin point of the event will be used.
+#' * \bold{ targetPoint } `Point` \cr Point used to position the positioningContainer. Deprecated, use `target` instead.
+#' * \bold{ useTargetPoint } `boolean` \cr If true use a point rather than rectangle to position the positioningContainer. For example it can be used to position based on a click.
 #'
 #' @md
 #' @name Coachmark
@@ -544,49 +526,47 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ alphaLabel }} {`string` \cr Label for the alpha textfield.}
-#' \item {\bold{ alphaSliderHidden }} {`boolean` \cr Whether to hide the alpha (or transparency) slider and text field.}
-#' \item {\bold{ alphaType }} {`'alpha' | 'transparency' | 'none'` \cr `alpha` (the default) means display a slider and text field for editing alpha values. `transparency` also displays a slider and text field but for editing transparency values. `none` hides these controls.
+#' * \bold{ alphaLabel } `string` \cr Label for the alpha textfield.
+#' * \bold{ alphaSliderHidden } `boolean` \cr Whether to hide the alpha (or transparency) slider and text field.
+#' * \bold{ alphaType } `'alpha' | 'transparency' | 'none'` \cr `alpha` (the default) means display a slider and text field for editing alpha values. `transparency` also displays a slider and text field but for editing transparency values. `none` hides these controls.
 #'
-#' Alpha represents the opacity of the color, whereas transparency represents the transparentness of the color: i.e. a 30% transparent color has 70% opaqueness.}
-#' \item {\bold{ blueLabel }} {`string` \cr Label for the blue text field.}
-#' \item {\bold{ className }} {`string` \cr Additional CSS class(es) to apply to the ColorPicker.}
-#' \item {\bold{ color }} {`IColor | string` \cr Object or CSS-compatible string to describe the color.}
-#' \item {\bold{ componentRef }} {`IRefObject<IColorPicker>` \cr Gets the component ref.}
-#' \item {\bold{ greenLabel }} {`string` \cr Label for the green text field.}
-#' \item {\bold{ hexLabel }} {`string` \cr Label for the hex text field.}
-#' \item {\bold{ onChange }} {`(ev: React.SyntheticEvent<HTMLElement>, color: IColor) => void` \cr Callback for when the user changes the color. (Not called when the color is changed via props.)}
-#' \item {\bold{ redLabel }} {`string` \cr Label for the red text field.}
-#' \item {\bold{ showPreview }} {`boolean` \cr Whether to show color preview box.}
-#' \item {\bold{ strings }} {`IColorPickerStrings` \cr Labels for elements within the ColorPicker. Defaults are provided in English only.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IColorPickerStyleProps, IColorPickerStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme (provided through customization).}
-#' \item {\bold{ ariaDescription }} {`string` \cr Detailed description for how to use the color rectangle. Moving the thumb horizontally adjusts saturation and moving it vertically adjusts value (essentially, brightness).}
-#' \item {\bold{ ariaLabel }} {`string` \cr Label of the ColorRectangle for the benefit of screen reader users.}
-#' \item {\bold{ ariaValueFormat }} {`string` \cr Format string for the color rectangle's current value as read by screen readers. The string must include descriptions and two placeholders for the current values: `{0}` for saturation and `{1}` for value/brightness.}
-#' \item {\bold{ className }} {`string` \cr Additional CSS class(es) to apply to the ColorRectangle.}
-#' \item {\bold{ color }} {`IColor` \cr Current color of the rectangle.}
-#' \item {\bold{ componentRef }} {`IRefObject<IColorRectangle>` \cr Gets the component ref.}
-#' \item {\bold{ minSize }} {`number` \cr Minimum width and height.}
-#' \item {\bold{ onChange }} {`(ev: React.MouseEvent | React.KeyboardEvent, color: IColor) => void` \cr Callback for when the color changes.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IColorRectangleStyleProps, IColorRectangleStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme (provided through customization).}
-#' \item {\bold{ ariaLabel }} {`string` \cr Label of the ColorSlider for the benefit of screen reader users.}
-#' \item {\bold{ className }} {`string` \cr Additional CSS class(es) to apply to the ColorSlider.}
-#' \item {\bold{ componentRef }} {`IRefObject<IColorSlider>` \cr Gets the component ref.}
-#' \item {\bold{ isAlpha }} {`boolean` \cr If true, the slider represents an alpha slider and will display a gray checkered pattern in the background. Otherwise, the slider represents a hue slider.}
-#' \item {\bold{ maxValue }} {`number` \cr Maximum value of the slider.}
-#' \item {\bold{ minValue }} {`number` \cr Minimum value of the slider.}
-#' \item {\bold{ onChange }} {`(event: React.MouseEvent | React.KeyboardEvent, newValue?: number) => void` \cr Callback issued when the value changes.}
-#' \item {\bold{ overlayColor }} {`string` \cr Hex color to use when rendering an alpha or transparency slider's overlay, *without* the `#`.}
-#' \item {\bold{ overlayStyle }} {`React.CSSProperties` \cr Custom style for the overlay element.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IColorSliderStyleProps, IColorSliderStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme (provided through customization).}
-#' \item {\bold{ thumbColor }} {`string` \cr CSS-compatible string for the color of the thumb element.}
-#' \item {\bold{ type }} {`'hue' | 'alpha' | 'transparency'` \cr Type of slider to display.}
-#' \item {\bold{ value }} {`number` \cr Current value of the slider.}
-#' }
+#' Alpha represents the opacity of the color, whereas transparency represents the transparentness of the color: i.e. a 30% transparent color has 70% opaqueness.
+#' * \bold{ blueLabel } `string` \cr Label for the blue text field.
+#' * \bold{ className } `string` \cr Additional CSS class(es) to apply to the ColorPicker.
+#' * \bold{ color } `IColor | string` \cr Object or CSS-compatible string to describe the color.
+#' * \bold{ componentRef } `IRefObject<IColorPicker>` \cr Gets the component ref.
+#' * \bold{ greenLabel } `string` \cr Label for the green text field.
+#' * \bold{ hexLabel } `string` \cr Label for the hex text field.
+#' * \bold{ onChange } `(ev: React.SyntheticEvent<HTMLElement>, color: IColor) => void` \cr Callback for when the user changes the color. (Not called when the color is changed via props.)
+#' * \bold{ redLabel } `string` \cr Label for the red text field.
+#' * \bold{ showPreview } `boolean` \cr Whether to show color preview box.
+#' * \bold{ strings } `IColorPickerStrings` \cr Labels for elements within the ColorPicker. Defaults are provided in English only.
+#' * \bold{ styles } `IStyleFunctionOrObject<IColorPickerStyleProps, IColorPickerStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
+#' * \bold{ theme } `ITheme` \cr Theme (provided through customization).
+#' * \bold{ ariaDescription } `string` \cr Detailed description for how to use the color rectangle. Moving the thumb horizontally adjusts saturation and moving it vertically adjusts value (essentially, brightness).
+#' * \bold{ ariaLabel } `string` \cr Label of the ColorRectangle for the benefit of screen reader users.
+#' * \bold{ ariaValueFormat } `string` \cr Format string for the color rectangle's current value as read by screen readers. The string must include descriptions and two placeholders for the current values: `{0}` for saturation and `{1}` for value/brightness.
+#' * \bold{ className } `string` \cr Additional CSS class(es) to apply to the ColorRectangle.
+#' * \bold{ color } `IColor` \cr Current color of the rectangle.
+#' * \bold{ componentRef } `IRefObject<IColorRectangle>` \cr Gets the component ref.
+#' * \bold{ minSize } `number` \cr Minimum width and height.
+#' * \bold{ onChange } `(ev: React.MouseEvent | React.KeyboardEvent, color: IColor) => void` \cr Callback for when the color changes.
+#' * \bold{ styles } `IStyleFunctionOrObject<IColorRectangleStyleProps, IColorRectangleStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
+#' * \bold{ theme } `ITheme` \cr Theme (provided through customization).
+#' * \bold{ ariaLabel } `string` \cr Label of the ColorSlider for the benefit of screen reader users.
+#' * \bold{ className } `string` \cr Additional CSS class(es) to apply to the ColorSlider.
+#' * \bold{ componentRef } `IRefObject<IColorSlider>` \cr Gets the component ref.
+#' * \bold{ isAlpha } `boolean` \cr If true, the slider represents an alpha slider and will display a gray checkered pattern in the background. Otherwise, the slider represents a hue slider.
+#' * \bold{ maxValue } `number` \cr Maximum value of the slider.
+#' * \bold{ minValue } `number` \cr Minimum value of the slider.
+#' * \bold{ onChange } `(event: React.MouseEvent | React.KeyboardEvent, newValue?: number) => void` \cr Callback issued when the value changes.
+#' * \bold{ overlayColor } `string` \cr Hex color to use when rendering an alpha or transparency slider's overlay, *without* the `#`.
+#' * \bold{ overlayStyle } `React.CSSProperties` \cr Custom style for the overlay element.
+#' * \bold{ styles } `IStyleFunctionOrObject<IColorSliderStyleProps, IColorSliderStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
+#' * \bold{ theme } `ITheme` \cr Theme (provided through customization).
+#' * \bold{ thumbColor } `string` \cr CSS-compatible string for the color of the thumb element.
+#' * \bold{ type } `'hue' | 'alpha' | 'transparency'` \cr Type of slider to display.
+#' * \bold{ value } `number` \cr Current value of the slider.
 #'
 #' @md
 #' @name ColorPicker
@@ -614,44 +594,42 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ allowFreeform }} {`boolean` \cr Whether the ComboBox is free form, meaning that the user input is not bound to provided options. Defaults to false.}
-#' \item {\bold{ ariaDescribedBy }} {`string` \cr Optional prop to add a string id that can be referenced inside the aria-describedby attribute}
-#' \item {\bold{ autoComplete }} {`'on' | 'off'` \cr Whether the ComboBox auto completes. As the user is inputing text, it will be suggested potential matches from the list of options. If the combo box is expanded, this will also scroll to the suggested option, and give it a selected style.}
-#' \item {\bold{ autofill }} {`IAutofillProps` \cr The AutofillProps to be passed into the Autofill component inside combobox}
-#' \item {\bold{ buttonIconProps }} {`IIconProps` \cr The IconProps to use for the button aspect of the combobox}
-#' \item {\bold{ caretDownButtonStyles }} {`Partial<IButtonStyles>` \cr Styles for the caret down button.}
-#' \item {\bold{ comboBoxOptionStyles }} {`Partial<IComboBoxOptionStyles>` \cr Default styles that should be applied to ComboBox options, in case an option does not come with user-defined custom styles}
-#' \item {\bold{ componentRef }} {`IRefObject<IComboBox>` \cr Optional callback to access the IComboBox interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ dropdownMaxWidth }} {`number` \cr Custom max width for dropdown}
-#' \item {\bold{ dropdownWidth }} {`number` \cr Custom width for dropdown (unless useComboBoxAsMenuWidth is undefined or false)}
-#' \item {\bold{ getClassNames }} {`(theme: ITheme, isOpen: boolean, disabled: boolean, required: boolean, focused: boolean, allowFreeForm: boolean, hasErrorMessage: boolean, className?: string) => IComboBoxClassNames` \cr Custom function for providing the classNames for the ComboBox. Can be used to provide all styles for the component instead of applying them on top of the default styles.}
-#' \item {\bold{ iconButtonProps }} {`IButtonProps` \cr Optional iconButton props on combo box}
-#' \item {\bold{ isButtonAriaHidden }} {`boolean` \cr Sets the 'aria-hidden' attribute on the ComboBox's button element instructing screen readers how to handle the element. This element is hidden by default because all functionality is handled by the input element and the arrow button is only meant to be decorative.}
-#' \item {\bold{ keytipProps }} {`IKeytipProps` \cr Optional keytip for this combo box}
-#' \item {\bold{ multiSelectDelimiter }} {`string` \cr When multiple items are selected, this will be used to separate values in the combobox input.}
-#' \item {\bold{ onChange }} {`(event: React.FormEvent<IComboBox>, option?: IComboBoxOption, index?: number, value?: string) => void` \cr Callback issued when either: 1) the selected option changes 2) a manually edited value is submitted. In this case there may not be a matched option if allowFreeform is also true (and hence only value would be true, the other parameter would be null in this case)}
-#' \item {\bold{ onItemClick }} {`(event: React.FormEvent<IComboBox>, option?: IComboBoxOption, index?: number) => void` \cr Callback issued when a ComboBox item is clicked.}
-#' \item {\bold{ onMenuDismiss }} {`() => void` \cr Function that gets invoked before the menu gets dismissed}
-#' \item {\bold{ onMenuDismissed }} {`() => void` \cr Function that gets invoked when the ComboBox menu is dismissed}
-#' \item {\bold{ onMenuOpen }} {`() => void` \cr Function that gets invoked when the ComboBox menu is launched}
-#' \item {\bold{ onPendingValueChanged }} {`(option?: IComboBoxOption, index?: number, value?: string) => void` \cr Callback issued when the user changes the pending value in ComboBox. This will be called any time the component is updated and there is a current pending value. Option, index, and value will all be undefined if no change has taken place and the previously entered pending value is still valid.}
-#' \item {\bold{ onRenderLabel }} {`IRenderFunction<IOnRenderComboBoxLabelProps>` \cr Custom render function for the label text.}
-#' \item {\bold{ onRenderLowerContent }} {`IRenderFunction<IComboBoxProps>` \cr Add additional content below the callout list.}
-#' \item {\bold{ onRenderUpperContent }} {`IRenderFunction<IComboBoxProps>` \cr Add additional content above the callout list.}
-#' \item {\bold{ onResolveOptions }} {`(options: IComboBoxOption[]) => IComboBoxOption[] | PromiseLike<IComboBoxOption[]>` \cr Callback issued when the options should be resolved, if they have been updated or if they need to be passed in the first time}
-#' \item {\bold{ onScrollToItem }} {`(itemIndex: number) => void` \cr Callback issued when the ComboBox requests the list to scroll to a specific element}
-#' \item {\bold{ options }} {`IComboBoxOption[]` \cr Collection of options for this ComboBox}
-#' \item {\bold{ persistMenu }} {`boolean` \cr Menu will not be created or destroyed when opened or closed, instead it will be hidden. This will improve perf of the menu opening but could potentially impact overall perf by having more elements in the dom. Should only be used when perf is important. Note: This may increase the amount of time it takes for the comboBox itself to mount.}
-#' \item {\bold{ scrollSelectedToTop }} {`boolean` \cr When options are scrollable the selected option is positioned at the top of the callout when it is opened (unless it has reached the end of the scrollbar).}
-#' \item {\bold{ shouldRestoreFocus }} {`boolean` \cr When specified, determines whether the callout (the menu which drops down) should restore the focus after being dismissed or not. If false, then the menu will not try to set focus to whichever element had focus before the menu was opened.}
-#' \item {\bold{ styles }} {`Partial<IComboBoxStyles>` \cr Custom styles for this component}
-#' \item {\bold{ text }} {`string` \cr Value to show in the input, does not have to map to a combobox option}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by HOC.}
-#' \item {\bold{ useComboBoxAsMenuWidth }} {`boolean` \cr Whether to use the ComboBoxes width as the menu's width}
-#' \item {\bold{ multiselectAccessibleText }} {`string` \cr Accessible text for label when combobox is multiselected.}
-#' \item {\bold{ props }} {`IComboBoxProps` \cr Props to render the combobox.}
-#' }
+#' * \bold{ allowFreeform } `boolean` \cr Whether the ComboBox is free form, meaning that the user input is not bound to provided options. Defaults to false.
+#' * \bold{ ariaDescribedBy } `string` \cr Optional prop to add a string id that can be referenced inside the aria-describedby attribute
+#' * \bold{ autoComplete } `'on' | 'off'` \cr Whether the ComboBox auto completes. As the user is inputing text, it will be suggested potential matches from the list of options. If the combo box is expanded, this will also scroll to the suggested option, and give it a selected style.
+#' * \bold{ autofill } `IAutofillProps` \cr The AutofillProps to be passed into the Autofill component inside combobox
+#' * \bold{ buttonIconProps } `IIconProps` \cr The IconProps to use for the button aspect of the combobox
+#' * \bold{ caretDownButtonStyles } `Partial<IButtonStyles>` \cr Styles for the caret down button.
+#' * \bold{ comboBoxOptionStyles } `Partial<IComboBoxOptionStyles>` \cr Default styles that should be applied to ComboBox options, in case an option does not come with user-defined custom styles
+#' * \bold{ componentRef } `IRefObject<IComboBox>` \cr Optional callback to access the IComboBox interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ dropdownMaxWidth } `number` \cr Custom max width for dropdown
+#' * \bold{ dropdownWidth } `number` \cr Custom width for dropdown (unless useComboBoxAsMenuWidth is undefined or false)
+#' * \bold{ getClassNames } `(theme: ITheme, isOpen: boolean, disabled: boolean, required: boolean, focused: boolean, allowFreeForm: boolean, hasErrorMessage: boolean, className?: string) => IComboBoxClassNames` \cr Custom function for providing the classNames for the ComboBox. Can be used to provide all styles for the component instead of applying them on top of the default styles.
+#' * \bold{ iconButtonProps } `IButtonProps` \cr Optional iconButton props on combo box
+#' * \bold{ isButtonAriaHidden } `boolean` \cr Sets the 'aria-hidden' attribute on the ComboBox's button element instructing screen readers how to handle the element. This element is hidden by default because all functionality is handled by the input element and the arrow button is only meant to be decorative.
+#' * \bold{ keytipProps } `IKeytipProps` \cr Optional keytip for this combo box
+#' * \bold{ multiSelectDelimiter } `string` \cr When multiple items are selected, this will be used to separate values in the combobox input.
+#' * \bold{ onChange } `(event: React.FormEvent<IComboBox>, option?: IComboBoxOption, index?: number, value?: string) => void` \cr Callback issued when either: 1) the selected option changes 2) a manually edited value is submitted. In this case there may not be a matched option if allowFreeform is also true (and hence only value would be true, the other parameter would be null in this case)
+#' * \bold{ onItemClick } `(event: React.FormEvent<IComboBox>, option?: IComboBoxOption, index?: number) => void` \cr Callback issued when a ComboBox item is clicked.
+#' * \bold{ onMenuDismiss } `() => void` \cr Function that gets invoked before the menu gets dismissed
+#' * \bold{ onMenuDismissed } `() => void` \cr Function that gets invoked when the ComboBox menu is dismissed
+#' * \bold{ onMenuOpen } `() => void` \cr Function that gets invoked when the ComboBox menu is launched
+#' * \bold{ onPendingValueChanged } `(option?: IComboBoxOption, index?: number, value?: string) => void` \cr Callback issued when the user changes the pending value in ComboBox. This will be called any time the component is updated and there is a current pending value. Option, index, and value will all be undefined if no change has taken place and the previously entered pending value is still valid.
+#' * \bold{ onRenderLabel } `IRenderFunction<IOnRenderComboBoxLabelProps>` \cr Custom render function for the label text.
+#' * \bold{ onRenderLowerContent } `IRenderFunction<IComboBoxProps>` \cr Add additional content below the callout list.
+#' * \bold{ onRenderUpperContent } `IRenderFunction<IComboBoxProps>` \cr Add additional content above the callout list.
+#' * \bold{ onResolveOptions } `(options: IComboBoxOption[]) => IComboBoxOption[] | PromiseLike<IComboBoxOption[]>` \cr Callback issued when the options should be resolved, if they have been updated or if they need to be passed in the first time
+#' * \bold{ onScrollToItem } `(itemIndex: number) => void` \cr Callback issued when the ComboBox requests the list to scroll to a specific element
+#' * \bold{ options } `IComboBoxOption[]` \cr Collection of options for this ComboBox
+#' * \bold{ persistMenu } `boolean` \cr Menu will not be created or destroyed when opened or closed, instead it will be hidden. This will improve perf of the menu opening but could potentially impact overall perf by having more elements in the dom. Should only be used when perf is important. Note: This may increase the amount of time it takes for the comboBox itself to mount.
+#' * \bold{ scrollSelectedToTop } `boolean` \cr When options are scrollable the selected option is positioned at the top of the callout when it is opened (unless it has reached the end of the scrollbar).
+#' * \bold{ shouldRestoreFocus } `boolean` \cr When specified, determines whether the callout (the menu which drops down) should restore the focus after being dismissed or not. If false, then the menu will not try to set focus to whichever element had focus before the menu was opened.
+#' * \bold{ styles } `Partial<IComboBoxStyles>` \cr Custom styles for this component
+#' * \bold{ text } `string` \cr Value to show in the input, does not have to map to a combobox option
+#' * \bold{ theme } `ITheme` \cr Theme provided by HOC.
+#' * \bold{ useComboBoxAsMenuWidth } `boolean` \cr Whether to use the ComboBoxes width as the menu's width
+#' * \bold{ multiselectAccessibleText } `string` \cr Accessible text for label when combobox is multiselected.
+#' * \bold{ props } `IComboBoxProps` \cr Props to render the combobox.
 #'
 #' @md
 #' @name ComboBox
@@ -691,31 +669,29 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ buttonStyles }} {`IButtonStyles` \cr Custom styles for individual button}
-#' \item {\bold{ cacheKey }} {`string` \cr A custom cache key to be used for this item. If `cacheKey` is changed, the cache will invalidate. Defaults to `key` value.}
-#' \item {\bold{ commandBarButtonAs }} {`IComponentAs<ICommandBarItemProps>` \cr Method to override the render of the individual command bar button. Not used when item is rendered in overflow.}
-#' \item {\bold{ iconOnly }} {`boolean` \cr Show only an icon for this item, not text. Does not apply if item is in the overflow.}
-#' \item {\bold{ renderedInOverflow }} {`boolean` \cr Context under which the item is being rendered. This value is mutated by the CommandBar and is useful for adjusting the `onRender` function.}
-#' \item {\bold{ tooltipHostProps }} {`ITooltipHostProps` \cr Props for the tooltip when in `iconOnly` mode.}
-#' \item {\bold{ ariaLabel }} {`string` \cr Accessibility text to be read by the screen reader when the user's focus enters the command bar. The screen reader will read this text after reading information about the first focusable item in the command bar.}
-#' \item {\bold{ buttonAs }} {`IComponentAs<IButtonProps>` \cr Custom component for the near and far item buttons. Not used for overflow menu items.}
-#' \item {\bold{ className }} {`string` \cr Additional css class to apply to the command bar}
-#' \item {\bold{ componentRef }} {`IRefObject<ICommandBar>` \cr Optional callback to access the ICommandBar interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ dataDidRender }} {`(renderedData: any) => void` \cr Function to be called every time data is rendered. It provides the data that was actually rendered. A use case would be adding telemetry when a particular control is shown in an overflow or dropped as a result of `onReduceData`, or to count the number of renders that an implementation of `onReduceData` triggers.}
-#' \item {\bold{ farItems }} {`ICommandBarItemProps[]` \cr Items to render on the right side (or left, in RTL). ICommandBarItemProps extends IContextualMenuItem.}
-#' \item {\bold{ items }} {`ICommandBarItemProps[]` \cr Items to render. ICommandBarItemProps extends IContextualMenuItem.}
-#' \item {\bold{ onDataGrown }} {`(movedItem: ICommandBarItemProps) => void` \cr Callback invoked when data has been grown.}
-#' \item {\bold{ onDataReduced }} {`(movedItem: ICommandBarItemProps) => void` \cr Callback invoked when data has been reduced.}
-#' \item {\bold{ onGrowData }} {`(data: ICommandBarData) => ICommandBarData | undefined` \cr Custom function to grow data if items are too small for the given space. Return `undefined` if no more steps can be taken to avoid infinate loop.}
-#' \item {\bold{ onReduceData }} {`(data: ICommandBarData) => ICommandBarData | undefined` \cr Custom function to reduce data if items do not fit in given space. Return `undefined` if no more steps can be taken to avoid infinate loop.}
-#' \item {\bold{ overflowButtonAs }} {`IComponentAs<IButtonProps>` \cr Custom component for the overflow button.}
-#' \item {\bold{ overflowButtonProps }} {`IButtonProps` \cr Props to be passed to overflow button. If `menuProps` are passed through this prop, any items provided will be prepended to any computed overflow items.}
-#' \item {\bold{ overflowItems }} {`ICommandBarItemProps[]` \cr Default items to have in the overflow menu. ICommandBarItemProps extends IContextualMenuItem.}
-#' \item {\bold{ shiftOnReduce }} {`boolean` \cr When true, items will be 'shifted' off the front of the array when reduced, and unshifted during grow.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<ICommandBarStyleProps, ICommandBarStyles>` \cr Customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by HOC.}
-#' }
+#' * \bold{ buttonStyles } `IButtonStyles` \cr Custom styles for individual button
+#' * \bold{ cacheKey } `string` \cr A custom cache key to be used for this item. If `cacheKey` is changed, the cache will invalidate. Defaults to `key` value.
+#' * \bold{ commandBarButtonAs } `IComponentAs<ICommandBarItemProps>` \cr Method to override the render of the individual command bar button. Not used when item is rendered in overflow.
+#' * \bold{ iconOnly } `boolean` \cr Show only an icon for this item, not text. Does not apply if item is in the overflow.
+#' * \bold{ renderedInOverflow } `boolean` \cr Context under which the item is being rendered. This value is mutated by the CommandBar and is useful for adjusting the `onRender` function.
+#' * \bold{ tooltipHostProps } `ITooltipHostProps` \cr Props for the tooltip when in `iconOnly` mode.
+#' * \bold{ ariaLabel } `string` \cr Accessibility text to be read by the screen reader when the user's focus enters the command bar. The screen reader will read this text after reading information about the first focusable item in the command bar.
+#' * \bold{ buttonAs } `IComponentAs<IButtonProps>` \cr Custom component for the near and far item buttons. Not used for overflow menu items.
+#' * \bold{ className } `string` \cr Additional css class to apply to the command bar
+#' * \bold{ componentRef } `IRefObject<ICommandBar>` \cr Optional callback to access the ICommandBar interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ dataDidRender } `(renderedData: any) => void` \cr Function to be called every time data is rendered. It provides the data that was actually rendered. A use case would be adding telemetry when a particular control is shown in an overflow or dropped as a result of `onReduceData`, or to count the number of renders that an implementation of `onReduceData` triggers.
+#' * \bold{ farItems } `ICommandBarItemProps[]` \cr Items to render on the right side (or left, in RTL). ICommandBarItemProps extends IContextualMenuItem.
+#' * \bold{ items } `ICommandBarItemProps[]` \cr Items to render. ICommandBarItemProps extends IContextualMenuItem.
+#' * \bold{ onDataGrown } `(movedItem: ICommandBarItemProps) => void` \cr Callback invoked when data has been grown.
+#' * \bold{ onDataReduced } `(movedItem: ICommandBarItemProps) => void` \cr Callback invoked when data has been reduced.
+#' * \bold{ onGrowData } `(data: ICommandBarData) => ICommandBarData | undefined` \cr Custom function to grow data if items are too small for the given space. Return `undefined` if no more steps can be taken to avoid infinate loop.
+#' * \bold{ onReduceData } `(data: ICommandBarData) => ICommandBarData | undefined` \cr Custom function to reduce data if items do not fit in given space. Return `undefined` if no more steps can be taken to avoid infinate loop.
+#' * \bold{ overflowButtonAs } `IComponentAs<IButtonProps>` \cr Custom component for the overflow button.
+#' * \bold{ overflowButtonProps } `IButtonProps` \cr Props to be passed to overflow button. If `menuProps` are passed through this prop, any items provided will be prepended to any computed overflow items.
+#' * \bold{ overflowItems } `ICommandBarItemProps[]` \cr Default items to have in the overflow menu. ICommandBarItemProps extends IContextualMenuItem.
+#' * \bold{ shiftOnReduce } `boolean` \cr When true, items will be 'shifted' off the front of the array when reduced, and unshifted during grow.
+#' * \bold{ styles } `IStyleFunctionOrObject<ICommandBarStyleProps, ICommandBarStyles>` \cr Customized styling that will layer on top of the variant rules.
+#' * \bold{ theme } `ITheme` \cr Theme provided by HOC.
 #'
 #' @md
 #' @name CommandBar
@@ -738,72 +714,70 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ className }} {`string` \cr Additional css class to apply to the ContextualMenuItem}
-#' \item {\bold{ classNames }} {`IMenuItemClassNames` \cr Classnames for different aspects of a menu item}
-#' \item {\bold{ componentRef }} {`IRefObject<IContextualMenuRenderItem>` \cr Optional callback to access the IContextualMenuRenderItem interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ dismissMenu }} {`(ev?: any, dismissAll?: boolean) => void` \cr This prop will get set by ContextualMenu and can be called to close the menu this item belongs to. If dismissAll is true, all menus will be closed.}
-#' \item {\bold{ dismissSubMenu }} {`() => void` \cr This prop will get set by ContextualMenu and can be called to close this item's subMenu, if present.}
-#' \item {\bold{ getSubmenuTarget }} {`() => HTMLElement | undefined` \cr This prop will get set by the wrapping component and will return the element that wraps this ContextualMenuItem. Used for openSubMenu.}
-#' \item {\bold{ hasIcons }} {`boolean | undefined` \cr If this item has icons}
-#' \item {\bold{ index }} {`number` \cr Index of the item}
-#' \item {\bold{ item }} {`IContextualMenuItem` \cr The item to display}
-#' \item {\bold{ onCheckmarkClick }} {`(item: IContextualMenuItem, ev: React.MouseEvent<HTMLElement>) => void` \cr Click handler for the checkmark}
-#' \item {\bold{ openSubMenu }} {`(item: any, target: HTMLElement) => void` \cr This prop will get set by ContextualMenu and can be called to open this item's subMenu, if present.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IContextualMenuItemStyleProps, IContextualMenuItemStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by High-Order Component.}
-#' \item {\bold{ focusableElementIndex }} {`number` \cr }
-#' \item {\bold{ hasCheckmarks }} {`boolean` \cr }
-#' \item {\bold{ hasIcons }} {`boolean` \cr }
-#' \item {\bold{ index }} {`number` \cr }
-#' \item {\bold{ totalItemCount }} {`number` \cr }
-#' \item {\bold{ defaultMenuItemRenderer }} {`(item: IContextualMenuItemRenderProps) => React.ReactNode` \cr }
-#' \item {\bold{ hasCheckmarks }} {`boolean` \cr }
-#' \item {\bold{ hasIcons }} {`boolean` \cr }
-#' \item {\bold{ items }} {`IContextualMenuItem[]` \cr }
-#' \item {\bold{ role }} {`string` \cr }
-#' \item {\bold{ totalItemCount }} {`number` \cr }
-#' \item {\bold{ alignTargetEdge }} {`boolean` \cr If true the positioning logic will prefer to flip edges rather than to nudge the rectangle to fit within bounds, thus making sure the element aligns perfectly with target's alignment edge}
-#' \item {\bold{ ariaLabel }} {`string` \cr Accessible label for the ContextualMenu's root element (inside the callout).}
-#' \item {\bold{ beakWidth }} {`number` \cr The width of the beak.}
-#' \item {\bold{ bounds }} {`IRectangle | ((target?: Target, targetWindow?: Window) => IRectangle | undefined)` \cr The bounding rectangle (or callback that returns a rectangle) which the contextual menu can appear in.}
-#' \item {\bold{ calloutProps }} {`ICalloutProps` \cr Additional custom props for the Callout.}
-#' \item {\bold{ className }} {`string` \cr Additional CSS class to apply to the ContextualMenu.}
-#' \item {\bold{ componentRef }} {`IRefObject<IContextualMenu>` \cr Optional callback to access the IContextualMenu interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ contextualMenuItemAs }} {`React.ComponentClass<IContextualMenuItemProps> | React.FunctionComponent<IContextualMenuItemProps>` \cr Custom component to use for rendering individual menu items.}
-#' \item {\bold{ coverTarget }} {`boolean` \cr If true, the menu will be positioned to cover the target. If false, it will be positioned next to the target.}
-#' \item {\bold{ delayUpdateFocusOnHover }} {`boolean` \cr If true, the contextual menu will not be updated until focus enters the menu via other means. This will only result in different behavior when `shouldFocusOnMount = false`.}
-#' \item {\bold{ directionalHint }} {`DirectionalHint` \cr How the menu should be positioned}
-#' \item {\bold{ directionalHintFixed }} {`boolean` \cr If true the position will not change sides in an attempt to fit the ContextualMenu within bounds. It will still attempt to align it to whatever bounds are given.}
-#' \item {\bold{ directionalHintForRTL }} {`DirectionalHint` \cr How the menu should be positioned in RTL layouts. If not specified, a mirror of `directionalHint` will be used.}
-#' \item {\bold{ doNotLayer }} {`boolean` \cr If true do not render on a new layer. If false render on a new layer.}
-#' \item {\bold{ focusZoneProps }} {`IFocusZoneProps` \cr Props to pass down to the FocusZone. NOTE: the default FocusZoneDirection will be used unless a direction is specified in the focusZoneProps (even if other focusZoneProps are defined)}
-#' \item {\bold{ gapSpace }} {`number` \cr The gap between the ContextualMenu and the target}
-#' \item {\bold{ getMenuClassNames }} {`(theme: ITheme, className?: string) => IContextualMenuClassNames` \cr Method to provide the classnames to style the contextual menu.}
-#' \item {\bold{ hidden }} {`boolean` \cr If true, renders the ContextualMenu in a hidden state. Use this flag, rather than rendering a ContextualMenu conditionally based on visibility, to improve rendering performance when it becomes visible. Note: When ContextualMenu is hidden its content will not be rendered. It will only render once the ContextualMenu is visible.}
-#' \item {\bold{ id }} {`string` \cr ID for the ContextualMenu's root element (inside the callout). Should be used for `aria-owns` and other such uses, rather than direct reference for programmatic purposes.}
-#' \item {\bold{ isBeakVisible }} {`boolean` \cr If true then the beak is visible. If false it will not be shown.}
-#' \item {\bold{ isSubMenu }} {`boolean` \cr Whether this menu is a submenu of another menu.}
-#' \item {\bold{ items }} {`IContextualMenuItem[]` \cr Menu items to display.}
-#' \item {\bold{ labelElementId }} {`string` \cr Used as `aria-labelledby` for the menu element inside the callout.}
-#' \item {\bold{ onDismiss }} {`(ev?: React.MouseEvent | React.KeyboardEvent, dismissAll?: boolean) => void` \cr Callback when the ContextualMenu tries to close. If `dismissAll` is true then all submenus will be dismissed.}
-#' \item {\bold{ onItemClick }} {`(ev?: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>, item?: IContextualMenuItem) => boolean | void` \cr Click handler which is invoked if `onClick` is not passed for individual contextual menu item. Returning true will dismiss the menu even if `ev.preventDefault()` was called.}
-#' \item {\bold{ onMenuDismissed }} {`(contextualMenu?: IContextualMenuProps) => void` \cr Callback for when the menu is being closed (removing from the DOM).}
-#' \item {\bold{ onMenuOpened }} {`(contextualMenu?: IContextualMenuProps) => void` \cr Callback for when the menu has been opened.}
-#' \item {\bold{ onRenderMenuList }} {`IRenderFunction<IContextualMenuListProps>` \cr Method to override the render of the list of menu items.}
-#' \item {\bold{ onRenderSubMenu }} {`IRenderFunction<IContextualMenuProps>` \cr Custom render function for a submenu.}
-#' \item {\bold{ onRestoreFocus }} {`(options: { originalElement?: HTMLElement | Window; containsFocus: boolean; }) => void` \cr Called when the component is unmounting, and focus needs to be restored. Argument passed down contains two variables, the element that the underlying popup believes focus should go to and whether or not the popup currently contains focus. If this prop is provided, focus will not be restored automatically, you'll need to call originalElement.focus()}
-#' \item {\bold{ shouldFocusOnContainer }} {`boolean` \cr Whether to focus on the contextual menu container (as opposed to the first menu item).}
-#' \item {\bold{ shouldFocusOnMount }} {`boolean` \cr Whether to focus on the menu when mounted.}
-#' \item {\bold{ shouldUpdateWhenHidden }} {`boolean` \cr If true, the menu will be updated even when `hidden=true`. Note that this will consume resources to update even when nothing is being shown to the user. This might be helpful if your updates are small and you want the menu to display quickly when `hidden` is set to false.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IContextualMenuStyleProps, IContextualMenuStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ subMenuHoverDelay }} {`number` \cr Delay (in milliseconds) to wait before expanding / dismissing a submenu on mouseEnter or mouseLeave}
-#' \item {\bold{ target }} {`Target` \cr The target that the ContextualMenu should try to position itself based on. It can be either an element, a query selector string resolving to a valid element, or a MouseEvent. If a MouseEvent is given, the origin point of the event will be used.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by higher-order component.}
-#' \item {\bold{ title }} {`string` \cr Title to be displayed at the top of the menu, above the items.}
-#' \item {\bold{ useTargetAsMinWidth }} {`boolean` \cr If true the context menu will have a minimum width equal to the width of the target element}
-#' \item {\bold{ useTargetWidth }} {`boolean` \cr If true the context menu will render as the same width as the target element}
-#' }
+#' * \bold{ className } `string` \cr Additional css class to apply to the ContextualMenuItem
+#' * \bold{ classNames } `IMenuItemClassNames` \cr Classnames for different aspects of a menu item
+#' * \bold{ componentRef } `IRefObject<IContextualMenuRenderItem>` \cr Optional callback to access the IContextualMenuRenderItem interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ dismissMenu } `(ev?: any, dismissAll?: boolean) => void` \cr This prop will get set by ContextualMenu and can be called to close the menu this item belongs to. If dismissAll is true, all menus will be closed.
+#' * \bold{ dismissSubMenu } `() => void` \cr This prop will get set by ContextualMenu and can be called to close this item's subMenu, if present.
+#' * \bold{ getSubmenuTarget } `() => HTMLElement | undefined` \cr This prop will get set by the wrapping component and will return the element that wraps this ContextualMenuItem. Used for openSubMenu.
+#' * \bold{ hasIcons } `boolean | undefined` \cr If this item has icons
+#' * \bold{ index } `number` \cr Index of the item
+#' * \bold{ item } `IContextualMenuItem` \cr The item to display
+#' * \bold{ onCheckmarkClick } `(item: IContextualMenuItem, ev: React.MouseEvent<HTMLElement>) => void` \cr Click handler for the checkmark
+#' * \bold{ openSubMenu } `(item: any, target: HTMLElement) => void` \cr This prop will get set by ContextualMenu and can be called to open this item's subMenu, if present.
+#' * \bold{ styles } `IStyleFunctionOrObject<IContextualMenuItemStyleProps, IContextualMenuItemStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
+#' * \bold{ theme } `ITheme` \cr Theme provided by High-Order Component.
+#' * \bold{ focusableElementIndex } `number` \cr
+#' * \bold{ hasCheckmarks } `boolean` \cr
+#' * \bold{ hasIcons } `boolean` \cr
+#' * \bold{ index } `number` \cr
+#' * \bold{ totalItemCount } `number` \cr
+#' * \bold{ defaultMenuItemRenderer } `(item: IContextualMenuItemRenderProps) => React.ReactNode` \cr
+#' * \bold{ hasCheckmarks } `boolean` \cr
+#' * \bold{ hasIcons } `boolean` \cr
+#' * \bold{ items } `IContextualMenuItem[]` \cr
+#' * \bold{ role } `string` \cr
+#' * \bold{ totalItemCount } `number` \cr
+#' * \bold{ alignTargetEdge } `boolean` \cr If true the positioning logic will prefer to flip edges rather than to nudge the rectangle to fit within bounds, thus making sure the element aligns perfectly with target's alignment edge
+#' * \bold{ ariaLabel } `string` \cr Accessible label for the ContextualMenu's root element (inside the callout).
+#' * \bold{ beakWidth } `number` \cr The width of the beak.
+#' * \bold{ bounds } `IRectangle | ((target?: Target, targetWindow?: Window) => IRectangle | undefined)` \cr The bounding rectangle (or callback that returns a rectangle) which the contextual menu can appear in.
+#' * \bold{ calloutProps } `ICalloutProps` \cr Additional custom props for the Callout.
+#' * \bold{ className } `string` \cr Additional CSS class to apply to the ContextualMenu.
+#' * \bold{ componentRef } `IRefObject<IContextualMenu>` \cr Optional callback to access the IContextualMenu interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ contextualMenuItemAs } `React.ComponentClass<IContextualMenuItemProps> | React.FunctionComponent<IContextualMenuItemProps>` \cr Custom component to use for rendering individual menu items.
+#' * \bold{ coverTarget } `boolean` \cr If true, the menu will be positioned to cover the target. If false, it will be positioned next to the target.
+#' * \bold{ delayUpdateFocusOnHover } `boolean` \cr If true, the contextual menu will not be updated until focus enters the menu via other means. This will only result in different behavior when `shouldFocusOnMount = false`.
+#' * \bold{ directionalHint } `DirectionalHint` \cr How the menu should be positioned
+#' * \bold{ directionalHintFixed } `boolean` \cr If true the position will not change sides in an attempt to fit the ContextualMenu within bounds. It will still attempt to align it to whatever bounds are given.
+#' * \bold{ directionalHintForRTL } `DirectionalHint` \cr How the menu should be positioned in RTL layouts. If not specified, a mirror of `directionalHint` will be used.
+#' * \bold{ doNotLayer } `boolean` \cr If true do not render on a new layer. If false render on a new layer.
+#' * \bold{ focusZoneProps } `IFocusZoneProps` \cr Props to pass down to the FocusZone. NOTE: the default FocusZoneDirection will be used unless a direction is specified in the focusZoneProps (even if other focusZoneProps are defined)
+#' * \bold{ gapSpace } `number` \cr The gap between the ContextualMenu and the target
+#' * \bold{ getMenuClassNames } `(theme: ITheme, className?: string) => IContextualMenuClassNames` \cr Method to provide the classnames to style the contextual menu.
+#' * \bold{ hidden } `boolean` \cr If true, renders the ContextualMenu in a hidden state. Use this flag, rather than rendering a ContextualMenu conditionally based on visibility, to improve rendering performance when it becomes visible. Note: When ContextualMenu is hidden its content will not be rendered. It will only render once the ContextualMenu is visible.
+#' * \bold{ id } `string` \cr ID for the ContextualMenu's root element (inside the callout). Should be used for `aria-owns` and other such uses, rather than direct reference for programmatic purposes.
+#' * \bold{ isBeakVisible } `boolean` \cr If true then the beak is visible. If false it will not be shown.
+#' * \bold{ isSubMenu } `boolean` \cr Whether this menu is a submenu of another menu.
+#' * \bold{ items } `IContextualMenuItem[]` \cr Menu items to display.
+#' * \bold{ labelElementId } `string` \cr Used as `aria-labelledby` for the menu element inside the callout.
+#' * \bold{ onDismiss } `(ev?: React.MouseEvent | React.KeyboardEvent, dismissAll?: boolean) => void` \cr Callback when the ContextualMenu tries to close. If `dismissAll` is true then all submenus will be dismissed.
+#' * \bold{ onItemClick } `(ev?: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>, item?: IContextualMenuItem) => boolean | void` \cr Click handler which is invoked if `onClick` is not passed for individual contextual menu item. Returning true will dismiss the menu even if `ev.preventDefault()` was called.
+#' * \bold{ onMenuDismissed } `(contextualMenu?: IContextualMenuProps) => void` \cr Callback for when the menu is being closed (removing from the DOM).
+#' * \bold{ onMenuOpened } `(contextualMenu?: IContextualMenuProps) => void` \cr Callback for when the menu has been opened.
+#' * \bold{ onRenderMenuList } `IRenderFunction<IContextualMenuListProps>` \cr Method to override the render of the list of menu items.
+#' * \bold{ onRenderSubMenu } `IRenderFunction<IContextualMenuProps>` \cr Custom render function for a submenu.
+#' * \bold{ onRestoreFocus } `(options: { originalElement?: HTMLElement | Window; containsFocus: boolean; }) => void` \cr Called when the component is unmounting, and focus needs to be restored. Argument passed down contains two variables, the element that the underlying popup believes focus should go to and whether or not the popup currently contains focus. If this prop is provided, focus will not be restored automatically, you'll need to call originalElement.focus()
+#' * \bold{ shouldFocusOnContainer } `boolean` \cr Whether to focus on the contextual menu container (as opposed to the first menu item).
+#' * \bold{ shouldFocusOnMount } `boolean` \cr Whether to focus on the menu when mounted.
+#' * \bold{ shouldUpdateWhenHidden } `boolean` \cr If true, the menu will be updated even when `hidden=true`. Note that this will consume resources to update even when nothing is being shown to the user. This might be helpful if your updates are small and you want the menu to display quickly when `hidden` is set to false.
+#' * \bold{ styles } `IStyleFunctionOrObject<IContextualMenuStyleProps, IContextualMenuStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
+#' * \bold{ subMenuHoverDelay } `number` \cr Delay (in milliseconds) to wait before expanding / dismissing a submenu on mouseEnter or mouseLeave
+#' * \bold{ target } `Target` \cr The target that the ContextualMenu should try to position itself based on. It can be either an element, a query selector string resolving to a valid element, or a MouseEvent. If a MouseEvent is given, the origin point of the event will be used.
+#' * \bold{ theme } `ITheme` \cr Theme provided by higher-order component.
+#' * \bold{ title } `string` \cr Title to be displayed at the top of the menu, above the items.
+#' * \bold{ useTargetAsMinWidth } `boolean` \cr If true the context menu will have a minimum width equal to the width of the target element
+#' * \bold{ useTargetWidth } `boolean` \cr If true the context menu will render as the same width as the target element
 #'
 #' @md
 #' @name ContextualMenu
@@ -830,48 +804,46 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ allFocusable }} {`boolean` \cr Allows all elements to be focused, including disabled ones}
-#' \item {\bold{ allowTextInput }} {`boolean` \cr Whether the DatePicker allows input a date string directly or not}
-#' \item {\bold{ ariaLabel }} {`string` \cr Aria Label for TextField of the DatePicker for screen reader users.}
-#' \item {\bold{ borderless }} {`boolean` \cr Determines if DatePicker has a border.}
-#' \item {\bold{ calendarAs }} {`IComponentAs<ICalendarProps>` \cr Custom Calendar to be used for date picking}
-#' \item {\bold{ calendarProps }} {`ICalendarProps` \cr Pass calendar props to calendar component}
-#' \item {\bold{ calloutProps }} {`ICalloutProps` \cr Pass callout props to callout component}
-#' \item {\bold{ className }} {`string` \cr Optional Classname for datepicker root element .}
-#' \item {\bold{ componentRef }} {`IRefObject<IDatePicker>` \cr Optional callback to access the IDatePicker interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ dateTimeFormatter }} {`ICalendarFormatDateCallbacks` \cr Apply additional formating to dates, for example localized date formatting.}
-#' \item {\bold{ disableAutoFocus }} {`boolean` \cr Whether the DatePicker should open automatically when the control is focused}
-#' \item {\bold{ disabled }} {`boolean` \cr Disabled state of the DatePicker.}
-#' \item {\bold{ firstDayOfWeek }} {`DayOfWeek` \cr The first day of the week for your locale.}
-#' \item {\bold{ firstWeekOfYear }} {`FirstWeekOfYear` \cr Defines when the first week of the year should start, FirstWeekOfYear.FirstDay, FirstWeekOfYear.FirstFullWeek or FirstWeekOfYear.FirstFourDayWeek are the possible values}
-#' \item {\bold{ formatDate }} {`(date?: Date) => string` \cr Optional method to format the chosen date to a string to display in the DatePicker}
-#' \item {\bold{ highlightCurrentMonth }} {`boolean` \cr Whether the month picker should highlight the current month}
-#' \item {\bold{ highlightSelectedMonth }} {`boolean` \cr Whether the month picker should highlight the selected month}
-#' \item {\bold{ initialPickerDate }} {`Date` \cr The initially highlighted date in the calendar picker}
-#' \item {\bold{ isMonthPickerVisible }} {`boolean` \cr Whether the month picker is shown beside the day picker or hidden.}
-#' \item {\bold{ isRequired }} {`boolean` \cr Whether the DatePicker is a required field or not}
-#' \item {\bold{ label }} {`string` \cr Label for the DatePicker}
-#' \item {\bold{ maxDate }} {`Date` \cr The maximum allowable date.}
-#' \item {\bold{ minDate }} {`Date` \cr The minimum allowable date.}
-#' \item {\bold{ onAfterMenuDismiss }} {`() => void` \cr Callback that runs after DatePicker's menu (Calendar) is closed}
-#' \item {\bold{ onSelectDate }} {`(date: Date | null | undefined) => void` \cr Callback issued when a date is selected}
-#' \item {\bold{ parseDateFromString }} {`(dateStr: string) => Date | null` \cr Optional method to parse the text input value to date, it is only useful when allowTextInput is set to true}
-#' \item {\bold{ pickerAriaLabel }} {`string` \cr Aria label for date picker popup for screen reader users.}
-#' \item {\bold{ placeholder }} {`string` \cr Placeholder text for the DatePicker}
-#' \item {\bold{ showCloseButton }} {`boolean` \cr Whether the CalendarDay close button should be shown or not.}
-#' \item {\bold{ showGoToToday }} {`boolean` \cr Whether the "Go to today" link should be shown or not}
-#' \item {\bold{ showMonthPickerAsOverlay }} {`boolean` \cr Show month picker on top of date picker when visible.}
-#' \item {\bold{ showWeekNumbers }} {`boolean` \cr Whether the calendar should show the week number (weeks 1 to 53) before each week row}
-#' \item {\bold{ strings }} {`IDatePickerStrings` \cr Localized strings to use in the DatePicker}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IDatePickerStyleProps, IDatePickerStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ tabIndex }} {`number` \cr The tabIndex of the TextField}
-#' \item {\bold{ textField }} {`ITextFieldProps` \cr Pass textField props to textField component. Prop name is "textField" for compatiblity with upcoming slots work.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by High-Order Component.}
-#' \item {\bold{ today }} {`Date` \cr Value of today. If null, current time in client machine will be used.}
-#' \item {\bold{ underlined }} {`boolean` \cr Whether or not the Textfield of the DatePicker is underlined.}
-#' \item {\bold{ value }} {`Date` \cr Default value of the DatePicker, if any}
-#' }
+#' * \bold{ allFocusable } `boolean` \cr Allows all elements to be focused, including disabled ones
+#' * \bold{ allowTextInput } `boolean` \cr Whether the DatePicker allows input a date string directly or not
+#' * \bold{ ariaLabel } `string` \cr Aria Label for TextField of the DatePicker for screen reader users.
+#' * \bold{ borderless } `boolean` \cr Determines if DatePicker has a border.
+#' * \bold{ calendarAs } `IComponentAs<ICalendarProps>` \cr Custom Calendar to be used for date picking
+#' * \bold{ calendarProps } `ICalendarProps` \cr Pass calendar props to calendar component
+#' * \bold{ calloutProps } `ICalloutProps` \cr Pass callout props to callout component
+#' * \bold{ className } `string` \cr Optional Classname for datepicker root element .
+#' * \bold{ componentRef } `IRefObject<IDatePicker>` \cr Optional callback to access the IDatePicker interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ dateTimeFormatter } `ICalendarFormatDateCallbacks` \cr Apply additional formating to dates, for example localized date formatting.
+#' * \bold{ disableAutoFocus } `boolean` \cr Whether the DatePicker should open automatically when the control is focused
+#' * \bold{ disabled } `boolean` \cr Disabled state of the DatePicker.
+#' * \bold{ firstDayOfWeek } `DayOfWeek` \cr The first day of the week for your locale.
+#' * \bold{ firstWeekOfYear } `FirstWeekOfYear` \cr Defines when the first week of the year should start, FirstWeekOfYear.FirstDay, FirstWeekOfYear.FirstFullWeek or FirstWeekOfYear.FirstFourDayWeek are the possible values
+#' * \bold{ formatDate } `(date?: Date) => string` \cr Optional method to format the chosen date to a string to display in the DatePicker
+#' * \bold{ highlightCurrentMonth } `boolean` \cr Whether the month picker should highlight the current month
+#' * \bold{ highlightSelectedMonth } `boolean` \cr Whether the month picker should highlight the selected month
+#' * \bold{ initialPickerDate } `Date` \cr The initially highlighted date in the calendar picker
+#' * \bold{ isMonthPickerVisible } `boolean` \cr Whether the month picker is shown beside the day picker or hidden.
+#' * \bold{ isRequired } `boolean` \cr Whether the DatePicker is a required field or not
+#' * \bold{ label } `string` \cr Label for the DatePicker
+#' * \bold{ maxDate } `Date` \cr The maximum allowable date.
+#' * \bold{ minDate } `Date` \cr The minimum allowable date.
+#' * \bold{ onAfterMenuDismiss } `() => void` \cr Callback that runs after DatePicker's menu (Calendar) is closed
+#' * \bold{ onSelectDate } `(date: Date | null | undefined) => void` \cr Callback issued when a date is selected
+#' * \bold{ parseDateFromString } `(dateStr: string) => Date | null` \cr Optional method to parse the text input value to date, it is only useful when allowTextInput is set to true
+#' * \bold{ pickerAriaLabel } `string` \cr Aria label for date picker popup for screen reader users.
+#' * \bold{ placeholder } `string` \cr Placeholder text for the DatePicker
+#' * \bold{ showCloseButton } `boolean` \cr Whether the CalendarDay close button should be shown or not.
+#' * \bold{ showGoToToday } `boolean` \cr Whether the "Go to today" link should be shown or not
+#' * \bold{ showMonthPickerAsOverlay } `boolean` \cr Show month picker on top of date picker when visible.
+#' * \bold{ showWeekNumbers } `boolean` \cr Whether the calendar should show the week number (weeks 1 to 53) before each week row
+#' * \bold{ strings } `IDatePickerStrings` \cr Localized strings to use in the DatePicker
+#' * \bold{ styles } `IStyleFunctionOrObject<IDatePickerStyleProps, IDatePickerStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
+#' * \bold{ tabIndex } `number` \cr The tabIndex of the TextField
+#' * \bold{ textField } `ITextFieldProps` \cr Pass textField props to textField component. Prop name is "textField" for compatiblity with upcoming slots work.
+#' * \bold{ theme } `ITheme` \cr Theme provided by High-Order Component.
+#' * \bold{ today } `Date` \cr Value of today. If null, current time in client machine will be used.
+#' * \bold{ underlined } `boolean` \cr Whether or not the Textfield of the DatePicker is underlined.
+#' * \bold{ value } `Date` \cr Default value of the DatePicker, if any
 #'
 #' @md
 #' @name DatePicker
@@ -936,191 +908,189 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ onColumnDragEnd }} {`(props: { dropLocation?: ColumnDragEndLocation; }, event: MouseEvent) => void` \cr Callback to notify the column dragEnd event to List Need this to check whether the dragEnd has happened on corresponding list or outside of the list}
-#' \item {\bold{ cellStyleProps }} {`ICellStyleProps` \cr Custom styles for cell rendering.}
-#' \item {\bold{ column }} {`IColumn` \cr The column definition for the component instance.}
-#' \item {\bold{ columnIndex }} {`number` \cr The column index for the component instance.}
-#' \item {\bold{ componentRef }} {`() => void` \cr A reference to the component instance.}
-#' \item {\bold{ dragDropHelper }} {`IDragDropHelper | null` \cr The drag and drop helper for the component instance.}
-#' \item {\bold{ isDraggable }} {`boolean` \cr Whether or not the column can be re-ordered via drag and drop.}
-#' \item {\bold{ isDropped }} {`boolean` \cr Whether or not the column has been dropped via drag and drop.}
-#' \item {\bold{ onColumnClick }} {`(ev: React.MouseEvent<HTMLElement>, column: IColumn) => void` \cr Callback fired when click event occurs.}
-#' \item {\bold{ onColumnContextMenu }} {`(column: IColumn, ev: React.MouseEvent<HTMLElement>) => void` \cr Callback fired on contextual menu event to provide contextual menu UI.}
-#' \item {\bold{ onRenderColumnHeaderTooltip }} {`IRenderFunction<IDetailsColumnRenderTooltipProps>` \cr Render function for providing a column header tooltip.}
-#' \item {\bold{ parentId }} {`string` \cr Parent ID used for accessibility label(s).}
-#' \item {\bold{ setDraggedItemIndex }} {`(itemIndex: number) => void` \cr }
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IDetailsColumnStyleProps, IDetailsColumnStyles>` \cr The component styles to respect during render.}
-#' \item {\bold{ theme }} {`ITheme` \cr The theme object to respect during render.}
-#' \item {\bold{ updateDragInfo }} {`(props: { itemIndex: number; }, event?: MouseEvent) => void` \cr Callback on drag and drop event.}
-#' \item {\bold{ useFastIcons }} {`boolean` \cr Whether to use fast icon and check components. The icons can't be targeted by customization but are still customizable via class names.}
-#' \item {\bold{ columns }} {`IColumn[]` \cr Column metadata}
-#' \item {\bold{ selection }} {`ISelection` \cr Selection from utilities}
-#' \item {\bold{ selectionMode }} {`SelectionMode` \cr Selection mode}
-#' \item {\bold{ onRenderFooter }} {`IRenderFunction<IDetailsGroupDividerProps>` \cr }
-#' \item {\bold{ onRenderHeader }} {`IRenderFunction<IDetailsGroupDividerProps>` \cr }
-#' \item {\bold{ ariaLabel }} {`string` \cr ariaLabel for the entire header}
-#' \item {\bold{ ariaLabelForSelectAllCheckbox }} {`string` \cr ariaLabel for the header checkbox that selects or deselects everything}
-#' \item {\bold{ ariaLabelForSelectionColumn }} {`string` \cr ariaLabel for the selection column}
-#' \item {\bold{ ariaLabelForToggleAllGroupsButton }} {`string` \cr ariaLabel for expand/collapse group button}
-#' \item {\bold{ className }} {`string` \cr Overriding class name}
-#' \item {\bold{ collapseAllVisibility }} {`CollapseAllVisibility` \cr Whether to collapse for all visibility}
-#' \item {\bold{ columnReorderOptions }} {`IColumnReorderOptions` \cr Column reordering options}
-#' \item {\bold{ columnReorderProps }} {`IColumnReorderHeaderProps` \cr Column reordering options}
-#' \item {\bold{ componentRef }} {`IRefObject<IDetailsHeader>` \cr Ref to the component itself}
-#' \item {\bold{ isAllCollapsed }} {`boolean` \cr Whether or not all is collapsed}
-#' \item {\bold{ layoutMode }} {`DetailsListLayoutMode` \cr Layout mode - fixedColumns or justified}
-#' \item {\bold{ minimumPixelsForDrag }} {`number` \cr Minimum pixels to be moved before dragging is registered}
-#' \item {\bold{ onColumnAutoResized }} {`(column: IColumn, columnIndex: number) => void` \cr Callback for when column is automatically resized}
-#' \item {\bold{ onColumnClick }} {`(ev: React.MouseEvent<HTMLElement>, column: IColumn) => void` \cr Callback for when the column is clicked}
-#' \item {\bold{ onColumnContextMenu }} {`(column: IColumn, ev: React.MouseEvent<HTMLElement>) => void` \cr Callback for when the column needs to show a context menu}
-#' \item {\bold{ onColumnIsSizingChanged }} {`(column: IColumn, isSizing: boolean) => void` \cr Callback for when column sizing has changed}
-#' \item {\bold{ onColumnResized }} {`(column: IColumn, newWidth: number, columnIndex: number) => void` \cr Callback for when column is resized}
-#' \item {\bold{ onRenderColumnHeaderTooltip }} {`IRenderFunction<IDetailsColumnRenderTooltipProps>` \cr Callback to render a tooltip for the column header}
-#' \item {\bold{ onRenderDetailsCheckbox }} {`IRenderFunction<IDetailsCheckboxProps>` \cr If provided, can be used to render a custom checkbox}
-#' \item {\bold{ onToggleCollapseAll }} {`(isAllCollapsed: boolean) => void` \cr Callback for when collapse all is toggled}
-#' \item {\bold{ selectAllVisibility }} {`SelectAllVisibility` \cr Select all button visibility}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IDetailsHeaderStyleProps, IDetailsHeaderStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme from the Higher Order Component}
-#' \item {\bold{ useFastIcons }} {`boolean` \cr Whether to use fast icon and check components. The icons can't be targeted by customization but are still customizable via class names.}
-#' \item {\bold{ columns }} {`IColumn[]` \cr Column metadata}
-#' \item {\bold{ selection }} {`ISelection` \cr Selection from utilities}
-#' \item {\bold{ selectionMode }} {`SelectionMode` \cr Selection mode}
-#' \item {\bold{ cellStyleProps }} {`ICellStyleProps` \cr Rules for rendering column cells.}
-#' \item {\bold{ checkboxVisibility }} {`CheckboxVisibility | undefined` \cr Checkbox visibility}
-#' \item {\bold{ columns }} {`IColumn[]` \cr Column metadata}
-#' \item {\bold{ groupNestingDepth }} {`number` \cr Nesting depth of a grouping}
-#' \item {\bold{ indentWidth }} {`number | undefined` \cr How much to indent}
-#' \item {\bold{ rowWidth }} {`number` \cr Minimum width of the row.}
-#' \item {\bold{ selection }} {`ISelection | undefined` \cr Selection from utilities}
-#' \item {\bold{ selectionMode }} {`SelectionMode | undefined` \cr Selection mode}
-#' \item {\bold{ viewport }} {`IViewport | undefined` \cr View port of the virtualized list}
-#' \item {\bold{ ariaLabel }} {`string` \cr Accessible label describing or summarizing the list.}
-#' \item {\bold{ ariaLabelForGrid }} {`string` \cr Accessible label for the grid within the list.}
-#' \item {\bold{ ariaLabelForListHeader }} {`string` \cr Accessible label for the list header.}
-#' \item {\bold{ ariaLabelForSelectAllCheckbox }} {`string` \cr Accessible label for the select all checkbox.}
-#' \item {\bold{ ariaLabelForSelectionColumn }} {`string` \cr Accessible label for the name of the selection column.}
-#' \item {\bold{ cellStyleProps }} {`ICellStyleProps` \cr Props impacting the render style of cells. Since these have an impact on calculated column widths, they are handled separately from normal theme styling, but they are passed to the styling system.}
-#' \item {\bold{ checkboxCellClassName }} {`string` \cr Class name to add to the cell of a checkbox.}
-#' \item {\bold{ checkboxVisibility }} {`CheckboxVisibility` \cr Controls the visibility of selection check box.}
-#' \item {\bold{ checkButtonAriaLabel }} {`string` \cr Accessible label for the check button.}
-#' \item {\bold{ className }} {`string` \cr Class name to add to the root element.}
-#' \item {\bold{ columnReorderOptions }} {`IColumnReorderOptions` \cr Options for column reordering using drag and drop.}
-#' \item {\bold{ columns }} {`IColumn[]` \cr column defitions. If none are provided, default columns will be created based on the items' properties.}
-#' \item {\bold{ compact }} {`boolean` \cr Whether to render in compact mode.}
-#' \item {\bold{ componentRef }} {`IRefObject<IDetailsList>` \cr Callback to access the IDetailsList interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ constrainMode }} {`ConstrainMode` \cr Controls how the list contrains overflow.}
-#' \item {\bold{ disableSelectionZone }} {`boolean` \cr Whether to disable the built-in SelectionZone, so the host component can provide its own.}
-#' \item {\bold{ dragDropEvents }} {`IDragDropEvents` \cr Map of callback functions related to row drag and drop functionality.}
-#' \item {\bold{ enableUpdateAnimations }} {`boolean` \cr Whether to animate updates}
-#' \item {\bold{ enterModalSelectionOnTouch }} {`boolean` \cr Whether the selection zone should enter modal state on touch.}
-#' \item {\bold{ getCellValueKey }} {`(item?: any, index?: number, column?: IColumn) => string` \cr If provided, will be the "default" item column cell value return. A column's `getValueKey` can override `getCellValueKey`.}
-#' \item {\bold{ getGroupHeight }} {`IGroupedListProps['getGroupHeight']` \cr Callback to override default group height calculation used by list virtualization.}
-#' \item {\bold{ getKey }} {`(item: any, index?: number) => string` \cr Callback to get the item key, to be used in the selection and on render. Must be provided if sorting or filtering is enabled.}
-#' \item {\bold{ getRowAriaDescribedBy }} {`(item: any) => string` \cr Callback to get the aria-describedby IDs (space-separated strings) of elements that describe the item.}
-#' \item {\bold{ getRowAriaLabel }} {`(item: any) => string` \cr Callback to get the aria-label string for a given item.}
-#' \item {\bold{ groupProps }} {`IDetailsGroupRenderProps` \cr Override properties to render groups.}
-#' \item {\bold{ groups }} {`IGroup[]` \cr Grouping instructions.}
-#' \item {\bold{ indentWidth }} {`number` \cr Override for the indent width used for group nesting.}
-#' \item {\bold{ initialFocusedIndex }} {`number` \cr Default index to set focus to once the items have rendered and the index exists.}
-#' \item {\bold{ isHeaderVisible }} {`boolean` \cr Controls the visibility of the header.}
-#' \item {\bold{ isPlaceholderData }} {`boolean` \cr Set this to true to indicate that the items being displayed are placeholder data.}
-#' \item {\bold{ items }} {`any[]` \cr The items to render.}
-#' \item {\bold{ layoutMode }} {`DetailsListLayoutMode` \cr Controls how the columns are adjusted.}
-#' \item {\bold{ listProps }} {`IListProps` \cr Properties to pass through to the List components being rendered.}
-#' \item {\bold{ minimumPixelsForDrag }} {`number` \cr The minimum mouse move distance to interpret the action as drag event.}
-#' \item {\bold{ onActiveItemChanged }} {`(item?: any, index?: number, ev?: React.FocusEvent<HTMLElement>) => void` \cr Callback for when an item in the list becomes active by clicking anywhere inside the row or navigating to it with the keyboard.}
-#' \item {\bold{ onColumnHeaderClick }} {`(ev?: React.MouseEvent<HTMLElement>, column?: IColumn) => void` \cr Callback for when the user clicks on the column header.}
-#' \item {\bold{ onColumnHeaderContextMenu }} {`(column?: IColumn, ev?: React.MouseEvent<HTMLElement>) => void` \cr Callback for when the user asks for a contextual menu (usually via right click) from a column header.}
-#' \item {\bold{ onColumnResize }} {`(column?: IColumn, newWidth?: number, columnIndex?: number) => void` \cr Callback fired on column resize}
-#' \item {\bold{ onDidUpdate }} {`(detailsList?: DetailsListBase) => void` \cr Callback for when the list has been updated. Useful for telemetry tracking externally.}
-#' \item {\bold{ onItemContextMenu }} {`(item?: any, index?: number, ev?: Event) => void | boolean` \cr Callback for when the context menu of an item has been accessed. If undefined or false is returned, `ev.preventDefault()` will be called.}
-#' \item {\bold{ onItemInvoked }} {`(item?: any, index?: number, ev?: Event) => void` \cr Callback for when a given row has been invoked (by pressing enter while it is selected.)}
-#' \item {\bold{ onRenderCheckbox }} {`IRenderFunction<IDetailsListCheckboxProps>` \cr If provided, can be used to render a custom checkbox.}
-#' \item {\bold{ onRenderDetailsFooter }} {`IRenderFunction<IDetailsFooterProps>` \cr An override to render the details footer.}
-#' \item {\bold{ onRenderDetailsHeader }} {`IRenderFunction<IDetailsHeaderProps>` \cr An override to render the details header.}
-#' \item {\bold{ onRenderItemColumn }} {`(item?: any, index?: number, column?: IColumn) => React.ReactNode` \cr If provided, will be the "default" item column renderer method. This affects cells within the rows, not the rows themselves. If a column definition provides its own `onRender` method, that will be used instead of this.}
-#' \item {\bold{ onRenderMissingItem }} {`(index?: number, rowProps?: IDetailsRowProps) => React.ReactNode` \cr Callback for what to render when the item is missing.}
-#' \item {\bold{ onRenderRow }} {`IRenderFunction<IDetailsRowProps>` \cr Callback to override the default row rendering.}
-#' \item {\bold{ onRowDidMount }} {`(item?: any, index?: number) => void` \cr Callback for when a given row has been mounted. Useful for identifying when a row has been rendered on the page.}
-#' \item {\bold{ onRowWillUnmount }} {`(item?: any, index?: number) => void` \cr Callback for when a given row has been unmounted. Useful for identifying when a row has been removed from the page.}
-#' \item {\bold{ onShouldVirtualize }} {`(props: IListProps) => boolean` \cr Callback to determine whether the list should be rendered in full, or virtualized.
+#' * \bold{ onColumnDragEnd } `(props: { dropLocation?: ColumnDragEndLocation; }, event: MouseEvent) => void` \cr Callback to notify the column dragEnd event to List Need this to check whether the dragEnd has happened on corresponding list or outside of the list
+#' * \bold{ cellStyleProps } `ICellStyleProps` \cr Custom styles for cell rendering.
+#' * \bold{ column } `IColumn` \cr The column definition for the component instance.
+#' * \bold{ columnIndex } `number` \cr The column index for the component instance.
+#' * \bold{ componentRef } `() => void` \cr A reference to the component instance.
+#' * \bold{ dragDropHelper } `IDragDropHelper | null` \cr The drag and drop helper for the component instance.
+#' * \bold{ isDraggable } `boolean` \cr Whether or not the column can be re-ordered via drag and drop.
+#' * \bold{ isDropped } `boolean` \cr Whether or not the column has been dropped via drag and drop.
+#' * \bold{ onColumnClick } `(ev: React.MouseEvent<HTMLElement>, column: IColumn) => void` \cr Callback fired when click event occurs.
+#' * \bold{ onColumnContextMenu } `(column: IColumn, ev: React.MouseEvent<HTMLElement>) => void` \cr Callback fired on contextual menu event to provide contextual menu UI.
+#' * \bold{ onRenderColumnHeaderTooltip } `IRenderFunction<IDetailsColumnRenderTooltipProps>` \cr Render function for providing a column header tooltip.
+#' * \bold{ parentId } `string` \cr Parent ID used for accessibility label(s).
+#' * \bold{ setDraggedItemIndex } `(itemIndex: number) => void` \cr
+#' * \bold{ styles } `IStyleFunctionOrObject<IDetailsColumnStyleProps, IDetailsColumnStyles>` \cr The component styles to respect during render.
+#' * \bold{ theme } `ITheme` \cr The theme object to respect during render.
+#' * \bold{ updateDragInfo } `(props: { itemIndex: number; }, event?: MouseEvent) => void` \cr Callback on drag and drop event.
+#' * \bold{ useFastIcons } `boolean` \cr Whether to use fast icon and check components. The icons can't be targeted by customization but are still customizable via class names.
+#' * \bold{ columns } `IColumn[]` \cr Column metadata
+#' * \bold{ selection } `ISelection` \cr Selection from utilities
+#' * \bold{ selectionMode } `SelectionMode` \cr Selection mode
+#' * \bold{ onRenderFooter } `IRenderFunction<IDetailsGroupDividerProps>` \cr
+#' * \bold{ onRenderHeader } `IRenderFunction<IDetailsGroupDividerProps>` \cr
+#' * \bold{ ariaLabel } `string` \cr ariaLabel for the entire header
+#' * \bold{ ariaLabelForSelectAllCheckbox } `string` \cr ariaLabel for the header checkbox that selects or deselects everything
+#' * \bold{ ariaLabelForSelectionColumn } `string` \cr ariaLabel for the selection column
+#' * \bold{ ariaLabelForToggleAllGroupsButton } `string` \cr ariaLabel for expand/collapse group button
+#' * \bold{ className } `string` \cr Overriding class name
+#' * \bold{ collapseAllVisibility } `CollapseAllVisibility` \cr Whether to collapse for all visibility
+#' * \bold{ columnReorderOptions } `IColumnReorderOptions` \cr Column reordering options
+#' * \bold{ columnReorderProps } `IColumnReorderHeaderProps` \cr Column reordering options
+#' * \bold{ componentRef } `IRefObject<IDetailsHeader>` \cr Ref to the component itself
+#' * \bold{ isAllCollapsed } `boolean` \cr Whether or not all is collapsed
+#' * \bold{ layoutMode } `DetailsListLayoutMode` \cr Layout mode - fixedColumns or justified
+#' * \bold{ minimumPixelsForDrag } `number` \cr Minimum pixels to be moved before dragging is registered
+#' * \bold{ onColumnAutoResized } `(column: IColumn, columnIndex: number) => void` \cr Callback for when column is automatically resized
+#' * \bold{ onColumnClick } `(ev: React.MouseEvent<HTMLElement>, column: IColumn) => void` \cr Callback for when the column is clicked
+#' * \bold{ onColumnContextMenu } `(column: IColumn, ev: React.MouseEvent<HTMLElement>) => void` \cr Callback for when the column needs to show a context menu
+#' * \bold{ onColumnIsSizingChanged } `(column: IColumn, isSizing: boolean) => void` \cr Callback for when column sizing has changed
+#' * \bold{ onColumnResized } `(column: IColumn, newWidth: number, columnIndex: number) => void` \cr Callback for when column is resized
+#' * \bold{ onRenderColumnHeaderTooltip } `IRenderFunction<IDetailsColumnRenderTooltipProps>` \cr Callback to render a tooltip for the column header
+#' * \bold{ onRenderDetailsCheckbox } `IRenderFunction<IDetailsCheckboxProps>` \cr If provided, can be used to render a custom checkbox
+#' * \bold{ onToggleCollapseAll } `(isAllCollapsed: boolean) => void` \cr Callback for when collapse all is toggled
+#' * \bold{ selectAllVisibility } `SelectAllVisibility` \cr Select all button visibility
+#' * \bold{ styles } `IStyleFunctionOrObject<IDetailsHeaderStyleProps, IDetailsHeaderStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
+#' * \bold{ theme } `ITheme` \cr Theme from the Higher Order Component
+#' * \bold{ useFastIcons } `boolean` \cr Whether to use fast icon and check components. The icons can't be targeted by customization but are still customizable via class names.
+#' * \bold{ columns } `IColumn[]` \cr Column metadata
+#' * \bold{ selection } `ISelection` \cr Selection from utilities
+#' * \bold{ selectionMode } `SelectionMode` \cr Selection mode
+#' * \bold{ cellStyleProps } `ICellStyleProps` \cr Rules for rendering column cells.
+#' * \bold{ checkboxVisibility } `CheckboxVisibility | undefined` \cr Checkbox visibility
+#' * \bold{ columns } `IColumn[]` \cr Column metadata
+#' * \bold{ groupNestingDepth } `number` \cr Nesting depth of a grouping
+#' * \bold{ indentWidth } `number | undefined` \cr How much to indent
+#' * \bold{ rowWidth } `number` \cr Minimum width of the row.
+#' * \bold{ selection } `ISelection | undefined` \cr Selection from utilities
+#' * \bold{ selectionMode } `SelectionMode | undefined` \cr Selection mode
+#' * \bold{ viewport } `IViewport | undefined` \cr View port of the virtualized list
+#' * \bold{ ariaLabel } `string` \cr Accessible label describing or summarizing the list.
+#' * \bold{ ariaLabelForGrid } `string` \cr Accessible label for the grid within the list.
+#' * \bold{ ariaLabelForListHeader } `string` \cr Accessible label for the list header.
+#' * \bold{ ariaLabelForSelectAllCheckbox } `string` \cr Accessible label for the select all checkbox.
+#' * \bold{ ariaLabelForSelectionColumn } `string` \cr Accessible label for the name of the selection column.
+#' * \bold{ cellStyleProps } `ICellStyleProps` \cr Props impacting the render style of cells. Since these have an impact on calculated column widths, they are handled separately from normal theme styling, but they are passed to the styling system.
+#' * \bold{ checkboxCellClassName } `string` \cr Class name to add to the cell of a checkbox.
+#' * \bold{ checkboxVisibility } `CheckboxVisibility` \cr Controls the visibility of selection check box.
+#' * \bold{ checkButtonAriaLabel } `string` \cr Accessible label for the check button.
+#' * \bold{ className } `string` \cr Class name to add to the root element.
+#' * \bold{ columnReorderOptions } `IColumnReorderOptions` \cr Options for column reordering using drag and drop.
+#' * \bold{ columns } `IColumn[]` \cr column defitions. If none are provided, default columns will be created based on the items' properties.
+#' * \bold{ compact } `boolean` \cr Whether to render in compact mode.
+#' * \bold{ componentRef } `IRefObject<IDetailsList>` \cr Callback to access the IDetailsList interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ constrainMode } `ConstrainMode` \cr Controls how the list contrains overflow.
+#' * \bold{ disableSelectionZone } `boolean` \cr Whether to disable the built-in SelectionZone, so the host component can provide its own.
+#' * \bold{ dragDropEvents } `IDragDropEvents` \cr Map of callback functions related to row drag and drop functionality.
+#' * \bold{ enableUpdateAnimations } `boolean` \cr Whether to animate updates
+#' * \bold{ enterModalSelectionOnTouch } `boolean` \cr Whether the selection zone should enter modal state on touch.
+#' * \bold{ getCellValueKey } `(item?: any, index?: number, column?: IColumn) => string` \cr If provided, will be the "default" item column cell value return. A column's `getValueKey` can override `getCellValueKey`.
+#' * \bold{ getGroupHeight } `IGroupedListProps['getGroupHeight']` \cr Callback to override default group height calculation used by list virtualization.
+#' * \bold{ getKey } `(item: any, index?: number) => string` \cr Callback to get the item key, to be used in the selection and on render. Must be provided if sorting or filtering is enabled.
+#' * \bold{ getRowAriaDescribedBy } `(item: any) => string` \cr Callback to get the aria-describedby IDs (space-separated strings) of elements that describe the item.
+#' * \bold{ getRowAriaLabel } `(item: any) => string` \cr Callback to get the aria-label string for a given item.
+#' * \bold{ groupProps } `IDetailsGroupRenderProps` \cr Override properties to render groups.
+#' * \bold{ groups } `IGroup[]` \cr Grouping instructions.
+#' * \bold{ indentWidth } `number` \cr Override for the indent width used for group nesting.
+#' * \bold{ initialFocusedIndex } `number` \cr Default index to set focus to once the items have rendered and the index exists.
+#' * \bold{ isHeaderVisible } `boolean` \cr Controls the visibility of the header.
+#' * \bold{ isPlaceholderData } `boolean` \cr Set this to true to indicate that the items being displayed are placeholder data.
+#' * \bold{ items } `any[]` \cr The items to render.
+#' * \bold{ layoutMode } `DetailsListLayoutMode` \cr Controls how the columns are adjusted.
+#' * \bold{ listProps } `IListProps` \cr Properties to pass through to the List components being rendered.
+#' * \bold{ minimumPixelsForDrag } `number` \cr The minimum mouse move distance to interpret the action as drag event.
+#' * \bold{ onActiveItemChanged } `(item?: any, index?: number, ev?: React.FocusEvent<HTMLElement>) => void` \cr Callback for when an item in the list becomes active by clicking anywhere inside the row or navigating to it with the keyboard.
+#' * \bold{ onColumnHeaderClick } `(ev?: React.MouseEvent<HTMLElement>, column?: IColumn) => void` \cr Callback for when the user clicks on the column header.
+#' * \bold{ onColumnHeaderContextMenu } `(column?: IColumn, ev?: React.MouseEvent<HTMLElement>) => void` \cr Callback for when the user asks for a contextual menu (usually via right click) from a column header.
+#' * \bold{ onColumnResize } `(column?: IColumn, newWidth?: number, columnIndex?: number) => void` \cr Callback fired on column resize
+#' * \bold{ onDidUpdate } `(detailsList?: DetailsListBase) => void` \cr Callback for when the list has been updated. Useful for telemetry tracking externally.
+#' * \bold{ onItemContextMenu } `(item?: any, index?: number, ev?: Event) => void | boolean` \cr Callback for when the context menu of an item has been accessed. If undefined or false is returned, `ev.preventDefault()` will be called.
+#' * \bold{ onItemInvoked } `(item?: any, index?: number, ev?: Event) => void` \cr Callback for when a given row has been invoked (by pressing enter while it is selected.)
+#' * \bold{ onRenderCheckbox } `IRenderFunction<IDetailsListCheckboxProps>` \cr If provided, can be used to render a custom checkbox.
+#' * \bold{ onRenderDetailsFooter } `IRenderFunction<IDetailsFooterProps>` \cr An override to render the details footer.
+#' * \bold{ onRenderDetailsHeader } `IRenderFunction<IDetailsHeaderProps>` \cr An override to render the details header.
+#' * \bold{ onRenderItemColumn } `(item?: any, index?: number, column?: IColumn) => React.ReactNode` \cr If provided, will be the "default" item column renderer method. This affects cells within the rows, not the rows themselves. If a column definition provides its own `onRender` method, that will be used instead of this.
+#' * \bold{ onRenderMissingItem } `(index?: number, rowProps?: IDetailsRowProps) => React.ReactNode` \cr Callback for what to render when the item is missing.
+#' * \bold{ onRenderRow } `IRenderFunction<IDetailsRowProps>` \cr Callback to override the default row rendering.
+#' * \bold{ onRowDidMount } `(item?: any, index?: number) => void` \cr Callback for when a given row has been mounted. Useful for identifying when a row has been rendered on the page.
+#' * \bold{ onRowWillUnmount } `(item?: any, index?: number) => void` \cr Callback for when a given row has been unmounted. Useful for identifying when a row has been removed from the page.
+#' * \bold{ onShouldVirtualize } `(props: IListProps) => boolean` \cr Callback to determine whether the list should be rendered in full, or virtualized.
 #'
 #' Virtualization will add and remove pages of items as the user scrolls them into the visible range. This benefits larger list scenarios by reducing the DOM on the screen, but can negatively affect performance for smaller lists.
 #'
-#' The default implementation will virtualize when this callback is not provided.}
-#' \item {\bold{ rowElementEventMap }} {`{ eventName: string; callback: (context: IDragDropContext, event?: any) => void; }[]` \cr Event names and corresponding callbacks that will be registered to rendered row elements.}
-#' \item {\bold{ selection }} {`ISelection` \cr Selection model to track selection state.}
-#' \item {\bold{ selectionMode }} {`SelectionMode` \cr Controls how/if the details list manages selection. Options include none, single, multiple}
-#' \item {\bold{ selectionPreservedOnEmptyClick }} {`boolean` \cr By default, selection is cleared when clicking on an empty (non-focusable) section of the screen. Setting this value to true overrides that behavior and maintains selection.}
-#' \item {\bold{ selectionZoneProps }} {`ISelectionZoneProps` \cr Additional props to pass through to the SelectionZone created by default.}
-#' \item {\bold{ setKey }} {`string` \cr A key that uniquely identifies the given items. If provided, the selection will be reset when the key changes.}
-#' \item {\bold{ shouldApplyApplicationRole }} {`boolean` \cr Whether the role `application` should be applied to the list.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IDetailsListStyleProps, IDetailsListStyles>` \cr Custom overrides to the themed or default styles.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by a higher-order component.}
-#' \item {\bold{ useFastIcons }} {`boolean` \cr Whether to use fast icon and check components. The icons can't be targeted by customization but are still customizable via class names.}
-#' \item {\bold{ usePageCache }} {`boolean` \cr Whether to enable render page caching. This is an experimental performance optimization that is off by default.}
-#' \item {\bold{ useReducedRowRenderer }} {`boolean` \cr Whether to re-render a row only when props changed. Might cause regression when depending on external updates.}
-#' \item {\bold{ viewport }} {`IViewport` \cr Viewport info, provided by the `withViewport` decorator.}
-#' \item {\bold{ cellsByColumn }} {`{ [columnKey: string]: React.ReactNode; }` \cr Optional pre-rendered content per column. Preferred over onRender or onRenderItemColumn if provided.}
-#' \item {\bold{ checkboxCellClassName }} {`string` \cr Class name for the checkbox cell}
-#' \item {\bold{ checkButtonAriaLabel }} {`string` \cr Check button's aria label}
-#' \item {\bold{ className }} {`string` \cr Overriding class name}
-#' \item {\bold{ collapseAllVisibility }} {`CollapseAllVisibility` \cr Collapse all visibility}
-#' \item {\bold{ compact }} {`boolean` \cr Whether to render in compact mode}
-#' \item {\bold{ componentRef }} {`IRefObject<IDetailsRow>` \cr Ref of the component}
-#' \item {\bold{ dragDropEvents }} {`IDragDropEvents` \cr Handling drag and drop events}
-#' \item {\bold{ dragDropHelper }} {`IDragDropHelper` \cr Helper for the drag and drop}
-#' \item {\bold{ enableUpdateAnimations }} {`boolean` \cr Whether to animate updates}
-#' \item {\bold{ eventsToRegister }} {`{ eventName: string; callback: (item?: any, index?: number, event?: any) => void; }[]` \cr A list of events to register}
-#' \item {\bold{ getRowAriaDescribedBy }} {`(item: any) => string` \cr Callback for getting the row aria-describedby}
-#' \item {\bold{ getRowAriaLabel }} {`(item: any) => string` \cr Callback for getting the row aria label}
-#' \item {\bold{ item }} {`any` \cr Data source for this component}
-#' \item {\bold{ itemIndex }} {`number` \cr Index of the collection of items of the DetailsList}
-#' \item {\bold{ onDidMount }} {`(row?: DetailsRowBase) => void` \cr Callback for did mount for parent}
-#' \item {\bold{ onRenderCheck }} {`(props: IDetailsRowCheckProps) => JSX.Element` \cr Callback for rendering a checkbox}
-#' \item {\bold{ onRenderDetailsCheckbox }} {`IRenderFunction<IDetailsCheckboxProps>` \cr If provided, can be used to render a custom checkbox}
-#' \item {\bold{ onWillUnmount }} {`(row?: DetailsRowBase) => void` \cr Callback for will mount for parent}
-#' \item {\bold{ rowFieldsAs }} {`React.ComponentType<IDetailsRowFieldsProps>` \cr DOM element into which to render row field}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IDetailsRowStyleProps, IDetailsRowStyles>` \cr Overriding styles to this row}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by styled() function}
-#' \item {\bold{ useFastIcons }} {`boolean` \cr Whether to use fast icon and check components. The icons can't be targeted by customization but are still customizable via class names.}
-#' \item {\bold{ useReducedRowRenderer }} {`boolean` \cr Rerender DetailsRow only when props changed. Might cause regression when depending on external updates.}
-#' \item {\bold{ anySelected }} {`boolean` \cr Is any selected - also true for isSelectionModal}
-#' \item {\bold{ canSelect }} {`boolean` \cr Can this checkbox be selectable}
-#' \item {\bold{ checkClassName }} {`string` \cr The classname to be passed down to Check component}
-#' \item {\bold{ className }} {`string` \cr Optional className to attach to the slider root element.}
-#' \item {\bold{ compact }} {`boolean` \cr Is this in compact mode?}
-#' \item {\bold{ isHeader }} {`boolean` \cr Is the check part of the header in a DetailsList}
-#' \item {\bold{ isVisible }} {`boolean` \cr Whether or not this checkbox is visible}
-#' \item {\bold{ onRenderDetailsCheckbox }} {`IRenderFunction<IDetailsCheckboxProps>` \cr If provided, can be used to render a custom checkbox}
-#' \item {\bold{ selected }} {`boolean` \cr Whether or not this check is selected}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IDetailsRowCheckStyleProps, IDetailsRowCheckStyles>` \cr Style override}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by High-Order Component.}
-#' \item {\bold{ useFastIcons }} {`boolean` \cr Whether to use fast icon and check components. The icons can't be targeted by customization but are still customizable via class names.}
-#' \item {\bold{ cellStyleProps }} {`ICellStyleProps` \cr Style properties to customize cell render output.}
-#' \item {\bold{ columns }} {`IColumn[]` \cr Columns metadata}
-#' \item {\bold{ columnStartIndex }} {`number` \cr Index to start for the column}
-#' \item {\bold{ compact }} {`boolean` \cr whether to render as a compact field}
-#' \item {\bold{ enableUpdateAnimations }} {`boolean` \cr }
-#' \item {\bold{ item }} {`any` \cr Data source for this component}
-#' \item {\bold{ itemIndex }} {`number` \cr The item index of the collection for the DetailsList}
-#' \item {\bold{ rowClassNames }} {`{ [k in keyof Pick<IDetailsRowStyles, 'isMultiline' | 'isRowHeader' | 'cell' | 'cellAnimation' | 'cellPadded' | 'cellUnpadded' | 'fields'>]: string; }` \cr Subset of classnames currently generated in DetailsRow that are used within DetailsRowFields.}
-#' \item {\bold{ columns }} {`IColumn[]` \cr Column metadata}
-#' \item {\bold{ selection }} {`ISelection` \cr Selection from utilities}
-#' \item {\bold{ selectionMode }} {`SelectionMode` \cr Selection mode}
-#' \item {\bold{ ariaLabelForShimmer }} {`string` \cr Aria label for shimmer. Set on grid while shimmer is enabled.}
-#' \item {\bold{ detailsListStyles }} {`IDetailsListProps['styles']` \cr DetailsList styles to pass through.}
-#' \item {\bold{ enableShimmer }} {`boolean` \cr Boolean flag to control when to render placeholders vs real items. It's up to the consumer app to know when fetching of the data is done to toggle this prop.}
-#' \item {\bold{ onRenderCustomPlaceholder }} {`(rowProps: IDetailsRowProps, index?: number, defaultRender?: (props: IDetailsRowProps) => React.ReactNode) => React.ReactNode` \cr Custom placeholder renderer to be used when in need to override the default placeholder of a DetailsRow. `rowProps` argument is passed to leverage the calculated column measurements done by DetailsList or you can use the optional arguments of item `index` and `defaultRender` to execute additional logic before rendering the default placeholder.}
-#' \item {\bold{ removeFadingOverlay }} {`boolean` \cr Determines whether to remove a fading out to bottom overlay over the shimmering items used to further emphasize the unknown number of items that will be fetched.}
-#' \item {\bold{ shimmerLines }} {`number` \cr Number of shimmer placeholder lines to render.}
-#' \item {\bold{ shimmerOverlayStyles }} {`IStyleFunctionOrObject<IShimmeredDetailsListStyleProps, IShimmeredDetailsListStyles>` \cr Custom styles to override the styles specific to the ShimmeredDetailsList root area.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IShimmeredDetailsListStyleProps, IShimmeredDetailsListStyles>` \cr Custom styles to override the styles specific to the ShimmeredDetailsList root area.}
-#' \item {\bold{ skipViewportMeasures }} {`boolean` \cr Whether or not to use ResizeObserver (if available) to detect and measure viewport on 'resize' events.
+#' The default implementation will virtualize when this callback is not provided.
+#' * \bold{ rowElementEventMap } `{ eventName: string; callback: (context: IDragDropContext, event?: any) => void; }[]` \cr Event names and corresponding callbacks that will be registered to rendered row elements.
+#' * \bold{ selection } `ISelection` \cr Selection model to track selection state.
+#' * \bold{ selectionMode } `SelectionMode` \cr Controls how/if the details list manages selection. Options include none, single, multiple
+#' * \bold{ selectionPreservedOnEmptyClick } `boolean` \cr By default, selection is cleared when clicking on an empty (non-focusable) section of the screen. Setting this value to true overrides that behavior and maintains selection.
+#' * \bold{ selectionZoneProps } `ISelectionZoneProps` \cr Additional props to pass through to the SelectionZone created by default.
+#' * \bold{ setKey } `string` \cr A key that uniquely identifies the given items. If provided, the selection will be reset when the key changes.
+#' * \bold{ shouldApplyApplicationRole } `boolean` \cr Whether the role `application` should be applied to the list.
+#' * \bold{ styles } `IStyleFunctionOrObject<IDetailsListStyleProps, IDetailsListStyles>` \cr Custom overrides to the themed or default styles.
+#' * \bold{ theme } `ITheme` \cr Theme provided by a higher-order component.
+#' * \bold{ useFastIcons } `boolean` \cr Whether to use fast icon and check components. The icons can't be targeted by customization but are still customizable via class names.
+#' * \bold{ usePageCache } `boolean` \cr Whether to enable render page caching. This is an experimental performance optimization that is off by default.
+#' * \bold{ useReducedRowRenderer } `boolean` \cr Whether to re-render a row only when props changed. Might cause regression when depending on external updates.
+#' * \bold{ viewport } `IViewport` \cr Viewport info, provided by the `withViewport` decorator.
+#' * \bold{ cellsByColumn } `{ [columnKey: string]: React.ReactNode; }` \cr Optional pre-rendered content per column. Preferred over onRender or onRenderItemColumn if provided.
+#' * \bold{ checkboxCellClassName } `string` \cr Class name for the checkbox cell
+#' * \bold{ checkButtonAriaLabel } `string` \cr Check button's aria label
+#' * \bold{ className } `string` \cr Overriding class name
+#' * \bold{ collapseAllVisibility } `CollapseAllVisibility` \cr Collapse all visibility
+#' * \bold{ compact } `boolean` \cr Whether to render in compact mode
+#' * \bold{ componentRef } `IRefObject<IDetailsRow>` \cr Ref of the component
+#' * \bold{ dragDropEvents } `IDragDropEvents` \cr Handling drag and drop events
+#' * \bold{ dragDropHelper } `IDragDropHelper` \cr Helper for the drag and drop
+#' * \bold{ enableUpdateAnimations } `boolean` \cr Whether to animate updates
+#' * \bold{ eventsToRegister } `{ eventName: string; callback: (item?: any, index?: number, event?: any) => void; }[]` \cr A list of events to register
+#' * \bold{ getRowAriaDescribedBy } `(item: any) => string` \cr Callback for getting the row aria-describedby
+#' * \bold{ getRowAriaLabel } `(item: any) => string` \cr Callback for getting the row aria label
+#' * \bold{ item } `any` \cr Data source for this component
+#' * \bold{ itemIndex } `number` \cr Index of the collection of items of the DetailsList
+#' * \bold{ onDidMount } `(row?: DetailsRowBase) => void` \cr Callback for did mount for parent
+#' * \bold{ onRenderCheck } `(props: IDetailsRowCheckProps) => JSX.Element` \cr Callback for rendering a checkbox
+#' * \bold{ onRenderDetailsCheckbox } `IRenderFunction<IDetailsCheckboxProps>` \cr If provided, can be used to render a custom checkbox
+#' * \bold{ onWillUnmount } `(row?: DetailsRowBase) => void` \cr Callback for will mount for parent
+#' * \bold{ rowFieldsAs } `React.ComponentType<IDetailsRowFieldsProps>` \cr DOM element into which to render row field
+#' * \bold{ styles } `IStyleFunctionOrObject<IDetailsRowStyleProps, IDetailsRowStyles>` \cr Overriding styles to this row
+#' * \bold{ theme } `ITheme` \cr Theme provided by styled() function
+#' * \bold{ useFastIcons } `boolean` \cr Whether to use fast icon and check components. The icons can't be targeted by customization but are still customizable via class names.
+#' * \bold{ useReducedRowRenderer } `boolean` \cr Rerender DetailsRow only when props changed. Might cause regression when depending on external updates.
+#' * \bold{ anySelected } `boolean` \cr Is any selected - also true for isSelectionModal
+#' * \bold{ canSelect } `boolean` \cr Can this checkbox be selectable
+#' * \bold{ checkClassName } `string` \cr The classname to be passed down to Check component
+#' * \bold{ className } `string` \cr Optional className to attach to the slider root element.
+#' * \bold{ compact } `boolean` \cr Is this in compact mode?
+#' * \bold{ isHeader } `boolean` \cr Is the check part of the header in a DetailsList
+#' * \bold{ isVisible } `boolean` \cr Whether or not this checkbox is visible
+#' * \bold{ onRenderDetailsCheckbox } `IRenderFunction<IDetailsCheckboxProps>` \cr If provided, can be used to render a custom checkbox
+#' * \bold{ selected } `boolean` \cr Whether or not this check is selected
+#' * \bold{ styles } `IStyleFunctionOrObject<IDetailsRowCheckStyleProps, IDetailsRowCheckStyles>` \cr Style override
+#' * \bold{ theme } `ITheme` \cr Theme provided by High-Order Component.
+#' * \bold{ useFastIcons } `boolean` \cr Whether to use fast icon and check components. The icons can't be targeted by customization but are still customizable via class names.
+#' * \bold{ cellStyleProps } `ICellStyleProps` \cr Style properties to customize cell render output.
+#' * \bold{ columns } `IColumn[]` \cr Columns metadata
+#' * \bold{ columnStartIndex } `number` \cr Index to start for the column
+#' * \bold{ compact } `boolean` \cr whether to render as a compact field
+#' * \bold{ enableUpdateAnimations } `boolean` \cr
+#' * \bold{ item } `any` \cr Data source for this component
+#' * \bold{ itemIndex } `number` \cr The item index of the collection for the DetailsList
+#' * \bold{ rowClassNames } `{ [k in keyof Pick<IDetailsRowStyles, 'isMultiline' | 'isRowHeader' | 'cell' | 'cellAnimation' | 'cellPadded' | 'cellUnpadded' | 'fields'>]: string; }` \cr Subset of classnames currently generated in DetailsRow that are used within DetailsRowFields.
+#' * \bold{ columns } `IColumn[]` \cr Column metadata
+#' * \bold{ selection } `ISelection` \cr Selection from utilities
+#' * \bold{ selectionMode } `SelectionMode` \cr Selection mode
+#' * \bold{ ariaLabelForShimmer } `string` \cr Aria label for shimmer. Set on grid while shimmer is enabled.
+#' * \bold{ detailsListStyles } `IDetailsListProps['styles']` \cr DetailsList styles to pass through.
+#' * \bold{ enableShimmer } `boolean` \cr Boolean flag to control when to render placeholders vs real items. It's up to the consumer app to know when fetching of the data is done to toggle this prop.
+#' * \bold{ onRenderCustomPlaceholder } `(rowProps: IDetailsRowProps, index?: number, defaultRender?: (props: IDetailsRowProps) => React.ReactNode) => React.ReactNode` \cr Custom placeholder renderer to be used when in need to override the default placeholder of a DetailsRow. `rowProps` argument is passed to leverage the calculated column measurements done by DetailsList or you can use the optional arguments of item `index` and `defaultRender` to execute additional logic before rendering the default placeholder.
+#' * \bold{ removeFadingOverlay } `boolean` \cr Determines whether to remove a fading out to bottom overlay over the shimmering items used to further emphasize the unknown number of items that will be fetched.
+#' * \bold{ shimmerLines } `number` \cr Number of shimmer placeholder lines to render.
+#' * \bold{ shimmerOverlayStyles } `IStyleFunctionOrObject<IShimmeredDetailsListStyleProps, IShimmeredDetailsListStyles>` \cr Custom styles to override the styles specific to the ShimmeredDetailsList root area.
+#' * \bold{ styles } `IStyleFunctionOrObject<IShimmeredDetailsListStyleProps, IShimmeredDetailsListStyles>` \cr Custom styles to override the styles specific to the ShimmeredDetailsList root area.
+#' * \bold{ skipViewportMeasures } `boolean` \cr Whether or not to use ResizeObserver (if available) to detect and measure viewport on 'resize' events.
 #'
-#' Falls back to window 'resize' event.}
-#' }
+#' Falls back to window 'resize' event.
 #'
 #' @md
 #' @name DetailsList
@@ -1189,53 +1159,51 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ className }} {`string` \cr Optional override class name}
-#' \item {\bold{ closeButtonAriaLabel }} {`string` \cr Label to be passed to to aria-label of close button}
-#' \item {\bold{ componentRef }} {`IRefObject<IDialogContent>` \cr Optional callback to access the IDialogContent interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ draggableHeaderClassName }} {`string` \cr The classname for when the header is draggable}
-#' \item {\bold{ isMultiline }} {`boolean` \cr Is inside a multiline wrapper}
-#' \item {\bold{ onDismiss }} {`(ev?: React.MouseEvent<HTMLButtonElement>) => any` \cr Callback for when the Dialog is dismissed from the close button or light dismiss, before the animation completes.}
-#' \item {\bold{ responsiveMode }} {`ResponsiveMode` \cr Responsive mode passed in from decorator.}
-#' \item {\bold{ showCloseButton }} {`boolean` \cr Show an 'x' close button in the upper-right corner}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IDialogContentStyleProps, IDialogContentStyles>` \cr Call to provide customized styling that will layer on top of the variant rules}
-#' \item {\bold{ subText }} {`string` \cr The subtext to display in the dialog}
-#' \item {\bold{ subTextId }} {`string` \cr The Id for subText container}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by HOC.}
-#' \item {\bold{ title }} {`string | JSX.Element` \cr The title text to display at the top of the dialog.}
-#' \item {\bold{ titleId }} {`string` \cr The Id for title container}
-#' \item {\bold{ titleProps }} {`React.HTMLAttributes<HTMLDivElement>` \cr The props for title container.}
-#' \item {\bold{ topButtonsProps }} {`IButtonProps[]` \cr Other top buttons that will show up next to the close button}
-#' \item {\bold{ type }} {`DialogType` \cr The type of Dialog to display.}
-#' \item {\bold{ className }} {`string` \cr Optional override class name}
-#' \item {\bold{ componentRef }} {`IRefObject<IDialogFooter>` \cr Gets the component ref.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IDialogFooterStyleProps, IDialogFooterStyles>` \cr Call to provide customized styling that will layer on top of the variant rules}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by HOC.}
-#' \item {\bold{ ariaDescribedById }} {`string` \cr Optional id for aria-DescribedBy}
-#' \item {\bold{ ariaLabelledById }} {`string` \cr Optional id for aria-LabelledBy}
-#' \item {\bold{ className }} {`string` \cr Optional class name to be added to the root class}
-#' \item {\bold{ componentRef }} {`IRefObject<IDialog>` \cr Optional callback to access the IDialog interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ containerClassName }} {`string` \cr Optional override for container class}
-#' \item {\bold{ contentClassName }} {`string` \cr Optional override content class}
-#' \item {\bold{ dialogContentProps }} {`IDialogContentProps` \cr Props to be passed through to Dialog Content}
-#' \item {\bold{ hidden }} {`boolean` \cr Whether the dialog is hidden.}
-#' \item {\bold{ isBlocking }} {`boolean` \cr Whether the dialog can be light dismissed by clicking outside the dialog (on the overlay).}
-#' \item {\bold{ isDarkOverlay }} {`boolean` \cr Whether the overlay is dark themed.}
-#' \item {\bold{ isOpen }} {`boolean` \cr Whether the dialog is displayed. Deprecated, use `hidden` instead.}
-#' \item {\bold{ maxWidth }} {`ICSSRule | ICSSPixelUnitRule` \cr Sets the maximum width for the dialog. It limits the width property to be larger than the value specified in max-width.}
-#' \item {\bold{ minWidth }} {`ICSSRule | ICSSPixelUnitRule` \cr Sets the minimum width of the dialog. It limits the width property to be not smaller than the value specified in min-width.}
-#' \item {\bold{ modalProps }} {`IModalProps` \cr Props to be passed through to Modal}
-#' \item {\bold{ onDismiss }} {`(ev?: React.MouseEvent<HTMLButtonElement>) => any` \cr A callback function for when the Dialog is dismissed from the close button or light dismiss. Can also be specified separately in content and modal.}
-#' \item {\bold{ onDismissed }} {`() => any` \cr A callback function which is called after the Dialog is dismissed and the animation is complete.}
-#' \item {\bold{ onLayerDidMount }} {`() => void` \cr A callback function for when the Dialog content is mounted on the overlay layer}
-#' \item {\bold{ onLayerMounted }} {`() => void` \cr Deprecated at 0.81.2, use `onLayerDidMount` instead.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IDialogStyleProps, IDialogStyles>` \cr Call to provide customized styling that will layer on top of the variant rules}
-#' \item {\bold{ subText }} {`string` \cr The subtext to display in the dialog.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by HOC.}
-#' \item {\bold{ title }} {`string | JSX.Element` \cr The title text to display at the top of the dialog.}
-#' \item {\bold{ topButtonsProps }} {`IButtonProps[]` \cr Other top buttons that will show up next to the close button}
-#' \item {\bold{ type }} {`DialogType` \cr The type of Dialog to display.}
-#' }
+#' * \bold{ className } `string` \cr Optional override class name
+#' * \bold{ closeButtonAriaLabel } `string` \cr Label to be passed to to aria-label of close button
+#' * \bold{ componentRef } `IRefObject<IDialogContent>` \cr Optional callback to access the IDialogContent interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ draggableHeaderClassName } `string` \cr The classname for when the header is draggable
+#' * \bold{ isMultiline } `boolean` \cr Is inside a multiline wrapper
+#' * \bold{ onDismiss } `(ev?: React.MouseEvent<HTMLButtonElement>) => any` \cr Callback for when the Dialog is dismissed from the close button or light dismiss, before the animation completes.
+#' * \bold{ responsiveMode } `ResponsiveMode` \cr Responsive mode passed in from decorator.
+#' * \bold{ showCloseButton } `boolean` \cr Show an 'x' close button in the upper-right corner
+#' * \bold{ styles } `IStyleFunctionOrObject<IDialogContentStyleProps, IDialogContentStyles>` \cr Call to provide customized styling that will layer on top of the variant rules
+#' * \bold{ subText } `string` \cr The subtext to display in the dialog
+#' * \bold{ subTextId } `string` \cr The Id for subText container
+#' * \bold{ theme } `ITheme` \cr Theme provided by HOC.
+#' * \bold{ title } `string | JSX.Element` \cr The title text to display at the top of the dialog.
+#' * \bold{ titleId } `string` \cr The Id for title container
+#' * \bold{ titleProps } `React.HTMLAttributes<HTMLDivElement>` \cr The props for title container.
+#' * \bold{ topButtonsProps } `IButtonProps[]` \cr Other top buttons that will show up next to the close button
+#' * \bold{ type } `DialogType` \cr The type of Dialog to display.
+#' * \bold{ className } `string` \cr Optional override class name
+#' * \bold{ componentRef } `IRefObject<IDialogFooter>` \cr Gets the component ref.
+#' * \bold{ styles } `IStyleFunctionOrObject<IDialogFooterStyleProps, IDialogFooterStyles>` \cr Call to provide customized styling that will layer on top of the variant rules
+#' * \bold{ theme } `ITheme` \cr Theme provided by HOC.
+#' * \bold{ ariaDescribedById } `string` \cr Optional id for aria-DescribedBy
+#' * \bold{ ariaLabelledById } `string` \cr Optional id for aria-LabelledBy
+#' * \bold{ className } `string` \cr Optional class name to be added to the root class
+#' * \bold{ componentRef } `IRefObject<IDialog>` \cr Optional callback to access the IDialog interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ containerClassName } `string` \cr Optional override for container class
+#' * \bold{ contentClassName } `string` \cr Optional override content class
+#' * \bold{ dialogContentProps } `IDialogContentProps` \cr Props to be passed through to Dialog Content
+#' * \bold{ hidden } `boolean` \cr Whether the dialog is hidden.
+#' * \bold{ isBlocking } `boolean` \cr Whether the dialog can be light dismissed by clicking outside the dialog (on the overlay).
+#' * \bold{ isDarkOverlay } `boolean` \cr Whether the overlay is dark themed.
+#' * \bold{ isOpen } `boolean` \cr Whether the dialog is displayed. Deprecated, use `hidden` instead.
+#' * \bold{ maxWidth } `ICSSRule | ICSSPixelUnitRule` \cr Sets the maximum width for the dialog. It limits the width property to be larger than the value specified in max-width.
+#' * \bold{ minWidth } `ICSSRule | ICSSPixelUnitRule` \cr Sets the minimum width of the dialog. It limits the width property to be not smaller than the value specified in min-width.
+#' * \bold{ modalProps } `IModalProps` \cr Props to be passed through to Modal
+#' * \bold{ onDismiss } `(ev?: React.MouseEvent<HTMLButtonElement>) => any` \cr A callback function for when the Dialog is dismissed from the close button or light dismiss. Can also be specified separately in content and modal.
+#' * \bold{ onDismissed } `() => any` \cr A callback function which is called after the Dialog is dismissed and the animation is complete.
+#' * \bold{ onLayerDidMount } `() => void` \cr A callback function for when the Dialog content is mounted on the overlay layer
+#' * \bold{ onLayerMounted } `() => void` \cr Deprecated at 0.81.2, use `onLayerDidMount` instead.
+#' * \bold{ styles } `IStyleFunctionOrObject<IDialogStyleProps, IDialogStyles>` \cr Call to provide customized styling that will layer on top of the variant rules
+#' * \bold{ subText } `string` \cr The subtext to display in the dialog.
+#' * \bold{ theme } `ITheme` \cr Theme provided by HOC.
+#' * \bold{ title } `string | JSX.Element` \cr The title text to display at the top of the dialog.
+#' * \bold{ topButtonsProps } `IButtonProps[]` \cr Other top buttons that will show up next to the close button
+#' * \bold{ type } `DialogType` \cr The type of Dialog to display.
 #'
 #' @md
 #' @name Dialog
@@ -1262,79 +1230,77 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ actions }} {`IButtonProps[]` \cr The actions available for this document.}
-#' \item {\bold{ className }} {`string` \cr Optional override class name}
-#' \item {\bold{ componentRef }} {`IRefObject<IDocumentCardActions>` \cr Gets the component ref.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IDocumentCardActionsStyleProps, IDocumentCardActionsStyles>` \cr Call to provide customized styling that will layer on top of the variant rules}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by HOC.}
-#' \item {\bold{ views }} {`Number` \cr The number of views this document has received.}
-#' \item {\bold{ activity }} {`string` \cr Describes the activity that has taken place, such as "Created Feb 23, 2016".}
-#' \item {\bold{ className }} {`string` \cr Optional override class name}
-#' \item {\bold{ componentRef }} {`IRefObject<IDocumentCardActivity>` \cr Gets the component ref.}
-#' \item {\bold{ people }} {`IDocumentCardActivityPerson[]` \cr One or more people who are involved in this activity.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IDocumentCardActivityStyleProps, IDocumentCardActivityStyles>` \cr Call to provide customized styling that will layer on top of the variant rules}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by HOC.}
-#' \item {\bold{ className }} {`string` \cr Optional override class name}
-#' \item {\bold{ componentRef }} {`IRefObject<IDocumentCardDetails>` \cr Gets the component ref.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IDocumentCardDetailsStyleProps, IDocumentCardDetailsStyles>` \cr Call to provide customized styling that will layer on top of the variant rules}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by HOC.}
-#' \item {\bold{ className }} {`string` \cr Optional override class name}
-#' \item {\bold{ componentRef }} {`IRefObject<IDocumentCardImage>` \cr Gets the component ref.}
-#' \item {\bold{ height }} {`number` \cr If provided, forces the preview image to be this height.}
-#' \item {\bold{ iconProps }} {`IIconProps` \cr The props for the icon associated with this document type.}
-#' \item {\bold{ imageFit }} {`ImageFit` \cr Used to determine how to size the image to fit the dimensions of the component. If both dimensions are provided, then the image is fit using ImageFit.scale, otherwise ImageFit.none is used.}
-#' \item {\bold{ imageSrc }} {`string` \cr Path to the preview image.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IDocumentCardImageStyleProps, IDocumentCardImageStyles>` \cr Call to provide customized styling that will layer on top of the variant rules}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by HOC.}
-#' \item {\bold{ width }} {`number` \cr If provided, forces the preview image to be this width.}
-#' \item {\bold{ ariaLabel }} {`string` \cr Aria label for the link to the document location.}
-#' \item {\bold{ className }} {`string` \cr Optional override class name}
-#' \item {\bold{ componentRef }} {`IRefObject<IDocumentCardLocation>` \cr Gets the component ref.}
-#' \item {\bold{ location }} {`string` \cr Text for the location of the document.}
-#' \item {\bold{ locationHref }} {`string` \cr URL to navigate to for this location.}
-#' \item {\bold{ onClick }} {`(ev?: React.MouseEvent<HTMLElement>) => void` \cr Function to call when the location is clicked.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IDocumentCardLocationStyleProps, IDocumentCardLocationStyles>` \cr Call to provide customized styling that will layer on top of the variant rules}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by HOC.}
-#' \item {\bold{ className }} {`string` \cr Optional override class name}
-#' \item {\bold{ componentRef }} {`IRefObject<IDocumentCardLogo>` \cr Gets the component ref.}
-#' \item {\bold{ logoIcon }} {`string` \cr Describes DocumentCard Logo badge.}
-#' \item {\bold{ logoName }} {`string` \cr Describe Logo name, optional.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IDocumentCardLogoStyleProps, IDocumentCardLogoStyles>` \cr Call to provide customized styling that will layer on top of the variant rules}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by HOC.}
-#' \item {\bold{ className }} {`string` \cr Optional override class name}
-#' \item {\bold{ componentRef }} {`IRefObject<IDocumentCardPreview>` \cr Gets the component ref.}
-#' \item {\bold{ getOverflowDocumentCountText }} {`(overflowCount: number) => string` \cr The function return string that will describe the number of overflow documents. such as (overflowCount: number) =\> `+${ overflowCount } more`,}
-#' \item {\bold{ previewImages }} {`IDocumentCardPreviewImage[]` \cr One or more preview images to display.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IDocumentCardPreviewStyleProps, IDocumentCardPreviewStyles>` \cr Call to provide customized styling that will layer on top of the variant rules}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by HOC.}
-#' \item {\bold{ accentColor }} {`string` \cr Hex color value of the line below the card, which should correspond to the document type. This should only be supplied when using the 'compact' card layout.
+#' * \bold{ actions } `IButtonProps[]` \cr The actions available for this document.
+#' * \bold{ className } `string` \cr Optional override class name
+#' * \bold{ componentRef } `IRefObject<IDocumentCardActions>` \cr Gets the component ref.
+#' * \bold{ styles } `IStyleFunctionOrObject<IDocumentCardActionsStyleProps, IDocumentCardActionsStyles>` \cr Call to provide customized styling that will layer on top of the variant rules
+#' * \bold{ theme } `ITheme` \cr Theme provided by HOC.
+#' * \bold{ views } `Number` \cr The number of views this document has received.
+#' * \bold{ activity } `string` \cr Describes the activity that has taken place, such as "Created Feb 23, 2016".
+#' * \bold{ className } `string` \cr Optional override class name
+#' * \bold{ componentRef } `IRefObject<IDocumentCardActivity>` \cr Gets the component ref.
+#' * \bold{ people } `IDocumentCardActivityPerson[]` \cr One or more people who are involved in this activity.
+#' * \bold{ styles } `IStyleFunctionOrObject<IDocumentCardActivityStyleProps, IDocumentCardActivityStyles>` \cr Call to provide customized styling that will layer on top of the variant rules
+#' * \bold{ theme } `ITheme` \cr Theme provided by HOC.
+#' * \bold{ className } `string` \cr Optional override class name
+#' * \bold{ componentRef } `IRefObject<IDocumentCardDetails>` \cr Gets the component ref.
+#' * \bold{ styles } `IStyleFunctionOrObject<IDocumentCardDetailsStyleProps, IDocumentCardDetailsStyles>` \cr Call to provide customized styling that will layer on top of the variant rules
+#' * \bold{ theme } `ITheme` \cr Theme provided by HOC.
+#' * \bold{ className } `string` \cr Optional override class name
+#' * \bold{ componentRef } `IRefObject<IDocumentCardImage>` \cr Gets the component ref.
+#' * \bold{ height } `number` \cr If provided, forces the preview image to be this height.
+#' * \bold{ iconProps } `IIconProps` \cr The props for the icon associated with this document type.
+#' * \bold{ imageFit } `ImageFit` \cr Used to determine how to size the image to fit the dimensions of the component. If both dimensions are provided, then the image is fit using ImageFit.scale, otherwise ImageFit.none is used.
+#' * \bold{ imageSrc } `string` \cr Path to the preview image.
+#' * \bold{ styles } `IStyleFunctionOrObject<IDocumentCardImageStyleProps, IDocumentCardImageStyles>` \cr Call to provide customized styling that will layer on top of the variant rules
+#' * \bold{ theme } `ITheme` \cr Theme provided by HOC.
+#' * \bold{ width } `number` \cr If provided, forces the preview image to be this width.
+#' * \bold{ ariaLabel } `string` \cr Aria label for the link to the document location.
+#' * \bold{ className } `string` \cr Optional override class name
+#' * \bold{ componentRef } `IRefObject<IDocumentCardLocation>` \cr Gets the component ref.
+#' * \bold{ location } `string` \cr Text for the location of the document.
+#' * \bold{ locationHref } `string` \cr URL to navigate to for this location.
+#' * \bold{ onClick } `(ev?: React.MouseEvent<HTMLElement>) => void` \cr Function to call when the location is clicked.
+#' * \bold{ styles } `IStyleFunctionOrObject<IDocumentCardLocationStyleProps, IDocumentCardLocationStyles>` \cr Call to provide customized styling that will layer on top of the variant rules
+#' * \bold{ theme } `ITheme` \cr Theme provided by HOC.
+#' * \bold{ className } `string` \cr Optional override class name
+#' * \bold{ componentRef } `IRefObject<IDocumentCardLogo>` \cr Gets the component ref.
+#' * \bold{ logoIcon } `string` \cr Describes DocumentCard Logo badge.
+#' * \bold{ logoName } `string` \cr Describe Logo name, optional.
+#' * \bold{ styles } `IStyleFunctionOrObject<IDocumentCardLogoStyleProps, IDocumentCardLogoStyles>` \cr Call to provide customized styling that will layer on top of the variant rules
+#' * \bold{ theme } `ITheme` \cr Theme provided by HOC.
+#' * \bold{ className } `string` \cr Optional override class name
+#' * \bold{ componentRef } `IRefObject<IDocumentCardPreview>` \cr Gets the component ref.
+#' * \bold{ getOverflowDocumentCountText } `(overflowCount: number) => string` \cr The function return string that will describe the number of overflow documents. such as (overflowCount: number) =\> `+${ overflowCount } more`,
+#' * \bold{ previewImages } `IDocumentCardPreviewImage[]` \cr One or more preview images to display.
+#' * \bold{ styles } `IStyleFunctionOrObject<IDocumentCardPreviewStyleProps, IDocumentCardPreviewStyles>` \cr Call to provide customized styling that will layer on top of the variant rules
+#' * \bold{ theme } `ITheme` \cr Theme provided by HOC.
+#' * \bold{ accentColor } `string` \cr Hex color value of the line below the card, which should correspond to the document type. This should only be supplied when using the 'compact' card layout.
 #'
-#' Deprecated at v4.17.1, to be removed at \>= v5.0.0.}
-#' \item {\bold{ children }} {`React.ReactNode` \cr Child components to render within the card.}
-#' \item {\bold{ className }} {`string` \cr Optional override class name}
-#' \item {\bold{ componentRef }} {`IRefObject<IDocumentCard>` \cr Optional callback to access the IDocumentCard interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ onClick }} {`(ev?: React.SyntheticEvent<HTMLElement>) => void` \cr Function to call when the card is clicked or keyboard Enter/Space is pushed.}
-#' \item {\bold{ onClickHref }} {`string` \cr A URL to navigate to when the card is clicked. If a function has also been provided, it will be used instead of the URL.}
-#' \item {\bold{ onClickTarget }} {`string` \cr A target browser context for opening the link. If not specified, will open in the same tab/window.}
-#' \item {\bold{ role }} {`string` \cr Aria role assigned to the documentCard (Eg. button, link). Use this to override the default assignment.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IDocumentCardStyleProps, IDocumentCardStyles>` \cr Call to provide customized styling that will layer on top of the variant rules}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by HOC.}
-#' \item {\bold{ type }} {`DocumentCardType` \cr The type of DocumentCard to display.}
-#' \item {\bold{ className }} {`string` \cr Optional override class name}
-#' \item {\bold{ componentRef }} {`IRefObject<IDocumentCardStatus>` \cr Gets the component ref.}
-#' \item {\bold{ status }} {`string` \cr Describe status information. Required field.}
-#' \item {\bold{ statusIcon }} {`string` \cr Describes DocumentCard status icon.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IDocumentCardStatusStyleProps, IDocumentCardStatusStyles>` \cr Call to provide customized styling that will layer on top of the variant rules}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by HOC.}
-#' \item {\bold{ className }} {`string` \cr Optional override class name}
-#' \item {\bold{ componentRef }} {`IRefObject<IDocumentCardTitle>` \cr Gets the component ref.}
-#' \item {\bold{ shouldTruncate }} {`boolean` \cr Whether we truncate the title to fit within the box. May have a performance impact.}
-#' \item {\bold{ showAsSecondaryTitle }} {`boolean` \cr Whether show as title as secondary title style such as smaller font and lighter color.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IDocumentCardTitleStyleProps, IDocumentCardTitleStyles>` \cr Call to provide customized styling that will layer on top of the variant rules}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by HOC.}
-#' \item {\bold{ title }} {`string` \cr Title text. If the card represents more than one document, this should be the title of one document and a "+X" string. For example, a collection of four documents would have a string of "Document.docx +3".}
-#' }
+#' Deprecated at v4.17.1, to be removed at \>= v5.0.0.
+#' * \bold{ children } `React.ReactNode` \cr Child components to render within the card.
+#' * \bold{ className } `string` \cr Optional override class name
+#' * \bold{ componentRef } `IRefObject<IDocumentCard>` \cr Optional callback to access the IDocumentCard interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ onClick } `(ev?: React.SyntheticEvent<HTMLElement>) => void` \cr Function to call when the card is clicked or keyboard Enter/Space is pushed.
+#' * \bold{ onClickHref } `string` \cr A URL to navigate to when the card is clicked. If a function has also been provided, it will be used instead of the URL.
+#' * \bold{ onClickTarget } `string` \cr A target browser context for opening the link. If not specified, will open in the same tab/window.
+#' * \bold{ role } `string` \cr Aria role assigned to the documentCard (Eg. button, link). Use this to override the default assignment.
+#' * \bold{ styles } `IStyleFunctionOrObject<IDocumentCardStyleProps, IDocumentCardStyles>` \cr Call to provide customized styling that will layer on top of the variant rules
+#' * \bold{ theme } `ITheme` \cr Theme provided by HOC.
+#' * \bold{ type } `DocumentCardType` \cr The type of DocumentCard to display.
+#' * \bold{ className } `string` \cr Optional override class name
+#' * \bold{ componentRef } `IRefObject<IDocumentCardStatus>` \cr Gets the component ref.
+#' * \bold{ status } `string` \cr Describe status information. Required field.
+#' * \bold{ statusIcon } `string` \cr Describes DocumentCard status icon.
+#' * \bold{ styles } `IStyleFunctionOrObject<IDocumentCardStatusStyleProps, IDocumentCardStatusStyles>` \cr Call to provide customized styling that will layer on top of the variant rules
+#' * \bold{ theme } `ITheme` \cr Theme provided by HOC.
+#' * \bold{ className } `string` \cr Optional override class name
+#' * \bold{ componentRef } `IRefObject<IDocumentCardTitle>` \cr Gets the component ref.
+#' * \bold{ shouldTruncate } `boolean` \cr Whether we truncate the title to fit within the box. May have a performance impact.
+#' * \bold{ showAsSecondaryTitle } `boolean` \cr Whether show as title as secondary title style such as smaller font and lighter color.
+#' * \bold{ styles } `IStyleFunctionOrObject<IDocumentCardTitleStyleProps, IDocumentCardTitleStyles>` \cr Call to provide customized styling that will layer on top of the variant rules
+#' * \bold{ theme } `ITheme` \cr Theme provided by HOC.
+#' * \bold{ title } `string` \cr Title text. If the card represents more than one document, this should be the title of one document and a "+X" string. For example, a collection of four documents would have a string of "Document.docx +3".
 #'
 #' @md
 #' @name DocumentCard
@@ -1367,27 +1333,25 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ defaultSelectedKeys }} {`string[] | number[]` \cr Keys that will be initially used to set selected items. This prop is only used when `multiSelect` is true (use `defaultSelectedKey` for single select). Mutually exclusive with `selectedKeys`.}
-#' \item {\bold{ dropdownWidth }} {`number` \cr Custom width for dropdown. If value is 0, width of the input field is used.}
-#' \item {\bold{ isDisabled }} {`boolean` \cr Deprecated at v0.52.0, use `disabled` instead.}
-#' \item {\bold{ keytipProps }} {`IKeytipProps` \cr Optional keytip for this dropdown}
-#' \item {\bold{ multiSelectDelimiter }} {`string` \cr When multiple items are selected, this will be used to separate values in the dropdown input.}
-#' \item {\bold{ notifyOnReselect }} {`boolean` \cr If true, `onChange` will still be called when an already-selected item is clicked again in single select mode. (Normally it would not be called in this case.)}
-#' \item {\bold{ onChange }} {`(event: React.FormEvent<HTMLDivElement>, option?: IDropdownOption, index?: number) => void` \cr Callback for when the selected option changes.}
-#' \item {\bold{ onChanged }} {`(option: IDropdownOption, index?: number) => void` \cr }
-#' \item {\bold{ onRenderCaretDown }} {`IRenderFunction<IDropdownProps>` \cr Custom renderer for chevron icon}
-#' \item {\bold{ onRenderLabel }} {`IRenderFunction<IDropdownProps>` \cr Custom renderer for the label.}
-#' \item {\bold{ onRenderPlaceholder }} {`IRenderFunction<IDropdownProps>` \cr Custom renderer for placeholder text}
-#' \item {\bold{ onRenderPlaceHolder }} {`IRenderFunction<IDropdownProps>` \cr Custom renderer for placeholder text}
-#' \item {\bold{ onRenderTitle }} {`IRenderFunction<IDropdownOption[]>` \cr Custom renderer for selected option displayed in input}
-#' \item {\bold{ options }} {`IDropdownOption[]` \cr Options for the dropdown. If using `defaultSelectedKey` or `defaultSelectedKeys`, options must be pure for correct behavior.}
-#' \item {\bold{ placeHolder }} {`string` \cr Input placeholder text. Displayed until an option is selected.}
-#' \item {\bold{ responsiveMode }} {`ResponsiveMode` \cr By default, the dropdown will render the standard way for screen sizes `large` and above, or in a panel on `small` and `medium` screens. Manually set this prop to override this behavior.}
-#' \item {\bold{ selectedKeys }} {`string[] | number[] | null` \cr Keys of the selected items, only used when `multiSelect` is true (use `selectedKey` for single select). If you provide this, you must maintain selection state by observing onChange events and passing a new prop value in when changed. Passing null will clear the selection. Mutually exclusive with `defaultSelectedKeys`.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IDropdownStyleProps, IDropdownStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by higher order component.}
-#' }
+#' * \bold{ defaultSelectedKeys } `string[] | number[]` \cr Keys that will be initially used to set selected items. This prop is only used when `multiSelect` is true (use `defaultSelectedKey` for single select). Mutually exclusive with `selectedKeys`.
+#' * \bold{ dropdownWidth } `number` \cr Custom width for dropdown. If value is 0, width of the input field is used.
+#' * \bold{ isDisabled } `boolean` \cr Deprecated at v0.52.0, use `disabled` instead.
+#' * \bold{ keytipProps } `IKeytipProps` \cr Optional keytip for this dropdown
+#' * \bold{ multiSelectDelimiter } `string` \cr When multiple items are selected, this will be used to separate values in the dropdown input.
+#' * \bold{ notifyOnReselect } `boolean` \cr If true, `onChange` will still be called when an already-selected item is clicked again in single select mode. (Normally it would not be called in this case.)
+#' * \bold{ onChange } `(event: React.FormEvent<HTMLDivElement>, option?: IDropdownOption, index?: number) => void` \cr Callback for when the selected option changes.
+#' * \bold{ onChanged } `(option: IDropdownOption, index?: number) => void` \cr
+#' * \bold{ onRenderCaretDown } `IRenderFunction<IDropdownProps>` \cr Custom renderer for chevron icon
+#' * \bold{ onRenderLabel } `IRenderFunction<IDropdownProps>` \cr Custom renderer for the label.
+#' * \bold{ onRenderPlaceholder } `IRenderFunction<IDropdownProps>` \cr Custom renderer for placeholder text
+#' * \bold{ onRenderPlaceHolder } `IRenderFunction<IDropdownProps>` \cr Custom renderer for placeholder text
+#' * \bold{ onRenderTitle } `IRenderFunction<IDropdownOption[]>` \cr Custom renderer for selected option displayed in input
+#' * \bold{ options } `IDropdownOption[]` \cr Options for the dropdown. If using `defaultSelectedKey` or `defaultSelectedKeys`, options must be pure for correct behavior.
+#' * \bold{ placeHolder } `string` \cr Input placeholder text. Displayed until an option is selected.
+#' * \bold{ responsiveMode } `ResponsiveMode` \cr By default, the dropdown will render the standard way for screen sizes `large` and above, or in a panel on `small` and `medium` screens. Manually set this prop to override this behavior.
+#' * \bold{ selectedKeys } `string[] | number[] | null` \cr Keys of the selected items, only used when `multiSelect` is true (use `selectedKey` for single select). If you provide this, you must maintain selection state by observing onChange events and passing a new prop value in when changed. Passing null will clear the selection. Mutually exclusive with `defaultSelectedKeys`.
+#' * \bold{ styles } `IStyleFunctionOrObject<IDropdownStyleProps, IDropdownStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
+#' * \bold{ theme } `ITheme` \cr Theme provided by higher order component.
 #'
 #' @md
 #' @name Dropdown
@@ -1415,26 +1379,24 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ addButtonProps }} {`IButtonProps` \cr Button properties for the add face button}
-#' \item {\bold{ ariaDescription }} {`string` \cr ARIA label for persona list}
-#' \item {\bold{ ariaLabel }} {`string` \cr Defines the aria label that the screen readers use when focus goes on a list of personas.}
-#' \item {\bold{ chevronButtonProps }} {`IButtonProps` \cr Deprecated at v0.70, use `overflowButtonProps` instead.}
-#' \item {\bold{ className }} {`string` \cr Additional css class to apply to the Facepile}
-#' \item {\bold{ componentRef }} {`IRefObject<IFacepile>` \cr Optional callback to access the IFacepile interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ getPersonaProps }} {`(persona: IFacepilePersona) => IPersonaSharedProps` \cr Method to access properties on the underlying Persona control}
-#' \item {\bold{ maxDisplayablePersonas }} {`number` \cr Maximum number of personas to show}
-#' \item {\bold{ onRenderPersona }} {`IRenderFunction<IFacepilePersona>` \cr Optional custom renderer for the persona, gets called when there is one persona in personas array}
-#' \item {\bold{ onRenderPersonaCoin }} {`IRenderFunction<IFacepilePersona>` \cr Optional custom renderer for the persona coins, gets called when there are multiple persona in personas array}
-#' \item {\bold{ overflowButtonProps }} {`IButtonProps` \cr Properties for the overflow icon}
-#' \item {\bold{ overflowButtonType }} {`OverflowButtonType` \cr Type of overflow icon to use}
-#' \item {\bold{ overflowPersonas }} {`IFacepilePersona[]` \cr Personas to place in the overflow}
-#' \item {\bold{ personas }} {`IFacepilePersona[]` \cr Array of IPersonaProps that define each Persona.}
-#' \item {\bold{ personaSize }} {`PersonaSize` \cr Size to display the personas}
-#' \item {\bold{ showAddButton }} {`boolean` \cr Show add person button}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IFacepileStyleProps, IFacepileStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by High-Order Component.}
-#' }
+#' * \bold{ addButtonProps } `IButtonProps` \cr Button properties for the add face button
+#' * \bold{ ariaDescription } `string` \cr ARIA label for persona list
+#' * \bold{ ariaLabel } `string` \cr Defines the aria label that the screen readers use when focus goes on a list of personas.
+#' * \bold{ chevronButtonProps } `IButtonProps` \cr Deprecated at v0.70, use `overflowButtonProps` instead.
+#' * \bold{ className } `string` \cr Additional css class to apply to the Facepile
+#' * \bold{ componentRef } `IRefObject<IFacepile>` \cr Optional callback to access the IFacepile interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ getPersonaProps } `(persona: IFacepilePersona) => IPersonaSharedProps` \cr Method to access properties on the underlying Persona control
+#' * \bold{ maxDisplayablePersonas } `number` \cr Maximum number of personas to show
+#' * \bold{ onRenderPersona } `IRenderFunction<IFacepilePersona>` \cr Optional custom renderer for the persona, gets called when there is one persona in personas array
+#' * \bold{ onRenderPersonaCoin } `IRenderFunction<IFacepilePersona>` \cr Optional custom renderer for the persona coins, gets called when there are multiple persona in personas array
+#' * \bold{ overflowButtonProps } `IButtonProps` \cr Properties for the overflow icon
+#' * \bold{ overflowButtonType } `OverflowButtonType` \cr Type of overflow icon to use
+#' * \bold{ overflowPersonas } `IFacepilePersona[]` \cr Personas to place in the overflow
+#' * \bold{ personas } `IFacepilePersona[]` \cr Array of IPersonaProps that define each Persona.
+#' * \bold{ personaSize } `PersonaSize` \cr Size to display the personas
+#' * \bold{ showAddButton } `boolean` \cr Show add person button
+#' * \bold{ styles } `IStyleFunctionOrObject<IFacepileStyleProps, IFacepileStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
+#' * \bold{ theme } `ITheme` \cr Theme provided by High-Order Component.
 #'
 #' @md
 #' @name Facepile
@@ -1455,19 +1417,17 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ ariaLabelledBy }} {`string` \cr Sets the aria-labelledby attribute.}
-#' \item {\bold{ componentRef }} {`IRefObject<IFocusTrapZone>` \cr Optional callback to access the IFocusTrapZone interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ disabled }} {`boolean` \cr Whether to disable the FocusTrapZone's focus trapping behavior.}
-#' \item {\bold{ disableFirstFocus }} {`boolean` \cr Do not put focus onto the first element inside the focus trap zone.}
-#' \item {\bold{ elementToFocusOnDismiss }} {`HTMLElement` \cr Sets the element to focus on when exiting the FocusTrapZone.}
-#' \item {\bold{ enableAriaHiddenSiblings }} {`boolean` \cr Puts aria-hidden=true on all non-ancestors of the current element, for screen readers. This is an experimental feature that will be graduated to default behavior after testing. This flag will be removed with the next major release.}
-#' \item {\bold{ firstFocusableSelector }} {`string | (() => string)` \cr Class name (not actual selector) for first focusable item. Do not append a dot. Only applies if `focusPreviouslyFocusedInnerElement` is false.}
-#' \item {\bold{ focusPreviouslyFocusedInnerElement }} {`boolean` \cr Specifies which descendant element to focus when `focus()` is called. If false, use the first focusable descendant, filtered by the `firstFocusableSelector` property if present. If true, use the element that was focused when the trap zone last had a focused descendant (or fall back to the first focusable descendant if the trap zone has never been focused).}
-#' \item {\bold{ forceFocusInsideTrap }} {`boolean` \cr Whether the focus trap zone should force focus to stay inside of it.}
-#' \item {\bold{ ignoreExternalFocusing }} {`boolean` \cr If false (the default), the trap zone will restore focus to the element which activated it once the trap zone is unmounted or disabled. Set to true to disable this behavior.}
-#' \item {\bold{ isClickableOutsideFocusTrap }} {`boolean` \cr Whether clicks are allowed outside this FocusTrapZone.}
-#' }
+#' * \bold{ ariaLabelledBy } `string` \cr Sets the aria-labelledby attribute.
+#' * \bold{ componentRef } `IRefObject<IFocusTrapZone>` \cr Optional callback to access the IFocusTrapZone interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ disabled } `boolean` \cr Whether to disable the FocusTrapZone's focus trapping behavior.
+#' * \bold{ disableFirstFocus } `boolean` \cr Do not put focus onto the first element inside the focus trap zone.
+#' * \bold{ elementToFocusOnDismiss } `HTMLElement` \cr Sets the element to focus on when exiting the FocusTrapZone.
+#' * \bold{ enableAriaHiddenSiblings } `boolean` \cr Puts aria-hidden=true on all non-ancestors of the current element, for screen readers. This is an experimental feature that will be graduated to default behavior after testing. This flag will be removed with the next major release.
+#' * \bold{ firstFocusableSelector } `string | (() => string)` \cr Class name (not actual selector) for first focusable item. Do not append a dot. Only applies if `focusPreviouslyFocusedInnerElement` is false.
+#' * \bold{ focusPreviouslyFocusedInnerElement } `boolean` \cr Specifies which descendant element to focus when `focus()` is called. If false, use the first focusable descendant, filtered by the `firstFocusableSelector` property if present. If true, use the element that was focused when the trap zone last had a focused descendant (or fall back to the first focusable descendant if the trap zone has never been focused).
+#' * \bold{ forceFocusInsideTrap } `boolean` \cr Whether the focus trap zone should force focus to stay inside of it.
+#' * \bold{ ignoreExternalFocusing } `boolean` \cr If false (the default), the trap zone will restore focus to the element which activated it once the trap zone is unmounted or disabled. Set to true to disable this behavior.
+#' * \bold{ isClickableOutsideFocusTrap } `boolean` \cr Whether clicks are allowed outside this FocusTrapZone.
 #'
 #' @md
 #' @name FocusTrapZone
@@ -1488,41 +1448,39 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ allowFocusRoot }} {`boolean` \cr Allows focus to park on root when focus is in the `FocusZone` at render time.}
-#' \item {\bold{ allowTabKey }} {`boolean` \cr Allows tab key to be handled to tab through a list of items in the focus zone, an unfortunate side effect is that users will not be able to tab out of the focus zone and have to hit escape or some other key.}
-#' \item {\bold{ ariaDescribedBy }} {`string` \cr Sets the aria-describedby attribute.}
-#' \item {\bold{ ariaLabelledBy }} {`string` \cr Sets the aria-labelledby attribute.}
-#' \item {\bold{ as }} {`React.ElementType` \cr A component that should be used as the root element of the FocusZone component.}
-#' \item {\bold{ checkForNoWrap }} {`boolean` \cr Determines whether to check for data-no-horizontal-wrap or data-no-vertical-wrap attributes when determining how to move focus}
-#' \item {\bold{ className }} {`string` \cr Additional class name to provide on the root element, in addition to the ms-FocusZone class.}
-#' \item {\bold{ componentRef }} {`IRefObject<IFocusZone>` \cr Optional callback to access the IFocusZone interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ defaultActiveElement }} {`string` \cr Optionally provide a selector for identifying the initial active element.}
-#' \item {\bold{ defaultTabbableElement }} {`string | ((root: HTMLElement) => HTMLElement)` \cr Optionally defines the initial tabbable element inside the FocusZone. If a string is passed then it is treated as a selector for identifying the initial tabbable element. If a function is passed then it uses the root element as a parameter to return the initial tabbable element.}
-#' \item {\bold{ direction }} {`FocusZoneDirection` \cr Defines which arrows to react to.}
-#' \item {\bold{ disabled }} {`boolean` \cr If set, the FocusZone will not be tabbable and keyboard navigation will be disabled. This does not affect disabled attribute of any child.}
-#' \item {\bold{ doNotAllowFocusEventToPropagate }} {`boolean` \cr Whether the FocusZone should allow focus events to propagate past the FocusZone.}
-#' \item {\bold{ elementType }} {`any` \cr Element type the root element will use. Default is "div".}
-#' \item {\bold{ handleTabKey }} {`FocusZoneTabbableElements` \cr Allows tab key to be handled to tab through a list of items in the focus zone, an unfortunate side effect is that users will not be able to tab out of the focus zone and have to hit escape or some other key.}
-#' \item {\bold{ isCircularNavigation }} {`boolean` \cr If set, will cycle to the beginning of the targets once the user navigates to the next target while at the end, and to the end when navigate to the previous at the beginning.}
-#' \item {\bold{ isInnerZoneKeystroke }} {`(ev: React.KeyboardEvent<HTMLElement>) => boolean` \cr If provided, this callback will be executed on keypresses to determine if the user intends to navigate into the inner zone. Returning true will ask the first inner zone to set focus.}
-#' \item {\bold{ onActiveElementChanged }} {`(element?: HTMLElement, ev?: React.FocusEvent<HTMLElement>) => void` \cr Callback for when one of immediate children elements gets active by getting focused or by having one of its respective children elements focused.}
-#' \item {\bold{ onBeforeFocus }} {`(childElement?: HTMLElement) => boolean` \cr Callback method for determining if focus should indeed be set on the given element.}
-#' \item {\bold{ onFocus }} {`(event: React.FocusEvent<HTMLElement | FocusZone>) => void` \cr Callback called when "focus" event triggered in FocusZone.}
-#' \item {\bold{ onFocusNotification }} {`() => void` \cr Callback to notify creators that focus has been set on the FocusZone}
-#' \item {\bold{ pagingSupportDisabled }} {`boolean` \cr Determines whether to disable the paging support for Page Up and Page Down keyboard scenarios.}
-#' \item {\bold{ preventDefaultWhenHandled }} {`boolean` \cr If true, FocusZone prevents the default behavior of Keyboard events when changing focus between elements.}
-#' \item {\bold{ preventFocusRestoration }} {`boolean` \cr If true, prevents the FocusZone from attempting to restore the focus to the inner element when the focus is on the root element after componentDidUpdate.}
-#' \item {\bold{ rootProps }} {`React.HTMLAttributes<HTMLDivElement>` \cr Deprecated at v1.12.1. DIV props provided to the FocusZone will be mixed into the root element.}
-#' \item {\bold{ shouldEnterInnerZone }} {`(ev: React.KeyboardEvent<HTMLElement>) => boolean` \cr Callback function that will be executed on keypresses to determine if the user intends to navigate into the inner (nested) zone. Returning true will ask the first inner zone to set focus.}
-#' \item {\bold{ shouldFocusInnerElementWhenReceivedFocus }} {`boolean` \cr If true and FocusZone's root element (container) receives focus, the focus will land either on the defaultTabbableElement (if set) or on the first tabbable element of this FocusZone. Usually a case for nested focus zones, when the nested focus zone's container is a focusable element.}
-#' \item {\bold{ shouldFocusOnMount }} {`boolean` \cr Determines if a default tabbable element should be force focused on FocusZone mount.  @default false}
-#' \item {\bold{ shouldInputLoseFocusOnArrowKey }} {`(inputElement: HTMLInputElement) => boolean` \cr A callback method to determine if the input element should lose focus on arrow keys}
-#' \item {\bold{ shouldRaiseClicks }} {`boolean` \cr Determines whether the FocusZone will walk up the DOM trying to invoke click callbacks on focusable elements on Enter and Space keydowns to ensure accessibility for tags that don't guarantee this behavior.}
-#' \item {\bold{ shouldReceiveFocus }} {`(childElement?: HTMLElement) => boolean` \cr Callback method for determining if focus should indeed be set on the given element.}
-#' \item {\bold{ shouldResetActiveElementWhenTabFromZone }} {`boolean` \cr If true and TAB key is not handled by FocusZone, resets current active element to null value. For example, when roving index is not desirable and focus should always reset to the default tabbable element.}
-#' \item {\bold{ stopFocusPropagation }} {`boolean` \cr Whether the FocusZone should allow focus events to propagate past the FocusZone.}
-#' }
+#' * \bold{ allowFocusRoot } `boolean` \cr Allows focus to park on root when focus is in the `FocusZone` at render time.
+#' * \bold{ allowTabKey } `boolean` \cr Allows tab key to be handled to tab through a list of items in the focus zone, an unfortunate side effect is that users will not be able to tab out of the focus zone and have to hit escape or some other key.
+#' * \bold{ ariaDescribedBy } `string` \cr Sets the aria-describedby attribute.
+#' * \bold{ ariaLabelledBy } `string` \cr Sets the aria-labelledby attribute.
+#' * \bold{ as } `React.ElementType` \cr A component that should be used as the root element of the FocusZone component.
+#' * \bold{ checkForNoWrap } `boolean` \cr Determines whether to check for data-no-horizontal-wrap or data-no-vertical-wrap attributes when determining how to move focus
+#' * \bold{ className } `string` \cr Additional class name to provide on the root element, in addition to the ms-FocusZone class.
+#' * \bold{ componentRef } `IRefObject<IFocusZone>` \cr Optional callback to access the IFocusZone interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ defaultActiveElement } `string` \cr Optionally provide a selector for identifying the initial active element.
+#' * \bold{ defaultTabbableElement } `string | ((root: HTMLElement) => HTMLElement)` \cr Optionally defines the initial tabbable element inside the FocusZone. If a string is passed then it is treated as a selector for identifying the initial tabbable element. If a function is passed then it uses the root element as a parameter to return the initial tabbable element.
+#' * \bold{ direction } `FocusZoneDirection` \cr Defines which arrows to react to.
+#' * \bold{ disabled } `boolean` \cr If set, the FocusZone will not be tabbable and keyboard navigation will be disabled. This does not affect disabled attribute of any child.
+#' * \bold{ doNotAllowFocusEventToPropagate } `boolean` \cr Whether the FocusZone should allow focus events to propagate past the FocusZone.
+#' * \bold{ elementType } `any` \cr Element type the root element will use. Default is "div".
+#' * \bold{ handleTabKey } `FocusZoneTabbableElements` \cr Allows tab key to be handled to tab through a list of items in the focus zone, an unfortunate side effect is that users will not be able to tab out of the focus zone and have to hit escape or some other key.
+#' * \bold{ isCircularNavigation } `boolean` \cr If set, will cycle to the beginning of the targets once the user navigates to the next target while at the end, and to the end when navigate to the previous at the beginning.
+#' * \bold{ isInnerZoneKeystroke } `(ev: React.KeyboardEvent<HTMLElement>) => boolean` \cr If provided, this callback will be executed on keypresses to determine if the user intends to navigate into the inner zone. Returning true will ask the first inner zone to set focus.
+#' * \bold{ onActiveElementChanged } `(element?: HTMLElement, ev?: React.FocusEvent<HTMLElement>) => void` \cr Callback for when one of immediate children elements gets active by getting focused or by having one of its respective children elements focused.
+#' * \bold{ onBeforeFocus } `(childElement?: HTMLElement) => boolean` \cr Callback method for determining if focus should indeed be set on the given element.
+#' * \bold{ onFocus } `(event: React.FocusEvent<HTMLElement | FocusZone>) => void` \cr Callback called when "focus" event triggered in FocusZone.
+#' * \bold{ onFocusNotification } `() => void` \cr Callback to notify creators that focus has been set on the FocusZone
+#' * \bold{ pagingSupportDisabled } `boolean` \cr Determines whether to disable the paging support for Page Up and Page Down keyboard scenarios.
+#' * \bold{ preventDefaultWhenHandled } `boolean` \cr If true, FocusZone prevents the default behavior of Keyboard events when changing focus between elements.
+#' * \bold{ preventFocusRestoration } `boolean` \cr If true, prevents the FocusZone from attempting to restore the focus to the inner element when the focus is on the root element after componentDidUpdate.
+#' * \bold{ rootProps } `React.HTMLAttributes<HTMLDivElement>` \cr Deprecated at v1.12.1. DIV props provided to the FocusZone will be mixed into the root element.
+#' * \bold{ shouldEnterInnerZone } `(ev: React.KeyboardEvent<HTMLElement>) => boolean` \cr Callback function that will be executed on keypresses to determine if the user intends to navigate into the inner (nested) zone. Returning true will ask the first inner zone to set focus.
+#' * \bold{ shouldFocusInnerElementWhenReceivedFocus } `boolean` \cr If true and FocusZone's root element (container) receives focus, the focus will land either on the defaultTabbableElement (if set) or on the first tabbable element of this FocusZone. Usually a case for nested focus zones, when the nested focus zone's container is a focusable element.
+#' * \bold{ shouldFocusOnMount } `boolean` \cr Determines if a default tabbable element should be force focused on FocusZone mount.  @default false
+#' * \bold{ shouldInputLoseFocusOnArrowKey } `(inputElement: HTMLInputElement) => boolean` \cr A callback method to determine if the input element should lose focus on arrow keys
+#' * \bold{ shouldRaiseClicks } `boolean` \cr Determines whether the FocusZone will walk up the DOM trying to invoke click callbacks on focusable elements on Enter and Space keydowns to ensure accessibility for tags that don't guarantee this behavior.
+#' * \bold{ shouldReceiveFocus } `(childElement?: HTMLElement) => boolean` \cr Callback method for determining if focus should indeed be set on the given element.
+#' * \bold{ shouldResetActiveElementWhenTabFromZone } `boolean` \cr If true and TAB key is not handled by FocusZone, resets current active element to null value. For example, when roving index is not desirable and focus should always reset to the default tabbable element.
+#' * \bold{ stopFocusPropagation } `boolean` \cr Whether the FocusZone should allow focus events to propagate past the FocusZone.
 #'
 #' @md
 #' @name FocusZone
@@ -1569,83 +1527,81 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ className }} {`string` \cr Custom className}
-#' \item {\bold{ compact }} {`boolean` \cr Boolean value to indicate if the component should render in compact mode. Set to false by default}
-#' \item {\bold{ componentRef }} {`IRefObject<{}>` \cr }
-#' \item {\bold{ expandButtonProps }} {`React.HTMLAttributes<HTMLButtonElement>` \cr Props for expand/collapse button}
-#' \item {\bold{ footerText }} {`string` \cr Text to display for the group footer.}
-#' \item {\bold{ group }} {`IGroup` \cr The group to be rendered by the header.}
-#' \item {\bold{ groupIndex }} {`number` \cr The index of the group.}
-#' \item {\bold{ groupLevel }} {`number` \cr The indent level of the group.}
-#' \item {\bold{ groups }} {`IGroup[]` \cr Stores parent group's children.}
-#' \item {\bold{ indentWidth }} {`number` \cr Width corresponding to a single level. This is multiplied by the groupLevel to get the full spacer width for the group.}
-#' \item {\bold{ isCollapsedGroupSelectVisible }} {`boolean` \cr Determines if the group selection check box is shown for collapsed groups.}
-#' \item {\bold{ isGroupLoading }} {`(group: IGroup) => boolean` \cr Callback to determine if a group has missing items and needs to load them from the server.}
-#' \item {\bold{ isSelected }} {`boolean` \cr Deprecated at v.65.1 and will be removed by v 1.0. Use `selected` instead.}
-#' \item {\bold{ loadingText }} {`string` \cr Text shown on group headers to indicate the group is being loaded.}
-#' \item {\bold{ onGroupHeaderClick }} {`(group: IGroup) => void` \cr Callback for when the group header is clicked.}
-#' \item {\bold{ onRenderTitle }} {`IRenderFunction<IGroupHeaderProps>` \cr Override which allows the caller to provider a custom renderer for the GroupHeader title.}
-#' \item {\bold{ onToggleCollapse }} {`(group: IGroup) => void` \cr Callback for when the group is expanded or collapsed.}
-#' \item {\bold{ onToggleSelectGroup }} {`(group: IGroup) => void` \cr Callback for when the group is selected.}
-#' \item {\bold{ onToggleSummarize }} {`(group: IGroup) => void` \cr Callback for when the group "Show All" link is clicked}
-#' \item {\bold{ selected }} {`boolean` \cr If all items in the group are selected.}
-#' \item {\bold{ selectionMode }} {`SelectionMode` \cr The selection mode of the list the group lives within.}
-#' \item {\bold{ showAllLinkText }} {`string` \cr Text to display for the group "Show All" link.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by the Higher Order Component}
-#' \item {\bold{ viewport }} {`IViewport` \cr A reference to the viewport in which the header is rendered.}
-#' \item {\bold{ className }} {`string` \cr Optional class name to add to the root element.}
-#' \item {\bold{ compact }} {`boolean` \cr Boolean value to indicate if the component should render in compact mode. Set to false by default}
-#' \item {\bold{ componentRef }} {`IRefObject<IGroupedList>` \cr Optional callback to access the IGroupedList interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ dragDropEvents }} {`IDragDropEvents` \cr Map of callback functions related to drag and drop functionality.}
-#' \item {\bold{ dragDropHelper }} {`IDragDropHelper` \cr helper to manage drag/drop across item and groups}
-#' \item {\bold{ eventsToRegister }} {`{ eventName: string; callback: (context: IDragDropContext, event?: any) => void; }[]` \cr Event names and corresponding callbacks that will be registered to groups and rendered elements}
-#' \item {\bold{ focusZoneProps }} {`IFocusZoneProps` \cr Optional properties to pass through to the FocusZone.}
-#' \item {\bold{ getGroupHeight }} {`(group: IGroup, groupIndex: number) => number` \cr Optional function to override default group height calculation used by list virtualization.}
-#' \item {\bold{ groupProps }} {`IGroupRenderProps` \cr Optional override properties to render groups.}
-#' \item {\bold{ groups }} {`IGroup[]` \cr Optional grouping instructions.}
-#' \item {\bold{ items }} {`any[]` \cr List of items to render.}
-#' \item {\bold{ listProps }} {`IListProps` \cr Optional properties to pass through to the list components being rendered.}
-#' \item {\bold{ onGroupExpandStateChanged }} {`(isSomeGroupExpanded: boolean) => void` \cr Optional callback when the group expand state changes between all collapsed and at least one group is expanded.}
-#' \item {\bold{ onRenderCell }} {`(nestingDepth?: number, item?: any, index?: number) => React.ReactNode` \cr Rendering callback to render the group items.}
-#' \item {\bold{ onShouldVirtualize }} {`(props: IListProps) => boolean` \cr Optional callback to determine whether the list should be rendered in full, or virtualized. Virtualization will add and remove pages of items as the user scrolls them into the visible range. This benefits larger list scenarios by reducing the DOM on the screen, but can negatively affect performance for smaller lists. The default implementation will virtualize when this callback is not provided.}
-#' \item {\bold{ selection }} {`ISelection` \cr Optional selection model to track selection state.}
-#' \item {\bold{ selectionMode }} {`SelectionMode` \cr Controls how/if the list manages selection.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IGroupedListStyleProps, IGroupedListStyles>` \cr Style function to be passed in to override the themed or default styles}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme that is passed in from Higher Order Component}
-#' \item {\bold{ usePageCache }} {`boolean` \cr boolean to control if pages containing unchanged items should be cached, this is a perf optimization The same property in List.Props}
-#' \item {\bold{ viewport }} {`IViewport` \cr Optional Viewport, provided by the parent component.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IGroupFooterStyleProps, IGroupFooterStyles>` \cr Style function to be passed in to override the themed or default styles}
-#' \item {\bold{ checked }} {`boolean` \cr }
-#' \item {\bold{ theme }} {`ITheme` \cr }
-#' \item {\bold{ ariaPosInSet }} {`number` \cr Defines an element's number or position in the current set of listitems or treeitems}
-#' \item {\bold{ ariaSetSize }} {`number` \cr Defines the number of items in the current set of listitems or treeitems}
-#' \item {\bold{ expandButtonIcon }} {`string` \cr Defines the name of a custom icon to be used for group headers. If not set, the default icon will be used}
-#' \item {\bold{ expandButtonProps }} {`React.HTMLAttributes<HTMLButtonElement>` \cr Native props for the GroupHeader expand and collapse button}
-#' \item {\bold{ groupedListId }} {`string` \cr GroupedList id for aria-controls}
-#' \item {\bold{ onRenderGroupHeaderCheckbox }} {`IRenderFunction<IGroupHeaderCheckboxProps>` \cr If provided, can be used to render a custom checkbox}
-#' \item {\bold{ selectAllButtonProps }} {`React.HTMLAttributes<HTMLButtonElement>` \cr Native props for the GroupHeader select all button}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IGroupHeaderStyleProps, IGroupHeaderStyles>` \cr Style function to be passed in to override the themed or default styles}
-#' \item {\bold{ useFastIcons }} {`boolean` \cr Whether to use fast icon and check components. The icons can't be targeted by customization but are still customizable via class names.}
-#' \item {\bold{ collapseAllVisibility }} {`CollapseAllVisibility` \cr Flag to indicate whether to ignore the collapsing icon on header.}
-#' \item {\bold{ footerProps }} {`IGroupFooterProps` \cr Information to pass in to the group footer.}
-#' \item {\bold{ getGroupItemLimit }} {`(group: IGroup) => number` \cr Grouping item limit.}
-#' \item {\bold{ headerProps }} {`IGroupHeaderProps` \cr Information to pass in to the group header.}
-#' \item {\bold{ isAllGroupsCollapsed }} {`boolean` \cr Boolean indicating if all groups are in collapsed state.}
-#' \item {\bold{ onRenderFooter }} {`IRenderFunction<IGroupFooterProps>` \cr Override which allows the caller to provide a custom footer.}
-#' \item {\bold{ onRenderHeader }} {`IRenderFunction<IGroupHeaderProps>` \cr Override which allows the caller to provide a custom header.}
-#' \item {\bold{ onRenderShowAll }} {`IRenderFunction<IGroupShowAllProps>` \cr Override which allows the caller to provide a custom Show All link.}
-#' \item {\bold{ onToggleCollapseAll }} {`(isAllCollapsed: boolean) => void` \cr Callback for when all groups are expanded or collapsed.}
-#' \item {\bold{ role }} {`string` \cr Override which allows the caller to provide a custom aria role}
-#' \item {\bold{ showAllProps }} {`IGroupShowAllProps` \cr Information to pass in to the group Show all footer.}
-#' \item {\bold{ showEmptyGroups }} {`boolean` \cr Boolean indicating if empty groups are shown}
-#' \item {\bold{ showAllLinkText }} {`string` \cr The Show All link text.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IGroupShowAllStyleProps, IGroupShowAllStyles>` \cr Style function to be passed in to override the themed or default styles}
-#' \item {\bold{ count }} {`number` \cr Count of spacer(s)}
-#' \item {\bold{ indentWidth }} {`number` \cr How much to indent}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IGroupSpacerStyleProps, IGroupSpacerStyles>` \cr Style function to be passed in to override the themed or default styles}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme from Higher Order Component}
-#' }
+#' * \bold{ className } `string` \cr Custom className
+#' * \bold{ compact } `boolean` \cr Boolean value to indicate if the component should render in compact mode. Set to false by default
+#' * \bold{ componentRef } `IRefObject<{}>` \cr
+#' * \bold{ expandButtonProps } `React.HTMLAttributes<HTMLButtonElement>` \cr Props for expand/collapse button
+#' * \bold{ footerText } `string` \cr Text to display for the group footer.
+#' * \bold{ group } `IGroup` \cr The group to be rendered by the header.
+#' * \bold{ groupIndex } `number` \cr The index of the group.
+#' * \bold{ groupLevel } `number` \cr The indent level of the group.
+#' * \bold{ groups } `IGroup[]` \cr Stores parent group's children.
+#' * \bold{ indentWidth } `number` \cr Width corresponding to a single level. This is multiplied by the groupLevel to get the full spacer width for the group.
+#' * \bold{ isCollapsedGroupSelectVisible } `boolean` \cr Determines if the group selection check box is shown for collapsed groups.
+#' * \bold{ isGroupLoading } `(group: IGroup) => boolean` \cr Callback to determine if a group has missing items and needs to load them from the server.
+#' * \bold{ isSelected } `boolean` \cr Deprecated at v.65.1 and will be removed by v 1.0. Use `selected` instead.
+#' * \bold{ loadingText } `string` \cr Text shown on group headers to indicate the group is being loaded.
+#' * \bold{ onGroupHeaderClick } `(group: IGroup) => void` \cr Callback for when the group header is clicked.
+#' * \bold{ onRenderTitle } `IRenderFunction<IGroupHeaderProps>` \cr Override which allows the caller to provider a custom renderer for the GroupHeader title.
+#' * \bold{ onToggleCollapse } `(group: IGroup) => void` \cr Callback for when the group is expanded or collapsed.
+#' * \bold{ onToggleSelectGroup } `(group: IGroup) => void` \cr Callback for when the group is selected.
+#' * \bold{ onToggleSummarize } `(group: IGroup) => void` \cr Callback for when the group "Show All" link is clicked
+#' * \bold{ selected } `boolean` \cr If all items in the group are selected.
+#' * \bold{ selectionMode } `SelectionMode` \cr The selection mode of the list the group lives within.
+#' * \bold{ showAllLinkText } `string` \cr Text to display for the group "Show All" link.
+#' * \bold{ theme } `ITheme` \cr Theme provided by the Higher Order Component
+#' * \bold{ viewport } `IViewport` \cr A reference to the viewport in which the header is rendered.
+#' * \bold{ className } `string` \cr Optional class name to add to the root element.
+#' * \bold{ compact } `boolean` \cr Boolean value to indicate if the component should render in compact mode. Set to false by default
+#' * \bold{ componentRef } `IRefObject<IGroupedList>` \cr Optional callback to access the IGroupedList interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ dragDropEvents } `IDragDropEvents` \cr Map of callback functions related to drag and drop functionality.
+#' * \bold{ dragDropHelper } `IDragDropHelper` \cr helper to manage drag/drop across item and groups
+#' * \bold{ eventsToRegister } `{ eventName: string; callback: (context: IDragDropContext, event?: any) => void; }[]` \cr Event names and corresponding callbacks that will be registered to groups and rendered elements
+#' * \bold{ focusZoneProps } `IFocusZoneProps` \cr Optional properties to pass through to the FocusZone.
+#' * \bold{ getGroupHeight } `(group: IGroup, groupIndex: number) => number` \cr Optional function to override default group height calculation used by list virtualization.
+#' * \bold{ groupProps } `IGroupRenderProps` \cr Optional override properties to render groups.
+#' * \bold{ groups } `IGroup[]` \cr Optional grouping instructions.
+#' * \bold{ items } `any[]` \cr List of items to render.
+#' * \bold{ listProps } `IListProps` \cr Optional properties to pass through to the list components being rendered.
+#' * \bold{ onGroupExpandStateChanged } `(isSomeGroupExpanded: boolean) => void` \cr Optional callback when the group expand state changes between all collapsed and at least one group is expanded.
+#' * \bold{ onRenderCell } `(nestingDepth?: number, item?: any, index?: number) => React.ReactNode` \cr Rendering callback to render the group items.
+#' * \bold{ onShouldVirtualize } `(props: IListProps) => boolean` \cr Optional callback to determine whether the list should be rendered in full, or virtualized. Virtualization will add and remove pages of items as the user scrolls them into the visible range. This benefits larger list scenarios by reducing the DOM on the screen, but can negatively affect performance for smaller lists. The default implementation will virtualize when this callback is not provided.
+#' * \bold{ selection } `ISelection` \cr Optional selection model to track selection state.
+#' * \bold{ selectionMode } `SelectionMode` \cr Controls how/if the list manages selection.
+#' * \bold{ styles } `IStyleFunctionOrObject<IGroupedListStyleProps, IGroupedListStyles>` \cr Style function to be passed in to override the themed or default styles
+#' * \bold{ theme } `ITheme` \cr Theme that is passed in from Higher Order Component
+#' * \bold{ usePageCache } `boolean` \cr boolean to control if pages containing unchanged items should be cached, this is a perf optimization The same property in List.Props
+#' * \bold{ viewport } `IViewport` \cr Optional Viewport, provided by the parent component.
+#' * \bold{ styles } `IStyleFunctionOrObject<IGroupFooterStyleProps, IGroupFooterStyles>` \cr Style function to be passed in to override the themed or default styles
+#' * \bold{ checked } `boolean` \cr
+#' * \bold{ theme } `ITheme` \cr
+#' * \bold{ ariaPosInSet } `number` \cr Defines an element's number or position in the current set of listitems or treeitems
+#' * \bold{ ariaSetSize } `number` \cr Defines the number of items in the current set of listitems or treeitems
+#' * \bold{ expandButtonIcon } `string` \cr Defines the name of a custom icon to be used for group headers. If not set, the default icon will be used
+#' * \bold{ expandButtonProps } `React.HTMLAttributes<HTMLButtonElement>` \cr Native props for the GroupHeader expand and collapse button
+#' * \bold{ groupedListId } `string` \cr GroupedList id for aria-controls
+#' * \bold{ onRenderGroupHeaderCheckbox } `IRenderFunction<IGroupHeaderCheckboxProps>` \cr If provided, can be used to render a custom checkbox
+#' * \bold{ selectAllButtonProps } `React.HTMLAttributes<HTMLButtonElement>` \cr Native props for the GroupHeader select all button
+#' * \bold{ styles } `IStyleFunctionOrObject<IGroupHeaderStyleProps, IGroupHeaderStyles>` \cr Style function to be passed in to override the themed or default styles
+#' * \bold{ useFastIcons } `boolean` \cr Whether to use fast icon and check components. The icons can't be targeted by customization but are still customizable via class names.
+#' * \bold{ collapseAllVisibility } `CollapseAllVisibility` \cr Flag to indicate whether to ignore the collapsing icon on header.
+#' * \bold{ footerProps } `IGroupFooterProps` \cr Information to pass in to the group footer.
+#' * \bold{ getGroupItemLimit } `(group: IGroup) => number` \cr Grouping item limit.
+#' * \bold{ headerProps } `IGroupHeaderProps` \cr Information to pass in to the group header.
+#' * \bold{ isAllGroupsCollapsed } `boolean` \cr Boolean indicating if all groups are in collapsed state.
+#' * \bold{ onRenderFooter } `IRenderFunction<IGroupFooterProps>` \cr Override which allows the caller to provide a custom footer.
+#' * \bold{ onRenderHeader } `IRenderFunction<IGroupHeaderProps>` \cr Override which allows the caller to provide a custom header.
+#' * \bold{ onRenderShowAll } `IRenderFunction<IGroupShowAllProps>` \cr Override which allows the caller to provide a custom Show All link.
+#' * \bold{ onToggleCollapseAll } `(isAllCollapsed: boolean) => void` \cr Callback for when all groups are expanded or collapsed.
+#' * \bold{ role } `string` \cr Override which allows the caller to provide a custom aria role
+#' * \bold{ showAllProps } `IGroupShowAllProps` \cr Information to pass in to the group Show all footer.
+#' * \bold{ showEmptyGroups } `boolean` \cr Boolean indicating if empty groups are shown
+#' * \bold{ showAllLinkText } `string` \cr The Show All link text.
+#' * \bold{ styles } `IStyleFunctionOrObject<IGroupShowAllStyleProps, IGroupShowAllStyles>` \cr Style function to be passed in to override the themed or default styles
+#' * \bold{ count } `number` \cr Count of spacer(s)
+#' * \bold{ indentWidth } `number` \cr How much to indent
+#' * \bold{ styles } `IStyleFunctionOrObject<IGroupSpacerStyleProps, IGroupSpacerStyles>` \cr Style function to be passed in to override the themed or default styles
+#' * \bold{ theme } `ITheme` \cr Theme from Higher Order Component
 #'
 #' @md
 #' @name GroupedList
@@ -1672,36 +1628,34 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ compactCardHeight }} {`number` \cr Height of compact card}
-#' \item {\bold{ expandedCardHeight }} {`number` \cr Height of expanded card}
-#' \item {\bold{ mode }} {`ExpandingCardMode` \cr Use to open the card in expanded format and not wait for the delay}
-#' \item {\bold{ onRenderCompactCard }} {`IRenderFunction<any>` \cr Render function to populate compact content area}
-#' \item {\bold{ onRenderExpandedCard }} {`IRenderFunction<any>` \cr Render function to populate expanded content area}
-#' \item {\bold{ cardDismissDelay }} {`number` \cr Length of card dismiss delay. A min number is necessary for pointer to hop between target and card}
-#' \item {\bold{ cardOpenDelay }} {`number` \cr Length of compact card delay}
-#' \item {\bold{ className }} {`string` \cr Additional CSS class(es) to apply to the HoverCard root element.}
-#' \item {\bold{ componentRef }} {`IRefObject<IHoverCard>` \cr Optional callback to access the IHoverCardHost interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ eventListenerTarget }} {`HTMLElement | string | null` \cr This prop is to separate the target to anchor hover card from the target to attach event listener. If set, this prop separates the target to anchor the hover card from the target to attach the event listener. When no `eventListenerTarget` given, HoverCard will use `target` prop or its root to set event listener.}
-#' \item {\bold{ expandedCardOpenDelay }} {`number` \cr Time in ms when expanded card should open after compact card}
-#' \item {\bold{ expandingCardProps }} {`IExpandingCardProps` \cr Additional ExpandingCard props to pass through HoverCard like renderers, target. gapSpace etc. Used along with 'type' prop set to HoverCardType.expanding. Reference detail properties in ICardProps and IExpandingCardProps.}
-#' \item {\bold{ instantOpenOnClick }} {`boolean` \cr Enables instant open of the full card upon click}
-#' \item {\bold{ onCardExpand }} {`() => void` \cr Callback when visible card is expanded.}
-#' \item {\bold{ onCardHide }} {`() => void` \cr Callback when card hides}
-#' \item {\bold{ onCardVisible }} {`() => void` \cr Callback when card becomes visible}
-#' \item {\bold{ openHotKey }} {`KeyCodes` \cr HotKey used for opening the HoverCard when tabbed to target.}
-#' \item {\bold{ plainCardProps }} {`IPlainCardProps` \cr Additional PlainCard props to pass through HoverCard like renderers, target, gapSpace etc. Used along with 'type' prop set to HoverCardType.plain. See for more details ICardProps and IPlainCardProps interfaces.}
-#' \item {\bold{ setAriaDescribedBy }} {`boolean` \cr Whether or not to mark the container as described by the hover card. If not specified, the caller should mark as element as described by the hover card id.}
-#' \item {\bold{ setInitialFocus }} {`boolean` \cr Set to true to set focus on the first focusable element in the card. Works in pair with the 'trapFocus' prop.}
-#' \item {\bold{ shouldBlockHoverCard }} {`() => void` \cr Should block hover card or not}
-#' \item {\bold{ sticky }} {`boolean` \cr If true disables Card dismiss upon mouse leave, so that card sticks around.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IHoverCardStyleProps, IHoverCardStyles>` \cr Custom styles for this component}
-#' \item {\bold{ target }} {`HTMLElement | string | null` \cr Optional target element to tag hover card on. If not provided and using HoverCard as a wrapper, don't set the 'data-is-focusable=true' attribute to the root of the wrapped child. If no target is given, HoverCard will use its root as a target and become the focusable element with a focus listener attached to it.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by higher order component.}
-#' \item {\bold{ trapFocus }} {`boolean` \cr Set to true if you want to render the content of the HoverCard in a FocusTrapZone for accessibility reasons. Optionally 'setInitialFocus' prop can be set to true to move focus inside the FocusTrapZone.}
-#' \item {\bold{ type }} {`HoverCardType` \cr Type of the hover card to render.}
-#' \item {\bold{ onRenderPlainCard }} {`IRenderFunction<any>` \cr Render function to populate compact content area}
-#' }
+#' * \bold{ compactCardHeight } `number` \cr Height of compact card
+#' * \bold{ expandedCardHeight } `number` \cr Height of expanded card
+#' * \bold{ mode } `ExpandingCardMode` \cr Use to open the card in expanded format and not wait for the delay
+#' * \bold{ onRenderCompactCard } `IRenderFunction<any>` \cr Render function to populate compact content area
+#' * \bold{ onRenderExpandedCard } `IRenderFunction<any>` \cr Render function to populate expanded content area
+#' * \bold{ cardDismissDelay } `number` \cr Length of card dismiss delay. A min number is necessary for pointer to hop between target and card
+#' * \bold{ cardOpenDelay } `number` \cr Length of compact card delay
+#' * \bold{ className } `string` \cr Additional CSS class(es) to apply to the HoverCard root element.
+#' * \bold{ componentRef } `IRefObject<IHoverCard>` \cr Optional callback to access the IHoverCardHost interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ eventListenerTarget } `HTMLElement | string | null` \cr This prop is to separate the target to anchor hover card from the target to attach event listener. If set, this prop separates the target to anchor the hover card from the target to attach the event listener. When no `eventListenerTarget` given, HoverCard will use `target` prop or its root to set event listener.
+#' * \bold{ expandedCardOpenDelay } `number` \cr Time in ms when expanded card should open after compact card
+#' * \bold{ expandingCardProps } `IExpandingCardProps` \cr Additional ExpandingCard props to pass through HoverCard like renderers, target. gapSpace etc. Used along with 'type' prop set to HoverCardType.expanding. Reference detail properties in ICardProps and IExpandingCardProps.
+#' * \bold{ instantOpenOnClick } `boolean` \cr Enables instant open of the full card upon click
+#' * \bold{ onCardExpand } `() => void` \cr Callback when visible card is expanded.
+#' * \bold{ onCardHide } `() => void` \cr Callback when card hides
+#' * \bold{ onCardVisible } `() => void` \cr Callback when card becomes visible
+#' * \bold{ openHotKey } `KeyCodes` \cr HotKey used for opening the HoverCard when tabbed to target.
+#' * \bold{ plainCardProps } `IPlainCardProps` \cr Additional PlainCard props to pass through HoverCard like renderers, target, gapSpace etc. Used along with 'type' prop set to HoverCardType.plain. See for more details ICardProps and IPlainCardProps interfaces.
+#' * \bold{ setAriaDescribedBy } `boolean` \cr Whether or not to mark the container as described by the hover card. If not specified, the caller should mark as element as described by the hover card id.
+#' * \bold{ setInitialFocus } `boolean` \cr Set to true to set focus on the first focusable element in the card. Works in pair with the 'trapFocus' prop.
+#' * \bold{ shouldBlockHoverCard } `() => void` \cr Should block hover card or not
+#' * \bold{ sticky } `boolean` \cr If true disables Card dismiss upon mouse leave, so that card sticks around.
+#' * \bold{ styles } `IStyleFunctionOrObject<IHoverCardStyleProps, IHoverCardStyles>` \cr Custom styles for this component
+#' * \bold{ target } `HTMLElement | string | null` \cr Optional target element to tag hover card on. If not provided and using HoverCard as a wrapper, don't set the 'data-is-focusable=true' attribute to the root of the wrapped child. If no target is given, HoverCard will use its root as a target and become the focusable element with a focus listener attached to it.
+#' * \bold{ theme } `ITheme` \cr Theme provided by higher order component.
+#' * \bold{ trapFocus } `boolean` \cr Set to true if you want to render the content of the HoverCard in a FocusTrapZone for accessibility reasons. Optionally 'setInitialFocus' prop can be set to true to move focus inside the FocusTrapZone.
+#' * \bold{ type } `HoverCardType` \cr Type of the hover card to render.
+#' * \bold{ onRenderPlainCard } `IRenderFunction<any>` \cr Render function to populate compact content area
 #'
 #' @md
 #' @name HoverCard
@@ -1712,9 +1666,9 @@ NULL
 #' @description
 #' In a user interface, an icon is an image that represents an application, a capability, or some other concept or specific entity with meaning for the user. An icon is usually selectable but can also be a nonselectable image, such as a company's logo.
 #'
-#' For a list of icons, visit our [icon documentation](https://developer.microsoft.com/en-us/fluentui#/styles/web/icons).
+#' For a list of icons, visit our [icon documentation](#/styles/web/icons).
 #'
-#' Note that icons are not bundled by default and typically must be loaded by calling `initializeIcons` from the `@uifabric/icons` package at the root of your application. See the [icon documentation](https://developer.microsoft.com/en-us/fluentui#/styles/web/icons#fabric-react) for more details.
+#' Note that icons are not bundled by default and typically must be loaded by calling `initializeIcons` from the `@uifabric/icons` package at the root of your application. See the [icon documentation](#/styles/web/icons#fabric-react) for more details.
 #'
 #'
 #' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Icon).
@@ -1724,19 +1678,17 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ className }} {`string` \cr Custom class to style the icon.}
-#' \item {\bold{ iconName }} {`string` \cr The name of the icon to use from the icon font. If string is empty, a placeholder icon will be rendered the same width as an icon.}
-#' \item {\bold{ ariaLabel }} {`string` \cr The aria label of the icon for the benefit of screen readers.}
-#' \item {\bold{ iconName }} {`string` \cr The name of the icon to use from the icon font. If string is empty, a placeholder icon will be rendered the same width as an icon.}
-#' \item {\bold{ iconType }} {`IconType` \cr The type of icon to render (image or icon font).}
-#' \item {\bold{ imageErrorAs }} {`React.ComponentType<IImageProps>` \cr If rendering an image icon, this component will be rendered in the event that loading the image fails.}
-#' \item {\bold{ imageProps }} {`IImageProps` \cr If rendering an image icon, these props will be passed to the Image component.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IIconStyleProps, IIconStyles>` \cr Gets the styles for an Icon.}
-#' \item {\bold{ theme }} {`ITheme` \cr }
-#' \item {\bold{ className }} {`string` \cr Custom class to style the icon.}
-#' \item {\bold{ imageProps }} {`IImageProps` \cr Props passed to the Image component.}
-#' }
+#' * \bold{ className } `string` \cr Custom class to style the icon.
+#' * \bold{ iconName } `string` \cr The name of the icon to use from the icon font. If string is empty, a placeholder icon will be rendered the same width as an icon.
+#' * \bold{ ariaLabel } `string` \cr The aria label of the icon for the benefit of screen readers.
+#' * \bold{ iconName } `string` \cr The name of the icon to use from the icon font. If string is empty, a placeholder icon will be rendered the same width as an icon.
+#' * \bold{ iconType } `IconType` \cr The type of icon to render (image or icon font).
+#' * \bold{ imageErrorAs } `React.ComponentType<IImageProps>` \cr If rendering an image icon, this component will be rendered in the event that loading the image fails.
+#' * \bold{ imageProps } `IImageProps` \cr If rendering an image icon, these props will be passed to the Image component.
+#' * \bold{ styles } `IStyleFunctionOrObject<IIconStyleProps, IIconStyles>` \cr Gets the styles for an Icon.
+#' * \bold{ theme } `ITheme` \cr
+#' * \bold{ className } `string` \cr Custom class to style the icon.
+#' * \bold{ imageProps } `IImageProps` \cr Props passed to the Image component.
 #'
 #' @md
 #' @name Icon
@@ -1755,18 +1707,16 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ className }} {`string` \cr Additional css class to apply to the Component}
-#' \item {\bold{ coverStyle }} {`ImageCoverStyle` \cr Specifies the cover style to be used for this image. If not specified, this will be dynamically calculated based on the aspect ratio for the image.}
-#' \item {\bold{ errorSrc }} {`string` \cr Deprecated at v1.3.6, to replace the src in case of errors, use `onLoadingStateChange` instead and rerender the Image with a difference src.}
-#' \item {\bold{ imageFit }} {`ImageFit` \cr Used to determine how the image is scaled and cropped to fit the frame.}
-#' \item {\bold{ maximizeFrame }} {`boolean` \cr If true, the image frame will expand to fill its parent container.}
-#' \item {\bold{ onLoadingStateChange }} {`(loadState: ImageLoadState) => void` \cr Optional callback method for when the image load state has changed. The 'loadState' parameter indicates the current state of the Image.}
-#' \item {\bold{ shouldFadeIn }} {`boolean` \cr If true, fades the image in when loaded.}
-#' \item {\bold{ shouldStartVisible }} {`boolean` \cr If true, the image starts as visible and is hidden on error. Otherwise, the image is hidden until it is successfully loaded. This disables shouldFadeIn.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IImageStyleProps, IImageStyles>` \cr Call to provide customized styling that will layer on top of the variant rules}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by HOC.}
-#' }
+#' * \bold{ className } `string` \cr Additional css class to apply to the Component
+#' * \bold{ coverStyle } `ImageCoverStyle` \cr Specifies the cover style to be used for this image. If not specified, this will be dynamically calculated based on the aspect ratio for the image.
+#' * \bold{ errorSrc } `string` \cr Deprecated at v1.3.6, to replace the src in case of errors, use `onLoadingStateChange` instead and rerender the Image with a difference src.
+#' * \bold{ imageFit } `ImageFit` \cr Used to determine how the image is scaled and cropped to fit the frame.
+#' * \bold{ maximizeFrame } `boolean` \cr If true, the image frame will expand to fill its parent container.
+#' * \bold{ onLoadingStateChange } `(loadState: ImageLoadState) => void` \cr Optional callback method for when the image load state has changed. The 'loadState' parameter indicates the current state of the Image.
+#' * \bold{ shouldFadeIn } `boolean` \cr If true, fades the image in when loaded.
+#' * \bold{ shouldStartVisible } `boolean` \cr If true, the image starts as visible and is hidden on error. Otherwise, the image is hidden until it is successfully loaded. This disables shouldFadeIn.
+#' * \bold{ styles } `IStyleFunctionOrObject<IImageStyleProps, IImageStyles>` \cr Call to provide customized styling that will layer on top of the variant rules
+#' * \bold{ theme } `ITheme` \cr Theme provided by HOC.
 #'
 #' @md
 #' @name Image
@@ -1785,29 +1735,27 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ componentRef }} {`IRefObject<IKeytipLayer>` \cr Optional callback to access the KeytipLayer component. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ content }} {`string` \cr String to put inside the layer to be used for the aria-describedby for the component with the keytip Should be one of the starting sequences}
-#' \item {\bold{ keytipExitSequences }} {`IKeytipTransitionKey[]` \cr List of key sequences that will exit keytips mode}
-#' \item {\bold{ keytipReturnSequences }} {`IKeytipTransitionKey[]` \cr List of key sequences that execute the return functionality in keytips (going back to the previous level of keytips)}
-#' \item {\bold{ keytipStartSequences }} {`IKeytipTransitionKey[]` \cr List of key sequences that will start keytips mode}
-#' \item {\bold{ onEnterKeytipMode }} {`() => void` \cr Callback function triggered when keytip mode is entered}
-#' \item {\bold{ onExitKeytipMode }} {`(ev?: React.KeyboardEvent<HTMLElement> | React.MouseEvent<HTMLElement>) => void` \cr Callback function triggered when keytip mode is exited. ev is the Mouse or Keyboard Event that triggered the exit, if any.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IKeytipLayerStyleProps, IKeytipLayerStyles>` \cr (Optional) Call to provide customized styling.}
-#' \item {\bold{ calloutProps }} {`ICalloutProps` \cr ICalloutProps to pass to the callout element}
-#' \item {\bold{ content }} {`string` \cr Content to put inside the keytip}
-#' \item {\bold{ disabled }} {`boolean` \cr T/F if the corresponding control for this keytip is disabled}
-#' \item {\bold{ hasDynamicChildren }} {`boolean` \cr Whether or not this keytip will have children keytips that are dynamically created (DOM is generated on keytip activation). Common cases are a Pivot or Modal.}
-#' \item {\bold{ hasMenu }} {`boolean` \cr Whether or not this keytip belongs to a component that has a menu Keytip mode will stay on when a menu is opened, even if the items in that menu have no keytips}
-#' \item {\bold{ keySequences }} {`string[]` \cr Array of KeySequences which is the full key sequence to trigger this keytip Should not include initial 'start' key sequence}
-#' \item {\bold{ offset }} {`Point` \cr Offset x and y for the keytip, added from the top-left corner By default the keytip will be anchored to the bottom-center of the element}
-#' \item {\bold{ onExecute }} {`(executeTarget: HTMLElement | null, target: HTMLElement | null) => void` \cr Function to call when this keytip is activated. 'executeTarget' is the DOM element marked with 'data-ktp-execute-target'. 'target' is the DOM element marked with 'data-ktp-target'.}
-#' \item {\bold{ onReturn }} {`(executeTarget: HTMLElement | null, target: HTMLElement | null) => void` \cr Function to call when the keytip is the currentKeytip and a return sequence is pressed. 'executeTarget' is the DOM element marked with 'data-ktp-execute-target'. 'target' is the DOM element marked with 'data-ktp-target'.}
-#' \item {\bold{ overflowSetSequence }} {`string[]` \cr Full KeySequence of the overflow set button, will be set automatically if this keytip is inside an overflow}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IKeytipStyleProps, IKeytipStyles>` \cr Optional styles for the component.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme for the component}
-#' \item {\bold{ visible }} {`boolean` \cr T/F if the keytip is visible}
-#' }
+#' * \bold{ componentRef } `IRefObject<IKeytipLayer>` \cr Optional callback to access the KeytipLayer component. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ content } `string` \cr String to put inside the layer to be used for the aria-describedby for the component with the keytip Should be one of the starting sequences
+#' * \bold{ keytipExitSequences } `IKeytipTransitionKey[]` \cr List of key sequences that will exit keytips mode
+#' * \bold{ keytipReturnSequences } `IKeytipTransitionKey[]` \cr List of key sequences that execute the return functionality in keytips (going back to the previous level of keytips)
+#' * \bold{ keytipStartSequences } `IKeytipTransitionKey[]` \cr List of key sequences that will start keytips mode
+#' * \bold{ onEnterKeytipMode } `() => void` \cr Callback function triggered when keytip mode is entered
+#' * \bold{ onExitKeytipMode } `(ev?: React.KeyboardEvent<HTMLElement> | React.MouseEvent<HTMLElement>) => void` \cr Callback function triggered when keytip mode is exited. ev is the Mouse or Keyboard Event that triggered the exit, if any.
+#' * \bold{ styles } `IStyleFunctionOrObject<IKeytipLayerStyleProps, IKeytipLayerStyles>` \cr (Optional) Call to provide customized styling.
+#' * \bold{ calloutProps } `ICalloutProps` \cr ICalloutProps to pass to the callout element
+#' * \bold{ content } `string` \cr Content to put inside the keytip
+#' * \bold{ disabled } `boolean` \cr T/F if the corresponding control for this keytip is disabled
+#' * \bold{ hasDynamicChildren } `boolean` \cr Whether or not this keytip will have children keytips that are dynamically created (DOM is generated on keytip activation). Common cases are a Pivot or Modal.
+#' * \bold{ hasMenu } `boolean` \cr Whether or not this keytip belongs to a component that has a menu Keytip mode will stay on when a menu is opened, even if the items in that menu have no keytips
+#' * \bold{ keySequences } `string[]` \cr Array of KeySequences which is the full key sequence to trigger this keytip Should not include initial 'start' key sequence
+#' * \bold{ offset } `Point` \cr Offset x and y for the keytip, added from the top-left corner By default the keytip will be anchored to the bottom-center of the element
+#' * \bold{ onExecute } `(executeTarget: HTMLElement | null, target: HTMLElement | null) => void` \cr Function to call when this keytip is activated. 'executeTarget' is the DOM element marked with 'data-ktp-execute-target'. 'target' is the DOM element marked with 'data-ktp-target'.
+#' * \bold{ onReturn } `(executeTarget: HTMLElement | null, target: HTMLElement | null) => void` \cr Function to call when the keytip is the currentKeytip and a return sequence is pressed. 'executeTarget' is the DOM element marked with 'data-ktp-execute-target'. 'target' is the DOM element marked with 'data-ktp-target'.
+#' * \bold{ overflowSetSequence } `string[]` \cr Full KeySequence of the overflow set button, will be set automatically if this keytip is inside an overflow
+#' * \bold{ styles } `IStyleFunctionOrObject<IKeytipStyleProps, IKeytipStyles>` \cr Optional styles for the component.
+#' * \bold{ theme } `ITheme` \cr Theme for the component
+#' * \bold{ visible } `boolean` \cr T/F if the keytip is visible
 #'
 #' @md
 #' @name Keytips
@@ -1838,14 +1786,12 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ as }} {`IComponentAs<React.AllHTMLAttributes<HTMLElement>>` \cr Render the root element as another type.}
-#' \item {\bold{ componentRef }} {`IRefObject<ILabel>` \cr Optional callback to access the ILabel interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ disabled }} {`boolean` \cr Renders the label as disabled.}
-#' \item {\bold{ required }} {`boolean` \cr Whether the associated form field is required or not}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<ILabelStyleProps, ILabelStyles>` \cr Styles for the label.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by HOC.}
-#' }
+#' * \bold{ as } `IComponentAs<React.AllHTMLAttributes<HTMLElement>>` \cr Render the root element as another type.
+#' * \bold{ componentRef } `IRefObject<ILabel>` \cr Optional callback to access the ILabel interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ disabled } `boolean` \cr Renders the label as disabled.
+#' * \bold{ required } `boolean` \cr Whether the associated form field is required or not
+#' * \bold{ styles } `IStyleFunctionOrObject<ILabelStyleProps, ILabelStyles>` \cr Styles for the label.
+#' * \bold{ theme } `ITheme` \cr Theme provided by HOC.
 #'
 #' @md
 #' @name Label
@@ -1868,18 +1814,16 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ className }} {`string` \cr Additional css class to apply to the Layer}
-#' \item {\bold{ componentRef }} {`IRefObject<ILayer>` \cr Optional callback to access the ILayer interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ eventBubblingEnabled }} {`boolean` \cr When enabled, Layer allows events to bubble up from Layer content. Traditionally Layer has not had this behavior. This prop preserves backwards compatibility by default while allowing users to opt in to the new event bubbling functionality.}
-#' \item {\bold{ hostId }} {`string` \cr The optional id property provided on a LayerHost that this Layer should render within. The LayerHost does not need to be immediately available but once has been rendered, and if missing, we'll avoid trying to render the Layer content until the host is available. If an id is not provided, we will render the Layer content in a fixed position element rendered at the end of the document.}
-#' \item {\bold{ insertFirst }} {`boolean` \cr Whether the layer should be added as the first child of the host. If true, the layer will be inserted as the first child of the host By default, the layer will be appended at the end to the host}
-#' \item {\bold{ onLayerDidMount }} {`() => void` \cr Callback for when the layer is mounted.}
-#' \item {\bold{ onLayerMounted }} {`() => void` \cr Callback for when the layer is mounted.}
-#' \item {\bold{ onLayerWillUnmount }} {`() => void` \cr Callback for when the layer is unmounted.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<ILayerStyleProps, ILayerStyles>` \cr Call to provide customized styling that will layer on top of the variant rules}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by HOC.}
-#' }
+#' * \bold{ className } `string` \cr Additional css class to apply to the Layer
+#' * \bold{ componentRef } `IRefObject<ILayer>` \cr Optional callback to access the ILayer interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ eventBubblingEnabled } `boolean` \cr When enabled, Layer allows events to bubble up from Layer content. Traditionally Layer has not had this behavior. This prop preserves backwards compatibility by default while allowing users to opt in to the new event bubbling functionality.
+#' * \bold{ hostId } `string` \cr The optional id property provided on a LayerHost that this Layer should render within. The LayerHost does not need to be immediately available but once has been rendered, and if missing, we'll avoid trying to render the Layer content until the host is available. If an id is not provided, we will render the Layer content in a fixed position element rendered at the end of the document.
+#' * \bold{ insertFirst } `boolean` \cr Whether the layer should be added as the first child of the host. If true, the layer will be inserted as the first child of the host By default, the layer will be appended at the end to the host
+#' * \bold{ onLayerDidMount } `() => void` \cr Callback for when the layer is mounted.
+#' * \bold{ onLayerMounted } `() => void` \cr Callback for when the layer is mounted.
+#' * \bold{ onLayerWillUnmount } `() => void` \cr Callback for when the layer is unmounted.
+#' * \bold{ styles } `IStyleFunctionOrObject<ILayerStyleProps, ILayerStyles>` \cr Call to provide customized styling that will layer on top of the variant rules
+#' * \bold{ theme } `ITheme` \cr Theme provided by HOC.
 #'
 #' @md
 #' @name Layer
@@ -1910,14 +1854,12 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ as }} {`string | React.ComponentClass | React.FunctionComponent` \cr A component that should be used as the root element of the link returned from the Link component.}
-#' \item {\bold{ componentRef }} {`IRefObject<ILink>` \cr Optional callback to access the ILink interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ disabled }} {`boolean` \cr Whether the link is disabled}
-#' \item {\bold{ keytipProps }} {`IKeytipProps` \cr Optional keytip for this Link}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<ILinkStyleProps, ILinkStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme (provided through customization.)}
-#' }
+#' * \bold{ as } `string | React.ComponentClass | React.FunctionComponent` \cr A component that should be used as the root element of the link returned from the Link component.
+#' * \bold{ componentRef } `IRefObject<ILink>` \cr Optional callback to access the ILink interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ disabled } `boolean` \cr Whether the link is disabled
+#' * \bold{ keytipProps } `IKeytipProps` \cr Optional keytip for this Link
+#' * \bold{ styles } `IStyleFunctionOrObject<ILinkStyleProps, ILinkStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
+#' * \bold{ theme } `ITheme` \cr Theme (provided through customization.)
 #'
 #' @md
 #' @name Link
@@ -1986,42 +1928,40 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ divProps }} {`React.HTMLAttributes<HTMLDivElement>` \cr Props to apply to the list root element.}
-#' \item {\bold{ pages }} {`IPage<T>[]` \cr The active pages to be rendered into the list. These will have been rendered using `onRenderPage`.}
-#' \item {\bold{ rootRef }} {`React.Ref<HTMLDivElement>` \cr The ref to be applied to the list root. The `List` uses this element to track scroll position and sizing.}
-#' \item {\bold{ surfaceElement }} {`JSX.Element | null` \cr The content to be rendered as the list surface element. This will have been rendered using `onRenderSurface`.}
-#' \item {\bold{ divProps }} {`React.HTMLAttributes<HTMLDivElement>` \cr Props to apply to the list surface element.}
-#' \item {\bold{ pageElements }} {`JSX.Element[]` \cr The content to be rendered representing all active pages.}
-#' \item {\bold{ pages }} {`IPage<T>[]` \cr The active pages to be rendered into the list. These will have been rendered using `onRenderPage`.}
-#' \item {\bold{ surfaceRef }} {`React.Ref<HTMLDivElement>` \cr A ref to be applied to the surface element. The `List` uses this element to track content size and focus.}
-#' \item {\bold{ className }} {`string` \cr Optional classname to append to root list.}
-#' \item {\bold{ componentRef }} {`IRefObject<IList>` \cr Optional callback to access the IList interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ getItemCountForPage }} {`(itemIndex?: number, visibleRect?: IRectangle) => number` \cr Method called by the list to get how many items to render per page from specified index. In general, use `getPageSpecification` instead.}
-#' \item {\bold{ getKey }} {`(item: T, index?: number) => string` \cr Optional callback to get the item key, to be used on render.}
-#' \item {\bold{ getPageHeight }} {`(itemIndex?: number, visibleRect?: IRectangle, itemCount?: number) => number` \cr Method called by the list to get the pixel height for a given page. By default, we measure the first page's height and default all other pages to that height when calculating the surface space. It is ideal to be able to adequately predict page heights in order to keep the surface space from jumping in pixels, which has been seen to cause browser performance issues. In general, use `getPageSpecification` instead.}
-#' \item {\bold{ getPageSpecification }} {`(itemIndex?: number, visibleRect?: IRectangle) => IPageSpecification` \cr Called by the list to get the specification for a page. Use this method to provide an allocation of items per page, as well as an estimated rendered height for the page. The list will use this to optimize virtualization.}
-#' \item {\bold{ getPageStyle }} {`(page: IPage<T>) => any` \cr Method called by the list to derive the page style object. For spacer pages, the list will derive the height and passed in heights will be ignored.}
-#' \item {\bold{ ignoreScrollingState }} {`boolean` \cr Whether to disable scroll state updates. This causes the isScrolling arg in onRenderCell to always be undefined. This is a performance optimization to let List skip a render cycle by not updating its scrolling state.}
-#' \item {\bold{ items }} {`T[]` \cr Items to render.}
-#' \item {\bold{ onPageAdded }} {`(page: IPage<T>) => void` \cr Optional callback for monitoring when a page is added.}
-#' \item {\bold{ onPageRemoved }} {`(page: IPage<T>) => void` \cr Optional callback for monitoring when a page is removed.}
-#' \item {\bold{ onPagesUpdated }} {`(pages: IPage<T>[]) => void` \cr Optional callback invoked when List rendering completed. This can be on initial mount or on re-render due to scrolling. This method will be called as a result of changes in List pages (added or removed), and after ALL the changes complete. To track individual page Add / Remove use onPageAdded / onPageRemoved instead.}
-#' \item {\bold{ onRenderCell }} {`(item?: T, index?: number, isScrolling?: boolean) => React.ReactNode` \cr Method to call when trying to render an item.}
-#' \item {\bold{ onRenderPage }} {`IRenderFunction<IPageProps<T>>` \cr Called when the List will render a page. Override this to control how cells are rendered within a page.}
-#' \item {\bold{ onRenderRoot }} {`IRenderFunction<IListOnRenderRootProps<T>>` \cr Render override for the element at the root of the `List`. Use this to apply some final attributes or structure to the content each time the list is updated with new active pages or items.}
-#' \item {\bold{ onRenderSurface }} {`IRenderFunction<IListOnRenderSurfaceProps<T>>` \cr Render override for the element representing the surface of the `List`. Use this to alter the structure of the rendered content if necessary on each update.}
-#' \item {\bold{ onShouldVirtualize }} {`(props: IListProps<T>) => boolean` \cr Optional callback to determine whether the list should be rendered in full, or virtualized. Virtualization will add and remove pages of items as the user scrolls them into the visible range. This benefits larger list scenarios by reducing the DOM on the screen, but can negatively affect performance for smaller lists. The default implementation will virtualize when this callback is not provided.}
-#' \item {\bold{ renderCount }} {`number` \cr Number of items to render. Defaults to items.length.}
-#' \item {\bold{ renderedWindowsAhead }} {`number` \cr In addition to the visible window, how many windowHeights should we render ahead.}
-#' \item {\bold{ renderedWindowsBehind }} {`number` \cr In addition to the visible window, how many windowHeights should we render behind.}
-#' \item {\bold{ role }} {`string` \cr The role to assign to the list root element. Use this to override the default assignment of 'list' to the root and 'listitem' to the cells.}
-#' \item {\bold{ startIndex }} {`number` \cr Index in items array to start rendering from. Defaults to 0.}
-#' \item {\bold{ usePageCache }} {`boolean` \cr Boolean value to enable render page caching. This is an experimental performance optimization that is off by default.}
-#' \item {\bold{ version }} {`{}` \cr An object which can be passed in as a fresh instance to 'force update' the list.}
-#' \item {\bold{ page }} {`IPage<T>` \cr The allocation data for the page.}
-#' \item {\bold{ role }} {`string` \cr The role being assigned to the rendered page element by the list.}
-#' }
+#' * \bold{ divProps } `React.HTMLAttributes<HTMLDivElement>` \cr Props to apply to the list root element.
+#' * \bold{ pages } `IPage<T>[]` \cr The active pages to be rendered into the list. These will have been rendered using `onRenderPage`.
+#' * \bold{ rootRef } `React.Ref<HTMLDivElement>` \cr The ref to be applied to the list root. The `List` uses this element to track scroll position and sizing.
+#' * \bold{ surfaceElement } `JSX.Element | null` \cr The content to be rendered as the list surface element. This will have been rendered using `onRenderSurface`.
+#' * \bold{ divProps } `React.HTMLAttributes<HTMLDivElement>` \cr Props to apply to the list surface element.
+#' * \bold{ pageElements } `JSX.Element[]` \cr The content to be rendered representing all active pages.
+#' * \bold{ pages } `IPage<T>[]` \cr The active pages to be rendered into the list. These will have been rendered using `onRenderPage`.
+#' * \bold{ surfaceRef } `React.Ref<HTMLDivElement>` \cr A ref to be applied to the surface element. The `List` uses this element to track content size and focus.
+#' * \bold{ className } `string` \cr Optional classname to append to root list.
+#' * \bold{ componentRef } `IRefObject<IList>` \cr Optional callback to access the IList interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ getItemCountForPage } `(itemIndex?: number, visibleRect?: IRectangle) => number` \cr Method called by the list to get how many items to render per page from specified index. In general, use `getPageSpecification` instead.
+#' * \bold{ getKey } `(item: T, index?: number) => string` \cr Optional callback to get the item key, to be used on render.
+#' * \bold{ getPageHeight } `(itemIndex?: number, visibleRect?: IRectangle, itemCount?: number) => number` \cr Method called by the list to get the pixel height for a given page. By default, we measure the first page's height and default all other pages to that height when calculating the surface space. It is ideal to be able to adequately predict page heights in order to keep the surface space from jumping in pixels, which has been seen to cause browser performance issues. In general, use `getPageSpecification` instead.
+#' * \bold{ getPageSpecification } `(itemIndex?: number, visibleRect?: IRectangle) => IPageSpecification` \cr Called by the list to get the specification for a page. Use this method to provide an allocation of items per page, as well as an estimated rendered height for the page. The list will use this to optimize virtualization.
+#' * \bold{ getPageStyle } `(page: IPage<T>) => any` \cr Method called by the list to derive the page style object. For spacer pages, the list will derive the height and passed in heights will be ignored.
+#' * \bold{ ignoreScrollingState } `boolean` \cr Whether to disable scroll state updates. This causes the isScrolling arg in onRenderCell to always be undefined. This is a performance optimization to let List skip a render cycle by not updating its scrolling state.
+#' * \bold{ items } `T[]` \cr Items to render.
+#' * \bold{ onPageAdded } `(page: IPage<T>) => void` \cr Optional callback for monitoring when a page is added.
+#' * \bold{ onPageRemoved } `(page: IPage<T>) => void` \cr Optional callback for monitoring when a page is removed.
+#' * \bold{ onPagesUpdated } `(pages: IPage<T>[]) => void` \cr Optional callback invoked when List rendering completed. This can be on initial mount or on re-render due to scrolling. This method will be called as a result of changes in List pages (added or removed), and after ALL the changes complete. To track individual page Add / Remove use onPageAdded / onPageRemoved instead.
+#' * \bold{ onRenderCell } `(item?: T, index?: number, isScrolling?: boolean) => React.ReactNode` \cr Method to call when trying to render an item.
+#' * \bold{ onRenderPage } `IRenderFunction<IPageProps<T>>` \cr Called when the List will render a page. Override this to control how cells are rendered within a page.
+#' * \bold{ onRenderRoot } `IRenderFunction<IListOnRenderRootProps<T>>` \cr Render override for the element at the root of the `List`. Use this to apply some final attributes or structure to the content each time the list is updated with new active pages or items.
+#' * \bold{ onRenderSurface } `IRenderFunction<IListOnRenderSurfaceProps<T>>` \cr Render override for the element representing the surface of the `List`. Use this to alter the structure of the rendered content if necessary on each update.
+#' * \bold{ onShouldVirtualize } `(props: IListProps<T>) => boolean` \cr Optional callback to determine whether the list should be rendered in full, or virtualized. Virtualization will add and remove pages of items as the user scrolls them into the visible range. This benefits larger list scenarios by reducing the DOM on the screen, but can negatively affect performance for smaller lists. The default implementation will virtualize when this callback is not provided.
+#' * \bold{ renderCount } `number` \cr Number of items to render. Defaults to items.length.
+#' * \bold{ renderedWindowsAhead } `number` \cr In addition to the visible window, how many windowHeights should we render ahead.
+#' * \bold{ renderedWindowsBehind } `number` \cr In addition to the visible window, how many windowHeights should we render behind.
+#' * \bold{ role } `string` \cr The role to assign to the list root element. Use this to override the default assignment of 'list' to the root and 'listitem' to the cells.
+#' * \bold{ startIndex } `number` \cr Index in items array to start rendering from. Defaults to 0.
+#' * \bold{ usePageCache } `boolean` \cr Boolean value to enable render page caching. This is an experimental performance optimization that is off by default.
+#' * \bold{ version } `{}` \cr An object which can be passed in as a fresh instance to 'force update' the list.
+#' * \bold{ page } `IPage<T>` \cr The allocation data for the page.
+#' * \bold{ role } `string` \cr The role being assigned to the rendered page element by the list.
 #'
 #' @md
 #' @name List
@@ -2048,17 +1988,15 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ className }} {`string` \cr Additional CSS class(es) to apply to the MarqueeSelection.}
-#' \item {\bold{ componentRef }} {`IRefObject<IMarqueeSelection>` \cr Optional callback to access the IMarqueeSelection interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ isDraggingConstrainedToRoot }} {`boolean` \cr Optional flag to restrict the drag rect to the root element, instead of allowing the drag rect to start outside of the root element boundaries.}
-#' \item {\bold{ isEnabled }} {`boolean` \cr Optional flag to control the enabled state of marquee selection. This allows you to render it and have events all ready to go, but conditionally disable it. That way transitioning between enabled/disabled generate no difference in the DOM.}
-#' \item {\bold{ onShouldStartSelection }} {`(ev: MouseEvent) => boolean` \cr Optional callback that is called, when the mouse down event occurs, in order to determine if we should start a marquee selection. If true is returned, we will cancel the mousedown event to prevent upstream mousedown handlers from executing.}
-#' \item {\bold{ rootProps }} {`React.HTMLAttributes<HTMLDivElement>` \cr Optional props to mix into the root DIV element.}
-#' \item {\bold{ selection }} {`ISelection` \cr The selection object to interact with when updating selection changes.}
-#' \item {\bold{ styles }} {`IStyleFunction<IMarqueeSelectionStyleProps, IMarqueeSelectionStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme (provided through customization.)}
-#' }
+#' * \bold{ className } `string` \cr Additional CSS class(es) to apply to the MarqueeSelection.
+#' * \bold{ componentRef } `IRefObject<IMarqueeSelection>` \cr Optional callback to access the IMarqueeSelection interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ isDraggingConstrainedToRoot } `boolean` \cr Optional flag to restrict the drag rect to the root element, instead of allowing the drag rect to start outside of the root element boundaries.
+#' * \bold{ isEnabled } `boolean` \cr Optional flag to control the enabled state of marquee selection. This allows you to render it and have events all ready to go, but conditionally disable it. That way transitioning between enabled/disabled generate no difference in the DOM.
+#' * \bold{ onShouldStartSelection } `(ev: MouseEvent) => boolean` \cr Optional callback that is called, when the mouse down event occurs, in order to determine if we should start a marquee selection. If true is returned, we will cancel the mousedown event to prevent upstream mousedown handlers from executing.
+#' * \bold{ rootProps } `React.HTMLAttributes<HTMLDivElement>` \cr Optional props to mix into the root DIV element.
+#' * \bold{ selection } `ISelection` \cr The selection object to interact with when updating selection changes.
+#' * \bold{ styles } `IStyleFunction<IMarqueeSelectionStyleProps, IMarqueeSelectionStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
+#' * \bold{ theme } `ITheme` \cr Theme (provided through customization.)
 #'
 #' @md
 #' @name MarqueeSelection
@@ -2107,22 +2045,20 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ actions }} {`JSX.Element` \cr The actions you want to show on the other side.}
-#' \item {\bold{ ariaLabel }} {`string` \cr A description of the message bar for the benefit of screen readers.}
-#' \item {\bold{ className }} {`string` \cr Additional CSS class(es) to apply to the MessageBar.}
-#' \item {\bold{ componentRef }} {`IRefObject<IMessageBar>` \cr Optional callback to access the IMessageBar interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ dismissButtonAriaLabel }} {`string` \cr Aria label on dismiss button if onDismiss is defined.}
-#' \item {\bold{ dismissIconProps }} {`IIconProps` \cr Custom icon prop to replace the dismiss icon. If unset, default will be the Fabric Clear icon.}
-#' \item {\bold{ isMultiline }} {`boolean` \cr Determines if the message bar is multi lined. If false, and the text overflows over buttons or to another line, it is clipped.}
-#' \item {\bold{ messageBarIconProps }} {`IIconProps` \cr Custom icon prop to replace the message bar icon. If unset, default will be the icon set by messageBarType.}
-#' \item {\bold{ messageBarType }} {`MessageBarType` \cr The type of MessageBar to render.}
-#' \item {\bold{ onDismiss }} {`(ev?: React.MouseEvent<HTMLElement | BaseButton | Button>) => any` \cr Whether the message bar has a dismiss button and its callback. If null, we don't show a dismiss button.}
-#' \item {\bold{ overflowButtonAriaLabel }} {`string` \cr Aria label on overflow button if truncated is defined.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IMessageBarStyleProps, IMessageBarStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme (provided through customization.)}
-#' \item {\bold{ truncated }} {`boolean` \cr Determines if the message bar text is truncated. If true, a button will render to toggle between a single line view and multiline view. This prop is for single line message bars with no buttons only in a limited space scenario.}
-#' }
+#' * \bold{ actions } `JSX.Element` \cr The actions you want to show on the other side.
+#' * \bold{ ariaLabel } `string` \cr A description of the message bar for the benefit of screen readers.
+#' * \bold{ className } `string` \cr Additional CSS class(es) to apply to the MessageBar.
+#' * \bold{ componentRef } `IRefObject<IMessageBar>` \cr Optional callback to access the IMessageBar interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ dismissButtonAriaLabel } `string` \cr Aria label on dismiss button if onDismiss is defined.
+#' * \bold{ dismissIconProps } `IIconProps` \cr Custom icon prop to replace the dismiss icon. If unset, default will be the Fabric Clear icon.
+#' * \bold{ isMultiline } `boolean` \cr Determines if the message bar is multi lined. If false, and the text overflows over buttons or to another line, it is clipped.
+#' * \bold{ messageBarIconProps } `IIconProps` \cr Custom icon prop to replace the message bar icon. If unset, default will be the icon set by messageBarType.
+#' * \bold{ messageBarType } `MessageBarType` \cr The type of MessageBar to render.
+#' * \bold{ onDismiss } `(ev?: React.MouseEvent<HTMLElement | BaseButton | Button>) => any` \cr Whether the message bar has a dismiss button and its callback. If null, we don't show a dismiss button.
+#' * \bold{ overflowButtonAriaLabel } `string` \cr Aria label on overflow button if truncated is defined.
+#' * \bold{ styles } `IStyleFunctionOrObject<IMessageBarStyleProps, IMessageBarStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
+#' * \bold{ theme } `ITheme` \cr Theme (provided through customization.)
+#' * \bold{ truncated } `boolean` \cr Determines if the message bar text is truncated. If true, a button will render to toggle between a single line view and multiline view. This prop is for single line message bars with no buttons only in a limited space scenario.
 #'
 #' @md
 #' @name MessageBar
@@ -2154,29 +2090,27 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ allowTouchBodyScroll }} {`boolean` \cr Allow body scroll on content and overlay on touch devices. Changing after mounting has no effect.}
-#' \item {\bold{ className }} {`string` \cr Optional class name to be added to the root class}
-#' \item {\bold{ componentRef }} {`IRefObject<IModal>` \cr Optional callback to access the IDialog interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ containerClassName }} {`string` \cr Optional override for container class}
-#' \item {\bold{ dragOptions }} {`IDragOptions` \cr The options to make the modal draggable}
-#' \item {\bold{ enableAriaHiddenSiblings }} {`boolean` \cr Puts aria-hidden=true on all non-ancestors of the current modal, for screen readers. This is an experimental feature that will be graduated to default behavior after testing. This flag will be removed with the next major release.}
-#' \item {\bold{ isBlocking }} {`boolean` \cr Whether the dialog can be light dismissed by clicking outside the dialog (on the overlay).}
-#' \item {\bold{ isDarkOverlay }} {`boolean` \cr Whether the overlay is dark themed.}
-#' \item {\bold{ isModeless }} {`boolean` \cr Whether the dialog should be modeless (e.g. not dismiss when focusing/clicking outside of the dialog). if true: isBlocking is ignored, there will be no overlay (isDarkOverlay is ignored), isClickableOutsideFocusTrap is true, and forceFocusInsideTrap is false}
-#' \item {\bold{ isOpen }} {`boolean` \cr Whether the dialog is displayed.}
-#' \item {\bold{ layerProps }} {`ILayerProps` \cr Defines an optional set of props to be passed through to Layer}
-#' \item {\bold{ onDismiss }} {`(ev?: React.MouseEvent<HTMLButtonElement>) => any` \cr A callback function for when the Modal is dismissed light dismiss, before the animation completes.}
-#' \item {\bold{ onDismissed }} {`() => any` \cr A callback function which is called after the Modal is dismissed and the animation is complete.}
-#' \item {\bold{ onLayerDidMount }} {`() => void` \cr A callback function for when the Modal content is mounted on the overlay layer}
-#' \item {\bold{ overlay }} {`IOverlayProps` \cr Defines an optional set of props to be passed through to Overlay}
-#' \item {\bold{ scrollableContentClassName }} {`string` \cr Optional override for scrollable content class}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IModalStyleProps, IModalStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ subtitleAriaId }} {`string` \cr ARIA id for the subtitle of the Modal, if any}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by High-Order Component.}
-#' \item {\bold{ titleAriaId }} {`string` \cr ARIA id for the title of the Modal, if any}
-#' \item {\bold{ topOffsetFixed }} {`boolean` \cr Whether the modal should have top offset fixed once opened and expand from the bottom only when the content changes dynamically.}
-#' }
+#' * \bold{ allowTouchBodyScroll } `boolean` \cr Allow body scroll on content and overlay on touch devices. Changing after mounting has no effect.
+#' * \bold{ className } `string` \cr Optional class name to be added to the root class
+#' * \bold{ componentRef } `IRefObject<IModal>` \cr Optional callback to access the IDialog interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ containerClassName } `string` \cr Optional override for container class
+#' * \bold{ dragOptions } `IDragOptions` \cr The options to make the modal draggable
+#' * \bold{ enableAriaHiddenSiblings } `boolean` \cr Puts aria-hidden=true on all non-ancestors of the current modal, for screen readers. This is an experimental feature that will be graduated to default behavior after testing. This flag will be removed with the next major release.
+#' * \bold{ isBlocking } `boolean` \cr Whether the dialog can be light dismissed by clicking outside the dialog (on the overlay).
+#' * \bold{ isDarkOverlay } `boolean` \cr Whether the overlay is dark themed.
+#' * \bold{ isModeless } `boolean` \cr Whether the dialog should be modeless (e.g. not dismiss when focusing/clicking outside of the dialog). if true: isBlocking is ignored, there will be no overlay (isDarkOverlay is ignored), isClickableOutsideFocusTrap is true, and forceFocusInsideTrap is false
+#' * \bold{ isOpen } `boolean` \cr Whether the dialog is displayed.
+#' * \bold{ layerProps } `ILayerProps` \cr Defines an optional set of props to be passed through to Layer
+#' * \bold{ onDismiss } `(ev?: React.MouseEvent<HTMLButtonElement>) => any` \cr A callback function for when the Modal is dismissed light dismiss, before the animation completes.
+#' * \bold{ onDismissed } `() => any` \cr A callback function which is called after the Modal is dismissed and the animation is complete.
+#' * \bold{ onLayerDidMount } `() => void` \cr A callback function for when the Modal content is mounted on the overlay layer
+#' * \bold{ overlay } `IOverlayProps` \cr Defines an optional set of props to be passed through to Overlay
+#' * \bold{ scrollableContentClassName } `string` \cr Optional override for scrollable content class
+#' * \bold{ styles } `IStyleFunctionOrObject<IModalStyleProps, IModalStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
+#' * \bold{ subtitleAriaId } `string` \cr ARIA id for the subtitle of the Modal, if any
+#' * \bold{ theme } `ITheme` \cr Theme provided by High-Order Component.
+#' * \bold{ titleAriaId } `string` \cr ARIA id for the title of the Modal, if any
+#' * \bold{ topOffsetFixed } `boolean` \cr Whether the modal should have top offset fixed once opened and expand from the bottom only when the content changes dynamically.
 #'
 #' @md
 #' @name Modal
@@ -2195,25 +2129,23 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ link }} {`INavLink` \cr (Optional) Link to be rendered.}
-#' \item {\bold{ ariaLabel }} {`string` \cr (Optional) The nav container aria label.}
-#' \item {\bold{ className }} {`string` \cr Additional css class to apply to the Nav}
-#' \item {\bold{ componentRef }} {`IRefObject<INav>` \cr Optional callback to access the INav interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ expandButtonAriaLabel }} {`string` \cr (Optional) The nav container aria label. The link name is prepended to this label. If not provided, the aria label will default to the link name.}
-#' \item {\bold{ groups }} {`INavLinkGroup[] | null` \cr A collection of link groups to display in the navigation bar}
-#' \item {\bold{ initialSelectedKey }} {`string` \cr (Optional) The key of the nav item initially selected.}
-#' \item {\bold{ isOnTop }} {`boolean` \cr Indicates whether the navigation component renders on top of other content in the UI}
-#' \item {\bold{ linkAs }} {`IComponentAs<INavButtonProps>` \cr Render a custom link in place of the normal one. This replaces the entire button rather than simply button content}
-#' \item {\bold{ onLinkClick }} {`(ev?: React.MouseEvent<HTMLElement>, item?: INavLink) => void` \cr Function callback invoked when a link in the navigation is clicked}
-#' \item {\bold{ onLinkExpandClick }} {`(ev?: React.MouseEvent<HTMLElement>, item?: INavLink) => void` \cr Function callback invoked when the chevron on a link is clicked}
-#' \item {\bold{ onRenderGroupHeader }} {`IRenderFunction<IRenderGroupHeaderProps>` \cr Used to customize how content inside the group header is rendered}
-#' \item {\bold{ onRenderLink }} {`IRenderFunction<INavLink>` \cr Used to customize how content inside the link tag is rendered}
-#' \item {\bold{ selectedAriaLabel }} {`string` \cr (Deprecated) Use ariaCurrent on links instead}
-#' \item {\bold{ selectedKey }} {`string` \cr (Optional) The key of the nav item selected by caller.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<INavStyleProps, INavStyles>` \cr Call to provide customized styling that will layer on top of the variant rules}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by HOC.}
-#' }
+#' * \bold{ link } `INavLink` \cr (Optional) Link to be rendered.
+#' * \bold{ ariaLabel } `string` \cr (Optional) The nav container aria label.
+#' * \bold{ className } `string` \cr Additional css class to apply to the Nav
+#' * \bold{ componentRef } `IRefObject<INav>` \cr Optional callback to access the INav interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ expandButtonAriaLabel } `string` \cr (Optional) The nav container aria label. The link name is prepended to this label. If not provided, the aria label will default to the link name.
+#' * \bold{ groups } `INavLinkGroup[] | null` \cr A collection of link groups to display in the navigation bar
+#' * \bold{ initialSelectedKey } `string` \cr (Optional) The key of the nav item initially selected.
+#' * \bold{ isOnTop } `boolean` \cr Indicates whether the navigation component renders on top of other content in the UI
+#' * \bold{ linkAs } `IComponentAs<INavButtonProps>` \cr Render a custom link in place of the normal one. This replaces the entire button rather than simply button content
+#' * \bold{ onLinkClick } `(ev?: React.MouseEvent<HTMLElement>, item?: INavLink) => void` \cr Function callback invoked when a link in the navigation is clicked
+#' * \bold{ onLinkExpandClick } `(ev?: React.MouseEvent<HTMLElement>, item?: INavLink) => void` \cr Function callback invoked when the chevron on a link is clicked
+#' * \bold{ onRenderGroupHeader } `IRenderFunction<IRenderGroupHeaderProps>` \cr Used to customize how content inside the group header is rendered
+#' * \bold{ onRenderLink } `IRenderFunction<INavLink>` \cr Used to customize how content inside the link tag is rendered
+#' * \bold{ selectedAriaLabel } `string` \cr (Deprecated) Use ariaCurrent on links instead
+#' * \bold{ selectedKey } `string` \cr (Optional) The key of the nav item selected by caller.
+#' * \bold{ styles } `IStyleFunctionOrObject<INavStyleProps, INavStyles>` \cr Call to provide customized styling that will layer on top of the variant rules
+#' * \bold{ theme } `ITheme` \cr Theme provided by HOC.
 #'
 #' @md
 #' @name Nav
@@ -2236,24 +2168,22 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ key }} {`string` \cr Unique id to identify the item.}
-#' \item {\bold{ keytipProps }} {`IKeytipProps` \cr Optional keytip for the overflowSetItem.}
-#' \item {\bold{ className }} {`string` \cr Class name}
-#' \item {\bold{ componentRef }} {`IRefObject<IOverflowSet>` \cr Gets the component ref.}
-#' \item {\bold{ doNotContainWithinFocusZone }} {`boolean` \cr If true do not contain the OverflowSet inside of a FocusZone, otherwise the OverflowSet will contain a FocusZone. If this is set to true focusZoneProps will be ignored. Use one or the other.}
-#' \item {\bold{ focusZoneProps }} {`IFocusZoneProps` \cr Custom properties for OverflowSet's FocusZone. If doNotContainWithinFocusZone is set to true focusZoneProps will be ignored. Use one or the other.}
-#' \item {\bold{ items }} {`IOverflowSetItemProps[]` \cr An array of items to be rendered by your onRenderItem function in the primary content area}
-#' \item {\bold{ itemSubMenuProvider }} {`(item: IOverflowSetItemProps) => any[] | undefined` \cr Function that will take in an IOverflowSetItemProps and return the subMenu for that item. If not provided, will use 'item.subMenuProps.items' by default. This is only used if your overflow set has keytips.}
-#' \item {\bold{ keytipSequences }} {`string[]` \cr Optional full keytip sequence for the overflow button, if it will have a keytip.}
-#' \item {\bold{ onRenderItem }} {`(item: IOverflowSetItemProps) => any` \cr Method to call when trying to render an item.}
-#' \item {\bold{ onRenderOverflowButton }} {`IRenderFunction<any[]>` \cr Rendering method for overflow button and contextual menu. The argument to the function is the overflowItems passed in as props to this function.}
-#' \item {\bold{ overflowItems }} {`IOverflowSetItemProps[]` \cr An array of items to be passed to overflow contextual menu}
-#' \item {\bold{ overflowSide }} {`'start' | 'end'` \cr Controls wether or not the overflow button is placed at the start or end of the items. This gives a reveresed visual behavior but maintains correct keyboard navigation.}
-#' \item {\bold{ role }} {`string` \cr The role for the OverflowSet.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IOverflowSetProps, IOverflowSetStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ vertical }} {`boolean` \cr Change item layout direction to vertical/stacked. If role is set to `menubar`, `vertical={true}` will also add proper `aria-orientation`.}
-#' }
+#' * \bold{ key } `string` \cr Unique id to identify the item.
+#' * \bold{ keytipProps } `IKeytipProps` \cr Optional keytip for the overflowSetItem.
+#' * \bold{ className } `string` \cr Class name
+#' * \bold{ componentRef } `IRefObject<IOverflowSet>` \cr Gets the component ref.
+#' * \bold{ doNotContainWithinFocusZone } `boolean` \cr If true do not contain the OverflowSet inside of a FocusZone, otherwise the OverflowSet will contain a FocusZone. If this is set to true focusZoneProps will be ignored. Use one or the other.
+#' * \bold{ focusZoneProps } `IFocusZoneProps` \cr Custom properties for OverflowSet's FocusZone. If doNotContainWithinFocusZone is set to true focusZoneProps will be ignored. Use one or the other.
+#' * \bold{ items } `IOverflowSetItemProps[]` \cr An array of items to be rendered by your onRenderItem function in the primary content area
+#' * \bold{ itemSubMenuProvider } `(item: IOverflowSetItemProps) => any[] | undefined` \cr Function that will take in an IOverflowSetItemProps and return the subMenu for that item. If not provided, will use 'item.subMenuProps.items' by default. This is only used if your overflow set has keytips.
+#' * \bold{ keytipSequences } `string[]` \cr Optional full keytip sequence for the overflow button, if it will have a keytip.
+#' * \bold{ onRenderItem } `(item: IOverflowSetItemProps) => any` \cr Method to call when trying to render an item.
+#' * \bold{ onRenderOverflowButton } `IRenderFunction<any[]>` \cr Rendering method for overflow button and contextual menu. The argument to the function is the overflowItems passed in as props to this function.
+#' * \bold{ overflowItems } `IOverflowSetItemProps[]` \cr An array of items to be passed to overflow contextual menu
+#' * \bold{ overflowSide } `'start' | 'end'` \cr Controls wether or not the overflow button is placed at the start or end of the items. This gives a reveresed visual behavior but maintains correct keyboard navigation.
+#' * \bold{ role } `string` \cr The role for the OverflowSet.
+#' * \bold{ styles } `IStyleFunctionOrObject<IOverflowSetProps, IOverflowSetStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
+#' * \bold{ vertical } `boolean` \cr Change item layout direction to vertical/stacked. If role is set to `menubar`, `vertical={true}` will also add proper `aria-orientation`.
 #'
 #' @md
 #' @name OverflowSet
@@ -2272,15 +2202,13 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ allowTouchBodyScroll }} {`boolean` \cr Allow body scroll on touch devices. Changing after mounting has no effect.}
-#' \item {\bold{ className }} {`string` \cr Additional css class to apply to the Overlay}
-#' \item {\bold{ componentRef }} {`IRefObject<IOverlay>` \cr Gets the component ref.}
-#' \item {\bold{ isDarkThemed }} {`boolean` \cr Whether to use the dark-themed overlay.}
-#' \item {\bold{ onClick }} {`() => void` \cr }
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IOverlayStyleProps, IOverlayStyles>` \cr Call to provide customized styling that will layer on top of the variant rules}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by HOC.}
-#' }
+#' * \bold{ allowTouchBodyScroll } `boolean` \cr Allow body scroll on touch devices. Changing after mounting has no effect.
+#' * \bold{ className } `string` \cr Additional css class to apply to the Overlay
+#' * \bold{ componentRef } `IRefObject<IOverlay>` \cr Gets the component ref.
+#' * \bold{ isDarkThemed } `boolean` \cr Whether to use the dark-themed overlay.
+#' * \bold{ onClick } `() => void` \cr
+#' * \bold{ styles } `IStyleFunctionOrObject<IOverlayStyleProps, IOverlayStyles>` \cr Call to provide customized styling that will layer on top of the variant rules
+#' * \bold{ theme } `ITheme` \cr Theme provided by HOC.
 #'
 #' @md
 #' @name Overlay
@@ -2336,45 +2264,43 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ allowTouchBodyScroll }} {`boolean` \cr Allow body scroll on content and overlay on touch devices. Changing after mounting has no effect.}
-#' \item {\bold{ className }} {`string` \cr Additional css class to apply to the Panel}
-#' \item {\bold{ closeButtonAriaLabel }} {`string` \cr Aria label on close button}
-#' \item {\bold{ componentId }} {`string` \cr Deprecated property. Serves no function.}
-#' \item {\bold{ componentRef }} {`IRefObject<IPanel>` \cr Optional callback to access the IPanel interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ customWidth }} {`string` \cr Custom panel width, used only when `type` is set to `PanelType.custom`.}
-#' \item {\bold{ elementToFocusOnDismiss }} {`HTMLElement` \cr Sets the HTMLElement to focus on when exiting the FocusTrapZone.}
-#' \item {\bold{ firstFocusableSelector }} {`string` \cr Indicates the selector for first focusable item. Deprecated, use `focusTrapZoneProps`.}
-#' \item {\bold{ focusTrapZoneProps }} {`IFocusTrapZoneProps` \cr Optional props to pass to the FocusTrapZone component to manage focus in the panel.}
-#' \item {\bold{ forceFocusInsideTrap }} {`boolean` \cr Indicates whether Panel should force focus inside the focus trap zone. If not explicitly specified, behavior aligns with FocusTrapZone's default behavior. Deprecated, use `focusTrapZoneProps`.}
-#' \item {\bold{ hasCloseButton }} {`boolean` \cr Has the close button visible.}
-#' \item {\bold{ headerClassName }} {`string` \cr Optional parameter to provider the class name for header text}
-#' \item {\bold{ headerText }} {`string` \cr Header text for the Panel.}
-#' \item {\bold{ headerTextProps }} {`React.HTMLAttributes<HTMLDivElement>` \cr The props for header text container.}
-#' \item {\bold{ ignoreExternalFocusing }} {`boolean` \cr Indicates if this Panel will ignore keeping track of HTMLElement that activated the Zone. Deprecated, use `focusTrapZoneProps`.}
-#' \item {\bold{ isBlocking }} {`boolean` \cr Whether the panel uses a modal overlay or not}
-#' \item {\bold{ isFooterAtBottom }} {`boolean` \cr Determines if content should stretch to fill available space putting footer at the bottom of the page}
-#' \item {\bold{ isHiddenOnDismiss }} {`boolean` \cr Whether the panel is hidden on dismiss, instead of destroyed in the DOM. Protects the contents from being destroyed when the panel is dismissed.}
-#' \item {\bold{ isLightDismiss }} {`boolean` \cr Whether the panel can be light dismissed.}
-#' \item {\bold{ isOpen }} {`boolean` \cr Whether the panel is displayed. If true, will cause panel to stay open even if dismissed. If false, will cause panel to stay hidden. If undefined, will allow the panel to control its own visility through open/dismiss methods.}
-#' \item {\bold{ layerProps }} {`ILayerProps` \cr Optional props to pass to the Layer component hosting the panel.}
-#' \item {\bold{ onDismiss }} {`(ev?: React.SyntheticEvent<HTMLElement>) => void` \cr A callback function for when the panel is closed, before the animation completes. If the panel should NOT be dismissed based on some keyboard event, then simply call ev.preventDefault() on it}
-#' \item {\bold{ onDismissed }} {`() => void` \cr A callback function which is called **after** the Panel is dismissed and the animation is complete. (If you need to update the Panel's `isOpen` prop in response to a dismiss event, use `onDismiss` instead.)}
-#' \item {\bold{ onLightDismissClick }} {`() => void` \cr Optional custom function to handle clicks outside the panel in lightdismiss mode}
-#' \item {\bold{ onOpen }} {`() => void` \cr A callback function for when the Panel is opened, before the animation completes.}
-#' \item {\bold{ onOpened }} {`() => void` \cr A callback function for when the Panel is opened, after the animation completes.}
-#' \item {\bold{ onOuterClick }} {`() => void` \cr Optional custom function to handle clicks outside this component}
-#' \item {\bold{ onRenderBody }} {`IRenderFunction<IPanelProps>` \cr Optional custom renderer for body region. Replaces any children passed into the component.}
-#' \item {\bold{ onRenderFooter }} {`IRenderFunction<IPanelProps>` \cr Optional custom renderer for footer region. Replaces sticky footer.}
-#' \item {\bold{ onRenderFooterContent }} {`IRenderFunction<IPanelProps>` \cr Custom renderer for content in the sticky footer}
-#' \item {\bold{ onRenderHeader }} {`IPanelHeaderRenderer` \cr Optional custom renderer for header region. Replaces current title}
-#' \item {\bold{ onRenderNavigation }} {`IRenderFunction<IPanelProps>` \cr Optional custom renderer navigation region. Replaces the region that contains the close button.}
-#' \item {\bold{ onRenderNavigationContent }} {`IRenderFunction<IPanelProps>` \cr Optional custom renderer for content in the navigation region. Replaces current close button.}
-#' \item {\bold{ overlayProps }} {`IOverlayProps` \cr Optional props to pass to the Overlay component that the panel uses.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IPanelStyleProps, IPanelStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by High-Order Component.}
-#' \item {\bold{ type }} {`PanelType` \cr Type of the panel.}
-#' }
+#' * \bold{ allowTouchBodyScroll } `boolean` \cr Allow body scroll on content and overlay on touch devices. Changing after mounting has no effect.
+#' * \bold{ className } `string` \cr Additional css class to apply to the Panel
+#' * \bold{ closeButtonAriaLabel } `string` \cr Aria label on close button
+#' * \bold{ componentId } `string` \cr Deprecated property. Serves no function.
+#' * \bold{ componentRef } `IRefObject<IPanel>` \cr Optional callback to access the IPanel interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ customWidth } `string` \cr Custom panel width, used only when `type` is set to `PanelType.custom`.
+#' * \bold{ elementToFocusOnDismiss } `HTMLElement` \cr Sets the HTMLElement to focus on when exiting the FocusTrapZone.
+#' * \bold{ firstFocusableSelector } `string` \cr Indicates the selector for first focusable item. Deprecated, use `focusTrapZoneProps`.
+#' * \bold{ focusTrapZoneProps } `IFocusTrapZoneProps` \cr Optional props to pass to the FocusTrapZone component to manage focus in the panel.
+#' * \bold{ forceFocusInsideTrap } `boolean` \cr Indicates whether Panel should force focus inside the focus trap zone. If not explicitly specified, behavior aligns with FocusTrapZone's default behavior. Deprecated, use `focusTrapZoneProps`.
+#' * \bold{ hasCloseButton } `boolean` \cr Has the close button visible.
+#' * \bold{ headerClassName } `string` \cr Optional parameter to provider the class name for header text
+#' * \bold{ headerText } `string` \cr Header text for the Panel.
+#' * \bold{ headerTextProps } `React.HTMLAttributes<HTMLDivElement>` \cr The props for header text container.
+#' * \bold{ ignoreExternalFocusing } `boolean` \cr Indicates if this Panel will ignore keeping track of HTMLElement that activated the Zone. Deprecated, use `focusTrapZoneProps`.
+#' * \bold{ isBlocking } `boolean` \cr Whether the panel uses a modal overlay or not
+#' * \bold{ isFooterAtBottom } `boolean` \cr Determines if content should stretch to fill available space putting footer at the bottom of the page
+#' * \bold{ isHiddenOnDismiss } `boolean` \cr Whether the panel is hidden on dismiss, instead of destroyed in the DOM. Protects the contents from being destroyed when the panel is dismissed.
+#' * \bold{ isLightDismiss } `boolean` \cr Whether the panel can be light dismissed.
+#' * \bold{ isOpen } `boolean` \cr Whether the panel is displayed. If true, will cause panel to stay open even if dismissed. If false, will cause panel to stay hidden. If undefined, will allow the panel to control its own visility through open/dismiss methods.
+#' * \bold{ layerProps } `ILayerProps` \cr Optional props to pass to the Layer component hosting the panel.
+#' * \bold{ onDismiss } `(ev?: React.SyntheticEvent<HTMLElement>) => void` \cr A callback function for when the panel is closed, before the animation completes. If the panel should NOT be dismissed based on some keyboard event, then simply call ev.preventDefault() on it
+#' * \bold{ onDismissed } `() => void` \cr A callback function which is called **after** the Panel is dismissed and the animation is complete. (If you need to update the Panel's `isOpen` prop in response to a dismiss event, use `onDismiss` instead.)
+#' * \bold{ onLightDismissClick } `() => void` \cr Optional custom function to handle clicks outside the panel in lightdismiss mode
+#' * \bold{ onOpen } `() => void` \cr A callback function for when the Panel is opened, before the animation completes.
+#' * \bold{ onOpened } `() => void` \cr A callback function for when the Panel is opened, after the animation completes.
+#' * \bold{ onOuterClick } `() => void` \cr Optional custom function to handle clicks outside this component
+#' * \bold{ onRenderBody } `IRenderFunction<IPanelProps>` \cr Optional custom renderer for body region. Replaces any children passed into the component.
+#' * \bold{ onRenderFooter } `IRenderFunction<IPanelProps>` \cr Optional custom renderer for footer region. Replaces sticky footer.
+#' * \bold{ onRenderFooterContent } `IRenderFunction<IPanelProps>` \cr Custom renderer for content in the sticky footer
+#' * \bold{ onRenderHeader } `IPanelHeaderRenderer` \cr Optional custom renderer for header region. Replaces current title
+#' * \bold{ onRenderNavigation } `IRenderFunction<IPanelProps>` \cr Optional custom renderer navigation region. Replaces the region that contains the close button.
+#' * \bold{ onRenderNavigationContent } `IRenderFunction<IPanelProps>` \cr Optional custom renderer for content in the navigation region. Replaces current close button.
+#' * \bold{ overlayProps } `IOverlayProps` \cr Optional props to pass to the Overlay component that the panel uses.
+#' * \bold{ styles } `IStyleFunctionOrObject<IPanelStyleProps, IPanelStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
+#' * \bold{ theme } `ITheme` \cr Theme provided by High-Order Component.
+#' * \bold{ type } `PanelType` \cr Type of the panel.
 #'
 #' @md
 #' @name Panel
@@ -2398,16 +2324,14 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IPeoplePickerItemSelectedStyleProps, IPeoplePickerItemSelectedStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ ValidationState }} {`ValidationState` \cr }
-#' \item {\bold{ className }} {`string` \cr Additional CSS class(es) to apply to the PeoplePickerItem root element.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by High-Order Component.}
-#' \item {\bold{ compact }} {`boolean` \cr Flag that controls whether each suggested PeoplePicker item (Persona) is rendered with or without secondary text for compact look.}
-#' \item {\bold{ personaProps }} {`IPersonaProps` \cr Persona props for each suggested for picking PeoplePicker item.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IPeoplePickerItemSuggestionStyleProps, IPeoplePickerItemSuggestionStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ suggestionsProps }} {`IBasePickerSuggestionsProps` \cr General common props for all PeoplePicker items suggestions.}
-#' }
+#' * \bold{ styles } `IStyleFunctionOrObject<IPeoplePickerItemSelectedStyleProps, IPeoplePickerItemSelectedStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
+#' * \bold{ ValidationState } `ValidationState` \cr
+#' * \bold{ className } `string` \cr Additional CSS class(es) to apply to the PeoplePickerItem root element.
+#' * \bold{ theme } `ITheme` \cr Theme provided by High-Order Component.
+#' * \bold{ compact } `boolean` \cr Flag that controls whether each suggested PeoplePicker item (Persona) is rendered with or without secondary text for compact look.
+#' * \bold{ personaProps } `IPersonaProps` \cr Persona props for each suggested for picking PeoplePicker item.
+#' * \bold{ styles } `IStyleFunctionOrObject<IPeoplePickerItemSuggestionStyleProps, IPeoplePickerItemSuggestionStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
+#' * \bold{ suggestionsProps } `IBasePickerSuggestionsProps` \cr General common props for all PeoplePicker items suggestions.
 #'
 #' @md
 #' @name PeoplePicker
@@ -2441,48 +2365,46 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ className }} {`string` \cr Additional css class to apply to the PersonaCoin}
-#' \item {\bold{ componentRef }} {`IRefObject<{}>` \cr Gets the component ref.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IPersonaCoinStyleProps, IPersonaCoinStyles>` \cr Call to provide customized styling that will layer on top of the variant rules}
-#' \item {\bold{ componentRef }} {`IRefObject<{}>` \cr Gets the component ref.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IPersonaPresenceStyleProps, IPersonaPresenceStyles>` \cr Call to provide customized styling that will layer on top of the variant rules}
-#' \item {\bold{ className }} {`string` \cr Additional CSS class(es) to apply to the Persona}
-#' \item {\bold{ componentRef }} {`IRefObject<IPersona>` \cr Optional callback to access the IPersona interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ onRenderOptionalText }} {`IRenderFunction<IPersonaProps>` \cr Optional custom renderer for the optional text.}
-#' \item {\bold{ onRenderPrimaryText }} {`IRenderFunction<IPersonaProps>` \cr Optional custom renderer for the primary text.}
-#' \item {\bold{ onRenderSecondaryText }} {`IRenderFunction<IPersonaProps>` \cr Optional custom renderer for the secondary text.}
-#' \item {\bold{ onRenderTertiaryText }} {`IRenderFunction<IPersonaProps>` \cr Optional custom renderer for the tertiary text.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IPersonaStyleProps, IPersonaStyles>` \cr Call to provide customized styling that will layer on top of variant rules}
-#' \item {\bold{ allowPhoneInitials }} {`boolean` \cr Whether initials are calculated for phone numbers and number sequences. Example: Set property to true to get initials for project names consisting of numbers only.}
-#' \item {\bold{ coinProps }} {`IPersonaCoinProps` \cr Optional HTML element props for Persona coin.}
-#' \item {\bold{ coinSize }} {`number` \cr Optional custom persona coin size in pixel.}
-#' \item {\bold{ hidePersonaDetails }} {`boolean` \cr Whether to not render persona details, and just render the persona image/initials.}
-#' \item {\bold{ imageAlt }} {`string` \cr Alt text for the image to use. Defaults to an empty string.}
-#' \item {\bold{ imageInitials }} {`string` \cr The user's initials to display in the image area when there is no image.}
-#' \item {\bold{ imageShouldFadeIn }} {`boolean` \cr If true, adds the css class 'is-fadeIn' to the image.}
-#' \item {\bold{ imageShouldStartVisible }} {`boolean` \cr If true, the image starts as visible and is hidden on error. Otherwise, the image is hidden until it is successfully loaded. This disables imageShouldFadeIn.}
-#' \item {\bold{ imageUrl }} {`string` \cr Url to the image to use, should be a square aspect ratio and big enough to fit in the image area.}
-#' \item {\bold{ initialsColor }} {`PersonaInitialsColor | string` \cr The background color when the user's initials are displayed.}
-#' \item {\bold{ isOutOfOffice }} {`boolean` \cr This flag can be used to signal the persona is out of office. This will change the way the presence icon looks for statuses that support dual-presence.}
-#' \item {\bold{ onPhotoLoadingStateChange }} {`(newImageLoadState: ImageLoadState) => void` \cr Optional callback for when loading state of the photo changes}
-#' \item {\bold{ onRenderCoin }} {`IRenderFunction<IPersonaSharedProps>` \cr Optional custom renderer for the coin}
-#' \item {\bold{ onRenderInitials }} {`IRenderFunction<IPersonaSharedProps>` \cr Optional custom renderer for the initials}
-#' \item {\bold{ onRenderPersonaCoin }} {`IRenderFunction<IPersonaSharedProps>` \cr Optional custom renderer for the coin}
-#' \item {\bold{ optionalText }} {`string` \cr Optional text to display, usually a custom message set. The optional text will only be shown when using size100.}
-#' \item {\bold{ presence }} {`PersonaPresence` \cr Presence of the person to display - will not display presence if undefined.}
-#' \item {\bold{ presenceColors }} {`{ available: string; away: string; busy: string; dnd: string; offline: string; oof: string; background: string; }` \cr The colors to be used for the presence-icon and it's background}
-#' \item {\bold{ presenceTitle }} {`string` \cr Presence title to be shown as a tooltip on hover over the presence icon.}
-#' \item {\bold{ primaryText }} {`string` \cr Primary text to display, usually the name of the person.}
-#' \item {\bold{ secondaryText }} {`string` \cr Secondary text to display, usually the role of the user.}
-#' \item {\bold{ showInitialsUntilImageLoads }} {`boolean` \cr If true renders the initials while the image is loading. This only applies when an imageUrl is provided.}
-#' \item {\bold{ showSecondaryText }} {`boolean` \cr }
-#' \item {\bold{ showUnknownPersonaCoin }} {`boolean` \cr If true, show the special coin for unknown persona. It has '?' in place of initials, with static font and background colors}
-#' \item {\bold{ size }} {`PersonaSize` \cr Decides the size of the control.}
-#' \item {\bold{ tertiaryText }} {`string` \cr Tertiary text to display, usually the status of the user. The tertiary text will only be shown when using size72 or size100.}
-#' \item {\bold{ text }} {`string` \cr Primary text to display, usually the name of the person.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by High-Order Component.}
-#' }
+#' * \bold{ className } `string` \cr Additional css class to apply to the PersonaCoin
+#' * \bold{ componentRef } `IRefObject<{}>` \cr Gets the component ref.
+#' * \bold{ styles } `IStyleFunctionOrObject<IPersonaCoinStyleProps, IPersonaCoinStyles>` \cr Call to provide customized styling that will layer on top of the variant rules
+#' * \bold{ componentRef } `IRefObject<{}>` \cr Gets the component ref.
+#' * \bold{ styles } `IStyleFunctionOrObject<IPersonaPresenceStyleProps, IPersonaPresenceStyles>` \cr Call to provide customized styling that will layer on top of the variant rules
+#' * \bold{ className } `string` \cr Additional CSS class(es) to apply to the Persona
+#' * \bold{ componentRef } `IRefObject<IPersona>` \cr Optional callback to access the IPersona interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ onRenderOptionalText } `IRenderFunction<IPersonaProps>` \cr Optional custom renderer for the optional text.
+#' * \bold{ onRenderPrimaryText } `IRenderFunction<IPersonaProps>` \cr Optional custom renderer for the primary text.
+#' * \bold{ onRenderSecondaryText } `IRenderFunction<IPersonaProps>` \cr Optional custom renderer for the secondary text.
+#' * \bold{ onRenderTertiaryText } `IRenderFunction<IPersonaProps>` \cr Optional custom renderer for the tertiary text.
+#' * \bold{ styles } `IStyleFunctionOrObject<IPersonaStyleProps, IPersonaStyles>` \cr Call to provide customized styling that will layer on top of variant rules
+#' * \bold{ allowPhoneInitials } `boolean` \cr Whether initials are calculated for phone numbers and number sequences. Example: Set property to true to get initials for project names consisting of numbers only.
+#' * \bold{ coinProps } `IPersonaCoinProps` \cr Optional HTML element props for Persona coin.
+#' * \bold{ coinSize } `number` \cr Optional custom persona coin size in pixel.
+#' * \bold{ hidePersonaDetails } `boolean` \cr Whether to not render persona details, and just render the persona image/initials.
+#' * \bold{ imageAlt } `string` \cr Alt text for the image to use. Defaults to an empty string.
+#' * \bold{ imageInitials } `string` \cr The user's initials to display in the image area when there is no image.
+#' * \bold{ imageShouldFadeIn } `boolean` \cr If true, adds the css class 'is-fadeIn' to the image.
+#' * \bold{ imageShouldStartVisible } `boolean` \cr If true, the image starts as visible and is hidden on error. Otherwise, the image is hidden until it is successfully loaded. This disables imageShouldFadeIn.
+#' * \bold{ imageUrl } `string` \cr Url to the image to use, should be a square aspect ratio and big enough to fit in the image area.
+#' * \bold{ initialsColor } `PersonaInitialsColor | string` \cr The background color when the user's initials are displayed.
+#' * \bold{ isOutOfOffice } `boolean` \cr This flag can be used to signal the persona is out of office. This will change the way the presence icon looks for statuses that support dual-presence.
+#' * \bold{ onPhotoLoadingStateChange } `(newImageLoadState: ImageLoadState) => void` \cr Optional callback for when loading state of the photo changes
+#' * \bold{ onRenderCoin } `IRenderFunction<IPersonaSharedProps>` \cr Optional custom renderer for the coin
+#' * \bold{ onRenderInitials } `IRenderFunction<IPersonaSharedProps>` \cr Optional custom renderer for the initials
+#' * \bold{ onRenderPersonaCoin } `IRenderFunction<IPersonaSharedProps>` \cr Optional custom renderer for the coin
+#' * \bold{ optionalText } `string` \cr Optional text to display, usually a custom message set. The optional text will only be shown when using size100.
+#' * \bold{ presence } `PersonaPresence` \cr Presence of the person to display - will not display presence if undefined.
+#' * \bold{ presenceColors } `{ available: string; away: string; busy: string; dnd: string; offline: string; oof: string; background: string; }` \cr The colors to be used for the presence-icon and it's background
+#' * \bold{ presenceTitle } `string` \cr Presence title to be shown as a tooltip on hover over the presence icon.
+#' * \bold{ primaryText } `string` \cr Primary text to display, usually the name of the person.
+#' * \bold{ secondaryText } `string` \cr Secondary text to display, usually the role of the user.
+#' * \bold{ showInitialsUntilImageLoads } `boolean` \cr If true renders the initials while the image is loading. This only applies when an imageUrl is provided.
+#' * \bold{ showSecondaryText } `boolean` \cr
+#' * \bold{ showUnknownPersonaCoin } `boolean` \cr If true, show the special coin for unknown persona. It has '?' in place of initials, with static font and background colors
+#' * \bold{ size } `PersonaSize` \cr Decides the size of the control.
+#' * \bold{ tertiaryText } `string` \cr Tertiary text to display, usually the status of the user. The tertiary text will only be shown when using size72 or size100.
+#' * \bold{ text } `string` \cr Primary text to display, usually the name of the person.
+#' * \bold{ theme } `ITheme` \cr Theme provided by High-Order Component.
 #'
 #' @md
 #' @name Persona
@@ -2501,99 +2423,97 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ className }} {`string` \cr ClassName for the picker.}
-#' \item {\bold{ componentRef }} {`IRefObject<IBasePicker<T>>` \cr Optional callback to access the IBasePicker interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ createGenericItem }} {`(input: string, ValidationState: ValidationState) => ISuggestionModel<T> | T` \cr Function that specifies how arbitrary text entered into the well is handled.}
-#' \item {\bold{ defaultSelectedItems }} {`T[]` \cr Initial items that have already been selected and should appear in the people picker.}
-#' \item {\bold{ disabled }} {`boolean` \cr Flag for disabling the picker.}
-#' \item {\bold{ enableSelectedSuggestionAlert }} {`boolean` \cr Adds an additional alert for the currently selected suggestion. This prop should be set to true for IE11 and below, as it enables proper screen reader behavior for each suggestion (since aria-activedescendant does not work with IE11). It should not be set for modern browsers (Edge, Chrome).}
-#' \item {\bold{ getTextFromItem }} {`(item: T, currentValue?: string) => string` \cr A callback to get text from an item. Used to autofill text in the pickers.}
-#' \item {\bold{ inputProps }} {`IInputProps` \cr AutoFill input native props}
-#' \item {\bold{ itemLimit }} {`number` \cr Restrict the amount of selectable items.}
-#' \item {\bold{ onBlur }} {`React.FocusEventHandler<HTMLInputElement | Autofill>` \cr A callback for when the user moves the focus away from the picker}
-#' \item {\bold{ onChange }} {`(items?: T[]) => void` \cr A callback for when the selected list of items changes.}
-#' \item {\bold{ onDismiss }} {`(ev?: any, selectedItem?: T) => boolean | void` \cr A callback to override the default behavior of adding the selected suggestion on dismiss. If it returns true or nothing, the selected item will be added on dismiss. If false, the selected item will not be added on dismiss.}
-#' \item {\bold{ onEmptyInputFocus }} {`(selectedItems?: T[]) => T[] | PromiseLike<T[]>` \cr A callback for what should happen when a user clicks within the input area.}
-#' \item {\bold{ onEmptyResolveSuggestions }} {`(selectedItems?: T[]) => T[] | PromiseLike<T[]>` \cr A callback for what should happen when suggestions are shown without input provided. Returns the already selected items so the resolver can filter them out. If used in conjunction with resolveDelay this will only kick off after the delay throttle.}
-#' \item {\bold{ onFocus }} {`React.FocusEventHandler<HTMLInputElement | Autofill>` \cr A callback for when the user put focus on the picker}
-#' \item {\bold{ onGetMoreResults }} {`(filter: string, selectedItems?: T[]) => T[] | PromiseLike<T[]>` \cr A callback that gets the rest of the results when a user clicks get more results.}
-#' \item {\bold{ onInputChange }} {`(input: string) => string` \cr A callback used to modify the input string.}
-#' \item {\bold{ onItemSelected }} {`(selectedItem?: T) => T | PromiseLike<T> | null` \cr A callback to process a selection after the user selects something from the picker. If the callback returns null, the item will not be added to the picker.}
-#' \item {\bold{ onRemoveSuggestion }} {`(item: T) => void` \cr A callback for when an item is removed from the suggestion list}
-#' \item {\bold{ onRenderItem }} {`(props: IPickerItemProps<T>) => JSX.Element` \cr Function that specifies how the selected item will appear.}
-#' \item {\bold{ onRenderSuggestionsItem }} {`(props: T, itemProps: ISuggestionItemProps<T>) => JSX.Element` \cr Function that specifies how an individual suggestion item will appear.}
-#' \item {\bold{ onResolveSuggestions }} {`(filter: string, selectedItems?: T[]) => T[] | PromiseLike<T[]>` \cr A callback for what should happen when a person types text into the input. Returns the already selected items so the resolver can filter them out. If used in conjunction with resolveDelay this will only kick off after the delay throttle.}
-#' \item {\bold{ onValidateInput }} {`(input: string) => ValidationState` \cr A function used to validate if raw text entered into the well can be added into the selected items list}
-#' \item {\bold{ pickerCalloutProps }} {`ICalloutProps` \cr The properties that will get passed to the Callout component.}
-#' \item {\bold{ pickerSuggestionsProps }} {`IBasePickerSuggestionsProps` \cr The properties that will get passed to the Suggestions component.}
-#' \item {\bold{ removeButtonAriaLabel }} {`string` \cr Aria label for the "X" button in the selected item component.}
-#' \item {\bold{ resolveDelay }} {`number` \cr The delay time in ms before resolving suggestions, which is kicked off when input has been changed. e.g. If a second input change happens within the resolveDelay time, the timer will start over. Only until after the timer completes will onResolveSuggestions be called.}
-#' \item {\bold{ searchingText }} {`((props: { input: string; }) => string) | string` \cr The text to display while searching for more results in a limited suggestions list}
-#' \item {\bold{ selectedItems }} {`T[]` \cr The items that the base picker should currently display as selected. If this is provided then the picker will act as a controlled component.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IBasePickerStyleProps, IBasePickerStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by styled() function.}
-#' \item {\bold{ "aria-label" }} {`string` \cr Screen reader label to apply to an input element.}
-#' \item {\bold{ defaultVisibleValue }} {`string` \cr The default value to be visible when the autofill first created. This is different than placeholder text because the placeholder text will disappear and re-appear. This text persists until deleted or changed.}
-#' \item {\bold{ componentRef }} {`IRefObject<IPickerItem>` \cr Optional callback to access the IPickerItem interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ index }} {`number` \cr Index number of the item in the array of picked items.}
-#' \item {\bold{ item }} {`T` \cr The item of Type T (Persona, Tag, or any other custom item provided).}
-#' \item {\bold{ key }} {`string | number` \cr Unique key for each picked item.}
-#' \item {\bold{ onItemChange }} {`(item: T, index: number) => void` \cr Internal Use only, gives a callback to the renderer to call when an item has changed. This allows the base picker to keep track of changes in the items.}
-#' \item {\bold{ onRemoveItem }} {`() => void` \cr Callback issued when the item is removed from the array of picked items.}
-#' \item {\bold{ removeButtonAriaLabel }} {`string` \cr Aria-label for the picked item remove button.}
-#' \item {\bold{ selected }} {`boolean` \cr Whether the picked item is selected or not.}
-#' \item {\bold{ className }} {`string` \cr Optional className for the root element of the suggestion item.}
-#' \item {\bold{ componentRef }} {`IRefObject<ISuggestionsItem>` \cr Optional callback to access the ISuggestionItem interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ id }} {`string` \cr Unique id of the suggested item.}
-#' \item {\bold{ isSelectedOverride }} {`boolean` \cr An override for the 'selected' property of the SuggestionModel.}
-#' \item {\bold{ onClick }} {`(ev: React.MouseEvent<HTMLButtonElement>) => void` \cr Callback for when the user clicks on the suggestion.}
-#' \item {\bold{ onRemoveItem }} {`(ev: React.MouseEvent<HTMLButtonElement>) => void` \cr Callback for when the item is removed from the array of suggested items.}
-#' \item {\bold{ removeButtonAriaLabel }} {`string` \cr The ARIA label for the button to remove the suggestion from the list.}
-#' \item {\bold{ RenderSuggestion }} {`(item: T, suggestionItemProps: ISuggestionItemProps<T>) => JSX.Element` \cr Optional renderer to override the default one for each type of picker.}
-#' \item {\bold{ showRemoveButton }} {`boolean` \cr Whether the remove button should be rendered or not.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<ISuggestionsItemStyleProps, ISuggestionsItemStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ suggestionModel }} {`ISuggestionModel<T>` \cr Individual suggestion object containing its properties.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by High-Order Component.}
-#' \item {\bold{ className }} {`string` \cr The CSS className of the suggestions root.}
-#' \item {\bold{ componentRef }} {`IRefObject<ISuggestions<T>>` \cr Optional callback to access the ISuggestions interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ createGenericItem }} {`() => void` \cr The callback that should be called when the user attempts to use the input text as as item}
-#' \item {\bold{ forceResolveText }} {`string` \cr The text that appears indicating to the use to force resolve the input}
-#' \item {\bold{ isLoading }} {`boolean` \cr Used to indicate whether or not the suggestions are loading.}
-#' \item {\bold{ isMostRecentlyUsedVisible }} {`boolean` \cr Indicates if a short list of recent suggestions should be shown.}
-#' \item {\bold{ isResultsFooterVisible }} {`boolean` \cr Indicates if the text in resultsFooter or resultsFooterFull should be shown at the end of the suggestion list.}
-#' \item {\bold{ isSearching }} {`boolean` \cr Used to indicate whether or not the component is searching for more results.}
-#' \item {\bold{ loadingText }} {`string` \cr The text to display while the results are loading.}
-#' \item {\bold{ moreSuggestionsAvailable }} {`boolean` \cr Used to indicate whether or not the user can request more suggestions. Dictates whether or not the searchForMore button is displayed.}
-#' \item {\bold{ mostRecentlyUsedHeaderText }} {`string` \cr The text that should appear at the top of the most recently used box.}
-#' \item {\bold{ noResultsFoundText }} {`string` \cr The text that should appear if no results are found when searching.}
-#' \item {\bold{ onGetMoreResults }} {`() => void` \cr The callback that should be called when the user attempts to get more results}
-#' \item {\bold{ onRenderNoResultFound }} {`IRenderFunction<void>` \cr How the "no result found" should look in the suggestion list.}
-#' \item {\bold{ onRenderSuggestion }} {`(props: T, suggestionItemProps: ISuggestionItemProps<T>) => JSX.Element` \cr How the suggestion should look in the suggestion list.}
-#' \item {\bold{ onSuggestionClick }} {`(ev?: React.MouseEvent<HTMLElement>, item?: any, index?: number) => void` \cr What should occur when a suggestion is clicked}
-#' \item {\bold{ onSuggestionRemove }} {`(ev?: React.MouseEvent<HTMLElement>, item?: T | IPersonaProps, index?: number) => void` \cr Function to fire when one of the optional remove buttons on a suggestion is clicked.
+#' * \bold{ className } `string` \cr ClassName for the picker.
+#' * \bold{ componentRef } `IRefObject<IBasePicker<T>>` \cr Optional callback to access the IBasePicker interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ createGenericItem } `(input: string, ValidationState: ValidationState) => ISuggestionModel<T> | T` \cr Function that specifies how arbitrary text entered into the well is handled.
+#' * \bold{ defaultSelectedItems } `T[]` \cr Initial items that have already been selected and should appear in the people picker.
+#' * \bold{ disabled } `boolean` \cr Flag for disabling the picker.
+#' * \bold{ enableSelectedSuggestionAlert } `boolean` \cr Adds an additional alert for the currently selected suggestion. This prop should be set to true for IE11 and below, as it enables proper screen reader behavior for each suggestion (since aria-activedescendant does not work with IE11). It should not be set for modern browsers (Edge, Chrome).
+#' * \bold{ getTextFromItem } `(item: T, currentValue?: string) => string` \cr A callback to get text from an item. Used to autofill text in the pickers.
+#' * \bold{ inputProps } `IInputProps` \cr AutoFill input native props
+#' * \bold{ itemLimit } `number` \cr Restrict the amount of selectable items.
+#' * \bold{ onBlur } `React.FocusEventHandler<HTMLInputElement | Autofill>` \cr A callback for when the user moves the focus away from the picker
+#' * \bold{ onChange } `(items?: T[]) => void` \cr A callback for when the selected list of items changes.
+#' * \bold{ onDismiss } `(ev?: any, selectedItem?: T) => boolean | void` \cr A callback to override the default behavior of adding the selected suggestion on dismiss. If it returns true or nothing, the selected item will be added on dismiss. If false, the selected item will not be added on dismiss.
+#' * \bold{ onEmptyInputFocus } `(selectedItems?: T[]) => T[] | PromiseLike<T[]>` \cr A callback for what should happen when a user clicks within the input area.
+#' * \bold{ onEmptyResolveSuggestions } `(selectedItems?: T[]) => T[] | PromiseLike<T[]>` \cr A callback for what should happen when suggestions are shown without input provided. Returns the already selected items so the resolver can filter them out. If used in conjunction with resolveDelay this will only kick off after the delay throttle.
+#' * \bold{ onFocus } `React.FocusEventHandler<HTMLInputElement | Autofill>` \cr A callback for when the user put focus on the picker
+#' * \bold{ onGetMoreResults } `(filter: string, selectedItems?: T[]) => T[] | PromiseLike<T[]>` \cr A callback that gets the rest of the results when a user clicks get more results.
+#' * \bold{ onInputChange } `(input: string) => string` \cr A callback used to modify the input string.
+#' * \bold{ onItemSelected } `(selectedItem?: T) => T | PromiseLike<T> | null` \cr A callback to process a selection after the user selects something from the picker. If the callback returns null, the item will not be added to the picker.
+#' * \bold{ onRemoveSuggestion } `(item: T) => void` \cr A callback for when an item is removed from the suggestion list
+#' * \bold{ onRenderItem } `(props: IPickerItemProps<T>) => JSX.Element` \cr Function that specifies how the selected item will appear.
+#' * \bold{ onRenderSuggestionsItem } `(props: T, itemProps: ISuggestionItemProps<T>) => JSX.Element` \cr Function that specifies how an individual suggestion item will appear.
+#' * \bold{ onResolveSuggestions } `(filter: string, selectedItems?: T[]) => T[] | PromiseLike<T[]>` \cr A callback for what should happen when a person types text into the input. Returns the already selected items so the resolver can filter them out. If used in conjunction with resolveDelay this will only kick off after the delay throttle.
+#' * \bold{ onValidateInput } `(input: string) => ValidationState` \cr A function used to validate if raw text entered into the well can be added into the selected items list
+#' * \bold{ pickerCalloutProps } `ICalloutProps` \cr The properties that will get passed to the Callout component.
+#' * \bold{ pickerSuggestionsProps } `IBasePickerSuggestionsProps` \cr The properties that will get passed to the Suggestions component.
+#' * \bold{ removeButtonAriaLabel } `string` \cr Aria label for the "X" button in the selected item component.
+#' * \bold{ resolveDelay } `number` \cr The delay time in ms before resolving suggestions, which is kicked off when input has been changed. e.g. If a second input change happens within the resolveDelay time, the timer will start over. Only until after the timer completes will onResolveSuggestions be called.
+#' * \bold{ searchingText } `((props: { input: string; }) => string) | string` \cr The text to display while searching for more results in a limited suggestions list
+#' * \bold{ selectedItems } `T[]` \cr The items that the base picker should currently display as selected. If this is provided then the picker will act as a controlled component.
+#' * \bold{ styles } `IStyleFunctionOrObject<IBasePickerStyleProps, IBasePickerStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
+#' * \bold{ theme } `ITheme` \cr Theme provided by styled() function.
+#' * \bold{ "aria-label" } `string` \cr Screen reader label to apply to an input element.
+#' * \bold{ defaultVisibleValue } `string` \cr The default value to be visible when the autofill first created. This is different than placeholder text because the placeholder text will disappear and re-appear. This text persists until deleted or changed.
+#' * \bold{ componentRef } `IRefObject<IPickerItem>` \cr Optional callback to access the IPickerItem interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ index } `number` \cr Index number of the item in the array of picked items.
+#' * \bold{ item } `T` \cr The item of Type T (Persona, Tag, or any other custom item provided).
+#' * \bold{ key } `string | number` \cr Unique key for each picked item.
+#' * \bold{ onItemChange } `(item: T, index: number) => void` \cr Internal Use only, gives a callback to the renderer to call when an item has changed. This allows the base picker to keep track of changes in the items.
+#' * \bold{ onRemoveItem } `() => void` \cr Callback issued when the item is removed from the array of picked items.
+#' * \bold{ removeButtonAriaLabel } `string` \cr Aria-label for the picked item remove button.
+#' * \bold{ selected } `boolean` \cr Whether the picked item is selected or not.
+#' * \bold{ className } `string` \cr Optional className for the root element of the suggestion item.
+#' * \bold{ componentRef } `IRefObject<ISuggestionsItem>` \cr Optional callback to access the ISuggestionItem interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ id } `string` \cr Unique id of the suggested item.
+#' * \bold{ isSelectedOverride } `boolean` \cr An override for the 'selected' property of the SuggestionModel.
+#' * \bold{ onClick } `(ev: React.MouseEvent<HTMLButtonElement>) => void` \cr Callback for when the user clicks on the suggestion.
+#' * \bold{ onRemoveItem } `(ev: React.MouseEvent<HTMLButtonElement>) => void` \cr Callback for when the item is removed from the array of suggested items.
+#' * \bold{ removeButtonAriaLabel } `string` \cr The ARIA label for the button to remove the suggestion from the list.
+#' * \bold{ RenderSuggestion } `(item: T, suggestionItemProps: ISuggestionItemProps<T>) => JSX.Element` \cr Optional renderer to override the default one for each type of picker.
+#' * \bold{ showRemoveButton } `boolean` \cr Whether the remove button should be rendered or not.
+#' * \bold{ styles } `IStyleFunctionOrObject<ISuggestionsItemStyleProps, ISuggestionsItemStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
+#' * \bold{ suggestionModel } `ISuggestionModel<T>` \cr Individual suggestion object containing its properties.
+#' * \bold{ theme } `ITheme` \cr Theme provided by High-Order Component.
+#' * \bold{ className } `string` \cr The CSS className of the suggestions root.
+#' * \bold{ componentRef } `IRefObject<ISuggestions<T>>` \cr Optional callback to access the ISuggestions interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ createGenericItem } `() => void` \cr The callback that should be called when the user attempts to use the input text as as item
+#' * \bold{ forceResolveText } `string` \cr The text that appears indicating to the use to force resolve the input
+#' * \bold{ isLoading } `boolean` \cr Used to indicate whether or not the suggestions are loading.
+#' * \bold{ isMostRecentlyUsedVisible } `boolean` \cr Indicates if a short list of recent suggestions should be shown.
+#' * \bold{ isResultsFooterVisible } `boolean` \cr Indicates if the text in resultsFooter or resultsFooterFull should be shown at the end of the suggestion list.
+#' * \bold{ isSearching } `boolean` \cr Used to indicate whether or not the component is searching for more results.
+#' * \bold{ loadingText } `string` \cr The text to display while the results are loading.
+#' * \bold{ moreSuggestionsAvailable } `boolean` \cr Used to indicate whether or not the user can request more suggestions. Dictates whether or not the searchForMore button is displayed.
+#' * \bold{ mostRecentlyUsedHeaderText } `string` \cr The text that should appear at the top of the most recently used box.
+#' * \bold{ noResultsFoundText } `string` \cr The text that should appear if no results are found when searching.
+#' * \bold{ onGetMoreResults } `() => void` \cr The callback that should be called when the user attempts to get more results
+#' * \bold{ onRenderNoResultFound } `IRenderFunction<void>` \cr How the "no result found" should look in the suggestion list.
+#' * \bold{ onRenderSuggestion } `(props: T, suggestionItemProps: ISuggestionItemProps<T>) => JSX.Element` \cr How the suggestion should look in the suggestion list.
+#' * \bold{ onSuggestionClick } `(ev?: React.MouseEvent<HTMLElement>, item?: any, index?: number) => void` \cr What should occur when a suggestion is clicked
+#' * \bold{ onSuggestionRemove } `(ev?: React.MouseEvent<HTMLElement>, item?: T | IPersonaProps, index?: number) => void` \cr Function to fire when one of the optional remove buttons on a suggestion is clicked.
 #'
-#' TODO (adjective-object) remove IPersonaprops before the next major version bump}
-#' \item {\bold{ refocusSuggestions }} {`(keyCode: KeyCodes) => void` \cr A function that resets focus to the expected item in the suggestion list}
-#' \item {\bold{ removeSuggestionAriaLabel }} {`string` \cr An ARIA label to use for the buttons to remove individual suggestions.}
-#' \item {\bold{ resultsFooter }} {`(props: ISuggestionsProps<T>) => JSX.Element` \cr A renderer that adds an element at the end of the suggestions list it has fewer items than resultsMaximumNumber.}
-#' \item {\bold{ resultsFooterFull }} {`(props: ISuggestionsProps<T>) => JSX.Element` \cr A renderer that adds an element at the end of the suggestions list it has more items than resultsMaximumNumber.}
-#' \item {\bold{ resultsMaximumNumber }} {`number` \cr Maximum number of suggestions to show in the full suggestion list.}
-#' \item {\bold{ searchErrorText }} {`string` \cr The text that should appear if there is a search error.}
-#' \item {\bold{ searchForMoreText }} {`string` \cr The text that appears indicating to the user that they can search for more results.}
-#' \item {\bold{ searchingText }} {`string` \cr The text to display while searching for more results in a limited suggestions list.}
-#' \item {\bold{ showForceResolve }} {`() => boolean` \cr The callback that should be called to see if the force resolve command should be shown}
-#' \item {\bold{ showRemoveButtons }} {`boolean` \cr Indicates whether to show a button with each suggestion to remove that suggestion.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<any, any>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ suggestions }} {`ISuggestionModel<T>[]` \cr The list of Suggestions that will be displayed}
-#' \item {\bold{ suggestionsAvailableAlertText }} {`string` \cr Screen reader message to read when there are suggestions available.}
-#' \item {\bold{ suggestionsClassName }} {`string` \cr The CSS className of the suggestions list}
-#' \item {\bold{ suggestionsContainerAriaLabel }} {`string` \cr An ARIA label for the container that is the parent of the suggestions.}
-#' \item {\bold{ suggestionsHeaderText }} {`string` \cr The text that appears at the top of the suggestions list.}
-#' \item {\bold{ suggestionsItemClassName }} {`string` \cr The className of the suggestion item.}
-#' \item {\bold{ suggestionsListId }} {`string` \cr The string that will be used as the suggestionsListId. Will be used by the BasePicker to keep track of the list for aria.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by High-Order Component.}
-#' }
+#' TODO (adjective-object) remove IPersonaprops before the next major version bump
+#' * \bold{ refocusSuggestions } `(keyCode: KeyCodes) => void` \cr A function that resets focus to the expected item in the suggestion list
+#' * \bold{ removeSuggestionAriaLabel } `string` \cr An ARIA label to use for the buttons to remove individual suggestions.
+#' * \bold{ resultsFooter } `(props: ISuggestionsProps<T>) => JSX.Element` \cr A renderer that adds an element at the end of the suggestions list it has fewer items than resultsMaximumNumber.
+#' * \bold{ resultsFooterFull } `(props: ISuggestionsProps<T>) => JSX.Element` \cr A renderer that adds an element at the end of the suggestions list it has more items than resultsMaximumNumber.
+#' * \bold{ resultsMaximumNumber } `number` \cr Maximum number of suggestions to show in the full suggestion list.
+#' * \bold{ searchErrorText } `string` \cr The text that should appear if there is a search error.
+#' * \bold{ searchForMoreText } `string` \cr The text that appears indicating to the user that they can search for more results.
+#' * \bold{ searchingText } `string` \cr The text to display while searching for more results in a limited suggestions list.
+#' * \bold{ showForceResolve } `() => boolean` \cr The callback that should be called to see if the force resolve command should be shown
+#' * \bold{ showRemoveButtons } `boolean` \cr Indicates whether to show a button with each suggestion to remove that suggestion.
+#' * \bold{ styles } `IStyleFunctionOrObject<any, any>` \cr Call to provide customized styling that will layer on top of the variant rules.
+#' * \bold{ suggestions } `ISuggestionModel<T>[]` \cr The list of Suggestions that will be displayed
+#' * \bold{ suggestionsAvailableAlertText } `string` \cr Screen reader message to read when there are suggestions available.
+#' * \bold{ suggestionsClassName } `string` \cr The CSS className of the suggestions list
+#' * \bold{ suggestionsContainerAriaLabel } `string` \cr An ARIA label for the container that is the parent of the suggestions.
+#' * \bold{ suggestionsHeaderText } `string` \cr The text that appears at the top of the suggestions list.
+#' * \bold{ suggestionsItemClassName } `string` \cr The className of the suggestion item.
+#' * \bold{ suggestionsListId } `string` \cr The string that will be used as the suggestionsListId. Will be used by the BasePicker to keep track of the list for aria.
+#' * \bold{ theme } `ITheme` \cr Theme provided by High-Order Component.
 #'
 #' @md
 #' @name Pickers
@@ -2616,43 +2536,41 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ alwaysRender }} {`boolean` \cr Defines whether to always render the pivot item (regardless of whether it is selected or not). Useful if you're rendering content that is expensive to mount.}
-#' \item {\bold{ ariaLabel }} {`string` \cr The aria label of each pivot link which will read by screen reader instead of linkText.
+#' * \bold{ alwaysRender } `boolean` \cr Defines whether to always render the pivot item (regardless of whether it is selected or not). Useful if you're rendering content that is expensive to mount.
+#' * \bold{ ariaLabel } `string` \cr The aria label of each pivot link which will read by screen reader instead of linkText.
 #'
-#' Note that unless you have compelling requirements you should not override aria-label.}
-#' \item {\bold{ componentRef }} {`IRefObject<{}>` \cr Gets the component ref.}
-#' \item {\bold{ headerButtonProps }} {`IButtonProps | { [key: string]: string | number | boolean; }` \cr Props for the header command button. This provides a way to pass in native props, such as data-* and aria-*, for each pivot header/link element.}
-#' \item {\bold{ headerText }} {`string` \cr The text displayed of each pivot link.}
-#' \item {\bold{ itemCount }} {`number | string` \cr Defines an optional item count displayed in parentheses just after the `linkText`.
+#' Note that unless you have compelling requirements you should not override aria-label.
+#' * \bold{ componentRef } `IRefObject<{}>` \cr Gets the component ref.
+#' * \bold{ headerButtonProps } `IButtonProps | { [key: string]: string | number | boolean; }` \cr Props for the header command button. This provides a way to pass in native props, such as data-* and aria-*, for each pivot header/link element.
+#' * \bold{ headerText } `string` \cr The text displayed of each pivot link.
+#' * \bold{ itemCount } `number | string` \cr Defines an optional item count displayed in parentheses just after the `linkText`.
 #'
-#' Examples: completed (4), Unread (99+)}
-#' \item {\bold{ itemIcon }} {`string` \cr An optional icon to show next to the pivot link.}
-#' \item {\bold{ itemKey }} {`string` \cr An required key to uniquely identify a pivot item.
+#' Examples: completed (4), Unread (99+)
+#' * \bold{ itemIcon } `string` \cr An optional icon to show next to the pivot link.
+#' * \bold{ itemKey } `string` \cr An required key to uniquely identify a pivot item.
 #'
-#' Note: The 'key' from react props cannot be used inside component.}
-#' \item {\bold{ keytipProps }} {`IKeytipProps` \cr Optional keytip for this PivotItem.}
-#' \item {\bold{ linkText }} {`string` \cr The text displayed of each pivot link - renaming to `headerText`.}
-#' \item {\bold{ onRenderItemLink }} {`IRenderFunction<IPivotItemProps>` \cr Optional custom renderer for the pivot item link.}
-#' \item {\bold{ className }} {`string` \cr Additional css class to apply to the Pivot}
-#' \item {\bold{ componentRef }} {`IRefObject<IPivot>` \cr Optional callback to access the IPivot interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ defaultSelectedIndex }} {`number` \cr Default selected index for the pivot. Only provide this if the pivot is an uncontrolled component; otherwise, use the `selectedKey` property.
+#' Note: The 'key' from react props cannot be used inside component.
+#' * \bold{ keytipProps } `IKeytipProps` \cr Optional keytip for this PivotItem.
+#' * \bold{ linkText } `string` \cr The text displayed of each pivot link - renaming to `headerText`.
+#' * \bold{ onRenderItemLink } `IRenderFunction<IPivotItemProps>` \cr Optional custom renderer for the pivot item link.
+#' * \bold{ className } `string` \cr Additional css class to apply to the Pivot
+#' * \bold{ componentRef } `IRefObject<IPivot>` \cr Optional callback to access the IPivot interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ defaultSelectedIndex } `number` \cr Default selected index for the pivot. Only provide this if the pivot is an uncontrolled component; otherwise, use the `selectedKey` property.
 #'
-#' This property is also mutually exclusive with `defaultSelectedKey`.}
-#' \item {\bold{ defaultSelectedKey }} {`string` \cr Default selected key for the pivot. Only provide this if the pivot is an uncontrolled component; otherwise, use the `selectedKey` property.
+#' This property is also mutually exclusive with `defaultSelectedKey`.
+#' * \bold{ defaultSelectedKey } `string` \cr Default selected key for the pivot. Only provide this if the pivot is an uncontrolled component; otherwise, use the `selectedKey` property.
 #'
-#' This property is also mutually exclusive with `defaultSelectedIndex`.}
-#' \item {\bold{ getTabId }} {`(itemKey: string, index: number) => string` \cr Callback to customize how IDs are generated for each tab header. Useful if you're rendering content outside and need to connect aria-labelledby.}
-#' \item {\bold{ headersOnly }} {`boolean` \cr Whether to skip rendering the tabpanel with the content of the selected tab. Use this prop if you plan to separately render the tab content and don't want to leave an empty tabpanel in the page that may confuse Screen Readers.}
-#' \item {\bold{ initialSelectedIndex }} {`number` \cr Index of the pivot item initially selected. Mutually exclusive with `initialSelectedKey`. Only provide this if the pivot is an uncontrolled component; otherwise, use `selectedKey`.}
-#' \item {\bold{ initialSelectedKey }} {`string` \cr Key of the pivot item initially selected. Mutually exclusive with `initialSelectedIndex`. Only provide this if the pivot is an uncontrolled component; otherwise, use `selectedKey`.}
-#' \item {\bold{ linkFormat }} {`PivotLinkFormat` \cr PivotLinkFormat to use (links, tabs)}
-#' \item {\bold{ linkSize }} {`PivotLinkSize` \cr PivotLinkSize to use (normal, large)}
-#' \item {\bold{ onLinkClick }} {`(item?: PivotItem, ev?: React.MouseEvent<HTMLElement>) => void` \cr Callback for when the selected pivot item is changed.}
-#' \item {\bold{ selectedKey }} {`string | null` \cr Key of the selected pivot item. Updating this will override the Pivot's selected item state. Only provide this if the pivot is a controlled component where you are maintaining the current state; otherwise, use `defaultSelectedKey`.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IPivotStyleProps, IPivotStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by High-Order Component.}
-#' }
+#' This property is also mutually exclusive with `defaultSelectedIndex`.
+#' * \bold{ getTabId } `(itemKey: string, index: number) => string` \cr Callback to customize how IDs are generated for each tab header. Useful if you're rendering content outside and need to connect aria-labelledby.
+#' * \bold{ headersOnly } `boolean` \cr Whether to skip rendering the tabpanel with the content of the selected tab. Use this prop if you plan to separately render the tab content and don't want to leave an empty tabpanel in the page that may confuse Screen Readers.
+#' * \bold{ initialSelectedIndex } `number` \cr Index of the pivot item initially selected. Mutually exclusive with `initialSelectedKey`. Only provide this if the pivot is an uncontrolled component; otherwise, use `selectedKey`.
+#' * \bold{ initialSelectedKey } `string` \cr Key of the pivot item initially selected. Mutually exclusive with `initialSelectedIndex`. Only provide this if the pivot is an uncontrolled component; otherwise, use `selectedKey`.
+#' * \bold{ linkFormat } `PivotLinkFormat` \cr PivotLinkFormat to use (links, tabs)
+#' * \bold{ linkSize } `PivotLinkSize` \cr PivotLinkSize to use (normal, large)
+#' * \bold{ onLinkClick } `(item?: PivotItem, ev?: React.MouseEvent<HTMLElement>) => void` \cr Callback for when the selected pivot item is changed.
+#' * \bold{ selectedKey } `string | null` \cr Key of the selected pivot item. Updating this will override the Pivot's selected item state. Only provide this if the pivot is a controlled component where you are maintaining the current state; otherwise, use `defaultSelectedKey`.
+#' * \bold{ styles } `IStyleFunctionOrObject<IPivotStyleProps, IPivotStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
+#' * \bold{ theme } `ITheme` \cr Theme provided by High-Order Component.
 #'
 #' @md
 #' @name Pivot
@@ -2681,19 +2599,17 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ ariaValueText }} {`string` \cr Text alternative of the progress status, used by screen readers for reading the value of the progress.}
-#' \item {\bold{ barHeight }} {`number` \cr Height of the ProgressIndicator}
-#' \item {\bold{ className }} {`string` \cr Additional css class to apply to the ProgressIndicator}
-#' \item {\bold{ description }} {`React.ReactNode` \cr Text describing or supplementing the operation. May be a string or React virtual elements.}
-#' \item {\bold{ label }} {`React.ReactNode` \cr Label to display above the control. May be a string or React virtual elements.}
-#' \item {\bold{ onRenderProgress }} {`IRenderFunction<IProgressIndicatorProps>` \cr A render override for the progress track.}
-#' \item {\bold{ percentComplete }} {`number` \cr Percentage of the operation's completeness, numerically between 0 and 1. If this is not set, the indeterminate progress animation will be shown instead.}
-#' \item {\bold{ progressHidden }} {`boolean` \cr Whether or not to hide the progress state.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IProgressIndicatorStyleProps, IProgressIndicatorStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by High-Order Component.}
-#' \item {\bold{ title }} {`string` \cr Deprecated at v0.43.0, to be removed at \>= v0.53.0. Use `label` instead.}
-#' }
+#' * \bold{ ariaValueText } `string` \cr Text alternative of the progress status, used by screen readers for reading the value of the progress.
+#' * \bold{ barHeight } `number` \cr Height of the ProgressIndicator
+#' * \bold{ className } `string` \cr Additional css class to apply to the ProgressIndicator
+#' * \bold{ description } `React.ReactNode` \cr Text describing or supplementing the operation. May be a string or React virtual elements.
+#' * \bold{ label } `React.ReactNode` \cr Label to display above the control. May be a string or React virtual elements.
+#' * \bold{ onRenderProgress } `IRenderFunction<IProgressIndicatorProps>` \cr A render override for the progress track.
+#' * \bold{ percentComplete } `number` \cr Percentage of the operation's completeness, numerically between 0 and 1. If this is not set, the indeterminate progress animation will be shown instead.
+#' * \bold{ progressHidden } `boolean` \cr Whether or not to hide the progress state.
+#' * \bold{ styles } `IStyleFunctionOrObject<IProgressIndicatorStyleProps, IProgressIndicatorStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
+#' * \bold{ theme } `ITheme` \cr Theme provided by High-Order Component.
+#' * \bold{ title } `string` \cr Deprecated at v0.43.0, to be removed at \>= v0.53.0. Use `label` instead.
 #'
 #' @md
 #' @name ProgressIndicator
@@ -2722,24 +2638,22 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ allowZeroStars }} {`boolean` \cr Allow the rating value to be set to 0 instead of a minimum of 1.}
-#' \item {\bold{ ariaLabelFormat }} {`string` \cr Optional label format for a rating star that will be read by screen readers. Can be used like "\{0\} of \{1\} stars selected", where \{0\} will be substituted by the current rating and \{1\} will be substituted by the max rating.}
-#' \item {\bold{ ariaLabelId }} {`string` \cr Deprecated: Optional id of label describing this instance of Rating.}
-#' \item {\bold{ componentRef }} {`IRefObject<IRating>` \cr Optional callback to access the IRating interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ getAriaLabel }} {`(rating: number, max: number) => string` \cr }
-#' \item {\bold{ icon }} {`string` \cr Custom icon}
-#' \item {\bold{ max }} {`number` \cr Maximum rating, defaults to 5, has to be \>= min}
-#' \item {\bold{ min }} {`number` \cr Minimum rating, defaults to 1, has to be \>= 0}
-#' \item {\bold{ onChange }} {`(event: React.FocusEvent<HTMLElement>, rating?: number) => void` \cr Callback issued when the rating changes.}
-#' \item {\bold{ onChanged }} {`(rating: number) => void` \cr }
-#' \item {\bold{ rating }} {`number` \cr Selected rating, has to be an integer between min and max}
-#' \item {\bold{ readOnly }} {`boolean` \cr Optional flag to mark rating control as readOnly}
-#' \item {\bold{ size }} {`RatingSize` \cr Size of rating, defaults to small}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IRatingStyleProps, IRatingStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme (provided through customization.)}
-#' \item {\bold{ unselectedIcon }} {`string` \cr Custom icon for unselected rating elements.}
-#' }
+#' * \bold{ allowZeroStars } `boolean` \cr Allow the rating value to be set to 0 instead of a minimum of 1.
+#' * \bold{ ariaLabelFormat } `string` \cr Optional label format for a rating star that will be read by screen readers. Can be used like "\{0\} of \{1\} stars selected", where \{0\} will be substituted by the current rating and \{1\} will be substituted by the max rating.
+#' * \bold{ ariaLabelId } `string` \cr Deprecated: Optional id of label describing this instance of Rating.
+#' * \bold{ componentRef } `IRefObject<IRating>` \cr Optional callback to access the IRating interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ getAriaLabel } `(rating: number, max: number) => string` \cr
+#' * \bold{ icon } `string` \cr Custom icon
+#' * \bold{ max } `number` \cr Maximum rating, defaults to 5, has to be \>= min
+#' * \bold{ min } `number` \cr Minimum rating, defaults to 1, has to be \>= 0
+#' * \bold{ onChange } `(event: React.FocusEvent<HTMLElement>, rating?: number) => void` \cr Callback issued when the rating changes.
+#' * \bold{ onChanged } `(rating: number) => void` \cr
+#' * \bold{ rating } `number` \cr Selected rating, has to be an integer between min and max
+#' * \bold{ readOnly } `boolean` \cr Optional flag to mark rating control as readOnly
+#' * \bold{ size } `RatingSize` \cr Size of rating, defaults to small
+#' * \bold{ styles } `IStyleFunctionOrObject<IRatingStyleProps, IRatingStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
+#' * \bold{ theme } `ITheme` \cr Theme (provided through customization.)
+#' * \bold{ unselectedIcon } `string` \cr Custom icon for unselected rating elements.
 #'
 #' @md
 #' @name Rating
@@ -2764,18 +2678,16 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ className }} {`string` \cr Additional css class to apply to the Component}
-#' \item {\bold{ componentRef }} {`IRefObject<IResizeGroup>` \cr Optional callback to access the IResizeGroup interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ data }} {`any` \cr Initial data to be passed to the `onRenderData` function. When there is no `onGrowData` provided, this data should represent what should be passed to the render function when the parent container of the ResizeGroup is at its maximum supported width. A `cacheKey` property may optionally be included as part of the data. Two data objects with the same `cacheKey` will be assumed to take up the same width and will prevent measurements. The type of `cacheKey` is a string.}
-#' \item {\bold{ dataDidRender }} {`(renderedData: any) => void` \cr Function to be called every time data is rendered. It provides the data that was actually rendered. A use case would be adding telemetry when a particular control is shown in an overflow well or dropped as a result of onReduceData or to count the number of renders that an implementation of onReduceData triggers.}
-#' \item {\bold{ direction }} {`ResizeGroupDirection` \cr Direction of this resize group, vertical or horizontal}
-#' \item {\bold{ onGrowData }} {`(prevData: any) => any` \cr Function to be performed on the data in order to increase its width. It is called in scenarios where the container has more room than the previous render and we may be able to fit more content. If there are no more scaling operations to perform on teh data, it should return undefined to prevent an infinite render loop.}
-#' \item {\bold{ onReduceData }} {`(prevData: any) => any` \cr Function to be performed on the data in order to reduce its width and make it fit into the given space. If there are no more scaling steps to apply, it should return undefined to prevent an infinite render loop.}
-#' \item {\bold{ onRenderData }} {`(data: any) => JSX.Element` \cr Function to render the data. Called when rendering the contents to the screen and when rendering in a hidden div to measure the size of the contents.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IResizeGroupStyleProps, IResizeGroupStyles>` \cr Call to provide customized styling that will layer on top of the variant rules}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by HOC.}
-#' }
+#' * \bold{ className } `string` \cr Additional css class to apply to the Component
+#' * \bold{ componentRef } `IRefObject<IResizeGroup>` \cr Optional callback to access the IResizeGroup interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ data } `any` \cr Initial data to be passed to the `onRenderData` function. When there is no `onGrowData` provided, this data should represent what should be passed to the render function when the parent container of the ResizeGroup is at its maximum supported width. A `cacheKey` property may optionally be included as part of the data. Two data objects with the same `cacheKey` will be assumed to take up the same width and will prevent measurements. The type of `cacheKey` is a string.
+#' * \bold{ dataDidRender } `(renderedData: any) => void` \cr Function to be called every time data is rendered. It provides the data that was actually rendered. A use case would be adding telemetry when a particular control is shown in an overflow well or dropped as a result of onReduceData or to count the number of renders that an implementation of onReduceData triggers.
+#' * \bold{ direction } `ResizeGroupDirection` \cr Direction of this resize group, vertical or horizontal
+#' * \bold{ onGrowData } `(prevData: any) => any` \cr Function to be performed on the data in order to increase its width. It is called in scenarios where the container has more room than the previous render and we may be able to fit more content. If there are no more scaling operations to perform on teh data, it should return undefined to prevent an infinite render loop.
+#' * \bold{ onReduceData } `(prevData: any) => any` \cr Function to be performed on the data in order to reduce its width and make it fit into the given space. If there are no more scaling steps to apply, it should return undefined to prevent an infinite render loop.
+#' * \bold{ onRenderData } `(data: any) => JSX.Element` \cr Function to render the data. Called when rendering the contents to the screen and when rendering in a hidden div to measure the size of the contents.
+#' * \bold{ styles } `IStyleFunctionOrObject<IResizeGroupStyleProps, IResizeGroupStyles>` \cr Call to provide customized styling that will layer on top of the variant rules
+#' * \bold{ theme } `ITheme` \cr Theme provided by HOC.
 #'
 #' @md
 #' @name ResizeGroup
@@ -2801,14 +2713,12 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ className }} {`string` \cr Additional css class to apply to the ScrollablePane}
-#' \item {\bold{ componentRef }} {`IRefObject<IScrollablePane>` \cr Optional callback to access the IScrollablePane interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ initialScrollPosition }} {`number` \cr Sets the initial scroll position of the ScrollablePane}
-#' \item {\bold{ scrollbarVisibility }} {`ScrollbarVisibility` \cr }
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IScrollablePaneStyleProps, IScrollablePaneStyles>` \cr Call to provide customized styling that will layer on top of the variant rules}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by HOC.}
-#' }
+#' * \bold{ className } `string` \cr Additional css class to apply to the ScrollablePane
+#' * \bold{ componentRef } `IRefObject<IScrollablePane>` \cr Optional callback to access the IScrollablePane interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ initialScrollPosition } `number` \cr Sets the initial scroll position of the ScrollablePane
+#' * \bold{ scrollbarVisibility } `ScrollbarVisibility` \cr
+#' * \bold{ styles } `IStyleFunctionOrObject<IScrollablePaneStyleProps, IScrollablePaneStyles>` \cr Call to provide customized styling that will layer on top of the variant rules
+#' * \bold{ theme } `ITheme` \cr Theme provided by HOC.
 #'
 #' @md
 #' @name ScrollablePane
@@ -2840,26 +2750,24 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ ariaLabel }} {`string` \cr The aria label of the SearchBox for the benefit of screen readers.}
-#' \item {\bold{ className }} {`string` \cr CSS class to apply to the SearchBox.}
-#' \item {\bold{ clearButtonProps }} {`IButtonProps` \cr The props for the clear button.}
-#' \item {\bold{ componentRef }} {`IRefObject<ISearchBox>` \cr Optional callback to access the ISearchBox interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ defaultValue }} {`string` \cr The default value of the text in the SearchBox, in the case of an uncontrolled component. This prop is being deprecated since so far, uncontrolled behavior has not been implemented.}
-#' \item {\bold{ disableAnimation }} {`boolean` \cr Whether or not to animate the SearchBox icon on focus.}
-#' \item {\bold{ iconProps }} {`Pick<IIconProps, Exclude<keyof IIconProps, 'className'>>` \cr The props for the icon.}
-#' \item {\bold{ labelText }} {`string` \cr Deprecated. Use `placeholder` instead.}
-#' \item {\bold{ onChange }} {`(event?: React.ChangeEvent<HTMLInputElement>, newValue?: string) => void` \cr Callback function for when the typed input for the SearchBox has changed.}
-#' \item {\bold{ onChanged }} {`(newValue: any) => void` \cr Deprecated at v0.52.2, use `onChange` instead.}
-#' \item {\bold{ onClear }} {`(ev?: any) => void` \cr Callback executed when the user clears the search box by either clicking 'X' or hitting escape.}
-#' \item {\bold{ onEscape }} {`(ev?: any) => void` \cr Callback executed when the user presses escape in the search box.}
-#' \item {\bold{ onSearch }} {`(newValue: any) => void` \cr Callback executed when the user presses enter in the search box.}
-#' \item {\bold{ placeholder }} {`string` \cr Placeholder for the search box.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<ISearchBoxStyleProps, ISearchBoxStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme (provided through customization).}
-#' \item {\bold{ underlined }} {`boolean` \cr Whether or not the SearchBox is underlined.}
-#' \item {\bold{ value }} {`string` \cr The value of the text in the SearchBox.}
-#' }
+#' * \bold{ ariaLabel } `string` \cr The aria label of the SearchBox for the benefit of screen readers.
+#' * \bold{ className } `string` \cr CSS class to apply to the SearchBox.
+#' * \bold{ clearButtonProps } `IButtonProps` \cr The props for the clear button.
+#' * \bold{ componentRef } `IRefObject<ISearchBox>` \cr Optional callback to access the ISearchBox interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ defaultValue } `string` \cr The default value of the text in the SearchBox, in the case of an uncontrolled component. This prop is being deprecated since so far, uncontrolled behavior has not been implemented.
+#' * \bold{ disableAnimation } `boolean` \cr Whether or not to animate the SearchBox icon on focus.
+#' * \bold{ iconProps } `Pick<IIconProps, Exclude<keyof IIconProps, 'className'>>` \cr The props for the icon.
+#' * \bold{ labelText } `string` \cr Deprecated. Use `placeholder` instead.
+#' * \bold{ onChange } `(event?: React.ChangeEvent<HTMLInputElement>, newValue?: string) => void` \cr Callback function for when the typed input for the SearchBox has changed.
+#' * \bold{ onChanged } `(newValue: any) => void` \cr Deprecated at v0.52.2, use `onChange` instead.
+#' * \bold{ onClear } `(ev?: any) => void` \cr Callback executed when the user clears the search box by either clicking 'X' or hitting escape.
+#' * \bold{ onEscape } `(ev?: any) => void` \cr Callback executed when the user presses escape in the search box.
+#' * \bold{ onSearch } `(newValue: any) => void` \cr Callback executed when the user presses enter in the search box.
+#' * \bold{ placeholder } `string` \cr Placeholder for the search box.
+#' * \bold{ styles } `IStyleFunctionOrObject<ISearchBoxStyleProps, ISearchBoxStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
+#' * \bold{ theme } `ITheme` \cr Theme (provided through customization).
+#' * \bold{ underlined } `boolean` \cr Whether or not the SearchBox is underlined.
+#' * \bold{ value } `string` \cr The value of the text in the SearchBox.
 #'
 #' @md
 #' @name SearchBox
@@ -2882,12 +2790,10 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ alignContent }} {`'start' | 'center' | 'end'` \cr Where the content should be aligned in the separator.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<ISeparatorStyleProps, ISeparatorStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme (provided through customization.)}
-#' \item {\bold{ vertical }} {`boolean` \cr Whether the element is a vertical separator.}
-#' }
+#' * \bold{ alignContent } `'start' | 'center' | 'end'` \cr Where the content should be aligned in the separator.
+#' * \bold{ styles } `IStyleFunctionOrObject<ISeparatorStyleProps, ISeparatorStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
+#' * \bold{ theme } `ITheme` \cr Theme (provided through customization.)
+#' * \bold{ vertical } `boolean` \cr Whether the element is a vertical separator.
 #'
 #' @md
 #' @name Separator
@@ -2908,43 +2814,41 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ borderStyle }} {`IRawStyle` \cr Use to set custom styling of the shimmerCircle borders.}
-#' \item {\bold{ componentRef }} {`IRefObject<IShimmerCircle>` \cr Optional callback to access the IShimmerCircle interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ height }} {`number` \cr Sets the height of the circle.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IShimmerCircleStyleProps, IShimmerCircleStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by High-Order Component.}
-#' \item {\bold{ backgroundColor }} {`string` \cr Defines the background color of the space in between and around shimmer elements.}
-#' \item {\bold{ componentRef }} {`IRefObject<IShimmerElementsGroup>` \cr Optional callback to access the IShimmerElementsGroup interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ flexWrap }} {`boolean` \cr Optional boolean for enabling flexWrap of the container containing the shimmerElements.}
-#' \item {\bold{ rowHeight }} {`number` \cr Optional maximum row height of the shimmerElements container.}
-#' \item {\bold{ shimmerElements }} {`IShimmerElement[]` \cr Elements to render in one group of the Shimmer.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IShimmerElementsGroupStyleProps, IShimmerElementsGroupStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by High-Order Component.}
-#' \item {\bold{ width }} {`string` \cr Optional width for ShimmerElements container.}
-#' \item {\bold{ borderStyle }} {`IRawStyle` \cr Use to set custom styling of the shimmerGap borders.}
-#' \item {\bold{ componentRef }} {`IRefObject<IShimmerGap>` \cr Optional callback to access the IShimmerGap interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ height }} {`number` \cr Sets the height of the gap.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IShimmerGapStyleProps, IShimmerGapStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by High-Order Component.}
-#' \item {\bold{ width }} {`number | string` \cr Sets width value of the gap.}
-#' \item {\bold{ borderStyle }} {`IRawStyle` \cr Use to set custom styling of the shimmerLine borders.}
-#' \item {\bold{ componentRef }} {`IRefObject<IShimmerLine>` \cr Optional callback to access the IShimmerLine interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ height }} {`number` \cr Sets the height of the rectangle.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IShimmerLineStyleProps, IShimmerLineStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by High-Order Component.}
-#' \item {\bold{ width }} {`number | string` \cr Sets width value of the line.}
-#' \item {\bold{ ariaLabel }} {`string` \cr Localized string of the status label for screen reader}
-#' \item {\bold{ className }} {`string` \cr Additional CSS class(es) to apply to the Shimmer container.}
-#' \item {\bold{ componentRef }} {`IRefObject<IShimmer>` \cr Optional callback to access the IShimmer interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ customElementsGroup }} {`React.ReactNode` \cr Custom elements when necessary to build complex placeholder skeletons.}
-#' \item {\bold{ isDataLoaded }} {`boolean` \cr Controls when the shimmer is swapped with actual data through an animated transition.}
-#' \item {\bold{ shimmerColors }} {`IShimmerColors` \cr Defines an object with possible colors to pass for Shimmer customization used on different backgrounds.}
-#' \item {\bold{ shimmerElements }} {`IShimmerElement[]` \cr Elements to render in one line of the Shimmer.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IShimmerStyleProps, IShimmerStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by High-Order Component.}
-#' \item {\bold{ width }} {`number | string` \cr Sets the width value of the shimmer wave wrapper.}
-#' }
+#' * \bold{ borderStyle } `IRawStyle` \cr Use to set custom styling of the shimmerCircle borders.
+#' * \bold{ componentRef } `IRefObject<IShimmerCircle>` \cr Optional callback to access the IShimmerCircle interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ height } `number` \cr Sets the height of the circle.
+#' * \bold{ styles } `IStyleFunctionOrObject<IShimmerCircleStyleProps, IShimmerCircleStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
+#' * \bold{ theme } `ITheme` \cr Theme provided by High-Order Component.
+#' * \bold{ backgroundColor } `string` \cr Defines the background color of the space in between and around shimmer elements.
+#' * \bold{ componentRef } `IRefObject<IShimmerElementsGroup>` \cr Optional callback to access the IShimmerElementsGroup interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ flexWrap } `boolean` \cr Optional boolean for enabling flexWrap of the container containing the shimmerElements.
+#' * \bold{ rowHeight } `number` \cr Optional maximum row height of the shimmerElements container.
+#' * \bold{ shimmerElements } `IShimmerElement[]` \cr Elements to render in one group of the Shimmer.
+#' * \bold{ styles } `IStyleFunctionOrObject<IShimmerElementsGroupStyleProps, IShimmerElementsGroupStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
+#' * \bold{ theme } `ITheme` \cr Theme provided by High-Order Component.
+#' * \bold{ width } `string` \cr Optional width for ShimmerElements container.
+#' * \bold{ borderStyle } `IRawStyle` \cr Use to set custom styling of the shimmerGap borders.
+#' * \bold{ componentRef } `IRefObject<IShimmerGap>` \cr Optional callback to access the IShimmerGap interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ height } `number` \cr Sets the height of the gap.
+#' * \bold{ styles } `IStyleFunctionOrObject<IShimmerGapStyleProps, IShimmerGapStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
+#' * \bold{ theme } `ITheme` \cr Theme provided by High-Order Component.
+#' * \bold{ width } `number | string` \cr Sets width value of the gap.
+#' * \bold{ borderStyle } `IRawStyle` \cr Use to set custom styling of the shimmerLine borders.
+#' * \bold{ componentRef } `IRefObject<IShimmerLine>` \cr Optional callback to access the IShimmerLine interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ height } `number` \cr Sets the height of the rectangle.
+#' * \bold{ styles } `IStyleFunctionOrObject<IShimmerLineStyleProps, IShimmerLineStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
+#' * \bold{ theme } `ITheme` \cr Theme provided by High-Order Component.
+#' * \bold{ width } `number | string` \cr Sets width value of the line.
+#' * \bold{ ariaLabel } `string` \cr Localized string of the status label for screen reader
+#' * \bold{ className } `string` \cr Additional CSS class(es) to apply to the Shimmer container.
+#' * \bold{ componentRef } `IRefObject<IShimmer>` \cr Optional callback to access the IShimmer interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ customElementsGroup } `React.ReactNode` \cr Custom elements when necessary to build complex placeholder skeletons.
+#' * \bold{ isDataLoaded } `boolean` \cr Controls when the shimmer is swapped with actual data through an animated transition.
+#' * \bold{ shimmerColors } `IShimmerColors` \cr Defines an object with possible colors to pass for Shimmer customization used on different backgrounds.
+#' * \bold{ shimmerElements } `IShimmerElement[]` \cr Elements to render in one line of the Shimmer.
+#' * \bold{ styles } `IStyleFunctionOrObject<IShimmerStyleProps, IShimmerStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
+#' * \bold{ theme } `ITheme` \cr Theme provided by High-Order Component.
+#' * \bold{ width } `number | string` \cr Sets the width value of the shimmer wave wrapper.
 #'
 #' @md
 #' @name Shimmer
@@ -2975,29 +2879,27 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ ariaLabel }} {`string` \cr A description of the Slider for the benefit of screen readers.}
-#' \item {\bold{ ariaValueText }} {`(value: number) => string` \cr A text description of the Slider number value for the benefit of screen readers. This should be used when the Slider number value is not accurately represented by a number.}
-#' \item {\bold{ buttonProps }} {`React.HTMLAttributes<HTMLButtonElement>` \cr Optional mixin for additional props on the thumb button within the slider.}
-#' \item {\bold{ className }} {`string` \cr Optional className to attach to the slider root element.}
-#' \item {\bold{ componentRef }} {`IRefObject<ISlider>` \cr Optional callback to access the ISlider interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ defaultValue }} {`number` \cr The initial value of the Slider. Use this if you intend for the Slider to be an uncontrolled component. This value is mutually exclusive to value. Use one or the other.}
-#' \item {\bold{ disabled }} {`boolean` \cr Optional flag to render the Slider as disabled.}
-#' \item {\bold{ label }} {`string` \cr Description label of the Slider}
-#' \item {\bold{ max }} {`number` \cr The max value of the Slider}
-#' \item {\bold{ min }} {`number` \cr The min value of the Slider}
-#' \item {\bold{ onChange }} {`(value: number) => void` \cr Callback when the value has been changed}
-#' \item {\bold{ onChanged }} {`(event: MouseEvent | TouchEvent | KeyboardEvent, value: number) => void` \cr Callback on mouse up or touch end}
-#' \item {\bold{ originFromZero }} {`boolean` \cr Optional flag to attach the origin of slider to zero. Helpful when the range include negatives.}
-#' \item {\bold{ showValue }} {`boolean` \cr Whether to show the value on the right of the Slider.}
-#' \item {\bold{ snapToStep }} {`boolean` \cr Optional flag to decide that thumb will snap to closest value while moving the slider}
-#' \item {\bold{ step }} {`number` \cr The difference between the two adjacent values of the Slider}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<ISliderStyleProps, ISliderStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by High-Order Component.}
-#' \item {\bold{ value }} {`number` \cr The initial value of the Slider. Use this if you intend to pass in a new value as a result of onChange events. This value is mutually exclusive to defaultValue. Use one or the other.}
-#' \item {\bold{ valueFormat }} {`(value: number) => string` \cr Optional function to format the slider value.}
-#' \item {\bold{ vertical }} {`boolean` \cr Optional flag to render the slider vertically. Defaults to rendering horizontal.}
-#' }
+#' * \bold{ ariaLabel } `string` \cr A description of the Slider for the benefit of screen readers.
+#' * \bold{ ariaValueText } `(value: number) => string` \cr A text description of the Slider number value for the benefit of screen readers. This should be used when the Slider number value is not accurately represented by a number.
+#' * \bold{ buttonProps } `React.HTMLAttributes<HTMLButtonElement>` \cr Optional mixin for additional props on the thumb button within the slider.
+#' * \bold{ className } `string` \cr Optional className to attach to the slider root element.
+#' * \bold{ componentRef } `IRefObject<ISlider>` \cr Optional callback to access the ISlider interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ defaultValue } `number` \cr The initial value of the Slider. Use this if you intend for the Slider to be an uncontrolled component. This value is mutually exclusive to value. Use one or the other.
+#' * \bold{ disabled } `boolean` \cr Optional flag to render the Slider as disabled.
+#' * \bold{ label } `string` \cr Description label of the Slider
+#' * \bold{ max } `number` \cr The max value of the Slider
+#' * \bold{ min } `number` \cr The min value of the Slider
+#' * \bold{ onChange } `(value: number) => void` \cr Callback when the value has been changed
+#' * \bold{ onChanged } `(event: MouseEvent | TouchEvent | KeyboardEvent, value: number) => void` \cr Callback on mouse up or touch end
+#' * \bold{ originFromZero } `boolean` \cr Optional flag to attach the origin of slider to zero. Helpful when the range include negatives.
+#' * \bold{ showValue } `boolean` \cr Whether to show the value on the right of the Slider.
+#' * \bold{ snapToStep } `boolean` \cr Optional flag to decide that thumb will snap to closest value while moving the slider
+#' * \bold{ step } `number` \cr The difference between the two adjacent values of the Slider
+#' * \bold{ styles } `IStyleFunctionOrObject<ISliderStyleProps, ISliderStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
+#' * \bold{ theme } `ITheme` \cr Theme provided by High-Order Component.
+#' * \bold{ value } `number` \cr The initial value of the Slider. Use this if you intend to pass in a new value as a result of onChange events. This value is mutually exclusive to defaultValue. Use one or the other.
+#' * \bold{ valueFormat } `(value: number) => string` \cr Optional function to format the slider value.
+#' * \bold{ vertical } `boolean` \cr Optional flag to render the slider vertically. Defaults to rendering horizontal.
 #'
 #' @md
 #' @name Slider
@@ -3029,54 +2931,52 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ ariaDescribedBy }} {`string` \cr ID of a label which describes the control, if not using the default label.}
-#' \item {\bold{ ariaLabel }} {`string` \cr A description of the control for the benefit of screen reader users.}
-#' \item {\bold{ ariaPositionInSet }} {`number` \cr The position in the parent set (if in a set).}
-#' \item {\bold{ ariaSetSize }} {`number` \cr The total size of the parent set (if in a set).}
-#' \item {\bold{ ariaValueNow }} {`number` \cr Sets the control's aria-valuenow. This is the numeric form of `value`. Providing this only makes sense when using as a controlled component.}
-#' \item {\bold{ ariaValueText }} {`string` \cr }
-#' \item {\bold{ className }} {`string` \cr Custom className for the control.}
-#' \item {\bold{ componentRef }} {`IRefObject<ISpinButton>` \cr Gets the component ref.}
-#' \item {\bold{ decrementButtonAriaLabel }} {`string` \cr Accessible label text for the decrement button (for screen reader users).}
-#' \item {\bold{ decrementButtonIcon }} {`IIconProps` \cr Custom props for the decrement button.}
-#' \item {\bold{ defaultValue }} {`string` \cr Initial value of the control. Updates to this prop will not be respected.
+#' * \bold{ ariaDescribedBy } `string` \cr ID of a label which describes the control, if not using the default label.
+#' * \bold{ ariaLabel } `string` \cr A description of the control for the benefit of screen reader users.
+#' * \bold{ ariaPositionInSet } `number` \cr The position in the parent set (if in a set).
+#' * \bold{ ariaSetSize } `number` \cr The total size of the parent set (if in a set).
+#' * \bold{ ariaValueNow } `number` \cr Sets the control's aria-valuenow. This is the numeric form of `value`. Providing this only makes sense when using as a controlled component.
+#' * \bold{ ariaValueText } `string` \cr
+#' * \bold{ className } `string` \cr Custom className for the control.
+#' * \bold{ componentRef } `IRefObject<ISpinButton>` \cr Gets the component ref.
+#' * \bold{ decrementButtonAriaLabel } `string` \cr Accessible label text for the decrement button (for screen reader users).
+#' * \bold{ decrementButtonIcon } `IIconProps` \cr Custom props for the decrement button.
+#' * \bold{ defaultValue } `string` \cr Initial value of the control. Updates to this prop will not be respected.
 #'
-#' Use this if you intend for the SpinButton to be an uncontrolled component which maintains its own value. Mutually exclusive with `value`.}
-#' \item {\bold{ disabled }} {`boolean` \cr Whether or not the control is disabled.}
-#' \item {\bold{ downArrowButtonStyles }} {`Partial<IButtonStyles>` \cr Custom styles for the down arrow button.
+#' Use this if you intend for the SpinButton to be an uncontrolled component which maintains its own value. Mutually exclusive with `value`.
+#' * \bold{ disabled } `boolean` \cr Whether or not the control is disabled.
+#' * \bold{ downArrowButtonStyles } `Partial<IButtonStyles>` \cr Custom styles for the down arrow button.
 #'
-#' Note: The buttons are in a checked state when arrow keys are used to incremenent/decrement the SpinButton. Use `rootChecked` instead of `rootPressed` for styling when that is the case.}
-#' \item {\bold{ getClassNames }} {`(theme: ITheme, disabled: boolean, isFocused: boolean, keyboardSpinDirection: KeyboardSpinDirection, labelPosition?: Position, className?: string) => ISpinButtonClassNames` \cr Custom function for providing the classNames for the control. Can be used to provide all styles for the component instead of applying them on top of the default styles.}
-#' \item {\bold{ iconButtonProps }} {`IButtonProps` \cr Additional props for the up and down arrow buttons.}
-#' \item {\bold{ iconProps }} {`IIconProps` \cr Props for an icon to display alongside the control's label.}
-#' \item {\bold{ incrementButtonAriaLabel }} {`string` \cr Accessible label text for the increment button (for screen reader users).}
-#' \item {\bold{ incrementButtonIcon }} {`IIconProps` \cr Custom props for the increment button.}
-#' \item {\bold{ inputProps }} {`React.InputHTMLAttributes<HTMLElement | HTMLInputElement>` \cr Additional props for the input field.}
-#' \item {\bold{ keytipProps }} {`IKeytipProps` \cr Keytip for the control.}
-#' \item {\bold{ label }} {`string` \cr Descriptive label for the control.}
-#' \item {\bold{ labelPosition }} {`Position` \cr Where to position the control's label.}
-#' \item {\bold{ max }} {`number` \cr Max value of the control.}
-#' \item {\bold{ min }} {`number` \cr Min value of the control.}
-#' \item {\bold{ onBlur }} {`React.FocusEventHandler<HTMLInputElement>` \cr Callback for when the control loses focus.}
-#' \item {\bold{ onDecrement }} {`(value: string, event?: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>) => string | void` \cr Callback for when the decrement button or down arrow key is pressed.}
-#' \item {\bold{ onFocus }} {`React.FocusEventHandler<HTMLInputElement>` \cr Callback for when the user focuses the control.}
-#' \item {\bold{ onIncrement }} {`(value: string, event?: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>) => string | void` \cr Callback for when the increment button or up arrow key is pressed.}
-#' \item {\bold{ onValidate }} {`(value: string, event?: React.SyntheticEvent<HTMLElement>) => string | void` \cr Callback for when the entered value should be validated.}
-#' \item {\bold{ precision }} {`number` \cr How many decimal places the value should be rounded to.
+#' Note: The buttons are in a checked state when arrow keys are used to incremenent/decrement the SpinButton. Use `rootChecked` instead of `rootPressed` for styling when that is the case.
+#' * \bold{ getClassNames } `(theme: ITheme, disabled: boolean, isFocused: boolean, keyboardSpinDirection: KeyboardSpinDirection, labelPosition?: Position, className?: string) => ISpinButtonClassNames` \cr Custom function for providing the classNames for the control. Can be used to provide all styles for the component instead of applying them on top of the default styles.
+#' * \bold{ iconButtonProps } `IButtonProps` \cr Additional props for the up and down arrow buttons.
+#' * \bold{ iconProps } `IIconProps` \cr Props for an icon to display alongside the control's label.
+#' * \bold{ incrementButtonAriaLabel } `string` \cr Accessible label text for the increment button (for screen reader users).
+#' * \bold{ incrementButtonIcon } `IIconProps` \cr Custom props for the increment button.
+#' * \bold{ inputProps } `React.InputHTMLAttributes<HTMLElement | HTMLInputElement>` \cr Additional props for the input field.
+#' * \bold{ keytipProps } `IKeytipProps` \cr Keytip for the control.
+#' * \bold{ label } `string` \cr Descriptive label for the control.
+#' * \bold{ labelPosition } `Position` \cr Where to position the control's label.
+#' * \bold{ max } `number` \cr Max value of the control.
+#' * \bold{ min } `number` \cr Min value of the control.
+#' * \bold{ onBlur } `React.FocusEventHandler<HTMLInputElement>` \cr Callback for when the control loses focus.
+#' * \bold{ onDecrement } `(value: string, event?: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>) => string | void` \cr Callback for when the decrement button or down arrow key is pressed.
+#' * \bold{ onFocus } `React.FocusEventHandler<HTMLInputElement>` \cr Callback for when the user focuses the control.
+#' * \bold{ onIncrement } `(value: string, event?: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>) => string | void` \cr Callback for when the increment button or up arrow key is pressed.
+#' * \bold{ onValidate } `(value: string, event?: React.SyntheticEvent<HTMLElement>) => string | void` \cr Callback for when the entered value should be validated.
+#' * \bold{ precision } `number` \cr How many decimal places the value should be rounded to.
 #'
-#' The default is calculated based on the precision of `step`: i.e. if step = 1, precision = 0. step = 0.0089, precision = 4. step = 300, precision = 2. step = 23.00, precision = 2.}
-#' \item {\bold{ step }} {`number` \cr Difference between two adjacent values of the control. This value is used to calculate the precision of the input if no `precision` is given. The precision calculated this way will always be \>= 0.}
-#' \item {\bold{ styles }} {`Partial<ISpinButtonStyles>` \cr Custom styling for individual elements within the control.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by HOC.}
-#' \item {\bold{ title }} {`string` \cr A more descriptive title for the control, visible on its tooltip.}
-#' \item {\bold{ upArrowButtonStyles }} {`Partial<IButtonStyles>` \cr Custom styles for the up arrow button.
+#' The default is calculated based on the precision of `step`: i.e. if step = 1, precision = 0. step = 0.0089, precision = 4. step = 300, precision = 2. step = 23.00, precision = 2.
+#' * \bold{ step } `number` \cr Difference between two adjacent values of the control. This value is used to calculate the precision of the input if no `precision` is given. The precision calculated this way will always be \>= 0.
+#' * \bold{ styles } `Partial<ISpinButtonStyles>` \cr Custom styling for individual elements within the control.
+#' * \bold{ theme } `ITheme` \cr Theme provided by HOC.
+#' * \bold{ title } `string` \cr A more descriptive title for the control, visible on its tooltip.
+#' * \bold{ upArrowButtonStyles } `Partial<IButtonStyles>` \cr Custom styles for the up arrow button.
 #'
-#' Note: The buttons are in a checked state when arrow keys are used to incremenent/decrement the SpinButton. Use `rootChecked` instead of `rootPressed` for styling when that is the case.}
-#' \item {\bold{ value }} {`string` \cr Current value of the control.
+#' Note: The buttons are in a checked state when arrow keys are used to incremenent/decrement the SpinButton. Use `rootChecked` instead of `rootPressed` for styling when that is the case.
+#' * \bold{ value } `string` \cr Current value of the control.
 #'
-#' Use this if you intend to pass in a new value as a result of change events. Mutually exclusive with `defaultValue`.}
-#' }
+#' Use this if you intend to pass in a new value as a result of change events. Mutually exclusive with `defaultValue`.
 #'
 #' @md
 #' @name SpinButton
@@ -3095,18 +2995,16 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ ariaLabel }} {`string` \cr Alternative status label for screen reader}
-#' \item {\bold{ ariaLive }} {`'assertive' | 'polite' | 'off'` \cr Politeness setting for label update announcement.}
-#' \item {\bold{ className }} {`string` \cr Additional CSS class(es) to apply to the Spinner.}
-#' \item {\bold{ componentRef }} {`IRefObject<ISpinner>` \cr Optional callback to access the ISpinner interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ label }} {`string` \cr The label to show next to the Spinner. Label updates will be announced to the screen readers. Use ariaLive to control politeness level.}
-#' \item {\bold{ labelPosition }} {`SpinnerLabelPosition` \cr The position of the label in regards of the spinner animation.}
-#' \item {\bold{ size }} {`SpinnerSize` \cr The size of Spinner to render. \{ extraSmall, small, medium, large \}}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<ISpinnerStyleProps, ISpinnerStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme (provided through customization.)}
-#' \item {\bold{ type }} {`SpinnerType` \cr Deprecated and will be removed at \>= 2.0.0. Use `SpinnerSize` instead.}
-#' }
+#' * \bold{ ariaLabel } `string` \cr Alternative status label for screen reader
+#' * \bold{ ariaLive } `'assertive' | 'polite' | 'off'` \cr Politeness setting for label update announcement.
+#' * \bold{ className } `string` \cr Additional CSS class(es) to apply to the Spinner.
+#' * \bold{ componentRef } `IRefObject<ISpinner>` \cr Optional callback to access the ISpinner interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ label } `string` \cr The label to show next to the Spinner. Label updates will be announced to the screen readers. Use ariaLive to control politeness level.
+#' * \bold{ labelPosition } `SpinnerLabelPosition` \cr The position of the label in regards of the spinner animation.
+#' * \bold{ size } `SpinnerSize` \cr The size of Spinner to render. \{ extraSmall, small, medium, large \}
+#' * \bold{ styles } `IStyleFunctionOrObject<ISpinnerStyleProps, ISpinnerStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
+#' * \bold{ theme } `ITheme` \cr Theme (provided through customization.)
+#' * \bold{ type } `SpinnerType` \cr Deprecated and will be removed at \>= 2.0.0. Use `SpinnerSize` instead.
 #'
 #' @md
 #' @name Spinner
@@ -3149,28 +3047,26 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ align }} {`'auto' | 'stretch' | 'baseline' | 'start' | 'center' | 'end'` \cr Defines how to align the StackItem along the x-axis (for vertical Stacks) or the y-axis (for horizontal Stacks).}
-#' \item {\bold{ className }} {`string` \cr Defines a CSS class name used to style the StackItem.}
-#' \item {\bold{ disableShrink }} {`boolean` \cr Defines whether the StackItem should be prevented from shrinking. This can be used to prevent a StackItem from shrinking when it is inside of a Stack that has shrinking items.}
-#' \item {\bold{ grow }} {`boolean | number | 'inherit' | 'initial' | 'unset'` \cr Defines how much to grow the StackItem in proportion to its siblings.}
-#' \item {\bold{ order }} {`number | string` \cr Defines order of the StackItem.}
-#' \item {\bold{ shrink }} {`boolean | number | 'inherit' | 'initial' | 'unset'` \cr Defines at what ratio should the StackItem shrink to fit the available space.}
-#' \item {\bold{ verticalFill }} {`boolean` \cr Defines whether the StackItem should take up 100% of the height of its parent.}
-#' \item {\bold{ as }} {`React.ElementType<React.HTMLAttributes<HTMLElement>>` \cr Defines how to render the Stack.}
-#' \item {\bold{ disableShrink }} {`boolean` \cr Defines whether Stack children should not shrink to fit the available space.}
-#' \item {\bold{ gap }} {`number | string` \cr Defines the spacing between Stack children. The property is specified as a value for 'row gap', followed optionally by a value for 'column gap'. If 'column gap' is omitted, it's set to the same value as 'row gap'.}
-#' \item {\bold{ grow }} {`boolean | number | 'inherit' | 'initial' | 'unset'` \cr Defines how much to grow the Stack in proportion to its siblings.}
-#' \item {\bold{ horizontal }} {`boolean` \cr Defines whether to render Stack children horizontally.}
-#' \item {\bold{ horizontalAlign }} {`Alignment` \cr Defines how to align Stack children horizontally (along the x-axis).}
-#' \item {\bold{ maxHeight }} {`number | string` \cr Defines the maximum height that the Stack can take.}
-#' \item {\bold{ maxWidth }} {`number | string` \cr Defines the maximum width that the Stack can take.}
-#' \item {\bold{ padding }} {`number | string` \cr Defines the inner padding of the Stack.}
-#' \item {\bold{ reversed }} {`boolean` \cr Defines whether to render Stack children in the opposite direction (bottom-to-top if it's a vertical Stack and right-to-left if it's a horizontal Stack).}
-#' \item {\bold{ verticalAlign }} {`Alignment` \cr Defines how to align Stack children vertically (along the y-axis).}
-#' \item {\bold{ verticalFill }} {`boolean` \cr Defines whether the Stack should take up 100% of the height of its parent. This property is required to be set to true when using the `grow` flag on children in vertical oriented Stacks. Stacks are rendered as block elements and grow horizontally to the container already.}
-#' \item {\bold{ wrap }} {`boolean` \cr Defines whether Stack children should wrap onto multiple rows or columns when they are about to overflow the size of the Stack.}
-#' }
+#' * \bold{ align } `'auto' | 'stretch' | 'baseline' | 'start' | 'center' | 'end'` \cr Defines how to align the StackItem along the x-axis (for vertical Stacks) or the y-axis (for horizontal Stacks).
+#' * \bold{ className } `string` \cr Defines a CSS class name used to style the StackItem.
+#' * \bold{ disableShrink } `boolean` \cr Defines whether the StackItem should be prevented from shrinking. This can be used to prevent a StackItem from shrinking when it is inside of a Stack that has shrinking items.
+#' * \bold{ grow } `boolean | number | 'inherit' | 'initial' | 'unset'` \cr Defines how much to grow the StackItem in proportion to its siblings.
+#' * \bold{ order } `number | string` \cr Defines order of the StackItem.
+#' * \bold{ shrink } `boolean | number | 'inherit' | 'initial' | 'unset'` \cr Defines at what ratio should the StackItem shrink to fit the available space.
+#' * \bold{ verticalFill } `boolean` \cr Defines whether the StackItem should take up 100% of the height of its parent.
+#' * \bold{ as } `React.ElementType<React.HTMLAttributes<HTMLElement>>` \cr Defines how to render the Stack.
+#' * \bold{ disableShrink } `boolean` \cr Defines whether Stack children should not shrink to fit the available space.
+#' * \bold{ gap } `number | string` \cr Defines the spacing between Stack children. The property is specified as a value for 'row gap', followed optionally by a value for 'column gap'. If 'column gap' is omitted, it's set to the same value as 'row gap'.
+#' * \bold{ grow } `boolean | number | 'inherit' | 'initial' | 'unset'` \cr Defines how much to grow the Stack in proportion to its siblings.
+#' * \bold{ horizontal } `boolean` \cr Defines whether to render Stack children horizontally.
+#' * \bold{ horizontalAlign } `Alignment` \cr Defines how to align Stack children horizontally (along the x-axis).
+#' * \bold{ maxHeight } `number | string` \cr Defines the maximum height that the Stack can take.
+#' * \bold{ maxWidth } `number | string` \cr Defines the maximum width that the Stack can take.
+#' * \bold{ padding } `number | string` \cr Defines the inner padding of the Stack.
+#' * \bold{ reversed } `boolean` \cr Defines whether to render Stack children in the opposite direction (bottom-to-top if it's a vertical Stack and right-to-left if it's a horizontal Stack).
+#' * \bold{ verticalAlign } `Alignment` \cr Defines how to align Stack children vertically (along the y-axis).
+#' * \bold{ verticalFill } `boolean` \cr Defines whether the Stack should take up 100% of the height of its parent. This property is required to be set to true when using the `grow` flag on children in vertical oriented Stacks. Stacks are rendered as block elements and grow horizontally to the container already.
+#' * \bold{ wrap } `boolean` \cr Defines whether Stack children should wrap onto multiple rows or columns when they are about to overflow the size of the Stack.
 #'
 #' @md
 #' @name Stack
@@ -3194,64 +3090,62 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ color }} {`string` \cr The CSS-compatible string to describe the color}
-#' \item {\bold{ id }} {`string` \cr Arbitrary unique string associated with this option}
-#' \item {\bold{ index }} {`number` \cr Index for this option}
-#' \item {\bold{ label }} {`string` \cr Tooltip and aria label for this item}
-#' \item {\bold{ borderWidth }} {`number` \cr Width of the border that indicates a selected/hovered cell, in pixels.}
-#' \item {\bold{ circle }} {`boolean` \cr True if this cell should be rendered as a circle, false if it should be a square.  @default `true` (render as circle)}
-#' \item {\bold{ color }} {`string` \cr The CSS-compatible string to describe the color}
-#' \item {\bold{ disabled }} {`boolean` \cr Whether this cell should be disabled  @default false}
-#' \item {\bold{ height }} {`number` \cr Height of the cell, in pixels}
-#' \item {\bold{ id }} {`string` \cr Used as a PREFIX for the cell's ID (the cell will not have this literal string as its ID).}
-#' \item {\bold{ idPrefix }} {`string` \cr Prefix for this cell's ID. Will be required in a future version once `id` is removed.}
-#' \item {\bold{ index }} {`number` \cr Index for this option}
-#' \item {\bold{ item }} {`IColorCellProps` \cr Item to render}
-#' \item {\bold{ label }} {`string` \cr Tooltip and aria label for this item}
-#' \item {\bold{ onClick }} {`(item: IColorCellProps) => void` \cr Handler for when a color cell is clicked.}
-#' \item {\bold{ onFocus }} {`(item: IColorCellProps) => void` \cr }
-#' \item {\bold{ onHover }} {`(item?: IColorCellProps) => void` \cr }
-#' \item {\bold{ onKeyDown }} {`(ev: React.KeyboardEvent<HTMLButtonElement>) => void` \cr }
-#' \item {\bold{ onMouseEnter }} {`(ev: React.MouseEvent<HTMLButtonElement>) => boolean` \cr Mouse enter handler. Returns true if the event should be processed, false otherwise.}
-#' \item {\bold{ onMouseLeave }} {`(ev: React.MouseEvent<HTMLButtonElement>) => void` \cr }
-#' \item {\bold{ onMouseMove }} {`(ev: React.MouseEvent<HTMLButtonElement>) => boolean` \cr Mouse move handler. Returns true if the event should be processed, false otherwise.}
-#' \item {\bold{ onWheel }} {`(ev: React.MouseEvent<HTMLButtonElement>) => void` \cr }
-#' \item {\bold{ selected }} {`boolean` \cr Whether this cell is currently selected}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IColorPickerGridCellStyleProps, IColorPickerGridCellStyles>` \cr Custom styles for the component.}
-#' \item {\bold{ theme }} {`ITheme` \cr The theme object to use for styling.}
-#' \item {\bold{ width }} {`number` \cr Width of the cell, in pixels}
-#' \item {\bold{ ariaPosInSet }} {`number` \cr Position this grid is in the parent set (index in a parent menu, for example)}
-#' \item {\bold{ ariaSetSize }} {`number` \cr Size of the parent set (size of parent menu, for example)}
-#' \item {\bold{ cellBorderWidth }} {`number` \cr Width of the border indicating a hovered/selected cell, in pixels}
-#' \item {\bold{ cellHeight }} {`number` \cr Height of an individual cell, in pixels}
-#' \item {\bold{ cellMargin }} {`number` \cr The distance between cells, in pixels}
-#' \item {\bold{ cellShape }} {`'circle' | 'square'` \cr The shape of the color cells.  @default 'circle'}
-#' \item {\bold{ cellWidth }} {`number` \cr Width of an individual cell, in pixels}
-#' \item {\bold{ className }} {`string` \cr Additional class name to provide on the root element}
-#' \item {\bold{ colorCells }} {`IColorCellProps[]` \cr The color cells that will be made available to the user.
+#' * \bold{ color } `string` \cr The CSS-compatible string to describe the color
+#' * \bold{ id } `string` \cr Arbitrary unique string associated with this option
+#' * \bold{ index } `number` \cr Index for this option
+#' * \bold{ label } `string` \cr Tooltip and aria label for this item
+#' * \bold{ borderWidth } `number` \cr Width of the border that indicates a selected/hovered cell, in pixels.
+#' * \bold{ circle } `boolean` \cr True if this cell should be rendered as a circle, false if it should be a square.  @default `true` (render as circle)
+#' * \bold{ color } `string` \cr The CSS-compatible string to describe the color
+#' * \bold{ disabled } `boolean` \cr Whether this cell should be disabled  @default false
+#' * \bold{ height } `number` \cr Height of the cell, in pixels
+#' * \bold{ id } `string` \cr Used as a PREFIX for the cell's ID (the cell will not have this literal string as its ID).
+#' * \bold{ idPrefix } `string` \cr Prefix for this cell's ID. Will be required in a future version once `id` is removed.
+#' * \bold{ index } `number` \cr Index for this option
+#' * \bold{ item } `IColorCellProps` \cr Item to render
+#' * \bold{ label } `string` \cr Tooltip and aria label for this item
+#' * \bold{ onClick } `(item: IColorCellProps) => void` \cr Handler for when a color cell is clicked.
+#' * \bold{ onFocus } `(item: IColorCellProps) => void` \cr
+#' * \bold{ onHover } `(item?: IColorCellProps) => void` \cr
+#' * \bold{ onKeyDown } `(ev: React.KeyboardEvent<HTMLButtonElement>) => void` \cr
+#' * \bold{ onMouseEnter } `(ev: React.MouseEvent<HTMLButtonElement>) => boolean` \cr Mouse enter handler. Returns true if the event should be processed, false otherwise.
+#' * \bold{ onMouseLeave } `(ev: React.MouseEvent<HTMLButtonElement>) => void` \cr
+#' * \bold{ onMouseMove } `(ev: React.MouseEvent<HTMLButtonElement>) => boolean` \cr Mouse move handler. Returns true if the event should be processed, false otherwise.
+#' * \bold{ onWheel } `(ev: React.MouseEvent<HTMLButtonElement>) => void` \cr
+#' * \bold{ selected } `boolean` \cr Whether this cell is currently selected
+#' * \bold{ styles } `IStyleFunctionOrObject<IColorPickerGridCellStyleProps, IColorPickerGridCellStyles>` \cr Custom styles for the component.
+#' * \bold{ theme } `ITheme` \cr The theme object to use for styling.
+#' * \bold{ width } `number` \cr Width of the cell, in pixels
+#' * \bold{ ariaPosInSet } `number` \cr Position this grid is in the parent set (index in a parent menu, for example)
+#' * \bold{ ariaSetSize } `number` \cr Size of the parent set (size of parent menu, for example)
+#' * \bold{ cellBorderWidth } `number` \cr Width of the border indicating a hovered/selected cell, in pixels
+#' * \bold{ cellHeight } `number` \cr Height of an individual cell, in pixels
+#' * \bold{ cellMargin } `number` \cr The distance between cells, in pixels
+#' * \bold{ cellShape } `'circle' | 'square'` \cr The shape of the color cells.  @default 'circle'
+#' * \bold{ cellWidth } `number` \cr Width of an individual cell, in pixels
+#' * \bold{ className } `string` \cr Additional class name to provide on the root element
+#' * \bold{ colorCells } `IColorCellProps[]` \cr The color cells that will be made available to the user.
 #'
-#' Note: When the reference to this prop changes, regardless of how many color cells change, all of the color cells will be re-rendered (potentially bad perf) because we memoize based on this prop's reference.}
-#' \item {\bold{ columnCount }} {`number` \cr Number of columns for the swatch color picker}
-#' \item {\bold{ disabled }} {`boolean` \cr Whether the control is disabled.}
-#' \item {\bold{ doNotContainWithinFocusZone }} {`boolean` \cr If false (the default), the grid is contained inside a FocusZone. If true, a FocusZone is not used.  @default false}
-#' \item {\bold{ focusOnHover }} {`boolean` \cr Whether to update focus when a cell is hovered.}
-#' \item {\bold{ getColorGridCellStyles }} {`IStyleFunctionOrObject<IColorPickerGridCellStyleProps, IColorPickerGridCellStyles>` \cr Styles for the grid cells.}
-#' \item {\bold{ id }} {`string` \cr ID for the swatch color picker's root element. Also used as a prefix for the IDs of color cells.}
-#' \item {\bold{ isControlled }} {`boolean` \cr Indicates whether the SwatchColorPicker is fully controlled. When true, the component will not set its internal state to track the selected color. Instead, the parent component will be responsible for handling state in the callbacks like `onColorChanged`.
+#' Note: When the reference to this prop changes, regardless of how many color cells change, all of the color cells will be re-rendered (potentially bad perf) because we memoize based on this prop's reference.
+#' * \bold{ columnCount } `number` \cr Number of columns for the swatch color picker
+#' * \bold{ disabled } `boolean` \cr Whether the control is disabled.
+#' * \bold{ doNotContainWithinFocusZone } `boolean` \cr If false (the default), the grid is contained inside a FocusZone. If true, a FocusZone is not used.  @default false
+#' * \bold{ focusOnHover } `boolean` \cr Whether to update focus when a cell is hovered.
+#' * \bold{ getColorGridCellStyles } `IStyleFunctionOrObject<IColorPickerGridCellStyleProps, IColorPickerGridCellStyles>` \cr Styles for the grid cells.
+#' * \bold{ id } `string` \cr ID for the swatch color picker's root element. Also used as a prefix for the IDs of color cells.
+#' * \bold{ isControlled } `boolean` \cr Indicates whether the SwatchColorPicker is fully controlled. When true, the component will not set its internal state to track the selected color. Instead, the parent component will be responsible for handling state in the callbacks like `onColorChanged`.
 #'
-#' NOTE: This property is a temporary workaround to force the component to be fully controllable without breaking existing behavior}
-#' \item {\bold{ mouseLeaveParentSelector }} {`string | undefined` \cr Selector to focus on mouse leave. Should only be used in conjunction with `focusOnHover`.}
-#' \item {\bold{ onCellFocused }} {`(id?: string, color?: string) => void` \cr Callback for when the user focuses a color cell. If `id` and `color` are unspecified, cells are no longer being focused.}
-#' \item {\bold{ onCellHovered }} {`(id?: string, color?: string) => void` \cr Callback for when the user hovers over a color cell. If `id` and `color` are unspecified, cells are no longer being hovered.}
-#' \item {\bold{ onColorChanged }} {`(id?: string, color?: string) => void` \cr Callback for when the user changes the color. If `id` and `color` are unspecified, there is no selected cell. (e.g. the user executed the currently selected cell to unselect it)}
-#' \item {\bold{ positionInSet }} {`number` \cr }
-#' \item {\bold{ selectedId }} {`string` \cr The ID of color cell that is currently selected}
-#' \item {\bold{ setSize }} {`number` \cr }
-#' \item {\bold{ shouldFocusCircularNavigate }} {`boolean` \cr Whether focus should cycle back to the beginning once the user navigates past the end (and vice versa). Only relevant if `doNotContainWithinFocusZone` is not true.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<ISwatchColorPickerStyleProps, ISwatchColorPickerStyles>` \cr Styles for the component.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme to apply to the component.}
-#' }
+#' NOTE: This property is a temporary workaround to force the component to be fully controllable without breaking existing behavior
+#' * \bold{ mouseLeaveParentSelector } `string | undefined` \cr Selector to focus on mouse leave. Should only be used in conjunction with `focusOnHover`.
+#' * \bold{ onCellFocused } `(id?: string, color?: string) => void` \cr Callback for when the user focuses a color cell. If `id` and `color` are unspecified, cells are no longer being focused.
+#' * \bold{ onCellHovered } `(id?: string, color?: string) => void` \cr Callback for when the user hovers over a color cell. If `id` and `color` are unspecified, cells are no longer being hovered.
+#' * \bold{ onColorChanged } `(id?: string, color?: string) => void` \cr Callback for when the user changes the color. If `id` and `color` are unspecified, there is no selected cell. (e.g. the user executed the currently selected cell to unselect it)
+#' * \bold{ positionInSet } `number` \cr
+#' * \bold{ selectedId } `string` \cr The ID of color cell that is currently selected
+#' * \bold{ setSize } `number` \cr
+#' * \bold{ shouldFocusCircularNavigate } `boolean` \cr Whether focus should cycle back to the beginning once the user navigates past the end (and vice versa). Only relevant if `doNotContainWithinFocusZone` is not true.
+#' * \bold{ styles } `IStyleFunctionOrObject<ISwatchColorPickerStyleProps, ISwatchColorPickerStyles>` \cr Styles for the component.
+#' * \bold{ theme } `ITheme` \cr Theme to apply to the component.
 #'
 #' @md
 #' @name SwatchColorPicker
@@ -3300,28 +3194,26 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ ariaDescribedBy }} {`string` \cr Defines the element id referencing the element containing the description for the TeachingBubble.}
-#' \item {\bold{ ariaLabelledBy }} {`string` \cr Defines the element id referencing the element containing label text for TeachingBubble.}
-#' \item {\bold{ calloutProps }} {`ICalloutProps` \cr Properties to pass through for Callout, reference detail properties in ICalloutProps}
-#' \item {\bold{ componentRef }} {`IRefObject<ITeachingBubble>` \cr Optional callback to access the ITeachingBubble interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ focusTrapZoneProps }} {`IFocusTrapZoneProps` \cr Properties to pass through for FocusTrapZone, reference detail properties in IFocusTrapZoneProps}
-#' \item {\bold{ footerContent }} {`string | JSX.Element` \cr Text that will be rendered in the footer of the TeachingBubble. May be rendered alongside primary and secondary buttons.}
-#' \item {\bold{ hasCloseButton }} {`boolean` \cr Whether the TeachingBubble renders close button in the top right corner.}
-#' \item {\bold{ hasCloseIcon }} {`boolean` \cr }
-#' \item {\bold{ hasCondensedHeadline }} {`boolean` \cr A variation with smaller bold headline and no margins.}
-#' \item {\bold{ hasSmallHeadline }} {`boolean` \cr A variation with smaller bold headline and margins to the body. (`hasCondensedHeadline` takes precedence if it is also set to true.)}
-#' \item {\bold{ headline }} {`string` \cr A headline for the Teaching Bubble.}
-#' \item {\bold{ illustrationImage }} {`IImageProps` \cr An Image for the TeachingBubble.}
-#' \item {\bold{ isWide }} {`boolean` \cr Whether or not the TeachingBubble is wide, with image on the left side.}
-#' \item {\bold{ onDismiss }} {`(ev?: any) => void` \cr Callback when the TeachingBubble tries to close.}
-#' \item {\bold{ primaryButtonProps }} {`IButtonProps` \cr The Primary interaction button}
-#' \item {\bold{ secondaryButtonProps }} {`IButtonProps` \cr The Secondary interaction button}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<ITeachingBubbleStyleProps, ITeachingBubbleStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ target }} {`Target` \cr Element, MouseEvent, Point, or querySelector string that the TeachingBubble should anchor to.}
-#' \item {\bold{ targetElement }} {`HTMLElement` \cr }
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by High-Order Component.}
-#' }
+#' * \bold{ ariaDescribedBy } `string` \cr Defines the element id referencing the element containing the description for the TeachingBubble.
+#' * \bold{ ariaLabelledBy } `string` \cr Defines the element id referencing the element containing label text for TeachingBubble.
+#' * \bold{ calloutProps } `ICalloutProps` \cr Properties to pass through for Callout, reference detail properties in ICalloutProps
+#' * \bold{ componentRef } `IRefObject<ITeachingBubble>` \cr Optional callback to access the ITeachingBubble interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ focusTrapZoneProps } `IFocusTrapZoneProps` \cr Properties to pass through for FocusTrapZone, reference detail properties in IFocusTrapZoneProps
+#' * \bold{ footerContent } `string | JSX.Element` \cr Text that will be rendered in the footer of the TeachingBubble. May be rendered alongside primary and secondary buttons.
+#' * \bold{ hasCloseButton } `boolean` \cr Whether the TeachingBubble renders close button in the top right corner.
+#' * \bold{ hasCloseIcon } `boolean` \cr
+#' * \bold{ hasCondensedHeadline } `boolean` \cr A variation with smaller bold headline and no margins.
+#' * \bold{ hasSmallHeadline } `boolean` \cr A variation with smaller bold headline and margins to the body. (`hasCondensedHeadline` takes precedence if it is also set to true.)
+#' * \bold{ headline } `string` \cr A headline for the Teaching Bubble.
+#' * \bold{ illustrationImage } `IImageProps` \cr An Image for the TeachingBubble.
+#' * \bold{ isWide } `boolean` \cr Whether or not the TeachingBubble is wide, with image on the left side.
+#' * \bold{ onDismiss } `(ev?: any) => void` \cr Callback when the TeachingBubble tries to close.
+#' * \bold{ primaryButtonProps } `IButtonProps` \cr The Primary interaction button
+#' * \bold{ secondaryButtonProps } `IButtonProps` \cr The Secondary interaction button
+#' * \bold{ styles } `IStyleFunctionOrObject<ITeachingBubbleStyleProps, ITeachingBubbleStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
+#' * \bold{ target } `Target` \cr Element, MouseEvent, Point, or querySelector string that the TeachingBubble should anchor to.
+#' * \bold{ targetElement } `HTMLElement` \cr
+#' * \bold{ theme } `ITheme` \cr Theme provided by High-Order Component.
 #'
 #' @md
 #' @name TeachingBubble
@@ -3344,16 +3236,14 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ as }} {`React.ElementType<React.HTMLAttributes<HTMLElement>>` \cr Optionally render the component as another component type or primitive.}
-#' \item {\bold{ block }} {`boolean` \cr Whether the text is displayed as a block element.
+#' * \bold{ as } `React.ElementType<React.HTMLAttributes<HTMLElement>>` \cr Optionally render the component as another component type or primitive.
+#' * \bold{ block } `boolean` \cr Whether the text is displayed as a block element.
 #'
-#' Note that in order for ellipsis on overflow to work properly, `block` and `nowrap` should be set to true.}
-#' \item {\bold{ nowrap }} {`boolean` \cr Whether the text is not wrapped.
+#' Note that in order for ellipsis on overflow to work properly, `block` and `nowrap` should be set to true.
+#' * \bold{ nowrap } `boolean` \cr Whether the text is not wrapped.
 #'
-#' Note that in order for ellipsis on overflow to work properly, `block` and `nowrap` should be set to true.}
-#' \item {\bold{ variant }} {`keyof IFontStyles` \cr Optional font type for Text.}
-#' }
+#' Note that in order for ellipsis on overflow to work properly, `block` and `nowrap` should be set to true.
+#' * \bold{ variant } `keyof IFontStyles` \cr Optional font type for Text.
 #'
 #' @md
 #' @name Text
@@ -3384,52 +3274,50 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ ariaLabel }} {`string` \cr Aria label for the text field.}
-#' \item {\bold{ autoAdjustHeight }} {`boolean` \cr For multiline text fields, whether or not to auto adjust text field height.}
-#' \item {\bold{ autoComplete }} {`string` \cr Whether the input field should have autocomplete enabled. This tells the browser to display options based on earlier typed values. Common values are 'on' and 'off' but for all possible values see the following links: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete#Values https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill}
-#' \item {\bold{ borderless }} {`boolean` \cr Whether or not the text field is borderless.}
-#' \item {\bold{ className }} {`string` \cr Optional class name that is added to the container of the component.}
-#' \item {\bold{ componentRef }} {`IRefObject<ITextField>` \cr Optional callback to access the ITextField component. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ defaultValue }} {`string` \cr Default value of the text field. Only provide this if the text field is an uncontrolled component; otherwise, use the `value` property.}
-#' \item {\bold{ deferredValidationTime }} {`number` \cr Text field will start to validate after users stop typing for `deferredValidationTime` milliseconds. Updates to this prop will not be respected.}
-#' \item {\bold{ description }} {`string` \cr Description displayed below the text field to provide additional details about what text to enter.}
-#' \item {\bold{ disabled }} {`boolean` \cr Disabled state of the text field.}
-#' \item {\bold{ errorMessage }} {`string | JSX.Element` \cr Static error message displayed below the text field. Use `onGetErrorMessage` to dynamically change the error message displayed (if any) based on the current value. `errorMessage` and `onGetErrorMessage` are mutually exclusive (`errorMessage` takes precedence).}
-#' \item {\bold{ iconProps }} {`IIconProps` \cr Props for an optional icon, displayed in the far right end of the text field.}
-#' \item {\bold{ inputClassName }} {`string` \cr Optional class name that is added specifically to the input/textarea element.}
-#' \item {\bold{ label }} {`string` \cr Label displayed above the text field (and read by screen readers).}
-#' \item {\bold{ mask }} {`string` \cr Only used by MaskedTextField: The masking string that defines the mask's behavior. A backslash will escape any character. Special format characters are: '9': `[0-9]` 'a': `[a-zA-Z]` '*': `[a-zA-Z0-9]`}
-#' \item {\bold{ maskChar }} {`string` \cr Only used by MaskedTextField: The character to show in place of unfilled characters of the mask.}
-#' \item {\bold{ maskFormat }} {`{ [key: string]: RegExp; }` \cr Only used by MaskedTextField: An object defining the format characters and corresponding regexp values. Default format characters: \{ '9': /`[0-9]`/, 'a': /`[a-zA-Z]`/, '*': /`[a-zA-Z0-9]`/ \}}
-#' \item {\bold{ multiline }} {`boolean` \cr Whether or not the text field is a multiline text field.}
-#' \item {\bold{ onChange }} {`(event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, newValue?: string) => void` \cr Callback for when the input value changes. This is called on both `input` and `change` events. (In a later version, this will probably only be called for the `change` event.)}
-#' \item {\bold{ onGetErrorMessage }} {`(value: string) => string | JSX.Element | PromiseLike<string | JSX.Element> | undefined` \cr Function used to determine whether the input value is valid and get an error message if not. Mutually exclusive with the static string `errorMessage` (it will take precedence over this).
+#' * \bold{ ariaLabel } `string` \cr Aria label for the text field.
+#' * \bold{ autoAdjustHeight } `boolean` \cr For multiline text fields, whether or not to auto adjust text field height.
+#' * \bold{ autoComplete } `string` \cr Whether the input field should have autocomplete enabled. This tells the browser to display options based on earlier typed values. Common values are 'on' and 'off' but for all possible values see the following links: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete#Values https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill
+#' * \bold{ borderless } `boolean` \cr Whether or not the text field is borderless.
+#' * \bold{ className } `string` \cr Optional class name that is added to the container of the component.
+#' * \bold{ componentRef } `IRefObject<ITextField>` \cr Optional callback to access the ITextField component. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ defaultValue } `string` \cr Default value of the text field. Only provide this if the text field is an uncontrolled component; otherwise, use the `value` property.
+#' * \bold{ deferredValidationTime } `number` \cr Text field will start to validate after users stop typing for `deferredValidationTime` milliseconds. Updates to this prop will not be respected.
+#' * \bold{ description } `string` \cr Description displayed below the text field to provide additional details about what text to enter.
+#' * \bold{ disabled } `boolean` \cr Disabled state of the text field.
+#' * \bold{ errorMessage } `string | JSX.Element` \cr Static error message displayed below the text field. Use `onGetErrorMessage` to dynamically change the error message displayed (if any) based on the current value. `errorMessage` and `onGetErrorMessage` are mutually exclusive (`errorMessage` takes precedence).
+#' * \bold{ iconProps } `IIconProps` \cr Props for an optional icon, displayed in the far right end of the text field.
+#' * \bold{ inputClassName } `string` \cr Optional class name that is added specifically to the input/textarea element.
+#' * \bold{ label } `string` \cr Label displayed above the text field (and read by screen readers).
+#' * \bold{ mask } `string` \cr Only used by MaskedTextField: The masking string that defines the mask's behavior. A backslash will escape any character. Special format characters are: '9': `[0-9]` 'a': `[a-zA-Z]` '*': `[a-zA-Z0-9]`
+#' * \bold{ maskChar } `string` \cr Only used by MaskedTextField: The character to show in place of unfilled characters of the mask.
+#' * \bold{ maskFormat } `{ [key: string]: RegExp; }` \cr Only used by MaskedTextField: An object defining the format characters and corresponding regexp values. Default format characters: \{ '9': /`[0-9]`/, 'a': /`[a-zA-Z]`/, '*': /`[a-zA-Z0-9]`/ \}
+#' * \bold{ multiline } `boolean` \cr Whether or not the text field is a multiline text field.
+#' * \bold{ onChange } `(event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, newValue?: string) => void` \cr Callback for when the input value changes. This is called on both `input` and `change` events. (In a later version, this will probably only be called for the `change` event.)
+#' * \bold{ onGetErrorMessage } `(value: string) => string | JSX.Element | PromiseLike<string | JSX.Element> | undefined` \cr Function used to determine whether the input value is valid and get an error message if not. Mutually exclusive with the static string `errorMessage` (it will take precedence over this).
 #'
 #' When it returns `string | JSX.Element`: - If valid, it returns empty string. - If invalid, it returns the error message and the text field will show a red border and show an error message below the text field.
 #'
-#' When it returns `Promise<string | JSX.Element>`: - The resolved value is displayed as the error message. - If rejected, the value is thrown away.}
-#' \item {\bold{ onNotifyValidationResult }} {`(errorMessage: string | JSX.Element, value: string | undefined) => void` \cr Function called after validation completes.}
-#' \item {\bold{ onRenderDescription }} {`IRenderFunction<ITextFieldProps>` \cr Custom renderer for the description.}
-#' \item {\bold{ onRenderLabel }} {`IRenderFunction<ITextFieldProps>` \cr Custom renderer for the label. If you don't call defaultRender, ensure that you give your custom-rendered label an id and that you set the textfield's aria-labelledby prop to that id.}
-#' \item {\bold{ onRenderPrefix }} {`IRenderFunction<ITextFieldProps>` \cr Custom render function for prefix.}
-#' \item {\bold{ onRenderSuffix }} {`IRenderFunction<ITextFieldProps>` \cr Custom render function for suffix.}
-#' \item {\bold{ prefix }} {`string` \cr Prefix displayed before the text field contents. This is not included in the value. Ensure a descriptive label is present to assist screen readers, as the value does not include the prefix.}
-#' \item {\bold{ readOnly }} {`boolean` \cr If true, the text field is readonly.}
-#' \item {\bold{ resizable }} {`boolean` \cr For multiline text fields, whether or not the field is resizable.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<ITextFieldStyleProps, ITextFieldStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ suffix }} {`string` \cr Suffix displayed after the text field contents. This is not included in the value. Ensure a descriptive label is present to assist screen readers, as the value does not include the suffix.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme (provided through customization).}
-#' \item {\bold{ underlined }} {`boolean` \cr Whether or not the text field is underlined.}
-#' \item {\bold{ validateOnFocusIn }} {`boolean` \cr Run validation when focus moves into the input, and **do not** validate on change.
+#' When it returns `Promise<string | JSX.Element>`: - The resolved value is displayed as the error message. - If rejected, the value is thrown away.
+#' * \bold{ onNotifyValidationResult } `(errorMessage: string | JSX.Element, value: string | undefined) => void` \cr Function called after validation completes.
+#' * \bold{ onRenderDescription } `IRenderFunction<ITextFieldProps>` \cr Custom renderer for the description.
+#' * \bold{ onRenderLabel } `IRenderFunction<ITextFieldProps>` \cr Custom renderer for the label. If you don't call defaultRender, ensure that you give your custom-rendered label an id and that you set the textfield's aria-labelledby prop to that id.
+#' * \bold{ onRenderPrefix } `IRenderFunction<ITextFieldProps>` \cr Custom render function for prefix.
+#' * \bold{ onRenderSuffix } `IRenderFunction<ITextFieldProps>` \cr Custom render function for suffix.
+#' * \bold{ prefix } `string` \cr Prefix displayed before the text field contents. This is not included in the value. Ensure a descriptive label is present to assist screen readers, as the value does not include the prefix.
+#' * \bold{ readOnly } `boolean` \cr If true, the text field is readonly.
+#' * \bold{ resizable } `boolean` \cr For multiline text fields, whether or not the field is resizable.
+#' * \bold{ styles } `IStyleFunctionOrObject<ITextFieldStyleProps, ITextFieldStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
+#' * \bold{ suffix } `string` \cr Suffix displayed after the text field contents. This is not included in the value. Ensure a descriptive label is present to assist screen readers, as the value does not include the suffix.
+#' * \bold{ theme } `ITheme` \cr Theme (provided through customization).
+#' * \bold{ underlined } `boolean` \cr Whether or not the text field is underlined.
+#' * \bold{ validateOnFocusIn } `boolean` \cr Run validation when focus moves into the input, and **do not** validate on change.
 #'
-#' (Unless this prop and/or `validateOnFocusOut` is set to true, validation will run on every change.)}
-#' \item {\bold{ validateOnFocusOut }} {`boolean` \cr Run validation when focus moves out of the input, and **do not** validate on change.
+#' (Unless this prop and/or `validateOnFocusOut` is set to true, validation will run on every change.)
+#' * \bold{ validateOnFocusOut } `boolean` \cr Run validation when focus moves out of the input, and **do not** validate on change.
 #'
-#' (Unless this prop and/or `validateOnFocusIn` is set to true, validation will run on every change.)}
-#' \item {\bold{ validateOnLoad }} {`boolean` \cr Whether validation should run when the input is initially rendered.}
-#' \item {\bold{ value }} {`string` \cr Current value of the text field. Only provide this if the text field is a controlled component where you are maintaining its current state; otherwise, use the `defaultValue` property.}
-#' }
+#' (Unless this prop and/or `validateOnFocusIn` is set to true, validation will run on every change.)
+#' * \bold{ validateOnLoad } `boolean` \cr Whether validation should run when the input is initially rendered.
+#' * \bold{ value } `string` \cr Current value of the text field. Only provide this if the text field is a controlled component where you are maintaining its current state; otherwise, use the `defaultValue` property.
 #'
 #' @md
 #' @name TextField
@@ -3457,26 +3345,24 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ ariaLabel }} {`string` \cr Text for screen-reader to announce as the name of the toggle.}
-#' \item {\bold{ as }} {`IComponentAs<React.HTMLAttributes<HTMLElement>>` \cr Render the root element as another type.}
-#' \item {\bold{ checked }} {`boolean` \cr Checked state of the toggle. If you are maintaining state yourself, use this property. Otherwise use `defaultChecked`.}
-#' \item {\bold{ componentRef }} {`IRefObject<IToggle>` \cr Optional callback to access the IToggle interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ defaultChecked }} {`boolean` \cr Initial state of the toggle. If you want the toggle to maintain its own state, use this. Otherwise use `checked`.}
-#' \item {\bold{ disabled }} {`boolean` \cr Optional disabled flag.}
-#' \item {\bold{ inlineLabel }} {`boolean` \cr Whether the label (not the onText/offText) should be positioned inline with the toggle control. Left (right in RTL) side when on/off text provided VS right (left in RTL) side when no on/off text. Caution: when not providing on/off text user may get confused in differentiating the on/off states of the toggle.}
-#' \item {\bold{ keytipProps }} {`IKeytipProps` \cr Optional keytip for this toggle}
-#' \item {\bold{ label }} {`string | JSX.Element` \cr A label for the toggle.}
-#' \item {\bold{ offAriaLabel }} {`string` \cr }
-#' \item {\bold{ offText }} {`string` \cr Text to display when toggle is OFF. Caution: when not providing on/off text user may get confused in differentiating the on/off states of the toggle.}
-#' \item {\bold{ onAriaLabel }} {`string` \cr }
-#' \item {\bold{ onChange }} {`(event: React.MouseEvent<HTMLElement>, checked?: boolean) => void` \cr Callback issued when the value changes.}
-#' \item {\bold{ onChanged }} {`(checked: boolean) => void` \cr }
-#' \item {\bold{ onText }} {`string` \cr Text to display when toggle is ON. Caution: when not providing on/off text user may get confused in differentiating the on/off states of the toggle.}
-#' \item {\bold{ role }} {`'checkbox' | 'switch' | 'menuitemcheckbox'` \cr (Optional) Specify whether to use the "switch" role (ARIA 1.1) or the checkbox role (ARIA 1.0). If unspecified, defaults to "switch".}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<IToggleStyleProps, IToggleStyles>` \cr Optional styles for the component.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by HOC.}
-#' }
+#' * \bold{ ariaLabel } `string` \cr Text for screen-reader to announce as the name of the toggle.
+#' * \bold{ as } `IComponentAs<React.HTMLAttributes<HTMLElement>>` \cr Render the root element as another type.
+#' * \bold{ checked } `boolean` \cr Checked state of the toggle. If you are maintaining state yourself, use this property. Otherwise use `defaultChecked`.
+#' * \bold{ componentRef } `IRefObject<IToggle>` \cr Optional callback to access the IToggle interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ defaultChecked } `boolean` \cr Initial state of the toggle. If you want the toggle to maintain its own state, use this. Otherwise use `checked`.
+#' * \bold{ disabled } `boolean` \cr Optional disabled flag.
+#' * \bold{ inlineLabel } `boolean` \cr Whether the label (not the onText/offText) should be positioned inline with the toggle control. Left (right in RTL) side when on/off text provided VS right (left in RTL) side when no on/off text. Caution: when not providing on/off text user may get confused in differentiating the on/off states of the toggle.
+#' * \bold{ keytipProps } `IKeytipProps` \cr Optional keytip for this toggle
+#' * \bold{ label } `string | JSX.Element` \cr A label for the toggle.
+#' * \bold{ offAriaLabel } `string` \cr
+#' * \bold{ offText } `string` \cr Text to display when toggle is OFF. Caution: when not providing on/off text user may get confused in differentiating the on/off states of the toggle.
+#' * \bold{ onAriaLabel } `string` \cr
+#' * \bold{ onChange } `(event: React.MouseEvent<HTMLElement>, checked?: boolean) => void` \cr Callback issued when the value changes.
+#' * \bold{ onChanged } `(checked: boolean) => void` \cr
+#' * \bold{ onText } `string` \cr Text to display when toggle is ON. Caution: when not providing on/off text user may get confused in differentiating the on/off states of the toggle.
+#' * \bold{ role } `'checkbox' | 'switch' | 'menuitemcheckbox'` \cr (Optional) Specify whether to use the "switch" role (ARIA 1.1) or the checkbox role (ARIA 1.0). If unspecified, defaults to "switch".
+#' * \bold{ styles } `IStyleFunctionOrObject<IToggleStyleProps, IToggleStyles>` \cr Optional styles for the component.
+#' * \bold{ theme } `ITheme` \cr Theme provided by HOC.
 #'
 #' @md
 #' @name Toggle
@@ -3519,39 +3405,37 @@ NULL
 #'
 #' @details
 #'
-#' \itemize{
-#' \item {\bold{ calloutProps }} {`ICalloutProps` \cr Additional properties to pass through for Callout.}
-#' \item {\bold{ className }} {`string` \cr Class name to apply to the *tooltip itself*, not the host. To apply a class to the host, use `hostClassName` or `styles.root`.}
-#' \item {\bold{ closeDelay }} {`number` \cr Number of milliseconds to delay closing the tooltip, so that the user has time to hover over the tooltip and interact with it. Hovering over the tooltip will count as hovering over the host, so that the tooltip will stay open if the user is actively interacting with it.}
-#' \item {\bold{ componentRef }} {`IRefObject<ITooltipHost>` \cr Optional callback to access the ITooltipHost interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ content }} {`string | JSX.Element | JSX.Element[]` \cr Content to display in the Tooltip.}
-#' \item {\bold{ delay }} {`TooltipDelay` \cr Length of delay before showing the tooltip on hover.}
-#' \item {\bold{ directionalHint }} {`DirectionalHint` \cr How the tooltip should be anchored to its `targetElement`.}
-#' \item {\bold{ directionalHintForRTL }} {`DirectionalHint` \cr How the element should be positioned in RTL layouts. If not specified, a mirror of `directionalHint` will be used.}
-#' \item {\bold{ hostClassName }} {`string` \cr Class name to apply to tooltip host.}
-#' \item {\bold{ id }} {`string` \cr Optional ID to pass through to the tooltip (not used on the host itself). Auto-generated if not provided.}
-#' \item {\bold{ onTooltipToggle }} {`onTooltipToggle?(isTooltipVisible: boolean): void;` \cr Notifies when tooltip becomes visible or hidden, whatever the trigger was.}
-#' \item {\bold{ overflowMode }} {`TooltipOverflowMode` \cr If this is unset (the default), the tooltip is always shown even if there's no overflow.
+#' * \bold{ calloutProps } `ICalloutProps` \cr Additional properties to pass through for Callout.
+#' * \bold{ className } `string` \cr Class name to apply to the *tooltip itself*, not the host. To apply a class to the host, use `hostClassName` or `styles.root`.
+#' * \bold{ closeDelay } `number` \cr Number of milliseconds to delay closing the tooltip, so that the user has time to hover over the tooltip and interact with it. Hovering over the tooltip will count as hovering over the host, so that the tooltip will stay open if the user is actively interacting with it.
+#' * \bold{ componentRef } `IRefObject<ITooltipHost>` \cr Optional callback to access the ITooltipHost interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ content } `string | JSX.Element | JSX.Element[]` \cr Content to display in the Tooltip.
+#' * \bold{ delay } `TooltipDelay` \cr Length of delay before showing the tooltip on hover.
+#' * \bold{ directionalHint } `DirectionalHint` \cr How the tooltip should be anchored to its `targetElement`.
+#' * \bold{ directionalHintForRTL } `DirectionalHint` \cr How the element should be positioned in RTL layouts. If not specified, a mirror of `directionalHint` will be used.
+#' * \bold{ hostClassName } `string` \cr Class name to apply to tooltip host.
+#' * \bold{ id } `string` \cr Optional ID to pass through to the tooltip (not used on the host itself). Auto-generated if not provided.
+#' * \bold{ onTooltipToggle } `onTooltipToggle?(isTooltipVisible: boolean): void;` \cr Notifies when tooltip becomes visible or hidden, whatever the trigger was.
+#' * \bold{ overflowMode } `TooltipOverflowMode` \cr If this is unset (the default), the tooltip is always shown even if there's no overflow.
 #'
 #' If set, only show the tooltip if the specified element (`Self` or `Parent`) has overflow. When set to `Parent`, the parent element is also used as the tooltip's target element.
 #'
-#' Note that even with `Self` mode, the TooltipHost *does not* check whether any children have overflow.}
-#' \item {\bold{ setAriaDescribedBy }} {`boolean` \cr Whether or not to mark the TooltipHost root element as described by the tooltip. If not specified, the caller should pass an `id` to the TooltipHost (to be passed through to the Tooltip) and mark the appropriate element as `aria-describedby` the `id`.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<ITooltipHostStyleProps, ITooltipHostStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by higher-order component.}
-#' \item {\bold{ tooltipProps }} {`ITooltipProps` \cr Additional properties to pass through for Tooltip.}
-#' \item {\bold{ calloutProps }} {`ICalloutProps` \cr Properties to pass through for Callout.}
-#' \item {\bold{ componentRef }} {`IRefObject<ITooltip>` \cr Optional callback to access the ITooltip interface. Use this instead of ref for accessing the public methods and properties of the component.}
-#' \item {\bold{ content }} {`string | JSX.Element | JSX.Element[]` \cr Content to be passed to the tooltip}
-#' \item {\bold{ delay }} {`TooltipDelay` \cr Length of delay. Set to `TooltipDelay.zero` if you do not want a delay.}
-#' \item {\bold{ directionalHint }} {`DirectionalHint` \cr How the tooltip should be anchored to its `targetElement`.}
-#' \item {\bold{ directionalHintForRTL }} {`DirectionalHint` \cr How the element should be positioned in RTL layouts. If not specified, a mirror of `directionalHint` will be used instead}
-#' \item {\bold{ maxWidth }} {`string | null` \cr Max width of tooltip}
-#' \item {\bold{ onRenderContent }} {`IRenderFunction<ITooltipProps>` \cr Render function to populate tooltip content.}
-#' \item {\bold{ styles }} {`IStyleFunctionOrObject<ITooltipStyleProps, ITooltipStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.}
-#' \item {\bold{ targetElement }} {`HTMLElement` \cr Element to anchor the Tooltip to.}
-#' \item {\bold{ theme }} {`ITheme` \cr Theme provided by higher-order component.}
-#' }
+#' Note that even with `Self` mode, the TooltipHost *does not* check whether any children have overflow.
+#' * \bold{ setAriaDescribedBy } `boolean` \cr Whether or not to mark the TooltipHost root element as described by the tooltip. If not specified, the caller should pass an `id` to the TooltipHost (to be passed through to the Tooltip) and mark the appropriate element as `aria-describedby` the `id`.
+#' * \bold{ styles } `IStyleFunctionOrObject<ITooltipHostStyleProps, ITooltipHostStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
+#' * \bold{ theme } `ITheme` \cr Theme provided by higher-order component.
+#' * \bold{ tooltipProps } `ITooltipProps` \cr Additional properties to pass through for Tooltip.
+#' * \bold{ calloutProps } `ICalloutProps` \cr Properties to pass through for Callout.
+#' * \bold{ componentRef } `IRefObject<ITooltip>` \cr Optional callback to access the ITooltip interface. Use this instead of ref for accessing the public methods and properties of the component.
+#' * \bold{ content } `string | JSX.Element | JSX.Element[]` \cr Content to be passed to the tooltip
+#' * \bold{ delay } `TooltipDelay` \cr Length of delay. Set to `TooltipDelay.zero` if you do not want a delay.
+#' * \bold{ directionalHint } `DirectionalHint` \cr How the tooltip should be anchored to its `targetElement`.
+#' * \bold{ directionalHintForRTL } `DirectionalHint` \cr How the element should be positioned in RTL layouts. If not specified, a mirror of `directionalHint` will be used instead
+#' * \bold{ maxWidth } `string | null` \cr Max width of tooltip
+#' * \bold{ onRenderContent } `IRenderFunction<ITooltipProps>` \cr Render function to populate tooltip content.
+#' * \bold{ styles } `IStyleFunctionOrObject<ITooltipStyleProps, ITooltipStyles>` \cr Call to provide customized styling that will layer on top of the variant rules.
+#' * \bold{ targetElement } `HTMLElement` \cr Element to anchor the Tooltip to.
+#' * \bold{ theme } `ITheme` \cr Theme provided by higher-order component.
 #'
 #' @md
 #' @name Tooltip
@@ -3575,8 +3459,6 @@ NULL
 #' 1. #C8C8C8/neutralTertiaryAlt divider when used within an #F4F4F4/neutralLighter layout
 #' 1. #EAEAEA/neutralLight divider when used within an #FFFFFF/white layout
 #'
-#'
-#'
 #' @md
 #' @name Divider
 NULL
@@ -3598,8 +3480,6 @@ NULL
 #' you need to work using the original docs to achieve the desired result.
 #'
 #'
-#'
-#'
 #' @md
 #' @name Keytip
 NULL
@@ -3613,8 +3493,6 @@ NULL
 #' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Theme).
 #' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
-#'
-#'
 #'
 #'
 #' @md
@@ -3636,8 +3514,6 @@ NULL
 #'
 #' - Use a picker to quickly search for a few tags or files.
 #' - Use a picker to manage a group of tags or files.
-#'
-#'
 #'
 #' @md
 #' @name Pickers
