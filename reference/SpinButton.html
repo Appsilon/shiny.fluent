@@ -147,10 +147,10 @@ The update functions return nothing (called for side effects).</p>
 <li><p><b> componentRef </b> <code>IRefObject&lt;ISpinButton&gt;</code> <br> Gets the component ref.</p></li>
 <li><p><b> decrementButtonAriaLabel </b> <code>string</code> <br> Accessible label text for the decrement button (for screen reader users).</p></li>
 <li><p><b> decrementButtonIcon </b> <code>IIconProps</code> <br> Custom props for the decrement button.</p></li>
-<li><p><b> defaultValue </b> <code>string</code> <br> Initial value of the control. Updates to this prop will not be respected.Use this if you intend for the SpinButton to be an uncontrolled component which maintains its own value. Mutually exclusive with <code>value</code>.</p></li>
-<li><p><b> disabled </b> <code>boolean</code> <br> Whether or not the control is disabled.</p></li>
-<li><p><b> downArrowButtonStyles </b> <code>Partial&lt;IButtonStyles&gt;</code> <br> Custom styles for the down arrow button.Note: The buttons are in a checked state when arrow keys are used to incremenent/decrement the SpinButton. Use <code>rootChecked</code> instead of <code>rootPressed</code> for styling when that is the case.</p></li>
-<li><p><b> getClassNames </b> <code>(theme: ITheme, disabled: boolean, isFocused: boolean, keyboardSpinDirection: KeyboardSpinDirection, labelPosition?: Position, className?: string) =&gt; ISpinButtonClassNames</code> <br> Custom function for providing the classNames for the control. Can be used to provide all styles for the component instead of applying them on top of the default styles.</p></li>
+<li><p><b> defaultValue </b> <code>string</code> <br> Initial value of the control. Updates to this prop will not be respected.</p></li>
+</ul><p>Use this if you intend for the SpinButton to be an uncontrolled component which maintains its own value. Mutually exclusive with <code>value</code>.</p><ul><li><p><b> disabled </b> <code>boolean</code> <br> Whether or not the control is disabled.</p></li>
+<li><p><b> downArrowButtonStyles </b> <code>Partial&lt;IButtonStyles&gt;</code> <br> Custom styles for the down arrow button.</p></li>
+</ul><p>Note: The buttons are in a checked state when arrow keys are used to incremenent/decrement the SpinButton. Use <code>rootChecked</code> instead of <code>rootPressed</code> for styling when that is the case.</p><ul><li><p><b> getClassNames </b> <code>(theme: ITheme, disabled: boolean, isFocused: boolean, keyboardSpinDirection: KeyboardSpinDirection, labelPosition?: Position, className?: string) =&gt; ISpinButtonClassNames</code> <br> Custom function for providing the classNames for the control. Can be used to provide all styles for the component instead of applying them on top of the default styles.</p></li>
 <li><p><b> iconButtonProps </b> <code>IButtonProps</code> <br> Additional props for the up and down arrow buttons.</p></li>
 <li><p><b> iconProps </b> <code>IIconProps</code> <br> Props for an icon to display alongside the control's label.</p></li>
 <li><p><b> incrementButtonAriaLabel </b> <code>string</code> <br> Accessible label text for the increment button (for screen reader users).</p></li>
@@ -166,14 +166,15 @@ The update functions return nothing (called for side effects).</p>
 <li><p><b> onFocus </b> <code>React.FocusEventHandler&lt;HTMLInputElement&gt;</code> <br> Callback for when the user focuses the control.</p></li>
 <li><p><b> onIncrement </b> <code>(value: string, event?: React.MouseEvent&lt;HTMLElement&gt; | React.KeyboardEvent&lt;HTMLElement&gt;) =&gt; string | void</code> <br> Callback for when the increment button or up arrow key is pressed.</p></li>
 <li><p><b> onValidate </b> <code>(value: string, event?: React.SyntheticEvent&lt;HTMLElement&gt;) =&gt; string | void</code> <br> Callback for when the entered value should be validated.</p></li>
-<li><p><b> precision </b> <code>number</code> <br> How many decimal places the value should be rounded to.The default is calculated based on the precision of <code>step</code>: i.e. if step = 1, precision = 0. step = 0.0089, precision = 4. step = 300, precision = 2. step = 23.00, precision = 2.</p></li>
-<li><p><b> step </b> <code>number</code> <br> Difference between two adjacent values of the control. This value is used to calculate the precision of the input if no <code>precision</code> is given. The precision calculated this way will always be \&gt;= 0.</p></li>
+<li><p><b> precision </b> <code>number</code> <br> How many decimal places the value should be rounded to.</p></li>
+</ul><p>The default is calculated based on the precision of <code>step</code>: i.e. if step = 1, precision = 0. step = 0.0089, precision = 4. step = 300, precision = 2. step = 23.00, precision = 2.</p><ul><li><p><b> step </b> <code>number</code> <br> Difference between two adjacent values of the control. This value is used to calculate the precision of the input if no <code>precision</code> is given. The precision calculated this way will always be \&gt;= 0.</p></li>
 <li><p><b> styles </b> <code>Partial&lt;ISpinButtonStyles&gt;</code> <br> Custom styling for individual elements within the control.</p></li>
 <li><p><b> theme </b> <code>ITheme</code> <br> Theme provided by HOC.</p></li>
 <li><p><b> title </b> <code>string</code> <br> A more descriptive title for the control, visible on its tooltip.</p></li>
-<li><p><b> upArrowButtonStyles </b> <code>Partial&lt;IButtonStyles&gt;</code> <br> Custom styles for the up arrow button.Note: The buttons are in a checked state when arrow keys are used to incremenent/decrement the SpinButton. Use <code>rootChecked</code> instead of <code>rootPressed</code> for styling when that is the case.</p></li>
-<li><p><b> value </b> <code>string</code> <br> Current value of the control.Use this if you intend to pass in a new value as a result of change events. Mutually exclusive with <code>defaultValue</code>.</p></li>
-</ul></div>
+<li><p><b> upArrowButtonStyles </b> <code>Partial&lt;IButtonStyles&gt;</code> <br> Custom styles for the up arrow button.</p></li>
+</ul><p>Note: The buttons are in a checked state when arrow keys are used to incremenent/decrement the SpinButton. Use <code>rootChecked</code> instead of <code>rootPressed</code> for styling when that is the case.</p><ul><li><p><b> value </b> <code>string</code> <br> Current value of the control.</p></li>
+</ul><p>Use this if you intend to pass in a new value as a result of change events. Mutually exclusive with <code>defaultValue</code>.</p>
+    </div>
     <div class="section level2">
     <h2 id="best-practices">Best practices<a class="anchor" aria-label="anchor" href="#best-practices"></a></h2>
     

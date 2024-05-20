@@ -223,8 +223,9 @@ The allowed props are listed below in the <b>Details</b> section.</p></dd>
 <li><p><b> onRenderRow </b> <code>IRenderFunction&lt;IDetailsRowProps&gt;</code> <br> Callback to override the default row rendering.</p></li>
 <li><p><b> onRowDidMount </b> <code>(item?: any, index?: number) =&gt; void</code> <br> Callback for when a given row has been mounted. Useful for identifying when a row has been rendered on the page.</p></li>
 <li><p><b> onRowWillUnmount </b> <code>(item?: any, index?: number) =&gt; void</code> <br> Callback for when a given row has been unmounted. Useful for identifying when a row has been removed from the page.</p></li>
-<li><p><b> onShouldVirtualize </b> <code>(props: IListProps) =&gt; boolean</code> <br> Callback to determine whether the list should be rendered in full, or virtualized.Virtualization will add and remove pages of items as the user scrolls them into the visible range. This benefits larger list scenarios by reducing the DOM on the screen, but can negatively affect performance for smaller lists.The default implementation will virtualize when this callback is not provided.</p></li>
-<li><p><b> rowElementEventMap </b> <code>{ eventName: string; callback: (context: IDragDropContext, event?: any) =&gt; void; }[]</code> <br> Event names and corresponding callbacks that will be registered to rendered row elements.</p></li>
+<li><p><b> onShouldVirtualize </b> <code>(props: IListProps) =&gt; boolean</code> <br> Callback to determine whether the list should be rendered in full, or virtualized.</p></li>
+</ul><p>Virtualization will add and remove pages of items as the user scrolls them into the visible range. This benefits larger list scenarios by reducing the DOM on the screen, but can negatively affect performance for smaller lists.</p>
+<p>The default implementation will virtualize when this callback is not provided.</p><ul><li><p><b> rowElementEventMap </b> <code>{ eventName: string; callback: (context: IDragDropContext, event?: any) =&gt; void; }[]</code> <br> Event names and corresponding callbacks that will be registered to rendered row elements.</p></li>
 <li><p><b> selection </b> <code>ISelection</code> <br> Selection model to track selection state.</p></li>
 <li><p><b> selectionMode </b> <code>SelectionMode</code> <br> Controls how/if the details list manages selection. Options include none, single, multiple</p></li>
 <li><p><b> selectionPreservedOnEmptyClick </b> <code>boolean</code> <br> By default, selection is cleared when clicking on an empty (non-focusable) section of the screen. Setting this value to true overrides that behavior and maintains selection.</p></li>
@@ -292,8 +293,9 @@ The allowed props are listed below in the <b>Details</b> section.</p></dd>
 <li><p><b> shimmerLines </b> <code>number</code> <br> Number of shimmer placeholder lines to render.</p></li>
 <li><p><b> shimmerOverlayStyles </b> <code>IStyleFunctionOrObject&lt;IShimmeredDetailsListStyleProps, IShimmeredDetailsListStyles&gt;</code> <br> Custom styles to override the styles specific to the ShimmeredDetailsList root area.</p></li>
 <li><p><b> styles </b> <code>IStyleFunctionOrObject&lt;IShimmeredDetailsListStyleProps, IShimmeredDetailsListStyles&gt;</code> <br> Custom styles to override the styles specific to the ShimmeredDetailsList root area.</p></li>
-<li><p><b> skipViewportMeasures </b> <code>boolean</code> <br> Whether or not to use ResizeObserver (if available) to detect and measure viewport on 'resize' events.Falls back to window 'resize' event.</p></li>
-</ul></div>
+<li><p><b> skipViewportMeasures </b> <code>boolean</code> <br> Whether or not to use ResizeObserver (if available) to detect and measure viewport on 'resize' events.</p></li>
+</ul><p>Falls back to window 'resize' event.</p>
+    </div>
     <div class="section level2">
     <h2 id="best-practices">Best practices<a class="anchor" aria-label="anchor" href="#best-practices"></a></h2>
     

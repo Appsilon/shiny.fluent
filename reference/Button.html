@@ -196,8 +196,8 @@ The update functions return nothing (called for side effects).</p>
 <ul><li><p><b> baseClassName </b> <code>string</code> <br></p></li>
 <li><p><b> variantClassName </b> <code>string</code> <br></p></li>
 <li><p><b> allowDisabledFocus </b> <code>boolean</code> <br> Whether the button can have focus in disabled mode</p></li>
-<li><p><b> ariaDescription </b> <code>string</code> <br> Detailed description of the button for the benefit of screen readers.Besides the compound button, other button types will need more information provided to screen reader.</p></li>
-<li><p><b> ariaHidden </b> <code>boolean</code> <br> If provided and is true it adds an 'aria-hidden' attribute instructing screen readers to ignore the element.</p></li>
+<li><p><b> ariaDescription </b> <code>string</code> <br> Detailed description of the button for the benefit of screen readers.</p></li>
+</ul><p>Besides the compound button, other button types will need more information provided to screen reader.</p><ul><li><p><b> ariaHidden </b> <code>boolean</code> <br> If provided and is true it adds an 'aria-hidden' attribute instructing screen readers to ignore the element.</p></li>
 <li><p><b> ariaLabel </b> <code>string</code> <br> The aria label of the button for the benefit of screen readers.</p></li>
 <li><p><b> buttonType </b> <code>ButtonType</code> <br> Deprecated at v1.2.3, to be removed at \&gt;= v2.0.0. Use specific button component instead.</p></li>
 <li><p><b> checked </b> <code>boolean</code> <br> Whether the button is checked</p></li>
@@ -229,8 +229,8 @@ The update functions return nothing (called for side effects).</p>
 <li><p><b> primary </b> <code>boolean</code> <br> Changes the visual presentation of the button to be emphasized (if defined)</p></li>
 <li><p><b> primaryActionButtonProps </b> <code>IButtonProps</code> <br> Optional props to be applied only to the primary action button of SplitButton and not to the overall SplitButton container</p></li>
 <li><p><b> primaryDisabled </b> <code>boolean</code> <br> If set to true and if this is a splitButton (split == true) then the primary action of a split button is disabled.</p></li>
-<li><p><b> renderPersistedMenuHiddenOnMount </b> <code>boolean</code> <br> If true, the persisted menu is rendered hidden when the button initially mounts. Non-persisted menus will not be in the component tree unless they are being shownNote: This increases the time the button will take to mount, but can improve perceived menu open perf. when the user opens the menu.</p></li>
-<li><p><b> rootProps </b> <code>React.ButtonHTMLAttributes&lt;HTMLButtonElement&gt; | React.AnchorHTMLAttributes&lt;HTMLAnchorElement&gt;</code> <br> Deprecated at v0.56.2, to be removed at \&gt;= v1.0.0. Just pass in button props instead. they will be mixed into the button/anchor element rendered by the component.</p></li>
+<li><p><b> renderPersistedMenuHiddenOnMount </b> <code>boolean</code> <br> If true, the persisted menu is rendered hidden when the button initially mounts. Non-persisted menus will not be in the component tree unless they are being shown</p></li>
+</ul><p>Note: This increases the time the button will take to mount, but can improve perceived menu open perf. when the user opens the menu.</p><ul><li><p><b> rootProps </b> <code>React.ButtonHTMLAttributes&lt;HTMLButtonElement&gt; | React.AnchorHTMLAttributes&lt;HTMLAnchorElement&gt;</code> <br> Deprecated at v0.56.2, to be removed at \&gt;= v1.0.0. Just pass in button props instead. they will be mixed into the button/anchor element rendered by the component.</p></li>
 <li><p><b> secondaryText </b> <code>string</code> <br> Description of the action this button takes. Only used for compound buttons</p></li>
 <li><p><b> split </b> <code>boolean</code> <br> If set to true, and if menuProps and onClick are provided, the button will render as a SplitButton.</p></li>
 <li><p><b> splitButtonAriaLabel </b> <code>string</code> <br> Accessible label for the dropdown chevron button if this button is split.</p></li>

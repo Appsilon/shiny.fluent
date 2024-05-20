@@ -128,21 +128,21 @@ The allowed props are listed below in the <b>Details</b> section.</p></dd>
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     
 <ul><li><p><b> alwaysRender </b> <code>boolean</code> <br> Defines whether to always render the pivot item (regardless of whether it is selected or not). Useful if you're rendering content that is expensive to mount.</p></li>
-<li><p><b> ariaLabel </b> <code>string</code> <br> The aria label of each pivot link which will read by screen reader instead of linkText.Note that unless you have compelling requirements you should not override aria-label.</p></li>
-<li><p><b> componentRef </b> <code>IRefObject&lt;{}&gt;</code> <br> Gets the component ref.</p></li>
+<li><p><b> ariaLabel </b> <code>string</code> <br> The aria label of each pivot link which will read by screen reader instead of linkText.</p></li>
+</ul><p>Note that unless you have compelling requirements you should not override aria-label.</p><ul><li><p><b> componentRef </b> <code>IRefObject&lt;{}&gt;</code> <br> Gets the component ref.</p></li>
 <li><p><b> headerButtonProps </b> <code>IButtonProps | { [key: string]: string | number | boolean; }</code> <br> Props for the header command button. This provides a way to pass in native props, such as data-* and aria-*, for each pivot header/link element.</p></li>
 <li><p><b> headerText </b> <code>string</code> <br> The text displayed of each pivot link.</p></li>
-<li><p><b> itemCount </b> <code>number | string</code> <br> Defines an optional item count displayed in parentheses just after the <code>linkText</code>.Examples: completed (4), Unread (99+)</p></li>
-<li><p><b> itemIcon </b> <code>string</code> <br> An optional icon to show next to the pivot link.</p></li>
-<li><p><b> itemKey </b> <code>string</code> <br> An required key to uniquely identify a pivot item.Note: The 'key' from react props cannot be used inside component.</p></li>
-<li><p><b> keytipProps </b> <code>IKeytipProps</code> <br> Optional keytip for this PivotItem.</p></li>
+<li><p><b> itemCount </b> <code>number | string</code> <br> Defines an optional item count displayed in parentheses just after the <code>linkText</code>.</p></li>
+</ul><p>Examples: completed (4), Unread (99+)</p><ul><li><p><b> itemIcon </b> <code>string</code> <br> An optional icon to show next to the pivot link.</p></li>
+<li><p><b> itemKey </b> <code>string</code> <br> An required key to uniquely identify a pivot item.</p></li>
+</ul><p>Note: The 'key' from react props cannot be used inside component.</p><ul><li><p><b> keytipProps </b> <code>IKeytipProps</code> <br> Optional keytip for this PivotItem.</p></li>
 <li><p><b> linkText </b> <code>string</code> <br> The text displayed of each pivot link - renaming to <code>headerText</code>.</p></li>
 <li><p><b> onRenderItemLink </b> <code>IRenderFunction&lt;IPivotItemProps&gt;</code> <br> Optional custom renderer for the pivot item link.</p></li>
 <li><p><b> className </b> <code>string</code> <br> Additional css class to apply to the Pivot</p></li>
 <li><p><b> componentRef </b> <code>IRefObject&lt;IPivot&gt;</code> <br> Optional callback to access the IPivot interface. Use this instead of ref for accessing the public methods and properties of the component.</p></li>
-<li><p><b> defaultSelectedIndex </b> <code>number</code> <br> Default selected index for the pivot. Only provide this if the pivot is an uncontrolled component; otherwise, use the <code>selectedKey</code> property.This property is also mutually exclusive with <code>defaultSelectedKey</code>.</p></li>
-<li><p><b> defaultSelectedKey </b> <code>string</code> <br> Default selected key for the pivot. Only provide this if the pivot is an uncontrolled component; otherwise, use the <code>selectedKey</code> property.This property is also mutually exclusive with <code>defaultSelectedIndex</code>.</p></li>
-<li><p><b> getTabId </b> <code>(itemKey: string, index: number) =&gt; string</code> <br> Callback to customize how IDs are generated for each tab header. Useful if you're rendering content outside and need to connect aria-labelledby.</p></li>
+<li><p><b> defaultSelectedIndex </b> <code>number</code> <br> Default selected index for the pivot. Only provide this if the pivot is an uncontrolled component; otherwise, use the <code>selectedKey</code> property.</p></li>
+</ul><p>This property is also mutually exclusive with <code>defaultSelectedKey</code>.</p><ul><li><p><b> defaultSelectedKey </b> <code>string</code> <br> Default selected key for the pivot. Only provide this if the pivot is an uncontrolled component; otherwise, use the <code>selectedKey</code> property.</p></li>
+</ul><p>This property is also mutually exclusive with <code>defaultSelectedIndex</code>.</p><ul><li><p><b> getTabId </b> <code>(itemKey: string, index: number) =&gt; string</code> <br> Callback to customize how IDs are generated for each tab header. Useful if you're rendering content outside and need to connect aria-labelledby.</p></li>
 <li><p><b> headersOnly </b> <code>boolean</code> <br> Whether to skip rendering the tabpanel with the content of the selected tab. Use this prop if you plan to separately render the tab content and don't want to leave an empty tabpanel in the page that may confuse Screen Readers.</p></li>
 <li><p><b> initialSelectedIndex </b> <code>number</code> <br> Index of the pivot item initially selected. Mutually exclusive with <code>initialSelectedKey</code>. Only provide this if the pivot is an uncontrolled component; otherwise, use <code>selectedKey</code>.</p></li>
 <li><p><b> initialSelectedKey </b> <code>string</code> <br> Key of the pivot item initially selected. Mutually exclusive with <code>initialSelectedIndex</code>. Only provide this if the pivot is an uncontrolled component; otherwise, use <code>selectedKey</code>.</p></li>
