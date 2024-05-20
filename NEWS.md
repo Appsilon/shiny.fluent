@@ -1,13 +1,18 @@
+# shiny.fluent 0.4.0
+
+1. Upgraded `@fluentui/react` to 8.118.2.
+2. Upgraded `shiny.react` dependency to 0.4.0 that uses React 18.3.1.
+
 # shiny.fluent 0.3.0
 
 1. Added `ThemeProvider` component ([#47](https://github.com/Appsilon/shiny.fluent/issues/47)).
 2. Added `ShimmeredDetailsList` component
 ([#34](https://github.com/Appsilon/shiny.fluent/issues/34)).
-3. All `.shinyInput` wrappers now have a sensible debounce consistent with vanilla Shiny
+1. All `.shinyInput` wrappers now have a sensible debounce consistent with vanilla Shiny
 ([#130](https://github.com/Appsilon/shiny.fluent/issues/130)).
-4. Added update functions for all buttons
+1. Added update functions for all buttons
 ([#12](https://github.com/Appsilon/shiny.react/issues/12)).
-5. `Dropdown.shinyInput` now supports multiselection
+1. `Dropdown.shinyInput` now supports multiselection
 ([#42](https://github.com/Appsilon/shiny.fluent/issues/42)).
 
 
