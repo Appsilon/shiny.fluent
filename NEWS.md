@@ -8,11 +8,11 @@
 1. Added `ThemeProvider` component ([#47](https://github.com/Appsilon/shiny.fluent/issues/47)).
 2. Added `ShimmeredDetailsList` component
 ([#34](https://github.com/Appsilon/shiny.fluent/issues/34)).
-1. All `.shinyInput` wrappers now have a sensible debounce consistent with vanilla Shiny
+3. All `.shinyInput` wrappers now have a sensible debounce consistent with vanilla Shiny
 ([#130](https://github.com/Appsilon/shiny.fluent/issues/130)).
-1. Added update functions for all buttons
+4. Added update functions for all buttons
 ([#12](https://github.com/Appsilon/shiny.react/issues/12)).
-1. `Dropdown.shinyInput` now supports multiselection
+5. `Dropdown.shinyInput` now supports multiselection
 ([#42](https://github.com/Appsilon/shiny.fluent/issues/42)).
 
 
