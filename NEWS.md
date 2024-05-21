@@ -1,3 +1,8 @@
+# shiny.fluent 0.4.0
+
+1. Upgraded `@fluentui/react` to 8.118.2.
+2. Upgraded `shiny.react` dependency to 0.4.0 that uses React 18.3.1.
+
 # shiny.fluent 0.3.0
 
 1. Added `ThemeProvider` component ([#47](https://github.com/Appsilon/shiny.fluent/issues/47)).

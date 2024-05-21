@@ -1,6 +1,6 @@
 Package: shiny.fluent
 Title: Microsoft Fluent UI for Shiny Apps
-Version: 0.3.0.900
+Version: 0.4.0
 Authors@R:
   c(
     person("Jakub", "Sobolewski", role = c("aut", "cre"), email = "opensource+jakub.sobolewski@appsilon.com"),
