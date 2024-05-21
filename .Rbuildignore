@@ -12,3 +12,4 @@
 ^scrape-docs/
 ^vignettes/
 ^.*\.sass_cache_keys
+^cran-comments\.md$
