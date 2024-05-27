@@ -11,7 +11,7 @@
   color: rgba(255, 255, 255, 0.55);
 }
 
-.navbar-dark .navbar-nav .active > .nav-link {
+.navbar-light .navbar-nav .active > .nav-link {
   background-color: var(--primary-color) !important;
   color: #fff !important;
 }
@@ -22,11 +22,6 @@
 
 #navbar > ul.navbar-nav > li.nav-item a:hover {
   background-color: var(--primary-color) !important;
-}
-
-.navbar-dark input[type="search"] {
-  background-color: #fff !important;
-  color: #444 !important;
 }
 
 nav .text-muted {
