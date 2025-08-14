@@ -198,3 +198,11 @@ Toggle.shinyInput <- input("Toggle", FALSE)
 #' @rdname Toggle
 #' @export
 updateToggle.shinyInput <- shiny.react::updateReactInput
+
+#' @rdname FileUploadButton
+#' @export
+FileUploadButton.shinyInput <- input("FileUploadButton", NULL)
+
+#' @rdname FileUploadButton
+#' @export
+updateFileUploadButton.shinyInput <- shiny.react::updateReactInput

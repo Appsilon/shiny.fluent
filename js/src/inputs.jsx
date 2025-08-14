@@ -1,3 +1,4 @@
+import * as React from 'react';
 import * as Fluent from '@fluentui/react';
 import { ButtonAdapter, InputAdapter, debounce } from '@/shiny.react';
 
@@ -107,3 +108,82 @@ export const Toggle = InputAdapter(Fluent.Toggle, (value, setValue) => ({
   checked: value,
   onChange: (e, v) => setValue(v),
 }));
+
+// Safari-compatible file upload button
+export const FileUploadButton = InputAdapter(
+  ({
+    value,
+    onChange,
+    buttonType = 'default',
+    icon,
+    text,
+    accept,
+    multiple,
+    ...otherProps
+  }) => {
+    const fileInputRef = React.useRef(null);
+
+    const handleClick = () => {
+      if (fileInputRef.current) {
+        fileInputRef.current.click();
+      }
+    };
+
+    const handleFileChange = (event) => {
+      const { files } = event.target;
+      if (files && files.length > 0) {
+        // Convert FileList to format Shiny expects
+        const fileData = Array.from(files).map((file) => ({
+          name: file.name,
+          size: file.size,
+          type: file.type,
+          lastModified: file.lastModified,
+        }));
+        onChange(multiple ? fileData : fileData[0]);
+      }
+    };
+
+    // Select the appropriate button component
+    let ButtonComponent;
+    if (buttonType === 'primary') {
+      ButtonComponent = Fluent.PrimaryButton;
+    } else if (buttonType === 'compound') {
+      ButtonComponent = Fluent.CompoundButton;
+    } else if (buttonType === 'action') {
+      ButtonComponent = Fluent.ActionButton;
+    } else if (buttonType === 'command') {
+      ButtonComponent = Fluent.CommandButton;
+    } else if (buttonType === 'commandBar') {
+      ButtonComponent = Fluent.CommandBarButton;
+    } else if (buttonType === 'icon') {
+      ButtonComponent = Fluent.IconButton;
+    } else {
+      ButtonComponent = Fluent.DefaultButton;
+    }
+
+    return (
+      <div>
+        <ButtonComponent
+          onClick={handleClick}
+          text={text}
+          iconProps={icon ? { iconName: icon } : undefined}
+          disabled={otherProps.disabled}
+          className={otherProps.className}
+          style={otherProps.style}
+        />
+        <input
+          ref={fileInputRef}
+          type="file"
+          accept={accept}
+          multiple={multiple}
+          onChange={handleFileChange}
+          style={{ display: 'none' }}
+        />
+      </div>
+    );
+  },
+  (value, setValue) => ({
+    value,
+    onChange: setValue,
+  }),
+);
