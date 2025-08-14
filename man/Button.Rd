@@ -351,143 +351,117 @@ if (interactive()) {
 library(shiny)
 library(shiny.fluent)
 
-# This example demonstrates how to create Safari-compatible file upload buttons
-# using Fluent UI styling. The new approach works across all browsers, including
-# Safari which blocks programmatic file input clicks.
+# This example demonstrates FileUploadButton - a native Fluent UI file upload component
+# that works across all browsers, including Safari.
 
-# RECOMMENDED APPROACH: Using fluentFileInput (Safari-compatible)
-ui_recommended <- function(id) {
+ui <- function(id) {
   ns <- NS(id)
   fluentPage(
-    h3("Recommended: Safari-Compatible File Upload"),
-    p("This approach works in all browsers including Safari:"),
+    h3("File Upload with Fluent UI"),
+    p("Native file upload components with full cross-browser support:"),
+    
     Stack(
-      tokens = list(childrenGap = 15),
+      tokens = list(childrenGap = 20),
       horizontal = FALSE,
       
-      fluentFileInput(
-        inputId = ns("upload1"),
-        label = "Upload File (Primary)",
-        buttonType = "primary",
-        icon = "Upload",
-        accept = ".xlsx,.csv,.pdf"
-      ),
-      
-      fluentFileInput(
-        inputId = ns("upload2"), 
-        label = "Upload Multiple Files",
-        buttonType = "default",
-        icon = "Attach",
-        multiple = TRUE,
-        accept = ".png,.jpg,.jpeg"
-      ),
-      
-      fluentFileInput(
-        inputId = ns("upload3"),
-        label = "Upload Document",
-        buttonType = "compound",
-        icon = "FolderOpen",
-        accept = ".docx,.pdf",
-        buttonWidth = "250px"
-      )
-    ),
-    br(),
-    div(id = ns("file_info"))
-  )
-}
-
-server_recommended <- function(id) {
-  moduleServer(id, function(input, output, session) {
-    
-    observeEvent(input$upload1, {
-      req(input$upload1)
-      insertUI(
-        paste0("#", session$ns("file_info")),
-        "beforeEnd",
-        p(paste("Primary upload:", input$upload1$name))
-      )
-    })
-    
-    observeEvent(input$upload2, {
-      req(input$upload2)
-      files <- if (length(input$upload2$name) > 1) {
-        paste(input$upload2$name, collapse = ", ")
-      } else {
-        input$upload2$name
-      }
-      insertUI(
-        paste0("#", session$ns("file_info")),
-        "beforeEnd", 
-        p(paste("Multiple upload:", files))
-      )
-    })
-    
-    observeEvent(input$upload3, {
-      req(input$upload3)
-      insertUI(
-        paste0("#", session$ns("file_info")),
-        "beforeEnd",
-        p(paste("Document upload:", input$upload3$name))
-      )
-    })
-  })
-}
-
-# LEGACY APPROACH: Using shinyjs (Safari-incompatible, kept for reference)
-ui_legacy <- function(id) {
-  ns <- NS(id)
-  fluentPage(
-    useShinyjs(),
-    h3("Legacy: Safari-Incompatible File Upload"),
-    p(style = "color: red;", "⚠️ This approach fails in Safari - kept for reference only"),
-    Stack(
-      tokens = list(childrenGap = 10L),
-      horizontal = TRUE,
-      DefaultButton.shinyInput(
-        inputId = ns("uploadFileButton"),
-        text = "Upload File (Legacy)",
-        iconProps = list(iconName = "Upload")
-      ),
+      # Primary button for important uploads
       div(
-        style = "visibility: hidden; height: 0; width: 0;",
-        fileInput(
-          inputId = ns("uploadFile"),
-          label = NULL
+        Text(variant = "mediumPlus", "Upload Data Files"),
+        FileUploadButton.shinyInput(
+          inputId = ns("data_files"),
+          text = "Choose Data Files",
+          buttonType = "primary",
+          icon = "Upload",
+          accept = ".xlsx,.csv,.json",
+          multiple = TRUE
+        )
+      ),
+      
+      # Default button for documents
+      div(
+        Text(variant = "mediumPlus", "Upload Document"),
+        FileUploadButton.shinyInput(
+          inputId = ns("document"),
+          text = "Choose Document", 
+          buttonType = "default",
+          icon = "TextDocument",
+          accept = ".pdf,.docx,.txt"
+        )
+      ),
+      
+      # Compound button with description
+      div(
+        Text(variant = "mediumPlus", "Upload Images"),
+        FileUploadButton.shinyInput(
+          inputId = ns("images"),
+          text = "Choose Images",
+          buttonType = "compound", 
+          icon = "Photo2",
+          accept = ".png,.jpg,.jpeg,.gif",
+          multiple = TRUE
         )
       )
     ),
-    textOutput(ns("file_path"))
-  )
-}
-
-server_legacy <- function(id) {
-  moduleServer(id, function(input, output, session) {
-    observeEvent(input$uploadFileButton, {
-      click("uploadFile")  # This fails in Safari
-    })
-
-    output$file_path <- renderText({
-      if (!is.null(input$uploadFile)) {
-        paste("Legacy upload:", input$uploadFile$name)
-      }
-    })
-  })
-}
-
-# Combined UI showing both approaches
-ui <- function(id) {
-  fluentPage(
-    ui_recommended(paste0(id, "_rec")),
+    
     br(),
-    hr(),
-    br(), 
-    ui_legacy(paste0(id, "_leg"))
+    h4("Upload Status:"),
+    div(id = ns("upload_status"))
   )
 }
 
 server <- function(id) {
-  server_recommended(paste0(id, "_rec"))
-  server_legacy(paste0(id, "_leg"))
+  moduleServer(id, function(input, output, session) {
+    
+    # Handle data files upload
+    observeEvent(input$data_files, {
+      req(input$data_files)
+      files <- if (length(input$data_files$name) > 1) {
+        paste(input$data_files$name, collapse = ", ")
+      } else {
+        input$data_files$name
+      }
+      insertUI(
+        paste0("#", session$ns("upload_status")),
+        "beforeEnd",
+        MessageBar(
+          messageBarType = 1, # success
+          paste("✅ Data files uploaded:", files)
+        )
+      )
+    })
+    
+    # Handle document upload
+    observeEvent(input$document, {
+      req(input$document)
+      insertUI(
+        paste0("#", session$ns("upload_status")),
+        "beforeEnd",
+        MessageBar(
+          messageBarType = 1, # success
+          paste("📄 Document uploaded:", input$document$name)
+        )
+      )
+    })
+    
+    # Handle images upload
+    observeEvent(input$images, {
+      req(input$images)
+      files <- if (length(input$images$name) > 1) {
+        paste(length(input$images$name), "images:", 
+              paste(input$images$name, collapse = ", "))
+      } else {
+        paste("Image uploaded:", input$images$name)
+      }
+      insertUI(
+        paste0("#", session$ns("upload_status")),
+        "beforeEnd",
+        MessageBar(
+          messageBarType = 1, # success
+          paste("🖼️", files)
+        )
+      )
+    })
+  })
 }
 
 if (interactive()) {

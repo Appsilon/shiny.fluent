@@ -201,7 +201,13 @@ NULL
 #' The R package cannot handle each and every case, so for advanced use cases
 #' you need to work using the original docs to achieve the desired result.
 #'
-#' # Best practices
+#' @param inputId ID of the component.
+#' @param value Starting value.
+#' @param session Object passed as the `session` argument to Shiny server.
+#' @param ... Props to pass to the component.
+#' The allowed props are listed below in the \bold{Details} section.
+#'
+#' @section Best practices:
 #' ### Usage
 #' - Use FileUploadButton when you need Safari-compatible file uploads
 #' - Choose appropriate buttonType for visual hierarchy (primary for main actions)

@@ -14,6 +14,16 @@ updateFileUploadButton.shinyInput(
   ...
 )
 }
+\arguments{
+\item{inputId}{ID of the component.}
+
+\item{...}{Props to pass to the component.
+The allowed props are listed below in the \bold{Details} section.}
+
+\item{value}{Starting value.}
+
+\item{session}{Object passed as the \code{session} argument to Shiny server.}
+}
 \description{
 A Safari-compatible file upload button that combines Fluent UI styling with cross-browser file selection functionality. This component solves the issue where Safari blocks programmatic file input clicks by using React-based file input handling.
 
@@ -34,6 +44,7 @@ you need to work using the original docs to achieve the desired result.
 }
 }
 \section{Best practices}{
+
 \subsection{Usage}{
 \itemize{
 \item Use FileUploadButton when you need Safari-compatible file uploads
