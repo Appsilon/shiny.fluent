@@ -195,11 +195,9 @@ NULL
 #' FileUploadButton
 #'
 #' @description
-#' A Safari-compatible file upload button that combines Fluent UI styling with cross-browser file selection functionality. This component solves the issue where Safari blocks programmatic file input clicks by using React-based file input handling.
+#' A Safari-compatible file upload button that combines Fluent UI styling with cross-browser file selection functionality. This component handles Safari blocking programmatic file input clicks by using React-based file input handling.
 #'
-#' For more details about Fluent UI buttons visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Button).
-#' The R package cannot handle each and every case, so for advanced use cases
-#' you need to work using the original docs to achieve the desired result.
+#' For more details about Fluent UI buttons visit [the official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Button).
 #'
 #' @param inputId ID of the component.
 #' @param value Starting value.
@@ -211,12 +209,12 @@ NULL
 #' ### Usage
 #' - Use FileUploadButton when you need Safari-compatible file uploads
 #' - Choose appropriate buttonType for visual hierarchy (primary for main actions)
-#' - Set meaningful accept attributes to filter file types
-#' - Use multiple=TRUE for bulk file uploads
+#' - Use `accept` prop to filter allowed file extensions
+#' - Use `multiple=TRUE` for bulk file uploads
 #'
 #' ### Content
-#' - Use clear, action-oriented text ("Upload Files", "Select Document")
-#' - Include relevant icons when helpful (Upload, Attach, FolderOpen)
+#' - Use clear, action-oriented `text` (e.g., "Upload Files", "Select Document")
+#' - Consider using relevant icons such as: Upload, Attach, or FolderOpen
 #' - Keep button text concise but descriptive
 #'
 #' ### Accessibility
@@ -229,7 +227,7 @@ NULL
 #' * \bold{ text } `string` \cr Text to display on the button.
 #' * \bold{ buttonType } `string` \cr Type of Fluent button: "primary", "default", "compound", "action", "command", "commandBar", or "icon". Defaults to "default".
 #' * \bold{ icon } `string` \cr Optional Fluent UI icon name (e.g., "Upload", "Attach", "FolderOpen").
-#' * \bold{ accept } `string` \cr File types to accept (e.g., ".xlsx,.csv", ".pdf"). Passed to underlying file input.
+#' * \bold{ accept } `string` \cr A comma-separated string of file extensions to accept (e.g., ".xlsx,.csv", ".pdf"). Passed to underlying file input.
 #' * \bold{ multiple } `boolean` \cr Whether to allow multiple file selection. Defaults to FALSE.
 #' * \bold{ disabled } `boolean` \cr Whether the button is disabled.
 #' * \bold{ className } `string` \cr Additional CSS class name for the button.
