@@ -192,6 +192,51 @@ NULL
 #' @name Button
 NULL
 
+#' FileUploadButton
+#'
+#' @description
+#' A Safari-compatible file upload button that combines Fluent UI styling with cross-browser file selection functionality. This component handles Safari blocking programmatic file input clicks by using React-based file input handling.
+#'
+#' For more details about Fluent UI buttons visit [the official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Button).
+#'
+#' @param inputId ID of the component.
+#' @param value Starting value.
+#' @param session Object passed as the `session` argument to Shiny server.
+#' @param ... Props to pass to the component.
+#' The allowed props are listed below in the \bold{Details} section.
+#'
+#' @section Best practices:
+#' ### Usage
+#' - Use FileUploadButton when you need Safari-compatible file uploads
+#' - Choose appropriate buttonType for visual hierarchy (primary for main actions)
+#' - Use `accept` prop to filter allowed file extensions
+#' - Use `multiple=TRUE` for bulk file uploads
+#'
+#' ### Content
+#' - Use clear, action-oriented `text` (e.g., "Upload Files", "Select Document")
+#' - Consider using relevant icons such as: Upload, Attach, or FolderOpen
+#' - Keep button text concise but descriptive
+#'
+#' ### Accessibility
+#' - Button follows Fluent UI accessibility standards
+#' - Supports keyboard navigation (Space/Enter to activate)
+#' - Compatible with screen readers and assistive technologies
+#'
+#' @details
+#'
+#' * \bold{ text } `string` \cr Text to display on the button.
+#' * \bold{ buttonType } `string` \cr Type of Fluent button: "primary", "default", "compound", "action", "command", "commandBar", or "icon". Defaults to "default".
+#' * \bold{ icon } `string` \cr Optional Fluent UI icon name (e.g., "Upload", "Attach", "FolderOpen").
+#' * \bold{ accept } `string` \cr A comma-separated string of file extensions to accept (e.g., ".xlsx,.csv", ".pdf"). Passed to underlying file input.
+#' * \bold{ multiple } `boolean` \cr Whether to allow multiple file selection. Defaults to FALSE.
+#' * \bold{ disabled } `boolean` \cr Whether the button is disabled.
+#' * \bold{ className } `string` \cr Additional CSS class name for the button.
+#' * \bold{ style } `string` \cr Inline CSS styles for the button.
+#'
+#' @md
+#' @name FileUploadButton
+NULL
+
 #' Calendar
 #'
 #' @description
