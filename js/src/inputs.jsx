@@ -112,14 +112,17 @@ export const Toggle = InputAdapter(Fluent.Toggle, (value, setValue) => ({
 // Safari-compatible file upload button
 export const FileUploadButton = InputAdapter(
   ({
-    value,
     onChange,
     buttonType = 'default',
     icon,
     text,
     accept,
     multiple,
-    ...otherProps
+    disabled,
+    className,
+    style,
+    ariaLabel,
+    title,
   }) => {
     const fileInputRef = React.useRef(null);
 
@@ -167,9 +170,11 @@ export const FileUploadButton = InputAdapter(
           onClick={handleClick}
           text={text}
           iconProps={icon ? { iconName: icon } : undefined}
-          disabled={otherProps.disabled}
-          className={otherProps.className}
-          style={otherProps.style}
+          disabled={disabled}
+          className={className}
+          style={style}
+          ariaLabel={ariaLabel}
+          title={title}
         />
         <input
           ref={fileInputRef}
