@@ -198,8 +198,6 @@ NULL
 #' A Safari-compatible file upload button that combines Fluent UI styling with cross-browser file selection functionality. This component solves the issue where Safari blocks programmatic file input clicks by using React-based file input handling.
 #'
 #' For more details about Fluent UI buttons visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Button).
-#' The R package cannot handle each and every case, so for advanced use cases
-#' you need to work using the original docs to achieve the desired result.
 #'
 #' @param inputId ID of the component.
 #' @param value Starting value.
@@ -220,9 +218,9 @@ NULL
 #' - Keep button text concise but descriptive
 #'
 #' ### Accessibility
-#' - Button automatically includes proper ARIA attributes
-#' - Supports keyboard navigation and screen readers
-#' - File input maintains semantic meaning for assistive technology
+#' - Button follows Fluent UI accessibility standards
+#' - Supports keyboard navigation (Space/Enter to activate)
+#' - Compatible with screen readers and assistive technologies
 #'
 #' @details
 #'

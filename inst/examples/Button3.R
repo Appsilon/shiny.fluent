@@ -57,7 +57,11 @@ ui <- function(id) {
     
     br(),
     h4("Upload Status:"),
-    div(id = ns("upload_status"))
+    div(
+      uiOutput(ns("data_files_status")),
+      uiOutput(ns("document_status")), 
+      uiOutput(ns("images_status"))
+    )
   )
 }
 
@@ -67,51 +71,57 @@ server <- function(id) {
     # Handle data files upload
     observeEvent(input$data_files, {
       req(input$data_files)
-      files <- if (length(input$data_files$name) > 1) {
-        paste(input$data_files$name, collapse = ", ")
+      # Handle multiple files (array) or single file (object) 
+      if (is.list(input$data_files) && !is.null(names(input$data_files))) {
+        # Single file object with named elements
+        files <- input$data_files$name
+      } else if (is.list(input$data_files)) {
+        # Array of file objects
+        files <- paste(sapply(input$data_files, function(f) f$name), collapse = ", ")
       } else {
-        input$data_files$name
+        # Fallback
+        files <- "Unknown file format"
       }
-      insertUI(
-        paste0("#", session$ns("upload_status")),
-        "beforeEnd",
+      output$data_files_status <- renderUI({
         MessageBar(
           messageBarType = 1, # success
           paste("✅ Data files uploaded:", files)
         )
-      )
+      })
     })
     
     # Handle document upload
     observeEvent(input$document, {
       req(input$document)
-      insertUI(
-        paste0("#", session$ns("upload_status")),
-        "beforeEnd",
+      output$document_status <- renderUI({
         MessageBar(
           messageBarType = 1, # success
           paste("📄 Document uploaded:", input$document$name)
         )
-      )
+      })
     })
     
     # Handle images upload
     observeEvent(input$images, {
       req(input$images)
-      files <- if (length(input$images$name) > 1) {
-        paste(length(input$images$name), "images:", 
-              paste(input$images$name, collapse = ", "))
+      # Handle multiple files (array) or single file (object)
+      if (is.list(input$images) && !is.null(names(input$images))) {
+        # Single file object
+        files <- paste("Image uploaded:", input$images$name)
+      } else if (is.list(input$images)) {
+        # Array of file objects
+        files <- paste(length(input$images), "images:", 
+                      paste(sapply(input$images, function(f) f$name), collapse = ", "))
       } else {
-        paste("Image uploaded:", input$images$name)
+        # Fallback
+        files <- "Unknown file format"
       }
-      insertUI(
-        paste0("#", session$ns("upload_status")),
-        "beforeEnd",
+      output$images_status <- renderUI({
         MessageBar(
           messageBarType = 1, # success
           paste("🖼️", files)
         )
-      )
+      })
     })
   })
 }

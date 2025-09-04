@@ -28,8 +28,6 @@ The allowed props are listed below in the \bold{Details} section.}
 A Safari-compatible file upload button that combines Fluent UI styling with cross-browser file selection functionality. This component solves the issue where Safari blocks programmatic file input clicks by using React-based file input handling.
 
 For more details about Fluent UI buttons visit the \href{https://developer.microsoft.com/en-us/fluentui#/controls/web/Button}{official docs}.
-The R package cannot handle each and every case, so for advanced use cases
-you need to work using the original docs to achieve the desired result.
 }
 \details{
 \itemize{
@@ -64,9 +62,9 @@ you need to work using the original docs to achieve the desired result.
 
 \subsection{Accessibility}{
 \itemize{
-\item Button automatically includes proper ARIA attributes
-\item Supports keyboard navigation and screen readers
-\item File input maintains semantic meaning for assistive technology
+\item Button follows Fluent UI accessibility standards
+\item Supports keyboard navigation (Space/Enter to activate)
+\item Compatible with screen readers and assistive technologies
 }
 }
 }
