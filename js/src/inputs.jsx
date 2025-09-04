@@ -109,7 +109,6 @@ export const Toggle = InputAdapter(Fluent.Toggle, (value, setValue) => ({
   onChange: (e, v) => setValue(v),
 }));
 
-// Safari-compatible file upload button
 export const FileUploadButton = InputAdapter(
   ({
     onChange,
