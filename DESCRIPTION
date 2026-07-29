@@ -18,7 +18,7 @@ License: LGPL-3
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.3
 Depends:
   R (>= 2.10)
 Imports:
@@ -34,7 +34,6 @@ Suggests:
   DT,
   ggplot2,
   glue,
-  imola,
   knitr,
   leaflet,
   mockery,

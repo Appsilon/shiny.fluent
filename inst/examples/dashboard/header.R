@@ -51,63 +51,40 @@ command_bar <- CommandBar(
 )
 
 
+# The grid layout (including the responsive breakpoint) lives in `style.scss`
+# under `.app_header`; the classes below name the grid areas.
 header <- function() {
-  appsilon_breakpoints <- breakpointSystem(
-    "appsilon-breakpoints",
-    breakpoint("xs", min = 320),
-    breakpoint("s", min = 428),
-    breakpoint("m", min = 728),
-    breakpoint("l", min = 1024),
-    breakpoint("xl", min = 1200)
-  )
-
-  gridPanel(
+  div(
     id = "app_header",
-    class = "mobile-collapsed",
-    breakpoint_system = appsilon_breakpoints,
-    areas = list(
-      default = c(
-        "logo . info mobile_controls",
-        "separator separator separator separator",
-        "title title title title",
-        "menu menu menu menu",
-        "cta cta cta cta"
-      ),
-      l = "logo separator title mobile_controls . menu info cta"
-    ),
-    columns = list(
-      default = "auto 1fr auto auto",
-      l = "auto 1px auto auto 1fr auto auto auto"
-    ),
-    rows = list(
-      default = "auto auto auto auto auto",
-      l = "40px"
-    ),
-    gap = list(
-      default = "0px",
-      l = "16px"
-    ),
-    logo = img(src = "appsilon-logo.png", class = "logo"),
-    separator = div(class = "app_header_vertical_separator mobile-toggled"),
-    title = div(
+    class = "app_header mobile-collapsed",
+    img(src = "appsilon-logo.png", class = "logo"),
+    div(class = "app_header_vertical_separator mobile-toggled separator"),
+    div(
       "shiny.fluent",
-      class = "app_header_title mobile-toggled"
+      class = "app_header_title mobile-toggled title"
     ),
     command_bar,
-    info = IconButton.shinyInput(
-      "cta_info",
-      class = "cta-icon",
-      iconProps = list(iconName = "Info"),
-      href = "#!/about"
+    tagAppendAttributes(
+      IconButton.shinyInput(
+        "cta_info",
+        class = "cta-icon",
+        iconProps = list(iconName = "Info"),
+        href = "#!/about"
+      ),
+      class = "info"
     ),
-    cta = PrimaryButton.shinyInput(
-      inputId = "cta_talk",
-      text = "Let's Talk",
-      class = "btn-primary btn-cta mobile-toggled",
-      href = "https://appsilon.com/",
-      target = "_blank"
+    tagAppendAttributes(
+      PrimaryButton.shinyInput(
+        inputId = "cta_talk",
+        text = "Let's Talk",
+        class = "btn-primary btn-cta mobile-toggled",
+        href = "https://appsilon.com/",
+        target = "_blank"
+      ),
+      class = "cta"
     ),
-    mobile_controls = div(
+    div(
+      class = "mobile_controls",
       tags$script("
         let header_expand = function() {
           document.getElementById('app_header').classList

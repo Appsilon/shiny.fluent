@@ -608,38 +608,6 @@
         "Built": "R 4.1.1; x86_64-pc-linux-gnu; 2022-12-16 11:11:38 UTC; unix"
       }
     },
-    "imola": {
-      "Source": "RSPM",
-      "Repository": "https://packagemanager.rstudio.com/all/latest",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
-      "description": {
-        "Package": "imola",
-        "Type": "Package",
-        "Title": "CSS Layouts (Grid and Flexbox) Implementation for R/Shiny",
-        "Version": "0.5.0",
-        "Authors@R": "person(\"Pedro\", \"Silva\", email = \"pedrocoutinhosilva@gmail.com\",\n  role = c(\"aut\", \"cre\"))",
-        "Description": "Allows easy creation of CSS layouts (grid and flexbox)\n  directly from R without added CSS.",
-        "License": "MIT + file LICENSE",
-        "URL": "https://github.com/pedrocoutinhosilva/imola",
-        "Encoding": "UTF-8",
-        "VignetteBuilder": "knitr",
-        "Imports": "shiny, htmltools, magrittr, stringi, glue, yaml",
-        "Suggests": "testthat (>= 3.0.0), rvest, devtools, covr, rmarkdown, knitr",
-        "RoxygenNote": "7.1.2",
-        "Config/testthat/edition": "3",
-        "Language": "en-US",
-        "NeedsCompilation": "no",
-        "Packaged": "2022-04-10 17:12:00 UTC; spark",
-        "Author": "Pedro Silva [aut, cre]",
-        "Maintainer": "Pedro Silva <pedrocoutinhosilva@gmail.com>",
-        "Repository": "RSPM",
-        "Date/Publication": "2022-04-19 09:32:30 UTC",
-        "Built": "R 4.1.1; ; 2023-03-28 09:10:26 UTC; unix"
-      }
-    },
     "jquerylib": {
       "Source": "RSPM",
       "Repository": "https://packagemanager.rstudio.com/all/latest",
