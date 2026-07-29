@@ -74,7 +74,7 @@ you need to work using the original docs to achieve the desired result.
 \subsection{Content}{
 \itemize{
 \item Separate two groups of check boxes with headings rather than positioning them one after the other.
-\item Use sentence-style capitalization—only capitalize the first word. For more info, see \href{https://docs.microsoft.com/style-guide/capitalization}{Capitalization} in the Microsoft Writing Style Guide.
+\item Use sentence-style capitalization—only capitalize the first word. For more info, see \href{https://learn.microsoft.com/style-guide/capitalization}{Capitalization} in the Microsoft Writing Style Guide.
 \item Don't use end punctuation (unless the check box label absolutely requires multiple sentences).
 \item Use a sentence fragment for the label, rather than a full sentence.
 \item Make it easy for people to understand what will happen if they select or clear a check box.

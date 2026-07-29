@@ -118,7 +118,7 @@ you need to work using the original docs to achieve the desired result.
 \item Don’t use periods at the end of titles.
 \item This mandatory content should explain the main information in a clear, concise, and specific statement or question. For example, “Delete this file?” instead of “Are you sure?”
 \item The title shouldn’t be a description of the body content. For example, don’t use “Error” as a title. Instead, use an informative statement like “Your session ended.”
-\item Use sentence-style capitalization—only capitalize the first word. For more info, see \href{https://docs.microsoft.com/style-guide/capitalization}{Capitalization} in the Microsoft Writing Style Guide.
+\item Use sentence-style capitalization—only capitalize the first word. For more info, see \href{https://learn.microsoft.com/style-guide/capitalization}{Capitalization} in the Microsoft Writing Style Guide.
 }
 }
 

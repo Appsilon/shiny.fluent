@@ -101,7 +101,7 @@ you need to work using the original docs to achieve the desired result.
 \item Don’t put a period at the end of the title.
 }
 
-\verb{[capitalization]}: https://docs.microsoft.com/style-guide/capitalization
+\verb{[capitalization]}: https://learn.microsoft.com/style-guide/capitalization
 }
 
 \subsection{Button labels}{
