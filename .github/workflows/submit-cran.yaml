@@ -1,0 +1,23 @@
+name: Submit to CRAN
+
+on:
+  release:
+    types: [prereleased]           # Only trigger on pre-releases
+
+jobs:
+  cran-submission:
+    runs-on: ubuntu-latest
+    name: Submit package to CRAN
+    permissions:
+      contents: read
+      issues: write                # Needed to create issues
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Submit R package to CRAN
+        uses: coatless-actions/cran-submission@v1
+        with:
+          pkg-directory: '.'       # Directory containing the package
+          check-directory: 'check' # Directory for check outputs
+          error-on: 'warning'      # Fail on warnings
+          create-issue: true       # Create issues to track submissions
