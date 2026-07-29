@@ -19,12 +19,35 @@ chromote::set_chrome_args(c(
 ))
 
 # Make sure the temp folder is removed when testing is complete
-withr::defer({
+withr::defer(
+  {
+    # Shut Chrome down gracefully and wait for the process to exit. Chrome removes
+    # its own temp dirs only on a clean exit, and a process still alive here would
+    # recreate them right after the unlink below.
+    if (chromote::has_default_chromote_object()) {
+      try(chromote::default_chromote_object()$close(wait = 10), silent = TRUE)
+    }
 
-  # Clean up chromote sessions
-  gc() # Run R6 finalizer methods
-  Sys.sleep(2) # Wait for any supervisors to exit
+    # Clean up chromote sessions
+    gc() # Run R6 finalizer methods
+    Sys.sleep(2) # Wait for any supervisors to exit
 
-  # Delete the Crashpad folder if it exists
-  unlink(file.path(tempdir(), "Crashpad"), recursive = TRUE)
-}, envir = testthat::teardown_env())
+    # Delete Chrome leftovers: 'Crashpad' and macOS 'com.google.Chrome.*' dirs.
+    # R CMD check reports detritus in dirname(tempdir()), which is check-private;
+    # outside a check that dir is the shared TMPDIR of a possibly running browser.
+    dirs <- if (testthat::is_checking()) {
+      c(tempdir(), dirname(tempdir()))
+    } else {
+      tempdir()
+    }
+    unlink(
+      list.files(
+        dirs,
+        pattern = "^(Crashpad|com\\.google\\.Chrome)",
+        full.names = TRUE
+      ),
+      recursive = TRUE
+    )
+  },
+  envir = testthat::teardown_env()
+)
