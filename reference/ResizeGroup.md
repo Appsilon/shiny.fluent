@@ -1,0 +1,171 @@
+# ResizeGroup
+
+ResizeGroup is a React component that can be used to help fit the right
+amount of content within a container. The consumer of the ResizeGroup
+provides some initial data, a reduce function, and a render function.
+The render function is responsible for populating the contents of a the
+container when given some data. The initial data should represent the
+data that should be rendered when the ResizeGroup has infinite width. If
+the contents returned by the render function do not fit within the
+ResizeGroup, the reduce function is called to get a version of the data
+whose rendered width should be smaller than the data that was just
+rendered.
+
+An example scenario is shown below, where controls that do not fit on
+screen are rendered in an overflow menu. The data in this situation is a
+list of 'primary' controls that are rendered on the top level and a set
+of overflow controls rendered in the overflow menu. The initial data in
+this case has all the controls in the primary set. The implementation of
+onReduceData moves a control from the overflow well into the primary
+control set.
+
+This component queries the DOM for the dimensions of elements. Too many
+of these dimension queries will negatively affect the performance of the
+component and could cause poor interactive performance on websites. One
+way to reduce the number of measurements performed by the component is
+to provide a cacheKey in the initial data and in the return value of
+onReduceData. Two data objects with the same cacheKey are assumed to
+have the same width, resulting in measurements being skipped for that
+data object. In the controls with an overflow example, the cacheKey is
+simply the concatenation of the keys of the controls that appear in the
+top level.
+
+There is a boolean context property (isMeasured) added to let child
+components know if they are only being used for measurement purposes.
+When isMeasured is true, it will signify that the component is not the
+instance visible to the user. This will not be needed for most
+scenarios. It is intended to be used to to skip unwanted side effects of
+mounting a child component more than once. This includes cases where the
+component makes API requests, requests focus to one of its elements,
+expensive computations, and/or renders markup unrelated to its size. Be
+careful not to use this property to change the components rendered
+output in a way that effects it size in any way.
+
+For more details and examples visit the [official
+docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/ResizeGroup).
+The R package cannot handle each and every case, so for advanced use
+cases you need to work using the original docs to achieve the desired
+result.
+
+## Usage
+
+``` r
+ResizeGroup(...)
+```
+
+## Arguments
+
+- ...:
+
+  Props to pass to the component. The allowed props are listed below in
+  the **Details** section.
+
+## Value
+
+Object with `shiny.tag` class suitable for use in the UI of a Shiny app.
+
+## Details
+
+- **className** `string`  
+  Additional css class to apply to the Component
+
+- **componentRef** `IRefObject<IResizeGroup>`  
+  Optional callback to access the IResizeGroup interface. Use this
+  instead of ref for accessing the public methods and properties of the
+  component.
+
+- **data** `any`  
+  Initial data to be passed to the `onRenderData` function. When there
+  is no `onGrowData` provided, this data should represent what should be
+  passed to the render function when the parent container of the
+  ResizeGroup is at its maximum supported width. A `cacheKey` property
+  may optionally be included as part of the data. Two data objects with
+  the same `cacheKey` will be assumed to take up the same width and will
+  prevent measurements. The type of `cacheKey` is a string.
+
+- **dataDidRender** `(renderedData: any) => void`  
+  Function to be called every time data is rendered. It provides the
+  data that was actually rendered. A use case would be adding telemetry
+  when a particular control is shown in an overflow well or dropped as a
+  result of onReduceData or to count the number of renders that an
+  implementation of onReduceData triggers.
+
+- **direction** `ResizeGroupDirection`  
+  Direction of this resize group, vertical or horizontal
+
+- **onGrowData** `(prevData: any) => any`  
+  Function to be performed on the data in order to increase its width.
+  It is called in scenarios where the container has more room than the
+  previous render and we may be able to fit more content. If there are
+  no more scaling operations to perform on teh data, it should return
+  undefined to prevent an infinite render loop.
+
+- **onReduceData** `(prevData: any) => any`  
+  Function to be performed on the data in order to reduce its width and
+  make it fit into the given space. If there are no more scaling steps
+  to apply, it should return undefined to prevent an infinite render
+  loop.
+
+- **onRenderData** `(data: any) => JSX.Element`  
+  Function to render the data. Called when rendering the contents to the
+  screen and when rendering in a hidden div to measure the size of the
+  contents.
+
+- **styles**
+  `IStyleFunctionOrObject<IResizeGroupStyleProps, IResizeGroupStyles>`  
+  Call to provide customized styling that will layer on top of the
+  variant rules
+
+- **theme** `ITheme`  
+  Theme provided by HOC.
+
+## Examples
+
+``` r
+library(shiny)
+library(shiny.fluent)
+
+data <- list(
+  items = list(
+    "many", "strings", "with", "varying", "length", "sometimes", "very", "short",
+    "other", "times", "extraordinarily", "long"
+  )
+)
+onRenderData <- JS("data =>
+  data.items.map(item =>
+    jsmodule['react'].createElement('div',
+      {
+        style: {
+          display: 'inline-block',
+          backgroundColor: 'orange',
+          padding: '10px',
+          margin: '10px',
+          fontSize: '20px',
+        }
+      },
+      item
+    )
+  )
+")
+onReduceData <- JS("data => ({ items: data.items.slice(0, -1) })")
+
+ui <- function(id) {
+  ns <- NS(id)
+  div(
+    p("Resize the browser to see how the elements are hidden when they do not fit:"),
+    ResizeGroup(
+      data = data,
+      onRenderData = onRenderData,
+      onReduceData = onReduceData
+    )
+  )
+}
+
+server <- function(id) {
+  moduleServer(id, function(input, output, session) {})
+}
+
+if (interactive()) {
+  shinyApp(ui("app"), function(input, output) server("app"))
+}
+```

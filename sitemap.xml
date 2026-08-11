@@ -1,261 +1,89 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/404.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/CONTRIBUTING.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/PULL_REQUEST_TEMPLATE.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/articles/shiny-fluent.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/articles/st-sales-reps-dashboard.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/articles/st-shiny-fluent-and-rhino.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/articles/sz-how-to-shiny-modules.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/articles/sz-how-to-troubleshoot.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/articles/sz-how-to-use-fluent-docs.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/articles/topic_react-in-shiny.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/index.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/news/index.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/ActivityItem.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/Announced.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/Breadcrumb.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/Button.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/Calendar.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/Callout.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/Checkbox.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/ChoiceGroup.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/Coachmark.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/ColorPicker.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/ComboBox.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/CommandBar.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/CommandBarItem.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/ContextualMenu.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/DatePicker.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/DetailsList.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/Dialog.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/Divider.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/DocumentCard.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/Dropdown.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/Facepile.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/FocusTrapZone.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/FocusZone.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/GroupedList.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/HoverCard.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/Icon.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/Image.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/Keytip.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/Keytips.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/Label.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/Layer.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/Link.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/List.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/MarqueeSelection.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/MessageBar.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/Modal.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/Nav.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/OverflowSet.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/Overlay.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/Panel.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/PeoplePicker.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/Persona.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/Pickers.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/Pivot.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/ProgressIndicator.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/Rating.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/ResizeGroup.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/ScrollablePane.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/SearchBox.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/Separator.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/Shimmer.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/Slider.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/SpinButton.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/Spinner.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/Stack.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/SwatchColorPicker.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/TeachingBubble.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/Text.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/TextField.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/Theme.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/Toggle.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/Tooltip.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/component.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/fluentPage.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/fluentPeople.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/fluentSalesDeals.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/parseTheme.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/reexports.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/runExample.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/shinyFluentDependency.html</loc>
-  </url>
-  <url>
-    <loc>https://appsilon.github.io/shiny.fluent/reference/shinyInput.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://appsilon.github.io/shiny.fluent/404.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/CONTRIBUTING.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/PULL_REQUEST_TEMPLATE.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/articles/index.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/articles/shiny-fluent.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/articles/st-sales-reps-dashboard.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/articles/st-shiny-fluent-and-rhino.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/articles/sz-how-to-shiny-modules.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/articles/sz-how-to-troubleshoot.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/articles/sz-how-to-use-fluent-docs.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/articles/topic_react-in-shiny.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/authors.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/index.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/news/index.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/ActivityItem.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/Announced.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/Breadcrumb.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/Button.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/Calendar.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/Callout.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/Checkbox.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/ChoiceGroup.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/Coachmark.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/ColorPicker.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/ComboBox.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/CommandBar.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/CommandBarItem.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/ContextualMenu.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/DatePicker.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/DetailsList.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/Dialog.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/Divider.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/DocumentCard.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/Dropdown.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/Facepile.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/FocusTrapZone.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/FocusZone.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/GroupedList.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/HoverCard.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/Icon.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/Image.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/Keytip.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/Keytips.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/Label.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/Layer.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/Link.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/List.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/MarqueeSelection.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/MessageBar.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/Modal.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/Nav.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/OverflowSet.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/Overlay.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/Panel.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/PeoplePicker.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/Persona.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/Pickers.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/Pivot.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/ProgressIndicator.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/Rating.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/ResizeGroup.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/ScrollablePane.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/SearchBox.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/Separator.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/Shimmer.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/Slider.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/SpinButton.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/Spinner.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/Stack.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/SwatchColorPicker.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/TeachingBubble.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/Text.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/TextField.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/Theme.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/Toggle.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/Tooltip.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/component.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/fluentPage.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/fluentPeople.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/fluentSalesDeals.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/index.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/parseTheme.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/reexports.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/runExample.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/shinyFluentDependency.html</loc></url>
+<url><loc>https://appsilon.github.io/shiny.fluent/reference/shinyInput.html</loc></url>
 </urlset>
+
