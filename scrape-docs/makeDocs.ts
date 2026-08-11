@@ -41,6 +41,21 @@ const REPLACE_MAP = [
     regex: /(\[(0-9|a-zA-Z|a-zA-Z0-9)\])/gm,
     replacement: '`$1`',
   },
+  // Absolutize relative links to the Fluent docs SPA. They point nowhere in the R manual,
+  // and the "#/a#b" form is invalid HTML (two fragments), which fails the CRAN vnu check.
+  {
+    regex: /\]\(#\/styles\/web\/icons#fabric-react\)/gm,
+    replacement: '](https://developer.microsoft.com/en-us/fluentui#/styles/web/icons)',
+  },
+  {
+    regex: /\]\(#\//gm,
+    replacement: '](https://developer.microsoft.com/en-us/fluentui#/',
+  },
+  // docs.microsoft.com redirects (301) to learn.microsoft.com, which CRAN flags.
+  {
+    regex: /https:\/\/docs\.microsoft\.com\//gm,
+    replacement: 'https://learn.microsoft.com/',
+  },
   // Remove empty @details
   {
     regex: /#'\s+@details[\n\s]+#'[\n\s]+#'[\n\s]+\\itemize\{\n#'\s\}/gm,

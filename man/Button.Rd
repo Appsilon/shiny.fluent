@@ -189,7 +189,7 @@ Note: This increases the time the button will take to mount, but can improve per
 
 \subsection{Content}{
 \itemize{
-\item Use sentence-style capitalization—only capitalize the first word. For more info, see \href{https://docs.microsoft.com/style-guide/capitalization}{Capitalization} in the Microsoft Writing Style Guide.
+\item Use sentence-style capitalization—only capitalize the first word. For more info, see \href{https://learn.microsoft.com/style-guide/capitalization}{Capitalization} in the Microsoft Writing Style Guide.
 \item Make sure it's clear what will happen when people interact with the button. Be concise; usually a single verb is best. Include a noun if there is any room for interpretation about what the verb means. For example, "Delete folder" or "Create account".
 }
 }

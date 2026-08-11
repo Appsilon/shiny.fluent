@@ -71,7 +71,7 @@ you need to work using the original docs to achieve the desired result.
 
 \subsection{Content}{
 \itemize{
-\item Use sentence-style capitalization—only capitalize the first word. For more info, see \href{https://docs.microsoft.com/style-guide/capitalization}{Capitalization} in the Microsoft Writing Style Guide.
+\item Use sentence-style capitalization—only capitalize the first word. For more info, see \href{https://learn.microsoft.com/style-guide/capitalization}{Capitalization} in the Microsoft Writing Style Guide.
 \item The dropdown list label should describe what can be found in the menu.
 \item Use shortened statements or single words as list options.
 \item If there isn't a default option, use "Select an option" as placeholder text.

@@ -43,7 +43,7 @@ you need to work using the original docs to achieve the desired result.
 \item Use descriptive, actionable link text when possible. Avoid using URLs as link text.
 \item Don't use if the action is destructive or irreversible. Links aren't appropriate for commands with significant consequences.
 \item Keep discrete links far enough apart that people can differentiate between them and easily select each one.
-\item Use sentence-style capitalization—only capitalize the first word. For more info, see \href{https://docs.microsoft.com/style-guide/capitalization}{Capitalization} in the Microsoft Writing Style Guide.
+\item Use sentence-style capitalization—only capitalize the first word. For more info, see \href{https://learn.microsoft.com/style-guide/capitalization}{Capitalization} in the Microsoft Writing Style Guide.
 }
 }
 }

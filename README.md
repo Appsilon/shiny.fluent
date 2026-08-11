@@ -82,6 +82,6 @@ Learn more at [appsilon.com](https://www.appsilon.com/).
 
 Get in touch [opensource@appsilon.com](mailto:opensource@appsilon.com)
 
-Explore the [Rhinoverse](https://rhinoverse.dev) - a family of R packages built around [Rhino](https://appsilon.github.io/rhino/)!
+Explore the [Rhinoverse](https://www.appsilon.com/rhinoverse) - a family of R packages built around [Rhino](https://appsilon.github.io/rhino/)!
 
 <a href = "https://www.appsilon.com/careers" target="_blank"><img src="https://raw.githubusercontent.com/Appsilon/website-cdn/gh-pages/WeAreHiring1.png" alt="We are hiring!"/></a>

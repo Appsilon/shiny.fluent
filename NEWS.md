@@ -1,3 +1,10 @@
+# shiny.fluent 0.4.1
+
+1. Fixed an invalid link in the `Icon` documentation that failed CRAN's HTML validation.
+2. Links to the Fluent UI docs and the Microsoft Writing Style Guide now point at their
+current locations.
+3. Removed the `imola` dependency from the dashboard example, which now uses plain CSS grid.
+
 # shiny.fluent 0.4.0
 
 1. Upgraded `@fluentui/react` to 8.118.2.

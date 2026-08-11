@@ -1,6 +1,6 @@
 Package: shiny.fluent
 Title: Microsoft Fluent UI for Shiny Apps
-Version: 0.4.0
+Version: 0.4.1
 Authors@R:
   c(
     person("Jakub", "Sobolewski", role = c("aut", "cre"), email = "opensource+jakub.sobolewski@appsilon.com"),
@@ -18,7 +18,7 @@ License: LGPL-3
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.3
 Depends:
   R (>= 2.10)
 Imports:
@@ -34,7 +34,6 @@ Suggests:
   DT,
   ggplot2,
   glue,
-  imola,
   knitr,
   leaflet,
   mockery,

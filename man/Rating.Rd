@@ -69,7 +69,7 @@ you need to work using the original docs to achieve the desired result.
 \subsection{Content}{
 \itemize{
 \item Use a five-star rating system.
-\item Use sentence-style capitalization—only capitalize the first word. For more info, see \href{https://docs.microsoft.com/style-guide/capitalization}{Capitalization} in the Microsoft Writing Style Guide.
+\item Use sentence-style capitalization—only capitalize the first word. For more info, see \href{https://learn.microsoft.com/style-guide/capitalization}{Capitalization} in the Microsoft Writing Style Guide.
 }
 }
 }

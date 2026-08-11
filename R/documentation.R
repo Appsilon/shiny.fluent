@@ -49,10 +49,10 @@ NULL
 #'
 #' The Announced component currently has the following documented use cases:
 #'
-#' 1. [Quick Actions](#/controls/web/announced/quickactions): Operations such as editing text or deletion that are short enough that they do not require a status during progress.
-#' 2. [Search Results](#/controls/web/announced/searchresults): Appearance of search results such as in contact fields or search boxes.
-#' 3. [Lazy Loading](#/controls/web/announced/lazyloading): "Lazy loading" of page sections that do not appear all at once.
-#' 4. [Bulk Operations](#/controls/web/announced/bulkoperations): Operations that require multiple sub operations, such as the moving of several files.
+#' 1. [Quick Actions](https://developer.microsoft.com/en-us/fluentui#/controls/web/announced/quickactions): Operations such as editing text or deletion that are short enough that they do not require a status during progress.
+#' 2. [Search Results](https://developer.microsoft.com/en-us/fluentui#/controls/web/announced/searchresults): Appearance of search results such as in contact fields or search boxes.
+#' 3. [Lazy Loading](https://developer.microsoft.com/en-us/fluentui#/controls/web/announced/lazyloading): "Lazy loading" of page sections that do not appear all at once.
+#' 4. [Bulk Operations](https://developer.microsoft.com/en-us/fluentui#/controls/web/announced/bulkoperations): Operations that require multiple sub operations, such as the moving of several files.
 #'
 #'
 #' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Announced).
@@ -130,7 +130,7 @@ NULL
 #'
 #' ### Content
 #'
-#' - Use sentence-style capitalization—only capitalize the first word. For more info, see [Capitalization](https://docs.microsoft.com/style-guide/capitalization) in the Microsoft Writing Style Guide.
+#' - Use sentence-style capitalization—only capitalize the first word. For more info, see [Capitalization](https://learn.microsoft.com/style-guide/capitalization) in the Microsoft Writing Style Guide.
 #' - Make sure it's clear what will happen when people interact with the button. Be concise; usually a single verb is best. Include a noun if there is any room for interpretation about what the verb means. For example, "Delete folder" or "Create account".
 #'
 #' @details
@@ -346,7 +346,7 @@ NULL
 #' ### Content
 #'
 #' - Separate two groups of check boxes with headings rather than positioning them one after the other.
-#' - Use sentence-style capitalization—only capitalize the first word. For more info, see [Capitalization](https://docs.microsoft.com/style-guide/capitalization) in the Microsoft Writing Style Guide.
+#' - Use sentence-style capitalization—only capitalize the first word. For more info, see [Capitalization](https://learn.microsoft.com/style-guide/capitalization) in the Microsoft Writing Style Guide.
 #' - Don't use end punctuation (unless the check box label absolutely requires multiple sentences).
 #' - Use a sentence fragment for the label, rather than a full sentence.
 #' - Make it easy for people to understand what will happen if they select or clear a check box.
@@ -871,7 +871,7 @@ NULL
 #'
 #' - Use sentence-style capitalization for column headers—only capitalize the first word. For more info, see `[Capitalization]` in the Microsoft Writing Style Guide.
 #'
-#' `[capitalization]`: https://docs.microsoft.com/style-guide/capitalization
+#' `[capitalization]`: https://learn.microsoft.com/style-guide/capitalization
 #'
 #' ### FAQ
 #'
@@ -1143,7 +1143,7 @@ NULL
 #' - Don’t use periods at the end of titles.
 #' - This mandatory content should explain the main information in a clear, concise, and specific statement or question. For example, “Delete this file?” instead of “Are you sure?”
 #' - The title shouldn’t be a description of the body content. For example, don’t use “Error” as a title. Instead, use an informative statement like “Your session ended.”
-#' - Use sentence-style capitalization—only capitalize the first word. For more info, see [Capitalization](https://docs.microsoft.com/style-guide/capitalization) in the Microsoft Writing Style Guide.
+#' - Use sentence-style capitalization—only capitalize the first word. For more info, see [Capitalization](https://learn.microsoft.com/style-guide/capitalization) in the Microsoft Writing Style Guide.
 #'
 #' #### Body copy (Optional)
 #'
@@ -1324,7 +1324,7 @@ NULL
 #'
 #' ### Content
 #'
-#' - Use sentence-style capitalization—only capitalize the first word. For more info, see [Capitalization](https://docs.microsoft.com/style-guide/capitalization) in the Microsoft Writing Style Guide.
+#' - Use sentence-style capitalization—only capitalize the first word. For more info, see [Capitalization](https://learn.microsoft.com/style-guide/capitalization) in the Microsoft Writing Style Guide.
 #' - The dropdown list label should describe what can be found in the menu.
 #' - Use shortened statements or single words as list options.
 #' - If there isn't a default option, use "Select an option" as placeholder text.
@@ -1666,9 +1666,9 @@ NULL
 #' @description
 #' In a user interface, an icon is an image that represents an application, a capability, or some other concept or specific entity with meaning for the user. An icon is usually selectable but can also be a nonselectable image, such as a company's logo.
 #'
-#' For a list of icons, visit our [icon documentation](#/styles/web/icons).
+#' For a list of icons, visit our [icon documentation](https://developer.microsoft.com/en-us/fluentui#/styles/web/icons).
 #'
-#' Note that icons are not bundled by default and typically must be loaded by calling `initializeIcons` from the `@uifabric/icons` package at the root of your application. See the [icon documentation](#/styles/web/icons#fabric-react) for more details.
+#' Note that icons are not bundled by default and typically must be loaded by calling `initializeIcons` from the `@uifabric/icons` package at the root of your application. See the [icon documentation](https://developer.microsoft.com/en-us/fluentui#/styles/web/icons) for more details.
 #'
 #'
 #' For more details and examples visit the [official docs](https://developer.microsoft.com/en-us/fluentui#/controls/web/Icon).
@@ -1779,7 +1779,7 @@ NULL
 #' ### Content
 #'
 #' - Labels should describe the purpose of the control.
-#' - Use sentence-style capitalization—only capitalize the first word. For more info, see [Capitalization](https://docs.microsoft.com/style-guide/capitalization) in the Microsoft Writing Style Guide.
+#' - Use sentence-style capitalization—only capitalize the first word. For more info, see [Capitalization](https://learn.microsoft.com/style-guide/capitalization) in the Microsoft Writing Style Guide.
 #' - Be short and concise.
 #' - Use nouns or short noun phrases.
 #' - Don't use labels as instructional text. For example, "Click to get started".
@@ -1850,7 +1850,7 @@ NULL
 #' - Use descriptive, actionable link text when possible. Avoid using URLs as link text.
 #' - Don't use if the action is destructive or irreversible. Links aren't appropriate for commands with significant consequences.
 #' - Keep discrete links far enough apart that people can differentiate between them and easily select each one.
-#' - Use sentence-style capitalization—only capitalize the first word. For more info, see [Capitalization](https://docs.microsoft.com/style-guide/capitalization) in the Microsoft Writing Style Guide.
+#' - Use sentence-style capitalization—only capitalize the first word. For more info, see [Capitalization](https://learn.microsoft.com/style-guide/capitalization) in the Microsoft Writing Style Guide.
 #'
 #' @details
 #'
@@ -1885,7 +1885,7 @@ NULL
 #'
 #' ### Content
 #'
-#' - Use sentence-style capitalization—only capitalize the first word. For more info, see [Capitalization](https://docs.microsoft.com/style-guide/capitalization) in the Microsoft Writing Style Guide.
+#' - Use sentence-style capitalization—only capitalize the first word. For more info, see [Capitalization](https://learn.microsoft.com/style-guide/capitalization) in the Microsoft Writing Style Guide.
 #'
 #' ### FAQ
 #'
@@ -2086,7 +2086,7 @@ NULL
 #'
 #' ### Content
 #'
-#' - Use sentence-style capitalization—only capitalize the first word. For more info, see [Capitalization](https://docs.microsoft.com/style-guide/capitalization) in the Microsoft Writing Style Guide.
+#' - Use sentence-style capitalization—only capitalize the first word. For more info, see [Capitalization](https://learn.microsoft.com/style-guide/capitalization) in the Microsoft Writing Style Guide.
 #'
 #' @details
 #'
@@ -2256,7 +2256,7 @@ NULL
 #' - Use sentence-style capitalization—only capitalize the first word. For more info, see `[Capitalization]` in the Microsoft Writing Style Guide.
 #' - Don’t put a period at the end of the title.
 #'
-#' `[capitalization]`: https://docs.microsoft.com/style-guide/capitalization
+#' `[capitalization]`: https://learn.microsoft.com/style-guide/capitalization
 #'
 #' #### Button labels
 #'
@@ -2634,7 +2634,7 @@ NULL
 #' ### Content
 #'
 #' - Use a five-star rating system.
-#' - Use sentence-style capitalization—only capitalize the first word. For more info, see [Capitalization](https://docs.microsoft.com/style-guide/capitalization) in the Microsoft Writing Style Guide.
+#' - Use sentence-style capitalization—only capitalize the first word. For more info, see [Capitalization](https://learn.microsoft.com/style-guide/capitalization) in the Microsoft Writing Style Guide.
 #'
 #' @details
 #'
@@ -3270,7 +3270,7 @@ NULL
 #'
 #' - Include a short label above the text field to communicate what information should be entered. Don't use placeholder text instead of a label. Placeholder text poses a variety of accessibility issues (including possible problems with color/contrast, and people thinking the form input is already filled out).
 #' - When part of a form, make it clear which fields are required vs. optional. If the input is required, add "(required)" to the label. Don't exclusively use "\*" to indicate required inputs as it is often not read by screen readers. For example, "First name (required)".
-#' - Use sentence-style capitalization—only capitalize the first word. For more info, see [Capitalization](https://docs.microsoft.com/style-guide/capitalization) in the Microsoft Writing Style Guide.
+#' - Use sentence-style capitalization—only capitalize the first word. For more info, see [Capitalization](https://learn.microsoft.com/style-guide/capitalization) in the Microsoft Writing Style Guide.
 #'
 #' @details
 #'

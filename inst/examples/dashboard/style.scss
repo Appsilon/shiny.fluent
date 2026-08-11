@@ -234,6 +234,39 @@ body {
   margin: 10px 0;
 }
 
+.app_header {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-areas:
+    "logo . info mobile_controls"
+    "separator separator separator separator"
+    "title title title title"
+    "menu menu menu menu"
+    "cta cta cta cta";
+  grid-template-rows: auto auto auto auto auto;
+  grid-template-columns: auto 1fr auto auto;
+  gap: 0px;
+  align-items: stretch;
+  justify-items: stretch;
+
+  > .logo { grid-area: logo; }
+  > .separator { grid-area: separator; }
+  > .title { grid-area: title; }
+  > .info { grid-area: info; }
+  > .cta { grid-area: cta; }
+  > .mobile_controls { grid-area: mobile_controls; }
+}
+
+@media (min-width: 1024px) {
+  .app_header {
+    grid-template-areas: "logo separator title mobile_controls . menu info cta";
+    grid-template-rows: 40px;
+    grid-template-columns: auto 1px auto auto 1fr auto auto auto;
+    gap: 16px;
+  }
+}
+
 #app_header {
   padding: 12px 0;
   justify-content: center;
