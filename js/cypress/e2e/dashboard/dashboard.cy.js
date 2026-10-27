@@ -1,4 +1,11 @@
 describe('Dashboard', () => {
+  it('places the CommandBar in the menu grid area', () => {
+    cy.visit('/#!/Slider');
+    cy.get('#app_header > .menu').should(($menu) => {
+      expect(getComputedStyle($menu[0]).gridArea.split(' / ')[0]).to.equal('menu');
+    });
+  });
+
   it('Slider', () => {
     cy.visit('/#!/Slider');
     const steps = 15;

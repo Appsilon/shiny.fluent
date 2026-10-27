@@ -63,7 +63,7 @@ header <- function() {
       "shiny.fluent",
       class = "app_header_title mobile-toggled title"
     ),
-    command_bar,
+    tagAppendAttributes(command_bar, class = "menu"),
     tagAppendAttributes(
       IconButton.shinyInput(
         "cta_info",

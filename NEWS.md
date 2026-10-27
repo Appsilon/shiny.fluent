@@ -1,3 +1,7 @@
+# shiny.fluent (development version)
+
+* Assign the dashboard CommandBar to its declared CSS grid area ([#252](https://github.com/Appsilon/shiny.fluent/issues/252), @dajiaohuang).
+
 # shiny.fluent 0.4.1
 
 1. Fixed an invalid link in the `Icon` documentation that failed CRAN's HTML validation.
