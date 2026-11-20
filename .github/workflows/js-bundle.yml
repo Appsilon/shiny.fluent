@@ -1,0 +1,56 @@
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'js/**'
+      - 'inst/www/**'
+      - '.github/workflows/js-bundle.yml'
+  pull_request:
+    paths:
+      - 'js/**'
+      - 'inst/www/**'
+      - '.github/workflows/js-bundle.yml'
+
+name: js-bundle
+
+permissions:
+  contents: read
+
+jobs:
+  fresh:
+    name: The committed JS bundle matches js/src
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: yarn
+          cache-dependency-path: js/yarn.lock
+
+      - name: Install JavaScript dependencies
+        working-directory: js
+        run: yarn install --frozen-lockfile
+
+      # Delete the committed bundle first, so a build that stops writing it shows up as a deleted file.
+      - name: Rebuild the bundle
+        run: |
+          rm inst/www/shiny.fluent/shiny-fluent.js
+          cd js && yarn webpack
+
+      # The package ships inst/www as committed, and the e2e tests use it as committed. A rebuild from the lockfile
+      # gives byte-identical output, so any difference means js/src changed without a rebuild.
+      - name: Check that the committed bundle is up to date
+        run: |
+          # --porcelain also lists new files, e.g. an extra chunk.
+          if [ -n "$(git status --porcelain inst/www)" ]; then
+            git status --short inst/www
+            echo "::error::inst/www is out of date with js/src. Run 'yarn webpack' in js/ and commit the result."
+            exit 1
+          fi
