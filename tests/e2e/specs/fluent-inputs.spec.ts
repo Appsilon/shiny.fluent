@@ -1,11 +1,9 @@
 // Ported from js/cypress/e2e/e2e-test/fluentComponents.cy.js: Fluent inputs (*.shinyInput()) send their values to
 // the server, reset when re-rendered, and follow update*.shinyInput() from the server.
-import path from 'node:path';
 import type { Page } from '@playwright/test';
-import { expect, test } from '../harness';
-import { PKG_ROOT } from '../harness/paths';
+import { expect, test } from '@appsilon/shiny-playwright';
 
-test.use({ app: path.join(PKG_ROOT, 'inst', 'examples', 'e2e-test') });
+test.use({ app: 'inst/examples/e2e-test' });
 
 test.beforeEach(async ({ shiny }) => {
   await shiny.goto();

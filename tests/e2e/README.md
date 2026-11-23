@@ -6,6 +6,11 @@ apps that use the package **built from this checkout** and drive them in Chromiu
 The specs here replace the Cypress tests the repository had in `js/cypress/` and run against the same apps:
 `inst/examples/e2e-test`, and the example dashboard `inst/examples/dashboard` for `dashboard.spec.ts`.
 
+The test infrastructure comes from the shared package
+[`@appsilon/shiny-playwright`](https://github.com/Appsilon/shiny.playwright) (installed from its git tag, see
+`package.json`). Its README describes the fixtures, the config helper and the CI workflow in full; this file covers
+what is specific to shiny.fluent.
+
 This folder is excluded from the package build (`.Rbuildignore`), so `R CMD check` and CRAN never see it.
 
 ## Running
@@ -40,27 +45,22 @@ To run against another Shiny version, install it into a separate library and put
 
 ### In CI
 
-`.github/workflows/e2e.yml` runs `npm test` on ubuntu, once with the oldest Shiny version we test (1.7.5.1) and
-once with the current CRAN release. It runs only when the package (including `inst/`) or the e2e tests change. In CI
-the tests use the Google Chrome that comes with the GitHub runner (`CI` is set), not Playwright's own Chromium:
-that avoids installing browser system packages on every run. To reproduce CI locally with your own Chrome, run
-`CI=1 npm test`. If tests fail, download the `e2e-shiny-<version>` artifact: it holds the HTML report and, per
+`.github/workflows/e2e.yml` calls the shared workflow from shiny.playwright, which runs `npm test` on ubuntu, once
+with the oldest Shiny version we test (1.7.5.1) and once with the latest release. The checks are
+`e2e / e2e (Shiny 1.7.5.1)` and `e2e / e2e (Shiny latest)`. It runs on every PR, and on pushes to main only when the
+package (including `inst/`) or the e2e tests change. In CI the tests use the Google Chrome that comes with the
+GitHub runner (`CI` is set), not Playwright's own Chromium: that avoids installing browser system packages on every
+run. To reproduce CI locally with your own Chrome, run `CI=1 npm test`. If tests fail, download the `e2e-shiny-<version>` artifact: it holds the HTML report and, per
 failed test, the trace and `app.log`. If the job fails in an earlier step (e.g. while installing R), there is no
 artifact; read the job log.
 
 ## How it works
 
-1. **Install from source.** Before the tests start, `harness/global-setup.ts` runs `R CMD INSTALL` into
-   a temporary library, one per run. Every app process puts that library first on its library path (and stops
-   if the package would load from anywhere else), so `library(shiny.fluent)` always loads the code in your working
-   tree. You never need to reinstall the package by hand. Exception: UI mode (`npm run test:ui`) installs once
-   when it starts, so restart it after changing the package.
-2. **One R process per app.** The `shiny` fixture starts the app a test asks for in its own R process, on a port R
-   picks itself. Each app starts at most once per worker and is reused across tests; every test still gets a fresh
-   browser page and therefore a fresh Shiny session.
-3. **Clean shutdown.** App processes are killed when the worker finishes. If the test runner is killed hard, the R
-   process notices that its parent is gone and quits within about a second (Linux and macOS, as long as the app is
-   not stuck in a long R computation).
+Before the tests start, the package is installed from this checkout (`R CMD INSTALL`) into a temporary library, so
+`library(shiny.fluent)` in the apps always loads the code in your working tree; you never need to reinstall it by
+hand. Each app runs in its own R process, and every test gets a fresh browser page and Shiny session. UI mode
+(`npm run test:ui`) installs once when it starts, so restart it after changing the package. See the
+[shiny.playwright README](https://github.com/Appsilon/shiny.playwright#readme) for details.
 
 ### The JavaScript bundle
 
@@ -70,11 +70,9 @@ After changing `js/src`, rebuild it (`yarn webpack` in `js/`) before running the
 ## Writing a test
 
 ```ts
-import path from 'node:path';
-import { expect, test } from '../harness';
-import { PKG_ROOT } from '../harness/paths';
+import { expect, test } from '@appsilon/shiny-playwright';
 
-test.use({ app: path.join(PKG_ROOT, 'inst', 'examples', 'e2e-test') }); // or a folder name under apps/
+test.use({ app: 'inst/examples/e2e-test' }); // relative to the package root, or a folder name under apps/
 
 test('Toggle.shinyInput() sends its value to the server', async ({ page, shiny }) => {
   await shiny.goto();                      // open the app, wait until Shiny is connected and idle
@@ -102,21 +100,13 @@ Guidelines:
   reminder to remove the mark.
 - `shiny.logs()` returns the R output captured since the test started, e.g. to assert that a warning was printed.
 
-### `shiny` fixture
-
-| Member | Purpose |
-|---|---|
-| `goto(path?)` | Open the app; wait until Shiny is connected and finished its first round of work. Fails immediately, with the R output, if the session dies. |
-| `selectOption(inputId, value)` | Choose a value in a `selectInput` like a user would (selectize or native). |
-| `inputValue(inputId)` | The value of a Shiny input as the client last sent it to the server. |
-| `waitForIdle()` | Wait until Shiny is connected and not busy. Only needed in special cases; prefer assertions. |
-| `logs()` | R stdout/stderr of the app since this test started. |
-| `expectNoErrors()` | Wait until Shiny has been idle for 0.5 s (so outputs created by `renderUI()` have rendered), then assert there is no disconnect overlay, no visible output error, and no browser console error. |
-| `app.url` | Base URL of the running app. |
+The `shiny` fixture (`goto()`, `selectOption()`, `inputValue()`, `waitForIdle()`, `logs()`, `expectNoErrors()`) and
+the options (`app`, `ignoreConsoleErrors`) are documented in the
+[shiny.playwright README](https://github.com/Appsilon/shiny.playwright#the-shiny-fixture).
 
 ## Layout
 
 ```
-specs/       test files (*.spec.ts)
-harness/     test infrastructure: install from source, app processes, Shiny helpers
+playwright.config.ts   defineShinyConfig() from @appsilon/shiny-playwright, plus shiny.fluent's own `use` settings
+specs/                 test files (*.spec.ts)
 ```

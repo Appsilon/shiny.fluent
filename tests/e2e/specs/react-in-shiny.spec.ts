@@ -1,10 +1,8 @@
 // Ported from js/cypress/e2e/e2e-test/reactInShiny.cy.js: Fluent (React) components in a Shiny layout, static and
 // rendered dynamically with renderReact().
-import path from 'node:path';
-import { expect, test } from '../harness';
-import { PKG_ROOT } from '../harness/paths';
+import { expect, test } from '@appsilon/shiny-playwright';
 
-test.use({ app: path.join(PKG_ROOT, 'inst', 'examples', 'e2e-test') });
+test.use({ app: 'inst/examples/e2e-test' });
 
 test.beforeEach(async ({ shiny }) => {
   await shiny.goto();
