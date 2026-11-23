@@ -1,10 +1,8 @@
 // Ported from js/cypress/e2e/dashboard/dashboard.cy.js: the example dashboard (inst/examples/dashboard), whose pages
 // are shiny.router routes such as /#!/Slider.
-import path from 'node:path';
-import { expect, test } from '../harness';
-import { PKG_ROOT } from '../harness/paths';
+import { expect, test } from '@appsilon/shiny-playwright';
 
-test.use({ app: path.join(PKG_ROOT, 'inst', 'examples', 'dashboard') });
+test.use({ app: 'inst/examples/dashboard' });
 
 test.afterEach(async ({ shiny }) => {
   await shiny.expectNoErrors();
