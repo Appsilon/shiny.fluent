@@ -52,3 +52,4 @@ Suggests:
   tibble,
   withr
 Config/testthat/edition: 3
+Config/Needs/e2e: DT, leaflet

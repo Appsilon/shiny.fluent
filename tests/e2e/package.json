@@ -1,0 +1,14 @@
+{
+  "name": "shiny.fluent-e2e",
+  "private": true,
+  "description": "End-to-end tests for shiny.fluent (Playwright). See README.md.",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "@types/node": "22.20.5"
+  }
+}
