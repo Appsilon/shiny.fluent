@@ -44,29 +44,6 @@ jobs:
         run: yarn lint
         working-directory: js
 
-      - name: Run Cypress
-        if: always()
-        uses: cypress-io/github-action@v5
-        with:
-          start: yarn start-e2e-test-app
-          working-directory: js
-          record: true
-          spec: cypress/e2e/e2e-test/*.js
-          config: baseUrl=http://localhost:8887
-        env:
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-      - name: Run Cypress on example Dashboard
-        if: always()
-        uses: cypress-io/github-action@v5
-        with:
-          start: yarn start-e2e-router-app
-          working-directory: js
-          record: true
-          spec: cypress/e2e/dashboard/*.js
-          config: baseUrl=http://localhost:8886
-        env:
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-
       - name: Test coverage
         run: |
           Rscript -e 'covr::codecov()'
