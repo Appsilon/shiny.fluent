@@ -9,16 +9,9 @@ on:
       - 'DESCRIPTION'
       - 'NAMESPACE'
       - '.github/workflows/e2e.yml'
-  # Note: with path filters, a PR that touches none of these paths gets no e2e checks at all. If these checks
-  # are ever made required, such PRs would wait for them forever; drop the filter (or add a skip job) first.
+  # No path filter on PRs: if the e2e checks are made required on main, a PR that touches none of the paths
+  # above would get no e2e checks at all and wait for them forever.
   pull_request:
-    paths:
-      - 'R/**'
-      - 'inst/**'
-      - 'tests/e2e/**'
-      - 'DESCRIPTION'
-      - 'NAMESPACE'
-      - '.github/workflows/e2e.yml'
 
 name: e2e
 
