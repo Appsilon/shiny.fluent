@@ -47,7 +47,7 @@ To run against another Shiny version, install it into a separate library and put
 
 `.github/workflows/e2e.yml` calls the shared workflow from shiny.playwright, which runs `npm test` on ubuntu, once
 with the oldest Shiny version we test (1.7.5.1) and once with the newest Shiny on Posit Package Manager (which can lag
-CRAN for a short time). The checks are `e2e / e2e (Shiny 1.7.5.1)` and `e2e / e2e (Shiny latest)`. It runs on every
+CRAN for a short time). The checks are `e2e / Shiny 1.7.5.1` and `e2e / Shiny latest`. It runs on every
 PR, and on pushes to main only when the package (including `inst/`), the e2e tests or the workflow file change. In CI
 the tests use the Google Chrome that comes with the GitHub runner (`CI` is set), not Playwright's own Chromium: that
 avoids installing browser system packages on every run. To reproduce CI locally with your own Chrome, run
