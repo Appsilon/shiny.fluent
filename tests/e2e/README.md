@@ -3,9 +3,8 @@
 Browser tests for shiny.fluent, written with [Playwright](https://playwright.dev). They start real Shiny
 apps that use the package **built from this checkout** and drive them in Chromium.
 
-The specs here are ported from the Cypress tests in `js/cypress/e2e/e2e-test/` (`actionButtons`, `shinyInReact`,
-`fluentComponents`) and run against the same app, `inst/examples/e2e-test`. The other Cypress specs still run in
-`ci.yml`.
+The specs here replace the Cypress tests the repository had in `js/cypress/` and run against the same apps:
+`inst/examples/e2e-test`, and the example dashboard `inst/examples/dashboard` for `dashboard.spec.ts`.
 
 This folder is excluded from the package build (`.Rbuildignore`), so `R CMD check` and CRAN never see it.
 

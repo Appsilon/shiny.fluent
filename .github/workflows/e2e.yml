@@ -55,7 +55,7 @@ jobs:
         with:
           dependencies: '"hard"'
           # Config/Needs/e2e in DESCRIPTION: packages the e2e apps need beyond Imports (DT and leaflet for
-          # inst/examples/e2e-test).
+          # inst/examples/e2e-test, the rest for inst/examples/dashboard).
           needs: e2e
           extra-packages: ${{ matrix.shiny == 'latest' && 'any::shiny' || format('shiny@{0}', matrix.shiny) }}
           upgrade: ${{ matrix.shiny == 'latest' && 'TRUE' || 'FALSE' }}
