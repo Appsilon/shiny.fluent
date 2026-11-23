@@ -20,7 +20,8 @@ permissions:
 
 jobs:
   # The shared workflow from @appsilon/shiny-playwright runs the tests on Shiny 1.7.5.1 (the oldest version we
-  # test) and on the latest release. The checks are `e2e / e2e (Shiny latest)` and `e2e / e2e (Shiny 1.7.5.1)`.
+  # test) and on the newest Shiny on Posit Package Manager, which can lag CRAN. The checks are
+  # `e2e / e2e (Shiny latest)` and `e2e / e2e (Shiny 1.7.5.1)`.
   # Upgrade the tag here together with the package version in tests/e2e/package.json.
   e2e:
     uses: Appsilon/shiny.playwright/.github/workflows/e2e.yml@v0.1.0
